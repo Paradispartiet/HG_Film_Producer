@@ -1,0 +1,524 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "candidate_a_scanner_darkly_2006",
+  "proposedScenarioId": "scenario_a_scanner_darkly_2006",
+  "routeSlug": "candidate-a-scanner-darkly-2006",
+  "status": "editorial_candidate_not_admitted",
+  "book": {
+    "chapter": 27,
+    "decision": "P2"
+  },
+  "identity": {
+    "title": "A Scanner Darkly",
+    "originalTitle": "A Scanner Darkly",
+    "year": 2006,
+    "directors": [
+      "Richard Linklater"
+    ],
+    "country": "United States",
+    "runtimeNote": "BFI lists 100 minutes. Exact version-specific mastering specifications and audited production costs are outside this draft's evidence."
+  },
+  "sources": [
+    {
+      "id": "cgw",
+      "title": "On Edge",
+      "publisher": "Computer Graphics World",
+      "url": "https://www.cgw.com/Publications/CGW/2006/Volume-29-Issue-8-Aug-2006-/On-Edge.aspx"
+    },
+    {
+      "id": "fresh",
+      "title": "Richard Linklater, Directing 'Darkly'",
+      "publisher": "Fresh Air Archive / WHYY",
+      "url": "https://freshairarchive.org/segments/richard-linklater-directing-darkly"
+    },
+    {
+      "id": "lat",
+      "title": "A long way from Disney",
+      "publisher": "Los Angeles Times",
+      "url": "https://www.latimes.com/archives/la-xpm-2006-jul-07-et-rotoscope7-story.html"
+    },
+    {
+      "id": "awn",
+      "title": "A Scanner Darkly: An Animated Illusion",
+      "publisher": "Animation World Network",
+      "url": "https://www.awn.com/animationworld/scanner-darkly-animated-illusion"
+    },
+    {
+      "id": "ward",
+      "title": "Independent Animation, Rotoshop and Communities of Practice: As Seen Through A Scanner Darkly",
+      "publisher": "Arts University Bournemouth / Animation",
+      "url": "https://research.aub.ac.uk/id/eprint/209/"
+    },
+    {
+      "id": "bfi",
+      "title": "A Scanner Darkly (2006) — film record",
+      "publisher": "British Film Institute",
+      "url": "https://www.bfi.org.uk/film/2b2cbfa8-7f35-5fc4-8518-e56a9a68b95a/a-scanner-darkly"
+    },
+    {
+      "id": "wired",
+      "title": "Trouble in Toontown",
+      "publisher": "WIRED",
+      "url": "https://www.wired.com/2006/03/scanner-2/"
+    }
+  ],
+  "article": {
+    "title": "A Scanner Darkly (2006): rotoscoping, continuity and collective animation labor",
+    "paragraphs": [
+      {
+        "text": "Richard Linklater adapted Philip K. Dick's novel using the computer-assisted drawing process previously employed for Waking Life. In a 2006 Fresh Air interview, he describes casting, rehearsing, filming and editing actors before a substantial animation stage. The study separates the fictional story's unstable perception from the practical decisions of the artists working over reference images.",
+        "sourceIds": [
+          "fresh",
+          "bfi"
+        ]
+      },
+      {
+        "text": "The production built physical sets and captured reference material on location. Contemporary trade coverage describes the new demands on Bob Sabiston's Rotoshop system: more precise line adjustment, improved interpolation control and additional tools for colour and masking. The reference footage and manually constructed drawings are different contributions to a shared image.",
+        "sourceIds": [
+          "cgw",
+          "wired"
+        ]
+      },
+      {
+        "text": "Where Waking Life varied the visual approach between encounters, this film sought sustained graphic continuity. Character guides helped animation leads coordinate the work. A proposed study uses model sheets, adjacent-shot reviews and layered drawing tests rather than requiring proprietary software. The same basic technique can support different artistic strategies.",
+        "sourceIds": [
+          "awn",
+          "cgw"
+        ]
+      },
+      {
+        "text": "Linklater estimated roughly 500 person-hours of animation per finished minute. Reporting at the time describes the difficulty of applying earlier production schedules to the more detailed film. Paul Ward's later research examines tensions between established creative communities and studio-style organization. Different accounts of the production are not an audited schedule or contract. Training, fair working conditions, review and credit should be planned explicitly.",
+        "sourceIds": [
+          "fresh",
+          "lat",
+          "ward"
+        ]
+      }
+    ]
+  },
+  "production": {
+    "premise": "Animate an original short dialogue in a consistent graphic style.",
+    "screenplay": "Use visual interpretation to express uncertainty without reenacting the film's drug-related events.",
+    "camera": "Record consenting performers in a designed reference environment.",
+    "animation": "Draw key contours and colours, adjust interpolation, and retain separate editable layers.",
+    "editing": "Use reference timing and style guides to review continuity across shots.",
+    "sound": "Preserve dialogue timing and use original or licensed audio; the historical mixing setup is not established.",
+    "learning": "Connect character guides, manual animation, software assistance, production labor and attribution."
+  },
+  "workshopIntroduction": {
+    "en": "Compare the more consistent graphic style of A Scanner Darkly with the varied animation of Waking Life through six original production exercises.",
+    "nb": "Sammenlign A Scanner Darklys mer ensartede tegneseriestil med Waking Lifes varierte animasjon gjennom seks originale produksjonsøvelser.",
+    "fr": "Comparer le style graphique plus cohérent d'A Scanner Darkly aux variations de Waking Life par six exercices originaux.",
+    "pt": "Comparar o estilo gráfico mais coerente de A Scanner Darkly com a animação variada de Waking Life através de seis exercícios originais."
+  },
+  "phases": [
+    {
+      "id": "reference",
+      "questionId": "scanner-reference",
+      "title": {
+        "en": "Performance and reference set",
+        "nb": "Skuespill og referansesett",
+        "fr": "Jeu et décor de référence",
+        "pt": "Interpretação e cenário de referência"
+      },
+      "deliverable": {
+        "en": "Shoot an original short scene with a consenting actor and a designed background; select a reference edit.",
+        "nb": "Film en kort originalscene med samtykkende skuespiller og utformet bakgrunn; velg et referanseklipp.",
+        "fr": "Filmer une courte scène originale avec consentement et décor conçu ; choisir le montage de référence.",
+        "pt": "Filmar uma cena original curta com consentimento e cenário concebido; escolher a montagem de referência."
+      }
+    },
+    {
+      "id": "style",
+      "questionId": "scanner-style",
+      "title": {
+        "en": "Character continuity and style guides",
+        "nb": "Figurkontinuitet og stilmanual",
+        "fr": "Continuité des personnages et guide visuel",
+        "pt": "Continuidade de personagens e guia visual"
+      },
+      "deliverable": {
+        "en": "Make a one-page model sheet showing a fictional character's proportions, contours and palette.",
+        "nb": "Lag en énsides modelloversikt med en fiktiv figurs proporsjoner, konturer og palett.",
+        "fr": "Créer une fiche de modèle avec proportions, contours et palette d'un personnage fictif.",
+        "pt": "Criar uma folha de modelo com proporções, contornos e paleta de uma personagem fictícia."
+      }
+    },
+    {
+      "id": "lines",
+      "questionId": "scanner-lines",
+      "title": {
+        "en": "Line control and interpolation",
+        "nb": "Linjekontroll og interpolering",
+        "fr": "Contrôle des lignes et interpolation",
+        "pt": "Controlo de linhas e interpolação"
+      },
+      "deliverable": {
+        "en": "Draw a moving contour at three keyframes and refine the transitions by hand.",
+        "nb": "Tegn en kontur i bevegelse ved tre nøkkelbilder og juster overgangene for hånd.",
+        "fr": "Dessiner un contour en mouvement à trois images clés et corriger les transitions à la main.",
+        "pt": "Desenhar um contorno em movimento em três quadros-chave e corrigir as transições à mão."
+      }
+    },
+    {
+      "id": "layers",
+      "questionId": "scanner-layers",
+      "title": {
+        "en": "Layered colour and compositing",
+        "nb": "Lagbasert farge og kompositering",
+        "fr": "Couleur et composition en couches",
+        "pt": "Cor e composição em camadas"
+      },
+      "deliverable": {
+        "en": "Build a fictional animated prop from separate contour, colour and shadow layers, and revise one layer.",
+        "nb": "Bygg en fiktiv animert rekvisitt av separate kontur-, farge- og skyggelag, og revider ett lag.",
+        "fr": "Construire un accessoire animé fictif avec couches de contours, couleurs et ombres, puis réviser une couche.",
+        "pt": "Construir um adereço animado fictício com camadas de contorno, cor e sombra, e rever uma camada."
+      }
+    },
+    {
+      "id": "labor",
+      "questionId": "scanner-labor",
+      "title": {
+        "en": "Team workflow and realistic scheduling",
+        "nb": "Teamarbeid og realistisk tidsplan",
+        "fr": "Travail d'équipe et calendrier réaliste",
+        "pt": "Trabalho de equipa e calendário realista"
+      },
+      "deliverable": {
+        "en": "Estimate time for two sample shots of different complexity; plan training, feedback, breaks and revision.",
+        "nb": "Anslå tid for to testklipp med ulik kompleksitet; planlegg opplæring, tilbakemelding, pauser og revisjon.",
+        "fr": "Estimer deux plans de complexités différentes ; prévoir formation, retours, pauses et révision.",
+        "pt": "Estimar dois planos de complexidades diferentes; planear formação, feedback, pausas e revisão."
+      }
+    },
+    {
+      "id": "delivery",
+      "questionId": "scanner-delivery",
+      "title": {
+        "en": "Credits, source comparison and delivery",
+        "nb": "Kreditering, kildesammenligning og levering",
+        "fr": "Crédits, comparaison des sources et livraison",
+        "pt": "Créditos, comparação de fontes e entrega"
+      },
+      "deliverable": {
+        "en": "Prepare a rights and credit ledger for the original reference performance, animation contributors and finished export.",
+        "nb": "Lag en rettighets- og kredittoversikt for egne referanseopptak, animasjonsbidrag og ferdig eksport.",
+        "fr": "Préparer un registre de droits et crédits pour le jeu de référence, les artistes et l'export final.",
+        "pt": "Preparar um registo de direitos e créditos para interpretação de referência, artistas e exportação final."
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "scanner-reference",
+      "area": "camera",
+      "prompt": {
+        "en": "Why prepare physical sets even when the reference footage will become animation?",
+        "nb": "Hvorfor forberede fysiske kulisser når referanseopptakene skal animeres?",
+        "fr": "Pourquoi préparer des décors physiques si les images seront animées ?",
+        "pt": "Porquê preparar cenários físicos se as imagens serão animadas?"
+      },
+      "options": [
+        {
+          "id": "empty",
+          "label": {
+            "en": "Use empty spaces for every scene without considering the intended background",
+            "nb": "Bruk tomme rom i alle scener uten å vurdere den ønskede bakgrunnen",
+            "fr": "Utiliser des espaces vides sans considérer le décor souhaité",
+            "pt": "Usar espaços vazios sem considerar o cenário pretendido"
+          }
+        },
+        {
+          "id": "reference",
+          "label": {
+            "en": "Design physical spaces and performances that supply useful visual references",
+            "nb": "Utform fysiske rom og prestasjoner som gir nyttige visuelle referanser",
+            "fr": "Concevoir des espaces et un jeu fournissant des références visuelles utiles",
+            "pt": "Conceber espaços e interpretações que forneçam referências visuais úteis"
+          }
+        },
+        {
+          "id": "automatic",
+          "label": {
+            "en": "Assume software automatically invents every detail needed for the finished image",
+            "nb": "Anta at programvaren automatisk finner opp alle detaljer i sluttbildet",
+            "fr": "Supposer que le logiciel invente automatiquement tous les détails de l'image finale",
+            "pt": "Pressupor que o software inventa automaticamente todos os detalhes finais"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "reference",
+      "explanation": {
+        "en": "Production reporting describes built sets and location shooting; Linklater describes completing a live-action edit before animation. Reference images are a designed foundation for artists, not the finished animation.",
+        "nb": "Produksjonsreportasjen beskriver kulisser og stedsopptak; Linklater beskriver ferdigklipte skuespilleropptak før animasjon. Referansene er et utformet grunnlag, ikke den ferdige animasjonen.",
+        "fr": "Le reportage décrit décors et tournage sur place ; Linklater décrit le montage avant animation. Les références sont une base conçue, non l'animation achevée.",
+        "pt": "A reportagem descreve cenários e rodagem em local; Linklater descreve montagem antes da animação. As referências são uma base concebida, não a animação final."
+      },
+      "sourceIds": [
+        "cgw",
+        "fresh"
+      ]
+    },
+    {
+      "id": "scanner-style",
+      "area": "animation",
+      "prompt": {
+        "en": "How can different artists maintain the more consistent look intended for this film?",
+        "nb": "Hvordan kan ulike kunstnere bevare det mer ensartede uttrykket som var ønsket for filmen?",
+        "fr": "Comment différents artistes peuvent-ils préserver l'aspect cohérent voulu pour ce film ?",
+        "pt": "Como podem artistas diferentes preservar o aspeto coerente pretendido para o filme?"
+      },
+      "options": [
+        {
+          "id": "free",
+          "label": {
+            "en": "Let each artist change character proportions and colours without coordination",
+            "nb": "La hver kunstner endre figurproporsjoner og farger uten samordning",
+            "fr": "Laisser chaque artiste modifier proportions et couleurs sans coordination",
+            "pt": "Deixar cada artista mudar proporções e cores sem coordenação"
+          }
+        },
+        {
+          "id": "fixed",
+          "label": {
+            "en": "Require an automated filter instead of agreeing on drawings or review",
+            "nb": "Krev et automatisk filter fremfor avtalte tegninger eller gjennomgang",
+            "fr": "Exiger un filtre automatique au lieu de dessins convenus ou de révision",
+            "pt": "Exigir um filtro automático em vez de desenhos acordados ou revisão"
+          }
+        },
+        {
+          "id": "guide",
+          "label": {
+            "en": "Agree on character guides and review adjacent shots while preserving artistic judgement",
+            "nb": "Avtal figurmanualer og gjennomgå naboklipp samtidig som kunstnerisk skjønn bevares",
+            "fr": "Convenir de guides et revoir les plans voisins tout en préservant le jugement artistique",
+            "pt": "Acordar guias e rever planos adjacentes preservando o juízo artístico"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "guide",
+      "explanation": {
+        "en": "Computer Graphics World records character style guides made by animation leads with Linklater. Animation World Network contrasts this consistent graphic-novel design with Waking Life's varied scene styles.",
+        "nb": "Computer Graphics World beskriver figurmanualer laget av animasjonslederne med Linklater. Animation World Network kontrasterer dette sammenhengende tegneserieuttrykket med Waking Lifes varierte scenestiler.",
+        "fr": "Computer Graphics World décrit des guides élaborés avec Linklater. Animation World Network oppose cette continuité graphique aux styles variés de Waking Life.",
+        "pt": "Computer Graphics World descreve guias feitos com Linklater. Animation World Network contrasta a continuidade gráfica com os estilos variados de Waking Life."
+      },
+      "sourceIds": [
+        "cgw",
+        "awn"
+      ]
+    },
+    {
+      "id": "scanner-lines",
+      "area": "animation",
+      "prompt": {
+        "en": "How should an animator respond when interpolated lines drift away from the intended form?",
+        "nb": "Hvordan bør en animatør reagere når interpolerte linjer glir bort fra ønsket form?",
+        "fr": "Comment réagir quand les lignes interpolées s'éloignent de la forme voulue ?",
+        "pt": "Como reagir quando linhas interpoladas se afastam da forma pretendida?"
+      },
+      "options": [
+        {
+          "id": "revise",
+          "label": {
+            "en": "Add or revise key drawings and adjust interpolation where the shape needs correction",
+            "nb": "Legg til eller revider nøkkeltegninger og juster interpoleringen der formen må korrigeres",
+            "fr": "Ajouter ou corriger des dessins clés et ajuster l'interpolation si nécessaire",
+            "pt": "Acrescentar ou corrigir desenhos-chave e ajustar a interpolação quando necessário"
+          }
+        },
+        {
+          "id": "ignore",
+          "label": {
+            "en": "Accept every interpolated result without examining the motion",
+            "nb": "Godta alle interpolerte resultater uten å undersøke bevegelsen",
+            "fr": "Accepter tous les résultats interpolés sans examiner le mouvement",
+            "pt": "Aceitar todos os resultados interpolados sem examinar o movimento"
+          }
+        },
+        {
+          "id": "freeze",
+          "label": {
+            "en": "Freeze one drawing for the entire shot even when the pose changes",
+            "nb": "Frys én tegning gjennom hele opptaket selv når posisjonen endres",
+            "fr": "Figer un dessin durant tout le plan même si la pose change",
+            "pt": "Fixar um desenho durante todo o plano mesmo quando a pose muda"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "revise",
+      "explanation": {
+        "en": "Sabiston's updated software gave artists finer control of line behaviour and interpolation. Key drawings remained human decisions, and added keys could correct the movement between earlier drawings.",
+        "nb": "Sabistons oppdaterte programvare ga kunstnerne finere kontroll over linjer og interpolering. Nøkkeltegningene var menneskelige valg, og ekstra nøkkelbilder kunne korrigere bevegelsen.",
+        "fr": "Le logiciel amélioré de Sabiston donnait un contrôle plus fin des lignes et de l'interpolation. Les dessins clés restaient humains ; des clés supplémentaires corrigeaient le mouvement.",
+        "pt": "O software atualizado de Sabiston permitia controlar melhor linhas e interpolação. Os desenhos-chave eram decisões humanas; chaves adicionais corrigiam o movimento."
+      },
+      "sourceIds": [
+        "cgw"
+      ]
+    },
+    {
+      "id": "scanner-layers",
+      "area": "animation",
+      "prompt": {
+        "en": "Which approach retains control of colour and shadows while drawing over live footage?",
+        "nb": "Hvilken metode bevarer kontroll over farge og skygger når man tegner over opptak?",
+        "fr": "Quelle méthode préserve le contrôle des couleurs et ombres sur les images filmées ?",
+        "pt": "Que método preserva controlo de cor e sombras ao desenhar sobre imagens filmadas?"
+      },
+      "options": [
+        {
+          "id": "flatten",
+          "label": {
+            "en": "Flatten every drawing layer before any review or correction",
+            "nb": "Slå sammen alle tegnelag før gjennomgang eller korrigering",
+            "fr": "Aplatir toutes les couches avant toute révision ou correction",
+            "pt": "Achatar todas as camadas antes de revisão ou correção"
+          }
+        },
+        {
+          "id": "layers",
+          "label": {
+            "en": "Keep editable colour and line elements and use masks to control selected regions",
+            "nb": "Behold redigerbare farge- og linjeelementer og bruk masker til å styre valgte områder",
+            "fr": "Conserver des éléments de couleur et de ligne modifiables et utiliser des masques",
+            "pt": "Manter elementos editáveis de cor e linha e usar máscaras para áreas selecionadas"
+          }
+        },
+        {
+          "id": "exact",
+          "label": {
+            "en": "Infer the precise original file structure from the final visual appearance",
+            "nb": "Utled den eksakte originale filstrukturen fra sluttbildets utseende",
+            "fr": "Déduire la structure exacte des fichiers originaux de l'image finale",
+            "pt": "Deduzir a estrutura exata dos ficheiros originais da imagem final"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "layers",
+      "explanation": {
+        "en": "The trade report describes improvements to Rotoshop including gradients, layers and masking. This exercise uses equivalent general techniques; it does not claim to reproduce the proprietary tool or its file format.",
+        "nb": "Fagreportasjen beskriver forbedringer av Rotoshop, blant annet gradienter, lag og maskering. Øvelsen bruker tilsvarende generelle teknikker uten å gjenskape proprietær programvare eller filformat.",
+        "fr": "Le reportage décrit dégradés, couches et masques ajoutés à Rotoshop. L'exercice utilise des techniques générales équivalentes sans reproduire le logiciel propriétaire ni son format.",
+        "pt": "A reportagem descreve gradientes, camadas e máscaras acrescentados ao Rotoshop. O exercício usa técnicas gerais equivalentes sem reproduzir software proprietário ou formato."
+      },
+      "sourceIds": [
+        "cgw",
+        "wired"
+      ]
+    },
+    {
+      "id": "scanner-labor",
+      "area": "research",
+      "prompt": {
+        "en": "How should a producer estimate labor when a new film demands more visual consistency and detail?",
+        "nb": "Hvordan bør en produsent anslå arbeid når en ny film krever mer visuell kontinuitet og detaljering?",
+        "fr": "Comment estimer le travail si un nouveau film exige davantage de cohérence et de détails ?",
+        "pt": "Como estimar trabalho quando um filme exige mais coerência e detalhe?"
+      },
+      "options": [
+        {
+          "id": "repeat",
+          "label": {
+            "en": "Reuse the previous film's schedule without testing the new shot complexity",
+            "nb": "Gjenbruk forrige films tidsplan uten å teste den nye klippkompleksiteten",
+            "fr": "Réutiliser le calendrier précédent sans tester la complexité des nouveaux plans",
+            "pt": "Reutilizar o calendário anterior sem testar a complexidade dos novos planos"
+          }
+        },
+        {
+          "id": "pressure",
+          "label": {
+            "en": "Respond to every delay only by demanding longer working days",
+            "nb": "Svar på alle forsinkelser bare ved å kreve lengre arbeidsdager",
+            "fr": "Répondre à tout retard uniquement par des journées de travail plus longues",
+            "pt": "Responder a atrasos apenas exigindo jornadas mais longas"
+          }
+        },
+        {
+          "id": "pilot",
+          "label": {
+            "en": "Test representative shots, budget training and revision, and agree on review milestones",
+            "nb": "Test representative klipp, budsjetter opplæring og revisjon, og avtal milepæler",
+            "fr": "Tester des plans représentatifs, budgéter formation et révision, convenir de jalons",
+            "pt": "Testar planos representativos, orçamentar formação e revisão e acordar marcos"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "pilot",
+      "explanation": {
+        "en": "Linklater reported roughly 500 person-hours per finished minute. Contemporary reporting and Ward's research describe scheduling and work-organization tensions. The reported effort is context, not a universal productivity target or a justification for overwork.",
+        "nb": "Linklater oppga omtrent 500 persontimer per ferdig minutt. Samtidsreportasje og Wards forskning beskriver utfordringer med tidsplan og organisering. Anslaget er kontekst, ikke et universelt produktivitetskrav eller grunnlag for overarbeid.",
+        "fr": "Linklater estime environ 500 heures-personnes par minute finie. Les reportages et Ward décrivent des tensions d'organisation. Ce chiffre est un contexte, non une norme ou une justification du surmenage.",
+        "pt": "Linklater estima cerca de 500 horas-pessoa por minuto final. Reportagens e Ward descrevem tensões de organização. O valor é contexto, não norma nem justificação de excesso de trabalho."
+      },
+      "sourceIds": [
+        "fresh",
+        "lat",
+        "ward"
+      ]
+    },
+    {
+      "id": "scanner-delivery",
+      "area": "research",
+      "prompt": {
+        "en": "How should a production study account for different creative and technical contributors?",
+        "nb": "Hvordan bør en produksjonsstudie dokumentere ulike kreative og tekniske bidragsytere?",
+        "fr": "Comment documenter les différents contributeurs créatifs et techniques ?",
+        "pt": "Como documentar os diferentes colaboradores criativos e técnicos?"
+      },
+      "options": [
+        {
+          "id": "credits",
+          "label": {
+            "en": "Distinguish the director, performers, software development, animation artists and producers using attributed sources",
+            "nb": "Skill regissør, skuespillere, programvareutvikling, animatører og produsenter med kildeangivelser",
+            "fr": "Distinguer réalisateur, interprètes, développement logiciel, artistes et producteurs avec des sources attribuées",
+            "pt": "Distinguir realizador, intérpretes, desenvolvimento de software, artistas e produtores com fontes atribuídas"
+          }
+        },
+        {
+          "id": "single",
+          "label": {
+            "en": "Attribute all drawing and software work to the director alone",
+            "nb": "Tilskriv alt tegnearbeid og all programvareutvikling til regissøren alene",
+            "fr": "Attribuer tout le dessin et le logiciel au seul réalisateur",
+            "pt": "Atribuir todo desenho e software apenas ao realizador"
+          }
+        },
+        {
+          "id": "guess",
+          "label": {
+            "en": "Invent a precise final budget and software licence agreement without records",
+            "nb": "Finn på et eksakt sluttbudsjett og en programvarelisensavtale uten dokumentasjon",
+            "fr": "Inventer un budget final et une licence logicielle sans documents",
+            "pt": "Inventar orçamento final e licença de software sem documentos"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "credits",
+      "explanation": {
+        "en": "BFI records Linklater as writer and director of the 2006 film; the trade accounts identify Sabiston's software and a wider animation team. Ward's research examines the division of labour. Neither a director credit nor an interview establishes every contract or final audited cost.",
+        "nb": "BFI oppgir Linklater som manusforfatter og regissør for 2006-filmen; fagreportasjene beskriver Sabistons programvare og et større animasjonsteam. Ward undersøker arbeidsdeling. Ingen av disse kildene fastslår alle kontrakter eller revidert sluttkostnad.",
+        "fr": "Le BFI crédite Linklater au scénario et à la réalisation ; les reportages identifient le logiciel de Sabiston et une équipe élargie. Ward étudie la division du travail. Ces sources n'établissent pas tous les contrats ni le coût audité.",
+        "pt": "O BFI credita Linklater no argumento e realização; reportagens identificam software de Sabiston e equipa alargada. Ward estuda divisão do trabalho. As fontes não estabelecem todos os contratos nem custo auditado."
+      },
+      "sourceIds": [
+        "bfi",
+        "ward",
+        "cgw"
+      ]
+    }
+  ],
+  "review": {
+    "runtimeAdmission": false,
+    "bookLinkApproved": false,
+    "studyPreview": true,
+    "required": [
+      "Independently review evidence and distinguish differing accounts of animation organization.",
+      "Complete full identity and eligible representation-gap assessment before canonical admission."
+    ]
+  }
+}
