@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Thirty-one pre-existing Production Cases receive evidence-backed craft decisions.
+ * Thirty-three pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -4453,6 +4453,386 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
         "sourceIds": [
           "s0",
           "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_fantomas_1913",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore recurring characters, literary adaptation and the identity of individual films within the Gaumont cycle.",
+      "nb": "Utforsk gjennomgående figurer, litterær adaptasjon og de enkelte filmenes identitet i Gaumont-serien.",
+      "fr": "Explorez les personnages récurrents, l'adaptation littéraire et l'identité des films du cycle Gaumont.",
+      "pt": "Explore personagens recorrentes, adaptação literária e a identidade dos filmes do ciclo Gaumont."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Fantômas (Feuillade)",
+        "publisher": "Gaumont",
+        "url": "https://www.gaumont.com/en/movie/fantomas-0"
+      },
+      {
+        "id": "s1",
+        "title": "Fantômas — Louis Feuillade, 1913",
+        "publisher": "La Cinémathèque française",
+        "url": "https://www.cinematheque.fr/film/48519.html"
+      },
+      {
+        "id": "s2",
+        "title": "Juve contre Fantômas — conventional title record",
+        "publisher": "Bibliothèque nationale de France",
+        "url": "https://catalogue.bnf.fr/ark:/12148/cb16462208q"
+      },
+      {
+        "id": "s3",
+        "title": "Le Mort qui tue — conventional title record",
+        "publisher": "Bibliothèque nationale de France",
+        "url": "https://catalogue.bnf.fr/ark:/12148/cb16472192c"
+      }
+    ],
+    "questions": [
+      {
+        "id": "fantomas-cycle",
+        "area": "research",
+        "prompt": {
+          "en": "How can an original fictional series maintain continuity between distinct films?",
+          "nb": "Hvordan kan en egen fiktiv serie bevare kontinuitet mellom selvstendige filmer?",
+          "fr": "Comment une série fictive originale peut-elle maintenir la continuité entre des films distincts ?",
+          "pt": "Como pode uma série ficcional original manter a continuidade entre filmes distintos?"
+        },
+        "options": [
+          {
+            "id": "memory",
+            "label": {
+              "en": "Give recurring characters recognizable traits and each film a distinct narrative identity",
+              "nb": "Gi gjennomgående figurer gjenkjennelige trekk og hver film en egen fortellingsidentitet",
+              "fr": "Donner aux personnages récurrents des traits reconnaissables et à chaque film une identité narrative propre",
+              "pt": "Dar às personagens recorrentes traços reconhecíveis e a cada filme uma identidade narrativa própria"
+            }
+          },
+          {
+            "id": "reset",
+            "label": {
+              "en": "Discard all recurring character relationships after each film",
+              "nb": "Forkast alle gjennomgående figurrelasjoner etter hver film",
+              "fr": "Supprimer toutes les relations récurrentes après chaque film",
+              "pt": "Eliminar todas as relações recorrentes após cada filme"
+            }
+          },
+          {
+            "id": "template",
+            "label": {
+              "en": "Assume every film follows a later television episode formula",
+              "nb": "Anta at alle filmene følger en senere TV-episodeformel",
+              "fr": "Supposer que chaque film suit une formule télévisuelle ultérieure",
+              "pt": "Supor que cada filme segue uma fórmula televisiva posterior"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "memory",
+        "explanation": {
+          "en": "Gaumont identifies the recurring ensemble, while the BnF records identify individual entries in a five-film cycle. Design a new benign fictional series with continuity and distinct instalments without imposing a later serial formula.",
+          "nb": "Gaumont identifiserer det gjennomgående ensemblet, mens BnF registrerer enkeltfilmer i en serie på fem. Lag en egen ufarlig fiksjonsserie med kontinuitet og selvstendige deler uten å påføre en senere serieformel.",
+          "fr": "Gaumont identifie la distribution récurrente et la BnF distingue les films d'un cycle de cinq. Concevez une fiction originale sans danger qui associe continuité et parties distinctes sans imposer une formule sérielle ultérieure.",
+          "pt": "A Gaumont identifica o elenco recorrente e a BnF distingue os filmes de um ciclo de cinco. Crie uma ficção original inofensiva com continuidade e partes distintas sem impor uma fórmula serial posterior."
+        },
+        "sourceIds": [
+          "s0",
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "fantomas-adaptation",
+        "area": "research",
+        "prompt": {
+          "en": "How should a producer document the relationship between literature and a film cycle?",
+          "nb": "Hvordan bør en produsent dokumentere forholdet mellom litteratur og en filmserie?",
+          "fr": "Comment documenter le rapport entre littérature et cycle cinématographique ?",
+          "pt": "Como documentar a relação entre literatura e ciclo cinematográfico?"
+        },
+        "options": [
+          {
+            "id": "erase",
+            "label": {
+              "en": "Omit the source authors when documenting the adaptation",
+              "nb": "Utelat kildeforfatterne når adaptasjonen dokumenteres",
+              "fr": "Omettre les auteurs des œuvres adaptées",
+              "pt": "Omitir os autores das obras adaptadas"
+            }
+          },
+          {
+            "id": "credits",
+            "label": {
+              "en": "Distinguish the literary authors, film adaptation and production company",
+              "nb": "Skill de litterære forfatterne, filmadaptasjonen og produksjonsselskapet",
+              "fr": "Distinguer auteurs littéraires, adaptation et société de production",
+              "pt": "Distinguir autores literários, adaptação e produtora"
+            }
+          },
+          {
+            "id": "invent",
+            "label": {
+              "en": "Attribute the entire literary and film history to a single creator",
+              "nb": "Tilskriv hele litteratur- og filmhistorien én enkelt skaper",
+              "fr": "Attribuer toute l'histoire littéraire et filmique à un seul créateur",
+              "pt": "Atribuir toda a história literária e cinematográfica a um único criador"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "credits",
+        "explanation": {
+          "en": "The Cinémathèque record credits Souvestre and Allain alongside Feuillade and the Gaumont production. Preserve the documented contributions and distinguish literary authorship from the film adaptation and its industrial organization.",
+          "nb": "Cinémathèque-oppføringen krediterer Souvestre og Allain sammen med Feuillade og Gaumont-produksjonen. Bevar de dokumenterte bidragene og skill litterært forfatterskap fra filmadaptasjon og industriell organisering.",
+          "fr": "La notice de la Cinémathèque crédite Souvestre et Allain aux côtés de Feuillade et de Gaumont. Préservez ces contributions et distinguez création littéraire, adaptation et organisation industrielle.",
+          "pt": "O registo da Cinémathèque credita Souvestre e Allain juntamente com Feuillade e Gaumont. Preserve estes contributos e distinga autoria literária, adaptação e organização industrial."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "fantomas-programme",
+        "area": "research",
+        "prompt": {
+          "en": "How should you describe the different durations of modern cycle presentations?",
+          "nb": "Hvordan bør du beskrive ulike varigheter for moderne visninger av filmserien?",
+          "fr": "Comment décrire les durées différentes des présentations modernes du cycle ?",
+          "pt": "Como descrever as diferentes durações das apresentações modernas do ciclo?"
+        },
+        "options": [
+          {
+            "id": "universal",
+            "label": {
+              "en": "Assign one programme runtime to every individual film",
+              "nb": "Tilordne én programvarighet til hver enkelt film",
+              "fr": "Attribuer une seule durée de programme à chaque film",
+              "pt": "Atribuir uma única duração de programa a cada filme"
+            }
+          },
+          {
+            "id": "sound",
+            "label": {
+              "en": "Describe modern musical accompaniment as original synchronized sound",
+              "nb": "Beskriv moderne musikkakkompagnement som synkron originallyd",
+              "fr": "Décrire l'accompagnement musical moderne comme son synchrone original",
+              "pt": "Descrever acompanhamento musical moderno como som sincronizado original"
+            }
+          },
+          {
+            "id": "version",
+            "label": {
+              "en": "Identify the catalogue, individual film or programme and presentation version",
+              "nb": "Identifiser katalogen, enkeltfilmen eller programmet og visningsversjonen",
+              "fr": "Identifier le catalogue, le film individuel ou programme et la version présentée",
+              "pt": "Identificar catálogo, filme individual ou programa e versão apresentada"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "version",
+        "explanation": {
+          "en": "Gaumont and the Cinémathèque describe different modern programme durations; BnF distinguishes individual entries. Report each version separately and do not turn modern accompaniment into an original synchronized soundtrack.",
+          "nb": "Gaumont og Cinémathèque oppgir ulike moderne programvarigheter; BnF skiller enkeltfilmene. Oppgi hver versjon separat og ikke gjør moderne akkompagnement til et opprinnelig synkront lydspor.",
+          "fr": "Gaumont et la Cinémathèque donnent des durées de programme différentes ; la BnF distingue les films. Décrivez chaque version séparément sans transformer l'accompagnement moderne en bande sonore synchrone originale.",
+          "pt": "Gaumont e Cinémathèque indicam diferentes durações de programa; a BnF distingue os filmes. Descreva cada versão separadamente sem transformar acompanhamento moderno em banda sonora sincronizada original."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_cabiria_1914",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore large-scale visual design, mobile framing and the distinction between silent and later sound editions.",
+      "nb": "Utforsk storskala visuell utforming, bevegelige utsnitt og skillet mellom stumfilm og senere lydversjoner.",
+      "fr": "Explorez la conception visuelle à grande échelle, le cadre mobile et la distinction entre éditions muette et sonore ultérieure.",
+      "pt": "Explore a conceção visual em grande escala, o enquadramento móvel e a distinção entre edições muda e sonora posterior."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Cabiria — restored silent films record",
+        "publisher": "Museo Nazionale del Cinema",
+        "url": "https://www2.museocinema.it/restauri/muti_restaurati.php?id=34&l=en"
+      },
+      {
+        "id": "s1",
+        "title": "Cabiria — Giovanni Pastrone, 1914",
+        "publisher": "La Cinémathèque française",
+        "url": "https://www.cinematheque.fr/film/43134.html"
+      },
+      {
+        "id": "s2",
+        "title": "Cabiria & Cabiria. The restoration",
+        "publisher": "Museo Nazionale del Cinema",
+        "url": "https://www.museocinema.it/en/exhibitions/cabiria-cabiria-restoration-0"
+      },
+      {
+        "id": "s3",
+        "title": "10 great silent epics — Cabiria (1914)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-silent-epics"
+      }
+    ],
+    "questions": [
+      {
+        "id": "cabiria-space",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a miniature set help you study the relationship between architecture and moving framing?",
+          "nb": "Hvordan kan en miniatyrscenografi hjelpe deg å studere forholdet mellom arkitektur og bevegelige utsnitt?",
+          "fr": "Comment une maquette peut-elle aider à étudier le rapport entre architecture et cadre mobile ?",
+          "pt": "Como pode uma maquete ajudar a estudar a relação entre arquitetura e enquadramento móvel?"
+        },
+        "options": [
+          {
+            "id": "reveal",
+            "label": {
+              "en": "Plan a safe tabletop camera movement that gradually reveals spatial depth",
+              "nb": "Planlegg en trygg kamerabevegelse på bordet som gradvis avdekker romdybden",
+              "fr": "Prévoir un mouvement de caméra sur maquette qui révèle progressivement la profondeur",
+              "pt": "Planear um movimento de câmara seguro sobre a maquete que revele gradualmente a profundidade"
+            }
+          },
+          {
+            "id": "size",
+            "label": {
+              "en": "Assume that larger scenery alone guarantees clearer visual storytelling",
+              "nb": "Anta at større dekorasjoner alene garanterer tydeligere visuell fortelling",
+              "fr": "Supposer que de grands décors garantissent à eux seuls un récit visuel clair",
+              "pt": "Supor que cenários maiores garantem por si só uma narrativa visual clara"
+            }
+          },
+          {
+            "id": "invent",
+            "label": {
+              "en": "Claim the film invented every form of camera movement",
+              "nb": "Hevd at filmen oppfant alle former for kamerabevegelse",
+              "fr": "Affirmer que le film a inventé toutes les formes de mouvement de caméra",
+              "pt": "Afirmar que o filme inventou todas as formas de movimento de câmara"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "reveal",
+        "explanation": {
+          "en": "The BFI dossier emphasizes Cabiria's scale and tracking shots. An original miniature exercise can compare fixed framing with gradual spatial revelation without claiming to reconstruct an exact historical shot or inventorship.",
+          "nb": "BFI-dokumentasjonen fremhever Cabirias skala og kamerakjøringer. En egen miniatyrøvelse kan sammenligne fast utsnitt med gradvis romlig avdekking uten å hevde eksakt historisk rekonstruksjon eller oppfinnerskap.",
+          "fr": "Le dossier BFI souligne l'échelle de Cabiria et ses travellings. Une maquette originale permet de comparer cadre fixe et révélation progressive de l'espace sans prétendre restituer un plan historique exact ou une invention exclusive.",
+          "pt": "O dossier BFI destaca a escala de Cabiria e os travellings. Uma maquete original permite comparar enquadramento fixo e revelação gradual do espaço sem alegar reconstrução exata ou invenção exclusiva."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "cabiria-team",
+        "area": "research",
+        "prompt": {
+          "en": "How should the credits of a large historical spectacle be represented?",
+          "nb": "Hvordan bør krediteringen av en stor historisk spektakkelfilm fremstilles?",
+          "fr": "Comment représenter les crédits d'un grand spectacle historique ?",
+          "pt": "Como representar os créditos de um grande espetáculo histórico?"
+        },
+        "options": [
+          {
+            "id": "single",
+            "label": {
+              "en": "Attribute every image, set and effect to the director alone",
+              "nb": "Tilskriv alle bilder, dekorasjoner og effekter regissøren alene",
+              "fr": "Attribuer toutes les images, décors et effets au seul réalisateur",
+              "pt": "Atribuir todas as imagens, cenários e efeitos apenas ao realizador"
+            }
+          },
+          {
+            "id": "collaboration",
+            "label": {
+              "en": "Map documented roles in design, cinematography, effects and production",
+              "nb": "Kartlegg dokumenterte roller innen scenografi, foto, effekter og produksjon",
+              "fr": "Cartographier les rôles documentés dans les décors, l'image, les effets et la production",
+              "pt": "Mapear os papéis documentados em cenografia, fotografia, efeitos e produção"
+            }
+          },
+          {
+            "id": "guess",
+            "label": {
+              "en": "Assign undocumented technical roles to the best-known contributors",
+              "nb": "Tilordne udokumenterte tekniske roller til de mest kjente bidragsyterne",
+              "fr": "Attribuer des rôles techniques non documentés aux collaborateurs les plus connus",
+              "pt": "Atribuir funções técnicas não documentadas aos colaboradores mais conhecidos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "collaboration",
+        "explanation": {
+          "en": "The museum and Cinémathèque records identify Itala Film, Pastrone and a cinematography team including Segundo de Chomón, who is also credited for effects coordination. Preserve supported roles rather than reducing the entire production to one person.",
+          "nb": "Museet og Cinémathèque identifiserer Itala Film, Pastrone og et fototeam med Segundo de Chomón, som også krediteres for effektkoordinering. Bevar dokumenterte roller fremfor å redusere hele produksjonen til én person.",
+          "fr": "Le musée et la Cinémathèque identifient Itala Film, Pastrone et une équipe image comprenant Segundo de Chomón, également crédité pour les effets. Préservez les rôles attestés sans réduire la production à une seule personne.",
+          "pt": "O museu e a Cinémathèque identificam Itala Film, Pastrone e uma equipa de fotografia com Segundo de Chomón, também creditado pelos efeitos. Preserve os papéis documentados sem reduzir a produção a uma só pessoa."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "cabiria-editions",
+        "area": "sound",
+        "prompt": {
+          "en": "How should a researcher distinguish the reconstructed 1914 edition and the later sound reissue?",
+          "nb": "Hvordan bør en forsker skille den rekonstruerte 1914-utgaven fra den senere lydutgaven?",
+          "fr": "Comment distinguer l'édition de 1914 reconstruite et la réédition sonore ultérieure ?",
+          "pt": "Como distinguir a edição de 1914 reconstruída da reedição sonora posterior?"
+        },
+        "options": [
+          {
+            "id": "collapse",
+            "label": {
+              "en": "Treat both editions as one unchanged original master",
+              "nb": "Behandle begge utgavene som én uendret originalmaster",
+              "fr": "Traiter les deux éditions comme un original unique et inchangé",
+              "pt": "Tratar ambas as edições como um original único e inalterado"
+            }
+          },
+          {
+            "id": "sync",
+            "label": {
+              "en": "Assume the original musical programme was synchronized recorded sound",
+              "nb": "Anta at det opprinnelige musikkprogrammet var synkront innspilt lyd",
+              "fr": "Supposer que le programme musical original était du son synchrone enregistré",
+              "pt": "Supor que o programa musical original era som sincronizado gravado"
+            }
+          },
+          {
+            "id": "editions",
+            "label": {
+              "en": "Document the editions, surviving elements and musical presentation separately",
+              "nb": "Dokumenter utgavene, bevarte elementer og musikkpresentasjonen separat",
+              "fr": "Documenter séparément les éditions, les éléments conservés et la présentation musicale",
+              "pt": "Documentar separadamente as edições, os elementos preservados e a apresentação musical"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "editions",
+        "explanation": {
+          "en": "The museum documents a reconstructed 1914 edition and a substantially altered 1931 sound reissue, as well as live performance of the Pizzetti/Mazza score. Keep the restoration decisions and music history tied to the relevant edition.",
+          "nb": "Museet dokumenterer en rekonstruert 1914-utgave og en vesentlig endret lydutgave fra 1931, samt levende fremføring av musikken til Pizzetti og Mazza. Knytt restaureringsvalgene og musikkhistorien til riktig utgave.",
+          "fr": "Le musée documente une édition de 1914 reconstruite, une réédition sonore de 1931 remaniée et l'exécution en direct de la musique de Pizzetti et Mazza. Reliez les choix de restauration et la musique à l'édition concernée.",
+          "pt": "O museu documenta uma edição de 1914 reconstruída, uma reedição sonora de 1931 alterada e a execução ao vivo da música de Pizzetti e Mazza. Relacione as decisões de restauro e a música com a edição correspondente."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
         ]
       }
     ]

@@ -40,15 +40,17 @@ const ids = [
   "scenario_the_story_of_the_kelly_gang_1906",
   "scenario_queen_elizabeth_1912",
   "scenario_traffic_in_souls_1913",
+  "scenario_fantomas_1913",
+  "scenario_cabiria_1914",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly thirty-one existing cases have ninety-three original, source-backed decisions", () => {
+test("Exactly thirty-three existing cases have ninety-nine original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 31);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 93);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 33);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 99);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -84,6 +86,12 @@ test("Exactly thirty-one existing cases have ninety-three original, source-backe
       const definitions = readFileSync("src/core/chapterFourIndustryExpansion.ts", "utf8");
       assert.ok(definitions.includes(workshop.scenarioId));
       const dossierFiles: Record<string, string> = {"scenario_the_story_of_the_kelly_gang_1906":"src/ui/data/scenarioProductionVerificationStoryOfTheKellyGang.ts","scenario_queen_elizabeth_1912":"src/ui/data/scenarioProductionVerificationQueenElizabeth.ts","scenario_traffic_in_souls_1913":"src/ui/data/scenarioProductionVerificationTrafficInSouls.ts"};
+      const dossier = readFileSync(dossierFiles[workshop.scenarioId]!, "utf8");
+      for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (["scenario_fantomas_1913", "scenario_cabiria_1914"].includes(workshop.scenarioId)) {
+      const definitions = readFileSync("src/core/chapterFiveInternationalExpansion.ts", "utf8");
+      assert.ok(definitions.includes(workshop.scenarioId));
+      const dossierFiles: Record<string, string> = {"scenario_fantomas_1913":"src/ui/data/scenarioProductionVerificationFantomas.ts","scenario_cabiria_1914":"src/ui/data/scenarioProductionVerificationCabiria.ts"};
       const dossier = readFileSync(dossierFiles[workshop.scenarioId]!, "utf8");
       for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
     } else if (workshop.scenarioId === "scenario_a_trip_to_the_moon_1902") {
@@ -446,4 +454,9 @@ test("Early industry workshops distinguish feature scale, rights and historical 
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_story_of_the_kelly_gang_1906")?.questions.map(q => q.bestSupportedOptionId), ["reels","live","limits"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_queen_elizabeth_1912")?.questions.map(q => q.bestSupportedOptionId), ["costume","roles","attribute"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_traffic_in_souls_1913")?.questions.map(q => q.bestSupportedOptionId), ["model","separate","evidence"]);
+});
+
+test("International workshops distinguish serial identity, collaborative spectacle and edition history", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_fantomas_1913")?.questions.map(q => q.bestSupportedOptionId), ["memory","credits","version"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_cabiria_1914")?.questions.map(q => q.bestSupportedOptionId), ["reveal","collaboration","editions"]);
 });
