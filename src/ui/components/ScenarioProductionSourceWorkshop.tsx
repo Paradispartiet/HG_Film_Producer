@@ -49,6 +49,13 @@ const copy: Record<FilmWorkLanguage, {
   },
 };
 
+const candidateFeedback: Record<FilmWorkLanguage, { readonly supported: string; readonly reconsider: string }> = {
+  en: { supported: "Recommended choice in this draft exercise", reconsider: "Consider the recommended choice in this draft exercise" },
+  nb: { supported: "Anbefalt valg i denne utkastøvelsen", reconsider: "Vurder det anbefalte valget i denne utkastøvelsen" },
+  fr: { supported: "Choix recommandé dans cet exercice provisoire", reconsider: "Examiner le choix recommandé dans cet exercice provisoire" },
+  pt: { supported: "Escolha recomendada neste exercício provisório", reconsider: "Considerar a escolha recomendada neste exercício provisório" },
+};
+
 export function ScenarioProductionSourceWorkshop({
   scenarioId,
   language,
@@ -62,6 +69,7 @@ export function ScenarioProductionSourceWorkshop({
   const [selections, setSelections] = useState<Record<string, string>>({});
   if (!workshop) return null;
   const ui = copy[language];
+  const feedback = workshopOverride ? candidateFeedback[language] : ui;
 
   return (
     <section className="scenario-source-workshop" aria-label={ui.title}>
@@ -97,7 +105,7 @@ export function ScenarioProductionSourceWorkshop({
               </div>
               {selected ? (
                 <div className="scenario-source-workshop__feedback" role="status" aria-live="polite">
-                  <strong>{supported ? ui.supported : ui.reconsider}</strong>
+                  <strong>{supported ? feedback.supported : feedback.reconsider}</strong>
                   <p>{question.explanation[language]}</p>
                 </div>
               ) : null}

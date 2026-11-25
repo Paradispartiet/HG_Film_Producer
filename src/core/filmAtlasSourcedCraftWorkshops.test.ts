@@ -21,20 +21,26 @@ const ids = [
   "scenario_vive_l_amour_1994",
   "scenario_peppermint_candy_1999",
   "scenario_all_the_beauty_and_the_bloodshed_2022",
+  "scenario_russian_ark_2002",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly twelve existing cases have thirty-six original, source-backed decisions", () => {
+test("Exactly thirteen existing cases have thirty-nine original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 12);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 36);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 13);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 39);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
     assert.ok(workshop.sources.length >= 2);
-    if (workshop.scenarioId === "scenario_all_the_beauty_and_the_bloodshed_2022") {
+    if (workshop.scenarioId === "scenario_russian_ark_2002") {
+      const manual = readFileSync("src/core/chapterEighteenRussianArkExpansion.ts", "utf8");
+      assert.match(manual, /id: "scenario_russian_ark_2002"/);
+      const verification = readFileSync("src/ui/data/scenarioProductionVerificationRussianArk.ts", "utf8");
+      assert.match(verification, /status: "verified"/);
+    } else if (workshop.scenarioId === "scenario_all_the_beauty_and_the_bloodshed_2022") {
       const manual = readFileSync("src/core/modernCanonExpansion.ts", "utf8");
       assert.match(manual, /id: "scenario_all_the_beauty_and_the_bloodshed_2022", title: "All the Beauty and the Bloodshed"[^\n]*year: 2022/);
     } else if (workshop.scenarioId === "scenario_peppermint_candy_1999") {
@@ -269,4 +275,17 @@ test("All the Beauty and the Bloodshed distinguishes audio interviews, archive i
   assert.equal(edit.bestSupportedOptionId, "interwoven-strands");
   assert.ok(edit.sourceIds.includes("praxis-credits"));
   assert.match(edit.explanation.en, /independent verification/);
+});
+
+test("Russian Ark separates capture duration, safe coordination, and post-production", () => {
+  const workshop = getSourceBackedCaseWorkshop("scenario_russian_ark_2002");
+  assert.ok(workshop);
+  const [capture, rehearsal, post] = workshop.questions;
+  assert.ok(capture && rehearsal && post);
+  assert.equal(capture.bestSupportedOptionId, "disk");
+  assert.match(capture.explanation.en, /35mm exhibition/);
+  assert.equal(rehearsal.bestSupportedOptionId, "rehearse");
+  assert.match(rehearsal.explanation.en, /consent and breaks/);
+  assert.equal(post.bestSupportedOptionId, "finish");
+  assert.match(post.explanation.en, /single take does not mean no post-production/);
 });
