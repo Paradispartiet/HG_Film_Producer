@@ -231,7 +231,7 @@ test("Chapters 1–10 remain full; Chapters 11–24 are readable drafts; 25–30
   const homeVideo = filmHistoryBookChapters.find((chapter) => chapter.number === 24);
   assert.equal(homeVideo?.status, "draft");
   assert.equal(homeVideo?.sections.length, 24);
-  assert.equal(homeVideo?.sources.length, 33);
+  assert.equal(homeVideo?.sources.length, 34);
   const remaining = filmHistoryBookChapters.filter((chapter) => chapter.number > 24);
   assert.equal(remaining.length, 6);
   assert.ok(remaining.every((chapter) => chapter.status === "outline"));
