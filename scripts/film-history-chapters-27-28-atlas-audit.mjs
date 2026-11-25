@@ -3,9 +3,11 @@ import path from "node:path";
 import process from "node:process";
 
 /**
- * Chapter 27–28 Atlas identity crosswalk.
+ * Canonical Film History chapters 27–30 Atlas identity crosswalk.
  * Reuses the same 37 registered expansion file names, normalized title/year
  * identity and deduplication logic as the Chapter 11 inventory audit.
+ * By default checks chapters 27 and 28 for backwards-compatible tests.
+ * Use --chapters=27,28,29,30 to audit all four final book chapters.
  * Finding a definition NEVER means the case is researched, playable or approved.
  */
 const root = process.cwd();
@@ -108,7 +110,10 @@ if (scenarios.length !== 430) {
 }
 
 function chapterFilms(number) {
-  const file = "src/core/filmHistoryChapterTwenty" + (number === 27 ? "Seven" : "Eight") + ".ts";
+  const chapterNames = { 27: "TwentySeven", 28: "TwentyEight", 29: "TwentyNine", 30: "Thirty" };
+  const name = chapterNames[number];
+  if (!name) throw new Error("Unsupported book chapter " + number);
+  const file = "src/core/filmHistoryChapter" + name + ".ts";
   const code = read(file);
   const match = code.match(/const filmReferences: readonly FilmHistoryBookFilmReference\[\] = (\[[\s\S]*?\n\]);/);
   if (!match) throw new Error("Missing canonical book film references for chapter " + number);
@@ -117,7 +122,10 @@ function chapterFilms(number) {
     hasPlayableScenarioId: film.atlasScenarioId !== undefined,
   }));
 }
-const references = [...chapterFilms(27), ...chapterFilms(28)];
+const explicitChapters = process.argv.find(value => value.startsWith("--chapters="))?.slice("--chapters=".length);
+const chosenChapters = explicitChapters ? explicitChapters.split(",").map(Number) : [27, 28];
+if (chosenChapters.length < 1 || new Set(chosenChapters).size !== chosenChapters.length || chosenChapters.some(n => ![27, 28, 29, 30].includes(n))) throw new Error("Invalid --chapters selection");
+const references = chosenChapters.flatMap(chapterFilms);
 const crosswalk = references.map(film => {
   const hits = scenarios.filter(s =>
     s.year === film.year &&
@@ -141,8 +149,7 @@ const report = {
   scope: "Full 430-scenario canonical identity-only audit; title/original title/expansion alias plus exact year. No film-specific case approval or independent film-history fact sign-off.",
   atlas: { expectedCount: 430, actualCount: scenarios.length, seedCount: seed.scenarios.length,
     expansionModules: files.length, expansionStats },
-  chapters: { 27: crosswalk.filter(x => x.chapter === 27).length,
-    28: crosswalk.filter(x => x.chapter === 28).length },
+  chapters: Object.fromEntries(chosenChapters.map(number => [number, crosswalk.filter(x => x.chapter === number).length])),
   totals: { candidates: crosswalk.length, existingDefinitions: matched.length,
     noExactMatch: crosswalk.length - matched.length, approvedPlayableLinks: crosswalk.filter(x => x.playableLinkPresent).length },
   crosswalk, safeguards: [

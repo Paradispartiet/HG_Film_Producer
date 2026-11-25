@@ -1,0 +1,322 @@
+{
+  "schemaVersion": "1.0",
+  "chapter": {
+    "number": 30,
+    "id": "contemporary-forms",
+    "title": "Contemporary forms and the unfinished present"
+  },
+  "auditDate": "2026-11-20",
+  "scope": "Human-assisted source URL and basic page/topic relevance review; this is NOT a claim-by-claim historical verification or editorial sign-off.",
+  "sourceReview": {
+    "expectedCount": 50,
+    "visitedCount": 50,
+    "result": "All 50 registered URLs resolved to a page with the named publisher and a relevant film, topic, programme, interview, review or article. Some are contextual lists or film listings, not primary confirmation of every historical sentence.",
+    "entries": [
+      {
+        "id": "ch30_actbfi",
+        "checkedUrl": "https://www.bfi.org.uk/film/a1bcdd0f-5c1d-52fb-b715-67816640a60e/the-act-of-killing",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_actcontext",
+        "checkedUrl": "https://www.bfi.org.uk/lists/10-great-danish-films",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_actreview",
+        "checkedUrl": "https://www.bfi.org.uk/sight-and-sound/reviews/review-act-killing",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_autobiog",
+        "checkedUrl": "https://www.bfi.org.uk/lists/10-great-autobiographical-films",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_beaches",
+        "checkedUrl": "https://www.bfi.org.uk/film/5e423903-d19c-565e-a9ba-4dc773eec8a6/the-beaches-of-agnes",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_beautybfi",
+        "checkedUrl": "https://player.bfi.org.uk/rentals/film/watch-all-the-beauty-and-the-bloodshed-2022-online",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_beautyreview",
+        "checkedUrl": "https://www.bfi.org.uk/sight-and-sound/reviews/all-beauty-bloodshed-remarkable-portrait-power-protest",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_bfi2010s",
+        "checkedUrl": "https://www.bfi.org.uk/sight-and-sound/z-2010s-film",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_bfireleases",
+        "checkedUrl": "https://www.bfi.org.uk/film-releases",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_blumhouse",
+        "checkedUrl": "https://www.bfi.org.uk/features/where-begin-blumhouse-productions",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_cameracriterion",
+        "checkedUrl": "https://www.criterion.com/films/29003-cameraperson",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_cameratalk",
+        "checkedUrl": "https://www.criterion.com/current/posts/4678-a-night-at-the-wing-with-kirsten-johnson",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_collective",
+        "checkedUrl": "https://player.bfi.org.uk/rentals/film/watch-collective-2019-online",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_collectiveinterview",
+        "checkedUrl": "https://www.bfi.org.uk/sight-and-sound/interviews/alexander-nanau-collective-expose-romanian-nightclub-fire-health-service-corruption",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_digitallife",
+        "checkedUrl": "https://www.bfi.org.uk/lists/10-great-films-about-life-digital-age",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_digitalwatch",
+        "checkedUrl": "https://www.sellingyourscreenplay.com/podcast-transcripts/sys-podcast-episode-110-sean-baker-chris-bergoch-talk-about-their-sundance-comedy-drama-tangerine-transcript/",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_documentedit",
+        "checkedUrl": "https://www.bfi.org.uk/features/praise-undersung-art-documentary-editing",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_earlydigital",
+        "checkedUrl": "https://www.bfi.org.uk/sight-and-sound/features/attack-zeros-ones-early-years-digital-cinema-told-david-lynch-miranda-july-michael-mann-more",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_essay2000s",
+        "checkedUrl": "https://www.bfi.org.uk/sight-and-sound/syndromes-new-century-introducing-best-films-2000s",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_festivals2020",
+        "checkedUrl": "https://www.bfi.org.uk/news/bfi-london-film-festival-joins-forces-with-film-festivals-worldwide-global-online-event",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_flee",
+        "checkedUrl": "https://www.bfi.org.uk/sight-and-sound/reviews/flee-an-astonishing-animated-portrait-young-refugee",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_fleebfi",
+        "checkedUrl": "https://player.bfi.org.uk/rentals/film/watch-flee-2021-online",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_gleanersbfi",
+        "checkedUrl": "https://www.bfi.org.uk/film/8257a6dd-eb35-587a-bb5f-1bdf9dada3c7/the-gleaners-and-i",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_hale",
+        "checkedUrl": "https://www.bfi.org.uk/sight-and-sound/film-moment-how-hale-county-this-morning-this-evening-heightens-our-gaze",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_halefilm",
+        "checkedUrl": "https://www.bfi.org.uk/film/07400eec-184f-543e-bdd3-cb32bc167995/hale-county-this-morning-this-evening",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_hostbfi",
+        "checkedUrl": "https://player.bfi.org.uk/rentals/film/watch-host-2020-online",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_hostinterview",
+        "checkedUrl": "https://www.bfi.org.uk/sight-and-sound/interviews/rob-savage-host-zoom-video-call-horror",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_ledlighting",
+        "checkedUrl": "https://theasc.com/article/lighting-for-led-stages/",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_leviathan",
+        "checkedUrl": "https://www.bfi.org.uk/sight-and-sound/reviews/leviathan-review-wet-wild-documentary-like-nothing-youve-seen-or-felt",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_lifeinterview",
+        "checkedUrl": "https://www.bfi.org.uk/interviews/kevin-macdonald-life-day-2020",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_mandalorian",
+        "checkedUrl": "https://theasc.com/article/the-mandalorian/",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_mariupolbfi",
+        "checkedUrl": "https://player.bfi.org.uk/rentals/film/watch-20-days-in-mariupol-2023-online",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_mariupolreview",
+        "checkedUrl": "https://www.bfi.org.uk/sight-and-sound/reviews/20-days-mariupol-harrowing-ground-reportage-from-war-ukraine",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_missingfilm",
+        "checkedUrl": "https://www.bfi.org.uk/film/88be8737-bc16-5cfb-8968-9df8b546ba5a/the-missing-picture",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_missinginterview",
+        "checkedUrl": "https://www.bfi.org.uk/sight-and-sound/interviews/memories-murder-rithy-panh-missing-picture",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_newsdox",
+        "checkedUrl": "https://www.bfi.org.uk/lists/10-great-documentaries-about-modern-news-media",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_newsmedia",
+        "checkedUrl": "https://www.bfi.org.uk/sight-and-sound/2023-year-documentary-film",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_panahibfi",
+        "checkedUrl": "https://www.bfi.org.uk/sight-and-sound/best-films-2012",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_panahifilm",
+        "checkedUrl": "https://whatson.bfi.org.uk/Online/default.asp?BOparam%3A%3AWScontent%3A%3AloadArticle%3A%3Acontext_id=&BOparam%3A%3AWScontent%3A%3AloadArticle%3A%3Apermalink=this-is-not-a-film",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_panahiguide",
+        "checkedUrl": "https://www.bfi.org.uk/features/where-begin-jafar-panahi",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_screenlife",
+        "checkedUrl": "https://www.bfi.org.uk/sight-and-sound/obviously-we-live-screens-how-streams-online-chat-become-films",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_stories",
+        "checkedUrl": "https://www.bfi.org.uk/sight-and-sound/reviews/film-week-stories-we-tell",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_tangerineplayer",
+        "checkedUrl": "https://www.academymuseum.org/collection/sean-bakers-tangerine-iphone",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_tangerinereview",
+        "checkedUrl": "https://www.bfi.org.uk/sight-and-sound/reviews/film-week-tangerine",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_techhistory",
+        "checkedUrl": "https://theasc.com/article/mandalorian-grogu-razor-crest-miniature-cinematography/",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_thessaloniki",
+        "checkedUrl": "https://www.bfi.org.uk/sight-and-sound/news/61st-thessaloniki-film-festival-2020-virtual-edition",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_vardafacets",
+        "checkedUrl": "https://www.bfi.org.uk/sight-and-sound/features/seven-facets-agnes-varda",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_vardainterview",
+        "checkedUrl": "https://www.bfi.org.uk/sight-and-sound/interviews/refuseniks-agnes-varda-gleaners-i",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_waltz",
+        "checkedUrl": "https://www.sonyclassics.com/waltzwithbashir/aboutAri.html",
+        "result": "opened_relevant_page"
+      },
+      {
+        "id": "ch30_warfilms",
+        "checkedUrl": "https://www.bfi.org.uk/lists/10-great-war-films-21st-century",
+        "result": "opened_relevant_page"
+      }
+    ],
+    "caveats": [
+      "Film listing pages document titles/metadata or programme records. They do not by themselves verify every interpretation in an essay.",
+      "Pages with updated dates and archived Sight and Sound articles must be distinguished from original publication dates.",
+      "Sensitive documentary history (Indonesian killings, Cambodia, Lebanon, Romanian medical scandal, Iran and Mariupol) still requires independent, case-specific research beyond an accessible film criticism URL.",
+      "Following a second source-specific check, the generic BFI film list for Waltz with Bashir, BFI Player listing for Tangerine and generic digital watchlist were replaced with the filmmaker's animation interview, Academy Museum's physical camera collection record and Sean Baker's production interview. All three replacement pages were opened and checked on 20 November 2026.",
+      "Ari Folman's interview is first-person evidence about production methods, not independent validation of his interpretation of war responsibility, atrocities or historical testimony. The book must keep source testimony distinct from independent historical findings."
+    ]
+  },
+  "atlasReview": {
+    "scope": "Exact normalized film-title AND year comparison against the 161 seed scenarios plus 11 existing modern/late-period Atlas expansion definition modules. Pre-1980 expansion modules were not individually re-audited here.",
+    "candidateFilmCount": 20,
+    "matchingDefinitions": [
+      {
+        "title": "Waltz with Bashir",
+        "year": 2008,
+        "scenarioId": "scenario_waltz_with_bashir_2008",
+        "origin": "film_scenarios_seed.json",
+        "scenarioStatus": "imported_seed_needs_film_specific_design",
+        "decision": "retain_P2_until_film_specific_verification"
+      },
+      {
+        "title": "Tangerine",
+        "year": 2015,
+        "scenarioId": "scenario_tangerine_2015",
+        "origin": "film_scenarios_seed.json",
+        "scenarioStatus": "imported_seed_needs_film_specific_design",
+        "decision": "retain_P2_until_film_specific_verification"
+      },
+      {
+        "title": "All the Beauty and the Bloodshed",
+        "year": 2022,
+        "scenarioId": "scenario_all_the_beauty_and_the_bloodshed_2022",
+        "origin": "modernCanonExpansion.ts",
+        "scenarioStatus": "manual_modern_canon_case_needs_source_verification",
+        "decision": "retain_P2_until_film_specific_verification"
+      }
+    ],
+    "noExactTitleYearMatchCount": 17,
+    "differentFilmCollision": {
+      "bookTitle": "Leviathan",
+      "bookYear": 2012,
+      "bookDescription": "Sensory ethnography fishing-vessel documentary by Lucien Castaing-Taylor and Véréna Paravel",
+      "existingAtlasScenarioId": "scenario_leviathan_2014",
+      "scenarioYear": 2014,
+      "decision": "never_link_2012_documentary_to_2014_drama"
+    },
+    "noPlayabilityClaims": true
+  },
+  "remainingGates": [
+    "Rerun full GitHub verification after changes",
+    "Claim-by-claim fact check and deeper historical citation relevance for all 30 Chapter 30 essays",
+    "Source-check and complete case design for the three matching Atlas definitions before any playable use",
+    "Confirm none of the other book film references is wrongly mapped under additional alternate titles or years",
+    "Visual inspection in actual iPad browser",
+    "Keep PR draft and do not merge ahead of the stacked dependencies"
+  ]
+}

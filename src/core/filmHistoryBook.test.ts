@@ -157,7 +157,7 @@ test("Chapter 2 keeps exhibition infrastructure outside fake Production Cases", 
   assert.ok(chapter.historicalObjects.some((item) => /Nickelodeon/i.test(item.label)));
 });
 
-test("Chapters 1–10 remain full; Chapters 11–29 are readable drafts; 30 remains outline", () => {
+test("Chapters 1–10 remain full; Chapters 11–30 are readable drafts; no outlines remain", () => {
   const completed = filmHistoryBookChapters.filter((chapter) => chapter.number <= 10);
   assert.equal(completed.length, 10);
   assert.ok(completed.every((chapter) => chapter.status === "full"));
@@ -252,12 +252,12 @@ test("Chapters 1–10 remain full; Chapters 11–29 are readable drafts; 30 rema
   assert.equal(platforms?.status, "draft");
   assert.equal(platforms?.sections.length, 28);
   assert.equal(platforms?.sources.length, 39);
-  const remaining = filmHistoryBookChapters.filter((chapter) => chapter.number > 29);
-  assert.equal(remaining.length, 1);
-  assert.ok(remaining.every((chapter) => chapter.status === "outline"));
-  assert.ok(remaining.every((chapter) => chapter.sections.length === 0));
-  assert.ok(remaining.every((chapter) => chapter.summary.length > 40));
-  assert.ok(remaining.every((chapter) => chapter.learningObjectives.length >= 3));
+  const contemporary = filmHistoryBookChapters.find((chapter) => chapter.number === 30);
+  assert.equal(contemporary?.status, "draft");
+  assert.equal(contemporary?.sections.length, 30);
+  assert.equal(contemporary?.sources.length, 50);
+  assert.equal(filmHistoryBookChapters.filter(chapter => chapter.status === "outline").length, 0);
+  assert.ok(filmHistoryBookChapters.every(chapter => chapter.sections.length > 0));
 });
 
 test("Chapter 12 carries 16 distinct source-resolved film articles with canonical Atlas references", () => {
