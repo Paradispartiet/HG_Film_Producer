@@ -16,82 +16,50 @@
       "Richard Linklater"
     ],
     "country": "United States",
-    "runtimeNote": "BFI lists 100 minutes. Exact version-specific mastering specifications and audited production costs are outside this draft's evidence."
+    "runtimeNote": "Running time, release versions and production costs remain to be independently checked against title-specific records."
   },
   "sources": [
     {
-      "id": "cgw",
-      "title": "On Edge",
-      "publisher": "Computer Graphics World",
-      "url": "https://www.cgw.com/Publications/CGW/2006/Volume-29-Issue-8-Aug-2006-/On-Edge.aspx"
-    },
-    {
-      "id": "fresh",
-      "title": "Richard Linklater, Directing 'Darkly'",
-      "publisher": "Fresh Air Archive / WHYY",
-      "url": "https://freshairarchive.org/segments/richard-linklater-directing-darkly"
-    },
-    {
-      "id": "lat",
-      "title": "A long way from Disney",
-      "publisher": "Los Angeles Times",
-      "url": "https://www.latimes.com/archives/la-xpm-2006-jul-07-et-rotoscope7-story.html"
-    },
-    {
-      "id": "awn",
-      "title": "A Scanner Darkly: An Animated Illusion",
-      "publisher": "Animation World Network",
-      "url": "https://www.awn.com/animationworld/scanner-darkly-animated-illusion"
-    },
-    {
-      "id": "ward",
-      "title": "Independent Animation, Rotoshop and Communities of Practice: As Seen Through A Scanner Darkly",
-      "publisher": "Arts University Bournemouth / Animation",
-      "url": "https://research.aub.ac.uk/id/eprint/209/"
-    },
-    {
-      "id": "bfi",
-      "title": "A Scanner Darkly (2006) — film record",
+      "id": "ch27_linklater",
+      "title": "Where to begin with Richard Linklater",
       "publisher": "British Film Institute",
-      "url": "https://www.bfi.org.uk/film/2b2cbfa8-7f35-5fc4-8518-e56a9a68b95a/a-scanner-darkly"
+      "url": "https://www.bfi.org.uk/features/where-begin-richard-linklater"
     },
     {
-      "id": "wired",
-      "title": "Trouble in Toontown",
-      "publisher": "WIRED",
-      "url": "https://www.wired.com/2006/03/scanner-2/"
+      "id": "ch27_indieanimation",
+      "title": "A brief history of indie directors working in animation",
+      "publisher": "British Film Institute",
+      "url": "https://www.bfi.org.uk/features/wes-anderson-david-lynch-indie-animation"
     }
   ],
   "article": {
     "title": "A Scanner Darkly (2006): rotoscoping, continuity and collective animation labor",
     "paragraphs": [
       {
-        "text": "Richard Linklater adapted Philip K. Dick's novel using the computer-assisted drawing process previously employed for Waking Life. In a 2006 Fresh Air interview, he describes casting, rehearsing, filming and editing actors before a substantial animation stage. The study separates the fictional story's unstable perception from the practical decisions of the artists working over reference images.",
+        "text": "Chapter 27 identifies A Scanner Darkly (2006) as a later Linklater film using a related animation technique for a different narrative purpose than Waking Life. This comparison motivates a study of how the same broad workflow can serve different expressive goals.",
         "sourceIds": [
-          "fresh",
-          "bfi"
+          "ch27_linklater"
         ]
       },
       {
-        "text": "The production built physical sets and captured reference material on location. Contemporary trade coverage describes the new demands on Bob Sabiston's Rotoshop system: more precise line adjustment, improved interpolation control and additional tools for colour and masking. The reference footage and manually constructed drawings are different contributions to a shared image.",
+        "text": "The proposed workshop starts with a short recorded performance and then explores human interpretation through drawn imagery. Its planned reference set and edit are exercise instructions, not verified claims about the film's original sets, capture hardware or post-production chronology.",
         "sourceIds": [
-          "cgw",
-          "wired"
+          "ch27_linklater",
+          "ch27_indieanimation"
         ]
       },
       {
-        "text": "Where Waking Life varied the visual approach between encounters, this film sought sustained graphic continuity. Character guides helped animation leads coordinate the work. A proposed study uses model sheets, adjacent-shot reviews and layered drawing tests rather than requiring proprietary software. The same basic technique can support different artistic strategies.",
+        "text": "A model sheet, key drawings, editable color layers and shot-to-shot review can help a team test a consistent graphic vocabulary. These are general animation production methods proposed for the learner; the historical use of any particular guide, layer format or interpolation tool requires further evidence.",
         "sourceIds": [
-          "awn",
-          "cgw"
+          "ch27_indieanimation",
+          "ch27_linklater"
         ]
       },
       {
-        "text": "Linklater estimated roughly 500 person-hours of animation per finished minute. Reporting at the time describes the difficulty of applying earlier production schedules to the more detailed film. Paul Ward's later research examines tensions between established creative communities and studio-style organization. Different accounts of the production are not an audited schedule or contract. Training, fair working conditions, review and credit should be planned explicitly.",
+        "text": "Estimate work from original sample shots, plan review and revision, and credit contributors separately. A production dossier must establish actual staffing, labor, software features and costs before presenting them as historical facts. This provisional comparative study is not a canonical case admission.",
         "sourceIds": [
-          "fresh",
-          "lat",
-          "ward"
+          "ch27_indieanimation",
+          "ch27_linklater"
         ]
       }
     ]
@@ -106,10 +74,10 @@
     "learning": "Connect character guides, manual animation, software assistance, production labor and attribution."
   },
   "workshopIntroduction": {
-    "en": "Compare the more consistent graphic style of A Scanner Darkly with the varied animation of Waking Life through six original production exercises.",
-    "nb": "Sammenlign A Scanner Darklys mer ensartede tegneseriestil med Waking Lifes varierte animasjon gjennom seks originale produksjonsøvelser.",
-    "fr": "Comparer le style graphique plus cohérent d'A Scanner Darkly aux variations de Waking Life par six exercices originaux.",
-    "pt": "Comparar o estilo gráfico mais coerente de A Scanner Darkly com a animação variada de Waking Life através de seis exercícios originais."
+    "en": "Compare two expressive uses of computer-assisted animation through six proposed production exercises, without claiming to reconstruct either original workflow.",
+    "nb": "Sammenlign to uttrykksmåter i dataassistert animasjon gjennom seks foreslåtte øvelser, uten å hevde at de rekonstruerer den opprinnelige arbeidsflyten.",
+    "fr": "Comparez deux usages expressifs de l'animation assistée par ordinateur avec six exercices proposés, sans prétendre reconstruire les procédés originaux.",
+    "pt": "Compare dois usos expressivos da animação assistida por computador em seis exercícios propostos, sem alegar reconstruir os processos originais."
   },
   "phases": [
     {
@@ -214,10 +182,10 @@
       "id": "scanner-reference",
       "area": "camera",
       "prompt": {
-        "en": "Why prepare physical sets even when the reference footage will become animation?",
-        "nb": "Hvorfor forberede fysiske kulisser når referanseopptakene skal animeres?",
-        "fr": "Pourquoi préparer des décors physiques si les images seront animées ?",
-        "pt": "Porquê preparar cenários físicos se as imagens serão animadas?"
+        "en": "Why plan the reference environment for a new animation exercise?",
+        "nb": "Hvorfor planlegge referansemiljøet til en ny animasjonsøvelse?",
+        "fr": "Pourquoi préparer l'environnement de référence pour un nouvel exercice d'animation ?",
+        "pt": "Porquê preparar o ambiente de referência para um novo exercício de animação?"
       },
       "options": [
         {
@@ -250,24 +218,24 @@
       ],
       "bestSupportedOptionId": "reference",
       "explanation": {
-        "en": "Production reporting describes built sets and location shooting; Linklater describes completing a live-action edit before animation. Reference images are a designed foundation for artists, not the finished animation.",
-        "nb": "Produksjonsreportasjen beskriver kulisser og stedsopptak; Linklater beskriver ferdigklipte skuespilleropptak før animasjon. Referansene er et utformet grunnlag, ikke den ferdige animasjonen.",
-        "fr": "Le reportage décrit décors et tournage sur place ; Linklater décrit le montage avant animation. Les références sont une base conçue, non l'animation achevée.",
-        "pt": "A reportagem descreve cenários e rodagem em local; Linklater descreve montagem antes da animação. As referências são uma base concebida, não a animação final."
+        "en": "The chapter establishes a relationship between filmed performance and drawn animation. A designed reference environment is a useful exercise choice, not proof of how the original film's sets were constructed.",
+        "nb": "Kapitlet knytter filmet fremføring til tegnet animasjon. Et planlagt referansemiljø er et nyttig øvelsesvalg, ikke bevis for hvordan filmens opprinnelige kulisser ble bygget.",
+        "fr": "Le chapitre établit un lien entre performance filmée et animation dessinée. Préparer un environnement de référence est un choix d'exercice, non une preuve des décors originaux.",
+        "pt": "O capítulo estabelece uma relação entre atuação filmada e animação desenhada. Preparar um ambiente de referência é uma escolha de exercício, não prova dos cenários originais."
       },
       "sourceIds": [
-        "cgw",
-        "fresh"
+        "ch27_linklater",
+        "ch27_indieanimation"
       ]
     },
     {
       "id": "scanner-style",
       "area": "animation",
       "prompt": {
-        "en": "How can different artists maintain the more consistent look intended for this film?",
-        "nb": "Hvordan kan ulike kunstnere bevare det mer ensartede uttrykket som var ønsket for filmen?",
-        "fr": "Comment différents artistes peuvent-ils préserver l'aspect cohérent voulu pour ce film ?",
-        "pt": "Como podem artistas diferentes preservar o aspeto coerente pretendido para o filme?"
+        "en": "How could a team achieve a consistent graphic style in its own comparative animation exercise?",
+        "nb": "Hvordan kan et team oppnå et sammenhengende grafisk uttrykk i sin egen sammenlignende animasjonsøvelse?",
+        "fr": "Comment une équipe peut-elle obtenir un style graphique cohérent dans son propre exercice comparatif ?",
+        "pt": "Como pode uma equipa obter um estilo gráfico coerente no seu exercício comparativo?"
       },
       "options": [
         {
@@ -300,14 +268,14 @@
       ],
       "bestSupportedOptionId": "guide",
       "explanation": {
-        "en": "Computer Graphics World records character style guides made by animation leads with Linklater. Animation World Network contrasts this consistent graphic-novel design with Waking Life's varied scene styles.",
-        "nb": "Computer Graphics World beskriver figurmanualer laget av animasjonslederne med Linklater. Animation World Network kontrasterer dette sammenhengende tegneserieuttrykket med Waking Lifes varierte scenestiler.",
-        "fr": "Computer Graphics World décrit des guides élaborés avec Linklater. Animation World Network oppose cette continuité graphique aux styles variés de Waking Life.",
-        "pt": "Computer Graphics World descreve guias feitos com Linklater. Animation World Network contrasta a continuidade gráfica com os estilos variados de Waking Life."
+        "en": "Chapter 27 contrasts related techniques serving different narrative goals. A model sheet and review of adjacent shots are proposed methods for testing visual consistency. The original film's specific guides remain to be verified.",
+        "nb": "Kapittel 27 sammenligner beslektede teknikker med ulike fortellermål. Modellark og vurdering av nabobilder er foreslåtte metoder for å teste visuell kontinuitet. Filmens faktiske stilguider må verifiseres.",
+        "fr": "Le chapitre 27 compare des techniques apparentées aux buts narratifs différents. Une fiche modèle et la revue des plans voisins servent à tester la cohérence. Les guides originaux restent à vérifier.",
+        "pt": "O capítulo 27 compara técnicas próximas com objetivos narrativos distintos. Uma ficha-modelo e revisão de planos vizinhos testam a coerência. Os guias originais continuam por verificar."
       },
       "sourceIds": [
-        "cgw",
-        "awn"
+        "ch27_linklater",
+        "ch27_indieanimation"
       ]
     },
     {
@@ -350,13 +318,14 @@
       ],
       "bestSupportedOptionId": "revise",
       "explanation": {
-        "en": "Sabiston's updated software gave artists finer control of line behaviour and interpolation. Key drawings remained human decisions, and added keys could correct the movement between earlier drawings.",
-        "nb": "Sabistons oppdaterte programvare ga kunstnerne finere kontroll over linjer og interpolering. Nøkkeltegningene var menneskelige valg, og ekstra nøkkelbilder kunne korrigere bevegelsen.",
-        "fr": "Le logiciel amélioré de Sabiston donnait un contrôle plus fin des lignes et de l'interpolation. Les dessins clés restaient humains ; des clés supplémentaires corrigeaient le mouvement.",
-        "pt": "O software atualizado de Sabiston permitia controlar melhor linhas e interpolação. Os desenhos-chave eram decisões humanas; chaves adicionais corrigiam o movimento."
+        "en": "Revise key drawings and test the result against the intended movement. Interpolation is a general exercise technique; the original film's exact tools and line controls require title-specific documentation.",
+        "nb": "Revider nøkkeltegningene og sammenlign resultatet med ønsket bevegelse. Interpolering er en generell øvelsesteknikk; filmens konkrete verktøy og linjekontroller krever egne kilder.",
+        "fr": "Révisez les dessins clés et comparez le résultat au mouvement visé. L'interpolation est une technique générale d'exercice ; les outils précis du film demandent des sources spécifiques.",
+        "pt": "Reveja os desenhos-chave e compare o resultado com o movimento pretendido. A interpolação é uma técnica geral de exercício; as ferramentas exatas do filme exigem fontes específicas."
       },
       "sourceIds": [
-        "cgw"
+        "ch27_linklater",
+        "ch27_indieanimation"
       ]
     },
     {
@@ -399,14 +368,14 @@
       ],
       "bestSupportedOptionId": "layers",
       "explanation": {
-        "en": "The trade report describes improvements to Rotoshop including gradients, layers and masking. This exercise uses equivalent general techniques; it does not claim to reproduce the proprietary tool or its file format.",
-        "nb": "Fagreportasjen beskriver forbedringer av Rotoshop, blant annet gradienter, lag og maskering. Øvelsen bruker tilsvarende generelle teknikker uten å gjenskape proprietær programvare eller filformat.",
-        "fr": "Le reportage décrit dégradés, couches et masques ajoutés à Rotoshop. L'exercice utilise des techniques générales équivalentes sans reproduire le logiciel propriétaire ni son format.",
-        "pt": "A reportagem descreve gradientes, camadas e máscaras acrescentados ao Rotoshop. O exercício usa técnicas gerais equivalentes sem reproduzir software proprietário ou formato."
+        "en": "Editable line, colour and shadow elements let the learner revise one part without flattening the entire image. This is a proposed general compositing workflow, not a verified account of the original software or file format.",
+        "nb": "Redigerbare linjer, farger og skygger lar eleven endre én del uten å slå sammen hele bildet. Dette er en foreslått generell arbeidsflyt, ikke dokumentasjon av den opprinnelige programvaren eller filformatet.",
+        "fr": "Des éléments modifiables de ligne, couleur et ombre permettent de réviser une partie sans aplatir l'image. C'est une méthode proposée, non un compte rendu vérifié du logiciel original.",
+        "pt": "Elementos editáveis de linha, cor e sombra permitem rever uma parte sem achatar a imagem. É um método proposto, não um relato verificado do software original."
       },
       "sourceIds": [
-        "cgw",
-        "wired"
+        "ch27_indieanimation",
+        "ch27_linklater"
       ]
     },
     {
@@ -449,15 +418,14 @@
       ],
       "bestSupportedOptionId": "pilot",
       "explanation": {
-        "en": "Linklater reported roughly 500 person-hours per finished minute. Contemporary reporting and Ward's research describe scheduling and work-organization tensions. The reported effort is context, not a universal productivity target or a justification for overwork.",
-        "nb": "Linklater oppga omtrent 500 persontimer per ferdig minutt. Samtidsreportasje og Wards forskning beskriver utfordringer med tidsplan og organisering. Anslaget er kontekst, ikke et universelt produktivitetskrav eller grunnlag for overarbeid.",
-        "fr": "Linklater estime environ 500 heures-personnes par minute finie. Les reportages et Ward décrivent des tensions d'organisation. Ce chiffre est un contexte, non une norme ou une justification du surmenage.",
-        "pt": "Linklater estima cerca de 500 horas-pessoa por minuto final. Reportagens e Ward descrevem tensões de organização. O valor é contexto, não norma nem justificação de excesso de trabalho."
+        "en": "Test shots of different complexity and include training, revision, breaks and review in the schedule. No numerical labor estimate for A Scanner Darkly is established by the current chapter dossier.",
+        "nb": "Test bilder med ulik kompleksitet og ta med opplæring, revisjon, pauser og vurdering i planen. Kapitlets nåværende kildemateriale fastslår ikke et tall for arbeidsmengden i A Scanner Darkly.",
+        "fr": "Testez des plans de complexité différente et prévoyez formation, retouche, pauses et revue. Le dossier actuel du chapitre n'établit aucun chiffre de travail pour A Scanner Darkly.",
+        "pt": "Teste planos de complexidade diferente e inclua formação, revisão, pausas e avaliação. O dossier atual do capítulo não estabelece uma estimativa numérica de trabalho para A Scanner Darkly."
       },
       "sourceIds": [
-        "fresh",
-        "lat",
-        "ward"
+        "ch27_linklater",
+        "ch27_indieanimation"
       ]
     },
     {
@@ -500,15 +468,14 @@
       ],
       "bestSupportedOptionId": "credits",
       "explanation": {
-        "en": "BFI records Linklater as writer and director of the 2006 film; the trade accounts identify Sabiston's software and a wider animation team. Ward's research examines the division of labour. Neither a director credit nor an interview establishes every contract or final audited cost.",
-        "nb": "BFI oppgir Linklater som manusforfatter og regissør for 2006-filmen; fagreportasjene beskriver Sabistons programvare og et større animasjonsteam. Ward undersøker arbeidsdeling. Ingen av disse kildene fastslår alle kontrakter eller revidert sluttkostnad.",
-        "fr": "Le BFI crédite Linklater au scénario et à la réalisation ; les reportages identifient le logiciel de Sabiston et une équipe élargie. Ward étudie la division du travail. Ces sources n'établissent pas tous les contrats ni le coût audité.",
-        "pt": "O BFI credita Linklater no argumento e realização; reportagens identificam software de Sabiston e equipa alargada. Ward estuda divisão do trabalho. As fontes não estabelecem todos os contratos nem custo auditado."
+        "en": "Credit performance, artistic interpretation and technical production separately in your exercise. Chapter 27 identifies Linklater's comparative film, but the full animation credits, employment arrangements and contracts require title-specific review.",
+        "nb": "Krediter fremføring, kunstnerisk tolkning og teknisk produksjon separat i øvelsen. Kapittel 27 identifiserer Linklaters sammenligningsfilm, men full animasjonskreditering, arbeidsforhold og avtaler krever egne kilder.",
+        "fr": "Créditez séparément performance, interprétation artistique et production technique. Le chapitre 27 identifie le film comparatif de Linklater, mais les crédits complets et contrats demandent une vérification spécifique.",
+        "pt": "Credite separadamente atuação, interpretação artística e produção técnica. O capítulo 27 identifica o filme comparativo de Linklater, mas créditos completos e contratos exigem verificação específica."
       },
       "sourceIds": [
-        "bfi",
-        "ward",
-        "cgw"
+        "ch27_linklater",
+        "ch27_indieanimation"
       ]
     }
   ],
@@ -517,6 +484,7 @@
     "bookLinkApproved": false,
     "studyPreview": true,
     "required": [
+      "Existing Chapter 27 bibliography is reused as provisional context only. Independently retrieve title-specific production records; do not treat proposed practice as historical evidence.",
       "Independently review evidence and distinguish differing accounts of animation organization.",
       "Complete full identity and eligible representation-gap assessment before canonical admission."
     ]

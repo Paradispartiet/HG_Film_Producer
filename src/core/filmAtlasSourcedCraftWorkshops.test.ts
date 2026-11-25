@@ -23,20 +23,31 @@ const ids = [
   "scenario_all_the_beauty_and_the_bloodshed_2022",
   "scenario_russian_ark_2002",
   "scenario_atanarjuat_the_fast_runner_2001",
+  "scenario_blacksmith_scene_1893",
+  "scenario_workers_leaving_lumiere_factory_1895",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly fourteen existing cases have forty-two original, source-backed decisions", () => {
+test("Exactly sixteen existing cases have forty-eight original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 14);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 42);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 16);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 48);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
     assert.ok(workshop.sources.length >= 2);
-    if (workshop.scenarioId === "scenario_atanarjuat_the_fast_runner_2001") {
+    if (workshop.scenarioId === "scenario_blacksmith_scene_1893" || workshop.scenarioId === "scenario_workers_leaving_lumiere_factory_1895") {
+      const definition = readFileSync("src/core/chapterOneEarlyCinemaExpansion.ts", "utf8");
+      assert.ok(definition.includes(workshop.scenarioId));
+      const verification = readFileSync("src/ui/data/scenarioProductionVerificationSilentFoundationsBatch.ts", "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const end = verification.indexOf('\n  },', start);
+      const dossier = verification.slice(start, end);
+      for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (workshop.scenarioId === "scenario_atanarjuat_the_fast_runner_2001") {
       const manual = readFileSync("src/core/chapterEighteenAtanarjuatExpansion.ts", "utf8");
       assert.match(manual, /id: "scenario_atanarjuat_the_fast_runner_2001"/);
       const verification = readFileSync("src/ui/data/scenarioProductionVerificationAtanarjuat.ts", "utf8");
@@ -290,11 +301,13 @@ test("Russian Ark separates capture duration, safe coordination, and post-produc
   const [capture, rehearsal, post] = workshop.questions;
   assert.ok(capture && rehearsal && post);
   assert.equal(capture.bestSupportedOptionId, "disk");
-  assert.match(capture.explanation.en, /35mm exhibition/);
+  assert.match(capture.explanation.en, /acquisition separate from exhibition/);
   assert.equal(rehearsal.bestSupportedOptionId, "rehearse");
   assert.match(rehearsal.explanation.en, /consent and breaks/);
   assert.equal(post.bestSupportedOptionId, "finish");
   assert.match(post.explanation.en, /single take does not mean no post-production/);
+  const dossier = readFileSync("src/ui/data/scenarioProductionVerificationRussianArk.ts", "utf8");
+  for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
 });
 
 test("Russian Ark has a dedicated playable brief, not the seed fallback", () => {
@@ -323,4 +336,14 @@ test("Atanarjuat respects community authority and separates capture from exhibit
   assert.match(resolver, /\?\? getAtanarjuatProductionBrief\(scenario\)/);
   assert.match(dedicated, /briefType: "production_case"/);
   assert.match(dedicated, /verificationStatus: "verified"/);
+});
+
+test("Early camera workshops distinguish staged performance, fixed framing and actuality versions", () => {
+  const blacksmith = getSourceBackedCaseWorkshop("scenario_blacksmith_scene_1893");
+  const lumiere = getSourceBackedCaseWorkshop("scenario_workers_leaving_lumiere_factory_1895");
+  assert.ok(blacksmith && lumiere);
+  assert.deepEqual(blacksmith.questions.map(q => q.bestSupportedOptionId), ["staged", "tableau", "sunlight"]);
+  assert.deepEqual(lumiere.questions.map(q => q.bestSupportedOptionId), ["gate", "compare", "system"]);
+  assert.match(blacksmith.questions[0]?.explanation.en ?? "", /laboratory employees/);
+  assert.match(lumiere.questions[1]?.explanation.en ?? "", /distinct surviving versions/);
 });
