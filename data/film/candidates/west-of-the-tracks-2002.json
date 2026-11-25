@@ -1,0 +1,534 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "candidate_west_of_the_tracks_2002",
+  "proposedScenarioId": "scenario_west_of_the_tracks_2002",
+  "routeSlug": "candidate-west-of-the-tracks-2002",
+  "status": "editorial_candidate_not_admitted",
+  "book": {
+    "chapter": 27,
+    "decision": "P2"
+  },
+  "identity": {
+    "title": "West of the Tracks",
+    "originalTitle": "Tie Xi Qu",
+    "year": 2002,
+    "directors": [
+      "Wang Bing"
+    ],
+    "country": "China",
+    "genres": [
+      "Documentary"
+    ],
+    "runtimeNote": "Book identity retains the 2002 Berlin cut (about 300 minutes). The expanded triptych premiered at Rotterdam in 2003. Pollacchi: 545 minutes; BFI and Reina Sofía: 551; Take Ninagawa: 554; Busan 2025 DCP: 558. These attributed durations are not assumed to describe identical versions or recording formats."
+  },
+  "credits": {
+    "director": "Wang Bing",
+    "sourceIds": [
+      "interview",
+      "bfi"
+    ]
+  },
+  "sources": [
+    {
+      "id": "pollacchi",
+      "title": "History in the Making: The Debut Epic Tiexi qu: West of the Tracks",
+      "publisher": "Amsterdam University Press / Cambridge Core",
+      "url": "https://www.cambridge.org/core/books/abs/wang-bings-filmmaking-of-the-china-dream/history-in-the-making-the-debut-epic-tiexi-qu-west-of-the-tracks/22AD8B3DC4ACF6B5AC7A9E06B63C0A6C"
+    },
+    {
+      "id": "bfi",
+      "title": "This was China: Wang Bing’s West of the Tracks",
+      "publisher": "BFI Sight and Sound",
+      "url": "https://www.bfi.org.uk/sight-and-sound/features/this-was-china-wang-bings-west-tracks"
+    },
+    {
+      "id": "interview",
+      "title": "Interview with Wang Bing: The Sense of History and Destiny (2002)",
+      "publisher": "Chinese Independent Film Archive",
+      "url": "https://www.chinaindiefilm.org/interview-with-wang-bing-the-sense-of-history-and-destiny-2002/"
+    },
+    {
+      "id": "frieze",
+      "title": "Time Does Not Heal: Inside Wang Bing’s Cinema of Slowness",
+      "publisher": "Frieze",
+      "url": "https://www.frieze.com/ko/article/time-does-not-heal-inside-wang-bings-cinema-slowness"
+    },
+    {
+      "id": "gallery",
+      "title": "Wang Bing – West of the Tracks",
+      "publisher": "Take Ninagawa",
+      "url": "https://www.takeninagawa.com/en/wang_bing/8926/"
+    },
+    {
+      "id": "reina",
+      "title": "Wang Bing — retrospective programme",
+      "publisher": "Museo Reina Sofía",
+      "url": "https://www.museoreinasofia.es/en/activity/wang-bing/"
+    },
+    {
+      "id": "busan",
+      "title": "Tie Xi Qu: West of the Tracks — 2025 programme",
+      "publisher": "Busan International Film Festival",
+      "url": "https://www.biff.kr/eng/html/archive/arc_history_view.asp?kind=history&m_idx=82753&page=3&pyear=2025&sec=425"
+    }
+  ],
+  "article": {
+    "title": "West of the Tracks (2002–2003): digital observation, industrial change and the long edit",
+    "paragraphs": [
+      {
+        "text": "Wang Bing's documentary observes the transformation of Tiexi, an industrial district of Shenyang, through the experiences of workers and their communities. His 2002 interview situates the project at the turn of the millennium. BFI's analysis connects its sustained attention to the changing industrial landscape. A study must distinguish historical research from the film's particular viewpoint, rather than making individuals stand for an entire country's experience.",
+        "sourceIds": [
+          "interview",
+          "bfi"
+        ]
+      },
+      {
+        "text": "Portable digital acquisition helped Wang sustain the project over a long period. Frieze identifies a borrowed Panasonic mini-DV camera and approximately 300 hours of footage, consistent in scale with the contemporary interview. This is a documented relationship between mobility and production duration, not an equipment specification sheet. A present-day exercise can use a modest camera, short authorized sessions and voluntary participants.",
+        "sourceIds": [
+          "frieze",
+          "interview"
+        ]
+      },
+      {
+        "text": "The completed documentary organizes its material into Rust, Remnants and Rails, tracing connections across work, housing and transport. The extended form required substantial editorial selection. Elena Pollacchi's academic chapter describes a two-year editing process and more than 300 hours of source material. Logging and preserving original media are appropriate teaching adaptations, not reconstructed claims about Wang's actual editing or storage hardware.",
+        "sourceIds": [
+          "bfi",
+          "pollacchi"
+        ]
+      },
+      {
+        "text": "A shorter cut appeared in Berlin in 2002; Hubert Bals Fund support helped make the expanded 2003 Rotterdam version possible. Published running times differ across later records, including a 558-minute DCP screening in Busan. Preserve the institutional provenance of each entry rather than creating duplicate film identities or confusing a later exhibition format with original acquisition. The documented financing and circulation deserve comparison with existing cases, but do not establish an approved new representation gap.",
+        "sourceIds": [
+          "pollacchi",
+          "gallery",
+          "busan",
+          "reina"
+        ]
+      }
+    ]
+  },
+  "production": {
+    "premise": "Create a short consensual fictional documentary study of change in an ordinary workplace or community.",
+    "screenplay": "Plan a research question and three connected thematic strands; distinguish testimony from historical context.",
+    "camera": "Use portable capture and repeat visits with permissions and safe locations.",
+    "editing": "Organize and review material before building a linked three-part structure; retain dates and source context.",
+    "sound": "Document original ambience and disclose relevant reconstruction; do not infer exact historic audio hardware.",
+    "learning": "Connect long observation, digital mobility, editorial labor, finishing support and version-specific circulation."
+  },
+  "workshopIntroduction": {
+    "en": "Explore extended observation, portable digital capture, documentary montage and version history in a safe fictional study.",
+    "nb": "Utforsk langvarig observasjon, bærbart digitalopptak, dokumentarklipping og versjonshistorie i en trygg fiktiv studie.",
+    "fr": "Explorer observation prolongée, captation numérique portable, montage documentaire et histoire des versions dans une étude fictive sûre.",
+    "pt": "Explorar observação prolongada, captação digital portátil, montagem documental e história de versões num estudo ficcional seguro."
+  },
+  "phases": [
+    {
+      "id": "research",
+      "questionId": "tiexi-research",
+      "title": {
+        "en": "Industrial history and access",
+        "nb": "Industrihistorie og tilgang",
+        "fr": "Histoire industrielle et accès",
+        "pt": "História industrial e acesso"
+      },
+      "deliverable": {
+        "en": "Prepare a research map for a fictional workplace transition, including permissions and independent historical sources.",
+        "nb": "Lag et researchkart for en fiktiv arbeidsplass i endring, med tillatelser og uavhengige historiske kilder.",
+        "fr": "Préparer une carte de recherche pour un lieu de travail fictif en transition, avec autorisations et sources indépendantes.",
+        "pt": "Preparar um mapa de pesquisa para um local de trabalho fictício em transição, com autorizações e fontes independentes."
+      }
+    },
+    {
+      "id": "capture",
+      "questionId": "tiexi-capture",
+      "title": {
+        "en": "Portable digital capture",
+        "nb": "Bærbart digitalopptak",
+        "fr": "Captation numérique portable",
+        "pt": "Captação digital portátil"
+      },
+      "deliverable": {
+        "en": "Plan three repeat visits to a permitted ordinary location with a small camera, consent and short recording sessions.",
+        "nb": "Planlegg tre gjenbesøk til et tillatt, ordinært sted med lite kamera, samtykke og korte opptaksøkter.",
+        "fr": "Planifier trois visites d'un lieu ordinaire autorisé avec petite caméra, consentement et séances courtes.",
+        "pt": "Planear três visitas a um local comum autorizado com câmara pequena, consentimento e sessões curtas."
+      }
+    },
+    {
+      "id": "archive",
+      "questionId": "tiexi-archive",
+      "title": {
+        "en": "Logging and media preservation",
+        "nb": "Logging og mediebevaring",
+        "fr": "Indexation et conservation",
+        "pt": "Catalogação e preservação"
+      },
+      "deliverable": {
+        "en": "Design a simple shot log with consent status, date, location, topic and two backup copies for a small fictional archive.",
+        "nb": "Lag en enkel opptakslogg med samtykkestatus, dato, sted, tema og to sikkerhetskopier for et lite fiktivt arkiv.",
+        "fr": "Concevoir un journal de plans avec consentement, date, lieu, sujet et deux sauvegardes pour une petite archive fictive.",
+        "pt": "Conceber um registo de planos com consentimento, data, local, tema e duas cópias para um pequeno arquivo fictício."
+      }
+    },
+    {
+      "id": "structure",
+      "questionId": "tiexi-structure",
+      "title": {
+        "en": "Triptych and documentary montage",
+        "nb": "Triptyk og dokumentarklipping",
+        "fr": "Triptyque et montage documentaire",
+        "pt": "Tríptico e montagem documental"
+      },
+      "deliverable": {
+        "en": "Outline three linked chapters about an invented workplace, community and transport system.",
+        "nb": "Skisser tre sammenhengende kapitler om en oppdiktet arbeidsplass, et lokalsamfunn og et transportsystem.",
+        "fr": "Esquisser trois chapitres liés sur un lieu de travail, une communauté et un réseau de transport fictifs.",
+        "pt": "Esboçar três capítulos ligados sobre um local de trabalho, uma comunidade e um sistema de transporte fictícios."
+      }
+    },
+    {
+      "id": "sound",
+      "questionId": "tiexi-sound",
+      "title": {
+        "en": "Observation and sound context",
+        "nb": "Observasjon og lydkontekst",
+        "fr": "Observation et contexte sonore",
+        "pt": "Observação e contexto sonoro"
+      },
+      "deliverable": {
+        "en": "Record original ambience in a permitted ordinary space and label its relation to each fictional shot.",
+        "nb": "Ta opp original atmosfærelyd på et tillatt, ordinært sted og merk forholdet til hvert fiktive bilde.",
+        "fr": "Enregistrer une ambiance originale dans un lieu ordinaire autorisé et noter son rapport à chaque plan fictif.",
+        "pt": "Gravar ambiente original num local comum autorizado e indicar a relação com cada plano fictício."
+      }
+    },
+    {
+      "id": "release",
+      "questionId": "tiexi-release",
+      "title": {
+        "en": "Finishing funds and version history",
+        "nb": "Ferdigstillingsmidler og versjonshistorie",
+        "fr": "Financement de finition et versions",
+        "pt": "Financiamento de finalização e versões"
+      },
+      "deliverable": {
+        "en": "Create a version ledger distinguishing the Berlin cut, Rotterdam triptych, finishing support and later screening records.",
+        "nb": "Lag en versjonsoversikt som skiller Berlin-versjonen, Rotterdam-triptyken, ferdigstillingsstøtte og senere visningsoppføringer.",
+        "fr": "Créer un registre distinguant version berlinoise, triptyque de Rotterdam, aide à la finition et projections ultérieures.",
+        "pt": "Criar um registo distinguindo versão de Berlim, tríptico de Roterdão, apoio à finalização e exibições posteriores."
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "tiexi-research",
+      "area": "research",
+      "prompt": {
+        "en": "How can a documentary study connect individual experiences with industrial change responsibly?",
+        "nb": "Hvordan kan en dokumentarstudie knytte individuelle erfaringer til industriell endring på en ansvarlig måte?",
+        "fr": "Comment relier les expériences individuelles aux mutations industrielles de façon responsable ?",
+        "pt": "Como relacionar experiências individuais com mudanças industriais de modo responsável?"
+      },
+      "options": [
+        {
+          "id": "generalize",
+          "label": {
+            "en": "Treat one filmed conversation as proof of every national economic trend",
+            "nb": "Behandle én filmet samtale som bevis for alle nasjonale økonomiske utviklingstrekk",
+            "fr": "Prendre une conversation filmée comme preuve de toutes les tendances économiques nationales",
+            "pt": "Tratar uma conversa filmada como prova de todas as tendências económicas nacionais"
+          }
+        },
+        {
+          "id": "context",
+          "label": {
+            "en": "Combine consenting participants' accounts with separate historical research and safe authorized access",
+            "nb": "Kombiner samtykkende deltakeres beretninger med separat historisk research og trygg autorisert tilgang",
+            "fr": "Associer des témoignages consentis à une recherche historique distincte et un accès autorisé et sûr",
+            "pt": "Combinar relatos consentidos com pesquisa histórica separada e acesso autorizado e seguro"
+          }
+        },
+        {
+          "id": "intrude",
+          "label": {
+            "en": "Enter an unsafe or restricted industrial site without permission to obtain footage",
+            "nb": "Gå inn på et farlig eller avsperret industriområde uten tillatelse for å få opptak",
+            "fr": "Entrer sans autorisation dans un site industriel dangereux ou interdit pour filmer",
+            "pt": "Entrar sem autorização num local industrial perigoso ou restrito para filmar"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "context",
+      "explanation": {
+        "en": "Wang's 2002 interview situates his work in Tiexi, and the BFI analysis connects its observation to industrial decline. A new documentary needs independently checked context, participant agency and safe access; historical practice is not a permission to trespass.",
+        "nb": "Wangs intervju fra 2002 plasserer arbeidet i Tiexi, og BFI knytter observasjonene til industriell tilbakegang. En ny dokumentar trenger uavhengig kontrollert kontekst, deltakernes selvbestemmelse og trygg tilgang.",
+        "fr": "L'entretien de 2002 situe le travail à Tiexi et le BFI relie l'observation au déclin industriel. Un nouveau documentaire exige contexte vérifié, autonomie des participants et accès sûr.",
+        "pt": "A entrevista de 2002 situa o trabalho em Tiexi e o BFI liga a observação ao declínio industrial. Um novo documentário exige contexto verificado, autonomia e acesso seguro."
+      },
+      "sourceIds": [
+        "interview",
+        "bfi"
+      ]
+    },
+    {
+      "id": "tiexi-capture",
+      "area": "camera",
+      "prompt": {
+        "en": "What production advantage does the documented portable DV setup illustrate?",
+        "nb": "Hvilken produksjonsfordel illustrerer det dokumenterte bærbare DV-oppsettet?",
+        "fr": "Quel avantage illustre le dispositif DV portable documenté ?",
+        "pt": "Que vantagem ilustra o equipamento DV portátil documentado?"
+      },
+      "options": [
+        {
+          "id": "studio",
+          "label": {
+            "en": "Require a large studio crew for every brief observational visit",
+            "nb": "Krev et stort studioteam for hvert korte observasjonsbesøk",
+            "fr": "Exiger une grande équipe de studio pour chaque visite d'observation",
+            "pt": "Exigir uma grande equipa de estúdio para cada visita de observação"
+          }
+        },
+        {
+          "id": "infer",
+          "label": {
+            "en": "Derive exact original lens, exposure and sound hardware from the released image",
+            "nb": "Utled eksakt originalobjektiv, eksponering og lydutstyr fra det utgitte bildet",
+            "fr": "Déduire objectif, exposition et matériel sonore exacts de l'image diffusée",
+            "pt": "Deduzir objetiva, exposição e equipamento sonoro exatos da imagem distribuída"
+          }
+        },
+        {
+          "id": "portable",
+          "label": {
+            "en": "Use portable capture to support repeated visits and observation over an extended period",
+            "nb": "Bruk bærbart opptaksutstyr til gjentatte besøk og observasjon over tid",
+            "fr": "Utiliser une captation portable pour des visites répétées et une observation prolongée",
+            "pt": "Usar captação portátil para visitas repetidas e observação prolongada"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "portable",
+      "explanation": {
+        "en": "Frieze identifies a borrowed Panasonic mini-DV camera and about 300 hours of footage. The contemporary interview likewise reports about two years of filming. Mobility and duration are supported; the sources do not establish every technical setting.",
+        "nb": "Frieze omtaler et lånt Panasonic mini-DV-kamera og rundt 300 timer materiale. Samtidsintervjuet omtaler omtrent to års opptak. Mobilitet og varighet er dokumentert, men ikke alle tekniske innstillinger.",
+        "fr": "Frieze identifie une caméra Panasonic mini-DV empruntée et environ 300 heures de rushes. L'entretien d'époque évoque deux ans de tournage. Mobilité et durée sont étayées, non tous les réglages.",
+        "pt": "Frieze identifica uma câmara Panasonic mini-DV emprestada e cerca de 300 horas de material. A entrevista da época refere dois anos de rodagem. Mobilidade e duração são sustentadas, não todos os parâmetros."
+      },
+      "sourceIds": [
+        "frieze",
+        "interview"
+      ]
+    },
+    {
+      "id": "tiexi-archive",
+      "area": "research",
+      "prompt": {
+        "en": "How should a contemporary team manage a long observational project with a large footage volume?",
+        "nb": "Hvordan bør et moderne team håndtere et langt observasjonsprosjekt med mye opptaksmateriale?",
+        "fr": "Comment gérer aujourd'hui un projet d'observation avec beaucoup de rushes ?",
+        "pt": "Como gerir hoje um projeto de observação com grande volume de material?"
+      },
+      "options": [
+        {
+          "id": "log",
+          "label": {
+            "en": "Keep organized logs and redundant backups while preserving consent restrictions",
+            "nb": "Behold strukturerte logger og flere sikkerhetskopier samtidig som samtykkebegrensninger respekteres",
+            "fr": "Tenir des journaux organisés et des sauvegardes redondantes en respectant le consentement",
+            "pt": "Manter registos organizados e cópias redundantes respeitando as restrições de consentimento"
+          }
+        },
+        {
+          "id": "discard",
+          "label": {
+            "en": "Delete all context and select only spectacular moments before reviewing the material",
+            "nb": "Slett all kontekst og velg bare spektakulære øyeblikk før materialgjennomgang",
+            "fr": "Supprimer tout contexte et choisir uniquement les moments spectaculaires avant visionnage",
+            "pt": "Apagar o contexto e selecionar apenas momentos espetaculares antes da revisão"
+          }
+        },
+        {
+          "id": "invent",
+          "label": {
+            "en": "Claim the original filmmaker used a specific modern media-management system without evidence",
+            "nb": "Påstå uten dokumentasjon at filmskaperen brukte et bestemt moderne mediesystem",
+            "fr": "Affirmer sans preuve que le réalisateur utilisait un système moderne précis",
+            "pt": "Afirmar sem prova que o realizador usava um sistema moderno específico"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "log",
+      "explanation": {
+        "en": "Pollacchi documents a lengthy edit drawing on more than 300 hours of footage. Logging and backups are proposed present-day practice for that scale, not a claim about Wang's original storage or cataloguing technology.",
+        "nb": "Pollacchi dokumenterer omfattende klipping basert på over 300 timer opptak. Logging og sikkerhetskopier er foreslått moderne arbeidspraksis, ikke påstander om Wangs opprinnelige lagringssystem.",
+        "fr": "Pollacchi documente un montage long à partir de plus de 300 heures. Journaux et sauvegardes sont des pratiques actuelles proposées, non des affirmations sur le système original de Wang.",
+        "pt": "Pollacchi documenta uma montagem longa a partir de mais de 300 horas. Registos e cópias são práticas atuais propostas, não afirmações sobre o sistema original de Wang."
+      },
+      "sourceIds": [
+        "pollacchi"
+      ]
+    },
+    {
+      "id": "tiexi-structure",
+      "area": "camera",
+      "prompt": {
+        "en": "Which editorial structure reflects the film's movement across distinct aspects of one district?",
+        "nb": "Hvilken klippestruktur gjenspeiler filmens bevegelse mellom ulike sider av ett distrikt?",
+        "fr": "Quelle structure reflète le passage entre différents aspects d'un même district ?",
+        "pt": "Que estrutura reflete a passagem entre diferentes aspetos do mesmo distrito?"
+      },
+      "options": [
+        {
+          "id": "random",
+          "label": {
+            "en": "Arrange unrelated scenes at random without considering their historical connections",
+            "nb": "Plasser uvedkommende scener tilfeldig uten å vurdere historiske forbindelser",
+            "fr": "Disposer des scènes sans rapport au hasard sans examiner leurs liens historiques",
+            "pt": "Organizar cenas sem relação ao acaso sem considerar ligações históricas"
+          }
+        },
+        {
+          "id": "triptych",
+          "label": {
+            "en": "Develop connected chapters around workplaces, residential life and railway circulation",
+            "nb": "Utvikle sammenhengende kapitler om arbeidsplasser, boligliv og jernbanetransport",
+            "fr": "Développer des chapitres liés sur le travail, la vie résidentielle et le réseau ferroviaire",
+            "pt": "Desenvolver capítulos ligados sobre trabalho, vida residencial e circulação ferroviária"
+          }
+        },
+        {
+          "id": "single",
+          "label": {
+            "en": "Reduce every strand to one explanatory statement and remove all contrasting perspectives",
+            "nb": "Reduser hver tråd til én forklaring og fjern alle kontrasterende perspektiver",
+            "fr": "Réduire chaque fil à une explication et supprimer les perspectives divergentes",
+            "pt": "Reduzir cada fio a uma explicação e remover perspetivas contrastantes"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "triptych",
+      "explanation": {
+        "en": "The BFI identifies the three parts as Rust, Remnants and Rails. The exercise adapts their linked thematic organization rather than assuming all documentary projects need the same structure or duration.",
+        "nb": "BFI identifiserer delene som Rust, Remnants og Rails. Øvelsen tilpasser deres tematiske sammenheng, uten å anta at alle dokumentarer trenger samme struktur eller lengde.",
+        "fr": "Le BFI identifie Rust, Remnants et Rails. L'exercice adapte cette organisation thématique sans imposer la même structure ou durée à tout documentaire.",
+        "pt": "O BFI identifica Rust, Remnants e Rails. O exercício adapta essa organização temática sem impor a mesma estrutura ou duração a todos os documentários."
+      },
+      "sourceIds": [
+        "bfi",
+        "pollacchi"
+      ]
+    },
+    {
+      "id": "tiexi-sound",
+      "area": "sound",
+      "prompt": {
+        "en": "How can sound support a documentary's sense of place without making unsupported historical claims?",
+        "nb": "Hvordan kan lyd støtte dokumentarens stedsfølelse uten udokumenterte historiske påstander?",
+        "fr": "Comment le son peut-il soutenir le lieu sans affirmations historiques non étayées ?",
+        "pt": "Como pode o som apoiar o sentido de lugar sem afirmações históricas não sustentadas?"
+      },
+      "options": [
+        {
+          "id": "hardware",
+          "label": {
+            "en": "Infer the original microphones and mixer settings from the finished film alone",
+            "nb": "Utled de opprinnelige mikrofonene og mikserinnstillingene bare fra den ferdige filmen",
+            "fr": "Déduire microphones et réglages originaux du seul film achevé",
+            "pt": "Deduzir microfones e definições originais apenas pelo filme final"
+          }
+        },
+        {
+          "id": "fabricate",
+          "label": {
+            "en": "Present invented sound effects as independently verified evidence of actual industrial events",
+            "nb": "Presenter oppdiktede lydeffekter som uavhengig bekreftet bevis på faktiske industrihendelser",
+            "fr": "Présenter des effets inventés comme preuves indépendantes d'événements industriels réels",
+            "pt": "Apresentar efeitos inventados como provas independentes de acontecimentos industriais reais"
+          }
+        },
+        {
+          "id": "contextual",
+          "label": {
+            "en": "Compare audible environments and disclose separately recorded or reconstructed sound when relevant",
+            "nb": "Sammenlign lydmiljøer og opplys om separat opptatt eller rekonstruert lyd når det er relevant",
+            "fr": "Comparer les environnements sonores et signaler les sons séparés ou reconstruits si pertinent",
+            "pt": "Comparar ambientes sonoros e declarar sons separados ou reconstruídos quando relevante"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "contextual",
+      "explanation": {
+        "en": "The BFI discussion locates the film's observations in factories and surrounding spaces. This exercise proposes an evidence-aware sound practice; the cited analysis does not establish the exact original microphones, track layout or final mixing process.",
+        "nb": "BFI plasserer filmens observasjoner i fabrikker og områdene rundt. Øvelsen foreslår kildebevisst lydpraksis; analysen fastslår ikke eksakte originalmikrofoner, sporoppsett eller sluttmiks.",
+        "fr": "Le BFI situe les observations dans les usines et leurs alentours. L'exercice propose une pratique sonore attentive aux preuves ; l'analyse ne documente pas microphones, pistes ou mixage final précis.",
+        "pt": "O BFI situa as observações nas fábricas e arredores. O exercício propõe prática sonora atenta às provas; a análise não documenta microfones, pistas ou mistura final exatos."
+      },
+      "sourceIds": [
+        "bfi"
+      ]
+    },
+    {
+      "id": "tiexi-release",
+      "area": "research",
+      "prompt": {
+        "en": "How should the 2002 and 2003 versions and differing running times be documented?",
+        "nb": "Hvordan bør versjonene fra 2002 og 2003 og ulike spilletider dokumenteres?",
+        "fr": "Comment documenter les versions de 2002 et 2003 et les durées divergentes ?",
+        "pt": "Como documentar versões de 2002 e 2003 e durações divergentes?"
+      },
+      "options": [
+        {
+          "id": "ledger",
+          "label": {
+            "en": "Keep one film study with distinct version records, funding evidence and attributed running times",
+            "nb": "Behold én filmstudie med separate versjonsoppføringer, finansieringskilder og kildebelagte spilletider",
+            "fr": "Conserver une étude avec notices de versions distinctes, preuves de financement et durées attribuées",
+            "pt": "Manter um estudo com registos distintos de versões, financiamento e durações atribuídas"
+          }
+        },
+        {
+          "id": "collapse",
+          "label": {
+            "en": "Replace every record with one exact duration and erase the earlier cut",
+            "nb": "Erstatt alle oppføringer med én eksakt spilletid og slett den tidligere versjonen",
+            "fr": "Remplacer toutes les notices par une durée exacte et effacer la version antérieure",
+            "pt": "Substituir todos os registos por uma duração exata e apagar a versão anterior"
+          }
+        },
+        {
+          "id": "format",
+          "label": {
+            "en": "Infer the original recording medium solely from the later DCP screening record",
+            "nb": "Utled det opprinnelige opptaksmediet bare fra den senere DCP-visningsoppføringen",
+            "fr": "Déduire le support de captation de la seule projection DCP ultérieure",
+            "pt": "Deduzir o suporte de captação apenas da projeção DCP posterior"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "ledger",
+      "explanation": {
+        "en": "Pollacchi documents a roughly 300-minute Berlin cut in 2002 and Hubert Bals Fund support for the longer 2003 Rotterdam version. Later records list 545, 551, 554 or 558 minutes; retain their provenance without inventing the cause of each difference.",
+        "nb": "Pollacchi dokumenterer en rundt 300 minutters Berlin-versjon i 2002 og støtte fra Hubert Bals Fund til den lengre Rotterdam-versjonen i 2003. Senere oppføringer viser 545, 551, 554 eller 558 minutter; behold kildegrunnlaget uten å dikte opp årsaken.",
+        "fr": "Pollacchi documente environ 300 minutes à Berlin en 2002 et l'aide Hubert Bals pour la version de Rotterdam en 2003. Les notices indiquent 545, 551, 554 ou 558 minutes ; conserver leurs sources sans inventer les causes.",
+        "pt": "Pollacchi documenta cerca de 300 minutos em Berlim em 2002 e apoio Hubert Bals para a versão de Roterdão em 2003. Os registos indicam 545, 551, 554 ou 558 minutos; preservar fontes sem inventar causas."
+      },
+      "sourceIds": [
+        "pollacchi",
+        "bfi",
+        "gallery",
+        "busan"
+      ]
+    }
+  ],
+  "review": {
+    "runtimeAdmission": false,
+    "bookLinkApproved": false,
+    "studyPreview": true,
+    "required": [
+      "Complete full catalogue overlap search for Tie Xi Qu, Tiexi District, and the 2003 expanded version.",
+      "Independently review runtime, capture period and financing records.",
+      "Assess eligible representation gap beyond existing verified digital documentary cases; no self-distribution or new identity approval asserted."
+    ]
+  }
+}
