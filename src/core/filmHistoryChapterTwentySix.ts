@@ -79,6 +79,12 @@ export const filmHistoryChapterTwentySixSources: readonly FilmHistoryBookSource[
     "url": "https://www.bfi.org.uk/lists/10-great-dog-films"
   },
   {
+    "id": "ch26_dogme_manifesto",
+    "title": "DOGME 95: manifesto and Vow of Chastity, 13 March 1995",
+    "publisher": "DOGME 95",
+    "url": "https://dogme95.com/"
+  },
+  {
     "id": "ch26_dogme",
     "title": "The Cruise at 20: DV and Dogme 95",
     "publisher": "BFI Sight and Sound",

@@ -23,9 +23,9 @@ test("Chapter 26 covers post-1989 institutions, regions and 22 substantial film 
   ]) assert.match(prose, essential);
 });
 
-test("Chapter 26 maintains 43 unique, used and resolvable editorial source records", () => {
+test("Chapter 26 maintains 44 unique, used and resolvable editorial source records", () => {
   const chapter = filmHistoryChapterTwentySix;
-  assert.equal(chapter.sources.length, 43);
+  assert.equal(chapter.sources.length, 44);
   const sourceIds = new Set(chapter.sources.map(source => source.id));
   const sourceUrls = new Set(chapter.sources.map(source => source.url));
   assert.equal(sourceIds.size, chapter.sources.length);
@@ -70,4 +70,13 @@ test("Chapter 26 documents Festen competition, shared Jury Prize and creative cr
   assert.ok(article?.sourceIds.includes("ch26_festen_cannes"));
   assert.match(article?.paragraphs.join(" ") ?? "", /1998 competition and its shared Jury Prize/);
   assert.match(article?.paragraphs.join(" ") ?? "", /Anthony Dod Mantle.*Valdís Óskarsdóttir/);
+});
+
+test("Chapter 26 distinguishes the original Dogme rules from digital capture", () => {
+  const chapter = filmHistoryChapterTwentySix;
+  assert.equal(chapter.sources.find(s => s.id === "ch26_dogme_manifesto")?.url, "https://dogme95.com/");
+  const article = chapter.sections.find(s => s.id === "ch26_dogme");
+  assert.ok(article?.sourceIds.includes("ch26_dogme_manifesto"));
+  assert.match(article?.paragraphs.join(" ") ?? "", /13 March 1995/);
+  assert.match(article?.paragraphs.join(" ") ?? "", /Academy 35 mm format, not a requirement to capture images digitally/);
 });
