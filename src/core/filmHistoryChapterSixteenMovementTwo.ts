@@ -10,7 +10,7 @@ export const filmHistoryChapterSixteenMovementTwo: readonly FilmHistoryBookSecti
       "The film makes communication difficult in both a literal and ethical sense. A soldier and civilian may fail to share words; an interpreter can be absent; an apparently minor misunderstanding may change a life. Rossellini combines dramatic situations with photographed locations and performers chosen for their connection to the environments depicted. The movement between intimate interactions and historical catastrophe produces emotional force without requiring a continuous conventional plot. At the same time, the images and order of events have been deliberately composed and edited. An episodic form is not an absence of filmmaking structure.",
       "BFI's study of Rossellini describes Paisan as a geographical journey through the liberation, while research on the roots of neorealism places it among the key works of the period. Compare it with Rome, Open City: one concentrates a network of resistance relationships in a city, while the other disperses attention across regions and encounters. It belongs to the story of war and the story of neorealism, but those contexts ask different questions. FilmWork should link to its existing Atlas case while treating the chosen episode, language use and historical evidence as distinct analytic problems."
     ],
-    sourceIds: ["ch16_bfi_rossellini", "ch16_bfi_topten", "ch16_bfi_roots"]
+    sourceIds: ["ch16_criterion_paisan", "ch16_bfi_rossellini", "ch16_bfi_topten", "ch16_bfi_roots"]
   },
   {
     id: "ch16_germany_zero",
