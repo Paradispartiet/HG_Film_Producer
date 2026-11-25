@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Six pre-existing Production Cases receive evidence-backed craft decisions.
+ * Seven pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -568,6 +568,75 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
           "Jia explique que le paysage semblait irréel et que le monument volant répondait par l'imagination à la vitesse des transformations. L'effet numérique exprime une expérience subjective, non le vol réel d'un bâtiment.",
           "Jia explica que a paisagem parecia irreal e que o monumento voador era uma resposta imaginativa à velocidade das mudanças. O efeito digital exprime uma experiência subjetiva, não o voo real de um edifício."),
         sourceIds: ["doors-interview"]
+      }
+    ]
+  },
+  {
+    scenarioId: "scenario_platform_2000",
+    status: "editorial_learning_exercise_not_case_verified",
+    introduction: t("Platform (2000) follows a provincial performance troupe through a decade of social transformation. Explore how Jia Zhangke and cinematographer Yu Lik-wai use distance, duration and collaboration to make historical change perceptible.",
+      "Platform (2000) følger en provinsiell artistgruppe gjennom et tiår med samfunnsendringer. Utforsk hvordan Jia Zhangke og filmfotograf Yu Lik-wai bruker avstand, varighet og samarbeid for å gjøre historiske endringer merkbare.",
+      "Platform (2000) suit une troupe provinciale pendant une décennie de transformations sociales. Explorez comment Jia Zhangke et le chef opérateur Yu Lik-wai rendent ces changements perceptibles par la distance, la durée et la collaboration.",
+      "Platform (2000) acompanha uma companhia artística provincial durante uma década de transformação social. Explore como Jia Zhangke e o diretor de fotografia Yu Lik-wai tornam a mudança histórica percetível através da distância, duração e colaboração."),
+    sources: [
+      { id: "senses-jia", title: "Cinema with an Accent – Interview with Jia Zhangke, Director of Platform", publisher: "Senses of Cinema", url: "https://www.sensesofcinema.com/2001/feature-articles/zhangke_interview/" },
+      { id: "nantes-interview", title: "Interview with Jia Zhang Ke at Nantes", publisher: "FilmFestivals.com", url: "https://www.filmfestivals.com/fr/node/178894" },
+      { id: "screen-review", title: "Platform — Derek Malcolm's contemporary review and credits", publisher: "Screen International", url: "https://www.screendaily.com/platform/404251.article" },
+    ],
+    questions: [
+      {
+        id: "platform-distance", area: "camera",
+        prompt: t("How can the camera preserve a sense of historical distance while showing the troupe's everyday life?",
+          "Hvordan kan kameraet bevare historisk avstand samtidig som det viser artistgruppens hverdagsliv?",
+          "Comment la caméra peut-elle préserver une distance historique tout en montrant la vie quotidienne de la troupe ?",
+          "Como pode a câmara preservar uma distância histórica ao mostrar o quotidiano da companhia?"),
+        options: [
+          { id: "explanatory-closeups", label: t("Use frequent explanatory close-ups to dictate where viewers look", "Bruk hyppige forklarende nærbilder for å styre publikums blikk", "Multiplier les gros plans explicatifs pour diriger le regard", "Usar grandes planos explicativos frequentes para dirigir o olhar") },
+          { id: "observational-distance", label: t("Step back and hold wider, sustained views of people within their surroundings", "Trekk kameraet tilbake og behold vide, langvarige bilder av mennesker i omgivelsene", "Reculer la caméra et maintenir des plans larges et prolongés des personnages dans leur milieu", "Recuar a câmara e manter planos amplos e prolongados das pessoas no seu meio") },
+          { id: "constant-pov", label: t("Show every event exclusively from one character's moving point of view", "Vis alle hendelser utelukkende fra én figurs bevegelige synsvinkel", "Montrer chaque événement exclusivement du point de vue mobile d'un personnage", "Mostrar todos os acontecimentos apenas do ponto de vista móvel de uma personagem") },
+        ],
+        bestSupportedOptionId: "observational-distance",
+        explanation: t("In Senses of Cinema, Jia contrasts the close, handheld immediacy of Xiao Wu with the more distant observer in Platform. Wider compositions and sustained takes allow viewers to attend to people and surroundings. He also rejects the idea that this is absolute objectivity.",
+          "I Senses of Cinema sammenligner Jia den nære, håndholdte umiddelbarheten i Xiao Wu med den mer distanserte observatøren i Platform. Vide komposisjoner og lange tagninger lar publikum studere mennesker og omgivelser. Han avviser samtidig at dette er absolutt objektivitet.",
+          "Dans Senses of Cinema, Jia oppose l'immédiateté de la caméra portée de Xiao Wu au regard plus distant de Platform. Plans larges et prises longues permettent d'observer les personnes et leur milieu, sans prétendre à une objectivité absolue.",
+          "Na Senses of Cinema, Jia contrapõe a proximidade da câmara à mão de Xiao Wu ao olhar mais distante de Platform. Planos amplos e prolongados permitem observar pessoas e espaços, sem pretender uma objetividade absoluta."),
+        sourceIds: ["senses-jia", "screen-review"]
+      },
+      {
+        id: "platform-duration", area: "camera",
+        prompt: t("How can the production convey the experience of waiting rather than simply communicate that time has passed?",
+          "Hvordan kan produksjonen formidle opplevelsen av å vente, ikke bare fortelle at tiden har gått?",
+          "Comment la réalisation peut-elle transmettre l'expérience de l'attente plutôt que simplement indiquer que le temps a passé ?",
+          "Como pode a realização transmitir a experiência da espera em vez de apenas indicar que o tempo passou?"),
+        options: [
+          { id: "rapid-montage", label: t("Compress every idle moment into a rapid montage of highlights", "Komprimer alle stille øyeblikk til en rask montasje av høydepunkter", "Comprimer tous les moments d'inaction en un montage rapide de temps forts", "Comprimir todos os momentos de inação numa montagem rápida de destaques") },
+          { id: "time-caption", label: t("Replace the actors' waiting with a caption announcing elapsed time", "Erstatt skuespillernes venting med en tekstplakat som angir tiden", "Remplacer l'attente des acteurs par un carton indiquant le temps écoulé", "Substituir a espera dos atores por um cartão que indique o tempo decorrido") },
+          { id: "preserved-time", label: t("Keep the mundane conversation and pauses unfolding within a continuous take", "La den hverdagslige samtalen og pausene utspille seg i én sammenhengende tagning", "Laisser la conversation ordinaire et les silences se dérouler dans une prise continue", "Deixar a conversa quotidiana e as pausas decorrerem num plano contínuo") },
+        ],
+        bestSupportedOptionId: "preserved-time",
+        explanation: t("Jia explains that a prolonged scene of people smoking and talking conveys stagnation through its actual duration. Breaking it into shorter pieces would change that experience. This supports a particular choice about time, not a rule that all films must avoid montage.",
+          "Jia forklarer at en lang scene der mennesker røyker og snakker, formidler stillstand gjennom selve varigheten. Kortere klipp ville endret opplevelsen. Dette støtter et bestemt tidslig grep, ikke et generelt forbud mot montasje.",
+          "Jia explique qu'une longue scène de conversation et de cigarettes transmet la stagnation par sa durée même. La fragmenter modifierait cette expérience. Ce choix temporel n'est pas une interdiction générale du montage.",
+          "Jia explica que uma cena longa de conversa e cigarros transmite a estagnação pela própria duração. Fragmentá-la mudaria a experiência. Esta escolha temporal não constitui uma proibição geral da montagem."),
+        sourceIds: ["senses-jia", "nantes-interview"]
+      },
+      {
+        id: "platform-performance", area: "research",
+        prompt: t("Which rehearsal and performance approach is consistent with Jia's account of his working method?",
+          "Hvilken tilnærming til prøver og skuespill samsvarer med Jias beskrivelse av arbeidsmetoden?",
+          "Quelle méthode de répétition et de jeu correspond au récit de Jia sur son travail ?",
+          "Que método de ensaio e interpretação corresponde ao relato de Jia sobre o seu trabalho?"),
+        options: [
+          { id: "guided-improvisation", label: t("Keep the scripted dramatic purpose, allow actors to vary dialogue and rehearse on set", "Behold scenens manusfestede formål, la skuespillerne variere replikkene og prøv på settet", "Conserver l'intention dramatique écrite, laisser varier les répliques et répéter sur le plateau", "Manter a intenção dramática escrita, permitir variações no diálogo e ensaiar no local") },
+          { id: "no-script-no-purpose", label: t("Discard the written scene and give the cast no dramatic purpose", "Forkast den skrevne scenen og gi skuespillerne intet dramatisk formål", "Abandonner la scène écrite et ne donner aucun objectif dramatique aux acteurs", "Abandonar a cena escrita e não dar qualquer objetivo dramático aos atores") },
+          { id: "no-variation", label: t("Require every word to be identical and forbid all actor contributions", "Krev at hvert ord er identisk og forby alle bidrag fra skuespillerne", "Exiger des mots strictement identiques et interdire toute contribution des acteurs", "Exigir palavras rigorosamente idênticas e proibir contribuições dos atores") },
+        ],
+        bestSupportedOptionId: "guided-improvisation",
+        explanation: t("Jia says dialogue was written, but actors could find their own phrasing while preserving the scene's purpose. Rehearsal began on set once the camera and lighting were prepared. Improvisation and a written screenplay can therefore coexist.",
+          "Jia sier at replikkene var skrevet, men at skuespillerne kunne finne egne formuleringer så lenge scenens formål ble bevart. Prøvene begynte på settet etter at kamera og lys var klargjort. Improvisasjon og et skrevet manus kan dermed eksistere side om side.",
+          "Jia indique que les dialogues étaient écrits, mais que les acteurs pouvaient les reformuler en conservant l'intention de la scène. Les répétitions commençaient sur le plateau après la préparation de la caméra et de la lumière.",
+          "Jia afirma que os diálogos estavam escritos, mas os atores podiam reformulá-los mantendo a intenção da cena. Os ensaios começavam no local após a preparação da câmara e da iluminação."),
+        sourceIds: ["senses-jia"]
       }
     ]
   }

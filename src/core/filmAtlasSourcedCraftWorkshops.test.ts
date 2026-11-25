@@ -15,20 +15,24 @@ const ids = [
   "scenario_cure_1997",
   "scenario_the_host_2006",
   "scenario_still_life_2006",
+  "scenario_platform_2000",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly six existing cases have eighteen original, source-backed decisions", () => {
+test("Exactly seven existing cases have twenty-one original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 6);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 18);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 7);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 21);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
     assert.ok(workshop.sources.length >= 2);
-    if (workshop.scenarioId === "scenario_still_life_2006") {
+    if (workshop.scenarioId === "scenario_platform_2000") {
+      const manual = readFileSync("src/core/modernCanonExpansion.ts", "utf8");
+      assert.match(manual, /id: "scenario_platform_2000", title: "Platform"[^\n]*year: 2000/);
+    } else if (workshop.scenarioId === "scenario_still_life_2006") {
       const manual = readFileSync("src/core/modernCanonExpansion.ts", "utf8");
       assert.match(manual, /id: "scenario_still_life_2006", title: "Still Life"[^\n]*year: 2006/);
     } else if (workshop.scenarioId === "scenario_the_host_2006") {
@@ -162,4 +166,18 @@ test("Still Life distinguishes digital capture, festival format, documentary and
   assert.ok(diptych.sourceIds.includes("photogenie-diptych"));
   assert.equal(surreal.bestSupportedOptionId, "express-dislocation");
   assert.match(surreal.explanation.en, /not evidence/);
+});
+
+test("Platform distinguishes camera distance, preserved time and guided improvisation", () => {
+  const workshop = getSourceBackedCaseWorkshop(ids[6]);
+  assert.ok(workshop);
+  const [distance, duration, performance] = workshop.questions;
+  assert.ok(distance && duration && performance);
+  assert.equal(distance.bestSupportedOptionId, "observational-distance");
+  assert.match(distance.explanation.en, /absolute objectivity/);
+  assert.equal(duration.bestSupportedOptionId, "preserved-time");
+  assert.match(duration.explanation.en, /not a rule/);
+  assert.equal(performance.bestSupportedOptionId, "guided-improvisation");
+  assert.match(performance.explanation.en, /dialogue was written/);
+  assert.ok(performance.sourceIds.includes("senses-jia"));
 });
