@@ -25,7 +25,7 @@ Kurosawa told DVD Talk that a ghost which does very little can be more disturbin
 
 ## Three optional production exercises
 
-The companion JSON contains all three questions, three alternatives each, four languages, explanations and source IDs. This is review material, not yet surfaced in the runtime.
+The companion JSON contains all three questions, three alternatives each, four languages, explanations and source IDs. This is now surfaced through the separate candidate route in Film Atlas and the Chapter 28 candidate link, not a canonical playable case.
 
 ## Evidence limits and approval
 

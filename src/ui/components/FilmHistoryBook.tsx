@@ -6,12 +6,15 @@ import {
   getFilmHistoryBookChapter,
 } from "../../core/filmHistoryBook";
 import type { FilmScenarioSeed } from "../data/filmScenarios";
+import { pulseCandidateMatches } from "./PulseCandidatePage";
 
 export function FilmHistoryBook({
   onOpenFilm,
+  onOpenPulseCandidate,
   scenarios,
 }: {
   readonly onOpenFilm: (scenario: FilmScenarioSeed) => void;
+  readonly onOpenPulseCandidate?: () => void;
   readonly scenarios: readonly FilmScenarioSeed[];
 }) {
   const [activeChapterId, setActiveChapterId] = useState("motion-before-cinema");
@@ -145,6 +148,7 @@ export function FilmHistoryBook({
                           <strong>{reference.title}</strong>
                           <p>{reference.note}</p>
                           {scenario ? <button onClick={() => onOpenFilm(scenario)} type="button">Open Film Atlas analysis →</button> : <small>No standalone Production Case is linked yet.</small>}
+                          {activeChapter.number === 28 && !scenario && pulseCandidateMatches(reference.title, reference.year) && onOpenPulseCandidate && <button className="pulse-book-candidate-link" type="button" onClick={onOpenPulseCandidate}>Open candidate article &amp; workshop →</button>}
                         </article>
                       );
                     })}

@@ -108,6 +108,47 @@ async function check(browser, language, film, tablet) {
   }
 }
 
+
+async function checkPulseCandidate(browser, language) {
+  const context = await browser.newContext({ viewport: { width: 768, height: 1024 }, hasTouch: true });
+  await context.addInitScript(lang => localStorage.setItem("hg_filmwork_language_v1", lang), language);
+  const page = await context.newPage();
+  page.setDefaultTimeout(20000);
+  const label = language + "-pulse-candidate";
+  try {
+    await page.goto(new URL("#/atlas", SITE).href, { waitUntil: "domcontentloaded" });
+    await page.locator(".pulse-candidate-link").click();
+    const candidate = page.locator(".pulse-candidate-page");
+    await candidate.waitFor({ state: "visible" });
+    assert.match(page.url(), /candidate-pulse-2001/);
+    assert.match(await candidate.locator("h1").textContent(), /Pulse/);
+    const before = await page.evaluate(() => JSON.stringify({ ...localStorage }));
+    const rows = candidate.locator(".scenario-source-workshop__question");
+    assert.equal(await rows.count(), 3);
+    for (let i = 0; i < 3; i++) {
+      const row = rows.nth(i);
+      const choices = row.locator(".scenario-source-workshop__choice");
+      assert.equal(await choices.count(), 3);
+      await choices.nth(i).click();
+      assert.equal(await row.locator('[aria-pressed="true"]').count(), 1);
+      await row.locator(".scenario-source-workshop__feedback").waitFor({ state: "visible" });
+      await row.locator("summary").click();
+      assert.ok(await row.locator("a[href^='https://']").count() > 0);
+    }
+    assert.equal(await page.evaluate(() => JSON.stringify({ ...localStorage })), before);
+    assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 2));
+    await candidate.locator("nav button").nth(1).click();
+    await page.locator(".film-history-book-chapter-link").nth(27).click();
+    await page.locator(".pulse-book-candidate-link").click();
+    await candidate.waitFor({ state: "visible" });
+    passed.push(label);
+    console.log("PASS " + label);
+  } catch (error) {
+    failures.push({ label, error: String(error?.stack ?? error) });
+    console.error("FAIL " + label + ": " + String(error?.message ?? error));
+  } finally { await context.close(); }
+}
+
 await mkdir(REPORT_DIR, { recursive: true });
 let browser;
 try {
@@ -116,6 +157,7 @@ try {
     for (const film of FILMS) {
       for (const tablet of TABLETS) await check(browser, language, film, tablet);
     }
+    await checkPulseCandidate(browser, language);
   }
 } catch (error) {
   failures.push({ setup: String(error?.stack ?? error) });
@@ -126,9 +168,9 @@ try {
 
 await writeFile(resolve(REPORT_DIR, "summary.json"), JSON.stringify({
   scope: "WebKit tablet-width functional QA; not physical iPad or aesthetic approval",
-  expected: LANGUAGES.length * FILMS.length * TABLETS.length,
+  expected: LANGUAGES.length * (FILMS.length * TABLETS.length + 1),
   passed,
   failures,
 }, null, 2) + "\n");
-console.log(`WebKit iPad-sized QA: ${passed.length}/16 passed; ${failures.length} failures`);
-if (failures.length || passed.length !== 16) process.exitCode = 1;
+console.log(`WebKit iPad-sized QA: ${passed.length}/${LANGUAGES.length * (FILMS.length * TABLETS.length + 1)} passed; ${failures.length} failures`);
+if (failures.length || passed.length !== LANGUAGES.length * (FILMS.length * TABLETS.length + 1)) process.exitCode = 1;

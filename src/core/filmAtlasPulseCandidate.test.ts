@@ -26,3 +26,18 @@ test("Pulse candidate remains separate from canonical playable admission", () =>
     }
   }
 });
+
+test("Pulse candidate has a dedicated Atlas and Chapter 28 study route, not a canonical scenario", () => {
+  const atlas = readFileSync("src/ui/components/FilmAtlasExperience.tsx", "utf8");
+  const book = readFileSync("src/ui/components/FilmHistoryBook.tsx", "utf8");
+  const page = readFileSync("src/ui/components/PulseCandidatePage.tsx", "utf8");
+  const history = readFileSync("src/ui/components/FilmHistoryExperience.tsx", "utf8");
+  assert.match(atlas, /route\.filmSlug === PULSE_CANDIDATE_SLUG/);
+  assert.match(atlas, /<PulseCandidatePage language=/);
+  assert.match(book, /activeChapter\.number === 28 && !scenario && pulseCandidateMatches/);
+  assert.match(history, /onOpenPulseCandidate=/);
+  assert.match(page, /candidate-pulse-2001/);
+  assert.match(page, /workshopOverride=\{candidateWorkshop\}/);
+  assert.match(page, /not a verified playable Production Case/);
+  assert.doesNotMatch(page, /localStorage|setProductionCaseMissionChoice|writeProductionCaseProgress/);
+});

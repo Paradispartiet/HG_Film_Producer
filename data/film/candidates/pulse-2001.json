@@ -280,9 +280,10 @@
       "Review historical and departmental claims independently.",
       "Implement scenario admission and production brief only after resolving catalogue counts and coverage gates.",
       "Connect book reference only after appropriate case approval.",
-      "Run existing QA after runtime integration."
+      "Run existing QA for the candidate reader and again after any canonical admission."
     ],
     "runtimeAdmission": false,
-    "bookLinkApproved": false
+    "bookLinkApproved": false,
+    "studyPreview": true
   }
 }

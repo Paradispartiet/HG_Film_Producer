@@ -7,6 +7,7 @@ import {
 } from "../../core/filmverketRoutes";
 import { getClassicFilmScenarios, type FilmScenarioSeed } from "../data/filmScenarios";
 import { FilmHistoryBook } from "./FilmHistoryBook";
+import { PULSE_CANDIDATE_SLUG } from "./PulseCandidatePage";
 import { FilmverketKnowledgeShell } from "./FilmverketKnowledgeShell";
 
 export function FilmHistoryExperience({
@@ -30,7 +31,7 @@ export function FilmHistoryExperience({
 
   return (
     <FilmverketKnowledgeShell activeSection="history" onNavigate={navigateSection}>
-      <FilmHistoryBook onOpenFilm={openFilm} scenarios={scenarios} />
+      <FilmHistoryBook onOpenFilm={openFilm} onOpenPulseCandidate={() => navigate({ section: "atlas", filmSlug: PULSE_CANDIDATE_SLUG })} scenarios={scenarios} />
     </FilmverketKnowledgeShell>
   );
 }
