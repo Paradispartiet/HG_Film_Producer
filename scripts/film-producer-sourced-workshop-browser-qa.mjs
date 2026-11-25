@@ -27,14 +27,16 @@ async function bundle(path) {
   return import("data:text/javascript;base64," + Buffer.from(result.outputFiles[0].text).toString("base64"));
 }
 
-const [data, scenarios] = await Promise.all([
+const [data, scenarios, briefs] = await Promise.all([
   bundle("src/ui/data/scenarioProductionSourceWorkshops.ts"),
   bundle("src/ui/data/filmScenarios.ts"),
+  bundle("src/ui/data/scenarioProductionBriefs.ts"),
 ]);
 const catalogue = scenarios.getClassicFilmScenarios();
 const cases = data.SOURCE_BACKED_CASE_WORKSHOPS.map(workshop => {
   const scenario = catalogue.find(s => s.id === workshop.scenarioId);
   assert.ok(scenario, "Missing case: " + workshop.scenarioId);
+  assert.equal(briefs.resolveScenarioProductionBrief(scenario).briefType, "production_case", "Missing playable brief: " + workshop.scenarioId);
   return { workshop, scenario };
 });
 assert.equal(cases.length, 13);
@@ -59,6 +61,10 @@ async function check(browser, language, item) {
     await search.waitFor({ state: "visible" });
     await search.fill(item.scenario.film.title);
     const card = page.locator(".scenario-card").filter({ has: page.getByRole("heading", { name: item.scenario.film.title, exact: true }) });
+    if (await card.count() === 0) {
+      for (const button of await page.locator(".scenario-era-show-all").all()) await button.click();
+    }
+    await card.waitFor({ state: "visible" });
     assert.equal(await card.count(), 1, label + ": unique film");
     await card.locator("button").last().click();
 

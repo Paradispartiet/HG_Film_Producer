@@ -289,3 +289,12 @@ test("Russian Ark separates capture duration, safe coordination, and post-produc
   assert.equal(post.bestSupportedOptionId, "finish");
   assert.match(post.explanation.en, /single take does not mean no post-production/);
 });
+
+test("Russian Ark has a dedicated playable brief, not the seed fallback", () => {
+  const resolver = readFileSync("src/ui/data/scenarioProductionBriefs.ts", "utf8");
+  const ark = readFileSync("src/ui/data/scenarioProductionBriefsRussianArk.ts", "utf8");
+  assert.match(resolver, /\?\? getRussianArkProductionBrief\(scenario\)/);
+  assert.match(ark, /briefType: "production_case"/);
+  assert.match(ark, /verificationStatus: "verified"/);
+  assert.match(ark, /definition\.id|item\.id === scenario\.id/);
+});

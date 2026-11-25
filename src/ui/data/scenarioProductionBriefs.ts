@@ -1,5 +1,6 @@
 import type { FilmScenarioSeed } from "./filmScenarios";
 import { getEarlyCinemaExpansionProductionBrief } from "./scenarioProductionBriefsEarlyCinemaExpansion";
+import { getRussianArkProductionBrief } from "./scenarioProductionBriefsRussianArk";
 
 export type ScenarioProductionBriefType = "production_case" | "seed_fallback";
 
@@ -2347,6 +2348,7 @@ export function getScenarioProductionBrief(scenarioId: string): ScenarioProducti
 
 export function resolveScenarioProductionBrief(scenario: FilmScenarioSeed): ScenarioProductionBrief {
   return getScenarioProductionBrief(scenario.id)
+    ?? getRussianArkProductionBrief(scenario)
     ?? getEarlyCinemaExpansionProductionBrief(scenario)
     ?? getFallbackScenarioProductionBrief(scenario);
 }
