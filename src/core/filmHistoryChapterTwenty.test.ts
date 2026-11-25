@@ -52,3 +52,18 @@ test("Chapter 20 does not convert political institutions into imaginary playable
   assert.ok(chapter.keyTerms.includes("Third Cinema"));
   assert.ok(chapter.keyTerms.includes("FEPACI"));
 });
+
+
+test("Chapter 20 preserves manifesto primary text and separates it from the earlier film", () => {
+  const chapter = filmHistoryChapterTwenty;
+  assert.equal(chapter.status, "draft");
+  assert.equal(chapter.sources.length, 33);
+  const original = chapter.sources.find(source => source.id === "ch20_manifesto_original");
+  assert.ok(original);
+  assert.equal(original.url, "https://www.degruyterbrill.com/document/doi/10.1525/9780520957411-070/html");
+  const essay = chapter.sections.find(section => section.id === "ch20_manifesto");
+  assert.ok(essay);
+  assert.ok(essay.sourceIds.includes("ch20_manifesto_original"));
+  assert.match(essay.paragraphs.join(" "), /1969 manifesto/);
+  assert.match(essay.paragraphs.join(" "), /1968 film The Hour of the Furnaces/);
+});
