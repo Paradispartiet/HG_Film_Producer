@@ -1,0 +1,562 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "candidate_timecode_2000",
+  "proposedScenarioId": "scenario_timecode_2000",
+  "routeSlug": "candidate-timecode-2000",
+  "status": "editorial_candidate_not_admitted",
+  "book": {
+    "chapter": 27,
+    "decision": "P2"
+  },
+  "identity": {
+    "title": "Timecode",
+    "originalTitle": "Timecode",
+    "year": 2000,
+    "directors": [
+      "Mike Figgis"
+    ],
+    "country": "United States",
+    "genres": [
+      "Drama",
+      "Experimental"
+    ],
+    "runtimeNote": "Film Fest Gent lists 97 minutes and IFFR 98. IFFR metadata lists 2002 and United Kingdom for its festival record, while Gent and Sony support the 2000 film identity; retain the discrepancy. Reported shooting repetitions differ (seven in WIRED versus fifteen in Figgis's interview and BFI). Do not equate capture duration and release running time."
+  },
+  "credits": {
+    "director": "Mike Figgis",
+    "cinematography": "Patrick Alexander Stewart",
+    "music": [
+      "Mike Figgis",
+      "Anthony Marinelli"
+    ],
+    "sourceIds": [
+      "gent",
+      "iffr"
+    ]
+  },
+  "sources": [
+    {
+      "id": "bfi-live",
+      "title": "Timecode live: quartet for four cameras",
+      "publisher": "BFI Sight and Sound",
+      "url": "https://www.bfi.org.uk/sight-and-sound/reviews/timecode-live-quartet-four-cameras"
+    },
+    {
+      "id": "bfi-oners",
+      "title": "Hot takes: a short history of the one-shot movie in 11 attempts",
+      "publisher": "British Film Institute",
+      "url": "https://www.bfi.org.uk/lists/single-take-films"
+    },
+    {
+      "id": "dga",
+      "title": "Visual History with Mike Figgis",
+      "publisher": "Directors Guild of America",
+      "url": "https://www.dga.org/Craft/VisualHistory/Interviews/Mike-Figgis"
+    },
+    {
+      "id": "lat",
+      "title": "The Daredevils of Digital Filmmaking",
+      "publisher": "Los Angeles Times",
+      "url": "https://www.latimes.com/archives/la-xpm-1999-nov-08-ca-31187-story.html"
+    },
+    {
+      "id": "wired",
+      "title": "Digital Cinema Plays With Form",
+      "publisher": "WIRED",
+      "url": "https://www.wired.com/2000/04/digital-cinema-plays-with-form/"
+    },
+    {
+      "id": "figgis",
+      "title": "Mike Figgis / Time Code — interview",
+      "publisher": "SPLICEDwire",
+      "url": "https://www.splicedwire.com/00features/figgis.html"
+    },
+    {
+      "id": "rte",
+      "title": "Mike Figgis to mix Timecode live at IFI",
+      "publisher": "RTÉ",
+      "url": "https://www.rte.ie/entertainment/2004/0302/401103-figgism/"
+    },
+    {
+      "id": "sony",
+      "title": "Timecode — distributor film record",
+      "publisher": "Sony Pictures Entertainment",
+      "url": "https://www.sonypictures.com/movies/timecode"
+    },
+    {
+      "id": "gent",
+      "title": "Timecode — 2000 festival record",
+      "publisher": "Film Fest Gent",
+      "url": "https://www.filmfestival.be/en/film/timecode"
+    },
+    {
+      "id": "iffr",
+      "title": "Time Code — festival programme record",
+      "publisher": "International Film Festival Rotterdam",
+      "url": "https://iffr.com/en/iffr/2010/films/time-code"
+    }
+  ],
+  "article": {
+    "title": "Timecode (2000): four cameras, one shared dramatic time",
+    "paragraphs": [
+      {
+        "text": "Timecode makes simultaneous viewpoints the central organizing principle of a feature. Four digital cameras record uninterrupted images of intersecting stories; the result places them in adjacent quadrants rather than alternating between them. Figgis described the writing process as analogous to composing music for independent voices: his timeline organized events into minute-long units. This connects the screenplay to coordination of a shared performance, not simply to a split-screen effect.",
+        "sourceIds": [
+          "dga",
+          "bfi-live"
+        ]
+      },
+      {
+        "text": "The method required timed encounters across the different camera groups. During production, reporting in the Los Angeles Times described performers using synchronized watches and improvising within a scheduled outline. Figgis later recalled reviewing complete attempts with cast and crew and spending time refining each group. Accounts differ about the total number of attempts. The important production lesson is collective rehearsal, shared timing and review rather than a supposedly effortless single take.",
+        "sourceIds": [
+          "lat",
+          "figgis",
+          "wired"
+        ]
+      },
+      {
+        "text": "The picture construction retains parallel views instead of using conventional cuts to decide what is visible at every moment. Sound provides an alternative means of directing attention: the prominence of a conversation can change even while every picture continues. At a later live screening, Figgis adjusted separate audio elements in real time. This demonstrates a second, exhibition-stage use of the film's structure, not evidence that every original screening had a variable mix.",
+        "sourceIds": [
+          "bfi-oners",
+          "bfi-live",
+          "rte"
+        ]
+      },
+      {
+        "text": "The official Sony film record identifies the 2000 Screen Gems release, and Film Fest Gent gives a 97-minute duration and credits Patrick Alexander Stewart for cinematography. IFFR records 98 minutes and a later exhibition format, with inconsistent country/year metadata. These records must remain source-specific. Digital capture, the selected performance, final presentation and subsequent live remix are distinct stages. The available evidence supports a formal production study, not automatic admission into the verified catalogue.",
+        "sourceIds": [
+          "sony",
+          "gent",
+          "iffr"
+        ]
+      }
+    ]
+  },
+  "production": {
+    "premise": "Create a short fictional ensemble scene told through four simultaneous viewpoints.",
+    "screenplay": "Write four synchronized narrative strands with agreed intersections and flexible dialogue.",
+    "camera": "Coordinate four short continuous digital captures with safe routes and shared start cues.",
+    "editing": "Assemble the synchronized views from one selected performance into a four-panel composition.",
+    "sound": "Create alternative mixes that guide attention between views without changing their timing.",
+    "learning": "Distinguish musical story planning, ensemble coordination, simultaneous capture, post-production and exhibition provenance."
+  },
+  "workshopIntroduction": {
+    "en": "Explore four simultaneous viewpoints, musical planning and sound-led attention in a short fictional production.",
+    "nb": "Utforsk fire samtidige synsvinkler, musikalsk planlegging og lydstyrt oppmerksomhet i en kort fiktiv produksjon.",
+    "fr": "Explorer quatre points de vue simultanés, une planification musicale et l'attention guidée par le son dans une courte fiction.",
+    "pt": "Explorar quatro pontos de vista simultâneos, planeamento musical e atenção guiada pelo som numa curta ficção."
+  },
+  "phases": [
+    {
+      "id": "score",
+      "questionId": "timecode-score",
+      "title": {
+        "en": "Parallel writing as a score",
+        "nb": "Parallell manusstruktur som partitur",
+        "fr": "Écriture parallèle comme partition",
+        "pt": "Escrita paralela como partitura"
+      },
+      "deliverable": {
+        "en": "Draw four timelines for a three-minute fictional scene with two shared dramatic beats.",
+        "nb": "Tegn fire tidslinjer for en tre minutters fiktiv scene med to felles handlingsledd.",
+        "fr": "Tracer quatre lignes temporelles pour une scène fictive de trois minutes avec deux moments communs.",
+        "pt": "Desenhar quatro linhas temporais para uma cena fictícia de três minutos com dois momentos comuns."
+      }
+    },
+    {
+      "id": "ensemble",
+      "questionId": "timecode-ensemble",
+      "title": {
+        "en": "Ensemble and rehearsal",
+        "nb": "Ensemble og prøver",
+        "fr": "Ensemble et répétition",
+        "pt": "Ensemble e ensaio"
+      },
+      "deliverable": {
+        "en": "Rehearse a short coordinated scene with consenting performers, shared cues and scheduled breaks.",
+        "nb": "Øv på en kort samordnet scene med samtykkende skuespillere, felles signaler og avtalte pauser.",
+        "fr": "Répéter une courte scène coordonnée avec consentement, repères communs et pauses prévues.",
+        "pt": "Ensaiar uma cena curta coordenada com consentimento, sinais comuns e pausas previstas."
+      }
+    },
+    {
+      "id": "capture",
+      "questionId": "timecode-capture",
+      "title": {
+        "en": "Synchronized digital capture",
+        "nb": "Synkronisert digitalt opptak",
+        "fr": "Captation numérique synchronisée",
+        "pt": "Captação digital sincronizada"
+      },
+      "deliverable": {
+        "en": "Plan four short continuous shots with a shared start cue and safe camera routes.",
+        "nb": "Planlegg fire korte sammenhengende opptak med felles startsignal og trygge kameraruter.",
+        "fr": "Planifier quatre plans courts continus avec un départ commun et des trajets sûrs.",
+        "pt": "Planear quatro planos curtos contínuos com início comum e percursos seguros."
+      }
+    },
+    {
+      "id": "image",
+      "questionId": "timecode-image",
+      "title": {
+        "en": "Four-panel image construction",
+        "nb": "Bildekomposisjon med fire felt",
+        "fr": "Composition en quatre cadres",
+        "pt": "Composição em quatro quadros"
+      },
+      "deliverable": {
+        "en": "Arrange four original short clips in a grid, keeping their shared timing intact.",
+        "nb": "Plasser fire originale korte klipp i et rutenett og behold den felles tidslinjen.",
+        "fr": "Disposer quatre clips originaux en grille en conservant leur chronologie commune.",
+        "pt": "Dispor quatro clipes originais numa grelha mantendo a cronologia comum."
+      }
+    },
+    {
+      "id": "mix",
+      "questionId": "timecode-mix",
+      "title": {
+        "en": "Sound-led attention and remix",
+        "nb": "Lydstyrt oppmerksomhet og remiks",
+        "fr": "Attention guidée par le son et remix",
+        "pt": "Atenção guiada pelo som e remix"
+      },
+      "deliverable": {
+        "en": "Create two mixes of the same four-panel scene, shifting dialogue emphasis without altering image timing.",
+        "nb": "Lag to mikser av samme firefeltsscene, med ulik dialogvekt uten å endre bildetiden.",
+        "fr": "Créer deux mixages de la même scène en quatre cadres en modifiant l'accent du dialogue sans changer le temps de l'image.",
+        "pt": "Criar duas misturas da mesma cena em quatro quadros, mudando o destaque do diálogo sem alterar o tempo da imagem."
+      }
+    },
+    {
+      "id": "release",
+      "questionId": "timecode-release",
+      "title": {
+        "en": "Production versions and exhibition",
+        "nb": "Produksjonsversjoner og visning",
+        "fr": "Versions de production et projection",
+        "pt": "Versões de produção e exibição"
+      },
+      "deliverable": {
+        "en": "Write a provenance ledger separating repeated takes, selected version, runtime reports and later live remix.",
+        "nb": "Skriv en kildeoversikt som skiller gjentatte opptak, valgt versjon, spilletidsopplysninger og senere livemiks.",
+        "fr": "Rédiger un registre distinguant prises répétées, version choisie, durées rapportées et remix ultérieur.",
+        "pt": "Escrever um registo distinguindo tomadas repetidas, versão escolhida, durações relatadas e remistura posterior."
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "timecode-score",
+      "area": "research",
+      "prompt": {
+        "en": "Which planning technique reflects Figgis's musical approach to simultaneous storytelling?",
+        "nb": "Hvilken planleggingsteknikk gjenspeiler Figgis' musikalske tilnærming til samtidig fortelling?",
+        "fr": "Quelle méthode reflète l'approche musicale de Figgis des récits simultanés ?",
+        "pt": "Que método reflete a abordagem musical de Figgis à narrativa simultânea?"
+      },
+      "options": [
+        {
+          "id": "linear",
+          "label": {
+            "en": "Write four independent scenes without a common timeline",
+            "nb": "Skriv fire uavhengige scener uten en felles tidslinje",
+            "fr": "Écrire quatre scènes indépendantes sans chronologie commune",
+            "pt": "Escrever quatro cenas independentes sem cronologia comum"
+          }
+        },
+        {
+          "id": "score",
+          "label": {
+            "en": "Map four strands onto a shared timeline with coordinated dramatic beats",
+            "nb": "Plasser fire fortellertråder på en felles tidslinje med samordnede handlingsledd",
+            "fr": "Inscrire quatre fils sur une chronologie commune avec des moments coordonnés",
+            "pt": "Colocar quatro fios narrativos numa cronologia comum com momentos coordenados"
+          }
+        },
+        {
+          "id": "montage",
+          "label": {
+            "en": "Assume the chronology can always be repaired through unrelated later inserts",
+            "nb": "Anta at kronologien alltid kan repareres med uvedkommende senere innklipp",
+            "fr": "Supposer que des inserts ultérieurs sans rapport répareront toujours la chronologie",
+            "pt": "Pressupor que inserções posteriores sem relação corrigem sempre a cronologia"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "score",
+      "explanation": {
+        "en": "Figgis described sketching narrative time in minute-long bars, borrowing the idea of independent voices interacting in a quartet. A shared planning score coordinates the strands without prescribing every line of dialogue.",
+        "nb": "Figgis beskrev en plan med minuttruter inspirert av kvartettens samspill mellom selvstendige stemmer. Et felles partitur samordner trådene uten å fastsette hver replikk.",
+        "fr": "Figgis décrit un plan en mesures d'une minute inspiré des voix indépendantes d'un quatuor. La partition coordonne les fils sans fixer chaque réplique.",
+        "pt": "Figgis descreve um plano em compassos de um minuto inspirado nas vozes independentes de um quarteto. A partitura coordena os fios sem fixar cada fala."
+      },
+      "sourceIds": [
+        "bfi-live"
+      ]
+    },
+    {
+      "id": "timecode-ensemble",
+      "area": "research",
+      "prompt": {
+        "en": "How can improvised performances remain coordinated when four scenes run at once?",
+        "nb": "Hvordan kan improviserte prestasjoner forbli samordnet når fire scener pågår samtidig?",
+        "fr": "Comment coordonner l'improvisation de quatre scènes simultanées ?",
+        "pt": "Como coordenar improvisações em quatro cenas simultâneas?"
+      },
+      "options": [
+        {
+          "id": "unplanned",
+          "label": {
+            "en": "Let every performer choose timing independently without any agreed story cues",
+            "nb": "La alle skuespillere velge tidspunkt uavhengig uten avtalte fortellersignaler",
+            "fr": "Laisser chaque acteur choisir son rythme sans repères narratifs communs",
+            "pt": "Deixar cada ator escolher o tempo sem sinais narrativos comuns"
+          }
+        },
+        {
+          "id": "isolated",
+          "label": {
+            "en": "Rehearse lines separately without testing intersections between the scenes",
+            "nb": "Øv på replikker separat uten å prøve møtepunktene mellom scenene",
+            "fr": "Répéter séparément sans tester les croisements entre scènes",
+            "pt": "Ensaiar separadamente sem testar os cruzamentos entre cenas"
+          }
+        },
+        {
+          "id": "cues",
+          "label": {
+            "en": "Agree on timed story cues while allowing flexible dialogue and responsive acting",
+            "nb": "Avtal tidsfestede handlingssignaler med rom for fleksibel dialog og responsivt skuespill",
+            "fr": "Convenir de repères chronométrés tout en permettant un dialogue souple",
+            "pt": "Acordar sinais narrativos temporizados com diálogo flexível e interpretação responsiva"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "cues",
+      "explanation": {
+        "en": "Contemporary production reporting describes synchronized watches and improvisation within a timed outline. Figgis later recalled screening the recordings and refining performance and camera work. These are coordination methods, not a demand for exhausting rehearsals.",
+        "nb": "Samtidig produksjonsreportasje beskriver synkroniserte klokker og improvisasjon innenfor en tidsplan. Figgis fortalte senere om gjennomgang og forbedring av skuespill og kamera. Dette er samordningsmetoder, ikke krav om utmattende prøver.",
+        "fr": "Un reportage contemporain décrit des montres synchronisées et l'improvisation dans un canevas chronométré. Figgis évoque ensuite la révision du jeu et de la caméra. Cela n'impose pas des répétitions épuisantes.",
+        "pt": "Uma reportagem da época descreve relógios sincronizados e improvisação num plano temporizado. Figgis recorda a revisão da interpretação e da câmara. Isto não exige ensaios exaustivos."
+      },
+      "sourceIds": [
+        "lat",
+        "figgis"
+      ]
+    },
+    {
+      "id": "timecode-capture",
+      "area": "camera",
+      "prompt": {
+        "en": "Which capture strategy preserves the simultaneous relationships across four viewpoints?",
+        "nb": "Hvilken opptaksstrategi bevarer samtidige relasjoner mellom fire synsvinkler?",
+        "fr": "Quelle stratégie préserve les relations simultanées entre quatre points de vue ?",
+        "pt": "Que estratégia preserva as relações simultâneas entre quatro pontos de vista?"
+      },
+      "options": [
+        {
+          "id": "sync",
+          "label": {
+            "en": "Record four continuous viewpoints simultaneously against a shared timing reference",
+            "nb": "Ta opp fire sammenhengende synsvinkler samtidig med en felles tidsreferanse",
+            "fr": "Enregistrer quatre points de vue continus simultanément avec une référence temporelle commune",
+            "pt": "Gravar quatro pontos de vista contínuos simultaneamente com referência temporal comum"
+          }
+        },
+        {
+          "id": "different",
+          "label": {
+            "en": "Record each viewpoint on unrelated days without matching the shared action",
+            "nb": "Ta opp hver synsvinkel på ulike dager uten å samordne felles handling",
+            "fr": "Filmer chaque point de vue un autre jour sans harmoniser l'action commune",
+            "pt": "Gravar cada ponto de vista em dias diferentes sem alinhar a ação comum"
+          }
+        },
+        {
+          "id": "invent",
+          "label": {
+            "en": "Infer exact original camera models and synchronization hardware from the final image",
+            "nb": "Utled eksakte originale kameramodeller og synkroniseringsutstyr fra sluttbildet",
+            "fr": "Déduire les modèles et le matériel de synchronisation exacts de l'image finale",
+            "pt": "Deduzir modelos e equipamento de sincronização exatos da imagem final"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "sync",
+      "explanation": {
+        "en": "The DGA describes four digital video cameras recording uninterrupted views together. This supports synchronized continuous acquisition as a method; the source does not identify every camera model, clocking device or recording format.",
+        "nb": "DGA beskriver fire digitale videokameraer som tok opp sammenhengende bilder samtidig. Det støtter synkronisert kontinuerlig opptak, men fastslår ikke alle kameramodeller, synkroniseringsenheter eller opptaksformater.",
+        "fr": "La DGA décrit quatre caméras vidéo numériques filmant simultanément sans interruption. Cela étaye la captation continue synchronisée, non chaque modèle ou format d'enregistrement.",
+        "pt": "A DGA descreve quatro câmaras de vídeo digital gravando simultaneamente sem interrupção. Isto sustenta captação contínua sincronizada, não cada modelo ou formato."
+      },
+      "sourceIds": [
+        "dga",
+        "bfi-oners"
+      ]
+    },
+    {
+      "id": "timecode-image",
+      "area": "camera",
+      "prompt": {
+        "en": "How should a four-panel assembly preserve the shared time of the selected performance?",
+        "nb": "Hvordan bør en firefeltskomposisjon bevare den valgte gjennomspillingens felles tid?",
+        "fr": "Comment préserver le temps commun de la prise choisie dans quatre cadres ?",
+        "pt": "Como preservar o tempo comum da interpretação escolhida em quatro quadros?"
+      },
+      "options": [
+        {
+          "id": "random",
+          "label": {
+            "en": "Choose unrelated fragments from different performances without checking continuity",
+            "nb": "Velg uvedkommende fragmenter fra ulike gjennomspillinger uten kontinuitetskontroll",
+            "fr": "Choisir des fragments de prises différentes sans vérifier la continuité",
+            "pt": "Escolher fragmentos de tomadas diferentes sem verificar continuidade"
+          }
+        },
+        {
+          "id": "grid",
+          "label": {
+            "en": "Combine the synchronized views of one selected performance into a four-panel grid",
+            "nb": "Sett sammen synkroniserte bilder fra én valgt gjennomspilling i et rutenett",
+            "fr": "Assembler les vues synchronisées d'une même prise choisie en grille",
+            "pt": "Combinar as vistas sincronizadas de uma interpretação escolhida numa grelha"
+          }
+        },
+        {
+          "id": "single",
+          "label": {
+            "en": "Discard three viewpoints and present only a conventional single-camera edit",
+            "nb": "Forkast tre synsvinkler og vis bare tradisjonell klipping fra ett kamera",
+            "fr": "Écarter trois points de vue et ne présenter qu'un montage classique",
+            "pt": "Descartar três pontos de vista e apresentar apenas montagem convencional"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "grid",
+      "explanation": {
+        "en": "WIRED describes combining the four views from a selected shooting day. The DGA confirms their simultaneous presentation. Selecting and assembling a performance is still production and post-production work, even without conventional picture cutting within each view.",
+        "nb": "WIRED beskriver sammenstilling av fire bilder fra en valgt opptaksdag. DGA bekrefter samtidig visning. Utvalg og sammenstilling er fortsatt produksjons- og etterarbeid, selv uten tradisjonell bildeklipping innenfor hvert felt.",
+        "fr": "WIRED décrit l'assemblage de quatre vues d'une journée choisie. La DGA confirme leur présentation simultanée. Sélection et assemblage restent du travail de production et de postproduction.",
+        "pt": "A WIRED descreve a combinação das quatro vistas de um dia escolhido. A DGA confirma a apresentação simultânea. Seleção e composição continuam a ser trabalho de produção e pós-produção."
+      },
+      "sourceIds": [
+        "wired",
+        "dga"
+      ]
+    },
+    {
+      "id": "timecode-mix",
+      "area": "sound",
+      "prompt": {
+        "en": "Which sound choice can guide attention without cutting away from the other images?",
+        "nb": "Hvilket lydvalg kan styre oppmerksomheten uten å klippe bort de andre bildene?",
+        "fr": "Quel choix sonore guide l'attention sans couper les autres images ?",
+        "pt": "Que escolha sonora guia a atenção sem cortar as outras imagens?"
+      },
+      "options": [
+        {
+          "id": "equal",
+          "label": {
+            "en": "Keep every dialogue strand equally prominent throughout without regard to meaning",
+            "nb": "Hold alle dialogtråder like fremtredende hele tiden uten hensyn til mening",
+            "fr": "Garder toutes les voix également présentes sans tenir compte du sens",
+            "pt": "Manter todas as vozes igualmente destacadas sem considerar o sentido"
+          }
+        },
+        {
+          "id": "mute",
+          "label": {
+            "en": "Remove all sound from every panel and forbid any alternative mix",
+            "nb": "Fjern all lyd fra alle felt og forby alternative mikser",
+            "fr": "Supprimer le son de tous les cadres et interdire tout mixage alternatif",
+            "pt": "Eliminar o som de todos os quadros e proibir misturas alternativas"
+          }
+        },
+        {
+          "id": "emphasis",
+          "label": {
+            "en": "Shift the balance of dialogue and other sounds to foreground a selected strand",
+            "nb": "Endre balansen mellom dialog og andre lyder for å fremheve én fortellertråd",
+            "fr": "Modifier l'équilibre des dialogues et des sons pour privilégier un fil",
+            "pt": "Mudar o equilíbrio dos diálogos e sons para destacar um fio narrativo"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "emphasis",
+      "explanation": {
+        "en": "BFI describes the sound mix directing attention across quadrants. Its report on Figgis's later live presentation documents manipulation of separate dialogue, music and effects tracks. The live event is distinct from the original theatrical mix.",
+        "nb": "BFI beskriver hvordan miksen styrer oppmerksomheten mellom bildefeltene. Rapporten om Figgis' senere livevisning dokumenterer endringer i separate dialog-, musikk- og effektspor. Livevisningen er noe annet enn den opprinnelige kinomiksen.",
+        "fr": "Le BFI décrit le mixage guidant l'attention entre cadres. Son compte rendu d'une projection remixée documente des pistes distinctes de dialogue, musique et effets. Cette projection diffère du mixage initial.",
+        "pt": "O BFI descreve a mistura guiando a atenção entre quadros. O relato de uma sessão remisturada documenta pistas separadas de diálogo, música e efeitos. Essa sessão difere da mistura original."
+      },
+      "sourceIds": [
+        "bfi-oners",
+        "bfi-live",
+        "rte"
+      ]
+    },
+    {
+      "id": "timecode-release",
+      "area": "research",
+      "prompt": {
+        "en": "How should conflicting shooting and exhibition records be documented?",
+        "nb": "Hvordan bør motstridende opptaks- og visningsopplysninger dokumenteres?",
+        "fr": "Comment documenter les divergences entre tournage et projection ?",
+        "pt": "Como documentar divergências entre rodagem e exibição?"
+      },
+      "options": [
+        {
+          "id": "ledger",
+          "label": {
+            "en": "Preserve each reported count and runtime with its source and distinguish capture from exhibition",
+            "nb": "Behold hvert rapportert antall og hver spilletid med kilde, og skill opptak fra visning",
+            "fr": "Conserver chaque chiffre et durée avec sa source et distinguer captation et projection",
+            "pt": "Preservar cada número e duração com a fonte e distinguir captação de exibição"
+          }
+        },
+        {
+          "id": "collapse",
+          "label": {
+            "en": "Choose a single exact number and erase conflicting accounts without explanation",
+            "nb": "Velg ett eksakt tall og slett motstridende opplysninger uten forklaring",
+            "fr": "Choisir un seul chiffre exact et effacer les autres récits sans explication",
+            "pt": "Escolher um único número exato e apagar relatos divergentes sem explicação"
+          }
+        },
+        {
+          "id": "format",
+          "label": {
+            "en": "Treat a later festival exhibition format as proof of the original camera recording format",
+            "nb": "Behandle et senere festivalvisningsformat som bevis på originalt kameraopptaksformat",
+            "fr": "Traiter le format d'une projection ultérieure comme preuve du format de captation",
+            "pt": "Tratar o formato de exibição posterior como prova do formato original de captação"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "ledger",
+      "explanation": {
+        "en": "WIRED reports seven shooting repetitions, while Figgis's SPLICEDwire interview and BFI report fifteen. Gent records 97 minutes and IFFR 98; IFFR also lists a later exhibition format. These records differ and should not be silently harmonized.",
+        "nb": "WIRED omtaler sju gjennomspillinger, mens Figgis' SPLICEDwire-intervju og BFI oppgir femten. Gent oppgir 97 minutter og IFFR 98; IFFR oppgir også et senere visningsformat. Avvikene skal ikke skjules.",
+        "fr": "WIRED évoque sept répétitions, tandis que Figgis dans SPLICEDwire et le BFI en indiquent quinze. Gent indique 97 minutes, IFFR 98 et un format de projection ultérieur. Ne pas effacer les écarts.",
+        "pt": "A WIRED refere sete repetições, enquanto Figgis na SPLICEDwire e o BFI indicam quinze. Gent indica 97 minutos, IFFR 98 e um formato de exibição posterior. Não apagar as divergências."
+      },
+      "sourceIds": [
+        "wired",
+        "figgis",
+        "bfi-live",
+        "gent",
+        "iffr"
+      ]
+    }
+  ],
+  "review": {
+    "runtimeAdmission": false,
+    "bookLinkApproved": false,
+    "studyPreview": true,
+    "required": [
+      "Complete exact catalogue overlap including Time Code alias.",
+      "Independently review reported take counts, runtimes and exhibition provenance.",
+      "Assess eligible representation gap before canonical admission; no eligible gap is asserted."
+    ]
+  }
+}
