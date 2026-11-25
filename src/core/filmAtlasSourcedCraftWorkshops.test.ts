@@ -19,20 +19,24 @@ const ids = [
   "scenario_raise_the_red_lantern_1991",
   "scenario_a_city_of_sadness_1989",
   "scenario_vive_l_amour_1994",
+  "scenario_peppermint_candy_1999",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly ten existing cases have thirty original, source-backed decisions", () => {
+test("Exactly eleven existing cases have thirty-three original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 10);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 30);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 11);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 33);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
     assert.ok(workshop.sources.length >= 2);
-    if (workshop.scenarioId === "scenario_vive_l_amour_1994") {
+    if (workshop.scenarioId === "scenario_peppermint_candy_1999") {
+      const manual = readFileSync("src/core/southKoreanCinemaExpansion.ts", "utf8");
+      assert.match(manual, /id: "scenario_peppermint_candy_1999",\s*title: "Peppermint Candy",[\s\S]{0,120}year: 1999/);
+    } else if (workshop.scenarioId === "scenario_vive_l_amour_1994") {
       const manual = readFileSync("src/core/eastAsianAuteurExpansion.ts", "utf8");
       assert.match(manual, /id: "scenario_vive_l_amour_1994",\s*title: "Vive L\x27Amour",[\s\S]{0,120}year: 1994/);
     } else if (workshop.scenarioId === "scenario_a_city_of_sadness_1989") {
@@ -232,4 +236,18 @@ test("Vive L'Amour distinguishes location adaptation, sustained performance and 
   assert.equal(sound.bestSupportedOptionId, "ambient-gestures");
   assert.ok(sound.sourceIds.includes("eye-vive"));
   assert.match(sound.explanation.en, /not a claim about the exact microphone/);
+});
+
+test("Peppermint Candy separates reverse shooting, visual transitions and historical verification", () => {
+  const workshop = getSourceBackedCaseWorkshop(ids[10]);
+  assert.ok(workshop);
+  const [shooting, transition, causality] = workshop.questions;
+  assert.ok(shooting && transition && causality);
+  assert.equal(shooting.bestSupportedOptionId, "reverse-shoot");
+  assert.ok(shooting.sourceIds.includes("lee-shooting"));
+  assert.equal(transition.bestSupportedOptionId, "repeated-motion");
+  assert.match(transition.explanation.en, /not recreating dangerous action/);
+  assert.equal(causality.bestSupportedOptionId, "effect-before-cause");
+  assert.ok(causality.sourceIds.includes("lee-time"));
+  assert.match(causality.explanation.en, /without turning fiction into an archive/);
 });
