@@ -55,3 +55,18 @@ test("Chapter 23 has no fabricated playable Atlas IDs or production cases", () =
   assert.equal(chapter.historicalObjects.length, 18);
   assert.ok(chapter.historicalObjects.every(item => item.role === "historical_object" && item.atlasDecision === "no_production_case"));
 });
+
+
+test("Chapter 23 grounds Akira film history in a direct BFI essay", () => {
+  const chapter = filmHistoryChapterTwentyThree;
+  assert.equal(chapter.status, "draft");
+  assert.equal(chapter.sources.length, 40);
+  const source = chapter.sources.find(item => item.id === "ch23_jp_akira");
+  assert.ok(source);
+  assert.equal(source.publisher, "British Film Institute");
+  assert.equal(source.url, "https://www.bfi.org.uk/features/30-years-akira-teenage-kicks-anime-style");
+  const article = chapter.sections.find(item => item.id === "ch23_anime");
+  assert.ok(article);
+  assert.ok(article.sourceIds.includes("ch23_jp_akira"));
+  assert.match(article.paragraphs.join(" "), /1988 Japanese release of Akira/);
+});

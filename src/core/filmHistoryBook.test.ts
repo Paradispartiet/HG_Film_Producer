@@ -191,7 +191,7 @@ test("Chapters 1–10 remain full; Chapters 11–23 are readable drafts; 24–30
   const neorealism = filmHistoryBookChapters.find((chapter) => chapter.number === 16);
   assert.equal(neorealism?.status, "draft");
   assert.equal(neorealism?.sections.length, 16);
-  assert.ok((neorealism?.sources.length ?? 0) >= 25);
+  assert.ok((neorealism?.sources.length ?? 0) >= 30);
 
   const asia = filmHistoryBookChapters.find((chapter) => chapter.number === 17);
   assert.equal(asia?.status, "draft");
@@ -208,25 +208,25 @@ test("Chapters 1–10 remain full; Chapters 11–23 are readable drafts; 24–30
   assert.equal(newWaves?.sections.length, 21);
   assert.ok((newWaves?.sources.length ?? 0) >= 30);
 
-  const decolonization = filmHistoryBookChapters.find((chapter) => chapter.number === 20);
-  assert.equal(decolonization?.status, "draft");
-  assert.equal(decolonization?.sections.length, 22);
-  assert.ok((decolonization?.sources.length ?? 0) >= 30);
+  const thirdCinema = filmHistoryBookChapters.find((chapter) => chapter.number === 20);
+  assert.equal(thirdCinema?.status, "draft");
+  assert.equal(thirdCinema?.sections.length, 22);
+  assert.ok((thirdCinema?.sources.length ?? 0) >= 33);
 
   const newHollywood = filmHistoryBookChapters.find((chapter) => chapter.number === 21);
   assert.equal(newHollywood?.status, "draft");
   assert.equal(newHollywood?.sections.length, 23);
-  assert.ok((newHollywood?.sources.length ?? 0) >= 40);
+  assert.ok((newHollywood?.sources.length ?? 0) >= 41);
 
   const counterCinema = filmHistoryBookChapters.find((chapter) => chapter.number === 22);
   assert.equal(counterCinema?.status, "draft");
   assert.equal(counterCinema?.sections.length, 25);
-  assert.ok((counterCinema?.sources.length ?? 0) >= 40);
+  assert.ok((counterCinema?.sources.length ?? 0) >= 45);
 
   const popularAsia = filmHistoryBookChapters.find((chapter) => chapter.number === 23);
   assert.equal(popularAsia?.status, "draft");
   assert.equal(popularAsia?.sections.length, 26);
-  assert.ok((popularAsia?.sources.length ?? 0) >= 35);
+  assert.ok((popularAsia?.sources.length ?? 0) >= 40);
 
   const remaining = filmHistoryBookChapters.filter((chapter) => chapter.number > 23);
   assert.equal(remaining.length, 7);
@@ -266,6 +266,90 @@ test("Chapter 12 carries 16 distinct source-resolved film articles with canonica
   assert.equal(chapter.filmReferences.length, 26);
   assert.ok(chapter.historicalObjects.length >= 10);
   assert.ok(chapter.historicalObjects.every((item) => item.atlasDecision === "no_production_case"));
+});
+
+test("Chapter 12 cites film-specific production and premiere provenance without changing editorial status", () => {
+  const chapter = getFilmHistoryBookChapter("hollywood-genres");
+  assert.ok(chapter);
+  assert.equal(chapter.status, "draft");
+  const stagecoach = chapter.sections.find((section) => section.id === "ch12_stagecoach");
+  const goneWithTheWind = chapter.sections.find((section) => section.id === "ch12_gone_with_the_wind");
+  assert.ok(stagecoach && goneWithTheWind);
+  assert.ok(stagecoach.sourceIds.includes("ch12_afi_stagecoach"));
+  assert.ok(goneWithTheWind.sourceIds.includes("ch12_emory_gwtw_premiere"));
+  assert.ok(goneWithTheWind.paragraphs.some((paragraph) => /segregated Atlanta premiere on 15 December 1939/.test(paragraph)));
+  const sources = new Map(chapter.sources.map((source) => [source.id, source]));
+  assert.equal(sources.get("ch12_afi_stagecoach")?.url, "https://catalog.afi.com/Film/4173-STAGECOACH");
+  assert.equal(sources.get("ch12_emory_gwtw_premiere")?.url, "https://news.emory.edu/stories/2014/11/bernstein-recounts-segregated-atlanta-premiere-gone-wind");
+});
+
+
+test("Chapter 12 separates pre-Code release from July 1934 enforcement", () => {
+  const chapter = getFilmHistoryBookChapter("hollywood-genres");
+  assert.ok(chapter);
+  assert.equal(chapter.status, "draft");
+  const sources = new Map(chapter.sources.map((source) => [source.id, source]));
+  for (const id of ["ch12_afi_42nd_street", "ch12_afi_it_happened", "ch12_loc_pca_1934", "ch12_afi_wizard"]) {
+    assert.match(sources.get(id)?.url ?? "", /^https:\/\//);
+  }
+  const capra = chapter.sections.find((section) => section.id === "ch12_it_happened_one_night");
+  assert.ok(capra);
+  assert.ok(capra.sourceIds.includes("ch12_afi_it_happened"));
+  assert.ok(capra.sourceIds.includes("ch12_loc_pca_1934"));
+  assert.match(capra.paragraphs.join(" "), /February 1934/);
+  assert.match(capra.paragraphs.join(" "), /that July/);
+  assert.ok(chapter.sections.find((section) => section.id === "ch12_42nd_street")?.sourceIds.includes("ch12_afi_42nd_street"));
+  assert.ok(chapter.sections.find((section) => section.id === "ch12_wizard_of_oz")?.sourceIds.includes("ch12_afi_wizard"));
+});
+
+
+test("Chapter 12 anchors selected close readings to source-backed film scenes", () => {
+  const chapter = getFilmHistoryBookChapter("hollywood-genres");
+  assert.ok(chapter);
+  assert.equal(chapter.status, "draft");
+  const sources = new Map(chapter.sources.map((source) => [source.id, source]));
+  assert.equal(sources.get("ch12_afi_casablanca")?.url, "https://catalog.afi.com/Film/27175-CASABLANCA");
+  assert.equal(sources.get("ch12_afi_double_indemnity")?.url, "https://catalog.afi.com/Film/2201-DOUBLE-INDEMNITY");
+  const getSection = (id: string) => {
+    const section = chapter.sections.find((item) => item.id === id);
+    assert.ok(section, `Missing Chapter 12 article ${id}`);
+    return section;
+  };
+  assert.match(getSection("ch12_42nd_street").paragraphs.join(" "), /Ruby Keeler plays Peggy Sawyer/);
+  assert.match(getSection("ch12_citizen_kane").paragraphs.join(" "), /breakfast-table montage/);
+  assert.ok(getSection("ch12_casablanca").sourceIds.includes("ch12_afi_casablanca"));
+  assert.match(getSection("ch12_casablanca").paragraphs.join(" "), /La Marseillaise/);
+  assert.ok(getSection("ch12_double_indemnity").sourceIds.includes("ch12_afi_double_indemnity"));
+  assert.match(getSection("ch12_double_indemnity").paragraphs.join(" "), /Dictaphone/);
+});
+
+
+test("Chapter 12 grounds visual motifs, dance production, melodrama and Oscar chronology", () => {
+  const chapter = getFilmHistoryBookChapter("hollywood-genres");
+  assert.ok(chapter);
+  assert.equal(chapter.status, "draft");
+  const section = (id: string) => {
+    const item = chapter.sections.find((candidate) => candidate.id === id);
+    assert.ok(item, `Missing article ${id}`);
+    return item;
+  };
+  const scarface = section("ch12_scarface");
+  assert.ok(scarface.sourceIds.includes("ch12_criterion_scarface_motif"));
+  assert.match(scarface.paragraphs.join(" "), /X shapes/);
+  const topHat = section("ch12_top_hat");
+  assert.ok(topHat.sourceIds.includes("ch12_afi_top_hat"));
+  assert.match(topHat.paragraphs.join(" "), /feathered dress/);
+  const stella = section("ch12_stella_dallas");
+  assert.ok(stella.sourceIds.includes("ch12_senses_stella_dallas"));
+  assert.match(stella.paragraphs.join(" "), /window separating the mother/);
+  const wind = section("ch12_gone_with_the_wind");
+  assert.ok(wind.sourceIds.includes("ch12_academy_mcdaniel_1940"));
+  assert.match(wind.paragraphs.join(" "), /15 December 1939/);
+  assert.match(wind.paragraphs.join(" "), /29 February 1940/);
+  const refs = new Map(chapter.sources.map((source) => [source.id, source]));
+  for (const id of ["ch12_criterion_scarface_motif", "ch12_afi_top_hat", "ch12_senses_stella_dallas", "ch12_academy_mcdaniel_1940"]) {
+    assert.match(refs.get(id)?.url ?? "", /^https:\/\//);
+  }
 });
 
 test("Chapter 13 adds sixteen sourced European film-history articles without adopting the mismatched postwar Atlas audit", () => {
@@ -352,6 +436,23 @@ test("Chapter 14 provides sixteen researched documentary animation and experimen
   assert.ok(chapter.historicalObjects.every((h) => h.atlasDecision === "no_production_case"));
 });
 
+
+test("Chapter 14 documents documentary commissions and Cornell presentation with primary institutions", () => {
+  const chapter = getFilmHistoryBookChapter("documentary-animation-experiment");
+  assert.ok(chapter);
+  assert.equal(chapter.status, "draft");
+  const byId = new Map(chapter.sections.map((section) => [section.id, section]));
+  const sources = new Map(chapter.sources.map((source) => [source.id, source]));
+  assert.equal(sources.get("ch14_open_song_sponsor")?.url, "https://www.open.edu/openlearn/history-the-arts/history/world-history/selling-empire-film");
+  assert.equal(sources.get("ch14_moma_rose_hobart")?.url, "https://www.moma.org/collection/works/311539");
+  assert.ok(byId.get("ch14_song_ceylon")?.sourceIds.includes("ch14_open_song_sponsor"));
+  assert.match(byId.get("ch14_song_ceylon")?.paragraphs.join(" ") ?? "", /Ceylon Tea Propaganda Board/);
+  assert.match(byId.get("ch14_housing_problems")?.paragraphs.join(" ") ?? "", /British Commercial Gas Association/);
+  assert.ok(byId.get("ch14_housing_problems")?.sourceIds.includes("ch14_bfi_ukpropaganda"));
+  assert.ok(byId.get("ch14_rose_hobart")?.sourceIds.includes("ch14_moma_rose_hobart"));
+  assert.match(byId.get("ch14_rose_hobart")?.paragraphs.join(" ") ?? "", /Brazilian record/);
+});
+
 test("Chapter 15 has sixteen sourced essays, verified existing Atlas references and no borrowed 1970s matrix", () => {
   const chapter = getFilmHistoryBookChapter("war-propaganda");
   assert.ok(chapter);
@@ -398,6 +499,24 @@ test("Chapter 15 has sixteen sourced essays, verified existing Atlas references 
   assert.ok(chapter.historicalObjects.every((h) => h.atlasDecision === "no_production_case"));
 });
 
+
+test("Chapter 15 separates actual and reenacted war footage from coerced Nazi film", () => {
+  const chapter = getFilmHistoryBookChapter("war-propaganda");
+  assert.ok(chapter);
+  assert.equal(chapter.status, "draft");
+  const sections = new Map(chapter.sections.map((section) => [section.id, section]));
+  const sanPietro = sections.get("ch15_san_pietro");
+  assert.ok(sanPietro);
+  assert.ok(sanPietro.sourceIds.includes("ch15_afi_san_pietro"));
+  assert.match(sanPietro.paragraphs.join(" "), /battle scenes were reenacted/);
+  assert.equal(chapter.sources.find((source) => source.id === "ch15_afi_san_pietro")?.url, "https://catalog.afi.com/Catalog/moviedetails/24563");
+  const ghetto = sections.get("ch15_theresienstadt");
+  assert.ok(ghetto);
+  assert.match(ghetto.paragraphs.join(" "), /never screened publicly/);
+  assert.match(ghetto.paragraphs.join(" "), /only fragments have survived/);
+  assert.ok(ghetto.sourceIds.includes("ch15_ushmm_theresienstadt"));
+});
+
 test("Chapter 16 has sixteen sourced Italian neorealist film articles without reusing the unrelated 1980s Atlas audit", () => {
   const chapter = getFilmHistoryBookChapter("italian-neorealism");
   assert.ok(chapter);
@@ -412,7 +531,7 @@ test("Chapter 16 has sixteen sourced Italian neorealist film articles without re
   const sourceIds = new Set(chapter.sources.map((s) => s.id));
   assert.equal(sectionIds.size, 16);
   assert.equal(sourceIds.size, chapter.sources.length);
-  assert.equal(chapter.sources.length, 30);
+  assert.equal(chapter.sources.length, 32);
   assert.ok(chapter.sources.some((s) => /British Film Institute|BFI/.test(s.publisher)));
   assert.ok(chapter.sources.some((s) => s.publisher === "The Criterion Collection"));
   assert.ok(chapter.sources.every((s) => s.url.startsWith("https://")));
@@ -443,4 +562,21 @@ test("Chapter 16 has sixteen sourced Italian neorealist film articles without re
   assert.ok(bookOnly.every((f) => f.atlasScenarioId === undefined));
   assert.ok(chapter.historicalObjects.length >= 12);
   assert.ok(chapter.historicalObjects.every((o) => o.atlasDecision === "no_production_case"));
+});
+
+
+test("Chapter 16 links film-specific Criterion records to The Children Are Watching Us and Paisan", () => {
+  const chapter = getFilmHistoryBookChapter("italian-neorealism");
+  assert.ok(chapter);
+  assert.equal(chapter.status, "draft");
+  const children = chapter.sections.find((section) => section.id === "ch16_children_watching");
+  const paisan = chapter.sections.find((section) => section.id === "ch16_paisan");
+  assert.ok(children && paisan);
+  assert.ok(children.sourceIds.includes("ch16_criterion_children"));
+  assert.ok(paisan.sourceIds.includes("ch16_criterion_paisan"));
+  assert.match(children.paragraphs.join(" "), /released in 1944/);
+  assert.match(paisan.paragraphs.join(" "), /six episodes/);
+  const sources = new Map(chapter.sources.map((source) => [source.id, source]));
+  assert.equal(sources.get("ch16_criterion_children")?.url, "https://www.criterion.com/films/772-the-children-are-watching-us");
+  assert.equal(sources.get("ch16_criterion_paisan")?.url, "https://www.criterion.com/films/2415-paisan");
 });

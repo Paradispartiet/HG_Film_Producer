@@ -48,10 +48,11 @@ export const filmHistoryChapterTwentyThreeJapanSections: readonly FilmHistoryBoo
     "paragraphs": [
       "Japanese animation developed through studio labor, television schedules, manga adaptations, toy-related businesses and the changing audience for theatrical features. Space Battleship Yamato is one example of a fictional world that circulated through different media rather than being created for just one cinema premiere. These relations altered the way producers could finance stories and the way viewers followed characters over time.",
       "BFI's history of anime traces the growth of the industry and the later importance of Studio Ghibli, Nausicaä of the Valley of the Wind and Akira. The extraordinary craft of Katsuhiro Otomo's 1988 feature contributed to anime's international recognition, but the industry did not begin with that film or exist only to produce work for foreign festivals. Television, direct-to-video titles and other commercial forms sustained artists and audiences.",
-      "Animation depends on artists, background painters, compositors, voice actors, editors and sound workers whose collective contribution is sometimes obscured by the reputation of one creator. Export dubs and re-edited international releases also affect what modern viewers identify as a film. An accurate comparison names versions and industrial contexts, not just its most admired shots."
+      "Animation depends on artists, background painters, compositors, voice actors, editors and sound workers whose collective contribution is sometimes obscured by the reputation of one creator. Export dubs and re-edited international releases also affect what modern viewers identify as a film. The 1988 Japanese release of Akira and its later Western reception belong to distinct histories of distribution and film culture. An accurate comparison names versions and industrial contexts, not just its most admired shots."
     ],
     "sourceIds": [
       "ch23_jp_anime",
+      "ch23_jp_akira",
       "ch23_jp_animefilms",
       "ch23_jp_films"
     ]

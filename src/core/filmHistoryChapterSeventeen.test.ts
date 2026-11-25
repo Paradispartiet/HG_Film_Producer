@@ -46,3 +46,24 @@ test("Chapter 17 does not invent existing Atlas cases before a case-by-case audi
   assert.ok(chapter.historicalObjects.length >= 10);
   assert.ok(chapter.historicalObjects.every(object => object.role === "historical_object" && object.atlasDecision === "no_production_case"));
 });
+
+
+test("Chapter 17 film-specific Criterion provenance protects narrative and version distinctions", () => {
+  const chapter = filmHistoryChapterSeventeen;
+  assert.equal(chapter.status, "draft");
+  assert.equal(chapter.sources.length, 31);
+  const sourceIds = new Map(chapter.sources.map((s) => [s.id, s.url]));
+  const article = (id: string) => {
+    const found = chapter.sections.find((section) => section.id === id);
+    assert.ok(found, `Missing film article ${id}`);
+    return found;
+  };
+  assert.equal(sourceIds.get("ch17_criterion_rashomon"), "https://www.criterion.com/films/307-rashomon");
+  assert.equal(sourceIds.get("ch17_criterion_ikiru"), "https://www.criterion.com/films/353");
+  assert.equal(sourceIds.get("ch17_criterion_godzilla"), "https://www.criterion.com/films/27755-godzilla");
+  assert.ok(article("ch17_rashomon").sourceIds.includes("ch17_criterion_rashomon"));
+  assert.ok(article("ch17_ikiru").sourceIds.includes("ch17_criterion_ikiru"));
+  assert.ok(article("ch17_godzilla").sourceIds.includes("ch17_criterion_godzilla"));
+  assert.match(article("ch17_ikiru").paragraphs.join(" "), /recollections at his funeral/);
+  assert.match(article("ch17_godzilla").paragraphs.join(" "), /1956 US release/);
+});
