@@ -13,20 +13,24 @@ const ids = [
   "scenario_waltz_with_bashir_2008",
   "scenario_tangerine_2015",
   "scenario_cure_1997",
+  "scenario_the_host_2006",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly four existing cases have twelve original, source-backed decisions", () => {
+test("Exactly five existing cases have fifteen original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 4);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 12);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 5);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 15);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
     assert.ok(workshop.sources.length >= 2);
-    if (workshop.scenarioId !== "scenario_cure_1997") {
+    if (workshop.scenarioId === "scenario_the_host_2006") {
+      const manual = readFileSync("src/core/southKoreanCinemaExpansion.ts", "utf8");
+      assert.match(manual, /id: "scenario_the_host_2006",\s*title: "The Host",\s*originalTitle: "Gwoemul",[\s\S]{0,100}year: 2006/);
+    } else if (workshop.scenarioId !== "scenario_cure_1997") {
       assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
     } else {
       const manual = readFileSync("src/core/modernCanonExpansion.ts", "utf8");
@@ -119,6 +123,7 @@ test("Cure distinguishes firsthand production evidence from analysis and preserv
   const workshop = getSourceBackedCaseWorkshop(ids[3]);
   assert.ok(workshop);
   const [duration, space, ending] = workshop.questions;
+  assert.ok(duration && space && ending);
   assert.equal(duration.bestSupportedOptionId, "sustained-performance");
   assert.ok(duration.sourceIds.includes("tiff-qa"));
   assert.equal(space.bestSupportedOptionId, "foreground-background");
@@ -126,4 +131,18 @@ test("Cure distinguishes firsthand production evidence from analysis and preserv
   assert.ok(space.sourceIds.includes("fujiwara"));
   assert.equal(ending.bestSupportedOptionId, "withhold-explicit-action");
   assert.match(ending.explanation.en, /does not establish one definitive interpretation/);
+});
+
+test("The Host links practical water effects, international workflow and performance to distinct evidence", () => {
+  const workshop = getSourceBackedCaseWorkshop(ids[4]);
+  assert.ok(workshop);
+  const [water, pipeline, family] = workshop.questions;
+  assert.ok(water && pipeline && family);
+  assert.equal(water.bestSupportedOptionId, "practical-splash");
+  assert.ok(water.sourceIds.includes("bong-practical"));
+  assert.equal(pipeline.bestSupportedOptionId, "shared-pipeline");
+  assert.ok(pipeline.sourceIds.includes("kofic"));
+  assert.equal(family.bestSupportedOptionId, "grounded-family");
+  assert.ok(family.sourceIds.includes("kpbs"));
+  assert.equal(getSourceBackedCaseWorkshop("scenario_host_2020"), undefined);
 });
