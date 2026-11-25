@@ -1,0 +1,288 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "candidate_pulse_2001",
+  "proposedScenarioId": "scenario_pulse_2001",
+  "status": "editorial_candidate_not_admitted",
+  "book": {
+    "chapter": 28,
+    "decision": "P2",
+    "sectionId": "ch28_cure"
+  },
+  "identity": {
+    "title": "Pulse",
+    "originalTitle": "Kairo",
+    "year": 2001,
+    "directors": [
+      "Kiyoshi Kurosawa"
+    ],
+    "country": "Japan",
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "runtimeNote": "Musashino and the TIFF programme report 118 minutes; Eye and BFI list 119. Do not collapse this discrepancy or infer capture format from exhibition format."
+  },
+  "credits": {
+    "cinematography": "Junichiro Hayashi",
+    "editing": "Junichi Kikuchi",
+    "productionDesign": "Tomoyuki Maruo",
+    "sound": "Makio Ika",
+    "lighting": "Meicho Tomiyama",
+    "music": "Takefumi Haketa",
+    "sourceIds": [
+      "musabi",
+      "tiff"
+    ]
+  },
+  "sources": [
+    {
+      "id": "musabi",
+      "title": "Pulse / Kairo — work record and crew credits",
+      "publisher": "Musashino Art University Image Library",
+      "url": "https://img-lib.musabi.ac.jp/search/document/detail-work/123"
+    },
+    {
+      "id": "eye",
+      "title": "Pulse — programme and restoration notes",
+      "publisher": "Eye Filmmuseum",
+      "url": "https://www.eyefilm.nl/en/whats-on/pulse/1597515"
+    },
+    {
+      "id": "reverse",
+      "title": "Interview with Kiyoshi Kurosawa",
+      "publisher": "Reverse Shot",
+      "url": "https://reverseshot.org/interviews/entry/1503/kiyoshi-kurosawa"
+    },
+    {
+      "id": "ucla",
+      "title": "Ghostbusters — Brian Hu on Pulse",
+      "publisher": "UCLA International Institute",
+      "url": "https://www.international.ucla.edu/cnes/article/33655"
+    },
+    {
+      "id": "tiff",
+      "title": "Pulse — 2001 Toronto International Film Festival programme entry",
+      "publisher": "Noah Cowan film archive",
+      "url": "https://www.noahcowanfilm.com/japanese-cinema/pulse"
+    },
+    {
+      "id": "bfi",
+      "title": "Pulse (2001) — film record",
+      "publisher": "British Film Institute",
+      "url": "https://player.bfi.org.uk/subscription/film/watch-pulse-2001-online"
+    },
+    {
+      "id": "dvd",
+      "title": "Emerging Cinema Master — Kiyoshi Kurosawa",
+      "publisher": "DVD Talk",
+      "url": "https://www.dvdtalk.com/interviews/emerging_cinema.html"
+    }
+  ],
+  "article": {
+    "title": "Pulse (2001): ordinary technology and the architecture of isolation",
+    "paragraphs": [
+      {
+        "text": "Kiyoshi Kurosawa places a supernatural story within the early consumer internet of Japan. His 2005 Reverse Shot interview explains that he wrote the film while the internet was spreading rapidly and its social consequences remained unfamiliar. The ordinary computer becomes a dramatic threshold, not merely an exotic prop. The story's loneliness is a fictional and aesthetic inquiry, not an empirical prediction that internet use necessarily causes isolation.",
+        "sourceIds": [
+          "reverse",
+          "eye",
+          "bfi"
+        ]
+      },
+      {
+        "text": "The film's material texture matters as much as its premise. Brian Hu's UCLA essay identifies the muted initial palette and recurring red accents that gradually acquire a disturbing significance. Instead of assuming an exact lighting rig, lens or film stock, examine how a selective color motif directs attention across doors, objects and ordinary interiors. Musashino's catalogue identifies Hayashi, Maruo and lighting technician Tomiyama, establishing distinct crew responsibilities without proving every individual creative decision.",
+        "sourceIds": [
+          "ucla",
+          "musabi"
+        ]
+      },
+      {
+        "text": "Eye Filmmuseum highlights the opening dial-up modem sound and the grainy computer imagery. An ordinary technological noise becomes part of the film's fictional world and a recognizable auditory sign of its period. As the sound returns in a different dramatic context, familiarity can become unsettling. A learning exercise can use newly created or licensed period-like audio without reproducing the film soundtrack; this formal observation does not establish the original sound hardware, recording format or mix specification.",
+        "sourceIds": [
+          "eye",
+          "musabi",
+          "tiff"
+        ]
+      },
+      {
+        "text": "Kurosawa told DVD Talk that a ghost which does very little can be more disturbing to him than a visibly attacking monster. This supports a teaching exercise about held framing, uncertain space and restrained action rather than prescriptive claims that all horror should work this way. The contemporary TIFF programme also situates the film beyond a simple internet-ghost premise. Its genre history should be compared with Cure and Ring without treating three films as a uniform national formula.",
+        "sourceIds": [
+          "dvd",
+          "tiff",
+          "bfi"
+        ]
+      }
+    ]
+  },
+  "production": {
+    "premise": "Design a fictional early-internet ghost story in which empty urban space, ordinary technology and constrained information create unease.",
+    "screenplay": "Use parallel encounters and partial information to connect mediated contact and social distance.",
+    "camera": "Preserve the ordinary environment in the frame; introduce selective color accents and ambiguous depth.",
+    "editing": "Let held moments and incomplete information build dread, rather than explaining each appearance.",
+    "sound": "Use original or licensed modem-like sounds as period-specific recurring motifs; distinguish sound interpretation from documented equipment.",
+    "learning": "Distinguish period technology, documented filmmaker intention and critical analysis; keep psychological harm out of scoring."
+  },
+  "questions": [
+    {
+      "id": "pulse-period",
+      "area": "research",
+      "prompt": {
+        "en": "Which historical setting best supports the director's account of the film's technological anxiety?",
+        "nb": "Hvilken historisk ramme støtter regissørens beskrivelse av filmens teknologiske uro?",
+        "fr": "Quel contexte historique correspond au récit du réalisateur sur l'inquiétude technologique du film ?",
+        "pt": "Que contexto histórico corresponde ao relato do realizador sobre a inquietação tecnológica do filme?"
+      },
+      "options": [
+        {
+          "id": "early-network",
+          "label": {
+            "en": "Use unfamiliar early consumer internet technology as part of ordinary life",
+            "nb": "Bruk datidens fremmede forbrukerinternett som del av hverdagen",
+            "fr": "Inscrire l'internet grand public encore peu familier dans le quotidien",
+            "pt": "Integrar a internet de consumo ainda pouco familiar no quotidiano"
+          }
+        },
+        {
+          "id": "current-platforms",
+          "label": {
+            "en": "Replace the period with contemporary social platforms without acknowledging the change",
+            "nb": "Erstatt tidsperioden med dagens sosiale plattformer uten å omtale endringen",
+            "fr": "Remplacer l'époque par les plateformes actuelles sans signaler ce changement",
+            "pt": "Substituir a época pelas plataformas atuais sem assinalar a mudança"
+          }
+        },
+        {
+          "id": "technology-proof",
+          "label": {
+            "en": "Treat fictional ghosts as evidence of real technological effects",
+            "nb": "Behandle fiktive spøkelser som bevis på virkelige teknologiske effekter",
+            "fr": "Traiter les fantômes fictifs comme preuve d'effets technologiques réels",
+            "pt": "Tratar fantasmas fictícios como prova de efeitos tecnológicos reais"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "early-network",
+      "explanation": {
+        "en": "Kurosawa describes a period when the internet was spreading faster than people understood its consequences. This supports a historically situated fictional premise, not a scientific claim.",
+        "nb": "Kurosawa beskriver en tid da internett spredte seg raskere enn forståelsen av konsekvensene. Dette støtter en historisk plassert fiksjonsidé, ikke en vitenskapelig påstand.",
+        "fr": "Kurosawa décrit une période où internet se répandait avant que ses conséquences soient comprises. Cela étaye une fiction située historiquement, non une affirmation scientifique.",
+        "pt": "Kurosawa descreve uma época em que a internet se difundia antes de as suas consequências serem compreendidas. Isto sustenta uma ficção situada historicamente, não uma afirmação científica."
+      },
+      "sourceIds": [
+        "reverse",
+        "eye"
+      ]
+    },
+    {
+      "id": "pulse-color",
+      "area": "camera",
+      "prompt": {
+        "en": "Which visual strategy reflects the recurring color motif identified in analysis of the finished film?",
+        "nb": "Hvilken visuell strategi gjenspeiler det gjentatte fargemotivet i analysen av filmen?",
+        "fr": "Quelle stratégie visuelle reflète le motif chromatique récurrent relevé dans l'analyse du film ?",
+        "pt": "Que estratégia visual reflete o motivo cromático recorrente identificado na análise do filme?"
+      },
+      "options": [
+        {
+          "id": "uniform-color",
+          "label": {
+            "en": "Apply the same intense color to every object regardless of context",
+            "nb": "Gi alle gjenstander samme intense farge uansett kontekst",
+            "fr": "Appliquer la même couleur intense à chaque objet sans tenir compte du contexte",
+            "pt": "Aplicar a mesma cor intensa a todos os objetos independentemente do contexto"
+          }
+        },
+        {
+          "id": "selective-red",
+          "label": {
+            "en": "Introduce selective red accents within relatively muted ordinary surroundings",
+            "nb": "Introduser utvalgte røde aksenter i forholdsvis dempede hverdagsomgivelser",
+            "fr": "Introduire des accents rouges sélectifs dans un environnement quotidien relativement terne",
+            "pt": "Introduzir acentos vermelhos seletivos em ambientes quotidianos relativamente neutros"
+          }
+        },
+        {
+          "id": "invent-hardware",
+          "label": {
+            "en": "Claim the exact lens and light model solely from viewing the image",
+            "nb": "Fastslå eksakt objektiv og lampemodell bare ved å se på bildet",
+            "fr": "Affirmer le modèle exact de l'objectif et des lampes à partir de l'image seule",
+            "pt": "Afirmar o modelo exato da objetiva e das luzes apenas pela imagem"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "selective-red",
+      "explanation": {
+        "en": "Brian Hu identifies recurring red details against a muted palette. This is critical analysis of the finished image, not proof of specific lighting equipment or capture stock.",
+        "nb": "Brian Hu identifiserer gjentatte røde detaljer mot en dempet palett. Dette er analyse av det ferdige bildet, ikke bevis på bestemt lysutstyr eller opptaksfilm.",
+        "fr": "Brian Hu relève des détails rouges récurrents sur une palette atténuée. Cette analyse du film achevé ne prouve ni le matériel d'éclairage ni le support de captation.",
+        "pt": "Brian Hu identifica detalhes vermelhos recorrentes sobre uma paleta discreta. Esta análise do filme acabado não prova o equipamento de iluminação nem o suporte de captação."
+      },
+      "sourceIds": [
+        "ucla",
+        "musabi"
+      ]
+    },
+    {
+      "id": "pulse-sound",
+      "area": "sound",
+      "prompt": {
+        "en": "How can period-specific technology become an expressive sound motif?",
+        "nb": "Hvordan kan datidens teknologi bli et uttrykksfullt lydmotiv?",
+        "fr": "Comment une technologie d'époque peut-elle devenir un motif sonore expressif ?",
+        "pt": "Como pode a tecnologia de época tornar-se um motivo sonoro expressivo?"
+      },
+      "options": [
+        {
+          "id": "music-only",
+          "label": {
+            "en": "Replace all recognizable technological sounds with unrelated continuous music",
+            "nb": "Erstatt alle gjenkjennelige teknologilyder med uvedkommende kontinuerlig musikk",
+            "fr": "Remplacer tous les sons technologiques reconnaissables par une musique continue sans rapport",
+            "pt": "Substituir todos os sons tecnológicos reconhecíveis por música contínua sem relação"
+          }
+        },
+        {
+          "id": "speculate-hardware",
+          "label": {
+            "en": "Invent an exact original recording device without production documentation",
+            "nb": "Finn opp et eksakt originalt opptaksapparat uten produksjonsdokumentasjon",
+            "fr": "Inventer un appareil d'enregistrement original précis sans documentation",
+            "pt": "Inventar um aparelho de gravação original exato sem documentação"
+          }
+        },
+        {
+          "id": "modem-motif",
+          "label": {
+            "en": "Use newly created or licensed modem-like audio as a recognizable recurring motif",
+            "nb": "Bruk nyskapt eller lisensiert modemlignende lyd som et gjenkjennelig tilbakevendende motiv",
+            "fr": "Employer un son de modem recréé ou autorisé comme motif récurrent reconnaissable",
+            "pt": "Usar som semelhante ao de um modem recriado ou licenciado como motivo recorrente reconhecível"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "modem-motif",
+      "explanation": {
+        "en": "Eye Filmmuseum identifies the dial-up sound at the opening. A new exercise may use a period-like motif, but the source does not establish the original microphone or mixing method.",
+        "nb": "Eye Filmmuseum identifiserer modemlyden i åpningen. En ny øvelse kan bruke et tidsriktig motiv, men kilden fastslår ikke original mikrofon eller miksemetode.",
+        "fr": "Eye Filmmuseum identifie le son de connexion au début. Un nouvel exercice peut employer un motif d'époque sans prétendre connaître le microphone ou le mixage original.",
+        "pt": "Eye Filmmuseum identifica o som de ligação no início. Um novo exercício pode usar um motivo de época sem afirmar qual era o microfone ou a mistura original."
+      },
+      "sourceIds": [
+        "eye",
+        "musabi"
+      ]
+    }
+  ],
+  "review": {
+    "required": [
+      "Check full canonical catalogue for exact title/year and Kairo alias; distinguish Pulse (2006).",
+      "Review historical and departmental claims independently.",
+      "Implement scenario admission and production brief only after resolving catalogue counts and coverage gates.",
+      "Connect book reference only after appropriate case approval.",
+      "Run existing QA after runtime integration."
+    ],
+    "runtimeAdmission": false,
+    "bookLinkApproved": false
+  }
+}
