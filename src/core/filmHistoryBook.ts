@@ -20,6 +20,7 @@ import { filmHistoryChapterNineteen } from "./filmHistoryChapterNineteen.js";
 import { filmHistoryChapterTwenty } from "./filmHistoryChapterTwenty.js";
 import { filmHistoryChapterTwentyOne } from "./filmHistoryChapterTwentyOne.js";
 import { filmHistoryChapterTwentyTwo } from "./filmHistoryChapterTwentyTwo.js";
+import { filmHistoryChapterTwentyThree } from "./filmHistoryChapterTwentyThree.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -167,15 +168,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
     chapters: [
       filmHistoryChapterTwentyOne,
       filmHistoryChapterTwentyTwo,
-      outline(
-        "popular-asian-cinemas",
-        23,
-        "Popular cinemas across Asia",
-        "1960s–1980s",
-        "Indian popular cinema, Hong Kong action, Japanese genre production and other industries build powerful regional and diasporic audiences.",
-        ["Compare industrial models across major Asian industries.", "Analyze music, action and star systems as production forms.", "Explain regional circulation beyond festival canons."],
-        ["popular Hindi cinema", "Hong Kong action", "star system", "martial arts", "regional market"],
-      ),
+      filmHistoryChapterTwentyThree,
       outline(
         "blockbuster-home-video",
         24,
