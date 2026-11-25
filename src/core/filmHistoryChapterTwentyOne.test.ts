@@ -50,3 +50,17 @@ test("Chapter 21 has no invented playable Atlas references or fake historical pr
   assert.ok(chapter.historicalObjects.length >= 15);
   assert.ok(chapter.historicalObjects.every(object => object.role === "historical_object" && object.atlasDecision === "no_production_case"));
 });
+
+
+test("Chapter 21 film-rating history uses the primary association record", () => {
+  const chapter = filmHistoryChapterTwentyOne;
+  assert.equal(chapter.status, "draft");
+  const source = chapter.sources.find(item => item.id === "ch21_ratings");
+  assert.ok(source);
+  assert.equal(source.publisher, "Motion Picture Association");
+  assert.equal(source.url, "https://www.motionpictures.org/film-ratings/");
+  const introduction = chapter.sections.find(section => section.id === "ch21_conditions");
+  assert.ok(introduction);
+  assert.ok(introduction.sourceIds.includes("ch21_ratings"));
+  assert.match(introduction.paragraphs.join(" "), /voluntary American film-rating system introduced in 1968/);
+});

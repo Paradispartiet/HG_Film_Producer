@@ -196,6 +196,12 @@ export const filmHistoryChapterTwentyThreeSources: readonly FilmHistoryBookSourc
     "url": "https://www.bfi.org.uk/sight-and-sound/features/seeds-anime-how-japanese-animation-arose"
   },
   {
+    "id": "ch23_jp_akira",
+    "title": "30 years of Akira – teenage kicks, anime-style",
+    "publisher": "British Film Institute",
+    "url": "https://www.bfi.org.uk/features/30-years-akira-teenage-kicks-anime-style"
+  },
+  {
     "id": "ch23_jp_animefilms",
     "title": "50 key anime films",
     "publisher": "BFI Sight and Sound",
