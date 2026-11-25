@@ -16,20 +16,24 @@ const ids = [
   "scenario_the_host_2006",
   "scenario_still_life_2006",
   "scenario_platform_2000",
+  "scenario_raise_the_red_lantern_1991",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly seven existing cases have twenty-one original, source-backed decisions", () => {
+test("Exactly eight existing cases have twenty-four original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 7);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 21);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 8);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 24);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
     assert.ok(workshop.sources.length >= 2);
-    if (workshop.scenarioId === "scenario_platform_2000") {
+    if (workshop.scenarioId === "scenario_raise_the_red_lantern_1991") {
+      const manual = readFileSync("src/core/eastAsianAuteurExpansion.ts", "utf8");
+      assert.match(manual, /id: "scenario_raise_the_red_lantern_1991",\s*title: "Raise the Red Lantern",[\s\S]{0,100}year: 1991/);
+    } else if (workshop.scenarioId === "scenario_platform_2000") {
       const manual = readFileSync("src/core/modernCanonExpansion.ts", "utf8");
       assert.match(manual, /id: "scenario_platform_2000", title: "Platform"[^\n]*year: 2000/);
     } else if (workshop.scenarioId === "scenario_still_life_2006") {
@@ -180,4 +184,17 @@ test("Platform distinguishes camera distance, preserved time and guided improvis
   assert.equal(performance.bestSupportedOptionId, "guided-improvisation");
   assert.match(performance.explanation.en, /dialogue was written/);
   assert.ok(performance.sourceIds.includes("senses-jia"));
+});
+
+test("Raise the Red Lantern distinguishes visual design from historical authentication", () => {
+  const workshop = getSourceBackedCaseWorkshop(ids[7]);
+  assert.ok(workshop);
+  const [architecture, color, ritual] = workshop.questions;
+  assert.ok(architecture && color && ritual);
+  assert.equal(architecture.bestSupportedOptionId, "architectural-frame");
+  assert.equal(color.bestSupportedOptionId, "selective-red");
+  assert.match(color.explanation.en, /not a claim about exact lamp wattage/);
+  assert.equal(ritual.bestSupportedOptionId, "constructed-ritual");
+  assert.ok(ritual.sourceIds.includes("ritual-study"));
+  assert.match(ritual.explanation.en, /inventions for the film/);
 });
