@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Twenty-six pre-existing Production Cases receive evidence-backed craft decisions.
+ * Twenty-eight pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -3499,6 +3499,389 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
           "s0",
           "s1",
           "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_attack_on_a_china_mission_bluejackets_to_the_rescue_1900",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Study staged topical fiction, uncertain reconstruction and imperial representation in Williamson's 1900 film.",
+      "nb": "Studer iscenesatt aktualitetsfiksjon, usikker rekonstruksjon og imperial representasjon i Williamsons film fra 1900.",
+      "fr": "Étudiez la fiction d'actualité mise en scène, la reconstruction incertaine et la représentation impériale dans le film de Williamson de 1900.",
+      "pt": "Estude a ficção de atualidade encenada, a reconstrução incerta e a representação imperial no filme de Williamson de 1900."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Attack on a China Mission - Bluejackets to the Rescue",
+        "publisher": "British Film Institute",
+        "url": "https://replay.bfi.org.uk/video/bd0d85a8-9027-5da8-b23c-3a2687695135"
+      },
+      {
+        "id": "s1",
+        "title": "Attack on a China Mission (Bluejackets to the Rescue) — Title ID 8382",
+        "publisher": "Screen Archive South East",
+        "url": "https://screenarchive.brighton.ac.uk/detail/8382/"
+      },
+      {
+        "id": "s2",
+        "title": "Cross-cutting in the face of history: The case of Attack on a China Mission",
+        "publisher": "Early Popular Visual Culture / Taylor & Francis",
+        "url": "https://www.tandfonline.com/doi/abs/10.1080/17460650902775328"
+      },
+      {
+        "id": "s4",
+        "title": "All England Was Present at that Siege: Imperial Defences and Island Stories in British Culture",
+        "publisher": "Oxford Academic / History Workshop Journal",
+        "url": "https://academic.oup.com/hwj/article/93/1/159/6555067"
+      },
+      {
+        "id": "s5",
+        "title": "Peking Plots: Fictionalizing the Boxer Rebellion of 1900",
+        "publisher": "Cambridge University Press",
+        "url": "https://www.cambridge.org/core/journals/victorian-literature-and-culture/article/abs/peking-plots-fictionalizing-the-boxer-rebellion-of-1900/967087D1D32D8AE004692F99DD50EA8E"
+      }
+    ],
+    "questions": [
+      {
+        "id": "mission-space",
+        "area": "camera",
+        "prompt": {
+          "en": "How could you test the relationship between two fictional spaces without reconstructing a violent scene?",
+          "nb": "Hvordan kan du undersøke forholdet mellom to fiktive rom uten å rekonstruere en voldsscene?",
+          "fr": "Comment étudier la relation entre deux espaces fictifs sans reconstruire une scène violente ?",
+          "pt": "Como estudar a relação entre dois espaços fictícios sem reconstruir uma cena violenta?"
+        },
+        "options": [
+          {
+            "id": "draw",
+            "label": {
+              "en": "Draw two connected spaces in an original everyday story",
+              "nb": "Tegn to sammenhengende rom i en egen hverdagsfortelling",
+              "fr": "Dessiner deux espaces reliés dans un récit quotidien original",
+              "pt": "Desenhar dois espaços ligados numa história quotidiana original"
+            }
+          },
+          {
+            "id": "unrelated",
+            "label": {
+              "en": "Use unrelated views without establishing any spatial relationship",
+              "nb": "Bruk urelaterte bilder uten å etablere romlig sammenheng",
+              "fr": "Employer des vues sans rapport ni relation spatiale établie",
+              "pt": "Usar vistas sem relação espacial estabelecida"
+            }
+          },
+          {
+            "id": "exact",
+            "label": {
+              "en": "Present an invented storyboard as an authenticated historical reconstruction",
+              "nb": "Presenter et oppdiktet storyboard som en autentisert historisk rekonstruksjon",
+              "fr": "Présenter un storyboard inventé comme reconstruction historique authentifiée",
+              "pt": "Apresentar um storyboard inventado como reconstrução histórica autenticada"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "draw",
+        "explanation": {
+          "en": "The BFI and regional archive records describe staged fiction and surviving views. Explore spatial connections through an original nonviolent drawing exercise; it does not establish the original shot order.",
+          "nb": "BFI og det regionale arkivet beskriver iscenesatt fiksjon og bevarte bilder. Utforsk romlige forbindelser i en egen ikke-voldelig tegneøvelse; den fastslår ikke den opprinnelige bilderekkefølgen.",
+          "fr": "Les notices BFI et régionales décrivent une fiction mise en scène et des vues conservées. Étudiez les liens spatiaux par un dessin original non violent ; il n'établit pas l'ordre original des plans.",
+          "pt": "Os registos BFI e regionais descrevem ficção encenada e vistas preservadas. Explore ligações espaciais num desenho original não violento; não estabelece a ordem original dos planos."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "mission-versions",
+        "area": "research",
+        "prompt": {
+          "en": "What should a researcher do when catalogue descriptions and surviving versions disagree?",
+          "nb": "Hva bør en forsker gjøre når katalogbeskrivelser og bevarte versjoner ikke stemmer overens?",
+          "fr": "Que faire si les descriptions de catalogue et les versions conservées divergent ?",
+          "pt": "O que fazer quando descrições de catálogo e versões preservadas divergem?"
+        },
+        "options": [
+          {
+            "id": "latest",
+            "label": {
+              "en": "Assume the latest reconstruction is necessarily the original",
+              "nb": "Anta at den nyeste rekonstruksjonen nødvendigvis er originalen",
+              "fr": "Supposer que la dernière reconstruction est nécessairement l'original",
+              "pt": "Supor que a reconstrução mais recente é necessariamente o original"
+            }
+          },
+          {
+            "id": "compare",
+            "label": {
+              "en": "Compare catalogue evidence, surviving copies and later reconstruction decisions",
+              "nb": "Sammenlign katalogbelegg, bevarte kopier og senere rekonstruksjonsvalg",
+              "fr": "Comparer les catalogues, les copies conservées et les choix de reconstruction",
+              "pt": "Comparar catálogos, cópias preservadas e escolhas de reconstrução"
+            }
+          },
+          {
+            "id": "first",
+            "label": {
+              "en": "Use the catalogue alone to assert a universal first in editing",
+              "nb": "Bruk bare katalogen til å hevde en universell førstegang i klippehistorien",
+              "fr": "Utiliser le seul catalogue pour affirmer une première absolue du montage",
+              "pt": "Usar apenas o catálogo para afirmar uma estreia absoluta na montagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "compare",
+        "explanation": {
+          "en": "Dulac and Gaudreault's study in the existing dossier describes discrepancies between rediscovered copies, catalogue descriptions and later reconstruction. Keep those evidence layers distinct; no certain original cross-cutting order is asserted here.",
+          "nb": "Dulac og Gaudreaults studie i dokumentasjonen beskriver avvik mellom gjenfunne kopier, katalogbeskrivelser og senere rekonstruksjon. Hold belegglagene adskilt; ingen sikker original kryssklippstruktur fastslås her.",
+          "fr": "L'étude de Dulac et Gaudreault décrit des écarts entre copies retrouvées, catalogues et reconstruction ultérieure. Distinguez ces niveaux de preuve ; aucun ordre original de montage alterné n'est affirmé ici.",
+          "pt": "O estudo de Dulac e Gaudreault descreve divergências entre cópias recuperadas, catálogos e reconstrução posterior. Distinga estes níveis de evidência; não se afirma aqui uma ordem original certa de montagem alternada."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "mission-representation",
+        "area": "research",
+        "prompt": {
+          "en": "How should you contextualize the film's representation of historical events?",
+          "nb": "Hvordan bør du kontekstualisere filmens fremstilling av historiske hendelser?",
+          "fr": "Comment contextualiser la représentation des événements historiques dans le film ?",
+          "pt": "Como contextualizar a representação dos acontecimentos históricos no filme?"
+        },
+        "options": [
+          {
+            "id": "document",
+            "label": {
+              "en": "Treat the staged fiction as authentic footage from China",
+              "nb": "Behandle iscenesatt fiksjon som autentiske opptak fra Kina",
+              "fr": "Traiter la fiction mise en scène comme images authentiques de Chine",
+              "pt": "Tratar a ficção encenada como imagens autênticas da China"
+            }
+          },
+          {
+            "id": "repeat",
+            "label": {
+              "en": "Repeat the film's stereotypes as reliable historical descriptions",
+              "nb": "Gjenta filmens stereotypier som pålitelige historiske beskrivelser",
+              "fr": "Répéter les stéréotypes du film comme descriptions historiques fiables",
+              "pt": "Repetir os estereótipos do filme como descrições históricas fiáveis"
+            }
+          },
+          {
+            "id": "context",
+            "label": {
+              "en": "Identify fiction, racist characterization and the British imperial context",
+              "nb": "Identifiser fiksjon, rasistisk karakterisering og britisk imperial kontekst",
+              "fr": "Identifier la fiction, les caractérisations racistes et le contexte impérial britannique",
+              "pt": "Identificar a ficção, as caracterizações racistas e o contexto imperial britânico"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "context",
+        "explanation": {
+          "en": "BFI flags racist characterization; the Oxford and Cambridge scholarship in the dossier situates the fictionalization within British imperial culture. Distinguish representation from historical evidence and seek independent perspectives rather than reproducing stereotypes.",
+          "nb": "BFI advarer om rasistisk karakterisering; Oxford- og Cambridge-forskningen i dokumentasjonen plasserer fiksjonaliseringen i britisk imperial kultur. Skill fremstilling fra historisk belegg og søk uavhengige perspektiver fremfor å gjenta stereotypier.",
+          "fr": "Le BFI signale des caractérisations racistes ; les travaux Oxford et Cambridge situent la fiction dans la culture impériale britannique. Distinguez représentation et preuve historique, et recherchez des perspectives indépendantes plutôt que de reproduire les stéréotypes.",
+          "pt": "O BFI assinala caracterizações racistas; os estudos Oxford e Cambridge situam a ficção na cultura imperial britânica. Distinga representação e evidência histórica e procure perspetivas independentes em vez de reproduzir estereótipos."
+        },
+        "sourceIds": [
+          "s0",
+          "s4",
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_lonely_villa_1909",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore parallel narrative, communication and the historical development of suspense in Biograph's 1909 film.",
+      "nb": "Utforsk parallellfortelling, kommunikasjon og den historiske utviklingen av spenning i Biographs film fra 1909.",
+      "fr": "Explorez le récit parallèle, la communication et le développement historique du suspense dans le film Biograph de 1909.",
+      "pt": "Explore a narrativa paralela, a comunicação e o desenvolvimento histórico do suspense no filme Biograph de 1909."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The lonely villa",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/item/2015600152/"
+      },
+      {
+        "id": "s3",
+        "title": "Heard over the phone: The Lonely Villa and the de Lorde tradition of the terrors of technology",
+        "publisher": "Oxford Academic / Screen",
+        "url": "https://academic.oup.com/screen/article-abstract/32/2/184/1630430"
+      },
+      {
+        "id": "s4",
+        "title": "Thinking in Pictures: Dramatic Structure in D. W. Griffith's Biograph Films",
+        "publisher": "University of California Press",
+        "url": "https://www.ucpress.edu/books/thinking-in-pictures/paper"
+      },
+      {
+        "id": "s5",
+        "title": "D.W. Griffith And The Origins Of American Narrative Film: The Early Years at Biograph",
+        "publisher": "University of Illinois Press",
+        "url": "https://www.press.uillinois.edu/books/?id=p063664"
+      }
+    ],
+    "questions": [
+      {
+        "id": "villa-parallel",
+        "area": "camera",
+        "prompt": {
+          "en": "How can an original benign story make simultaneous activity in separate spaces clear?",
+          "nb": "Hvordan kan en egen ufarlig fortelling tydeliggjøre samtidig aktivitet i adskilte rom?",
+          "fr": "Comment rendre lisibles des activités simultanées dans des espaces distincts avec un récit original sans danger ?",
+          "pt": "Como tornar claras atividades simultâneas em espaços distintos numa história original inofensiva?"
+        },
+        "options": [
+          {
+            "id": "parallel",
+            "label": {
+              "en": "Alternate two clearly established fictional spaces during a shared everyday task",
+              "nb": "Veksle mellom to tydelig etablerte fiktive rom under en felles hverdagsoppgave",
+              "fr": "Alterner deux espaces fictifs bien établis pendant une tâche quotidienne commune",
+              "pt": "Alternar dois espaços fictícios bem estabelecidos durante uma tarefa quotidiana comum"
+            }
+          },
+          {
+            "id": "random",
+            "label": {
+              "en": "Switch between unrelated images without any shared narrative purpose",
+              "nb": "Veksle mellom urelaterte bilder uten felles fortellermessig formål",
+              "fr": "Passer entre des images sans rapport ni objectif narratif commun",
+              "pt": "Alternar imagens sem relação nem objetivo narrativo comum"
+            }
+          },
+          {
+            "id": "one",
+            "label": {
+              "en": "Remove every indication that the activities share a time frame",
+              "nb": "Fjern alle tegn på at aktivitetene deler en tidsramme",
+              "fr": "Supprimer tout indice indiquant un cadre temporel commun",
+              "pt": "Eliminar todos os sinais de um quadro temporal comum"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "parallel",
+        "explanation": {
+          "en": "The existing scholarship treats parallel narrative as a central formal feature. Use a harmless original task, such as preparing a shared surprise, to compare the readability of alternating views without reconstructing the film's violent plot.",
+          "nb": "Den eksisterende forskningen behandler parallellfortelling som et sentralt formgrep. Bruk en egen ufarlig oppgave, som å forberede en felles overraskelse, til å sammenligne lesbarheten i vekslende bilder uten å rekonstruere filmens voldelige handling.",
+          "fr": "Les travaux cités traitent le récit parallèle comme un procédé central. Utilisez une tâche originale sans danger, comme préparer une surprise commune, pour comparer la lisibilité des vues alternées sans reconstruire l'intrigue violente.",
+          "pt": "Os estudos citados tratam a narrativa paralela como recurso central. Use uma tarefa original inofensiva, como preparar uma surpresa comum, para comparar a clareza das vistas alternadas sem reconstruir o enredo violento."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "villa-communication",
+        "area": "sound",
+        "prompt": {
+          "en": "How can a communication device connect separate spaces in a silent-film exercise?",
+          "nb": "Hvordan kan et kommunikasjonsapparat knytte sammen adskilte rom i en stumfilmøvelse?",
+          "fr": "Comment un dispositif de communication peut-il relier des espaces distincts dans un exercice de cinéma muet ?",
+          "pt": "Como pode um dispositivo de comunicação ligar espaços distintos num exercício de cinema mudo?"
+        },
+        "options": [
+          {
+            "id": "audio",
+            "label": {
+              "en": "Assume the historical silent film contains recorded telephone dialogue",
+              "nb": "Anta at den historiske stumfilmen inneholder innspilt telefondialog",
+              "fr": "Supposer que le film muet contient un dialogue téléphonique enregistré",
+              "pt": "Supor que o filme mudo contém diálogo telefónico gravado"
+            }
+          },
+          {
+            "id": "visual",
+            "label": {
+              "en": "Show the communication cue and the related visual response in another space",
+              "nb": "Vis kommunikasjonssignalet og den tilhørende visuelle responsen i et annet rom",
+              "fr": "Montrer le signal de communication et la réponse visuelle correspondante dans un autre espace",
+              "pt": "Mostrar o sinal de comunicação e a resposta visual correspondente noutro espaço"
+            }
+          },
+          {
+            "id": "ignore",
+            "label": {
+              "en": "Treat communication as an unrelated decorative object",
+              "nb": "Behandle kommunikasjonen som en urelatert dekorativ gjenstand",
+              "fr": "Traiter la communication comme un objet décoratif sans rapport",
+              "pt": "Tratar a comunicação como um objeto decorativo sem relação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "visual",
+        "explanation": {
+          "en": "Gunning's study in the dossier connects the telephone motif with parallel narrative. In a new silent exercise, make communication legible through visual cues and responses; do not attribute synchronized dialogue to the historical production.",
+          "nb": "Gunnings studie i dokumentasjonen knytter telefonmotivet til parallellfortellingen. Gjør kommunikasjonen lesbar med visuelle signaler og responser i en ny stumfilmøvelse; ikke tilskriv den historiske produksjonen synkron dialog.",
+          "fr": "L'étude de Gunning relie le motif du téléphone au récit parallèle. Dans un nouvel exercice muet, rendez la communication lisible par des signes et réponses visuels, sans attribuer de dialogue synchrone à la production historique.",
+          "pt": "O estudo de Gunning liga o motivo do telefone à narrativa paralela. Num novo exercício mudo, torne a comunicação clara por sinais e respostas visuais, sem atribuir diálogo sincronizado à produção histórica."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "villa-history",
+        "area": "research",
+        "prompt": {
+          "en": "How should you explain the film's contribution to the history of parallel editing?",
+          "nb": "Hvordan bør du forklare filmens bidrag til parallellklippingens historie?",
+          "fr": "Comment expliquer la contribution du film à l'histoire du montage alterné ?",
+          "pt": "Como explicar o contributo do filme para a história da montagem alternada?"
+        },
+        "options": [
+          {
+            "id": "inventor",
+            "label": {
+              "en": "Attribute all cross-cutting exclusively to Griffith",
+              "nb": "Tilskriv all kryssklipping utelukkende til Griffith",
+              "fr": "Attribuer tout le montage alterné exclusivement à Griffith",
+              "pt": "Atribuir toda a montagem alternada exclusivamente a Griffith"
+            }
+          },
+          {
+            "id": "ignore",
+            "label": {
+              "en": "Ignore earlier international experiments and production conditions",
+              "nb": "Ignorer tidligere internasjonale forsøk og produksjonsvilkår",
+              "fr": "Ignorer les expériences internationales antérieures et les conditions de production",
+              "pt": "Ignorar experiências internacionais anteriores e condições de produção"
+            }
+          },
+          {
+            "id": "development",
+            "label": {
+              "en": "Describe the contribution within wider international and industrial developments",
+              "nb": "Beskriv bidraget innenfor en bredere internasjonal og industriell utvikling",
+              "fr": "Décrire l'apport dans une évolution internationale et industrielle plus large",
+              "pt": "Descrever o contributo numa evolução internacional e industrial mais ampla"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "development",
+        "explanation": {
+          "en": "The university-press scholarship recorded in the dossier explicitly notes earlier international intercutting practices and wider industrial changes. Describe Griffith's contribution as a historical development, not a sole-inventor claim.",
+          "nb": "Universitetsforlagenes forskning i dokumentasjonen omtaler tidligere internasjonal kryssklipping og bredere industrielle endringer. Beskriv Griffiths bidrag som en historisk utvikling, ikke som en påstand om én oppfinner.",
+          "fr": "Les travaux universitaires cités évoquent des pratiques internationales antérieures de montage et des transformations industrielles. Décrivez l'apport de Griffith comme une évolution historique, non comme une invention individuelle exclusive.",
+          "pt": "Os estudos universitários citados referem práticas internacionais anteriores de montagem e transformações industriais. Descreva o contributo de Griffith como evolução histórica, não como invenção individual exclusiva."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
         ]
       }
     ]

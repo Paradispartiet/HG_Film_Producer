@@ -35,15 +35,17 @@ const ids = [
   "scenario_a_trip_to_the_moon_1902",
   "scenario_grandmas_reading_glass_1900",
   "scenario_histoire_d_un_crime_1901",
+  "scenario_attack_on_a_china_mission_bluejackets_to_the_rescue_1900",
+  "scenario_the_lonely_villa_1909",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly twenty-six existing cases have seventy-eight original, source-backed decisions", () => {
+test("Exactly twenty-eight existing cases have eighty-four original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 26);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 78);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 28);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 84);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -67,6 +69,12 @@ test("Exactly twenty-six existing cases have seventy-eight original, source-back
       const definitions = readFileSync("src/core/chapterThreeNarrativeExpansion.ts", "utf8");
       assert.ok(definitions.includes(workshop.scenarioId));
       const dossierFiles: Record<string, string> = {"scenario_grandmas_reading_glass_1900":"src/ui/data/scenarioProductionVerificationGrandmasReadingGlass.ts","scenario_histoire_d_un_crime_1901":"src/ui/data/scenarioProductionVerificationHistoireDUnCrime.ts"};
+      const dossier = readFileSync(dossierFiles[workshop.scenarioId]!, "utf8");
+      for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (["scenario_attack_on_a_china_mission_bluejackets_to_the_rescue_1900", "scenario_the_lonely_villa_1909"].includes(workshop.scenarioId)) {
+      const definitions = readFileSync("src/core/chapterThreeNarrativeExpansion.ts", "utf8");
+      assert.ok(definitions.includes(workshop.scenarioId));
+      const dossierFiles: Record<string, string> = {"scenario_attack_on_a_china_mission_bluejackets_to_the_rescue_1900":"src/ui/data/scenarioProductionVerificationAttackChinaMission.ts","scenario_the_lonely_villa_1909":"src/ui/data/scenarioProductionVerificationLonelyVilla.ts"};
       const dossier = readFileSync(dossierFiles[workshop.scenarioId]!, "utf8");
       for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
     } else if (workshop.scenarioId === "scenario_a_trip_to_the_moon_1902") {
@@ -418,4 +426,9 @@ test("Méliès workshop separates studio techniques, original exercises and rest
 test("Early narrative workshops distinguish represented gaze, memory and historical context", () => {
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_grandmas_reading_glass_1900")?.questions.map(q => q.bestSupportedOptionId), ["look","mask","context"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_histoire_d_un_crime_1901")?.questions.map(q => q.bestSupportedOptionId), ["planes","sequence","system"]);
+});
+
+test("Early narrative workshops distinguish reconstruction, representation and parallel narration", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_attack_on_a_china_mission_bluejackets_to_the_rescue_1900")?.questions.map(q => q.bestSupportedOptionId), ["draw","compare","context"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_lonely_villa_1909")?.questions.map(q => q.bestSupportedOptionId), ["parallel","visual","development"]);
 });
