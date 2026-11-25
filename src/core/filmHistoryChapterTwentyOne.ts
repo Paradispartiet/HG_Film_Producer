@@ -19,9 +19,9 @@ export const filmHistoryChapterTwentyOneSources: readonly FilmHistoryBookSource[
   },
   {
     "id": "ch21_ratings",
-    "title": "The Movie Rating System: Its History",
-    "publisher": "Classification and Rating Administration",
-    "url": "https://www.filmratings.com/News/"
+    "title": "Film ratings: history of the voluntary system introduced in 1968",
+    "publisher": "Motion Picture Association",
+    "url": "https://www.motionpictures.org/film-ratings/"
   },
   {
     "id": "ch21_bonnie",
@@ -259,7 +259,7 @@ export const filmHistoryChapterTwentyOneSections: readonly FilmHistoryBookSectio
     "paragraphs": [
       "New Hollywood is often described as the glorious moment when young directors took Hollywood away from cautious executives. That version overlooks the economic crisis and institutional negotiations that made experimentation possible. By the late 1960s the major companies were confronting changed audiences, expensive disappointments and the uncertain commercial value of old production habits. A younger moviegoing public responded to different rhythms, performers and attitudes. Executives could therefore see a low-budget, unconventional project as an opportunity rather than simply a threat.",
       "The movement was never a formally organized school. It included studio-financed features, companies that made production packages with major distributors, smaller independent films and artists whose ambitions did not always agree. Directors drew on French, Italian and Japanese cinemas, older American genres, theater, television and documentary. The success of an adventurous film could buy more freedom for another project, yet its financing and distribution still involved contracts, marketing and the labor of numerous collaborators.",
-      "The period is best studied through relationships between form, market and artistic risk. The classification system introduced in 1968 replaced the previous Production Code framework with age-related categories and helped establish different expectations about adult subject matter. But ratings did not simply make every film free of constraint, just as youth ticket sales did not dictate a uniform modernist style. New Hollywood was a shifting industrial bargain, not a liberation accomplished on a single date."
+      "The period is best studied through relationships between form, market and artistic risk. The voluntary American film-rating system introduced in 1968 replaced the previous Production Code framework with age-related audience guidance rather than industry approval of a film's subject matter. This helped establish different expectations about adult themes, although the voluntary ratings and theater-enforcement practices did not make every film free of commercial constraint. But ratings did not simply make every film free of constraint, just as youth ticket sales did not dictate a uniform modernist style. New Hollywood was a shifting industrial bargain, not a liberation accomplished on a single date."
     ],
     "sourceIds": [
       "ch21_period",
