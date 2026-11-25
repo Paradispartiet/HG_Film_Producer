@@ -20,20 +20,24 @@ const ids = [
   "scenario_a_city_of_sadness_1989",
   "scenario_vive_l_amour_1994",
   "scenario_peppermint_candy_1999",
+  "scenario_all_the_beauty_and_the_bloodshed_2022",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly eleven existing cases have thirty-three original, source-backed decisions", () => {
+test("Exactly twelve existing cases have thirty-six original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 11);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 33);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 12);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 36);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
     assert.ok(workshop.sources.length >= 2);
-    if (workshop.scenarioId === "scenario_peppermint_candy_1999") {
+    if (workshop.scenarioId === "scenario_all_the_beauty_and_the_bloodshed_2022") {
+      const manual = readFileSync("src/core/modernCanonExpansion.ts", "utf8");
+      assert.match(manual, /id: "scenario_all_the_beauty_and_the_bloodshed_2022", title: "All the Beauty and the Bloodshed"[^\n]*year: 2022/);
+    } else if (workshop.scenarioId === "scenario_peppermint_candy_1999") {
       const manual = readFileSync("src/core/southKoreanCinemaExpansion.ts", "utf8");
       assert.match(manual, /id: "scenario_peppermint_candy_1999",\s*title: "Peppermint Candy",[\s\S]{0,120}year: 1999/);
     } else if (workshop.scenarioId === "scenario_vive_l_amour_1994") {
@@ -250,4 +254,19 @@ test("Peppermint Candy separates reverse shooting, visual transitions and histor
   assert.equal(causality.bestSupportedOptionId, "effect-before-cause");
   assert.ok(causality.sourceIds.includes("lee-time"));
   assert.match(causality.explanation.en, /without turning fiction into an archive/);
+});
+
+test("All the Beauty and the Bloodshed distinguishes audio interviews, archive integrity and thematic editing", () => {
+  const workshop = getSourceBackedCaseWorkshop(ids[11]);
+  assert.ok(workshop);
+  const [interview, archive, edit] = workshop.questions;
+  assert.ok(interview && archive && edit);
+  assert.equal(interview.bestSupportedOptionId, "audio-conversation");
+  assert.ok(interview.sourceIds.includes("poitras-pov"));
+  assert.match(interview.explanation.en, /pause or decline/);
+  assert.equal(archive.bestSupportedOptionId, "respect-frame");
+  assert.match(archive.explanation.en, /verify permissions and credits separately/);
+  assert.equal(edit.bestSupportedOptionId, "interwoven-strands");
+  assert.ok(edit.sourceIds.includes("praxis-credits"));
+  assert.match(edit.explanation.en, /independent verification/);
 });
