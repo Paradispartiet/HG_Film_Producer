@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Eighteen pre-existing Production Cases receive evidence-backed craft decisions.
+ * Twenty pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -1987,6 +1987,382 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
         "sourceIds": [
           "moma",
           "loc"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_great_train_robbery_1903",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore how the 1903 Edison film connects studio and location images, temporal organization and exhibition choices.",
+      "nb": "Utforsk hvordan Edison-filmen fra 1903 kombinerer studio og opptakssteder, tidsorganisering og visningsvalg.",
+      "fr": "Explorez comment le film Edison de 1903 associe studio, décors naturels, organisation temporelle et choix de projection.",
+      "pt": "Explore como o filme Edison de 1903 combina estúdio, exteriores, organização temporal e escolhas de exibição."
+    },
+    "sources": [
+      {
+        "id": "loc",
+        "title": "The great train robbery",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/item/00694220/"
+      },
+      {
+        "id": "moma",
+        "title": "Edwin S. Porter. The Great Train Robbery. 1903",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/collection/works/304708"
+      },
+      {
+        "id": "bfi",
+        "title": "The Innovators 1900-1910: Time After Time",
+        "publisher": "British Film Institute",
+        "url": "https://old.bfi.org.uk/sightandsound/feature/145"
+      },
+      {
+        "id": "nga",
+        "title": "Cine-Concert: The Great Train Robbery followed by Sand!",
+        "publisher": "National Gallery of Art",
+        "url": "https://www.nga.gov/calendar/treasures-american-cinema-westerns-reel-americana/cine-concert-great-train-robbery-followed-sand?evd=202604191800"
+      }
+    ],
+    "questions": [
+      {
+        "id": "train-space",
+        "area": "camera",
+        "prompt": {
+          "en": "How could an original storyboard connect interior and exterior spaces?",
+          "nb": "Hvordan kan et eget storyboard knytte sammen innendørs og utendørs rom?",
+          "fr": "Comment relier intérieur et extérieur dans un storyboard original ?",
+          "pt": "Como ligar interiores e exteriores num storyboard original?"
+        },
+        "options": [
+          {
+            "id": "single",
+            "label": {
+              "en": "Keep every event in one unchanging interior",
+              "nb": "Behold alle hendelser i ett uforanderlig interiør",
+              "fr": "Garder tous les événements dans un intérieur fixe",
+              "pt": "Manter todos os acontecimentos num interior fixo"
+            }
+          },
+          {
+            "id": "hybrid",
+            "label": {
+              "en": "Combine drawn interior and exterior views with readable spatial relations",
+              "nb": "Kombiner tegnede inne- og utebilder med lesbare romforhold",
+              "fr": "Combiner des vues dessinées intérieures et extérieures aux rapports spatiaux lisibles",
+              "pt": "Combinar vistas desenhadas de interiores e exteriores com relações espaciais claras"
+            }
+          },
+          {
+            "id": "random",
+            "label": {
+              "en": "Choose unrelated views without establishing their relationship",
+              "nb": "Velg urelaterte bilder uten å etablere sammenhengen",
+              "fr": "Choisir des vues sans établir leur relation",
+              "pt": "Escolher vistas sem estabelecer a sua relação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "hybrid",
+        "explanation": {
+          "en": "The repository's LOC and MoMA records describe a studio-location hybrid. Test the idea using drawings or models, not live railway action. This exercise is not an exact shot reconstruction.",
+          "nb": "LOC- og MoMA-oppføringene beskriver en kombinasjon av studio og opptakssteder. Prøv prinsippet med tegninger eller modeller, ikke handling på en virkelig jernbane. Oppgaven rekonstruerer ikke eksakte bilder.",
+          "fr": "Les notices LOC et MoMA décrivent une production mêlant studio et extérieurs. Testez le principe par dessins ou maquettes, jamais sur une voie ferrée réelle. Ce n'est pas une reconstruction exacte.",
+          "pt": "Os registos LOC e MoMA descrevem uma produção de estúdio e exteriores. Teste o princípio com desenhos ou maquetes, nunca numa ferrovia real. O exercício não reconstrói planos exatos."
+        },
+        "sourceIds": [
+          "loc",
+          "moma"
+        ]
+      },
+      {
+        "id": "train-time",
+        "area": "research",
+        "prompt": {
+          "en": "How should an editor study temporal relations in this 1903 film?",
+          "nb": "Hvordan bør en klipper undersøke tidsforhold i denne filmen fra 1903?",
+          "fr": "Comment étudier les relations temporelles dans ce film de 1903 ?",
+          "pt": "Como estudar as relações temporais neste filme de 1903?"
+        },
+        "options": [
+          {
+            "id": "historical",
+            "label": {
+              "en": "Compare scene organization with contemporary practices and note uncertainties",
+              "nb": "Sammenlign sceneorganisering med samtidens praksis og noter usikkerhet",
+              "fr": "Comparer l'organisation des scènes aux pratiques contemporaines et noter les incertitudes",
+              "pt": "Comparar a organização das cenas com práticas da época e registar incertezas"
+            }
+          },
+          {
+            "id": "modern",
+            "label": {
+              "en": "Assume that modern continuity rules already governed every cut",
+              "nb": "Anta at moderne kontinuitetsregler allerede styrte hvert klipp",
+              "fr": "Supposer que les règles modernes gouvernaient chaque coupe",
+              "pt": "Supor que as regras modernas já regiam todos os cortes"
+            }
+          },
+          {
+            "id": "inventor",
+            "label": {
+              "en": "Credit the film with inventing all narrative editing",
+              "nb": "Gi filmen æren for å ha oppfunnet all fortellende klipping",
+              "fr": "Attribuer au film l'invention de tout montage narratif",
+              "pt": "Atribuir ao filme a invenção de toda a montagem narrativa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "historical",
+        "explanation": {
+          "en": "The existing BFI dossier warns against retrofitting later continuity grammar or a single-inventor story. Compare scene relationships within the film's historical context rather than claiming a universal first.",
+          "nb": "Den eksisterende BFI-dokumentasjonen advarer mot å påføre senere kontinuitetsregler eller en fortelling om én oppfinner. Sammenlign sceneforhold i filmens historiske kontekst uten å hevde en universell førsteplass.",
+          "fr": "Le dossier BFI met en garde contre l'application rétroactive des règles ultérieures et le récit d'un inventeur unique. Comparez les relations entre scènes dans leur contexte historique.",
+          "pt": "O dossier BFI alerta contra projetar regras posteriores de continuidade ou um inventor único. Compare relações entre cenas no contexto histórico, sem afirmar uma primeira vez universal."
+        },
+        "sourceIds": [
+          "bfi",
+          "moma"
+        ]
+      },
+      {
+        "id": "train-exhibition",
+        "area": "research",
+        "prompt": {
+          "en": "How should a curator account for the film's direct-address image?",
+          "nb": "Hvordan bør en kurator forholde seg til filmens direkte henvendelse til publikum?",
+          "fr": "Comment un commissaire doit-il traiter l'image adressée au public ?",
+          "pt": "Como deve um curador abordar a imagem dirigida ao público?"
+        },
+        "options": [
+          {
+            "id": "fixed",
+            "label": {
+              "en": "Assume every historical screening used one fixed ending",
+              "nb": "Anta at alle historiske visninger brukte én fast avslutning",
+              "fr": "Supposer une fin fixe pour toutes les projections historiques",
+              "pt": "Supor um final fixo em todas as projeções históricas"
+            }
+          },
+          {
+            "id": "ignore",
+            "label": {
+              "en": "Ignore presentation history and label every copy identical",
+              "nb": "Ignorer visningshistorien og merk alle kopier som identiske",
+              "fr": "Ignorer l'histoire de la projection et déclarer les copies identiques",
+              "pt": "Ignorar a história da exibição e declarar todas as cópias idênticas"
+            }
+          },
+          {
+            "id": "context",
+            "label": {
+              "en": "Document the print and distinguish exhibition choices from narrative structure",
+              "nb": "Dokumenter kopien og skill visningsvalg fra fortellingens struktur",
+              "fr": "Documenter la copie et distinguer choix de projection et structure narrative",
+              "pt": "Documentar a cópia e distinguir escolhas de exibição da estrutura narrativa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "context",
+        "explanation": {
+          "en": "The existing case documentation treats the direct-address image as a flexible attraction, not a compulsory modern ending. Record the specific print and presentation evidence before interpreting its position.",
+          "nb": "Eksisterende dokumentasjon behandler den direkte henvendelsen som et fleksibelt attraksjonselement, ikke en obligatorisk moderne slutt. Noter den konkrete kopien og visningsbelegget før plasseringen tolkes.",
+          "fr": "Le dossier traite cette adresse au public comme une attraction flexible, non comme une fin moderne obligatoire. Identifiez la copie et les preuves de projection avant d'interpréter sa position.",
+          "pt": "O dossier trata essa interpelação como atração flexível, não como final moderno obrigatório. Registe a cópia e as evidências de exibição antes de interpretar a sua posição."
+        },
+        "sourceIds": [
+          "nga",
+          "bfi"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_rescued_by_rover_1905",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Study repeated routes, animal performance and replacement-version history in this 1905 British fiction.",
+      "nb": "Studer gjentatte ruter, dyreprestasjon og versjonshistorie i denne britiske fiksjonsfilmen fra 1905.",
+      "fr": "Étudiez les trajets répétés, le jeu animal et l'histoire des versions de cette fiction britannique de 1905.",
+      "pt": "Estude percursos repetidos, interpretação animal e história das versões nesta ficção britânica de 1905."
+    },
+    "sources": [
+      {
+        "id": "bfi",
+        "title": "Rescued by Rover (1905)",
+        "publisher": "BFI Screenonline",
+        "url": "https://www.screenonline.org.uk/film/id/514859/index.html"
+      },
+      {
+        "id": "sase",
+        "title": "Rescued by Rover",
+        "publisher": "Screen Archive South East",
+        "url": "https://screenarchive.brighton.ac.uk/detail/8407/"
+      },
+      {
+        "id": "dfi",
+        "title": "Rescued by Rover",
+        "publisher": "Danish Film Institute",
+        "url": "https://www.dfi.dk/en/viden-om-film/filmdatabasen/film/120019"
+      },
+      {
+        "id": "museum",
+        "title": "A dog detective, fairies, and Sherlock Holmes’ dressing gown",
+        "publisher": "Science Museum",
+        "url": "https://blog.sciencemuseum.org.uk/dog-detective-fairies-sherlock-holmes-dressing-gown/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "rover-route",
+        "area": "camera",
+        "prompt": {
+          "en": "How can repeated journeys make an original storyboard easier to follow?",
+          "nb": "Hvordan kan gjentatte turer gjøre et eget storyboard lettere å følge?",
+          "fr": "Comment rendre un storyboard original plus lisible grâce aux trajets répétés ?",
+          "pt": "Como tornar um storyboard original mais legível com percursos repetidos?"
+        },
+        "options": [
+          {
+            "id": "landmarks",
+            "label": {
+              "en": "Reuse recognizable landmarks and consistent movement direction",
+              "nb": "Gjenbruk gjenkjennelige landemerker og konsekvent bevegelsesretning",
+              "fr": "Réutiliser des repères reconnaissables et une direction cohérente",
+              "pt": "Reutilizar marcos reconhecíveis e uma direção coerente"
+            }
+          },
+          {
+            "id": "shuffle",
+            "label": {
+              "en": "Shuffle landmarks and directions without a narrative reason",
+              "nb": "Bland landemerker og retninger uten fortellermessig grunn",
+              "fr": "Mélanger repères et directions sans raison narrative",
+              "pt": "Misturar marcos e direções sem razão narrativa"
+            }
+          },
+          {
+            "id": "caption",
+            "label": {
+              "en": "Replace spatial relationships entirely with explanatory captions",
+              "nb": "Erstatt romforhold fullstendig med forklarende tekstplakater",
+              "fr": "Remplacer les relations spatiales par des cartons explicatifs",
+              "pt": "Substituir relações espaciais por legendas explicativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "landmarks",
+        "explanation": {
+          "en": "The BFI dossier describes clear route-based multi-shot storytelling. Repeat a simple fictional route with drawings to test spatial comprehension; do not claim this film alone invented continuity editing.",
+          "nb": "BFI-dokumentasjonen beskriver tydelig rutebasert fortelling over flere bilder. Gjenta en enkel fiktiv rute med tegninger for å teste romforståelse, uten å hevde at filmen alene oppfant kontinuitetsklipping.",
+          "fr": "Le dossier BFI décrit un récit clair fondé sur les trajets et plusieurs plans. Répétez un parcours fictif dessiné pour tester la compréhension spatiale, sans attribuer l'invention du montage de continuité à ce seul film.",
+          "pt": "O dossier BFI descreve uma narrativa clara baseada em percursos e vários planos. Repita um percurso fictício desenhado para testar a compreensão espacial, sem atribuir a invenção da continuidade a este único filme."
+        },
+        "sourceIds": [
+          "bfi",
+          "sase"
+        ]
+      },
+      {
+        "id": "rover-performance",
+        "area": "camera",
+        "prompt": {
+          "en": "How can you study the action-bearing role of the dog without risking animal welfare?",
+          "nb": "Hvordan kan du studere hundens handlingsbærende rolle uten å risikere dyrevelferden?",
+          "fr": "Comment étudier le rôle narratif du chien sans compromettre son bien-être ?",
+          "pt": "Como estudar o papel narrativo do cão sem comprometer o bem-estar animal?"
+        },
+        "options": [
+          {
+            "id": "repeat",
+            "label": {
+              "en": "Demand repeated stressful performances from an animal",
+              "nb": "Krev gjentatte stressende prestasjoner fra et dyr",
+              "fr": "Imposer des prises stressantes répétées à un animal",
+              "pt": "Exigir atuações stressantes repetidas de um animal"
+            }
+          },
+          {
+            "id": "draw",
+            "label": {
+              "en": "Use drawings or a toy to plan readable cues and reactions",
+              "nb": "Bruk tegninger eller en leke til å planlegge tydelige signaler og reaksjoner",
+              "fr": "Utiliser des dessins ou un jouet pour prévoir des indices et réactions lisibles",
+              "pt": "Usar desenhos ou um brinquedo para planear sinais e reações claros"
+            }
+          },
+          {
+            "id": "erase",
+            "label": {
+              "en": "Remove the action-bearing character from the narrative",
+              "nb": "Fjern den handlingsbærende figuren fra fortellingen",
+              "fr": "Supprimer le personnage moteur du récit",
+              "pt": "Retirar da narrativa a personagem que conduz a ação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "draw",
+        "explanation": {
+          "en": "The archive record describes a dog-led rescue narrative, and the Science Museum dossier identifies Blair. The exercise isolates causal storytelling through drawings or props, not a claim about historical animal-training methods.",
+          "nb": "Arkivoppføringen beskriver en redningsfortelling ledet av en hund, og Science Museum identifiserer Blair. Øvelsen isolerer årsakssammenheng med tegninger eller rekvisitter, uten påstander om historisk dyretrening.",
+          "fr": "La notice d'archive décrit un sauvetage mené par un chien et le dossier Science Museum identifie Blair. L'exercice isole la causalité par dessins ou accessoires, sans prétendre documenter le dressage historique.",
+          "pt": "O registo de arquivo descreve um salvamento conduzido por um cão e o dossier Science Museum identifica Blair. O exercício isola a causalidade com desenhos ou objetos, sem afirmar métodos históricos de treino animal."
+        },
+        "sourceIds": [
+          "sase",
+          "museum"
+        ]
+      },
+      {
+        "id": "rover-versions",
+        "area": "research",
+        "prompt": {
+          "en": "What should a researcher do when surviving copies may derive from replacement shoots?",
+          "nb": "Hva bør en forsker gjøre når bevarte kopier kan stamme fra nye opptak?",
+          "fr": "Que faire si les copies conservées peuvent provenir de nouveaux tournages ?",
+          "pt": "O que fazer quando cópias preservadas podem vir de novas filmagens?"
+        },
+        "options": [
+          {
+            "id": "same",
+            "label": {
+              "en": "Treat every surviving copy as the identical original negative",
+              "nb": "Behandle alle bevarte kopier som det identiske originalnegativet",
+              "fr": "Traiter toutes les copies comme le négatif original identique",
+              "pt": "Tratar todas as cópias como o mesmo negativo original"
+            }
+          },
+          {
+            "id": "guess",
+            "label": {
+              "en": "Assign an exact version date without supporting evidence",
+              "nb": "Fastsett en eksakt versjonsdato uten dokumentasjon",
+              "fr": "Attribuer une date précise sans preuve",
+              "pt": "Atribuir uma data exata sem evidência"
+            }
+          },
+          {
+            "id": "compare",
+            "label": {
+              "en": "Compare archival records and identify version uncertainty",
+              "nb": "Sammenlign arkivoppføringer og identifiser usikkerhet om versjonen",
+              "fr": "Comparer les notices d'archives et identifier l'incertitude de version",
+              "pt": "Comparar registos de arquivo e identificar incerteza de versão"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "compare",
+        "explanation": {
+          "en": "The Science Museum dossier describes re-shooting after negatives wore out under high demand. Record the archive, version and evidence; do not infer an exact lineage for an unidentified copy.",
+          "nb": "Science Museum-dokumentasjonen beskriver nye opptak etter at negativer ble slitt ut av stor etterspørsel. Noter arkiv, versjon og belegg; ikke anta et eksakt opphav for en uidentifisert kopi.",
+          "fr": "Le dossier Science Museum décrit de nouveaux tournages après l'usure des négatifs due à la demande. Notez archive, version et preuves ; n'inférez pas la filiation exacte d'une copie non identifiée.",
+          "pt": "O dossier Science Museum descreve novas filmagens após o desgaste dos negativos devido à procura. Registe arquivo, versão e evidência; não deduza a linhagem exata de uma cópia não identificada."
+        },
+        "sourceIds": [
+          "museum",
+          "dfi"
         ]
       }
     ]
