@@ -70,7 +70,7 @@ test("Pulse admission assessment preserves the existing audited representation g
 test("Candidate preview registration is independent of canonical admission", () => {
   const registry = readFileSync("src/ui/data/filmStudyCandidates.ts", "utf8");
   const page = readFileSync("src/ui/components/FilmStudyCandidatePage.tsx", "utf8");
-  assert.match(registry, /const editorialCandidates: readonly FilmStudyCandidate\[\] = \[pulse, searching, host, unfriended, profile, timecode\]/);
+  assert.match(registry, /const editorialCandidates: readonly FilmStudyCandidate\[\] = \[pulse, searching, host, unfriended, profile, timecode, vanda\]/);
   assert.match(registry, /!candidate\.review\.runtimeAdmission && !candidate\.review\.bookLinkApproved/);
   assert.match(registry, /candidate\.identity\.year === year/);
   assert.match(registry, /matches\.length === 1/);

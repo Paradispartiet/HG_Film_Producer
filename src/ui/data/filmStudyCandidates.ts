@@ -4,6 +4,7 @@ import host from "../../../data/film/candidates/host-2020.json";
 import unfriended from "../../../data/film/candidates/unfriended-2014.json";
 import profile from "../../../data/film/candidates/profile-2018.json";
 import timecode from "../../../data/film/candidates/timecode-2000.json";
+import vanda from "../../../data/film/candidates/in-vandas-room-2000.json";
 import type { SourceBackedCaseWorkshop, WorkshopQuestion, WorkshopText, WorkshopSource, WorkshopOption } from "./scenarioProductionSourceWorkshops";
 
 export type FilmStudyCandidate = {
@@ -24,7 +25,7 @@ export type FilmStudyCandidate = {
 };
 
 // Explicit imports keep the editorial registry deterministic. Never append these to the playable catalogue.
-const editorialCandidates: readonly FilmStudyCandidate[] = [pulse, searching, host, unfriended, profile, timecode];
+const editorialCandidates: readonly FilmStudyCandidate[] = [pulse, searching, host, unfriended, profile, timecode, vanda];
 
 function normalizeTitle(title: string): string {
   return title.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").trim().toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();

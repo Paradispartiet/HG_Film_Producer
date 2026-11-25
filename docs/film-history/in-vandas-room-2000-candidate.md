@@ -1,0 +1,22 @@
+# In Vanda's Room (2000) — candidate study
+
+Chapter 27 · P2 · Not a canonical production case.
+
+After Ossos, Pedro Costa returned to Fontainhas with a different production method: small-scale digital capture and extended encounters with residents. Film at Lincoln Center describes close collaboration with nonprofessional performers and an intersection of documentary and fiction. In the Sabzian interview, Costa discusses the uncertain relationship between filmmaker and participant, including the modest payment made after finishing money arrived. The study uses consensual fictional everyday scenes, not reenactments of addiction or private hardship. ([flc](https://www.filmlinc.org/films/in-vandas-room/), [sabzian](https://www.sabzian.be/text/interview-with-pedro-costa), [interstices](https://www.cambridge.org/core/books/abs/refocus-the-films-of-pedro-costa/digital-filmmaking-at-the-interstices/5C5BFF7E8BECEF9F7A40950DAFB6395E))
+
+The reduced crew and portable video equipment changed the relation between production time and daily life. Costa used Panasonic DV and shaped available interior light with simple reflected light. The Criterion essay distinguishes his largely solitary early work from later sound assistance. The low-resource shooting arrangement nevertheless required planning, ongoing negotiation and post-production resources; no exact total budget or uniformly fixed crew size is established. ([rooms](https://www.criterion.com/current/posts/1425-pedro-costa-s-fontainhas-trilogy-rooms-for-the-living-and-the-dead), [tcm](https://www.tcm.com/articles/567892/in-vandas-room), [interstices](https://www.cambridge.org/core/books/abs/refocus-the-films-of-pedro-costa/digital-filmmaking-at-the-interstices/5C5BFF7E8BECEF9F7A40950DAFB6395E))
+
+Long observation did not mean an untouched recording. Costa recalls discovering a more effective structure through attentive review of participants' words. Editorial credits differ in breadth between the Criterion listing and other film records. TCM also describes post-synchronized sounds and additional demolition ambience; the audible environment should not be treated as an entirely synchronous location recording. ([othon](https://othoncinema.com/2024/12/15/interview-with-pedro-costa/), [criterion](https://www.criterion.com/films/20820), [cineuropa](https://cineuropa.org/en/film/195871/), [reel](https://archives.cinemadureel.org/en/film/no-quarto-da-vanda-2/), [tcm](https://www.tcm.com/articles/567892/in-vandas-room))
+
+The project connects inexpensive digital acquisition to a wider European finishing and circulation infrastructure. Costa describes German funding late in production; Cineuropa identifies production companies and broadcasters across several countries. Film at Lincoln Center explicitly distinguishes digital images from a later 35mm print. Runtime records vary, and reported footage totals are approximate. The evidence supports a production study and a potential comparison with existing low-resource digital cases, not an approved gap or independent self-distribution claim. ([sabzian](https://www.sabzian.be/text/interview-with-pedro-costa), [cineuropa](https://cineuropa.org/en/film/195871/), [flc](https://www.filmlinc.org/films/in-vandas-room/), [iffr](https://iffr.com/en/iffr/2001/films/no-quarto-da-vanda), [criterion](https://www.criterion.com/films/20820), [othon](https://othoncinema.com/2024/12/15/interview-with-pedro-costa/))
+
+## Six-phase practice
+
+- **Collaboration and consent:** Write a participation agreement for a short everyday scene, including refusal, breaks and payment.
+- **Production scale and time:** Plan a small crew, agreed short sessions and a distinct post-production budget.
+- **Available light and framing:** Create three consent-based still frames using window light and a safe reflector in an ordinary room.
+- **Duration and editorial listening:** Compare two edits of a consenting participant's fictional everyday conversation, keeping meaningful pauses.
+- **Location sound and reconstruction:** Create a short original room-tone and offscreen ambience track, labelling separately recorded sounds.
+- **Co-production and exhibition:** Prepare a source ledger separating digital acquisition, finishing, co-production and exhibition records.
+
+All exercises use voluntary fictional situations. Reported runtime, credits and production records remain distinct; no approved representation gap is asserted.
