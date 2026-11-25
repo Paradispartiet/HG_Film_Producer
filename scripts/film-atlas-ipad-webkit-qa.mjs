@@ -109,7 +109,7 @@ async function check(browser, language, film, tablet) {
 }
 
 
-const STUDY_CANDIDATES = [{ id: "candidate_pulse_2001", slug: "candidate-pulse-2001", title: "Pulse", chapter: 28 }, { id: "candidate_searching_2018", slug: "candidate-searching-2018", title: "Searching", chapter: 30 }, { id: "candidate_host_2020", slug: "candidate-host-2020", title: "Host", chapter: 30 }];
+const STUDY_CANDIDATES = [{ id: "candidate_pulse_2001", slug: "candidate-pulse-2001", title: "Pulse", chapter: 28 }, { id: "candidate_searching_2018", slug: "candidate-searching-2018", title: "Searching", chapter: 30 }, { id: "candidate_host_2020", slug: "candidate-host-2020", title: "Host", chapter: 30 }, { id: "candidate_unfriended_2014", slug: "candidate-unfriended-2014", title: "Unfriended", chapter: 30 }];
 
 async function checkStudyCandidate(browser, language, film) {
   const context = await browser.newContext({ viewport: { width: 768, height: 1024 }, hasTouch: true });

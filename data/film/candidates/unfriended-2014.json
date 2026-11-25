@@ -1,0 +1,564 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "candidate_unfriended_2014",
+  "proposedScenarioId": "scenario_unfriended_2014",
+  "routeSlug": "candidate-unfriended-2014",
+  "status": "editorial_candidate_not_admitted",
+  "book": {
+    "chapter": 30,
+    "decision": "P2"
+  },
+  "identity": {
+    "title": "Unfriended",
+    "originalTitle": "Cybernatural",
+    "year": 2014,
+    "directors": [
+      "Levan Gabriadze"
+    ],
+    "country": "United States",
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "runtimeNote": "Fantasia documents the 2014 Cybernatural premiere; Universal lists 2015 and 83 minutes for its released edition. The 2014 festival version's exact duration is not established here."
+  },
+  "credits": {
+    "director": "Levan (Leo) Gabriadze",
+    "screenplay": "Nelson Greaves",
+    "cinematography": "Adam Sidman",
+    "editing": [
+      "Parker Laramie",
+      "Andrew Wesman"
+    ],
+    "productionDesign": "Heidi Koleto",
+    "sourceIds": [
+      "credits"
+    ]
+  },
+  "sources": [
+    {
+      "id": "producer",
+      "title": "In ‘Unfriended,’ horror comes to life online",
+      "publisher": "Los Angeles Times",
+      "url": "https://www.latimes.com/entertainment/movies/la-et-mn-ca-unfriended-producer-20150412-story.html"
+    },
+    {
+      "id": "director",
+      "title": "The Haunted Interface: Interview with Levan Gabriadze",
+      "publisher": "Interact",
+      "url": "https://revistainteract.pt/41/the-haunted-interface-interview-with-levan-gabriadze/"
+    },
+    {
+      "id": "writer",
+      "title": "Unfriended – Q&A with writer Nelson Greaves and producer Jason Blum",
+      "publisher": "Dread Central",
+      "url": "https://www.dreadcentral.com/news/96887/unfriended-qa-with-writer-nelson-greaves-and-producer-jason-blum/"
+    },
+    {
+      "id": "camera",
+      "title": "‘Unfriended’ Ushers in Screencast Movies",
+      "publisher": "Front Row Features",
+      "url": "https://frontrowfeatures.com/features-category-of-interviews-and-spotlights/film-features/unfriended-ushers-in-screencast-movies-11548.html"
+    },
+    {
+      "id": "cast",
+      "title": "Interview: Renee Olstead Talks Unfriended’s Blu-ray and DVD Release",
+      "publisher": "Shockya",
+      "url": "https://www.shockya.com/news/2015/08/08/interview-renee-olstead-talks-unfriendeds-blu-ray-and-dvd-release-exclusive/"
+    },
+    {
+      "id": "screen",
+      "title": "Timur Bekmambetov, 'Unfriended'",
+      "publisher": "Screen International",
+      "url": "https://www.screendaily.com/interviews/timur-bekmambetov-unfriended/5086774.article"
+    },
+    {
+      "id": "festival",
+      "title": "Fantasia Festival — Year 2014 archive",
+      "publisher": "Fantasia International Film Festival",
+      "url": "https://fantasiafestival.com/en/about/archives/2014"
+    },
+    {
+      "id": "universal",
+      "title": "Unfriended — release and runtime record",
+      "publisher": "Universal Pictures At Home",
+      "url": "https://www.universalpicturesathome.com/movies/unfriended"
+    },
+    {
+      "id": "credits",
+      "title": "From Universal Pictures Home Entertainment: Unfriended",
+      "publisher": "Universal Pictures Home Entertainment via PR Newswire",
+      "url": "https://www.prnewswire.com/news-releases/from-universal-pictures-home-entertainment-unfriended-300096176.html"
+    },
+    {
+      "id": "fast",
+      "title": "How this Russian director's Screenlife films went from gimmick to gold in Hollywood",
+      "publisher": "Fast Company",
+      "url": "https://www.fastcompany.com/90605560/how-this-russian-directors-screenlife-films-went-from-gimmick-to-gold-in-hollywood"
+    }
+  ],
+  "article": {
+    "title": "Unfriended (2014): ensemble performance inside a constructed desktop",
+    "paragraphs": [
+      {
+        "text": "Unfriended uses the computer desktop as the frame of a fictional group conversation. Bekmambetov's account locates the premise in screen sharing, while Gabriadze situates the method in the lineage of found footage and Mike Figgis's Timecode. The classroom task is not to recreate the film's harmful events: it is to construct a consensual fictional conversation whose dramatic information is carried by screen activity.",
+        "sourceIds": [
+          "producer",
+          "director"
+        ]
+      },
+      {
+        "text": "The ensemble was prepared through group video auditions and sustained rehearsals. Greaves describes a house arranged as separate character spaces connected by a shared audiovisual system. Olstead recalls coordinating her own framing with dialogue and using a laptop-mounted GoPro. This combines ensemble continuity with distributed framing; the approach should not be confused with Host's later remote-at-home production.",
+        "sourceIds": [
+          "camera",
+          "writer",
+          "cast",
+          "fast"
+        ]
+      },
+      {
+        "text": "The screen is also a post-production construction. Gabriadze describes editors Parker Laramie and Andrew Wesman manually animating desktop interactions. The distributor credits Adam Sidman as cinematographer and Heidi Koleto as production designer. The relevant craft distinction is between performers' recorded activity and constructed interface layers. Specific editing software, audio acquisition settings and final theatrical mixing workflow remain unclaimed here.",
+        "sourceIds": [
+          "director",
+          "credits"
+        ]
+      },
+      {
+        "text": "Fantasia's archive identifies the 2014 festival premiere under the name Cybernatural, whereas Universal records the 2015 release. Screen International reports a production cost below US$1 million; the subsequent Universal partnership connects the project to mainstream theatrical distribution rather than self-distribution. The production-cost report is an estimate, not an audited ledger. These records support a useful comparison with Searching and Host, but do not themselves establish eligibility for a new verified Atlas identity.",
+        "sourceIds": [
+          "festival",
+          "universal",
+          "screen",
+          "fast"
+        ]
+      }
+    ]
+  },
+  "production": {
+    "premise": "Create a fictional conversation inside one designed desktop with agreed roles and non-harmful dramatic beats.",
+    "screenplay": "Use continuous story time, typed messages and interface movement; all personal information is fictional.",
+    "camera": "Coordinate simultaneous performances through a shared connection and safe framing plans.",
+    "editing": "Separate continuous performances from layered interface animation and editorial assembly.",
+    "sound": "Design original call and notification cues; do not infer the original audio hardware from the finished film.",
+    "learning": "Distinguish ensemble continuity, screen construction, microbudget cost reports and distributor-led release."
+  },
+  "workshopIntroduction": {
+    "en": "Explore sustained ensemble acting, connected capture and layered screen construction in an optional fictional exercise.",
+    "nb": "Utforsk sammenhengende ensemblespill, tilkoblede opptak og lagdelt skjermkonstruksjon i en frivillig fiksjonsøvelse.",
+    "fr": "Explorer jeu collectif prolongé, captation reliée et construction d'écran en couches dans un exercice fictif facultatif.",
+    "pt": "Explorar interpretação coletiva prolongada, captação ligada e construção de ecrã em camadas num exercício ficcional facultativo."
+  },
+  "phases": [
+    {
+      "id": "story",
+      "questionId": "unfriended-story",
+      "title": {
+        "en": "Screen viewpoint and pitch",
+        "nb": "Skjermperspektiv og pitch",
+        "fr": "Point de vue et présentation",
+        "pt": "Ponto de vista e apresentação"
+      },
+      "deliverable": {
+        "en": "Draft a fictional conversation that stays on one invented desktop and lasts two minutes.",
+        "nb": "Skriv en fiktiv samtale på to minutter som holder seg på ett oppdiktet skrivebord.",
+        "fr": "Écrire une conversation fictive de deux minutes sur un seul bureau inventé.",
+        "pt": "Escrever uma conversa fictícia de dois minutos num único ambiente de trabalho inventado."
+      }
+    },
+    {
+      "id": "performance",
+      "questionId": "unfriended-performance",
+      "title": {
+        "en": "Casting and ensemble rehearsal",
+        "nb": "Casting og ensembleprøver",
+        "fr": "Distribution et répétition collective",
+        "pt": "Seleção e ensaio coletivo"
+      },
+      "deliverable": {
+        "en": "Rehearse a short fictional group call with agreed dramatic beats and a planned break.",
+        "nb": "Øv på en kort fiktiv gruppesamtale med avtalte handlingsledd og planlagt pause.",
+        "fr": "Répéter un bref appel fictif avec des temps narratifs convenus et une pause prévue.",
+        "pt": "Ensaiar uma breve chamada fictícia com momentos narrativos acordados e uma pausa prevista."
+      }
+    },
+    {
+      "id": "capture",
+      "questionId": "unfriended-capture",
+      "title": {
+        "en": "Networked capture and blocking",
+        "nb": "Nettverksopptak og personplassering",
+        "fr": "Captation en réseau et déplacements",
+        "pt": "Captação em rede e marcações"
+      },
+      "deliverable": {
+        "en": "Draw a safe camera and eyeline plan for a three-person fictional video conversation.",
+        "nb": "Tegn en trygg plan for kamera og blikkretning til en fiktiv videosamtale med tre personer.",
+        "fr": "Dessiner un plan sûr de caméra et de regards pour un appel fictif à trois.",
+        "pt": "Desenhar um plano seguro de câmara e olhares para uma chamada fictícia a três."
+      }
+    },
+    {
+      "id": "interface",
+      "questionId": "unfriended-interface",
+      "title": {
+        "en": "Interface and cursor dramaturgy",
+        "nb": "Grensesnitt og markørdramaturgi",
+        "fr": "Interface et dramaturgie du curseur",
+        "pt": "Interface e dramaturgia do cursor"
+      },
+      "deliverable": {
+        "en": "Animate a fictional message draft, pause and revision using original graphic assets.",
+        "nb": "Animer et oppdiktet meldingsutkast, en pause og en omskriving med egen grafikk.",
+        "fr": "Animer un brouillon fictif, une pause et une révision avec des graphismes originaux.",
+        "pt": "Animar um rascunho fictício, uma pausa e uma revisão com grafismos originais."
+      }
+    },
+    {
+      "id": "edit",
+      "questionId": "unfriended-edit",
+      "title": {
+        "en": "Performance continuity and post",
+        "nb": "Skuespillerkontinuitet og etterarbeid",
+        "fr": "Continuité du jeu et postproduction",
+        "pt": "Continuidade da interpretação e pós-produção"
+      },
+      "deliverable": {
+        "en": "Compare two short takes and design an editable desktop composition using the preferred performances.",
+        "nb": "Sammenlign to korte tagninger og lag en redigerbar skjermkomposisjon med valgte prestasjoner.",
+        "fr": "Comparer deux prises courtes et concevoir une composition modifiable avec les interprétations retenues.",
+        "pt": "Comparar duas tomadas curtas e conceber uma composição editável com as interpretações escolhidas."
+      }
+    },
+    {
+      "id": "release",
+      "questionId": "unfriended-release",
+      "title": {
+        "en": "Production economics and release",
+        "nb": "Produksjonsøkonomi og lansering",
+        "fr": "Économie et diffusion",
+        "pt": "Economia e distribuição"
+      },
+      "deliverable": {
+        "en": "Make a release ledger separating production-cost reports, festival premiere, later distribution and rights checks.",
+        "nb": "Lag en lanseringsoversikt som skiller rapporterte produksjonskostnader, festivalpremiere, senere distribusjon og rettighetskontroll.",
+        "fr": "Créer un registre distinguant coûts rapportés, première en festival, distribution ultérieure et droits.",
+        "pt": "Criar um registo que distingue custos relatados, estreia em festival, distribuição posterior e direitos."
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "unfriended-story",
+      "area": "research",
+      "prompt": {
+        "en": "Which narrative constraint reflects the producer's stated screen-film premise?",
+        "nb": "Hvilken fortellerbegrensning gjenspeiler produsentens skjermfilmidé?",
+        "fr": "Quelle contrainte narrative correspond au principe du producteur ?",
+        "pt": "Que restrição narrativa corresponde ao princípio do produtor?"
+      },
+      "options": [
+        {
+          "id": "outside",
+          "label": {
+            "en": "Cut frequently to an external camera showing unrelated locations",
+            "nb": "Klipp ofte til et eksternt kamera som viser uvedkommende steder",
+            "fr": "Couper souvent vers une caméra extérieure montrant des lieux sans rapport",
+            "pt": "Cortar frequentemente para uma câmara externa que mostra locais sem relação"
+          }
+        },
+        {
+          "id": "desktop",
+          "label": {
+            "en": "Keep the fictional action on one character's computer in continuous story time",
+            "nb": "Hold den fiktive handlingen på én figurs datamaskin i sammenhengende fortellertid",
+            "fr": "Maintenir l'action fictive sur l'ordinateur d'un personnage en temps continu",
+            "pt": "Manter a ação fictícia no computador de uma personagem em tempo contínuo"
+          }
+        },
+        {
+          "id": "private",
+          "label": {
+            "en": "Record real private messages without the participants' agreement",
+            "nb": "Ta opp virkelige private meldinger uten deltakernes samtykke",
+            "fr": "Enregistrer des messages privés réels sans accord des participants",
+            "pt": "Gravar mensagens privadas reais sem acordo dos participantes"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "desktop",
+      "explanation": {
+        "en": "Bekmambetov's own account describes a single-screen, real-time storytelling constraint. An exercise uses wholly invented messages and consenting performers, not actual personal data.",
+        "nb": "Bekmambetovs egen beretning beskriver én skjerm og sammenhengende fortellertid. Øvelsen bruker oppdiktede meldinger og samtykkende deltakere, ikke ekte persondata.",
+        "fr": "Bekmambetov décrit une contrainte d'écran unique et de temps continu. L'exercice utilise des messages inventés et des participants consentants.",
+        "pt": "Bekmambetov descreve um único ecrã e tempo contínuo. O exercício usa mensagens inventadas e participantes que consentem."
+      },
+      "sourceIds": [
+        "producer"
+      ]
+    },
+    {
+      "id": "unfriended-performance",
+      "area": "research",
+      "prompt": {
+        "en": "Which rehearsal method prepares an ensemble for sustained simultaneous performance?",
+        "nb": "Hvilken prøvemetode forbereder ensemblet på sammenhengende samtidig skuespill?",
+        "fr": "Quelle répétition prépare une interprétation collective prolongée ?",
+        "pt": "Que ensaio prepara uma interpretação coletiva prolongada?"
+      },
+      "options": [
+        {
+          "id": "solo",
+          "label": {
+            "en": "Rehearse isolated lines only, without any group interaction",
+            "nb": "Øv bare på isolerte replikker uten samspill i gruppen",
+            "fr": "Répéter uniquement des répliques isolées sans interaction collective",
+            "pt": "Ensaiar apenas falas isoladas sem interação coletiva"
+          }
+        },
+        {
+          "id": "no",
+          "label": {
+            "en": "Remove all agreed scene beats and expect spontaneous narrative coherence",
+            "nb": "Fjern alle avtalte handlingsledd og forvent spontan fortellersammenheng",
+            "fr": "Supprimer tous les temps convenus et attendre une cohérence spontanée",
+            "pt": "Eliminar todos os momentos acordados e esperar coerência espontânea"
+          }
+        },
+        {
+          "id": "ensemble",
+          "label": {
+            "en": "Rehearse the whole agreed scene together using the video-call format",
+            "nb": "Øv gjennom hele den avtalte scenen sammen i videosamtaleformat",
+            "fr": "Répéter ensemble toute la scène convenue par appel vidéo",
+            "pt": "Ensaiar em conjunto toda a cena acordada por videochamada"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "ensemble",
+      "explanation": {
+        "en": "Greaves reports switching auditions to video calls and testing performers as groups. Gabriadze describes rehearsing extended scenes and developing dialogue collaboratively. The exercise preserves agency and scheduled breaks.",
+        "nb": "Greaves beskriver videoauditioner og gruppeprøver. Gabriadze forteller om sammenhengende prøver og samarbeid om dialogen. Øvelsen bevarer medbestemmelse og avtalte pauser.",
+        "fr": "Greaves évoque des auditions vidéo en groupe. Gabriadze décrit des répétitions prolongées et un dialogue collaboratif. L'exercice respecte l'autonomie et les pauses prévues.",
+        "pt": "Greaves refere audições vídeo em grupo. Gabriadze descreve ensaios prolongados e diálogo colaborativo. O exercício respeita autonomia e pausas previstas."
+      },
+      "sourceIds": [
+        "camera",
+        "director"
+      ]
+    },
+    {
+      "id": "unfriended-capture",
+      "area": "camera",
+      "prompt": {
+        "en": "How can separated performers react to each other during synchronized filming?",
+        "nb": "Hvordan kan adskilte skuespillere reagere på hverandre under samordnet filming?",
+        "fr": "Comment des interprètes séparés réagissent-ils pendant une captation coordonnée ?",
+        "pt": "Como reagem intérpretes separados durante uma captação coordenada?"
+      },
+      "options": [
+        {
+          "id": "linked",
+          "label": {
+            "en": "Provide a shared audiovisual connection and record each performer with agreed framing",
+            "nb": "Gi skuespillerne en felles audiovisuell forbindelse og ta opp med avtalt utsnitt",
+            "fr": "Fournir une liaison audiovisuelle commune et filmer chacun avec un cadre convenu",
+            "pt": "Fornecer ligação audiovisual comum e gravar cada ator com enquadramento acordado"
+          }
+        },
+        {
+          "id": "silent",
+          "label": {
+            "en": "Prevent all communication and require the cast to guess the reactions",
+            "nb": "Hindre all kommunikasjon og krev at ensemblet gjetter reaksjonene",
+            "fr": "Empêcher toute communication et demander de deviner les réactions",
+            "pt": "Impedir comunicação e exigir que os atores adivinhem as reações"
+          }
+        },
+        {
+          "id": "model",
+          "label": {
+            "en": "Assume a particular camera model from the finished visual texture alone",
+            "nb": "Anta en bestemt kameramodell bare ut fra det ferdige bildets tekstur",
+            "fr": "Supposer un modèle de caméra d'après la seule texture finale",
+            "pt": "Pressupor um modelo de câmara apenas pela textura final"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "linked",
+      "explanation": {
+        "en": "Greaves and Olstead describe GoPro-equipped laptops and simultaneous interaction between performers in different rooms. Sidman's linked recording setup supported mutual reactions. The reports do not establish every technical specification.",
+        "nb": "Greaves og Olstead beskriver bærbare maskiner med GoPro og samtidig samspill mellom rom. Sidmans tilkoblede opptakssystem støttet reaksjonene. Kildene fastslår ikke alle tekniske spesifikasjoner.",
+        "fr": "Greaves et Olstead décrivent des ordinateurs équipés de GoPro et des échanges simultanés entre pièces. Le dispositif relié de Sidman permettait les réactions sans établir toutes les spécifications.",
+        "pt": "Greaves e Olstead descrevem computadores com GoPro e interação simultânea entre divisões. O sistema ligado de Sidman permitia reações sem estabelecer todas as especificações."
+      },
+      "sourceIds": [
+        "writer",
+        "cast",
+        "fast"
+      ]
+    },
+    {
+      "id": "unfriended-interface",
+      "area": "animation",
+      "prompt": {
+        "en": "How can interface movement communicate a fictional character's hesitation?",
+        "nb": "Hvordan kan grensesnittbevegelse uttrykke en fiktiv figurs nøling?",
+        "fr": "Comment le mouvement de l'interface exprime-t-il l'hésitation d'un personnage fictif ?",
+        "pt": "Como pode o movimento da interface expressar a hesitação de uma personagem fictícia?"
+      },
+      "options": [
+        {
+          "id": "noise",
+          "label": {
+            "en": "Animate random cursor movements unrelated to the character's decisions",
+            "nb": "Animer tilfeldige markørbevegelser uten forbindelse til figurens valg",
+            "fr": "Animer des mouvements aléatoires sans lien avec les choix du personnage",
+            "pt": "Animar movimentos aleatórios sem relação com as escolhas da personagem"
+          }
+        },
+        {
+          "id": "timed",
+          "label": {
+            "en": "Time a draft, pause and revision to express uncertainty in the fictional scene",
+            "nb": "Tidssett et utkast, en pause og en omskriving for å uttrykke usikkerhet i den fiktive scenen",
+            "fr": "Synchroniser un brouillon, une pause et une révision pour exprimer l'incertitude",
+            "pt": "Temporizar um rascunho, uma pausa e uma revisão para expressar incerteza"
+          }
+        },
+        {
+          "id": "explain",
+          "label": {
+            "en": "Replace each visible action with an explanatory voiceover",
+            "nb": "Erstatt hver synlige handling med en forklarende fortellerstemme",
+            "fr": "Remplacer chaque action visible par une voix explicative",
+            "pt": "Substituir cada ação visível por narração explicativa"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "timed",
+      "explanation": {
+        "en": "The producer connects cursor behavior with character expression. Gabriadze recalls the manual animation of interface details during editing. This supports deliberately designed screen action, not a claim about modern software used on the original film.",
+        "nb": "Produsenten knytter markørbevegelser til figurens uttrykk. Gabriadze beskriver manuell animasjon av grensesnittdetaljer under klipping. Dette støtter bevisst skjermhandling, ikke påstander om nyere programvare i originalfilmen.",
+        "fr": "Le producteur relie le curseur à l'expression du personnage. Gabriadze évoque l'animation manuelle des interfaces au montage. Cela étaye une action conçue, non un logiciel moderne utilisé à l'époque.",
+        "pt": "O produtor liga o cursor à expressão da personagem. Gabriadze recorda animação manual de interfaces na montagem. Isto sustenta ação concebida, não software moderno usado no filme original."
+      },
+      "sourceIds": [
+        "producer",
+        "director"
+      ]
+    },
+    {
+      "id": "unfriended-edit",
+      "area": "camera",
+      "prompt": {
+        "en": "What does a sustained ensemble take establish about the final editing process?",
+        "nb": "Hva fastslår en sammenhengende ensembletagning om det ferdige klippearbeidet?",
+        "fr": "Que démontre une prise collective prolongée sur le montage final ?",
+        "pt": "O que estabelece uma tomada coletiva prolongada sobre a montagem final?"
+      },
+      "options": [
+        {
+          "id": "uncut",
+          "label": {
+            "en": "Assume the final film required no editing because extended takes were recorded",
+            "nb": "Anta at filmen ikke krevde klipping fordi lange tagninger ble tatt opp",
+            "fr": "Supposer que le film ne nécessitait aucun montage car les prises étaient longues",
+            "pt": "Pressupor que o filme não exigiu montagem porque as tomadas eram longas"
+          }
+        },
+        {
+          "id": "single",
+          "label": {
+            "en": "Discard all source layers and retain only a flattened screen recording",
+            "nb": "Forkast alle kildelag og behold bare et sammenslått skjermopptak",
+            "fr": "Écarter toutes les couches sources et conserver une capture aplatie",
+            "pt": "Descartar todas as camadas e manter apenas uma gravação achatada"
+          }
+        },
+        {
+          "id": "layers",
+          "label": {
+            "en": "Treat sustained acting and layered editorial construction as distinct production stages",
+            "nb": "Behandle sammenhengende skuespill og lagdelt klippekonstruksjon som ulike produksjonsfaser",
+            "fr": "Distinguer jeu prolongé et construction du montage en couches",
+            "pt": "Distinguir interpretação prolongada e construção da montagem em camadas"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "layers",
+      "explanation": {
+        "en": "Greaves and Bekmambetov describe repeated full-length performances, while Gabriadze credits Parker Laramie and Andrew Wesman with extensive layered post-production. Long takes do not establish an unedited final film.",
+        "nb": "Greaves og Bekmambetov beskriver gjentatte gjennomspillinger, mens Gabriadze krediterer Parker Laramie og Andrew Wesman for omfattende lagdelt etterarbeid. Lange tagninger betyr ikke at filmen er uklippet.",
+        "fr": "Greaves et Bekmambetov évoquent plusieurs prises complètes, et Gabriadze attribue un travail complexe à Parker Laramie et Andrew Wesman. Les longues prises ne prouvent pas l'absence de montage.",
+        "pt": "Greaves e Bekmambetov descrevem várias tomadas completas, e Gabriadze credita a pós-produção complexa a Parker Laramie e Andrew Wesman. Tomadas longas não provam ausência de montagem."
+      },
+      "sourceIds": [
+        "writer",
+        "screen",
+        "director",
+        "credits"
+      ]
+    },
+    {
+      "id": "unfriended-release",
+      "area": "research",
+      "prompt": {
+        "en": "How should the film's 2014 and 2015 dates and distribution history be recorded?",
+        "nb": "Hvordan bør filmens årstall 2014 og 2015 og distribusjonshistorie registreres?",
+        "fr": "Comment noter les dates 2014 et 2015 et l'histoire de distribution du film ?",
+        "pt": "Como registar as datas 2014 e 2015 e o historial de distribuição do filme?"
+      },
+      "options": [
+        {
+          "id": "versions",
+          "label": {
+            "en": "Keep the 2014 festival premiere and 2015 Universal release distinct, with reported costs labelled as estimates",
+            "nb": "Skill festivalpremieren i 2014 fra Universals lansering i 2015, og merk rapporterte kostnader som anslag",
+            "fr": "Distinguer la première en 2014 de la sortie Universal en 2015 et qualifier les coûts d'estimations",
+            "pt": "Distinguir estreia em 2014 da distribuição Universal em 2015 e identificar custos como estimativas"
+          }
+        },
+        {
+          "id": "duplicate",
+          "label": {
+            "en": "Create separate film identities solely because two release years are recorded",
+            "nb": "Opprett to filmidentiteter bare fordi to lanseringsår er registrert",
+            "fr": "Créer deux identités de film uniquement à cause des deux années",
+            "pt": "Criar duas identidades de filme apenas por existirem dois anos"
+          }
+        },
+        {
+          "id": "gross",
+          "label": {
+            "en": "Treat box-office revenue as the producer's audited net profit",
+            "nb": "Behandle kinoinntekter som produsentens reviderte nettofortjeneste",
+            "fr": "Traiter les recettes en salles comme bénéfice net audité du producteur",
+            "pt": "Tratar receitas de bilheteira como lucro líquido auditado do produtor"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "versions",
+      "explanation": {
+        "en": "Fantasia records the 2014 premiere as Cybernatural; Universal lists its 2015 release. Screen International reports production costs below one million US dollars. This is a reported estimate, not an audited budget or proof of self-distribution.",
+        "nb": "Fantasia dokumenterer premieren i 2014 som Cybernatural; Universal oppgir lansering i 2015. Screen International rapporterer produksjonskostnader under én million dollar. Dette er et rapportert anslag, ikke revidert budsjett eller bevis på selvdistribusjon.",
+        "fr": "Fantasia indique la première en 2014 sous Cybernatural ; Universal indique 2015. Screen International rapporte un coût inférieur à un million de dollars, non un budget audité ni une autodistribution prouvée.",
+        "pt": "Fantasia regista estreia em 2014 como Cybernatural; Universal indica 2015. Screen International relata custo inferior a um milhão de dólares, não orçamento auditado nem autodistribuição comprovada."
+      },
+      "sourceIds": [
+        "festival",
+        "universal",
+        "screen"
+      ]
+    }
+  ],
+  "review": {
+    "runtimeAdmission": false,
+    "bookLinkApproved": false,
+    "studyPreview": true,
+    "required": [
+      "Check full catalogue overlap including Cybernatural and 2015 release alias.",
+      "Independently review source claims, costs and rights.",
+      "Assess representation gate; reported microbudget and mainstream distribution are not proof of self-distribution."
+    ]
+  }
+}
