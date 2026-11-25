@@ -17,20 +17,24 @@ const ids = [
   "scenario_still_life_2006",
   "scenario_platform_2000",
   "scenario_raise_the_red_lantern_1991",
+  "scenario_a_city_of_sadness_1989",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly eight existing cases have twenty-four original, source-backed decisions", () => {
+test("Exactly nine existing cases have twenty-seven original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 8);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 24);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 9);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 27);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
     assert.ok(workshop.sources.length >= 2);
-    if (workshop.scenarioId === "scenario_raise_the_red_lantern_1991") {
+    if (workshop.scenarioId === "scenario_a_city_of_sadness_1989") {
+      const manual = readFileSync("src/core/modernCanonExpansion.ts", "utf8");
+      assert.match(manual, /id: "scenario_a_city_of_sadness_1989", title: "A City of Sadness"[^\n]*year: 1989/);
+    } else if (workshop.scenarioId === "scenario_raise_the_red_lantern_1991") {
       const manual = readFileSync("src/core/eastAsianAuteurExpansion.ts", "utf8");
       assert.match(manual, /id: "scenario_raise_the_red_lantern_1991",\s*title: "Raise the Red Lantern",[\s\S]{0,100}year: 1991/);
     } else if (workshop.scenarioId === "scenario_platform_2000") {
@@ -197,4 +201,17 @@ test("Raise the Red Lantern distinguishes visual design from historical authenti
   assert.equal(ritual.bestSupportedOptionId, "constructed-ritual");
   assert.ok(ritual.sourceIds.includes("ritual-study"));
   assert.match(ritual.explanation.en, /inventions for the film/);
+});
+
+test("A City of Sadness links depth staging, sync sound and indirect narration to evidence", () => {
+  const workshop = getSourceBackedCaseWorkshop(ids[8]);
+  assert.ok(workshop);
+  const [depth, sound, history] = workshop.questions;
+  assert.ok(depth && sound && history);
+  assert.equal(depth.bestSupportedOptionId, "sustained-depth");
+  assert.ok(depth.sourceIds.includes("ucla-city"));
+  assert.equal(sound.bestSupportedOptionId, "sync-location");
+  assert.ok(sound.sourceIds.includes("tu-interview"));
+  assert.equal(history.bestSupportedOptionId, "family-perspective");
+  assert.match(history.explanation.en, /independently sourced historical records/);
 });
