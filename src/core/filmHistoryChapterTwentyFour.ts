@@ -74,6 +74,12 @@ export const filmHistoryChapterTwentyFourSources: readonly FilmHistoryBookSource
     "url": "https://www.legislation.gov.uk/ukpga/1984/39/pdfs/ukpga_19840039_en.pdf"
   },
   {
+    "id": "ch24_bbfc_vra",
+    "title": "The Video Recordings Act: UK video classification and phased implementation",
+    "publisher": "British Board of Film Classification",
+    "url": "https://www.bbfc.co.uk/film-media-resources/legislation/the-video-recordings-act"
+  },
+  {
     "id": "ch24_nasties",
     "title": "Unspooling the history of the video nasty controversy",
     "publisher": "BFI Sight and Sound",

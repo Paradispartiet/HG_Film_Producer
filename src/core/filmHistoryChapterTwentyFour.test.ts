@@ -24,7 +24,7 @@ test("Chapter 24 develops distinct film, exhibition and home-video histories", (
 
 test("Chapter 24 references unique URL sources with no unreferenced or broken IDs", () => {
   const chapter = filmHistoryChapterTwentyFour;
-  assert.equal(chapter.sources.length, 33);
+  assert.equal(chapter.sources.length, 34);
   const ids = new Set(chapter.sources.map(source => source.id));
   const urls = new Set(chapter.sources.map(source => source.url));
   assert.equal(ids.size, chapter.sources.length);
@@ -66,4 +66,20 @@ test("Chapter 24 cites the original 1984 Act in its British video classification
   assert.ok(article?.sourceIds.includes("ch24_video_act"));
   assert.match(article?.paragraphs.join(" ") ?? "", /12 July 1984/);
   assert.match(article?.paragraphs.join(" ") ?? "", /exemptions/);
+});
+
+
+test("Chapter 24 distinguishes the Act from phased BBFC enforcement", () => {
+  const chapter = filmHistoryChapterTwentyFour;
+  assert.equal(chapter.status, "draft");
+  assert.equal(chapter.sources.length, 34);
+  const source = chapter.sources.find(s => s.id === "ch24_bbfc_vra");
+  assert.ok(source);
+  assert.equal(source.url, "https://www.bbfc.co.uk/film-media-resources/legislation/the-video-recordings-act");
+  const article = chapter.sections.find(s => s.id === "ch24_nasties");
+  assert.ok(article);
+  assert.ok(article.sourceIds.includes("ch24_video_act"));
+  assert.ok(article.sourceIds.includes("ch24_bbfc_vra"));
+  assert.match(article.paragraphs.join(" "), /classification from 1985/);
+  assert.match(article.paragraphs.join(" "), /September 1988/);
 });

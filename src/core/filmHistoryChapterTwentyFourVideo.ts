@@ -90,14 +90,15 @@ export const filmHistoryChapterTwentyFourVideoSections: readonly FilmHistoryBook
     "title": "19. Video nasties: British classification and moral panic",
     "paragraphs": [
       "In early-1980s Britain the expression video nasty was applied to an unstable group of films criticized for violent or sexually explicit material. The controversy also reflected concerns that movies once controlled through theatrical distribution could be purchased or rented for private viewing. The label was not a consistent genre or one fixed historical list.",
-      "BFI explains the relationship between press campaigns, enforcement and the Video Recordings Act 1984. The original Act, which received Royal Assent on 12 July 1984, established a framework for classifying video works and regulating their supply. Sections 2 and 3 specified exemptions for certain works and transactions; section 4 provided for a designated classification authority with particular attention to home viewing. The law therefore did not impose a blanket ban on all unclassified home recordings. This is a specifically British institutional history, not a universal feature of VHS adoption. Students need to distinguish legal regulation, newspaper allegations and scientific claims about audience behavior.",
+      "BFI explains the relationship between press campaigns, enforcement and the Video Recordings Act 1984. The original Act, which received Royal Assent on 12 July 1984, established a framework for classifying video works and regulating their supply. Sections 2 and 3 specified exemptions for certain works and transactions; section 4 provided for a designated classification authority with particular attention to home viewing. The law therefore did not impose a blanket ban on all unclassified home recordings. The BBFC's historical account documents phased classification from 1985 and the September 1988 deadline for existing video stock. This is a specifically British institutional history, not a universal feature of VHS adoption. Students need to distinguish legal regulation, newspaper allegations and scientific claims about audience behavior.",
       "The dispute illustrates how new technology challenged assumptions about access and control. It would be mistaken to treat all criticism as ignorance or every controversial release as proven harmful. The historical questions concern public arguments, regulation and the interests of a medium entering domestic life."
     ],
     "sourceIds": [
       "ch24_nasties",
       "ch24_nasties_intro",
       "ch24_videotape",
-      "ch24_video_act"
+      "ch24_video_act",
+      "ch24_bbfc_vra"
     ]
   },
   {
