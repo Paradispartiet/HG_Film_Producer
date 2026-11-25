@@ -1,0 +1,521 @@
+{
+  "schemaVersion": 1,
+  "candidateId": "candidate_waking_life_2001",
+  "proposedScenarioId": "scenario_waking_life_2001",
+  "routeSlug": "candidate-waking-life-2001",
+  "status": "editorial_candidate_not_admitted",
+  "book": {
+    "chapter": 27,
+    "decision": "P2"
+  },
+  "identity": {
+    "title": "Waking Life",
+    "originalTitle": "Waking Life",
+    "year": 2001,
+    "directors": [
+      "Richard Linklater"
+    ],
+    "country": "United States",
+    "runtimeNote": "2001 Sundance debut and subsequent Fox Searchlight acquisition are documented by Animation World Network. Exact release-version running time and technical mastering metadata are not established by this dossier."
+  },
+  "sources": [
+    {
+      "id": "linklater",
+      "title": "Waking Life — Interview with Richard Linklater",
+      "publisher": "Nitrate Online",
+      "url": "https://nitrateonline.com/2001/fwaking"
+    },
+    {
+      "id": "cgw",
+      "title": "Life Lines",
+      "publisher": "Computer Graphics World",
+      "url": "https://www.cgw.com/Publications/CGW/2002/Volume-25-Issue-2-Feb-2002-/Life-Lines.aspx"
+    },
+    {
+      "id": "awn",
+      "title": "Linklater's Animated Waking Life Finds Home At Fox Searchlight",
+      "publisher": "Animation World Network",
+      "url": "https://www.awn.com/news/linklaters-animated-waking-life-finds-home-fox-searchlight"
+    },
+    {
+      "id": "wired",
+      "title": "Animating a Waking Life",
+      "publisher": "WIRED",
+      "url": "https://www.wired.com/2001/10/animating-a-waking-life/"
+    },
+    {
+      "id": "notes",
+      "title": "Waking Life — Production Notes",
+      "publisher": "Cinema.com",
+      "url": "https://cinema.com/articles/814/waking-life-production-notes.phtml"
+    },
+    {
+      "id": "oxford",
+      "title": "Interview with Richard Linklater",
+      "publisher": "University of Illinois Press / Oxford Academic",
+      "url": "https://academic.oup.com/illinois-scholarship-online/book/22643/chapter-abstract/183010759"
+    },
+    {
+      "id": "comparison",
+      "title": "A long way from Disney",
+      "publisher": "Los Angeles Times",
+      "url": "https://www.latimes.com/archives/la-xpm-2006-jul-07-et-rotoscope7-story.html"
+    }
+  ],
+  "article": {
+    "title": "Waking Life (2001): filmed performance reinterpreted through drawing",
+    "paragraphs": [
+      {
+        "text": "Richard Linklater developed Waking Life around an encounter between philosophical dialogue and a mutable visual world. His interview for University of Illinois Press describes recognizing the expressive potential of the animation work developed by Bob Sabiston and Tommy Pallotta. Rather than treating digital imagery as a way to erase the artist's hand, the film uses changes in line, shape and surface as expressive decisions.",
+        "sourceIds": [
+          "oxford",
+          "linklater"
+        ]
+      },
+      {
+        "text": "The workflow began with digitally filmed performances and editorial selection before animation. Animation World Network's contemporary report identifies interpolated rotoscoping as the method. Computer Graphics World explains the artists' manual drawing of shapes on selected frames and the use of interpolation to assist motion between key drawings. The distinction between reference footage and animation labor is essential: software does not independently interpret the performance.",
+        "sourceIds": [
+          "awn",
+          "cgw"
+        ]
+      },
+      {
+        "text": "The production gave animators room to interpret individual scenes and characters. Computer Graphics World describes scene-based experimentation and changing visual approaches to the protagonist. The production notes identify a team exceeding thirty artists and substantial labor per animated minute. A useful present-day exercise compares brief tests before committing to a larger schedule, rather than treating one historical estimate as a guaranteed rate.",
+        "sourceIds": [
+          "cgw",
+          "notes"
+        ]
+      },
+      {
+        "text": "The 2001 Sundance debut was followed by Fox Searchlight's acquisition of worldwide distribution rights, as reported by Animation World Network. This makes a clear distinction between the film's independent creative development and its later commercial distribution. The later production of A Scanner Darkly required a different balance of visual consistency and labor, according to the Los Angeles Times. No new canonical identity or industry-coverage gap is approved by this study.",
+        "sourceIds": [
+          "awn",
+          "comparison"
+        ]
+      }
+    ]
+  },
+  "production": {
+    "premise": "Create a short fictional dialogue transformed through drawn digital animation.",
+    "screenplay": "Connect expressive visual treatment to the purpose of the dialogue.",
+    "camera": "Capture consenting performers and choose a reference edit before drawing.",
+    "animation": "Draw selected key shapes, interpolate where useful and revise expressive details manually.",
+    "editing": "Review scene-specific styles and maintain coherent performance timing.",
+    "sound": "Retain the timing of original dialogue and plan separately for licensed music and sound.",
+    "learning": "Distinguish live-action capture, animation craft, artistic labor and distribution rights."
+  },
+  "workshopIntroduction": {
+    "en": "Explore the relationship between digital reference footage, manual drawing, interpolation and animation production.",
+    "nb": "Utforsk forholdet mellom digitale referanseopptak, manuell tegning, interpolering og animasjonsproduksjon.",
+    "fr": "Explorer les liens entre images de référence, dessin manuel, interpolation et production animée.",
+    "pt": "Explorar a relação entre imagens de referência digitais, desenho manual, interpolação e produção de animação."
+  },
+  "phases": [
+    {
+      "id": "concept",
+      "questionId": "waking-concept",
+      "title": {
+        "en": "Concept and expressive style",
+        "nb": "Konsept og uttrykk",
+        "fr": "Concept et style expressif",
+        "pt": "Conceito e estilo expressivo"
+      },
+      "deliverable": {
+        "en": "Write a fictional dialogue scene and choose an expressive visual treatment for its mood.",
+        "nb": "Skriv en fiktiv dialogscene og velg et visuelt uttrykk for stemningen.",
+        "fr": "Écrire un dialogue fictif et choisir un traitement visuel expressif.",
+        "pt": "Escrever um diálogo fictício e escolher um tratamento visual expressivo."
+      }
+    },
+    {
+      "id": "capture",
+      "questionId": "waking-capture",
+      "title": {
+        "en": "Live-action reference and edit",
+        "nb": "Skuespilleropptak og klipp",
+        "fr": "Référence filmée et montage",
+        "pt": "Referência filmada e montagem"
+      },
+      "deliverable": {
+        "en": "Record a consenting performer in a ten-second fictional shot and select the reference edit.",
+        "nb": "Ta opp en samtykkende skuespiller i et ti sekunders fiktivt klipp og velg referanseklippet.",
+        "fr": "Filmer un interprète consentant dix secondes et choisir le montage de référence.",
+        "pt": "Filmar um intérprete que consente durante dez segundos e escolher a montagem de referência."
+      }
+    },
+    {
+      "id": "draw",
+      "questionId": "waking-draw",
+      "title": {
+        "en": "Rotoscoping and interpolation",
+        "nb": "Rotoskopi og interpolering",
+        "fr": "Rotoscopie et interpolation",
+        "pt": "Rotoscopia e interpolação"
+      },
+      "deliverable": {
+        "en": "Draw three key poses over your own footage and compare manually revised in-between shapes.",
+        "nb": "Tegn tre nøkkelposisjoner over egne opptak og sammenlign manuelt justerte mellomformer.",
+        "fr": "Dessiner trois poses clés sur vos images et comparer les formes intermédiaires corrigées.",
+        "pt": "Desenhar três poses-chave sobre imagens próprias e comparar formas intermédias revistas."
+      }
+    },
+    {
+      "id": "style",
+      "questionId": "waking-style",
+      "title": {
+        "en": "Art direction and scene variation",
+        "nb": "Kunstnerisk regi og scenevariasjon",
+        "fr": "Direction artistique et variation",
+        "pt": "Direção artística e variação"
+      },
+      "deliverable": {
+        "en": "Draw two visual treatments of the same fictional exchange and explain the expressive contrast.",
+        "nb": "Tegn to visuelle versjoner av samme fiktive samtale og forklar uttrykksforskjellen.",
+        "fr": "Dessiner deux traitements du même échange fictif et expliquer le contraste.",
+        "pt": "Desenhar dois tratamentos da mesma conversa fictícia e explicar o contraste."
+      }
+    },
+    {
+      "id": "labor",
+      "questionId": "waking-labor",
+      "title": {
+        "en": "Animation labor and schedule",
+        "nb": "Animasjonsarbeid og tidsplan",
+        "fr": "Travail d'animation et calendrier",
+        "pt": "Trabalho de animação e calendário"
+      },
+      "deliverable": {
+        "en": "Time a short animation test and estimate staffing and review for a longer fictional sequence.",
+        "nb": "Ta tiden på en kort animasjonstest og anslå bemanning og gjennomgang for en lengre fiktiv sekvens.",
+        "fr": "Chronométrer un test court et estimer l'équipe et la révision d'une séquence plus longue.",
+        "pt": "Cronometrar um teste curto e estimar equipa e revisão para uma sequência maior."
+      }
+    },
+    {
+      "id": "release",
+      "questionId": "waking-release",
+      "title": {
+        "en": "Credits, rights and distribution",
+        "nb": "Kreditering, rettigheter og distribusjon",
+        "fr": "Crédits, droits et diffusion",
+        "pt": "Créditos, direitos e distribuição"
+      },
+      "deliverable": {
+        "en": "Create a credit and rights ledger for your original footage, drawings and delivery files.",
+        "nb": "Lag en kreditt- og rettighetsoversikt for egne opptak, tegninger og leveringsfiler.",
+        "fr": "Créer un registre de crédits et de droits pour images, dessins et fichiers de livraison originaux.",
+        "pt": "Criar um registo de créditos e direitos para imagens, desenhos e ficheiros de entrega originais."
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "waking-concept",
+      "area": "research",
+      "prompt": {
+        "en": "Why choose hand-drawn digital animation rather than a photorealistic imitation of filmed material?",
+        "nb": "Hvorfor velge håndtegnet digital animasjon fremfor fotorealistisk etterligning av filmopptaket?",
+        "fr": "Pourquoi choisir une animation numérique dessinée plutôt qu'une imitation photoréaliste des images filmées ?",
+        "pt": "Porquê escolher animação digital desenhada em vez de imitação fotorrealista?"
+      },
+      "options": [
+        {
+          "id": "filter",
+          "label": {
+            "en": "Apply a single automatic filter without making artistic decisions",
+            "nb": "Bruk ett automatisk filter uten kunstneriske valg",
+            "fr": "Appliquer un filtre automatique sans choix artistiques",
+            "pt": "Aplicar um filtro automático sem escolhas artísticas"
+          }
+        },
+        {
+          "id": "express",
+          "label": {
+            "en": "Use deliberate drawing choices to make the subjective experience visible",
+            "nb": "Bruk bevisste tegnevalg for å synliggjøre den subjektive opplevelsen",
+            "fr": "Choisir des dessins qui rendent visible l'expérience subjective",
+            "pt": "Usar escolhas de desenho para tornar visível a experiência subjetiva"
+          }
+        },
+        {
+          "id": "literal",
+          "label": {
+            "en": "Require every animated frame to reproduce the photograph exactly",
+            "nb": "Krev at hvert animert bilde gjengir fotografiet eksakt",
+            "fr": "Exiger que chaque image animée reproduise exactement la photographie",
+            "pt": "Exigir que cada imagem animada reproduza exatamente a fotografia"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "express",
+      "explanation": {
+        "en": "Linklater describes finding an expressive form for a long-developing film idea through Sabiston's animation. The visual treatment is an artistic decision, not simply a technical conversion.",
+        "nb": "Linklater beskriver hvordan Sabistons animasjon ga en lenge utviklet filmidé et uttrykk. Bildebehandlingen er et kunstnerisk valg, ikke bare en teknisk konvertering.",
+        "fr": "Linklater décrit comment l'animation de Sabiston a donné une forme expressive à une idée ancienne. Le traitement visuel est un choix artistique, non une simple conversion.",
+        "pt": "Linklater descreve como a animação de Sabiston deu forma expressiva a uma ideia antiga. O tratamento visual é escolha artística, não mera conversão."
+      },
+      "sourceIds": [
+        "oxford",
+        "linklater"
+      ]
+    },
+    {
+      "id": "waking-capture",
+      "area": "camera",
+      "prompt": {
+        "en": "Which sequence of production stages matches Waking Life's documented workflow?",
+        "nb": "Hvilken rekkefølge av produksjonsfaser samsvarer med Waking Lifes dokumenterte arbeidsflyt?",
+        "fr": "Quel ordre des étapes correspond au processus documenté de Waking Life ?",
+        "pt": "Que ordem de etapas corresponde ao processo documentado de Waking Life?"
+      },
+      "options": [
+        {
+          "id": "animate-first",
+          "label": {
+            "en": "Finish animation before recording any reference performances",
+            "nb": "Fullfør animasjon før det tas opp noen referanseprestasjoner",
+            "fr": "Terminer l'animation avant de filmer les références",
+            "pt": "Terminar animação antes de gravar referências"
+          }
+        },
+        {
+          "id": "random",
+          "label": {
+            "en": "Draw disconnected scenes without deciding on performance timing",
+            "nb": "Tegn løsrevne scener uten å velge timing for skuespillet",
+            "fr": "Dessiner des scènes isolées sans choisir le rythme du jeu",
+            "pt": "Desenhar cenas isoladas sem escolher o ritmo da interpretação"
+          }
+        },
+        {
+          "id": "edit-first",
+          "label": {
+            "en": "Film digital live action, edit the footage, then animate over the selected material",
+            "nb": "Film digitalt skuespill, klipp opptakene og animer deretter over valgt materiale",
+            "fr": "Filmer en numérique, monter puis animer sur les images sélectionnées",
+            "pt": "Filmar digitalmente, montar e animar sobre o material selecionado"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "edit-first",
+      "explanation": {
+        "en": "Animation World Network reported that digital live-action editing preceded the animation. Reference timing and performance therefore give the artists a concrete basis for interpretation; exact camera models are not inferred.",
+        "nb": "Animation World Network rapporterte at de digitale skuespilleropptakene ble klippet før animasjonen. Timing og prestasjon gir tegnerne et konkret utgangspunkt, uten antakelser om eksakte kameramodeller.",
+        "fr": "Animation World Network rapporte que le montage des prises numériques précède l'animation. Le rythme et le jeu donnent une base concrète aux artistes, sans déduire de modèle de caméra précis.",
+        "pt": "Animation World Network relata que a montagem da ação digital precedeu a animação. Ritmo e interpretação dão uma base concreta aos artistas, sem deduzir modelos de câmara."
+      },
+      "sourceIds": [
+        "awn",
+        "wired"
+      ]
+    },
+    {
+      "id": "waking-draw",
+      "area": "animation",
+      "prompt": {
+        "en": "What work did Rotoshop automate, and what still depended on the animator?",
+        "nb": "Hvilket arbeid automatiserte Rotoshop, og hva var fortsatt avhengig av animatøren?",
+        "fr": "Quel travail Rotoshop automatise-t-il et que reste-t-il à l'animateur ?",
+        "pt": "Que trabalho automatiza Rotoshop e o que depende do animador?"
+      },
+      "options": [
+        {
+          "id": "keys",
+          "label": {
+            "en": "Draw and revise shapes on selected frames, using interpolation between them when useful",
+            "nb": "Tegn og juster former på utvalgte bilder, med interpolering mellom dem når det er nyttig",
+            "fr": "Dessiner et corriger des formes sur des images choisies puis interpoler si utile",
+            "pt": "Desenhar e rever formas em quadros escolhidos, interpolando quando útil"
+          }
+        },
+        {
+          "id": "auto",
+          "label": {
+            "en": "Let software automatically trace and interpret every expressive feature of the scene",
+            "nb": "La programvaren automatisk spore og tolke alle scenens uttrykksdetaljer",
+            "fr": "Laisser le logiciel tracer et interpréter automatiquement tous les détails expressifs",
+            "pt": "Deixar o software traçar e interpretar automaticamente todos os detalhes expressivos"
+          }
+        },
+        {
+          "id": "still",
+          "label": {
+            "en": "Use one unchanged drawing for every changing pose regardless of movement",
+            "nb": "Bruk én uendret tegning for alle posisjoner uansett bevegelse",
+            "fr": "Utiliser un dessin inchangé pour toutes les poses malgré le mouvement",
+            "pt": "Usar um desenho inalterado para todas as poses independentemente do movimento"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "keys",
+      "explanation": {
+        "en": "Sabiston explains in Computer Graphics World that artists drew shapes and added new key drawings when movement changed, while interpolation could smooth the transition. This is labor-intensive animation, not automatic image tracing.",
+        "nb": "Sabiston forklarer i Computer Graphics World at kunstnerne tegnet former og la til nye nøkkeltegninger når bevegelsen endret seg, mens interpolering kunne jevne ut overgangen. Dette er arbeidskrevende animasjon, ikke automatisk sporing.",
+        "fr": "Sabiston explique que les artistes dessinaient les formes et ajoutaient des clés lors des changements de mouvement ; l'interpolation pouvait lisser la transition. Ce n'est pas un traçage automatique.",
+        "pt": "Sabiston explica que os artistas desenhavam formas e acrescentavam chaves quando o movimento mudava; a interpolação suavizava transições. Não é traçado automático."
+      },
+      "sourceIds": [
+        "cgw",
+        "linklater"
+      ]
+    },
+    {
+      "id": "waking-style",
+      "area": "animation",
+      "prompt": {
+        "en": "How can different artists' visual styles contribute to a coherent dream narrative?",
+        "nb": "Hvordan kan ulike kunstneres visuelle stiler bidra til en sammenhengende drømmefortelling?",
+        "fr": "Comment des styles différents contribuent-ils à un récit onirique cohérent ?",
+        "pt": "Como estilos diferentes contribuem para uma narrativa onírica coerente?"
+      },
+      "options": [
+        {
+          "id": "uniform",
+          "label": {
+            "en": "Require every sequence to have identical visual treatment regardless of its dramatic purpose",
+            "nb": "Krev identisk visuelt uttrykk i alle sekvenser uansett dramatisk hensikt",
+            "fr": "Exiger un traitement identique pour chaque séquence quel que soit son but",
+            "pt": "Exigir tratamento idêntico em todas as sequências qualquer que seja o propósito"
+          }
+        },
+        {
+          "id": "varied",
+          "label": {
+            "en": "Allow scene-specific styles while coordinating narrative continuity across the film",
+            "nb": "Tillat scenespesifikke stiler og samordne fortellerkontinuiteten gjennom filmen",
+            "fr": "Permettre des styles propres aux scènes tout en coordonnant la continuité narrative",
+            "pt": "Permitir estilos próprios de cada cena, coordenando continuidade narrativa"
+          }
+        },
+        {
+          "id": "random",
+          "label": {
+            "en": "Assign arbitrary visual changes without reviewing the scene's intended expression",
+            "nb": "Tildel vilkårlige bildeendringer uten å vurdere scenens uttrykk",
+            "fr": "Attribuer des variations arbitraires sans revoir l'expression de la scène",
+            "pt": "Atribuir mudanças arbitrárias sem rever a expressão da cena"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "varied",
+      "explanation": {
+        "en": "Computer Graphics World describes artists working on whole scenes with distinctive treatments and the protagonist changing appearance across encounters. Linklater likewise describes valuing artists' individual contributions. The exercise adapts that principle rather than imposing a uniform style.",
+        "nb": "Computer Graphics World beskriver ulike uttrykk i hele scener og at hovedfiguren endrer utseende mellom møter. Linklater fremhever også kunstnernes individuelle bidrag. Øvelsen tilpasser prinsippet fremfor å påtvinge lik stil.",
+        "fr": "Computer Graphics World décrit des scènes traitées différemment et un protagoniste dont l'aspect varie. Linklater valorise les apports individuels des artistes. L'exercice adapte ce principe.",
+        "pt": "Computer Graphics World descreve tratamentos distintos por cena e um protagonista que muda de aparência. Linklater valoriza contributos individuais. O exercício adapta esse princípio."
+      },
+      "sourceIds": [
+        "cgw",
+        "linklater"
+      ]
+    },
+    {
+      "id": "waking-labor",
+      "area": "research",
+      "prompt": {
+        "en": "How should a producer plan a hand-drawn digital animation schedule?",
+        "nb": "Hvordan bør en produsent planlegge tidsbruken for håndtegnet digital animasjon?",
+        "fr": "Comment planifier le calendrier d'une animation numérique dessinée ?",
+        "pt": "Como planear o calendário de uma animação digital desenhada?"
+      },
+      "options": [
+        {
+          "id": "instant",
+          "label": {
+            "en": "Assume interpolation eliminates the time needed for human drawing and review",
+            "nb": "Anta at interpolering fjerner all tid til menneskelig tegning og gjennomgang",
+            "fr": "Supposer que l'interpolation supprime le temps de dessin et de révision",
+            "pt": "Pressupor que interpolação elimina o tempo de desenho e revisão"
+          }
+        },
+        {
+          "id": "constant",
+          "label": {
+            "en": "Apply one fixed historical productivity estimate to all sequences regardless of complexity",
+            "nb": "Bruk ett historisk produktivitetsanslag på alle sekvenser uansett kompleksitet",
+            "fr": "Appliquer une estimation historique fixe à toutes les séquences sans tenir compte de leur complexité",
+            "pt": "Aplicar uma estimativa histórica fixa a todas as sequências sem considerar complexidade"
+          }
+        },
+        {
+          "id": "test",
+          "label": {
+            "en": "Estimate effort from representative tests and budget artist time, feedback and revision",
+            "nb": "Anslå innsats fra representative tester og budsjetter kunstnertid, tilbakemelding og revisjon",
+            "fr": "Estimer l'effort par des tests représentatifs et budgéter temps des artistes et révisions",
+            "pt": "Estimar esforço por testes representativos e orçamentar tempo de artistas e revisões"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "test",
+      "explanation": {
+        "en": "The production notes describe more than thirty artists and substantial per-minute animation labor. A later report contrasts the more demanding uniform style of A Scanner Darkly. Historical estimates are context, not a universal productivity target.",
+        "nb": "Produksjonsnotatene beskriver over tretti kunstnere og betydelig arbeid per animert minutt. En senere reportasje sammenligner med den mer krevende enhetlige stilen i A Scanner Darkly. Historiske anslag er kontekst, ikke universelle krav.",
+        "fr": "Les notes évoquent plus de trente artistes et un travail important par minute. Un reportage ultérieur compare le style uniforme plus exigeant d'A Scanner Darkly. Les estimations historiques ne sont pas des normes universelles.",
+        "pt": "As notas referem mais de trinta artistas e trabalho significativo por minuto. Uma reportagem posterior compara o estilo uniforme mais exigente de A Scanner Darkly. Estimativas históricas não são metas universais."
+      },
+      "sourceIds": [
+        "notes",
+        "comparison"
+      ]
+    },
+    {
+      "id": "waking-release",
+      "area": "research",
+      "prompt": {
+        "en": "Which distinction matters when documenting an independent animation production's distribution?",
+        "nb": "Hvilket skille er viktig ved dokumentasjon av en uavhengig animasjonsproduksjons distribusjon?",
+        "fr": "Quelle distinction importe dans la documentation de la diffusion d'une animation indépendante ?",
+        "pt": "Que distinção importa ao documentar distribuição de animação independente?"
+      },
+      "options": [
+        {
+          "id": "deal",
+          "label": {
+            "en": "Distinguish the independently developed work from the later distributor's acquired rights",
+            "nb": "Skill det uavhengig utviklede verket fra distributørens senere ervervede rettigheter",
+            "fr": "Distinguer l'œuvre développée indépendamment des droits acquis ensuite par le distributeur",
+            "pt": "Distinguir a obra desenvolvida independentemente dos direitos adquiridos pelo distribuidor"
+          }
+        },
+        {
+          "id": "self",
+          "label": {
+            "en": "Assume independent production necessarily means the filmmakers self-distributed the film",
+            "nb": "Anta at uavhengig produksjon nødvendigvis betyr at filmskaperne selv distribuerte filmen",
+            "fr": "Supposer que production indépendante signifie nécessairement autodistribution",
+            "pt": "Pressupor que produção independente significa necessariamente autodistribuição"
+          }
+        },
+        {
+          "id": "rights",
+          "label": {
+            "en": "Assume every reference image and piece of music is automatically cleared",
+            "nb": "Anta at alle referansebilder og all musikk automatisk er rettighetsklarert",
+            "fr": "Supposer que toute image de référence et musique est automatiquement autorisée",
+            "pt": "Pressupor que toda imagem de referência e música está automaticamente autorizada"
+          }
+        }
+      ],
+      "bestSupportedOptionId": "deal",
+      "explanation": {
+        "en": "Animation World Network reported Fox Searchlight's acquisition of worldwide distribution rights following the 2001 Sundance debut. This establishes a distributor relationship, not an audited budget or self-distribution claim. New exercises use original or cleared assets.",
+        "nb": "Animation World Network rapporterte Fox Searchlights kjøp av verdensomspennende distribusjonsrettigheter etter Sundance-debuten i 2001. Det dokumenterer et distributørsamarbeid, ikke et revidert budsjett eller selvdistribusjon. Nye øvelser bruker egne eller klarerte ressurser.",
+        "fr": "Animation World Network rapporte l'acquisition des droits mondiaux par Fox Searchlight après Sundance 2001. Cela établit un distributeur, non un budget audité ni une autodistribution. Utiliser des médias originaux ou autorisés.",
+        "pt": "Animation World Network relata aquisição dos direitos mundiais pela Fox Searchlight após Sundance 2001. Demonstra distribuição por parceiro, não orçamento auditado nem autodistribuição. Usar meios originais ou autorizados."
+      },
+      "sourceIds": [
+        "awn"
+      ]
+    }
+  ],
+  "review": {
+    "runtimeAdmission": false,
+    "bookLinkApproved": false,
+    "studyPreview": true,
+    "required": [
+      "Independently review production testimony and release metadata.",
+      "Complete exact catalogue identity and eligible representation-gap assessment before admission."
+    ]
+  }
+}

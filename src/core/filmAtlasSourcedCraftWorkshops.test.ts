@@ -21,20 +21,33 @@ const ids = [
   "scenario_vive_l_amour_1994",
   "scenario_peppermint_candy_1999",
   "scenario_all_the_beauty_and_the_bloodshed_2022",
+  "scenario_russian_ark_2002",
+  "scenario_atanarjuat_the_fast_runner_2001",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly twelve existing cases have thirty-six original, source-backed decisions", () => {
+test("Exactly fourteen existing cases have forty-two original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 12);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 36);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 14);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 42);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
     assert.ok(workshop.sources.length >= 2);
-    if (workshop.scenarioId === "scenario_all_the_beauty_and_the_bloodshed_2022") {
+    if (workshop.scenarioId === "scenario_atanarjuat_the_fast_runner_2001") {
+      const manual = readFileSync("src/core/chapterEighteenAtanarjuatExpansion.ts", "utf8");
+      assert.match(manual, /id: "scenario_atanarjuat_the_fast_runner_2001"/);
+      const verification = readFileSync("src/ui/data/scenarioProductionVerificationAtanarjuat.ts", "utf8");
+      assert.match(verification, /status: "verified"/);
+      for (const source of workshop.sources) assert.ok(verification.includes(source.url));
+    } else if (workshop.scenarioId === "scenario_russian_ark_2002") {
+      const manual = readFileSync("src/core/chapterEighteenRussianArkExpansion.ts", "utf8");
+      assert.match(manual, /id: "scenario_russian_ark_2002"/);
+      const verification = readFileSync("src/ui/data/scenarioProductionVerificationRussianArk.ts", "utf8");
+      assert.match(verification, /status: "verified"/);
+    } else if (workshop.scenarioId === "scenario_all_the_beauty_and_the_bloodshed_2022") {
       const manual = readFileSync("src/core/modernCanonExpansion.ts", "utf8");
       assert.match(manual, /id: "scenario_all_the_beauty_and_the_bloodshed_2022", title: "All the Beauty and the Bloodshed"[^\n]*year: 2022/);
     } else if (workshop.scenarioId === "scenario_peppermint_candy_1999") {
@@ -269,4 +282,45 @@ test("All the Beauty and the Bloodshed distinguishes audio interviews, archive i
   assert.equal(edit.bestSupportedOptionId, "interwoven-strands");
   assert.ok(edit.sourceIds.includes("praxis-credits"));
   assert.match(edit.explanation.en, /independent verification/);
+});
+
+test("Russian Ark separates capture duration, safe coordination, and post-production", () => {
+  const workshop = getSourceBackedCaseWorkshop("scenario_russian_ark_2002");
+  assert.ok(workshop);
+  const [capture, rehearsal, post] = workshop.questions;
+  assert.ok(capture && rehearsal && post);
+  assert.equal(capture.bestSupportedOptionId, "disk");
+  assert.match(capture.explanation.en, /35mm exhibition/);
+  assert.equal(rehearsal.bestSupportedOptionId, "rehearse");
+  assert.match(rehearsal.explanation.en, /consent and breaks/);
+  assert.equal(post.bestSupportedOptionId, "finish");
+  assert.match(post.explanation.en, /single take does not mean no post-production/);
+});
+
+test("Russian Ark has a dedicated playable brief, not the seed fallback", () => {
+  const resolver = readFileSync("src/ui/data/scenarioProductionBriefs.ts", "utf8");
+  const ark = readFileSync("src/ui/data/scenarioProductionBriefsRussianArk.ts", "utf8");
+  assert.match(resolver, /\?\? getRussianArkProductionBrief\(scenario\)/);
+  assert.match(ark, /briefType: "production_case"/);
+  assert.match(ark, /verificationStatus: "verified"/);
+  assert.match(ark, /definition\.id|item\.id === scenario\.id/);
+});
+
+test("Atanarjuat respects community authority and separates capture from exhibition", () => {
+  const workshop = getSourceBackedCaseWorkshop("scenario_atanarjuat_the_fast_runner_2001");
+  assert.ok(workshop);
+  const [oral, crew, format] = workshop.questions;
+  assert.ok(oral && crew && format);
+  assert.equal(oral.bestSupportedOptionId, "collaborate");
+  assert.match(oral.explanation.en, /explicitly authorized/);
+  assert.equal(crew.bestSupportedOptionId, "local");
+  assert.match(crew.explanation.en, /not universal staffing quotas/);
+  assert.equal(format.bestSupportedOptionId, "separate");
+  assert.match(format.explanation.en, /Digital Betacam/);
+  assert.match(format.explanation.en, /digital-to-film transfer/);
+  const resolver = readFileSync("src/ui/data/scenarioProductionBriefs.ts", "utf8");
+  const dedicated = readFileSync("src/ui/data/scenarioProductionBriefsAtanarjuat.ts", "utf8");
+  assert.match(resolver, /\?\? getAtanarjuatProductionBrief\(scenario\)/);
+  assert.match(dedicated, /briefType: "production_case"/);
+  assert.match(dedicated, /verificationStatus: "verified"/);
 });

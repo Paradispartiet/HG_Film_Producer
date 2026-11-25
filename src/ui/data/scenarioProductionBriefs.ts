@@ -1,5 +1,8 @@
 import type { FilmScenarioSeed } from "./filmScenarios";
 import { getEarlyCinemaExpansionProductionBrief } from "./scenarioProductionBriefsEarlyCinemaExpansion";
+import { getRussianArkProductionBrief } from "./scenarioProductionBriefsRussianArk";
+import { getAtanarjuatProductionBrief } from "./scenarioProductionBriefsAtanarjuat";
+import { getVerifiedHistoryMappedProductionBrief } from "./scenarioProductionBriefsVerifiedHistory";
 
 export type ScenarioProductionBriefType = "production_case" | "seed_fallback";
 
@@ -2345,9 +2348,17 @@ export function getScenarioProductionBrief(scenarioId: string): ScenarioProducti
   return brief ? { ...brief, briefType: "production_case" } : undefined;
 }
 
-export function resolveScenarioProductionBrief(scenario: FilmScenarioSeed): ScenarioProductionBrief {
+// Preserve all existing handcrafted and previously registered mission choices.
+export function resolveRegisteredScenarioProductionBrief(scenario: FilmScenarioSeed): ScenarioProductionBrief | undefined {
   return getScenarioProductionBrief(scenario.id)
-    ?? getEarlyCinemaExpansionProductionBrief(scenario)
+    ?? getRussianArkProductionBrief(scenario)
+    ?? getAtanarjuatProductionBrief(scenario)
+    ?? getEarlyCinemaExpansionProductionBrief(scenario);
+}
+
+export function resolveScenarioProductionBrief(scenario: FilmScenarioSeed): ScenarioProductionBrief {
+  return resolveRegisteredScenarioProductionBrief(scenario)
+    ?? getVerifiedHistoryMappedProductionBrief(scenario)
     ?? getFallbackScenarioProductionBrief(scenario);
 }
 

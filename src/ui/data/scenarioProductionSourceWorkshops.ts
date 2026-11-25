@@ -1,11 +1,11 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Twelve pre-existing Production Cases receive evidence-backed craft decisions.
+ * Fourteen pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
- * or change the research-pending verification status.
+ * or change a case's existing verification status.
  */
 export type WorkshopText = Readonly<Record<FilmWorkLanguage, string>>;
 export type WorkshopSource = {
@@ -872,6 +872,412 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
       { id: "beauty-interweave", area: "research", prompt: t("Which editing structure reflects the relationship between the artist's earlier life and contemporary activism?", "Hvilken klippestruktur gjenspeiler forholdet mellom kunstnerens tidligere liv og samtidige aktivisme?", "Quelle structure de montage reflète le rapport entre la vie passée de l'artiste et son militantisme contemporain ?", "Que estrutura de montagem reflete a relação entre a vida anterior da artista e o ativismo contemporâneo?"), options: [{ id: "interwoven-strands", label: t("Interweave the present campaign and earlier life through carefully developed thematic connections", "Flett samtidens kampanje og tidligere liv sammen gjennom gjennomarbeidede tematiske forbindelser", "Entrelacer la campagne présente et la vie passée par des liens thématiques soigneusement élaborés", "Entrelaçar a campanha atual e a vida anterior através de ligações temáticas cuidadosamente elaboradas") },
           { id: "chronology-only", label: t("Separate the biography from activism into two strictly chronological unrelated blocks", "Skill biografi og aktivisme i to strengt kronologiske blokker uten sammenheng", "Séparer biographie et militantisme en deux blocs strictement chronologiques sans lien", "Separar biografia e ativismo em dois blocos estritamente cronológicos sem ligação") },
           { id: "erase-source", label: t("Replace all testimony and archive material with anonymous expert commentary", "Erstatt alle vitnesbyrd og arkivmateriale med anonyme ekspertkommentarer", "Remplacer tous les témoignages et archives par des commentaires anonymes d'experts", "Substituir todos os testemunhos e arquivos por comentários anónimos de especialistas") }], bestSupportedOptionId: "interwoven-strands", explanation: t("Poitras explains that the contemporary PAIN campaign was a narrative thread from the outset, while thematic connections developed in editing. Praxis credits Amy Foote, Joe Bini and Brian A. Kates as editors. Juxtaposition can illuminate relationships without equating distinct crises or substituting for independent verification of factual claims.", "Poitras forklarer at den samtidige PAIN-kampanjen var en fortellertråd fra starten, mens de tematiske forbindelsene utviklet seg under klippingen. Praxis krediterer Amy Foote, Joe Bini og Brian A. Kates som klippere. Sammenstilling kan belyse forbindelser uten å likestille ulike kriser eller erstatte uavhengig faktakontroll.", "Poitras explique que la campagne contemporaine de PAIN constituait dès le début un fil narratif, tandis que les liens thématiques se sont développés au montage. Praxis crédite Amy Foote, Joe Bini et Brian A. Kates. Le rapprochement ne remplace pas la vérification indépendante des faits.", "Poitras explica que a campanha contemporânea de PAIN era desde o início um fio narrativo e que as ligações temáticas se desenvolveram na montagem. Praxis credita Amy Foote, Joe Bini e Brian A. Kates. A justaposição não substitui a verificação independente dos factos."), sourceIds: ["poitras-berliner","praxis-credits"] }
+    ]
+  },
+  {
+    "scenarioId": "scenario_russian_ark_2002",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Russian Ark turns continuous camera movement into a production challenge joining digital recording, ensemble choreography and post-production. These choices teach the workflow without recreating its physical burden.",
+      "nb": "Russian Ark gjør sammenhengende kamerabevegelse til en produksjonsutfordring som forener digitalopptak, ensemblekoreografi og etterarbeid. Valgene lærer arbeidsflyten uten å gjenskape den fysiske belastningen.",
+      "fr": "Russian Ark transforme le mouvement continu en défi de captation numérique, de chorégraphie collective et de postproduction. L'exercice enseigne le processus sans reproduire l'effort physique.",
+      "pt": "Russian Ark transforma o movimento contínuo num desafio de captação digital, coreografia coletiva e pós-produção. O exercício ensina o processo sem reproduzir o esforço físico."
+    },
+    "sources": [
+      {
+        "id": "production",
+        "title": "Russian Ark — Production Notes",
+        "publisher": "Cinema.com",
+        "url": "https://cinema.com/articles/2015/russian-ark-production-notes.phtml"
+      },
+      {
+        "id": "tcm",
+        "title": "Russian Ark — production history",
+        "publisher": "Turner Classic Movies",
+        "url": "https://www.tcm.com/articles/718963/russian-ark"
+      },
+      {
+        "id": "dff",
+        "title": "Entfesselte Bilder: Gespräch mit Kameramann Tilman Büttner",
+        "publisher": "Deutsches Filminstitut & Filmmuseum",
+        "url": "https://www.dff.film/video/entfesselte-bilder-gespraech-mit-kameramann-tilman-buettner-von-russian-ark-2002/"
+      },
+      {
+        "id": "sokurov",
+        "title": "Alexander Sokurov — Seamless Art",
+        "publisher": "Cineuropa",
+        "url": "https://cineuropa.org/en/interview/331/en/training/"
+      },
+      {
+        "id": "iffr",
+        "title": "Russian Ark — IFFR 2003 film record",
+        "publisher": "International Film Festival Rotterdam",
+        "url": "https://iffr.com/en/iffr/2003/films/russian-ark"
+      },
+      {
+        "id": "cannes",
+        "title": "Russian Ark — Cannes 2002 competition",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/russian-ark/"
+      },
+      {
+        "id": "nziff",
+        "title": "Russian Ark — NZIFF 2002 screening",
+        "publisher": "New Zealand International Film Festival",
+        "url": "https://www.nziff.co.nz/2002/archive-1/russian-ark/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "ark-capture",
+        "area": "camera",
+        "prompt": {
+          "en": "Which recording strategy addressed the planned feature-length uninterrupted camera movement?",
+          "nb": "Hvilken opptaksstrategi løste behovet for en sammenhengende kamerabevegelse i spillefilmlengde?",
+          "fr": "Quelle stratégie de captation répondait au mouvement continu prévu pour tout le film ?",
+          "pt": "Que estratégia de captação respondia ao movimento contínuo previsto para toda a longa-metragem?"
+        },
+        "options": [
+          {
+            "id": "film-magazine",
+            "label": {
+              "en": "Rely on changing conventional film magazines during the continuous take",
+              "nb": "Basere opptaket på skifte av tradisjonelle filmmagasiner under den sammenhengende tagningen",
+              "fr": "Compter sur des changements de magasins de pellicule pendant la prise continue",
+              "pt": "Depender de trocas de carregadores de película durante a tomada contínua"
+            }
+          },
+          {
+            "id": "disk",
+            "label": {
+              "en": "Plan continuous digital HD capture to a portable hard-disk recorder",
+              "nb": "Planlegg sammenhengende digitalt HD-opptak til en bærbar harddiskopptaker",
+              "fr": "Prévoir une captation HD numérique continue sur un enregistreur portable à disque dur",
+              "pt": "Planear captação HD digital contínua num gravador portátil de disco rígido"
+            }
+          },
+          {
+            "id": "screening",
+            "label": {
+              "en": "Treat a later 35mm screening print as the original camera recording medium",
+              "nb": "Behandle en senere 35 mm-visningskopi som kameraets opprinnelige opptaksmedium",
+              "fr": "Traiter une copie de projection 35 mm ultérieure comme support original de captation",
+              "pt": "Tratar uma cópia de projeção de 35 mm posterior como suporte original de captação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "disk",
+        "explanation": {
+          "en": "The production notes and TCM identify feature-length uncompressed HD recording directly to a portable hard disk. The IFFR record separately identifies 35mm exhibition. The exercise teaches the recording-duration constraint, not an exact camera model or a requirement to use heavy equipment.",
+          "nb": "Produksjonsnotatene og TCM beskriver ukomprimert HD-opptak i spillefilmlengde direkte til en bærbar harddisk. IFFR oppgir 35 mm-visning separat. Øvelsen lærer om opptaksvarighet, ikke en bestemt kameramodell eller krav om tungt utstyr.",
+          "fr": "Les notes de production et TCM décrivent la captation HD non compressée sur disque dur portable. IFFR distingue la projection 35 mm. L'exercice porte sur la durée, non sur un modèle précis ou un matériel lourd.",
+          "pt": "As notas de produção e TCM descrevem captação HD não comprimida em disco rígido portátil. IFFR distingue a projeção de 35 mm. O exercício aborda a duração, não um modelo exato ou equipamento pesado."
+        },
+        "sourceIds": [
+          "production",
+          "tcm",
+          "iffr"
+        ]
+      },
+      {
+        "id": "ark-choreography",
+        "area": "research",
+        "prompt": {
+          "en": "How can a crew prepare a continuous scene across several rooms with a limited location-access window?",
+          "nb": "Hvordan kan et team forberede en sammenhengende scene gjennom flere rom når tilgangen til stedet er begrenset?",
+          "fr": "Comment préparer une scène continue traversant plusieurs salles avec un accès limité au lieu ?",
+          "pt": "Como preparar uma cena contínua em várias salas com acesso limitado ao local?"
+        },
+        "options": [
+          {
+            "id": "improvise",
+            "label": {
+              "en": "Leave transitions and performer movements entirely unplanned until recording begins",
+              "nb": "La overganger og skuespillerbevegelser være helt uplanlagt til opptaket starter",
+              "fr": "Laisser toutes les transitions et déplacements sans préparation avant la prise",
+              "pt": "Deixar todas as transições e movimentos sem planeamento até à gravação"
+            }
+          },
+          {
+            "id": "museum",
+            "label": {
+              "en": "Use original museum objects as handling props without permission",
+              "nb": "Bruk originale museumsgjenstander som rekvisitter uten tillatelse",
+              "fr": "Manipuler les objets originaux du musée comme accessoires sans autorisation",
+              "pt": "Usar objetos originais do museu como adereços sem autorização"
+            }
+          },
+          {
+            "id": "rehearse",
+            "label": {
+              "en": "Rehearse sections and transitions, coordinate cues, and protect the location and crew",
+              "nb": "Øv på delscener og overganger, samordne signaler og beskytt opptakssted og team",
+              "fr": "Répéter les sections et transitions, coordonner les repères et protéger le lieu et l'équipe",
+              "pt": "Ensaiar secções e transições, coordenar sinais e proteger o local e a equipa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "rehearse",
+        "explanation": {
+          "en": "TCM reports advance rehearsals of scenes and transitions, one day of museum access for the shoot, and strict protection of exhibits. DFF describes the scale of coordinated performance. For a learning exercise, plan a short authorized route, safe camera movement, consent and breaks rather than reproducing the original physical demands.",
+          "nb": "TCM beskriver forhåndsprøver på scener og overganger, én opptaksdag i museet og strengt vern av utstillingene. DFF beskriver omfanget av samordningen. Planlegg en kort tillatt rute, trygg kamerabevegelse, samtykke og pauser fremfor å gjenskape den opprinnelige fysiske belastningen.",
+          "fr": "TCM décrit des répétitions préalables, une journée de tournage au musée et la protection des œuvres. DFF décrit l'ampleur de la coordination. Prévoir un parcours court autorisé, des mouvements sûrs, le consentement et des pauses.",
+          "pt": "TCM descreve ensaios prévios, um dia de rodagem no museu e proteção das obras. DFF descreve a escala da coordenação. Planear percurso curto autorizado, movimentos seguros, consentimento e pausas."
+        },
+        "sourceIds": [
+          "tcm",
+          "dff"
+        ]
+      },
+      {
+        "id": "ark-post",
+        "area": "sound",
+        "prompt": {
+          "en": "What does the uninterrupted picture take establish about the film's sound and finishing workflow?",
+          "nb": "Hva fastslår den sammenhengende bildetagningen om filmens lyd- og ferdigstillingsarbeid?",
+          "fr": "Que démontre la prise d'image continue sur le son et la finition du film ?",
+          "pt": "O que demonstra a tomada de imagem contínua sobre o som e a finalização?"
+        },
+        "options": [
+          {
+            "id": "finish",
+            "label": {
+              "en": "Preserve continuous picture time while separately planning sound mixing and colour finishing",
+              "nb": "Bevar sammenhengende bildetid samtidig som lydmiks og fargebearbeiding planlegges separat",
+              "fr": "Préserver le temps continu de l'image tout en planifiant séparément mixage et étalonnage",
+              "pt": "Preservar o tempo contínuo da imagem e planear separadamente mistura e correção de cor"
+            }
+          },
+          {
+            "id": "untouched",
+            "label": {
+              "en": "Assume the one-take film had no sound mixing or picture finishing",
+              "nb": "Anta at filmen i én tagning verken hadde lydmiks eller bildeetterarbeid",
+              "fr": "Supposer que le film en une prise n'a eu ni mixage ni finition de l'image",
+              "pt": "Pressupor que o filme numa tomada não teve mistura nem finalização de imagem"
+            }
+          },
+          {
+            "id": "runtime",
+            "label": {
+              "en": "Treat different catalogue running times as proof of an undocumented picture cut",
+              "nb": "Behandle ulike oppgitte spilletider som bevis på et udokumentert bildeklipp",
+              "fr": "Traiter les durées divergentes comme preuve d'une coupe non documentée",
+              "pt": "Tratar durações divergentes como prova de um corte não documentado"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "finish",
+        "explanation": {
+          "en": "Sokurov told Cineuropa that the picture was not conventionally edited but the sound was extensively mixed. IFFR records digital colour and light processing. Cannes and IFFR list 96 minutes, while NZIFF lists 95; the cause of the difference is not established. A single take does not mean no post-production.",
+          "nb": "Sokurov fortalte Cineuropa at bildet ikke ble konvensjonelt klippet, men at lyden ble omfattende mikset. IFFR dokumenterer digital farge- og lysbearbeiding. Cannes og IFFR oppgir 96 minutter, NZIFF 95; årsaken til avviket er ikke fastslått. Én tagning betyr ikke fravær av etterarbeid.",
+          "fr": "Sokurov indique à Cineuropa que l'image n'a pas été montée conventionnellement mais que le son a été largement mixé. IFFR documente le traitement numérique de la couleur et de la lumière. Cannes et IFFR indiquent 96 minutes, NZIFF 95 ; l'écart reste inexpliqué. Une prise unique n'exclut pas la postproduction.",
+          "pt": "Sokurov disse à Cineuropa que a imagem não teve montagem convencional, mas o som foi amplamente misturado. IFFR documenta tratamento digital de cor e luz. Cannes e IFFR indicam 96 minutos, NZIFF 95; a causa é desconhecida. Uma tomada única não exclui pós-produção."
+        },
+        "sourceIds": [
+          "sokurov",
+          "iffr",
+          "cannes",
+          "nziff"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_atanarjuat_the_fast_runner_2001",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore Inuit-led collaboration, oral-story adaptation and digital production using the film's existing reviewed source dossier, with respect for community authority.",
+      "nb": "Utforsk inuittledet samarbeid, adaptasjon av muntlig fortellertradisjon og digital produksjon med filmens eksisterende kildegrunnlag og respekt for lokalsamfunnets myndighet.",
+      "fr": "Explorer collaboration dirigée par les Inuits, adaptation orale et production numérique à partir du dossier existant, dans le respect de l'autorité communautaire.",
+      "pt": "Explorar colaboração liderada pelos Inuit, adaptação oral e produção digital com o dossier existente, respeitando autoridade comunitária."
+    },
+    "sources": [
+      {
+        "id": "isuma-press",
+        "title": "Atanarjuat (The Fast Runner) Press Kit",
+        "publisher": "Igloolik Isuma Productions",
+        "url": "https://www.isuma.tv/sites/default/themes/atanarjuat/files/Atan_presskit.pdf"
+      },
+      {
+        "id": "isuma-facts",
+        "title": "Facts at a glance — Atanarjuat",
+        "publisher": "IsumaTV / Igloolik Isuma Productions",
+        "url": "https://www.isuma.tv/en/atanarjuat/facts-glance"
+      },
+      {
+        "id": "nfb",
+        "title": "Atanarjuat the Fast Runner",
+        "publisher": "National Film Board of Canada",
+        "url": "https://www.nfb.ca/film/atanarjuat_the_fast_runner_en/"
+      },
+      {
+        "id": "angilirq",
+        "title": "Interview with Paul Apak Angilirq",
+        "publisher": "IsumaTV / Igloolik Isuma Productions",
+        "url": "https://www.isuma.tv/node/5555/"
+      },
+      {
+        "id": "cannes",
+        "title": "Atanarjuat The Fast Runner",
+        "publisher": "Festival de Cannes",
+        "url": "https://cinemadedemain.festival-cannes.com/en/f/atanarjuat-the-fast-runner/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "atanarjuat-oral",
+        "area": "research",
+        "prompt": {
+          "en": "How can a screenplay adaptation respect the community knowledge behind an oral narrative?",
+          "nb": "Hvordan kan en manusadaptasjon respektere lokalsamfunnets kunnskap bak en muntlig fortelling?",
+          "fr": "Comment une adaptation peut-elle respecter les savoirs communautaires d'un récit oral ?",
+          "pt": "Como pode uma adaptação respeitar os saberes comunitários de uma narrativa oral?"
+        },
+        "options": [
+          {
+            "id": "universal",
+            "label": {
+              "en": "Treat one published version as the definitive account and omit the other narrators",
+              "nb": "Behandle én publisert versjon som den endelige fortellingen og utelat de andre fortellerne",
+              "fr": "Traiter une version publiée comme définitive et écarter les autres narrateurs",
+              "pt": "Tratar uma versão publicada como definitiva e excluir os outros narradores"
+            }
+          },
+          {
+            "id": "collaborate",
+            "label": {
+              "en": "Consult authorized storytellers, compare accounts, and review the adapted script together",
+              "nb": "Rådfør deg med autoriserte fortellere, sammenlign versjoner og gjennomgå det adapterte manuset sammen",
+              "fr": "Consulter les narrateurs autorisés, comparer les récits et relire ensemble le scénario adapté",
+              "pt": "Consultar narradores autorizados, comparar relatos e rever em conjunto o argumento adaptado"
+            }
+          },
+          {
+            "id": "documentary",
+            "label": {
+              "en": "Present the dramatized screenplay as an exact documentary record of historical events",
+              "nb": "Presenter det dramatiserte manuset som et eksakt dokumentarisk referat av historiske hendelser",
+              "fr": "Présenter le scénario dramatisé comme un relevé documentaire exact des événements historiques",
+              "pt": "Apresentar o argumento dramatizado como um registo documental exato dos acontecimentos históricos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "collaborate",
+        "explanation": {
+          "en": "The existing Isuma production dossier records Angilirq's interviews with eight elders, collaborative Inuktitut screenwriting and elder review. The NFB distinguishes the result from documentary. New exercises should use an original fictional story or material explicitly authorized by its knowledge holders; cultural knowledge is not automatically free to reproduce.",
+          "nb": "Isumas eksisterende produksjonsdokumentasjon beskriver Angilirqs intervjuer med åtte eldre, samarbeid om manus på inuktitut og gjennomgang med eldre. NFB skiller resultatet fra dokumentarfilm. Nye øvelser bør bruke en egen fiktiv fortelling eller uttrykkelig godkjent materiale; kulturell kunnskap er ikke automatisk fritt tilgjengelig for gjengivelse.",
+          "fr": "Le dossier Isuma décrit les entretiens d'Angilirq avec huit aînés, l'écriture collective en inuktitut et leur relecture. L'ONF distingue le résultat du documentaire. Utiliser une fiction originale ou des récits explicitement autorisés ; les savoirs culturels ne sont pas librement reproductibles par défaut.",
+          "pt": "O dossier Isuma descreve entrevistas de Angilirq com oito anciãos, escrita coletiva em inuktitut e revisão pelos anciãos. O NFB distingue o resultado do documentário. Usar ficção original ou material expressamente autorizado; saberes culturais não são automaticamente livres para reprodução."
+        },
+        "sourceIds": [
+          "isuma-press",
+          "angilirq",
+          "nfb"
+        ]
+      },
+      {
+        "id": "atanarjuat-crew",
+        "area": "research",
+        "prompt": {
+          "en": "Which production plan best reflects the documented Inuit-led collaboration and local training?",
+          "nb": "Hvilken produksjonsplan gjenspeiler best det dokumenterte inuittledede samarbeidet og den lokale opplæringen?",
+          "fr": "Quel plan reflète le mieux la collaboration dirigée par les Inuits et la formation locale documentées ?",
+          "pt": "Que plano reflete melhor a colaboração liderada pelos Inuit e a formação local documentadas?"
+        },
+        "options": [
+          {
+            "id": "external",
+            "label": {
+              "en": "Give visiting specialists all creative authority and assign local participants only background roles",
+              "nb": "Gi tilreisende spesialister all kreativ myndighet og tildel lokale deltakere bare bakgrunnsroller",
+              "fr": "Donner toute l'autorité créative aux spécialistes visiteurs et reléguer les participants locaux à l'arrière-plan",
+              "pt": "Dar toda a autoridade criativa a especialistas visitantes e relegar participantes locais a papéis secundários"
+            }
+          },
+          {
+            "id": "fixed",
+            "label": {
+              "en": "Copy traditional objects from photographs without consulting their makers or community experts",
+              "nb": "Kopier tradisjonelle gjenstander fra fotografier uten å rådføre deg med skapere eller lokalsamfunnets fagpersoner",
+              "fr": "Copier des objets traditionnels depuis des photos sans consulter leurs créateurs ni experts communautaires",
+              "pt": "Copiar objetos tradicionais de fotografias sem consultar criadores ou especialistas comunitários"
+            }
+          },
+          {
+            "id": "local",
+            "label": {
+              "en": "Plan local creative leadership, agreed training, credited craft expertise and safe location access",
+              "nb": "Planlegg lokal kreativ ledelse, avtalt opplæring, kreditert håndverkskompetanse og trygg tilgang til opptakssteder",
+              "fr": "Prévoir direction créative locale, formation convenue, savoir-faire crédité et accès sûr aux lieux",
+              "pt": "Planear liderança criativa local, formação acordada, saber artesanal creditado e acesso seguro aos locais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "local",
+        "explanation": {
+          "en": "Isuma's press kit reports an all-Inuit cast, an approximately 90 percent Inuit technical crew, local trainees and collaboration with elders and artists on costumes, props and sets. These are production-specific accounts, not universal staffing quotas. A learning production must agree on authority, consent, compensation and appropriate permissions rather than reproduce culturally specific objects without authorization.",
+          "nb": "Isumas pressepakke oppgir et utelukkende inuittisk skuespillerensemble, omtrent 90 prosent inuittisk teknisk team, lokal opplæring og samarbeid med eldre og kunstnere om kostymer, rekvisitter og scenografi. Dette er filmspesifikke opplysninger, ikke universelle bemanningskvoter. Avtal myndighet, samtykke, honorar og tillatelser fremfor å gjenskape kulturspesifikke gjenstander uten godkjenning.",
+          "fr": "Le dossier Isuma indique une distribution entièrement inuite, une équipe technique inuite à environ 90 %, des stagiaires locaux et la collaboration d'aînés et d'artistes aux costumes et décors. Ce ne sont pas des quotas universels. Un exercice doit convenir de l'autorité, du consentement, de la rémunération et des autorisations.",
+          "pt": "O dossier Isuma indica elenco inteiramente Inuit, equipa técnica aproximadamente 90% Inuit, formação local e colaboração de anciãos e artistas em figurinos e cenários. Não são quotas universais. Acordar autoridade, consentimento, remuneração e autorizações numa nova produção."
+        },
+        "sourceIds": [
+          "isuma-press",
+          "isuma-facts",
+          "nfb"
+        ]
+      },
+      {
+        "id": "atanarjuat-format",
+        "area": "camera",
+        "prompt": {
+          "en": "How should the film's digital acquisition and theatrical transfer be recorded in a production study?",
+          "nb": "Hvordan bør filmens digitale opptak og kinooverføring dokumenteres i en produksjonsstudie?",
+          "fr": "Comment documenter la captation numérique et le transfert cinéma dans une étude de production ?",
+          "pt": "Como documentar a captação digital e a transferência para cinema num estudo de produção?"
+        },
+        "options": [
+          {
+            "id": "separate",
+            "label": {
+              "en": "Record Digital Betacam acquisition and the later 35mm transfer as distinct stages",
+              "nb": "Registrer Digital Betacam-opptak og senere overføring til 35 mm som ulike faser",
+              "fr": "Enregistrer la captation Digital Betacam et le transfert ultérieur en 35 mm comme étapes distinctes",
+              "pt": "Registar captação Digital Betacam e transferência posterior para 35 mm como etapas distintas"
+            }
+          },
+          {
+            "id": "film",
+            "label": {
+              "en": "Assume a 35mm exhibition print proves the scenes were originally shot on film",
+              "nb": "Anta at en 35 mm-visningskopi beviser at scenene opprinnelig ble filmet på filmrull",
+              "fr": "Supposer qu'une copie 35 mm prouve une captation originale sur pellicule",
+              "pt": "Pressupor que uma cópia de 35 mm prova captação original em película"
+            }
+          },
+          {
+            "id": "speculate",
+            "label": {
+              "en": "Invent the exact camera body, lens and transfer settings from the finished image",
+              "nb": "Finn på eksakt kamerahus, objektiv og overføringsinnstillinger fra det ferdige bildet",
+              "fr": "Inventer le boîtier, l'objectif et les réglages de transfert à partir de l'image finale",
+              "pt": "Inventar corpo de câmara, objetiva e definições de transferência pela imagem final"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "separate",
+        "explanation": {
+          "en": "The existing Isuma production dossier documents 16:9 Digital Betacam acquisition, and both Isuma and the NFB credit Digital Film Group for digital-to-film transfer. Cannes records the completed 172-minute feature. These records do not establish the exact camera body, lens, sound hardware or transfer settings. An exercise can plan a modern digital workflow without imitating hazardous location conditions.",
+          "nb": "Isumas eksisterende produksjonsdokumentasjon oppgir Digital Betacam-opptak i 16:9, og både Isuma og NFB krediterer Digital Film Group for digital-til-film-overføring. Cannes oppgir en ferdig film på 172 minutter. Kildene fastslår ikke eksakt kamerahus, objektiv, lydutstyr eller overføringsinnstillinger. En øvelse kan planlegge et moderne digitalt opptak uten å etterligne farlige forhold på opptaksstedet.",
+          "fr": "Le dossier Isuma indique une captation Digital Betacam 16:9 ; Isuma et l'ONF créditent Digital Film Group pour le transfert sur pellicule. Cannes indique 172 minutes. Ces notices n'établissent ni boîtier, ni objectif, ni matériel sonore précis. Un exercice peut proposer une captation moderne sans reproduire des conditions dangereuses.",
+          "pt": "O dossier Isuma indica captação Digital Betacam 16:9; Isuma e NFB creditam Digital Film Group pela transferência para película. Cannes indica 172 minutos. Os registos não estabelecem câmara, objetiva, áudio ou parâmetros exatos. Um exercício pode planear captação moderna sem reproduzir condições perigosas."
+        },
+        "sourceIds": [
+          "isuma-press",
+          "nfb",
+          "cannes"
+        ]
+      }
     ]
   }
 ] as const;

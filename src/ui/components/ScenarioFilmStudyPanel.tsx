@@ -13,199 +13,161 @@ import type { FilmWorkLanguage } from "../../core/filmWorkLanguage";
 import type { FilmScenarioSeed } from "../data/filmScenarios";
 import {
   createFilmHistoryChoices,
-  resolveScenarioFilmStudyMap,
 } from "../data/scenarioFilmStudyMap";
 import {
   createEuropeanTimeIdentitySystemsFilmHistoryChoices,
   getEuropeanTimeIdentitySystemsFilmHistoryProfile,
-  resolveEuropeanTimeIdentitySystemsFilmStudyMap,
 } from "../data/scenarioFilmStudyEuropeanTimeIdentitySystemsBatch";
 import {
   createNewGermanCinemaSystemsFilmHistoryChoices,
   getNewGermanCinemaSystemsFilmHistoryProfile,
-  resolveNewGermanCinemaSystemsFilmStudyMap,
 } from "../data/scenarioFilmStudyNewGermanCinemaSystemsBatch";
 import {
   createEuropean1960sSpaceSystemsFilmHistoryChoices,
   getEuropean1960sSpaceSystemsFilmHistoryProfile,
-  resolveEuropean1960sSpaceSystemsFilmStudyMap,
 } from "../data/scenarioFilmStudyEuropean1960sSpaceSystemsBatch";
 import {
   createBalkanWarInstitutionSystemsFilmHistoryChoices,
   getBalkanWarInstitutionSystemsFilmHistoryProfile,
-  resolveBalkanWarInstitutionSystemsFilmStudyMap,
 } from "../data/scenarioFilmStudyBalkanWarInstitutionSystemsBatch";
 import {
   createBritishIrishPlaceBodySystemsFilmHistoryChoices,
   getBritishIrishPlaceBodySystemsFilmHistoryProfile,
-  resolveBritishIrishPlaceBodySystemsFilmStudyMap,
 } from "../data/scenarioFilmStudyBritishIrishPlaceBodySystemsBatch";
 import {
   createIberianPortugueseMemorySystemsFilmHistoryChoices,
   getIberianPortugueseMemorySystemsFilmHistoryProfile,
-  resolveIberianPortugueseMemorySystemsFilmStudyMap,
 } from "../data/scenarioFilmStudyIberianPortugueseMemorySystemsBatch";
 import {
   create1930sProductionSystemsFilmHistoryChoices,
   get1930sProductionSystemsFilmHistoryProfile,
-  resolve1930sProductionSystemsFilmStudyMap,
 } from "../data/scenarioFilmStudy1930sProductionSystemsBatch";
 import {
   create1940sNoirRealismFilmHistoryChoices,
   get1940sNoirRealismFilmHistoryProfile,
-  resolve1940sNoirRealismFilmStudyMap,
 } from "../data/scenarioFilmStudy1940sNoirRealismBatch";
 import {
   create1950sAsianPostwarFilmHistoryChoices,
   get1950sAsianPostwarFilmHistoryProfile,
-  resolve1950sAsianPostwarFilmStudyMap,
 } from "../data/scenarioFilmStudy1950sAsianPostwarBatch";
 import {
   create1950sExpressivePostwarFilmHistoryChoices,
   get1950sExpressivePostwarFilmHistoryProfile,
-  resolve1950sExpressivePostwarFilmStudyMap,
 } from "../data/scenarioFilmStudy1950sExpressivePostwarBatch";
 import {
   create1960sScaleIndependentFilmHistoryChoices,
   get1960sScaleIndependentFilmHistoryProfile,
-  resolve1960sScaleIndependentFilmStudyMap,
 } from "../data/scenarioFilmStudy1960sScaleIndependentBatch";
 import {
   create1980sPoliticalPalmeSystemsFilmHistoryChoices,
   get1980sPoliticalPalmeSystemsFilmHistoryProfile,
-  resolve1980sPoliticalPalmeSystemsFilmStudyMap,
 } from "../data/scenarioFilmStudy1980sPoliticalPalmeSystemsBatch";
 import {
   createClassicalHollywoodFilmHistoryChoices,
   getClassicalHollywoodFilmHistoryProfile,
-  resolveClassicalHollywoodFilmStudyMap,
 } from "../data/scenarioFilmStudyClassicalHollywoodBatch";
 import {
   createConstructedWorldsFilmHistoryChoices,
   getConstructedWorldsFilmHistoryProfile,
-  resolveConstructedWorldsFilmStudyMap,
 } from "../data/scenarioFilmStudyConstructedWorldsBatch";
 import {
   createContemporaryDissentRuralSystemsFilmHistoryChoices,
   getContemporaryDissentRuralSystemsFilmHistoryProfile,
-  resolveContemporaryDissentRuralSystemsFilmStudyMap,
 } from "../data/scenarioFilmStudyContemporaryDissentRuralSystemsBatch";
 import {
   createContemporaryEuropeanSocialCareSystemsFilmHistoryChoices,
   getContemporaryEuropeanSocialCareSystemsFilmHistoryProfile,
-  resolveContemporaryEuropeanSocialCareSystemsFilmStudyMap,
 } from "../data/scenarioFilmStudyContemporaryEuropeanSocialCareSystemsBatch";
 import {
   createCrimeNoirTransformationsFilmHistoryChoices,
   getCrimeNoirTransformationsFilmHistoryProfile,
-  resolveCrimeNoirTransformationsFilmStudyMap,
 } from "../data/scenarioFilmStudyCrimeNoirTransformationsBatch";
 import {
   createCzechoslovakNewWaveFilmHistoryChoices,
   getCzechoslovakNewWaveFilmHistoryProfile,
-  resolveCzechoslovakNewWaveFilmStudyMap,
 } from "../data/scenarioFilmStudyCzechoslovakNewWaveBatch";
 import {
   createEarly1960sProductionSystemsFilmHistoryChoices,
   getEarly1960sProductionSystemsFilmHistoryProfile,
-  resolveEarly1960sProductionSystemsFilmStudyMap,
 } from "../data/scenarioFilmStudyEarly1960sProductionSystemsBatch";
 import {
   createEuropeanModernistProductionFilmHistoryChoices,
   getEuropeanModernistProductionFilmHistoryProfile,
-  resolveEuropeanModernistProductionFilmStudyMap,
 } from "../data/scenarioFilmStudyEuropeanModernistProductionBatch";
 import {
   createEuropeanPoeticMemorySystemsFilmHistoryChoices,
   getEuropeanPoeticMemorySystemsFilmHistoryProfile,
-  resolveEuropeanPoeticMemorySystemsFilmStudyMap,
 } from "../data/scenarioFilmStudyEuropeanPoeticMemorySystemsBatch";
 import {
   createEuropeanPoliticalFeministModernismFilmHistoryChoices,
   getEuropeanPoliticalFeministModernismFilmHistoryProfile,
-  resolveEuropeanPoliticalFeministModernismFilmStudyMap,
 } from "../data/scenarioFilmStudyEuropeanPoliticalFeministModernismBatch";
 import {
   createEuropeanPressureFilmHistoryChoices,
   getEuropeanPressureFilmHistoryProfile,
-  resolveEuropeanPressureFilmStudyMap,
 } from "../data/scenarioFilmStudyEuropeanPressureBatch";
 import {
   createFestivalJourneyDisplacementSystemsFilmHistoryChoices,
   getFestivalJourneyDisplacementSystemsFilmHistoryProfile,
-  resolveFestivalJourneyDisplacementSystemsFilmStudyMap,
 } from "../data/scenarioFilmStudyFestivalJourneyDisplacementSystemsBatch";
 import {
   createFestivalUrbanIntimacySystemsFilmHistoryChoices,
   getFestivalUrbanIntimacySystemsFilmHistoryProfile,
-  resolveFestivalUrbanIntimacySystemsFilmStudyMap,
 } from "../data/scenarioFilmStudyFestivalUrbanIntimacySystemsBatch";
 import {
   createIndependentStorytellingFilmHistoryChoices,
   getIndependentStorytellingFilmHistoryProfile,
-  resolveIndependentStorytellingFilmStudyMap,
 } from "../data/scenarioFilmStudyIndependentStorytellingBatch";
 import {
   createIntimateFestivalBodyCareSystemsFilmHistoryChoices,
   getIntimateFestivalBodyCareSystemsFilmHistoryProfile,
-  resolveIntimateFestivalBodyCareSystemsFilmStudyMap,
 } from "../data/scenarioFilmStudyIntimateFestivalBodyCareSystemsBatch";
 import {
   createLandscapeFilmHistoryChoices,
   getLandscapeFilmHistoryProfile,
-  resolveLandscapeFilmStudyMap,
 } from "../data/scenarioFilmStudyLandscapeBatch";
 import {
   createLateSilentEarlySoundFilmHistoryChoices,
   getLateSilentEarlySoundFilmHistoryProfile,
-  resolveLateSilentEarlySoundFilmStudyMap,
 } from "../data/scenarioFilmStudyLateSilentEarlySoundBatch";
 import {
   createMinimalistRoadFilmHistoryChoices,
   getMinimalistRoadFilmHistoryProfile,
-  resolveMinimalistRoadFilmStudyMap,
 } from "../data/scenarioFilmStudyMinimalistRoadBatch";
 import {
   createModernNordicBehaviorSystemsFilmHistoryChoices,
   getModernNordicBehaviorSystemsFilmHistoryProfile,
-  resolveModernNordicBehaviorSystemsFilmStudyMap,
 } from "../data/scenarioFilmStudyModernNordicBehaviorSystemsBatch";
 import {
   createNewHollywoodBlockbusterFilmHistoryChoices,
   getNewHollywoodBlockbusterFilmHistoryProfile,
-  resolveNewHollywoodBlockbusterFilmStudyMap,
 } from "../data/scenarioFilmStudyNewHollywoodBlockbusterBatch";
 import {
   createNordicMinimalistSocialSystemsFilmHistoryChoices,
   getNordicMinimalistSocialSystemsFilmHistoryProfile,
-  resolveNordicMinimalistSocialSystemsFilmStudyMap,
 } from "../data/scenarioFilmStudyNordicMinimalistSocialSystemsBatch";
 import {
   createNorwegianPostwarGenreSystemsFilmHistoryChoices,
   getNorwegianPostwarGenreSystemsFilmHistoryProfile,
-  resolveNorwegianPostwarGenreSystemsFilmStudyMap,
 } from "../data/scenarioFilmStudyNorwegianPostwarGenreSystemsBatch";
 import {
   createPostwarEuropeanModernismFilmHistoryChoices,
   getPostwarEuropeanModernismFilmHistoryProfile,
-  resolvePostwarEuropeanModernismFilmStudyMap,
 } from "../data/scenarioFilmStudyPostwarEuropeanModernismBatch";
 import {
   createSilentFoundationsFilmHistoryChoices,
   getSilentFoundationsFilmHistoryProfile,
-  resolveSilentFoundationsFilmStudyMap,
 } from "../data/scenarioFilmStudySilentFoundationsBatch";
 import {
   createSilentStudioSystemsFilmHistoryChoices,
   getSilentStudioSystemsFilmHistoryProfile,
-  resolveSilentStudioSystemsFilmStudyMap,
 } from "../data/scenarioFilmStudySilentStudioSystemsBatch";
 import {
   createTechnologyFilmHistoryChoices,
   getTechnologyFilmHistoryProfile,
-  resolveTechnologyFilmStudyMap,
 } from "../data/scenarioFilmStudyTechnologyBatch";
 import type { ScenarioProductionBrief } from "../data/scenarioProductionBriefs";
+import { resolveFullScenarioFilmStudyMap } from "../data/scenarioFilmStudyProfileResolver";
 import { useFilmWorkLanguage } from "../filmWorkLanguage";
 import "./scenarioFilmStudy.css";
 
@@ -219,45 +181,7 @@ export function ScenarioFilmStudyPanel({
   const [language] = useFilmWorkLanguage();
   const copy = FILM_STUDY_COPY[language];
   const filmStudy = useMemo(
-    () => resolveEuropeanTimeIdentitySystemsFilmStudyMap(scenario, brief)
-      ?? resolveNewGermanCinemaSystemsFilmStudyMap(scenario, brief)
-      ?? resolveEuropean1960sSpaceSystemsFilmStudyMap(scenario, brief)
-      ?? resolveBalkanWarInstitutionSystemsFilmStudyMap(scenario, brief)
-      ?? resolveIberianPortugueseMemorySystemsFilmStudyMap(scenario, brief)
-      ?? resolveBritishIrishPlaceBodySystemsFilmStudyMap(scenario, brief)
-      ?? resolveEuropeanPoeticMemorySystemsFilmStudyMap(scenario, brief)
-      ?? resolveContemporaryEuropeanSocialCareSystemsFilmStudyMap(scenario, brief)
-      ?? resolveContemporaryDissentRuralSystemsFilmStudyMap(scenario, brief)
-      ?? resolveFestivalUrbanIntimacySystemsFilmStudyMap(scenario, brief)
-      ?? resolveIntimateFestivalBodyCareSystemsFilmStudyMap(scenario, brief)
-      ?? resolveFestivalJourneyDisplacementSystemsFilmStudyMap(scenario, brief)
-      ?? resolve1980sPoliticalPalmeSystemsFilmStudyMap(scenario, brief)
-      ?? resolveModernNordicBehaviorSystemsFilmStudyMap(scenario, brief)
-      ?? resolveNordicMinimalistSocialSystemsFilmStudyMap(scenario, brief)
-      ?? resolveNorwegianPostwarGenreSystemsFilmStudyMap(scenario, brief)
-      ?? resolveCrimeNoirTransformationsFilmStudyMap(scenario, brief)
-      ?? resolveEarly1960sProductionSystemsFilmStudyMap(scenario, brief)
-      ?? resolve1950sExpressivePostwarFilmStudyMap(scenario, brief)
-      ?? resolveEuropeanModernistProductionFilmStudyMap(scenario, brief)
-      ?? resolve1960sScaleIndependentFilmStudyMap(scenario, brief)
-      ?? resolveNewHollywoodBlockbusterFilmStudyMap(scenario, brief)
-      ?? resolveEuropeanPoliticalFeministModernismFilmStudyMap(scenario, brief)
-      ?? resolveCzechoslovakNewWaveFilmStudyMap(scenario, brief)
-      ?? resolvePostwarEuropeanModernismFilmStudyMap(scenario, brief)
-      ?? resolve1950sAsianPostwarFilmStudyMap(scenario, brief)
-      ?? resolve1940sNoirRealismFilmStudyMap(scenario, brief)
-      ?? resolveClassicalHollywoodFilmStudyMap(scenario, brief)
-      ?? resolve1930sProductionSystemsFilmStudyMap(scenario, brief)
-      ?? resolveLateSilentEarlySoundFilmStudyMap(scenario, brief)
-      ?? resolveSilentStudioSystemsFilmStudyMap(scenario, brief)
-      ?? resolveSilentFoundationsFilmStudyMap(scenario, brief)
-      ?? resolveIndependentStorytellingFilmStudyMap(scenario, brief)
-      ?? resolveEuropeanPressureFilmStudyMap(scenario, brief)
-      ?? resolveMinimalistRoadFilmStudyMap(scenario, brief)
-      ?? resolveConstructedWorldsFilmStudyMap(scenario, brief)
-      ?? resolveLandscapeFilmStudyMap(scenario, brief)
-      ?? resolveTechnologyFilmStudyMap(scenario, brief)
-      ?? resolveScenarioFilmStudyMap(scenario, brief),
+    () => resolveFullScenarioFilmStudyMap(scenario, brief),
     [brief, scenario],
   );
   const [selectedHistoryChoiceId, setSelectedHistoryChoiceId] = useState<string | undefined>();
