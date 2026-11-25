@@ -24,6 +24,7 @@ import { filmHistoryChapterTwentyThree } from "./filmHistoryChapterTwentyThree.j
 import { filmHistoryChapterTwentyFour } from "./filmHistoryChapterTwentyFour.js";
 import { filmHistoryChapterTwentyFive } from "./filmHistoryChapterTwentyFive.js";
 import { filmHistoryChapterTwentySix } from "./filmHistoryChapterTwentySix.js";
+import { filmHistoryChapterTwentySeven } from "./filmHistoryChapterTwentySeven.js";
 
 export type FilmHistoryBookSource = {
   readonly id: string;
@@ -184,15 +185,7 @@ export const filmHistoryBookParts: readonly FilmHistoryBookPart[] = [
     thesis: "Digital tools, transnational finance, new national movements, franchise economics and platform distribution reorganize both cinema's aesthetics and the institutions through which films reach audiences.",
     chapters: [
       filmHistoryChapterTwentySix,
-      outline(
-        "digital-production",
-        27,
-        "Digital production and the transformed image",
-        "1990s–2010s",
-        "Digital editing, digital intermediate workflows, CGI, motion capture and digital cinematography change what can be photographed, constructed and revised.",
-        ["Distinguish major stages of digital workflow change.", "Analyze CGI as integrated production rather than a post-production add-on.", "Explain the digital intermediate's importance."],
-        ["digital intermediate", "CGI", "motion capture", "digital cinematography", "nonlinear editing"],
-      ),
+      filmHistoryChapterTwentySeven,
       outline(
         "east-asian-turn",
         28,
