@@ -21,6 +21,7 @@ export const filmHistoryChapterFourteenSources: readonly FilmHistoryBookSource[]
   { id: "ch14_bfi_french_avant", title: "10 great French avant-garde films of the 1920s", publisher: "British Film Institute", url: "https://www.bfi.org.uk/lists/10-great-french-avant-garde-films-1920s" },
   { id: "ch14_bfi_nice", title: "À propos de Nice (1930)", publisher: "British Film Institute", url: "https://www.bfi.org.uk/film/358143c0-3cab-515f-be94-c311fc04e6e4/a-propos-de-nice" },
   { id: "ch14_bfi_song", title: "Song of Ceylon (1934)", publisher: "BFI Player", url: "https://player.bfi.org.uk/free/film/watch-song-of-ceylon-1934-online" },
+  { id: "ch14_open_song_sponsor", title: "Selling Empire: Film — Song of Ceylon commission and colonial context", publisher: "The Open University", url: "https://www.open.edu/openlearn/history-the-arts/history/world-history/selling-empire-film" },
   { id: "ch14_bfi_women_docs", title: "Breaking the goldfish bowl: Britain's women documentary makers", publisher: "British Film Institute", url: "https://www.bfi.org.uk/features/britain-women-documentary-makers" },
   { id: "ch14_bfi_grierson", title: "Smashing the goldfish bowl: the Grierson sisters", publisher: "British Film Institute", url: "https://www.bfi.org.uk/features/smashing-goldfish-bowl-how-grierson-sisters-helped-pioneer-british-documentary" },
   { id: "ch14_bfi_ukpropaganda", title: "A short history of British propaganda in 10 films", publisher: "British Film Institute", url: "https://www.bfi.org.uk/lists/short-history-british-propaganda-10-films" },
@@ -39,6 +40,7 @@ export const filmHistoryChapterFourteenSources: readonly FilmHistoryBookSource[]
   { id: "ch14_bfi_cinephilia", title: "A century of cinephilia: the legacy of the Film Society", publisher: "BFI Sight and Sound", url: "https://www.bfi.org.uk/sight-and-sound/features/century-cinephilia-legacy-film-society" },
   { id: "ch14_criterion_bunuel", title: "Luis Buñuel: Eternal Surrealist", publisher: "The Criterion Collection", url: "https://www.criterion.com/current/posts/6767-luis-bunuel-eternal-surrealist" },
   { id: "ch14_bfi_remix", title: "10 great remix films", publisher: "British Film Institute", url: "https://www.bfi.org.uk/lists/10-great-remix-films" },
+  { id: "ch14_moma_rose_hobart", title: "Joseph Cornell: Rose Hobart (1936)", publisher: "Museum of Modern Art", url: "https://www.moma.org/collection/works/311539" },
   { id: "ch14_criterion_deren", title: "Maya Deren on 16 mm", publisher: "The Criterion Collection", url: "https://www.criterion.com/current/posts/8173-maya-deren-on-16-mm" },
   { id: "ch14_criterion_deren_collection", title: "The Criterion Channel's January 2026 lineup: Maya Deren", publisher: "The Criterion Collection", url: "https://www.criterion.com/current/posts/9012-the-criterion-channel-s-january-2026-lineup" },
 ];
