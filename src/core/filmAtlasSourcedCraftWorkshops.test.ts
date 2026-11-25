@@ -162,7 +162,7 @@ test("Exactly thirty-five existing cases have one hundred and five original, sou
     const sourcesById = new Map(workshop.sources.map(s => [s.id, s]));
     for (const source of workshop.sources) {
       assert.match(source.url, /^https:\/\//);
-      assert.ok(source.publisher.length > 5);
+      assert.ok(source.publisher.trim().length > 0, `Missing publisher for ${workshop.scenarioId}: ${source.id}`);
       assert.ok(source.title.length > 10);
     }
     for (const question of workshop.questions) {
@@ -472,4 +472,10 @@ test("International workshops distinguish serial identity, collaborative spectac
 test("Danish silent workshops distinguish performance, adaptation and market versions", () => {
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_afgrunden_1910")?.questions.map(q => q.bestSupportedOptionId), ["gesture","focus","context"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_atlantis_1913")?.questions.map(q => q.bestSupportedOptionId), ["roles","model","versions"]);
+});
+
+test("Source validation accepts the exact short publisher name Pathé", () => {
+  const workshop = getSourceBackedCaseWorkshop("scenario_histoire_d_un_crime_1901");
+  assert.ok(workshop);
+  assert.ok(workshop.sources.some(source => source.publisher === "Pathé" && source.url === "https://www.pathe.com/en/pathe/"));
 });
