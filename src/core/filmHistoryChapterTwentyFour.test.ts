@@ -24,7 +24,7 @@ test("Chapter 24 develops distinct film, exhibition and home-video histories", (
 
 test("Chapter 24 references unique URL sources with no unreferenced or broken IDs", () => {
   const chapter = filmHistoryChapterTwentyFour;
-  assert.equal(chapter.sources.length, 32);
+  assert.equal(chapter.sources.length, 33);
   const ids = new Set(chapter.sources.map(source => source.id));
   const urls = new Set(chapter.sources.map(source => source.url));
   assert.equal(ids.size, chapter.sources.length);
@@ -56,4 +56,14 @@ test("Chapter 24 does not fabricate Atlas playable scenarios or industry product
   assert.ok(chapter.filmReferences.every(film => film.atlasScenarioId === undefined));
   assert.equal(chapter.historicalObjects.length, 16);
   assert.ok(chapter.historicalObjects.every(object => object.role === "historical_object" && object.atlasDecision === "no_production_case"));
+});
+
+test("Chapter 24 cites the original 1984 Act in its British video classification article", () => {
+  const chapter = filmHistoryChapterTwentyFour;
+  const source = chapter.sources.find(s => s.id === "ch24_video_act");
+  assert.equal(source?.url, "https://www.legislation.gov.uk/ukpga/1984/39/pdfs/ukpga_19840039_en.pdf");
+  const article = chapter.sections.find(s => s.id === "ch24_nasties");
+  assert.ok(article?.sourceIds.includes("ch24_video_act"));
+  assert.match(article?.paragraphs.join(" ") ?? "", /12 July 1984/);
+  assert.match(article?.paragraphs.join(" ") ?? "", /exemptions/);
 });
