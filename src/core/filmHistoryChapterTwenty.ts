@@ -13,6 +13,12 @@ export const filmHistoryChapterTwentySources: readonly FilmHistoryBookSource[] =
     "url": "https://www.bfi.org.uk/sight-and-sound/features/hour-furnaces-fernando-solanas-1968-greatest-films-poll"
   },
   {
+    "id": "ch20_manifesto_original",
+    "title": "Towards a Third Cinema: Notes and Experiences for the Development of a Cinema of Liberation in the Third World (Argentina, 1969)",
+    "publisher": "Film Manifestos and Global Cinema Cultures / University of California Press",
+    "url": "https://www.degruyterbrill.com/document/doi/10.1525/9780520957411-070/html"
+  },
+  {
     "id": "ch20_revolution",
     "title": "10 great revolutionary films of the 1960s",
     "publisher": "British Film Institute",
@@ -247,12 +253,13 @@ export const filmHistoryChapterTwentySections: readonly FilmHistoryBookSection[]
     "id": "ch20_manifesto",
     "title": "4. Towards a Third Cinema (1969): a manifesto with tensions and limits",
     "paragraphs": [
-      "Solanas and Getino's essay describes revolutionary cinema as a form of organization as well as filmmaking. Its contrast between commercial entertainment, individual auteur production and collective political cinema is deliberately sharp. Such polemical divisions helped articulate what the filmmakers believed existing institutions prevented. Yet the distinctions cannot explain every commercially distributed political picture, every independently made art film or every state-supported cinema produced during anti-colonial struggles.",
+      "Solanas and Getino's 1969 manifesto, written in the wake of their 1968 film The Hour of the Furnaces, describes revolutionary cinema as a form of organization as well as filmmaking. Its contrast between commercial entertainment, individual auteur production and collective political cinema is deliberately sharp. Such polemical divisions helped articulate what the filmmakers believed existing institutions prevented. Yet the distinctions cannot explain every commercially distributed political picture, every independently made art film or every state-supported cinema produced during anti-colonial struggles.",
       "The theory also asks how a viewer might become an active participant. This can mean discussion, changed habits of interpretation, or involvement in an organized movement, rather than ordinary consumption of a message. The Hour of the Furnaces provides a concrete example, but the manifesto's influence must be studied through documented reception and practice instead of assuming all later political films inherited its plan. The historical ambition was to create alternative circuits of public meaning.",
       "Comparison is essential: a Brazilian Cinema Novo allegory, a Senegalese social satire and an Algerian historical epic might all resist unequal power but take different paths to spectators. BFI explicitly notes that the 1969 manifesto did not claim to offer the exclusive model. Film History should hold on to that qualification, which guards against turning a theory of liberation into a new method of categorizing other cultures from outside."
     ],
     "sourceIds": [
       "ch20_manifesto",
+      "ch20_manifesto_original",
       "ch20_revolution",
       "ch20_novolist"
     ]
