@@ -37,15 +37,18 @@ const ids = [
   "scenario_histoire_d_un_crime_1901",
   "scenario_attack_on_a_china_mission_bluejackets_to_the_rescue_1900",
   "scenario_the_lonely_villa_1909",
+  "scenario_the_story_of_the_kelly_gang_1906",
+  "scenario_queen_elizabeth_1912",
+  "scenario_traffic_in_souls_1913",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly twenty-eight existing cases have eighty-four original, source-backed decisions", () => {
+test("Exactly thirty-one existing cases have ninety-three original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 28);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 84);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 31);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 93);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -75,6 +78,12 @@ test("Exactly twenty-eight existing cases have eighty-four original, source-back
       const definitions = readFileSync("src/core/chapterThreeNarrativeExpansion.ts", "utf8");
       assert.ok(definitions.includes(workshop.scenarioId));
       const dossierFiles: Record<string, string> = {"scenario_attack_on_a_china_mission_bluejackets_to_the_rescue_1900":"src/ui/data/scenarioProductionVerificationAttackChinaMission.ts","scenario_the_lonely_villa_1909":"src/ui/data/scenarioProductionVerificationLonelyVilla.ts"};
+      const dossier = readFileSync(dossierFiles[workshop.scenarioId]!, "utf8");
+      for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (["scenario_the_story_of_the_kelly_gang_1906", "scenario_queen_elizabeth_1912", "scenario_traffic_in_souls_1913"].includes(workshop.scenarioId)) {
+      const definitions = readFileSync("src/core/chapterFourIndustryExpansion.ts", "utf8");
+      assert.ok(definitions.includes(workshop.scenarioId));
+      const dossierFiles: Record<string, string> = {"scenario_the_story_of_the_kelly_gang_1906":"src/ui/data/scenarioProductionVerificationStoryOfTheKellyGang.ts","scenario_queen_elizabeth_1912":"src/ui/data/scenarioProductionVerificationQueenElizabeth.ts","scenario_traffic_in_souls_1913":"src/ui/data/scenarioProductionVerificationTrafficInSouls.ts"};
       const dossier = readFileSync(dossierFiles[workshop.scenarioId]!, "utf8");
       for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
     } else if (workshop.scenarioId === "scenario_a_trip_to_the_moon_1902") {
@@ -431,4 +440,10 @@ test("Early narrative workshops distinguish represented gaze, memory and histori
 test("Early narrative workshops distinguish reconstruction, representation and parallel narration", () => {
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_attack_on_a_china_mission_bluejackets_to_the_rescue_1900")?.questions.map(q => q.bestSupportedOptionId), ["draw","compare","context"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_lonely_villa_1909")?.questions.map(q => q.bestSupportedOptionId), ["parallel","visual","development"]);
+});
+
+test("Early industry workshops distinguish feature scale, rights and historical evidence", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_story_of_the_kelly_gang_1906")?.questions.map(q => q.bestSupportedOptionId), ["reels","live","limits"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_queen_elizabeth_1912")?.questions.map(q => q.bestSupportedOptionId), ["costume","roles","attribute"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_traffic_in_souls_1913")?.questions.map(q => q.bestSupportedOptionId), ["model","separate","evidence"]);
 });

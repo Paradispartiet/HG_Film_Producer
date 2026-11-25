@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Twenty-eight pre-existing Production Cases receive evidence-backed craft decisions.
+ * Thirty-one pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -3882,6 +3882,577 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
         "sourceIds": [
           "s4",
           "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_story_of_the_kelly_gang_1906",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore feature-length production, touring exhibition and the limits of surviving fragments.",
+      "nb": "Utforsk langfilmproduksjon, turnévisning og grensene for bevarte fragmenter.",
+      "fr": "Explorez la production de longs métrages, les projections itinérantes et les limites des fragments conservés.",
+      "pt": "Explore a produção de longas-metragens, a exibição itinerante e os limites dos fragmentos preservados."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The Story of the Kelly Gang",
+        "publisher": "National Film and Sound Archive of Australia (NFSA)",
+        "url": "https://www.nfsa.gov.au/stories/articles/story-kelly-gang"
+      },
+      {
+        "id": "s1",
+        "title": "THE STORY OF THE KELLY GANG [1906] : [PORDENONE RESTORATION] - TITLE VERSION",
+        "publisher": "NFSA Pro",
+        "url": "https://pro.nfsa.gov.au/titles/RSKFBH59"
+      },
+      {
+        "id": "s2",
+        "title": "The Story of the Kelly Gang (1906) – Memory of the World",
+        "publisher": "UNESCO Memory of the World",
+        "url": "https://www.unesco.org/en/memory-world/story-kelly-gang-1906"
+      },
+      {
+        "id": "s3",
+        "title": "The Story of the Kelly Gang (1906)",
+        "publisher": "British Film Institute (BFI)",
+        "url": "https://www.bfi.org.uk/film/e8572cbd-21d7-593c-9ca5-7364ea3fc6e6/the-story-of-the-kelly-gang"
+      }
+    ],
+    "questions": [
+      {
+        "id": "kelly-reels",
+        "area": "camera",
+        "prompt": {
+          "en": "How could you plan a long fictional programme using several reels?",
+          "nb": "Hvordan kan du planlegge et langt fiktivt program fordelt på flere filmruller?",
+          "fr": "Comment organiser un long programme fictif sur plusieurs bobines ?",
+          "pt": "Como planear um longo programa fictício em várias bobinas?"
+        },
+        "options": [
+          {
+            "id": "reels",
+            "label": {
+              "en": "Plan connected narrative sections and reel transitions",
+              "nb": "Planlegg sammenhengende fortellingsdeler og overganger mellom rullene",
+              "fr": "Prévoir des parties narratives reliées et les transitions entre bobines",
+              "pt": "Planear partes narrativas ligadas e transições entre bobinas"
+            }
+          },
+          {
+            "id": "short",
+            "label": {
+              "en": "Treat the entire programme as one unrelated short attraction",
+              "nb": "Behandle hele programmet som én løsrevet kort attraksjon",
+              "fr": "Traiter tout le programme comme une attraction courte isolée",
+              "pt": "Tratar todo o programa como uma atração curta isolada"
+            }
+          },
+          {
+            "id": "exact",
+            "label": {
+              "en": "Present an invented plan as the authentic historical reel breakdown",
+              "nb": "Presenter en oppdiktet plan som den autentiske historiske rullinndelingen",
+              "fr": "Présenter un plan inventé comme le découpage historique authentique",
+              "pt": "Apresentar um plano inventado como a divisão histórica autêntica"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "reels",
+        "explanation": {
+          "en": "The NFSA dossier describes an original of about five reels. Plan a harmless original fictional journey in several connected parts; this exercise does not recover the historical reel breakdown.",
+          "nb": "NFSA-dokumentasjonen beskriver en original på omtrent fem ruller. Planlegg en egen ufarlig fiktiv reise i flere sammenhengende deler; øvelsen rekonstruerer ikke den historiske rullinndelingen.",
+          "fr": "Le dossier NFSA décrit un original d'environ cinq bobines. Planifiez un voyage fictif original et sans danger en plusieurs parties liées ; l'exercice ne restitue pas le découpage historique.",
+          "pt": "O dossier NFSA descreve um original de cerca de cinco bobinas. Planeie uma viagem fictícia original e segura em partes ligadas; o exercício não recupera a divisão histórica."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "kelly-exhibition",
+        "area": "sound",
+        "prompt": {
+          "en": "How should you account for live presentation during early touring exhibition?",
+          "nb": "Hvordan bør du ta hensyn til levende presentasjon under tidlig turnévisning?",
+          "fr": "Comment prendre en compte la présentation en direct lors des projections itinérantes ?",
+          "pt": "Como considerar a apresentação ao vivo nas exibições itinerantes iniciais?"
+        },
+        "options": [
+          {
+            "id": "sync",
+            "label": {
+              "en": "Describe live narration as synchronized sound recorded on the film",
+              "nb": "Beskriv levende fortellerstemme som synkron lyd innspilt på filmen",
+              "fr": "Décrire la narration en direct comme du son synchrone enregistré sur le film",
+              "pt": "Descrever a narração ao vivo como som sincronizado gravado no filme"
+            }
+          },
+          {
+            "id": "live",
+            "label": {
+              "en": "Separate photographed material from narration and live effects",
+              "nb": "Skill det fotograferte materialet fra fortellerstemme og levende lydeffekter",
+              "fr": "Distinguer les images filmées de la narration et des effets en direct",
+              "pt": "Separar o material filmado da narração e dos efeitos ao vivo"
+            }
+          },
+          {
+            "id": "ignore",
+            "label": {
+              "en": "Ignore the exhibition conditions when planning the programme",
+              "nb": "Ignorer visningsforholdene når programmet planlegges",
+              "fr": "Ignorer les conditions de projection dans la préparation du programme",
+              "pt": "Ignorar as condições de exibição ao planear o programa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "live",
+        "explanation": {
+          "en": "NFSA Pro describes a lecturer and live effects accompanying the presentation. Distinguish these exhibition practices from the photographed work and do not attribute a recorded synchronized soundtrack to it.",
+          "nb": "NFSA Pro beskriver en forteller og levende effekter under visningen. Skill denne visningspraksisen fra det fotograferte verket, og ikke tilskriv filmen et innspilt synkront lydspor.",
+          "fr": "NFSA Pro décrit un bonimenteur et des effets en direct pendant la projection. Distinguez ces pratiques des images filmées sans attribuer de bande sonore synchrone enregistrée au film.",
+          "pt": "NFSA Pro descreve um narrador e efeitos ao vivo durante a exibição. Distinga estas práticas das imagens filmadas sem atribuir ao filme uma banda sonora sincronizada gravada."
+        },
+        "sourceIds": [
+          "s1",
+          "s0"
+        ]
+      },
+      {
+        "id": "kelly-fragments",
+        "area": "research",
+        "prompt": {
+          "en": "How should a historian present the surviving restored material?",
+          "nb": "Hvordan bør en historiker presentere det bevarte restaurerte materialet?",
+          "fr": "Comment présenter le matériel restauré qui subsiste ?",
+          "pt": "Como apresentar o material restaurado que sobreviveu?"
+        },
+        "options": [
+          {
+            "id": "complete",
+            "label": {
+              "en": "Label the restored fragments as the entire original feature",
+              "nb": "Merk de restaurerte fragmentene som hele den opprinnelige langfilmen",
+              "fr": "Présenter les fragments restaurés comme le long métrage original complet",
+              "pt": "Apresentar os fragmentos restaurados como a longa-metragem original completa"
+            }
+          },
+          {
+            "id": "invent",
+            "label": {
+              "en": "Fill all missing scenes with guesses and label them archival evidence",
+              "nb": "Fyll alle manglende scener med gjetninger og kall dem arkivbelegg",
+              "fr": "Combler les scènes manquantes par des hypothèses présentées comme preuves",
+              "pt": "Preencher cenas em falta com suposições apresentadas como provas"
+            }
+          },
+          {
+            "id": "limits",
+            "label": {
+              "en": "Distinguish surviving footage, reconstruction and missing material",
+              "nb": "Skill bevarte opptak, rekonstruksjon og manglende materiale",
+              "fr": "Distinguer images conservées, reconstruction et matériel manquant",
+              "pt": "Distinguir imagens preservadas, reconstrução e material em falta"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "limits",
+        "explanation": {
+          "en": "NFSA and UNESCO document the landmark feature scale and fragmentary survival. Explain its historical importance without claiming that a complete original survives or that feature cinema had one universal inventor.",
+          "nb": "NFSA og UNESCO dokumenterer langfilmformatets betydning og fragmentarisk bevaring. Forklar den historiske betydningen uten å hevde at hele originalen er bevart eller at langfilmen hadde én universell oppfinner.",
+          "fr": "NFSA et UNESCO documentent l'importance du format long et la conservation fragmentaire. Expliquez cet apport sans prétendre que l'original complet subsiste ni désigner un inventeur unique du long métrage.",
+          "pt": "NFSA e UNESCO documentam a importância do formato longo e a preservação fragmentária. Explique o contributo sem afirmar que o original completo sobrevive ou indicar um inventor único da longa-metragem."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_queen_elizabeth_1912",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore star prestige, costume design, distribution rights and print history.",
+      "nb": "Utforsk stjerneprestisje, kostymedesign, distribusjonsrettigheter og kopihistorie.",
+      "fr": "Explorez le prestige des vedettes, les costumes, les droits de distribution et l'histoire des copies.",
+      "pt": "Explore o prestígio das estrelas, os figurinos, os direitos de distribuição e a história das cópias."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "La Reine Elisabeth",
+        "publisher": "Fondation Jérôme Seydoux-Pathé",
+        "url": "https://www.fondation-jeromeseydoux-pathe.com/event/2251"
+      },
+      {
+        "id": "s1",
+        "title": "Strike a pose: fashion and film through the ages",
+        "publisher": "BFI Sight and Sound",
+        "url": "https://www.bfi.org.uk/sight-and-sound/features/strike-pose-fashion-film-through-ages"
+      },
+      {
+        "id": "s2",
+        "title": "Short Film Program 1 — Modern Matinees: Iris Barry's History of Film",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/calendar/events/5818"
+      },
+      {
+        "id": "s3",
+        "title": "Queen Elizabeth — Research Catalog",
+        "publisher": "New York Public Library",
+        "url": "https://test.nypl.org/research/research-catalog/bib/b15562649"
+      }
+    ],
+    "questions": [
+      {
+        "id": "queen-costume",
+        "area": "camera",
+        "prompt": {
+          "en": "How can costume and framing support a prestige performance?",
+          "nb": "Hvordan kan kostyme og bildeutsnitt understøtte en prestisjepreget skuespillerprestasjon?",
+          "fr": "Comment le costume et le cadrage peuvent-ils soutenir une interprétation de prestige ?",
+          "pt": "Como podem figurino e enquadramento apoiar uma interpretação de prestígio?"
+        },
+        "options": [
+          {
+            "id": "costume",
+            "label": {
+              "en": "Develop an original costume sketch and framing that make the performance readable",
+              "nb": "Lag en egen kostymeskisse og et utsnitt som gjør prestasjonen tydelig",
+              "fr": "Créer un croquis original de costume et un cadrage qui rendent le jeu lisible",
+              "pt": "Criar um esboço original de figurino e um enquadramento que tornem a interpretação legível"
+            }
+          },
+          {
+            "id": "neutral",
+            "label": {
+              "en": "Ignore the visual relationship between costume and performance",
+              "nb": "Ignorer det visuelle forholdet mellom kostyme og prestasjon",
+              "fr": "Ignorer la relation visuelle entre costume et interprétation",
+              "pt": "Ignorar a relação visual entre figurino e interpretação"
+            }
+          },
+          {
+            "id": "copy",
+            "label": {
+              "en": "Claim an invented costume sketch is an authenticated Poiret design",
+              "nb": "Hevd at en oppdiktet kostymeskisse er et autentisert Poiret-design",
+              "fr": "Présenter un croquis inventé comme un dessin authentifié de Poiret",
+              "pt": "Apresentar um esboço inventado como um desenho autenticado de Poiret"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "costume",
+        "explanation": {
+          "en": "BFI documents Poiret's stylized costumes for Bernhardt. Explore how design and framing support an original fictional performance; the exercise does not reproduce an authenticated historical costume.",
+          "nb": "BFI dokumenterer Poirets stiliserte kostymer for Bernhardt. Utforsk hvordan design og utsnitt støtter en egen fiktiv prestasjon; øvelsen gjengir ikke et autentisert historisk kostyme.",
+          "fr": "Le BFI documente les costumes stylisés de Poiret pour Bernhardt. Explorez le lien entre design, cadrage et jeu fictif original ; l'exercice ne reproduit pas un costume historique authentifié.",
+          "pt": "O BFI documenta os figurinos estilizados de Poiret para Bernhardt. Explore a relação entre design, enquadramento e interpretação fictícia original; o exercício não reproduz um figurino histórico autenticado."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "queen-rights",
+        "area": "research",
+        "prompt": {
+          "en": "How should you distinguish production from international distribution?",
+          "nb": "Hvordan bør du skille produksjon fra internasjonal distribusjon?",
+          "fr": "Comment distinguer la production de la distribution internationale ?",
+          "pt": "Como distinguir a produção da distribuição internacional?"
+        },
+        "options": [
+          {
+            "id": "same",
+            "label": {
+              "en": "Assign all production and distribution credits to the rights buyer",
+              "nb": "Tilskriv alle produksjons- og distribusjonskrediteringer rettighetskjøperen",
+              "fr": "Attribuer tous les crédits de production et de distribution à l'acheteur des droits",
+              "pt": "Atribuir todos os créditos de produção e distribuição ao comprador dos direitos"
+            }
+          },
+          {
+            "id": "roles",
+            "label": {
+              "en": "Map French production separately from US rights and presentation",
+              "nb": "Kartlegg fransk produksjon adskilt fra amerikanske rettigheter og visning",
+              "fr": "Cartographier séparément la production française et les droits et projections américains",
+              "pt": "Mapear separadamente a produção francesa e os direitos e exibição nos EUA"
+            }
+          },
+          {
+            "id": "ignore",
+            "label": {
+              "en": "Ignore territorial rights when explaining the feature economy",
+              "nb": "Ignorer territorielle rettigheter når langfilmøkonomien forklares",
+              "fr": "Ignorer les droits territoriaux pour expliquer l'économie du long métrage",
+              "pt": "Ignorar os direitos territoriais ao explicar a economia da longa-metragem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "roles",
+        "explanation": {
+          "en": "The Pathé foundation identifies Le Film d'Art production, while BFI documents Zukor's US rights purchase. Explain how distribution helped the feature economy without transferring the French production credit to the distributor.",
+          "nb": "Pathé-stiftelsen identifiserer Le Film d'Art-produksjonen, mens BFI dokumenterer Zukors kjøp av USA-rettigheter. Forklar distribusjonens rolle uten å overføre fransk produksjonskreditering til distributøren.",
+          "fr": "La Fondation Pathé identifie la production du Film d'Art ; le BFI documente l'achat des droits américains par Zukor. Expliquez le rôle de la distribution sans transférer le crédit de production français.",
+          "pt": "A Fundação Pathé identifica a produção Le Film d'Art e o BFI documenta a compra dos direitos americanos por Zukor. Explique a distribuição sem transferir o crédito de produção francês."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "queen-prints",
+        "area": "research",
+        "prompt": {
+          "en": "How should you report different catalogue durations and credits?",
+          "nb": "Hvordan bør du rapportere ulike katalogvarigheter og krediteringer?",
+          "fr": "Comment rendre compte des durées et crédits divergents des catalogues ?",
+          "pt": "Como relatar durações e créditos diferentes nos catálogos?"
+        },
+        "options": [
+          {
+            "id": "force",
+            "label": {
+              "en": "Choose one duration and claim it applies to every surviving print",
+              "nb": "Velg én varighet og hev at den gjelder alle bevarte kopier",
+              "fr": "Choisir une durée et l'attribuer à toutes les copies conservées",
+              "pt": "Escolher uma duração e atribuí-la a todas as cópias preservadas"
+            }
+          },
+          {
+            "id": "average",
+            "label": {
+              "en": "Average conflicting records into a new asserted original duration",
+              "nb": "Beregn gjennomsnittet av sprikende oppføringer som en ny påstått originalvarighet",
+              "fr": "Moyenner les notices divergentes pour affirmer une nouvelle durée originale",
+              "pt": "Calcular a média dos registos divergentes como suposta duração original"
+            }
+          },
+          {
+            "id": "attribute",
+            "label": {
+              "en": "Attribute each duration and credit to its specific source and version",
+              "nb": "Knytt hver varighet og kreditering til sin konkrete kilde og versjon",
+              "fr": "Attribuer chaque durée et crédit à sa source et à sa version",
+              "pt": "Atribuir cada duração e crédito à respetiva fonte e versão"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "attribute",
+        "explanation": {
+          "en": "The Pathé, MoMA and NYPL records describe different durations and credits. Preserve those differences and distinguish later musical accompaniment from synchronized original sound rather than declaring one universal version.",
+          "nb": "Pathé-, MoMA- og NYPL-oppføringene beskriver ulike varigheter og krediteringer. Bevar forskjellene og skill senere musikkakkompagnement fra synkron originallyd fremfor å erklære én universell versjon.",
+          "fr": "Les notices Pathé, MoMA et NYPL décrivent des durées et crédits différents. Préservez ces différences et distinguez l'accompagnement musical ultérieur du son synchrone original sans déclarer une version universelle.",
+          "pt": "Os registos Pathé, MoMA e NYPL descrevem durações e créditos distintos. Preserve as diferenças e distinga acompanhamento musical posterior de som sincronizado original, sem declarar uma versão universal."
+        },
+        "sourceIds": [
+          "s0",
+          "s2",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_traffic_in_souls_1913",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore feature economics, the separation of production and distribution, and evidence behind publicity.",
+      "nb": "Utforsk langfilmøkonomi, skillet mellom produksjon og distribusjon og belegg bak markedsføringen.",
+      "fr": "Explorez l'économie du long métrage, la séparation entre production et distribution et les preuves derrière la publicité.",
+      "pt": "Explore a economia da longa-metragem, a separação entre produção e distribuição e a evidência por trás da publicidade."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Traffic in Souls / Where Are My Children?",
+        "publisher": "UCLA Film & Television Archive",
+        "url": "https://cinema.ucla.edu/events/traffic-in-souls-1913-where-are-my-children-1916-2012-05-10/"
+      },
+      {
+        "id": "s1",
+        "title": "Traffic in Souls",
+        "publisher": "American Film Institute Catalog",
+        "url": "https://catalog.afi.com/Film/2111-TRAFFIC-IN-SOULS"
+      },
+      {
+        "id": "s2",
+        "title": "Traffic in Souls — Motion picture copyright descriptions collection",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/item/s1229l01767/"
+      },
+      {
+        "id": "s3",
+        "title": "The long take: Great footage",
+        "publisher": "British Film Institute / Sight and Sound",
+        "url": "https://www.bfi.org.uk/sight-and-sound/features/long-take-great-footage"
+      },
+      {
+        "id": "s4",
+        "title": "National Film Registry 2006",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/loc/lcib/07012/film.html"
+      }
+    ],
+    "questions": [
+      {
+        "id": "traffic-economics",
+        "area": "research",
+        "prompt": {
+          "en": "How would you evaluate the risk of a longer theatrical programme?",
+          "nb": "Hvordan vil du vurdere risikoen ved et lengre kinoprogram?",
+          "fr": "Comment évaluer le risque d'un programme de projection plus long ?",
+          "pt": "Como avaliar o risco de um programa de exibição mais longo?"
+        },
+        "options": [
+          {
+            "id": "model",
+            "label": {
+              "en": "Compare hypothetical production costs, bookings and audience assumptions",
+              "nb": "Sammenlign hypotetiske produksjonskostnader, visningsavtaler og publikumsantakelser",
+              "fr": "Comparer coûts de production, réservations et hypothèses de public fictifs",
+              "pt": "Comparar custos de produção, reservas de sessões e pressupostos de público hipotéticos"
+            }
+          },
+          {
+            "id": "guarantee",
+            "label": {
+              "en": "Assume every longer film guarantees the same commercial success",
+              "nb": "Anta at alle lengre filmer garanterer samme kommersielle suksess",
+              "fr": "Supposer que tout film plus long garantit le même succès commercial",
+              "pt": "Supor que todo filme mais longo garante o mesmo sucesso comercial"
+            }
+          },
+          {
+            "id": "cost",
+            "label": {
+              "en": "Ignore exhibition bookings when discussing production risk",
+              "nb": "Ignorer visningsavtaler når produksjonsrisiko diskuteres",
+              "fr": "Ignorer les réservations de salles dans l'analyse du risque",
+              "pt": "Ignorar as reservas de sessões na análise do risco"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "model",
+        "explanation": {
+          "en": "UCLA records reported returns and bookings, while BFI places the case in the transition toward longer programmes. Use hypothetical figures to examine risk; do not treat reported historical returns as guaranteed future results.",
+          "nb": "UCLA dokumenterer rapporterte inntekter og visningsavtaler, mens BFI plasserer filmen i overgangen til lengre programmer. Bruk hypotetiske tall til å undersøke risiko; ikke behandle rapporterte historiske inntekter som garanterte fremtidige resultater.",
+          "fr": "UCLA rapporte des recettes et des réservations de salles ; le BFI situe le film dans la transition vers des programmes plus longs. Utilisez des chiffres hypothétiques pour étudier le risque, sans garantir des résultats futurs.",
+          "pt": "A UCLA regista receitas e reservas de sessões relatadas; o BFI situa o filme na transição para programas mais longos. Use valores hipotéticos para estudar o risco, sem garantir resultados futuros."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "traffic-roles",
+        "area": "research",
+        "prompt": {
+          "en": "How should you record the companies responsible for the film?",
+          "nb": "Hvordan bør du registrere selskapene som stod bak filmen?",
+          "fr": "Comment identifier les sociétés responsables du film ?",
+          "pt": "Como registar as empresas responsáveis pelo filme?"
+        },
+        "options": [
+          {
+            "id": "merge",
+            "label": {
+              "en": "Combine every company role into an undifferentiated producer credit",
+              "nb": "Slå sammen alle selskapsroller til én udifferensiert produsentkreditering",
+              "fr": "Fusionner tous les rôles des sociétés en un crédit de production indistinct",
+              "pt": "Fundir todos os papéis das empresas num crédito de produção indiferenciado"
+            }
+          },
+          {
+            "id": "separate",
+            "label": {
+              "en": "Distinguish production company, distributor and copyright claimant",
+              "nb": "Skill produksjonsselskap, distributør og innehaver av opphavsrettskrav",
+              "fr": "Distinguer société de production, distributeur et titulaire déclaré du copyright",
+              "pt": "Distinguir produtora, distribuidora e titular declarado dos direitos de autor"
+            }
+          },
+          {
+            "id": "infer",
+            "label": {
+              "en": "Infer production authorship solely from the copyright registration",
+              "nb": "Utled produksjonsansvar utelukkende fra opphavsrettsregistreringen",
+              "fr": "Déduire la production uniquement de l'enregistrement du copyright",
+              "pt": "Deduzir a produção apenas do registo de direitos de autor"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "separate",
+        "explanation": {
+          "en": "AFI identifies IMP production and Universal distribution, and the LOC copyright record names Universal as claimant. Document these distinct functions rather than treating copyright metadata as complete production attribution.",
+          "nb": "AFI identifiserer IMP-produksjon og Universal-distribusjon, og LOCs opphavsrettsoppføring navngir Universal som kravshaver. Dokumenter de ulike funksjonene fremfor å behandle registreringen som fullstendig produksjonskreditering.",
+          "fr": "L'AFI identifie la production IMP et la distribution Universal ; la notice LOC désigne Universal comme titulaire déclaré. Documentez ces fonctions distinctes plutôt que de traiter le copyright comme un crédit de production complet.",
+          "pt": "A AFI identifica a produção IMP e a distribuição Universal; o registo LOC indica a Universal como titular declarado. Documente estas funções distintas em vez de tratar o registo como crédito de produção completo."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "traffic-publicity",
+        "area": "research",
+        "prompt": {
+          "en": "How should a researcher interpret promotional claims about a staged social melodrama?",
+          "nb": "Hvordan bør en forsker tolke markedsføringspåstander om et iscenesatt sosialt melodrama?",
+          "fr": "Comment interpréter les affirmations publicitaires sur un mélodrame social mis en scène ?",
+          "pt": "Como interpretar afirmações publicitárias sobre um melodrama social encenado?"
+        },
+        "options": [
+          {
+            "id": "endorsement",
+            "label": {
+              "en": "Treat every advertised institutional endorsement as confirmed",
+              "nb": "Behandle enhver annonsert institusjonell støtte som bekreftet",
+              "fr": "Considérer toute approbation institutionnelle annoncée comme confirmée",
+              "pt": "Tratar todo apoio institucional anunciado como confirmado"
+            }
+          },
+          {
+            "id": "documentary",
+            "label": {
+              "en": "Treat fictional scenes filmed on real streets as documentary proof",
+              "nb": "Behandle fiktive scener filmet i virkelige gater som dokumentarisk bevis",
+              "fr": "Traiter les scènes fictives filmées dans de vraies rues comme preuves documentaires",
+              "pt": "Tratar cenas fictícias filmadas em ruas reais como prova documental"
+            }
+          },
+          {
+            "id": "evidence",
+            "label": {
+              "en": "Separate fiction, promotional claims and independently verified evidence",
+              "nb": "Skill fiksjon, markedsføringspåstander og uavhengig verifisert belegg",
+              "fr": "Distinguer fiction, affirmations publicitaires et preuves vérifiées indépendamment",
+              "pt": "Distinguir ficção, afirmações publicitárias e evidência verificada independentemente"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "evidence",
+        "explanation": {
+          "en": "AFI records publicity invoking investigations and a denial of authorization, while UCLA documents real locations used for staged fiction. Neither publicity nor location footage validates the film's social claims; examine independent evidence.",
+          "nb": "AFI omtaler markedsføring som viste til undersøkelser og en benektelse av godkjenning, mens UCLA dokumenterer virkelige opptakssteder brukt til iscenesatt fiksjon. Verken reklame eller opptakssteder bekrefter filmens sosiale påstander; undersøk uavhengig belegg.",
+          "fr": "L'AFI signale une publicité invoquant des enquêtes et un démenti d'autorisation ; UCLA documente des lieux réels utilisés pour une fiction. Ni la publicité ni les lieux ne valident les affirmations sociales du film ; recherchez des preuves indépendantes.",
+          "pt": "A AFI regista publicidade que invocava investigações e uma negação de autorização; a UCLA documenta locais reais usados para ficção. Nem a publicidade nem os locais validam as afirmações sociais do filme; procure evidência independente."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
         ]
       }
     ]
