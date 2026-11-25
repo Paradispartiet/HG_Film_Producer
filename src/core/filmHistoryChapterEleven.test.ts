@@ -78,12 +78,12 @@ test("Chapter 11 preserves historical technologies and missing-film boundaries",
   }
 });
 
-test("Film History keeps 30 chapters, with Chapters 11–19 drafted and Chapters 1–10 full", () => {
+test("Film History keeps 30 chapters, with Chapters 11–20 drafted and Chapters 1–10 full", () => {
   assert.equal(filmHistoryBookChapters.length, 30);
   assert.equal(filmHistoryBookChapters.filter((chapter) => chapter.status === "full").length, 10);
-  assert.equal(filmHistoryBookChapters.filter((chapter) => chapter.status === "draft").length, 9);
-  assert.equal(filmHistoryBookChapters.filter((chapter) => chapter.status === "outline").length, 11);
-  for (const number of [11, 12, 13, 14, 15, 16, 17, 18, 19]) {
+  assert.equal(filmHistoryBookChapters.filter((chapter) => chapter.status === "draft").length, 10);
+  assert.equal(filmHistoryBookChapters.filter((chapter) => chapter.status === "outline").length, 10);
+  for (const number of [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) {
     assert.equal(filmHistoryBookChapters.find((chapter) => chapter.number === number)?.status, "draft");
   }
 });
