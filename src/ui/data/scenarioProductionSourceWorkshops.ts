@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Thirty-three pre-existing Production Cases receive evidence-backed craft decisions.
+ * Thirty-five pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -4832,6 +4832,376 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
         "sourceIds": [
           "s0",
           "s1",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_afgrunden_1910",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore performance-led filmmaking, compact production and Asta Nielsen's international screen identity.",
+      "nb": "Utforsk skuespillerdrevet filmproduksjon, konsentrerte opptak og Asta Nielsens internasjonale stjerneidentitet.",
+      "fr": "Explorez la mise en scène centrée sur le jeu, la production resserrée et l'identité internationale d'Asta Nielsen.",
+      "pt": "Explore a realização centrada na interpretação, a produção concentrada e a identidade internacional de Asta Nielsen."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Afgrunden — Film Database",
+        "publisher": "Det Danske Filminstitut",
+        "url": "https://www.dfi.dk/viden-om-film/filmdatabasen/film/afgrunden-0"
+      },
+      {
+        "id": "s1",
+        "title": "Asta Nielsen: the silent muse",
+        "publisher": "British Film Institute / Sight and Sound",
+        "url": "https://www.bfi.org.uk/sight-and-sound/features/asta-nielsen-silent-muse"
+      },
+      {
+        "id": "s2",
+        "title": "Afgrunden — Danish Silent Film streaming record",
+        "publisher": "Det Danske Filminstitut / Stumfilm.dk",
+        "url": "https://www.stumfilm.dk/stumfilm/streaming/film/afgrunden"
+      },
+      {
+        "id": "s3",
+        "title": "Dansk filmhistorie: 1910-1919",
+        "publisher": "Det Danske Filminstitut",
+        "url": "https://www.dfi.dk/viden-om-film/filmhistorie/dansk-filmhistorie-1910-1919"
+      }
+    ],
+    "questions": [
+      {
+        "id": "afgrunden-performance",
+        "area": "camera",
+        "prompt": {
+          "en": "How can framing and rehearsal support an expressive silent performance?",
+          "nb": "Hvordan kan utsnitt og prøver støtte et uttrykksfullt stumfilmspill?",
+          "fr": "Comment le cadrage et les répétitions peuvent-ils soutenir un jeu muet expressif ?",
+          "pt": "Como podem o enquadramento e os ensaios apoiar uma interpretação muda expressiva?"
+        },
+        "options": [
+          {
+            "id": "gesture",
+            "label": {
+              "en": "Rehearse subtle gestures and compare framing that makes them readable",
+              "nb": "Øv på subtile gester og sammenlign utsnitt som gjør dem lesbare",
+              "fr": "Répéter des gestes subtils et comparer les cadres qui les rendent lisibles",
+              "pt": "Ensaiar gestos subtis e comparar enquadramentos que os tornam legíveis"
+            }
+          },
+          {
+            "id": "exaggerate",
+            "label": {
+              "en": "Require every emotion to use the same exaggerated gesture",
+              "nb": "Krev at alle følelser uttrykkes med den samme overdrevne gesten",
+              "fr": "Exiger le même geste exagéré pour chaque émotion",
+              "pt": "Exigir o mesmo gesto exagerado para todas as emoções"
+            }
+          },
+          {
+            "id": "ignore",
+            "label": {
+              "en": "Ignore the performer when choosing every camera position",
+              "nb": "Ignorer skuespilleren ved valg av alle kamerastandpunkter",
+              "fr": "Ignorer l'interprète dans le choix de chaque position de caméra",
+              "pt": "Ignorar o intérprete ao escolher todas as posições da câmara"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "gesture",
+        "explanation": {
+          "en": "The BFI and DFI dossiers discuss Nielsen's restrained and psychologically expressive performance. Compare framing and gesture in an original everyday scene; this does not assert that Nielsen invented naturalistic film acting.",
+          "nb": "BFI og DFI beskriver Nielsens tilbakeholdne og psykologisk uttrykksfulle spill. Sammenlign utsnitt og gester i en egen hverdagsscene; dette innebærer ikke at Nielsen oppfant naturalistisk filmspill.",
+          "fr": "Les dossiers BFI et DFI décrivent le jeu retenu et psychologiquement expressif de Nielsen. Comparez cadrages et gestes dans une scène quotidienne originale, sans lui attribuer l'invention du jeu naturaliste.",
+          "pt": "Os dossiers BFI e DFI descrevem a interpretação contida e psicologicamente expressiva de Nielsen. Compare enquadramentos e gestos numa cena quotidiana original, sem lhe atribuir a invenção da interpretação naturalista."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "afgrunden-resources",
+        "area": "research",
+        "prompt": {
+          "en": "How could a small production prioritize limited shooting time and resources?",
+          "nb": "Hvordan kan en liten produksjon prioritere begrenset opptakstid og ressurser?",
+          "fr": "Comment une petite production peut-elle hiérarchiser son temps et ses moyens limités ?",
+          "pt": "Como pode uma pequena produção priorizar tempo e recursos limitados?"
+        },
+        "options": [
+          {
+            "id": "scale",
+            "label": {
+              "en": "Spend every resource on unrelated elaborate scenery",
+              "nb": "Bruk alle ressursene på omfattende dekorasjoner uten fortellingsfunksjon",
+              "fr": "Consacrer tous les moyens à des décors élaborés sans lien avec le récit",
+              "pt": "Gastar todos os recursos em cenários elaborados sem relação com a narrativa"
+            }
+          },
+          {
+            "id": "focus",
+            "label": {
+              "en": "Plan a manageable schedule around performance, location and readable staging",
+              "nb": "Planlegg en gjennomførbar opptaksplan rundt spill, opptakssteder og tydelig iscenesettelse",
+              "fr": "Prévoir un calendrier réaliste centré sur le jeu, les lieux et la mise en scène lisible",
+              "pt": "Planear um calendário viável centrado na interpretação, locais e encenação legível"
+            }
+          },
+          {
+            "id": "copy",
+            "label": {
+              "en": "Treat a hypothetical schedule as the original production's exact shooting log",
+              "nb": "Presenter en hypotetisk plan som originalproduksjonens eksakte opptakslogg",
+              "fr": "Présenter un calendrier fictif comme le journal exact du tournage original",
+              "pt": "Apresentar um calendário hipotético como o diário exato da rodagem original"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "focus",
+        "explanation": {
+          "en": "The BFI dossier reports a compact eight-day production and several Copenhagen-area locations; DFI identifies the production roles. Build a hypothetical schedule with realistic limits, without claiming to reconstruct the original daily shooting plan.",
+          "nb": "BFI-dokumentasjonen beskriver åtte opptaksdager og flere steder i København-området; DFI identifiserer produksjonsrollene. Lag en hypotetisk plan med realistiske rammer uten å hevde at den gjenskaper den opprinnelige dagsplanen.",
+          "fr": "Le dossier BFI rapporte huit jours de tournage et plusieurs lieux dans la région de Copenhague ; le DFI identifie les rôles de production. Élaborez un calendrier hypothétique réaliste sans prétendre restituer le plan quotidien original.",
+          "pt": "O dossier BFI relata oito dias de rodagem e vários locais na região de Copenhaga; o DFI identifica as funções de produção. Crie um calendário hipotético realista sem alegar reconstituir o plano diário original."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "afgrunden-preservation",
+        "area": "research",
+        "prompt": {
+          "en": "How should you describe the surviving digital presentation and Nielsen's historical significance?",
+          "nb": "Hvordan bør du beskrive den bevarte digitale visningen og Nielsens historiske betydning?",
+          "fr": "Comment décrire la présentation numérique conservée et l'importance historique de Nielsen ?",
+          "pt": "Como descrever a apresentação digital preservada e a importância histórica de Nielsen?"
+        },
+        "options": [
+          {
+            "id": "untouched",
+            "label": {
+              "en": "Present the surviving digital version as an untouched original master",
+              "nb": "Presenter den bevarte digitale versjonen som en urørt originalmaster",
+              "fr": "Présenter la version numérique conservée comme un original intact",
+              "pt": "Apresentar a versão digital preservada como um original intocado"
+            }
+          },
+          {
+            "id": "first",
+            "label": {
+              "en": "Use international success to claim that one performer invented all screen acting",
+              "nb": "Bruk internasjonal suksess til å hevde at én skuespiller oppfant alt filmspill",
+              "fr": "Utiliser le succès international pour attribuer tout le jeu cinématographique à une seule interprète",
+              "pt": "Usar o sucesso internacional para atribuir toda a interpretação cinematográfica a uma única atriz"
+            }
+          },
+          {
+            "id": "context",
+            "label": {
+              "en": "Document preservation changes and distinguish star reception from original material",
+              "nb": "Dokumenter bevaringsendringer og skill stjernemottakelsen fra originalmaterialet",
+              "fr": "Documenter les interventions de conservation et distinguer la réception de la vedette du matériau original",
+              "pt": "Documentar intervenções de conservação e distinguir a receção da estrela do material original"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "context",
+        "explanation": {
+          "en": "The DFI streaming record describes deterioration and recovered dance material; DFI's film history connects the film to Nielsen's international career. Explain these different evidence layers without treating a digital presentation as an unchanged original.",
+          "nb": "DFIs strømmeoppføring beskriver nedbrytning og gjenfunnet dansemateriale; filmhistorien knytter filmen til Nielsens internasjonale karriere. Forklar disse ulike belegglagene uten å behandle en digital visning som en uendret original.",
+          "fr": "La notice de diffusion du DFI décrit la dégradation et les images de danse retrouvées ; son histoire du cinéma relie le film à la carrière internationale de Nielsen. Distinguez ces preuves sans assimiler la présentation numérique à un original intact.",
+          "pt": "O registo de difusão do DFI descreve deterioração e imagens de dança recuperadas; a história do cinema do DFI liga o filme à carreira internacional de Nielsen. Distinga estas evidências sem tratar a apresentação digital como original inalterado."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_atlantis_1913",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore literary adaptation, export-oriented feature production and the provenance of alternative endings.",
+      "nb": "Utforsk litterær adaptasjon, eksportrettet langfilmproduksjon og proveniensen til alternative avslutninger.",
+      "fr": "Explorez l'adaptation littéraire, la production de longs métrages pour l'exportation et la provenance des fins alternatives.",
+      "pt": "Explore a adaptação literária, a produção de longas-metragens para exportação e a proveniência de finais alternativos."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Atlantis — Film Database",
+        "publisher": "Det Danske Filminstitut",
+        "url": "https://www.dfi.dk/en/viden-om-film/filmdatabasen/film/atlantis-1"
+      },
+      {
+        "id": "s1",
+        "title": "Danish Film History: 1910-1920",
+        "publisher": "Det Danske Filminstitut",
+        "url": "https://www.dfi.dk/en/english/danish-film-history/danish-film-history-1910-1920"
+      },
+      {
+        "id": "s2",
+        "title": "Atlantis — Danish Silent Film streaming record",
+        "publisher": "Det Danske Filminstitut / Stumfilm.dk",
+        "url": "https://www.stumfilm.dk/en/stumfilm/streaming/film/atlantis"
+      }
+    ],
+    "questions": [
+      {
+        "id": "atlantis-adaptation",
+        "area": "research",
+        "prompt": {
+          "en": "How should you plan and credit a feature adapted from a novel?",
+          "nb": "Hvordan bør du planlegge og kreditere en langfilm basert på en roman?",
+          "fr": "Comment planifier et créditer un long métrage adapté d'un roman ?",
+          "pt": "Como planear e creditar uma longa-metragem adaptada de um romance?"
+        },
+        "options": [
+          {
+            "id": "roles",
+            "label": {
+              "en": "Distinguish source author, screenwriters, direction and production responsibilities",
+              "nb": "Skill kildeforfatter, manusforfattere, regi og produksjonsansvar",
+              "fr": "Distinguer auteur du roman, scénaristes, réalisation et responsabilités de production",
+              "pt": "Distinguir autor do romance, argumentistas, realização e responsabilidades de produção"
+            }
+          },
+          {
+            "id": "collapse",
+            "label": {
+              "en": "Credit all literary and cinematic work to the studio alone",
+              "nb": "Krediter alt litterært og filmatisk arbeid bare til studioet",
+              "fr": "Attribuer tout le travail littéraire et cinématographique au seul studio",
+              "pt": "Atribuir todo o trabalho literário e cinematográfico apenas ao estúdio"
+            }
+          },
+          {
+            "id": "literal",
+            "label": {
+              "en": "Assume that every scene and image is identical to the novel",
+              "nb": "Anta at alle scener og bilder er identiske med romanen",
+              "fr": "Supposer que chaque scène et image est identique au roman",
+              "pt": "Supor que todas as cenas e imagens são idênticas ao romance"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "roles",
+        "explanation": {
+          "en": "DFI identifies Hauptmann's novel, the screenwriters Schröder and Garde, director Blom and Nordisk. A new adaptation plan should document these distinct kinds of creative responsibility without assuming that the film duplicates the source text.",
+          "nb": "DFI identifiserer Hauptmanns roman, manusforfatterne Schröder og Garde, regissør Blom og Nordisk. En ny adaptasjonsplan bør dokumentere ulike typer kreativt ansvar uten å anta at filmen kopierer kildeteksten.",
+          "fr": "Le DFI identifie le roman de Hauptmann, les scénaristes Schröder et Garde, le réalisateur Blom et Nordisk. Un projet d'adaptation doit distinguer ces responsabilités créatives sans supposer que le film reproduit le texte.",
+          "pt": "O DFI identifica o romance de Hauptmann, os argumentistas Schröder e Garde, o realizador Blom e a Nordisk. Um projeto de adaptação deve distinguir estas responsabilidades criativas sem supor que o filme duplica o texto."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "atlantis-scale",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a producer explore ambitious feature design without assuming spectacle guarantees success?",
+          "nb": "Hvordan kan en produsent utforske ambisiøs langfilmdesign uten å anta at spektakel garanterer suksess?",
+          "fr": "Comment explorer une conception ambitieuse sans supposer que le spectacle garantit le succès ?",
+          "pt": "Como explorar uma conceção ambiciosa sem supor que o espetáculo garante sucesso?"
+        },
+        "options": [
+          {
+            "id": "unlimited",
+            "label": {
+              "en": "Assume that increasing scale always guarantees artistic and commercial success",
+              "nb": "Anta at større skala alltid garanterer kunstnerisk og kommersiell suksess",
+              "fr": "Supposer qu'une échelle accrue garantit toujours le succès artistique et commercial",
+              "pt": "Supor que aumentar a escala garante sempre sucesso artístico e comercial"
+            }
+          },
+          {
+            "id": "model",
+            "label": {
+              "en": "Compare a modest storyboard with a safe miniature set and evaluate their narrative value",
+              "nb": "Sammenlign et beskjedent storyboard med trygg miniatyrscenografi og vurder fortellerverdien",
+              "fr": "Comparer un storyboard modeste et une maquette sûre en évaluant leur valeur narrative",
+              "pt": "Comparar um storyboard modesto e uma maquete segura avaliando o valor narrativo"
+            }
+          },
+          {
+            "id": "invent",
+            "label": {
+              "en": "Attribute undocumented effects techniques to the historical production",
+              "nb": "Tilskriv den historiske produksjonen udokumenterte effektteknikker",
+              "fr": "Attribuer des techniques d'effets non documentées à la production historique",
+              "pt": "Atribuir técnicas de efeitos não documentadas à produção histórica"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "model",
+        "explanation": {
+          "en": "DFI's history frames Atlantis as an ambitious internationally oriented Nordisk feature whose scale did not ensure success. Compare safe miniature and storyboard alternatives for an invented scene; do not infer historical effects methods from this exercise.",
+          "nb": "DFIs filmhistorie beskriver Atlantis som en ambisiøs, internasjonalt orientert Nordisk-produksjon der skala ikke sikret suksess. Sammenlign trygge miniatyr- og storyboardalternativer for en oppdiktet scene; ikke utled historiske effektmetoder fra øvelsen.",
+          "fr": "L'histoire du DFI présente Atlantis comme un long métrage Nordisk ambitieux et international dont l'ampleur ne garantissait pas le succès. Comparez maquette et storyboard pour une scène inventée, sans en déduire les techniques historiques d'effets.",
+          "pt": "A história do DFI apresenta Atlantis como uma longa-metragem Nordisk ambiciosa e internacional cuja escala não garantiu sucesso. Compare maquete e storyboard para uma cena inventada, sem deduzir técnicas históricas de efeitos."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "atlantis-endings",
+        "area": "research",
+        "prompt": {
+          "en": "How should alternative market endings and modern presentation choices be documented?",
+          "nb": "Hvordan bør alternative markedsavslutninger og moderne visningsvalg dokumenteres?",
+          "fr": "Comment documenter les fins alternatives selon les marchés et les choix de présentation modernes ?",
+          "pt": "Como documentar finais alternativos por mercado e escolhas modernas de apresentação?"
+        },
+        "options": [
+          {
+            "id": "universal",
+            "label": {
+              "en": "Declare that every market received one identical ending",
+              "nb": "Erklær at alle markeder fikk én identisk avslutning",
+              "fr": "Déclarer que tous les marchés ont reçu une fin identique",
+              "pt": "Declarar que todos os mercados receberam um final idêntico"
+            }
+          },
+          {
+            "id": "sound",
+            "label": {
+              "en": "Treat the modern recorded music as synchronized original production sound",
+              "nb": "Behandle den moderne innspilte musikken som synkron originallyd",
+              "fr": "Traiter la musique moderne enregistrée comme du son synchrone original",
+              "pt": "Tratar a música moderna gravada como som sincronizado original"
+            }
+          },
+          {
+            "id": "versions",
+            "label": {
+              "en": "Record each ending's documented market and distinguish later music and intertitles",
+              "nb": "Registrer hver avslutnings dokumenterte marked og skill ut senere musikk og mellomtekster",
+              "fr": "Consigner le marché documenté de chaque fin et distinguer musique ultérieure et intertitres",
+              "pt": "Registar o mercado documentado de cada final e distinguir música posterior e intertítulos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "versions",
+        "explanation": {
+          "en": "DFI records two endings including an unhappy ending for the Russian market. The streaming record identifies English intertitles and modern Robert Israel music. Keep historical ending evidence and archival presentation metadata separate rather than inventing an identical universal print.",
+          "nb": "DFI registrerer to avslutninger, inkludert en ulykkelig slutt for det russiske markedet. Strømmeoppføringen identifiserer engelske mellomtekster og moderne musikk av Robert Israel. Hold historiske sluttversjoner og arkivvisningens metadata adskilt fremfor å dikte opp én universell kopi.",
+          "fr": "Le DFI recense deux fins, dont une malheureuse destinée au marché russe. La notice de diffusion indique des intertitres anglais et une musique moderne de Robert Israel. Distinguez les preuves sur les fins et les métadonnées de présentation au lieu d'inventer une copie universelle.",
+          "pt": "O DFI regista dois finais, incluindo um infeliz para o mercado russo. O registo de difusão identifica intertítulos ingleses e música moderna de Robert Israel. Distinga a evidência dos finais e os metadados de apresentação, sem inventar uma cópia universal."
+        },
+        "sourceIds": [
+          "s0",
           "s2"
         ]
       }
