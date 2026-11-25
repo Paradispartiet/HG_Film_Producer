@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Sixteen pre-existing Production Cases receive evidence-backed craft decisions.
+ * Eighteen pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -1631,6 +1631,362 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
         "sourceIds": [
           "lumiere",
           "bfi"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_fire_1901",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Williamson's rescue story connects separate places through action. Use an original, harmless storyboard to explore how editing builds a coherent journey.",
+      "nb": "Williamsons redningsfortelling knytter ulike steder sammen gjennom handling. Bruk et eget, ufarlig storyboard for å utforske hvordan klipping skaper en sammenhengende reise.",
+      "fr": "Le récit de sauvetage de Williamson relie des lieux distincts par l'action. Explorez la continuité du trajet dans un storyboard original et sans danger.",
+      "pt": "A narrativa de salvamento de Williamson liga lugares distintos pela ação. Explore a continuidade do percurso num storyboard original e seguro."
+    },
+    "sources": [
+      {
+        "id": "sase",
+        "title": "Fire! — archive record 8389",
+        "publisher": "Screen Archive South East",
+        "url": "https://screenarchive.brighton.ac.uk/detail/8389/"
+      },
+      {
+        "id": "eastman",
+        "title": "James Card Program #2: Development of the Narrative",
+        "publisher": "George Eastman Museum",
+        "url": "https://www.eastman.org/event/film-screenings/james-card-program-2-development-narrative-35mm-16mm"
+      }
+    ],
+    "questions": [
+      {
+        "id": "fire-action-chain",
+        "area": "research",
+        "prompt": {
+          "en": "How can several separate views become a single readable rescue narrative?",
+          "nb": "Hvordan kan flere separate bilder bli en sammenhengende redningsfortelling?",
+          "fr": "Comment plusieurs vues distinctes peuvent-elles former un récit de sauvetage lisible ?",
+          "pt": "Como podem várias vistas separadas formar uma narrativa de salvamento legível?"
+        },
+        "options": [
+          {
+            "id": "random",
+            "label": {
+              "en": "Arrange unrelated images without a visible connection between actions",
+              "nb": "Sett sammen urelaterte bilder uten synlig sammenheng mellom handlingene",
+              "fr": "Assembler des images sans lien visible entre les actions",
+              "pt": "Montar imagens sem ligação visível entre as ações"
+            }
+          },
+          {
+            "id": "sequence",
+            "label": {
+              "en": "Connect an alarm, response and arrival through successive readable compositions",
+              "nb": "Knytt varsel, respons og ankomst sammen med lesbare komposisjoner i rekkefølge",
+              "fr": "Relier alerte, réponse et arrivée par des compositions successives lisibles",
+              "pt": "Ligar alerta, resposta e chegada por composições sucessivas legíveis"
+            }
+          },
+          {
+            "id": "static",
+            "label": {
+              "en": "Keep every stage of the story in one undifferentiated view",
+              "nb": "Behold alle fortellingens stadier i ett udifferensiert bilde",
+              "fr": "Garder toutes les étapes dans une seule vue indifférenciée",
+              "pt": "Manter todas as etapas numa única vista indiferenciada"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "sequence",
+        "explanation": {
+          "en": "The existing Screen Archive South East dossier describes the alarm, mobilization, journey and staged rescue. Eastman Museum places the film in the development of multi-scene narrative. Design a coherent chain of fictional actions, without claiming to reproduce the exact historical shot list.",
+          "nb": "Screen Archive South East-materialet beskriver varsel, mobilisering, ferd og iscenesatt redning. Eastman Museum plasserer filmen i utviklingen av fortelling over flere scener. Lag en sammenhengende fiktiv handlingskjede uten å påstå at den gjengir den nøyaktige historiske klippelisten.",
+          "fr": "Le dossier Screen Archive South East décrit l'alerte, la mobilisation, le trajet et le sauvetage mis en scène. Eastman Museum situe le film dans le développement du récit en plusieurs scènes. Construisez une chaîne fictive sans prétendre reproduire le découpage exact.",
+          "pt": "O dossier Screen Archive South East descreve alerta, mobilização, percurso e salvamento encenado. Eastman Museum situa o filme no desenvolvimento da narrativa em várias cenas. Crie uma sequência fictícia sem alegar reproduzir a lista histórica de planos."
+        },
+        "sourceIds": [
+          "sase",
+          "eastman"
+        ]
+      },
+      {
+        "id": "fire-location",
+        "area": "camera",
+        "prompt": {
+          "en": "What should a learner distinguish when a fictional event is staged in a real place?",
+          "nb": "Hva må eleven skille mellom når en fiktiv hendelse iscenesettes på et virkelig sted?",
+          "fr": "Que distinguer lorsqu'un événement fictif est mis en scène dans un lieu réel ?",
+          "pt": "O que distinguir quando um acontecimento fictício é encenado num local real?"
+        },
+        "options": [
+          {
+            "id": "document",
+            "label": {
+              "en": "Treat real streets and buildings as proof that every event actually happened",
+              "nb": "Behandle virkelige gater og bygninger som bevis for at hele hendelsen fant sted",
+              "fr": "Prendre les lieux réels pour preuve que tout s'est réellement passé",
+              "pt": "Tomar ruas e edifícios reais como prova de que tudo aconteceu"
+            }
+          },
+          {
+            "id": "ignore",
+            "label": {
+              "en": "Ignore spatial relationships because the scene is fictional",
+              "nb": "Ignorer romlige forbindelser fordi scenen er fiktiv",
+              "fr": "Ignorer les relations spatiales puisque la scène est fictive",
+              "pt": "Ignorar relações espaciais por se tratar de ficção"
+            }
+          },
+          {
+            "id": "distinguish",
+            "label": {
+              "en": "Separate the real location from the staged action and map the fictional geography",
+              "nb": "Skill virkelig opptakssted fra iscenesatt handling og kartlegg det fiktive rommet",
+              "fr": "Distinguer lieu réel et action mise en scène et schématiser l'espace fictif",
+              "pt": "Distinguir local real de ação encenada e esquematizar o espaço fictício"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "distinguish",
+        "explanation": {
+          "en": "The regional archive identifies Williamson's 1901 fiction production and its staged rescue. Real locations help make space legible without authenticating the fictional action. Draw a small location diagram for your own harmless story.",
+          "nb": "Det regionale arkivet identifiserer Williamsons fiksjonsfilm fra 1901 og den iscenesatte redningen. Virkelige steder gjør rommet lesbart uten å bekrefte den fiktive handlingen. Tegn en enkel stedsskisse til din egen ufarlige fortelling.",
+          "fr": "Les archives régionales identifient la fiction de Williamson de 1901 et le sauvetage mis en scène. Les lieux réels rendent l'espace lisible sans authentifier l'action fictive. Dessinez un petit schéma pour votre récit sans danger.",
+          "pt": "O arquivo regional identifica a ficção de Williamson de 1901 e o salvamento encenado. Locais reais tornam o espaço legível sem autenticar a ação fictícia. Desenhe um esquema simples para a sua narrativa segura."
+        },
+        "sourceIds": [
+          "sase"
+        ]
+      },
+      {
+        "id": "fire-safe-storyboard",
+        "area": "research",
+        "prompt": {
+          "en": "How can you study the film's suspense without recreating a dangerous rescue?",
+          "nb": "Hvordan kan du studere filmens spenning uten å gjenskape en farlig redning?",
+          "fr": "Comment étudier le suspense du film sans reproduire un sauvetage dangereux ?",
+          "pt": "Como estudar o suspense do filme sem reproduzir um salvamento perigoso?"
+        },
+        "options": [
+          {
+            "id": "board",
+            "label": {
+              "en": "Use a drawn storyboard or harmless fictional problem to test pacing and space",
+              "nb": "Bruk et tegnet storyboard eller et ufarlig fiktivt problem for å teste tempo og rom",
+              "fr": "Utiliser un storyboard dessiné ou un problème fictif sans danger pour tester rythme et espace",
+              "pt": "Usar um storyboard desenhado ou um problema fictício seguro para testar ritmo e espaço"
+            }
+          },
+          {
+            "id": "hazard",
+            "label": {
+              "en": "Treat a hazardous reenactment as necessary for learning the editing method",
+              "nb": "Behandle en farlig gjenskaping som nødvendig for å lære klippemetoden",
+              "fr": "Considérer une reconstitution dangereuse comme nécessaire à l'apprentissage du montage",
+              "pt": "Considerar uma reconstituição perigosa necessária para aprender a montagem"
+            }
+          },
+          {
+            "id": "spectacle",
+            "label": {
+              "en": "Replace the study of narrative with spectacle alone",
+              "nb": "Erstatt studiet av fortelling med spektakel alene",
+              "fr": "Remplacer l'étude du récit par le seul spectacle",
+              "pt": "Substituir o estudo da narrativa apenas pelo espetáculo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "board",
+        "explanation": {
+          "en": "The archive's rescue narrative supplies a historical example of connected action, not a safety protocol. The learning goal is spatial and temporal storytelling. Use drawings, objects or a harmless invented situation instead of fire or a physical rescue.",
+          "nb": "Arkivets redningsfortelling gir et historisk eksempel på sammenhengende handling, ikke en sikkerhetsprosedyre. Målet er romlig og tidslig fortelling. Bruk tegninger, gjenstander eller en ufarlig oppdiktet situasjon i stedet for brann eller fysisk redning.",
+          "fr": "Le récit des archives fournit un exemple historique d'action liée, non un protocole de sécurité. L'objectif est la narration spatiale et temporelle. Utilisez dessins, objets ou une situation inventée sans danger plutôt que feu ou sauvetage physique.",
+          "pt": "A narrativa do arquivo oferece um exemplo histórico de ação ligada, não um protocolo de segurança. O objetivo é narrar espaço e tempo. Use desenhos, objetos ou uma situação inventada segura em vez de fogo ou salvamento físico."
+        },
+        "sourceIds": [
+          "sase",
+          "eastman"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_life_of_an_american_fireman_1903",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Compare two ways of arranging screen time and learn why a film's surviving version matters for editing history. Use an original storyboard rather than reenacting a rescue.",
+      "nb": "Sammenlign to måter å ordne filmtid på, og lær hvorfor filmens bevarte versjon er viktig for klippehistorien. Bruk et eget storyboard fremfor å gjenskape en redning.",
+      "fr": "Comparez deux organisations du temps filmique et comprenez l'importance de la version conservée pour l'histoire du montage. Utilisez un storyboard original sans reconstituer un sauvetage.",
+      "pt": "Compare duas organizações do tempo fílmico e aprenda por que a versão preservada importa para a história da montagem. Use um storyboard original sem reencenar um salvamento."
+    },
+    "sources": [
+      {
+        "id": "loc",
+        "title": "The Life of an American Fireman (1903)",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/static/programs/national-film-preservation-board/film-registry/descriptions.html"
+      },
+      {
+        "id": "bfi",
+        "title": "The Innovators 1900-1910: Time After Time",
+        "publisher": "British Film Institute",
+        "url": "https://old.bfi.org.uk/sightandsound/feature/145"
+      },
+      {
+        "id": "moma",
+        "title": "Edwin S. Porter: A Portrait",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/explore/inside_out/2009/09/22/an-auteurist-history-of-film-a-portrait-of-edwin-s-porte/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "fireman-provenance",
+        "area": "research",
+        "prompt": {
+          "en": "What should you check before attributing a cross-cut rescue sequence to the 1903 original?",
+          "nb": "Hva bør du sjekke før du tilskriver en kryssklippet redningssekvens til originalen fra 1903?",
+          "fr": "Que vérifier avant d'attribuer un sauvetage en montage alterné à l'original de 1903 ?",
+          "pt": "O que verificar antes de atribuir uma sequência em montagem alternada ao original de 1903?"
+        },
+        "options": [
+          {
+            "id": "date",
+            "label": {
+              "en": "Assume that every surviving edit has the release year's shot order",
+              "nb": "Anta at alle bevarte klipp har utgivelsesårets bilderekkefølge",
+              "fr": "Supposer que chaque montage conservé suit l'ordre de l'année de sortie",
+              "pt": "Supor que cada montagem preservada segue a ordem do ano de estreia"
+            }
+          },
+          {
+            "id": "modern",
+            "label": {
+              "en": "Prefer the most familiar modern edit without investigating its origin",
+              "nb": "Foretrekk det mest kjente moderne klippet uten å undersøke opphavet",
+              "fr": "Préférer le montage moderne le plus connu sans étudier sa provenance",
+              "pt": "Preferir a montagem moderna mais conhecida sem investigar a origem"
+            }
+          },
+          {
+            "id": "deposit",
+            "label": {
+              "en": "Identify the version and compare it with the original copyright-deposit evidence",
+              "nb": "Identifiser versjonen og sammenlign den med det opprinnelige deponeringsmaterialet",
+              "fr": "Identifier la version et la comparer aux documents originaux du dépôt de copyright",
+              "pt": "Identificar a versão e compará-la com a documentação original do depósito de direitos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "deposit",
+        "explanation": {
+          "en": "The existing Library of Congress record explains that a later cross-cut reedit was mistaken for the original until scholars examined the copyright paper print. Establish provenance before using shot order as evidence of historical innovation.",
+          "nb": "Library of Congress-materialet forklarer at en senere kryssklippet versjon ble mistolket som originalen frem til forskere undersøkte papirkopien deponert for opphavsrett. Fastslå versjonens opphav før du bruker klipperekkefølgen som bevis på historisk nyskaping.",
+          "fr": "Le dossier Library of Congress explique qu'un remontage alterné ultérieur fut pris pour l'original jusqu'à l'examen du tirage papier déposé. Établissez la provenance avant d'utiliser l'ordre des plans comme preuve d'innovation historique.",
+          "pt": "O dossier Library of Congress explica que uma remontagem alternada posterior foi tomada pelo original até ao exame da cópia em papel depositada. Estabeleça a proveniência antes de usar a ordem dos planos como prova de inovação histórica."
+        },
+        "sourceIds": [
+          "loc"
+        ]
+      },
+      {
+        "id": "fireman-temporal",
+        "area": "research",
+        "prompt": {
+          "en": "Which storyboard comparison best explores the difference between repeated action and alternating viewpoints?",
+          "nb": "Hvilken storyboard-sammenligning utforsker best forskjellen mellom gjentatt handling og vekslende perspektiver?",
+          "fr": "Quelle comparaison de storyboards explore le mieux l'action répétée et les points de vue alternés ?",
+          "pt": "Que comparação de storyboards explora melhor ação repetida e pontos de vista alternados?"
+        },
+        "options": [
+          {
+            "id": "viewpoints",
+            "label": {
+              "en": "Show one complete harmless action from each viewpoint, then compare an alternating arrangement",
+              "nb": "Vis én hel ufarlig handling fra hvert perspektiv, og sammenlign med en vekslende rekkefølge",
+              "fr": "Montrer une action sans danger complète de chaque point de vue puis comparer un montage alterné",
+              "pt": "Mostrar uma ação segura completa de cada ponto de vista e comparar com uma montagem alternada"
+            }
+          },
+          {
+            "id": "random",
+            "label": {
+              "en": "Shuffle the images without tracking what happens in each view",
+              "nb": "Bland bildene uten å følge hva som skjer i hvert perspektiv",
+              "fr": "Mélanger les images sans suivre l'action dans chaque vue",
+              "pt": "Misturar imagens sem seguir a ação em cada vista"
+            }
+          },
+          {
+            "id": "equate",
+            "label": {
+              "en": "Assume every repeated view and every alternating cut has identical temporal meaning",
+              "nb": "Anta at gjentatte bilder og vekslende klipp alltid har samme tidsbetydning",
+              "fr": "Supposer que répétition et alternance ont toujours le même sens temporel",
+              "pt": "Supor que repetição e alternância têm sempre o mesmo sentido temporal"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "viewpoints",
+        "explanation": {
+          "en": "The existing BFI dossier describes the original ending as complete action inside followed by its replay outside, distinct from a later intercut version. Use a fictional action to compare perceived repetition and simultaneity; this storyboard is not a reconstruction of the film's exact shots.",
+          "nb": "Det eksisterende BFI-materialet beskriver originalslutten som fullført handling innendørs, deretter gjentatt utendørs, til forskjell fra en senere kryssklippet versjon. Bruk en fiktiv handling til å sammenligne opplevd gjentakelse og samtidighet; storyboardet rekonstruerer ikke filmens eksakte bilder.",
+          "fr": "Le dossier BFI décrit la fin originale comme une action achevée à l'intérieur puis rejouée à l'extérieur, contrairement au remontage alterné. Comparez répétition et simultanéité perçues dans une action fictive ; ce storyboard ne reconstruit pas les plans exacts.",
+          "pt": "O dossier BFI descreve o final original como ação completa no interior seguida da sua repetição no exterior, distinta da remontagem alternada. Compare repetição e simultaneidade percebidas numa ação fictícia; este storyboard não reconstrói os planos exatos."
+        },
+        "sourceIds": [
+          "loc",
+          "bfi"
+        ]
+      },
+      {
+        "id": "fireman-history",
+        "area": "research",
+        "prompt": {
+          "en": "How can a film historian explain the case's importance without making an unsupported first-ever claim?",
+          "nb": "Hvordan kan en filmhistoriker forklare filmens betydning uten en udokumentert påstand om å være først?",
+          "fr": "Comment expliquer l'importance du film sans prétendre à une première absolue non étayée ?",
+          "pt": "Como explicar a importância do filme sem afirmar uma estreia absoluta não fundamentada?"
+        },
+        "options": [
+          {
+            "id": "first",
+            "label": {
+              "en": "Declare that one film invented every later editing technique",
+              "nb": "Erklær at én film oppfant alle senere klippeteknikker",
+              "fr": "Déclarer qu'un film a inventé toutes les techniques de montage ultérieures",
+              "pt": "Declarar que um filme inventou todas as técnicas de montagem posteriores"
+            }
+          },
+          {
+            "id": "evidence",
+            "label": {
+              "en": "Identify the version, evidence, historical context and remaining uncertainties",
+              "nb": "Identifiser versjon, belegg, historisk kontekst og gjenstående usikkerhet",
+              "fr": "Identifier version, preuves, contexte historique et incertitudes restantes",
+              "pt": "Identificar versão, evidência, contexto histórico e incertezas restantes"
+            }
+          },
+          {
+            "id": "dismiss",
+            "label": {
+              "en": "Dismiss the film's importance because its original edit differs from later conventions",
+              "nb": "Avvis filmens betydning fordi originalklippen avviker fra senere konvensjoner",
+              "fr": "Écarter son importance parce que le montage original diffère des conventions ultérieures",
+              "pt": "Descartar a importância por a montagem original diferir das convenções posteriores"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "evidence",
+        "explanation": {
+          "en": "MoMA places Porter in early American narrative history, and the Library of Congress record documents the importance of version research. Historical significance does not require an absolute invention claim. Record the institution, version and limitations supporting your interpretation.",
+          "nb": "MoMA plasserer Porter i tidlig amerikansk fortellingshistorie, og Library of Congress dokumenterer betydningen av versjonsforskning. Historisk betydning krever ikke en absolutt oppfinnerpåstand. Noter institusjon, versjon og begrensninger som støtter tolkningen.",
+          "fr": "MoMA situe Porter dans l'histoire du récit américain et Library of Congress documente l'importance de l'étude des versions. L'importance historique n'exige pas une revendication d'invention absolue. Notez institution, version et limites.",
+          "pt": "MoMA situa Porter na história da narrativa americana e Library of Congress documenta a importância do estudo de versões. A importância histórica não exige reivindicar invenção absoluta. Registe instituição, versão e limites."
+        },
+        "sourceIds": [
+          "moma",
+          "loc"
         ]
       }
     ]
