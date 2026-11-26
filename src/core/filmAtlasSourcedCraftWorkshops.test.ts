@@ -105,15 +105,23 @@ const ids = [
   "scenario_double_indemnity_1944",
   "scenario_brief_encounter_1945",
   "scenario_the_third_man_1949",
+  "scenario_the_maltese_falcon_1941",
+  "scenario_bicycle_thieves_1948",
+  "scenario_rashomon_1950",
+  "scenario_tokyo_story_1953",
+  "scenario_seven_samurai_1954",
+  "scenario_la_strada_1954",
+  "scenario_pather_panchali_1955",
+  "scenario_ordet_1955",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly ninety-six existing cases have two hundred and eighty-eight original, source-backed decisions", () => {
+test("Exactly one hundred and four existing cases have three hundred and twelve original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 96);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 288);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 104);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 312);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -312,6 +320,17 @@ test("Exactly ninety-six existing cases have two hundred and eighty-eight origin
     } else if (["scenario_rome_open_city_1945","scenario_double_indemnity_1944","scenario_brief_encounter_1945","scenario_the_third_man_1949"].includes(workshop.scenarioId)) {
       assert.ok(readFileSync("src/core/earlyCinemaExpansion.ts", "utf8").includes(workshop.scenarioId));
       const verification = readFileSync("src/ui/data/scenarioProductionVerification1940sNoirRealismBatch.ts", "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const next = verification.indexOf("\n  },", start);
+      const section = verification.slice(start, next < 0 ? undefined : next);
+      for (const source of workshop.sources) assert.ok(section.includes(source.url));
+    } else if (["scenario_the_maltese_falcon_1941","scenario_bicycle_thieves_1948","scenario_rashomon_1950","scenario_tokyo_story_1953","scenario_seven_samurai_1954","scenario_la_strada_1954","scenario_pather_panchali_1955","scenario_ordet_1955"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_the_maltese_falcon_1941":["src/ui/data/scenarioProductionVerificationCrimeNoirTransformationsBatch.ts","earlyCinemaExpansion"],"scenario_bicycle_thieves_1948":["src/ui/data/scenarioProductionVerification.ts","seed"],"scenario_rashomon_1950":["src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts","earlyCinemaExpansion"],"scenario_tokyo_story_1953":["src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts","earlyCinemaExpansion"],"scenario_seven_samurai_1954":["src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts","earlyCinemaExpansion"],"scenario_la_strada_1954":["src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts","earlyCinemaExpansion"],"scenario_pather_panchali_1955":["src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts","earlyCinemaExpansion"],"scenario_ordet_1955":["src/ui/data/scenarioProductionVerificationPostwarEuropeanModernismBatch.ts","scandinavianEuropeanExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      if (definition === "seed") assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
+      else assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
       const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
       assert.ok(start >= 0);
       const next = verification.indexOf("\n  },", start);
@@ -814,4 +833,16 @@ test("Postwar and wartime transition workshops preserve film-specific evidence",
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_double_indemnity_1944")?.questions.map(q => q.id), ["doubleindemnity-confession","doubleindemnity-shadow","doubleindemnity-regulation"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_brief_encounter_1945")?.questions.map(q => q.id), ["briefencounter-memory","briefencounter-station","briefencounter-music"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_third_man_1949")?.questions.map(q => q.id), ["thethirdman-space","thethirdman-units","thethirdman-score"]);
+});
+
+
+test("Postwar workshops preserve distinct film-specific questions and evidence", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_maltese_falcon_1941")?.questions.map(q => q.id), ["themaltesefalcon-adaptation","themaltesefalcon-rehearsal","themaltesefalcon-lighting"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_bicycle_thieves_1948")?.questions.map(q => q.id), ["bicyclethieves-street","bicyclethieves-casting","bicyclethieves-editing"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_rashomon_1950")?.questions.map(q => q.id), ["rashomon-testimony","rashomon-forest","rashomon-score"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_tokyo_story_1953")?.questions.map(q => q.id), ["tokyostory-camera","tokyostory-performance","tokyostory-rhythm"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_seven_samurai_1954")?.questions.map(q => q.id), ["sevensamurai-ensemble","sevensamurai-coverage","sevensamurai-editions"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_la_strada_1954")?.questions.map(q => q.id), ["lastrada-gesture","lastrada-road","lastrada-music"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_pather_panchali_1955")?.questions.map(q => q.id), ["patherpanchali-observation","patherpanchali-finance","patherpanchali-sound"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_ordet_1955")?.questions.map(q => q.id), ["ordet-duration","ordet-interior","ordet-quiet"]);
 });

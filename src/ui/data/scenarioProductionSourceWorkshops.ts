@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Ninety-six pre-existing Production Cases receive evidence-backed craft decisions.
+ * One hundred and four pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -16883,6 +16883,1503 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
           "s0",
           "s2",
           "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_maltese_falcon_1941",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Literary adaptation and rehearsed studio performance",
+      "nb": "Litterær adaptasjon og innøvd studioskuespill",
+      "fr": "Adaptation littéraire et jeu répété en studio",
+      "pt": "Adaptação literária e interpretação ensaiada"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The Maltese Falcon",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/27025-THE-MALTESE-FALCON"
+      },
+      {
+        "id": "s1",
+        "title": "Film Night at the Pickford Theater: The Maltese Falcon (1941)",
+        "publisher": "Library of Congress",
+        "url": "https://blogs.loc.gov/now-see-hear/2023/03/film-night-at-the-pickford-theater-the-maltese-falcon-1941/"
+      },
+      {
+        "id": "s2",
+        "title": "The Maltese Falcon (1941)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/e76abf55-0d46-53ae-b3ce-a68e5fbfc711/the-maltese-falcon"
+      },
+      {
+        "id": "s3",
+        "title": "John Huston's The Maltese Falcon",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/explore/inside_out/2011/05/17/john-hustons-the-maltese-falcon/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "themaltesefalcon-adaptation",
+        "area": "research",
+        "prompt": {
+          "en": "Compare Hammett's novel with the earlier adaptations",
+          "nb": "Sammenlign Hammetts roman med tidligere adaptasjoner",
+          "fr": "Comparer le roman de Hammett aux adaptations antérieures",
+          "pt": "Comparar o romance de Hammett com adaptações anteriores"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Track retained dialogue and changed scenes",
+              "nb": "Kartlegg beholdt dialog og endrede scener",
+              "fr": "Relever dialogues conservés et scènes modifiées",
+              "pt": "Registar diálogos mantidos e cenas alteradas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat all versions as interchangeable",
+              "nb": "Behandle alle versjoner som identiske",
+              "fr": "Traiter toutes les versions comme interchangeables",
+              "pt": "Tratar todas as versões como equivalentes"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore the novel and studio context",
+              "nb": "Ignorer romanen og studiokonteksten",
+              "fr": "Ignorer le roman et le contexte du studio",
+              "pt": "Ignorar romance e contexto do estúdio"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI and the Library of Congress document earlier versions and Huston's close adaptation. Distinguish the source text from each film version.",
+          "nb": "AFI og Library of Congress dokumenterer tidligere versjoner og Hustons nære adaptasjon. Skill forelegget fra hver filmversjon.",
+          "fr": "L’AFI et la Bibliothèque du Congrès documentent les versions antérieures et l’adaptation fidèle. Distinguez le texte source de chaque film.",
+          "pt": "A AFI e a Biblioteca do Congresso documentam versões anteriores e adaptação fiel. Distinga o texto original de cada filme."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "themaltesefalcon-rehearsal",
+        "area": "research",
+        "prompt": {
+          "en": "How should a dialogue-led ensemble scene be prepared?",
+          "nb": "Hvordan bør en dialogdrevet ensemblescene forberedes?",
+          "fr": "Comment préparer une scène chorale fondée sur le dialogue ?",
+          "pt": "Como preparar uma cena de conjunto baseada no diálogo?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Replace all dialogue with action spectacle",
+              "nb": "Erstatt all dialog med actionspektakel",
+              "fr": "Remplacer tout dialogue par le spectacle",
+              "pt": "Substituir todo diálogo por espetáculo de ação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse entrances, verbal reactions and shifting relationships",
+              "nb": "Øv på innganger, verbale reaksjoner og skiftende relasjoner",
+              "fr": "Répéter entrées, réactions verbales et rapports changeants",
+              "pt": "Ensaiar entradas, reações verbais e relações mutáveis"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Record each line without rehearsing interaction",
+              "nb": "Spill inn hver replikk uten samspilløvelse",
+              "fr": "Enregistrer chaque réplique sans répéter les interactions",
+              "pt": "Gravar cada fala sem ensaiar a interação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The Library documents extensive rehearsal and largely sequential shooting. Create a new ensemble scene with coordinated performance, not a reconstruction of undocumented blocking.",
+          "nb": "Biblioteket dokumenterer omfattende prøver og hovedsakelig sekvensielle opptak. Lag en ny ensemblescene med samordnet spill, ikke udokumentert rekonstruksjon.",
+          "fr": "La Bibliothèque documente les répétitions et le tournage largement séquentiel. Créez une scène originale au jeu coordonné sans inventer les placements historiques.",
+          "pt": "A Biblioteca documenta ensaios extensos e filmagem maioritariamente sequencial. Crie uma cena original com interpretação coordenada sem inventar posições históricas."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "themaltesefalcon-lighting",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a studio interior suggest shifting suspicion?",
+          "nb": "Hvordan kan et studiointeriør antyde skiftende mistanke?",
+          "fr": "Comment un intérieur de studio suggère-t-il une méfiance changeante ?",
+          "pt": "Como pode um interior de estúdio sugerir desconfiança crescente?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Darken every frame without dramatic motivation",
+              "nb": "Mørklegg alle bilder uten dramatisk motivasjon",
+              "fr": "Assombrir chaque plan sans motivation dramatique",
+              "pt": "Escurecer todos os planos sem motivação dramática"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume noir was a fixed studio lighting standard",
+              "nb": "Anta at noir var en fast standard for studiobelysning",
+              "fr": "Supposer que le noir était une norme d’éclairage du studio",
+              "pt": "Supor que o noir era uma norma de iluminação do estúdio"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Coordinate shadows with group composition and objects",
+              "nb": "Samordne skygger med gruppekomposisjon og gjenstander",
+              "fr": "Coordonner ombres, composition du groupe et objets",
+              "pt": "Coordenar sombras, composição do grupo e objetos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI credits Edeson and Haas, and BFI describes exaggerated shadows. Plan an original composition while treating noir as a historical critical category.",
+          "nb": "AFI krediterer Edeson og Haas, og BFI beskriver overdrevne skygger. Planlegg en egen komposisjon og behandle noir som en historisk kritikerbetegnelse.",
+          "fr": "L’AFI crédite Edeson et Haas, le BFI décrit les ombres accentuées. Concevez une composition originale en distinguant la catégorie critique du noir.",
+          "pt": "A AFI credita Edeson e Haas, e o BFI descreve sombras acentuadas. Planeie uma composição original distinguindo a categoria crítica noir."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_bicycle_thieves_1948",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Street realism, nonprofessional performance and restrained editing",
+      "nb": "Gaterealisme, amatørskuespill og tilbakeholden klipping",
+      "fr": "Réalisme de rue, jeu non professionnel et montage retenu",
+      "pt": "Realismo de rua, interpretação não profissional e montagem contida"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Bicycle Thieves (1948)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/594f7408-2fdd-55a0-a347-79370e42e0ed/bicycle-thieves"
+      },
+      {
+        "id": "s1",
+        "title": "The Bicycle Thief",
+        "publisher": "Turner Classic Movies",
+        "url": "https://www.tcm.com/articles/12767/the-bicycle-thief"
+      },
+      {
+        "id": "s2",
+        "title": "The Taviani brothers on Bicycle Thieves: It was like a course in directing",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/taviani-brothers-bicycle-thieves-it-was-like-course-directing"
+      }
+    ],
+    "questions": [
+      {
+        "id": "bicyclethieves-street",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a street scene convey everyday economic pressure?",
+          "nb": "Hvordan kan en gatescene formidle hverdagens økonomiske press?",
+          "fr": "Comment une scène de rue traduit-elle la pression économique quotidienne ?",
+          "pt": "Como pode uma cena de rua transmitir pressão económica quotidiana?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat every staged street scene as documentary evidence",
+              "nb": "Behandle alle iscenesatte gatescener som dokumentariske bevis",
+              "fr": "Traiter toute scène de rue jouée comme preuve documentaire",
+              "pt": "Tratar toda cena encenada na rua como prova documental"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Frame the relationship between people, objects and public space",
+              "nb": "Komponer forholdet mellom mennesker, gjenstander og offentlig rom",
+              "fr": "Cadrer les rapports entre personnes, objets et espace public",
+              "pt": "Enquadrar relações entre pessoas, objetos e espaço público"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Replace everyday surroundings with glamorous scenery",
+              "nb": "Erstatt hverdagsmiljøet med glamorøse kulisser",
+              "fr": "Remplacer le quotidien par des décors glamour",
+              "pt": "Substituir o quotidiano por cenários glamorosos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI links Rome street locations to postwar social reality and the father-son search. Design a fictional street scene without confusing realism with documentary proof.",
+          "nb": "BFI knytter Romas gater til etterkrigstidens sosiale virkelighet og farens og sønnens leting. Utform en fiktiv scene uten å forveksle realisme med dokumentasjon.",
+          "fr": "Le BFI relie les rues de Rome à la réalité sociale et à la recherche du père et du fils. Créez une fiction sans confondre réalisme et preuve.",
+          "pt": "O BFI liga as ruas de Roma à realidade social e à busca de pai e filho. Conceba uma ficção sem confundir realismo com prova."
+        },
+        "sourceIds": [
+          "s0"
+        ]
+      },
+      {
+        "id": "bicyclethieves-casting",
+        "area": "research",
+        "prompt": {
+          "en": "How should nonprofessional casting be approached?",
+          "nb": "Hvordan bør casting av ikke-profesjonelle tilnærmes?",
+          "fr": "Comment aborder le choix d’interprètes non professionnels ?",
+          "pt": "Como abordar a seleção de intérpretes não profissionais?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume nonprofessionals never require direction",
+              "nb": "Anta at amatører aldri trenger regi",
+              "fr": "Supposer que les non-professionnels n’ont jamais besoin de direction",
+              "pt": "Supor que não profissionais nunca precisam de direção"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Film participants without explaining their role",
+              "nb": "Film medvirkende uten å forklare rollen deres",
+              "fr": "Filmer des participants sans expliquer leur rôle",
+              "pt": "Filmar participantes sem explicar o seu papel"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse specific actions with consent and clear direction",
+              "nb": "Øv på konkrete handlinger med samtykke og tydelig regi",
+              "fr": "Répéter des actions précises avec consentement et direction claire",
+              "pt": "Ensaiar ações específicas com consentimento e direção clara"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "TCM describes De Sica's selection and direction of nonprofessional performers. Apply the lesson through a consent-based rehearsal rather than claiming authenticity automatically.",
+          "nb": "TCM beskriver De Sicas utvelgelse og regi av amatører. Bruk lærdommen i en samtykkebasert prøve fremfor å anta automatisk autentisitet.",
+          "fr": "TCM décrit le choix et la direction des interprètes par De Sica. Appliquez cela dans une répétition consentie sans présumer l’authenticité.",
+          "pt": "A TCM descreve a seleção e direção de intérpretes por De Sica. Aplique a lição num ensaio consentido sem presumir autenticidade."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "bicyclethieves-editing",
+        "area": "camera",
+        "prompt": {
+          "en": "How can understated editing support a simple search narrative?",
+          "nb": "Hvordan kan tilbakeholden klipping støtte en enkel letefortelling?",
+          "fr": "Comment un montage retenu soutient-il un récit de recherche simple ?",
+          "pt": "Como pode uma montagem contida apoiar uma narrativa de busca simples?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use restrained shot changes and recurring visual relationships",
+              "nb": "Bruk tilbakeholdne klipp og gjentakende visuelle relasjoner",
+              "fr": "Employer des coupes mesurées et des relations visuelles récurrentes",
+              "pt": "Usar cortes contidos e relações visuais recorrentes"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Insert dramatic effects at every ordinary action",
+              "nb": "Legg inn dramatiske effekter ved hver hverdagsbevegelse",
+              "fr": "Insérer des effets dramatiques à chaque geste ordinaire",
+              "pt": "Inserir efeitos dramáticos em cada gesto comum"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore the child’s perspective throughout the sequence",
+              "nb": "Ignorer barnets perspektiv gjennom hele sekvensen",
+              "fr": "Ignorer le point de vue de l’enfant dans toute la séquence",
+              "pt": "Ignorar a perspetiva da criança em toda a sequência"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The Taviani brothers discuss visual rhymes and restrained cutting in their BFI analysis. Make an original shot list linking the adult and child's experience.",
+          "nb": "Taviani-brødrene drøfter visuelle rim og tilbakeholden klipping hos BFI. Lag en egen bildeliste som knytter den voksnes og barnets erfaring sammen.",
+          "fr": "Les Taviani analysent les rimes visuelles et le montage retenu au BFI. Créez un découpage original reliant l’expérience de l’adulte et de l’enfant.",
+          "pt": "Os Taviani analisam rimas visuais e montagem contida no BFI. Crie uma lista de planos original ligando experiências do adulto e da criança."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_rashomon_1950",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Contradictory testimony, forest light and repeated narration",
+      "nb": "Motstridende vitnesbyrd, skogslys og gjentatt fortelling",
+      "fr": "Témoignages contradictoires, lumière forestière et récit répété",
+      "pt": "Testemunhos contraditórios, luz florestal e narrativa repetida"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Rashomon",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/307-rashomon"
+      },
+      {
+        "id": "s1",
+        "title": "Rashomon. 1950. Directed by Akira Kurosawa",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/calendar/events/4273"
+      },
+      {
+        "id": "s2",
+        "title": "Rashomon (1950)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/878cd0fa-33da-547a-b128-84cec508f7da/rashomon"
+      },
+      {
+        "id": "s3",
+        "title": "The Rashomon effect: a new look at Akira Kurosawa's cinematic milestone",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/rashomon-effect-akira-kurosawa"
+      }
+    ],
+    "questions": [
+      {
+        "id": "rashomon-testimony",
+        "area": "research",
+        "prompt": {
+          "en": "How can repeated events reveal conflicting testimony?",
+          "nb": "Hvordan kan gjentatte hendelser avdekke motstridende vitnesbyrd?",
+          "fr": "Comment des événements répétés révèlent-ils des témoignages contradictoires ?",
+          "pt": "Como podem eventos repetidos revelar testemunhos contraditórios?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Make every account identical in meaning",
+              "nb": "Gjør alle beretningene identiske i betydning",
+              "fr": "Rendre tous les récits identiques en sens",
+              "pt": "Tornar todos os relatos idênticos em significado"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Declare the first testimony objectively correct",
+              "nb": "Erklær første vitnesbyrd objektivt riktig",
+              "fr": "Déclarer le premier témoignage objectivement exact",
+              "pt": "Declarar o primeiro testemunho objetivamente correto"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Vary performance and framing with each narrator's account",
+              "nb": "Varier spill og utsnitt med hver fortellers beretning",
+              "fr": "Varier jeu et cadrage selon le récit de chaque narrateur",
+              "pt": "Variar interpretação e enquadramento segundo cada relato"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion and BFI document the adapted sources and incompatible viewpoints. Design fictional versions that distinguish narrative perspective from factual corroboration.",
+          "nb": "Criterion og BFI dokumenterer foreleggene og uforenlige perspektiver. Lag fiktive versjoner som skiller fortellerperspektiv fra faktisk bekreftelse.",
+          "fr": "Criterion et le BFI documentent les sources et points de vue incompatibles. Créez des versions fictives distinguant perspective et corroboration.",
+          "pt": "A Criterion e o BFI documentam as fontes e perspetivas incompatíveis. Crie versões fictícias distinguindo perspetiva de corroboração."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "rashomon-forest",
+        "area": "camera",
+        "prompt": {
+          "en": "How can forest lighting contribute to an unstable perspective?",
+          "nb": "Hvordan kan skogslys bidra til et ustabilt perspektiv?",
+          "fr": "Comment la lumière forestière contribue-t-elle à un point de vue instable ?",
+          "pt": "Como pode a luz florestal contribuir para uma perspetiva instável?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Storyboard shifting light and moving camera relationships",
+              "nb": "Lag storyboard for skiftende lys og kamerabevegelse",
+              "fr": "Préparer un storyboard de lumière changeante et de mouvements de caméra",
+              "pt": "Criar storyboard de luz variável e movimentos de câmara"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use uniform lighting to remove all visual variation",
+              "nb": "Bruk ensartet lys for å fjerne all visuell variasjon",
+              "fr": "Utiliser un éclairage uniforme supprimant toute variation",
+              "pt": "Usar iluminação uniforme eliminando variações"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Claim every forest shot used the same mirror arrangement",
+              "nb": "Hevd at alle skogsbilder brukte samme speiloppsett",
+              "fr": "Affirmer que tous les plans forestiers utilisent les mêmes miroirs",
+              "pt": "Afirmar que todos os planos da floresta usaram os mesmos espelhos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "MoMA records Miyagawa's tracking shots, mirror lighting and lens flare. Plan an original image study rather than inventing a shot-by-shot historical diagram.",
+          "nb": "MoMA dokumenterer Miyagawas kamerabevegelser, speillys og lysreflekser. Planlegg en egen bildestudie fremfor å dikte opp historiske skjemaer.",
+          "fr": "Le MoMA documente les travellings, miroirs et reflets de Miyagawa. Concevez une étude originale sans inventer un schéma historique plan par plan.",
+          "pt": "O MoMA documenta movimentos de Miyagawa, espelhos e reflexos. Planeie um estudo original sem inventar diagramas históricos plano a plano."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "rashomon-score",
+        "area": "sound",
+        "prompt": {
+          "en": "How can recurring sound connect different versions of an event?",
+          "nb": "Hvordan kan gjentakende lyd knytte ulike versjoner av en hendelse sammen?",
+          "fr": "Comment un son récurrent relie-t-il différentes versions d’un événement ?",
+          "pt": "Como pode um som recorrente ligar versões diferentes de um evento?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Eliminate the relationship between sound and repeated narration",
+              "nb": "Fjern forholdet mellom lyd og gjentatt fortelling",
+              "fr": "Éliminer le lien entre son et récit répété",
+              "pt": "Eliminar a relação entre som e narrativa repetida"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Repeat a motif while varying its dramatic placement",
+              "nb": "Gjenta et motiv mens den dramatiske plasseringen varieres",
+              "fr": "Répéter un motif en variant son placement dramatique",
+              "pt": "Repetir um motivo variando a sua colocação dramática"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use the score as proof that one narrator is truthful",
+              "nb": "Bruk filmmusikken som bevis på at én forteller snakker sant",
+              "fr": "Prendre la musique pour preuve de la véracité d’un narrateur",
+              "pt": "Usar a música como prova de que um narrador diz a verdade"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI identifies the recurring bolero-like music and Criterion credits Hayasaka. Develop a new motif that connects accounts without settling their truth.",
+          "nb": "BFI identifiserer gjentakende bolerolignende musikk, og Criterion krediterer Hayasaka. Utvikle et eget motiv som forbinder beretninger uten å avgjøre sannheten.",
+          "fr": "Le BFI relève la musique récurrente proche du boléro et Criterion crédite Hayasaka. Créez un motif reliant les récits sans trancher leur vérité.",
+          "pt": "O BFI identifica música recorrente semelhante ao bolero e a Criterion credita Hayasaka. Crie um motivo ligando relatos sem decidir a sua verdade."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_tokyo_story_1953",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Low camera, domestic composition and everyday time",
+      "nb": "Lavt kamera, hjemlige komposisjoner og hverdagstid",
+      "fr": "Caméra basse, composition domestique et temps quotidien",
+      "pt": "Câmara baixa, composição doméstica e tempo quotidiano"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Tokyo Story",
+        "publisher": "Shochiku",
+        "url": "https://cinemaplus.shochiku.co.jp/titles/detail/133/"
+      },
+      {
+        "id": "s1",
+        "title": "Tokyo Story",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/284-tokyo-story"
+      },
+      {
+        "id": "s2",
+        "title": "Tokyo Story (1953)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/65edaa59-6546-57b5-9fa3-9409f93d1383/tokyo-story"
+      },
+      {
+        "id": "s3",
+        "title": "Tokyo monogatari (Tokyo Story). 1953",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/collection/works/300675"
+      }
+    ],
+    "questions": [
+      {
+        "id": "tokyostory-camera",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a domestic conversation be framed with restraint?",
+          "nb": "Hvordan kan en samtale i hjemmet komponeres med tilbakeholdenhet?",
+          "fr": "Comment cadrer une conversation domestique avec retenue ?",
+          "pt": "Como enquadrar uma conversa doméstica com contenção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan low stable viewpoints and precise room composition",
+              "nb": "Planlegg lave stabile synspunkter og presis romkomposisjon",
+              "fr": "Prévoir des points de vue bas et stables et une composition précise",
+              "pt": "Planear pontos de vista baixos e estáveis e composição precisa"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Move the camera continuously without dramatic purpose",
+              "nb": "Beveg kameraet kontinuerlig uten dramatisk formål",
+              "fr": "Déplacer la caméra constamment sans fonction dramatique",
+              "pt": "Mover a câmara continuamente sem função dramática"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume camera height alone defines Ozu's style",
+              "nb": "Anta at kamerahøyde alene definerer Ozus stil",
+              "fr": "Supposer que la hauteur seule définit le style d’Ozu",
+              "pt": "Supor que só a altura da câmara define o estilo de Ozu"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI and MoMA discuss the seated-height, nearly motionless camera and restrained composition. Design an original domestic scene integrating space and performance.",
+          "nb": "BFI og MoMA drøfter det lave, nesten urørlige kameraet og tilbakeholden komposisjon. Utform en egen hjemlig scene som forener rom og spill.",
+          "fr": "Le BFI et le MoMA analysent la caméra basse presque immobile et la composition retenue. Concevez une scène originale intégrant espace et jeu.",
+          "pt": "O BFI e o MoMA analisam a câmara baixa quase imóvel e a composição contida. Conceba uma cena original integrando espaço e interpretação."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "tokyostory-performance",
+        "area": "research",
+        "prompt": {
+          "en": "How can a family scene express emotional distance without exposition?",
+          "nb": "Hvordan kan en familiescene uttrykke følelsesmessig avstand uten forklaringer?",
+          "fr": "Comment exprimer la distance affective d’une famille sans exposition ?",
+          "pt": "Como exprimir distância emocional numa família sem exposição?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Replace mundane interactions with constant dramatic conflict",
+              "nb": "Erstatt hverdagslig samspill med konstant dramatisk konflikt",
+              "fr": "Remplacer les interactions ordinaires par un conflit permanent",
+              "pt": "Substituir interações comuns por conflito permanente"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse pauses, routine gestures and understated dialogue",
+              "nb": "Øv på pauser, hverdagsbevegelser og dempet dialog",
+              "fr": "Répéter pauses, gestes quotidiens et dialogue retenu",
+              "pt": "Ensaiar pausas, gestos quotidianos e diálogo contido"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Have every character explain their feelings directly",
+              "nb": "La hver figur forklare følelsene sine direkte",
+              "fr": "Faire expliquer directement ses émotions à chaque personnage",
+              "pt": "Fazer cada personagem explicar diretamente as emoções"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "MoMA emphasizes sparse dialogue and understated acting; Shochiku records Ozu and Noda's screenplay. Create an original scene where everyday interaction carries meaning.",
+          "nb": "MoMA fremhever knapp dialog og dempet spill; Shochiku dokumenterer Ozus og Nodas manus. Lag en egen scene der hverdagslig samspill bærer mening.",
+          "fr": "Le MoMA souligne le dialogue rare et le jeu retenu ; Shochiku crédite Ozu et Noda. Créez une scène où l’interaction quotidienne porte le sens.",
+          "pt": "O MoMA destaca diálogo escasso e interpretação contida; a Shochiku credita Ozu e Noda. Crie uma cena onde a interação quotidiana transmite sentido."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "tokyostory-rhythm",
+        "area": "camera",
+        "prompt": {
+          "en": "How can editing convey the passing of ordinary time?",
+          "nb": "Hvordan kan klippingen formidle hverdagslig tid som går?",
+          "fr": "Comment le montage traduit-il le passage du temps ordinaire ?",
+          "pt": "Como pode a montagem transmitir a passagem do tempo quotidiano?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Accelerate every quiet moment with rapid montage",
+              "nb": "Øk tempoet i hvert stille øyeblikk med rask montasje",
+              "fr": "Accélérer chaque instant calme par un montage rapide",
+              "pt": "Acelerar cada momento calmo com montagem rápida"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat all transitions as meaningless filler",
+              "nb": "Behandle alle overganger som meningsløst fyllstoff",
+              "fr": "Traiter toutes les transitions comme du remplissage",
+              "pt": "Tratar todas as transições como preenchimento sem sentido"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Sequence pauses and transitions around domestic routine",
+              "nb": "Sett pauser og overganger sammen rundt hverdagsrutiner",
+              "fr": "Organiser pauses et transitions autour des routines domestiques",
+              "pt": "Organizar pausas e transições em torno das rotinas domésticas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI connects composition and editing with generational rupture, while MoMA describes domestic routine. Plan a new sequence where duration and transition express relationships.",
+          "nb": "BFI knytter komposisjon og klipp til generasjonsbrudd, mens MoMA beskriver hverdagsrutiner. Planlegg en egen sekvens der varighet og overgang uttrykker relasjoner.",
+          "fr": "Le BFI relie composition et montage à la rupture générationnelle, le MoMA décrit les routines. Concevez une séquence où durée et transition expriment les rapports.",
+          "pt": "O BFI liga composição e montagem à rutura geracional, e o MoMA descreve rotinas. Planeie uma sequência onde duração e transição exprimem relações."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_seven_samurai_1954",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Ensemble writing, multi-camera filmmaking and release versions",
+      "nb": "Ensemblemanus, flerkameraopptak og utgavehistorie",
+      "fr": "Écriture chorale, tournage multicaméra et versions",
+      "pt": "Escrita de conjunto, filmagem multicâmara e versões"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Seven Samurai",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/165-seven-samurai"
+      },
+      {
+        "id": "s1",
+        "title": "Seven Samurai (1954)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/01391b07-5940-5d02-aa47-1158142f2b64/seven-samurai"
+      },
+      {
+        "id": "s2",
+        "title": "Akira Kurosawa: 10 essential films",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/akira-kurosawa-10-essential-films"
+      },
+      {
+        "id": "s3",
+        "title": "Seven Samurai: the rocky road to classic status",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/seven-samurai-akira-kurosawa-classic-status"
+      }
+    ],
+    "questions": [
+      {
+        "id": "sevensamurai-ensemble",
+        "area": "research",
+        "prompt": {
+          "en": "How can a large fictional ensemble remain individually recognizable?",
+          "nb": "Hvordan kan et stort fiktivt ensemble forbli individuelt gjenkjennelig?",
+          "fr": "Comment rendre chaque membre d’un grand ensemble fictif reconnaissable ?",
+          "pt": "Como tornar cada membro de um grande elenco fictício reconhecível?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Introduce every character without a narrative relationship",
+              "nb": "Introduser alle figurer uten fortellingsmessig sammenheng",
+              "fr": "Introduire chacun sans relation narrative",
+              "pt": "Introduzir todos sem relação narrativa"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Give each character a distinct dramatic role and performance cue",
+              "nb": "Gi hver figur en egen dramatisk rolle og spillmarkør",
+              "fr": "Donner à chacun un rôle dramatique et un repère de jeu distincts",
+              "pt": "Dar a cada personagem papel dramático e marca interpretativa próprios"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Give all characters identical motivations and gestures",
+              "nb": "Gi alle figurene identiske motivasjoner og bevegelser",
+              "fr": "Donner à tous les mêmes motivations et gestes",
+              "pt": "Dar a todos motivações e gestos idênticos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion credits the three screenplay collaborators and BFI identifies the recruitment structure. Develop an original ensemble chart that supports recognizable individual roles.",
+          "nb": "Criterion krediterer de tre manusforfatterne, og BFI identifiserer rekrutteringsstrukturen. Lag et eget ensemblekart med gjenkjennelige individuelle roller.",
+          "fr": "Criterion crédite les trois scénaristes et le BFI décrit le recrutement. Créez un tableau original des rôles individuels reconnaissables.",
+          "pt": "A Criterion credita os três argumentistas e o BFI descreve o recrutamento. Crie um quadro original de papéis individuais reconhecíveis."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "sevensamurai-coverage",
+        "area": "camera",
+        "prompt": {
+          "en": "How can multiple cameras preserve continuity in a staged movement scene?",
+          "nb": "Hvordan kan flere kameraer bevare kontinuitet i en iscenesatt bevegelsesscene?",
+          "fr": "Comment plusieurs caméras préservent-elles la continuité d’une scène de mouvement ?",
+          "pt": "Como podem várias câmaras preservar continuidade numa cena de movimento encenada?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Record disconnected viewpoints with no continuity plan",
+              "nb": "Ta opp frakoblede synspunkter uten kontinuitetsplan",
+              "fr": "Filmer des points de vue disjoints sans plan de raccord",
+              "pt": "Filmar perspetivas desconexas sem plano de continuidade"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Recreate hazardous historical stunts to test the cameras",
+              "nb": "Gjenskap farlige historiske stunt for å teste kameraene",
+              "fr": "Reproduire des cascades historiques dangereuses pour tester les caméras",
+              "pt": "Recriar acrobacias históricas perigosas para testar câmaras"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Storyboard complementary viewpoints and matching visual references",
+              "nb": "Lag storyboard med komplementære synspunkter og samsvarende bildereferanser",
+              "fr": "Prévoir des points de vue complémentaires et des références de raccord",
+              "pt": "Criar storyboard com perspetivas complementares e referências de continuidade"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI documents Kurosawa's multi-camera approach and spatial clarity. Practice with a safe fictional movement study or storyboard, not dangerous stunt recreation.",
+          "nb": "BFI dokumenterer Kurosawas flerkamerametode og romlige tydelighet. Øv med en trygg fiktiv bevegelsesstudie eller storyboard, ikke farlige stunt.",
+          "fr": "Le BFI documente la méthode multicaméra et la clarté spatiale. Exercez-vous avec une étude de mouvement sûre ou un storyboard, sans cascades dangereuses.",
+          "pt": "O BFI documenta a abordagem multicâmara e a clareza espacial. Pratique com um estudo seguro de movimento ou storyboard, sem acrobacias perigosas."
+        },
+        "sourceIds": [
+          "s1",
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "sevensamurai-editions",
+        "area": "research",
+        "prompt": {
+          "en": "How should different release lengths be compared?",
+          "nb": "Hvordan bør ulike utgivelser med forskjellig lengde sammenlignes?",
+          "fr": "Comment comparer des versions de durées différentes ?",
+          "pt": "Como comparar versões com durações diferentes?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record edition length, release context and restoration provenance",
+              "nb": "Registrer utgavelengde, utgivelseskontekst og restaureringsproveniens",
+              "fr": "Consigner durée, contexte de sortie et provenance de restauration",
+              "pt": "Registar duração, contexto de lançamento e proveniência do restauro"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume every international release was identical",
+              "nb": "Anta at alle internasjonale utgivelser var identiske",
+              "fr": "Supposer que toutes les sorties internationales étaient identiques",
+              "pt": "Supor que todos os lançamentos internacionais eram idênticos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Infer the original cut from any short excerpt",
+              "nb": "Utled originalversjonen fra et vilkårlig kort utdrag",
+              "fr": "Déduire le montage original de n’importe quel extrait",
+              "pt": "Inferir a montagem original de qualquer excerto curto"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI records truncated international versions and Criterion describes the restored presentation. Identify the specific edition before evaluating pacing or structure.",
+          "nb": "BFI dokumenterer forkortede internasjonale versjoner, og Criterion beskriver restaurert visning. Identifiser utgaven før rytme eller struktur vurderes.",
+          "fr": "Le BFI documente les versions internationales raccourcies et Criterion la présentation restaurée. Identifiez l’édition avant d’évaluer rythme ou structure.",
+          "pt": "O BFI documenta versões internacionais abreviadas e a Criterion a apresentação restaurada. Identifique a edição antes de avaliar ritmo ou estrutura."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_la_strada_1954",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Physical performance, poetic roads and recurring music",
+      "nb": "Fysisk skuespill, poetiske veier og tilbakevendende musikk",
+      "fr": "Jeu physique, routes poétiques et musique récurrente",
+      "pt": "Interpretação física, estradas poéticas e música recorrente"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "La strada",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/185-la-strada"
+      },
+      {
+        "id": "s1",
+        "title": "La strada (1954)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/aa551be7-dc11-50e3-9d0d-0193b8a3422e/la-strada"
+      },
+      {
+        "id": "s2",
+        "title": "La Strada (The Road). 1954. Directed by Federico Fellini",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/calendar/events/7386"
+      },
+      {
+        "id": "s3",
+        "title": "1957 Academy Awards",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/oscars/ceremonies/1957/P"
+      }
+    ],
+    "questions": [
+      {
+        "id": "lastrada-gesture",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a performer communicate emotion through physical action?",
+          "nb": "Hvordan kan en skuespiller formidle følelser gjennom fysisk handling?",
+          "fr": "Comment un interprète communique-t-il l’émotion par l’action physique ?",
+          "pt": "Como pode um intérprete comunicar emoção através da ação física?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Explain every emotion in lengthy spoken exposition",
+              "nb": "Forklar alle følelser med lange muntlige forklaringer",
+              "fr": "Expliquer chaque émotion par de longs discours",
+              "pt": "Explicar cada emoção com longos discursos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the historical performance without interpretation",
+              "nb": "Kopier det historiske skuespillet uten fortolkning",
+              "fr": "Copier le jeu historique sans interprétation",
+              "pt": "Copiar a interpretação histórica sem releitura"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Develop expressive gestures and allow time for reaction",
+              "nb": "Utvikle uttrykksfulle bevegelser og gi tid til reaksjon",
+              "fr": "Développer des gestes expressifs et laisser du temps aux réactions",
+              "pt": "Desenvolver gestos expressivos e dar tempo à reação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI describes the Chaplinesque performance and MoMA identifies the principal actors. Create original gesture studies instead of copying Masina's performance.",
+          "nb": "BFI beskriver det Chaplin-inspirerte spillet, og MoMA identifiserer hovedaktørene. Lag egne bevegelsesstudier fremfor å kopiere Masinas spill.",
+          "fr": "Le BFI décrit le jeu chaplinesque et le MoMA identifie les acteurs. Créez des études gestuelles originales sans copier Masina.",
+          "pt": "O BFI descreve a interpretação chaplinesca e o MoMA identifica os atores. Crie estudos gestuais originais sem copiar Masina."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "lastrada-road",
+        "area": "camera",
+        "prompt": {
+          "en": "How can an episodic journey shift from realism toward fable?",
+          "nb": "Hvordan kan en episodisk reise bevege seg fra realisme mot fabel?",
+          "fr": "Comment un voyage épisodique passe-t-il du réalisme à la fable ?",
+          "pt": "Como pode uma viagem episódica passar do realismo à fábula?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Connect recurring locations with expressive character encounters",
+              "nb": "Knytt tilbakevendende steder til uttrykksfulle møter mellom figurer",
+              "fr": "Relier lieux récurrents et rencontres expressives",
+              "pt": "Ligar lugares recorrentes a encontros expressivos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Make every stop an unrelated scenic postcard",
+              "nb": "Gjør hvert stopp til et urelatert landskapspostkort",
+              "fr": "Faire de chaque étape une carte postale sans lien",
+              "pt": "Tornar cada paragem um postal sem ligação"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat the fictional road as a neutral travel documentary",
+              "nb": "Behandle den fiktive veien som en nøytral reisedokumentar",
+              "fr": "Traiter la route fictive comme un documentaire neutre",
+              "pt": "Tratar a estrada fictícia como documentário de viagem neutro"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion and BFI place the film between neorealist settings and poetic fable. Plan an original journey where the locations acquire narrative meaning.",
+          "nb": "Criterion og BFI plasserer filmen mellom neorealistiske miljøer og poetisk fabel. Planlegg en egen reise der stedene får fortellingsmessig mening.",
+          "fr": "Criterion et le BFI situent le film entre décors néoréalistes et fable poétique. Concevez un voyage original où les lieux prennent sens.",
+          "pt": "A Criterion e o BFI situam o filme entre ambientes neorrealistas e fábula poética. Planeie uma viagem original onde os locais ganham sentido."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "lastrada-music",
+        "area": "sound",
+        "prompt": {
+          "en": "How can a recurring theme change emotional meaning?",
+          "nb": "Hvordan kan et tilbakevendende tema endre følelsesmessig betydning?",
+          "fr": "Comment un thème récurrent change-t-il de sens émotionnel ?",
+          "pt": "Como pode um tema recorrente mudar o sentido emocional?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume the music alone explains every character decision",
+              "nb": "Anta at musikken alene forklarer alle figurenes valg",
+              "fr": "Supposer que la musique explique seule chaque décision",
+              "pt": "Supor que só a música explica cada decisão"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Repeat an original motif in contrasting dramatic circumstances",
+              "nb": "Gjenta et eget motiv under kontrasterende dramatiske omstendigheter",
+              "fr": "Répéter un motif original dans des circonstances dramatiques contrastées",
+              "pt": "Repetir um motivo original em circunstâncias dramáticas contrastantes"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Play an unchanged cue over every scene without distinction",
+              "nb": "Spill samme lydinnslag over alle scener uten forskjell",
+              "fr": "Jouer le même signal sur toutes les scènes sans distinction",
+              "pt": "Tocar o mesmo sinal em todas as cenas sem distinção"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI and MoMA identify Rota's score as important to the travelling tragedy. Compose a new motif and explore how its meaning changes with context.",
+          "nb": "BFI og MoMA fremhever Rotas musikk i den omreisende tragedien. Lag et eget motiv og utforsk hvordan meningen endres med konteksten.",
+          "fr": "Le BFI et le MoMA soulignent la musique de Rota dans la tragédie itinérante. Créez un motif dont le sens change selon le contexte.",
+          "pt": "O BFI e o MoMA destacam a música de Rota na tragédia itinerante. Crie um motivo cujo sentido muda com o contexto."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_pather_panchali_1955",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Location observation, intermittent finance and musical collaboration",
+      "nb": "Stedsobservasjon, avbrutt finansiering og musikalsk samarbeid",
+      "fr": "Observation des lieux, financement intermittent et collaboration musicale",
+      "pt": "Observação de locais, financiamento intermitente e colaboração musical"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Pather Panchali",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/28021-pather-panchali"
+      },
+      {
+        "id": "s1",
+        "title": "Satyajit Ray's Pather Panchali",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/explore/inside_out/2012/11/13/satyajit-rays-pather-panchali/"
+      },
+      {
+        "id": "s2",
+        "title": "Pather Panchali (1955)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/bfbb9ef1-1b2c-58fd-b030-4f50c4827d91/pather-panchali"
+      },
+      {
+        "id": "s3",
+        "title": "Satyajit Ray's The Apu Trilogy",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/events/satyajit-rays-apu-trilogy"
+      }
+    ],
+    "questions": [
+      {
+        "id": "patherpanchali-observation",
+        "area": "camera",
+        "prompt": {
+          "en": "How can rural daily life be observed without romanticizing hardship?",
+          "nb": "Hvordan kan landlig hverdagsliv observeres uten å romantisere motgang?",
+          "fr": "Comment observer la vie rurale sans idéaliser les difficultés ?",
+          "pt": "Como observar a vida rural sem romantizar dificuldades?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Frame ordinary activity alongside material circumstances",
+              "nb": "Komponer hverdagsaktivitet sammen med materielle omstendigheter",
+              "fr": "Cadrer l’activité ordinaire avec ses conditions matérielles",
+              "pt": "Enquadrar atividades comuns com as condições materiais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Reduce every rural character to picturesque scenery",
+              "nb": "Reduser alle landsbygdsfigurer til pittoresk dekor",
+              "fr": "Réduire chaque personnage rural à un décor pittoresque",
+              "pt": "Reduzir cada personagem rural a cenário pitoresco"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat staged fiction as ethnographic proof",
+              "nb": "Behandle iscenesatt fiksjon som etnografisk bevis",
+              "fr": "Traiter la fiction mise en scène comme preuve ethnographique",
+              "pt": "Tratar ficção encenada como prova etnográfica"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI connects the rural location production with childhood observation and ordinary lives. Create a fictional scene attentive to people and context rather than picturesque stereotypes.",
+          "nb": "BFI knytter den landlige produksjonen til barndomsobservasjon og vanlige liv. Lag en fiktiv scene med oppmerksomhet på mennesker og kontekst fremfor pittoreske stereotypier.",
+          "fr": "Le BFI relie le tournage rural à l’observation de l’enfance et aux vies ordinaires. Créez une scène attentive aux personnes et au contexte, sans stéréotypes.",
+          "pt": "O BFI liga a produção rural à observação da infância e vidas comuns. Crie uma cena atenta às pessoas e ao contexto, sem estereótipos."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "patherpanchali-finance",
+        "area": "research",
+        "prompt": {
+          "en": "How should an intermittent low-resource production be organized?",
+          "nb": "Hvordan bør en produksjon med avbrudd og knappe ressurser organiseres?",
+          "fr": "Comment organiser une production intermittente aux ressources limitées ?",
+          "pt": "Como organizar uma produção intermitente com recursos limitados?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Credit only the director and omit support institutions",
+              "nb": "Krediter bare regissøren og utelat støtteinstitusjonene",
+              "fr": "Créditer seulement le réalisateur et oublier les institutions",
+              "pt": "Creditar apenas o realizador e omitir instituições de apoio"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Track funding stages, continuity records and collaborator responsibilities",
+              "nb": "Følg finansieringsfaser, kontinuitetsnotater og samarbeidspartneres ansvar",
+              "fr": "Suivre financement, continuité et responsabilités des collaborateurs",
+              "pt": "Acompanhar financiamento, continuidade e responsabilidades dos colaboradores"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume the entire budget was secured from the start",
+              "nb": "Anta at hele budsjettet var sikret fra starten",
+              "fr": "Supposer que tout le budget était assuré dès le début",
+              "pt": "Supor que todo o orçamento estava garantido desde o início"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "MoMA documents funding struggles, government subsidy and finishing support; Criterion identifies the crew. Plan a fictional staged budget without inventing historical amounts.",
+          "nb": "MoMA dokumenterer finansieringskamp, offentlig støtte og ferdigstillingshjelp; Criterion identifiserer filmteamet. Planlegg et fiktivt fasebudsjett uten å dikte opp historiske beløp.",
+          "fr": "Le MoMA documente les difficultés financières, la subvention et l’aide à la finition ; Criterion identifie l’équipe. Concevez un budget fictif sans inventer de montants historiques.",
+          "pt": "O MoMA documenta dificuldades financeiras, subsídio e apoio à finalização; a Criterion identifica a equipa. Planeie um orçamento fictício sem inventar valores históricos."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "patherpanchali-sound",
+        "area": "sound",
+        "prompt": {
+          "en": "How can music accompany intimate observations of everyday life?",
+          "nb": "Hvordan kan musikk ledsage nære observasjoner av hverdagslivet?",
+          "fr": "Comment la musique accompagne-t-elle l’observation intime du quotidien ?",
+          "pt": "Como pode a música acompanhar observações íntimas da vida quotidiana?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Cover every environmental sound with continuous music",
+              "nb": "Dekk all miljølyd med kontinuerlig musikk",
+              "fr": "Couvrir tous les sons ambiants de musique continue",
+              "pt": "Cobrir todos os sons ambientais com música contínua"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Attribute the entire soundtrack to the composer alone",
+              "nb": "Tilskriv hele lydsporet til komponisten alene",
+              "fr": "Attribuer toute la bande sonore au seul compositeur",
+              "pt": "Atribuir toda a banda sonora apenas ao compositor"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Balance original musical cues with environmental sound and pauses",
+              "nb": "Balanser egne musikkinnslag med miljølyd og pauser",
+              "fr": "Équilibrer musique originale, sons ambiants et pauses",
+              "pt": "Equilibrar música original, sons ambientais e pausas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion distinguishes Ravi Shankar's music and Bhupen Ghosh's sound contribution. Develop a fictional cue plan that recognizes their different craft roles.",
+          "nb": "Criterion skiller Ravi Shankars musikk og Bhupen Ghoshs lydbidrag. Lag en fiktiv lydplan som anerkjenner de ulike fagrollene.",
+          "fr": "Criterion distingue musique de Ravi Shankar et travail sonore de Bhupen Ghosh. Concevez un plan sonore fictif reconnaissant leurs métiers distincts.",
+          "pt": "A Criterion distingue música de Ravi Shankar e som de Bhupen Ghosh. Conceba um plano sonoro fictício reconhecendo os seus papéis distintos."
+        },
+        "sourceIds": [
+          "s0"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_ordet_1955",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Long takes, chamber staging and restrained sound",
+      "nb": "Lange tagninger, kammeriscenesettelse og tilbakeholden lyd",
+      "fr": "Plans longs, mise en scène de chambre et son retenu",
+      "pt": "Planos longos, encenação de câmara e som contido"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The word",
+        "publisher": "Danish Film Institute",
+        "url": "https://www.dfi.dk/en/viden-om-film/filmdatabasen/film/ordet"
+      },
+      {
+        "id": "s1",
+        "title": "Ordet (1955)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/d06c8e31-324e-5886-bfb3-200802199b37/ordet"
+      },
+      {
+        "id": "s2",
+        "title": "Ordet",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/441-ordet"
+      },
+      {
+        "id": "s3",
+        "title": "Chains of dreams: Carl Th. Dreyer",
+        "publisher": "Danish Film Institute",
+        "url": "https://www.dfi.dk/carlthdreyer/om-dreyer/filmisk-stil/chains-dreams-carl-th-dreyer"
+      }
+    ],
+    "questions": [
+      {
+        "id": "ordet-duration",
+        "area": "camera",
+        "prompt": {
+          "en": "How can one sustained shot carry a changing dramatic relationship?",
+          "nb": "Hvordan kan én lang tagning bære en skiftende dramatisk relasjon?",
+          "fr": "Comment un plan prolongé porte-t-il une relation dramatique changeante ?",
+          "pt": "Como pode um plano prolongado sustentar uma relação dramática mutável?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Keep every performer static throughout the entire scene",
+              "nb": "Hold alle skuespillere urørlige gjennom hele scenen",
+              "fr": "Maintenir tous les acteurs immobiles pendant toute la scène",
+              "pt": "Manter todos os intérpretes imóveis durante toda a cena"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse blocking and slow reframing around shifts of attention",
+              "nb": "Øv på plassering og langsom omkomponering rundt oppmerksomhetsskifter",
+              "fr": "Répéter placements et recadrages lents selon les déplacements de l’attention",
+              "pt": "Ensaiar marcações e reenquadramentos lentos segundo mudanças de atenção"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Cut after every line regardless of dramatic change",
+              "nb": "Klipp etter hver replikk uavhengig av dramatisk endring",
+              "fr": "Couper après chaque réplique sans égard au changement dramatique",
+              "pt": "Cortar após cada fala sem atender à mudança dramática"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "DFI scholarship and BFI document Dreyer's 114-shot construction and slow camera movement. Design an original long take with motivated changes of composition.",
+          "nb": "DFI og BFI dokumenterer Dreyers konstruksjon med 114 bilder og langsomme kamerabevegelser. Utform en egen lang tagning med motiverte komposisjonsendringer.",
+          "fr": "Les études DFI et le BFI documentent les 114 plans et les mouvements lents de Dreyer. Concevez un plan long original aux changements de composition motivés.",
+          "pt": "Os estudos DFI e o BFI documentam os 114 planos e os movimentos lentos de Dreyer. Conceba um plano longo original com mudanças de composição motivadas."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "ordet-interior",
+        "area": "research",
+        "prompt": {
+          "en": "How can a sparse interior support contrasting beliefs and emotions?",
+          "nb": "Hvordan kan et sparsomt interiør støtte ulike trosoppfatninger og følelser?",
+          "fr": "Comment un intérieur dépouillé soutient-il des croyances et émotions contrastées ?",
+          "pt": "Como pode um interior austero apoiar crenças e emoções contrastantes?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Fill every corner with decorative objects without purpose",
+              "nb": "Fyll hvert hjørne med pyntegjenstander uten formål",
+              "fr": "Remplir chaque coin d’objets décoratifs sans fonction",
+              "pt": "Encher cada canto de objetos decorativos sem função"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat the adaptation as a literal record of actual events",
+              "nb": "Behandle adaptasjonen som bokstavelig dokumentasjon av faktiske hendelser",
+              "fr": "Traiter l’adaptation comme un relevé littéral d’événements réels",
+              "pt": "Tratar a adaptação como registo literal de acontecimentos reais"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Coordinate doors, furniture and performer relationships",
+              "nb": "Samordne dører, møbler og relasjoner mellom skuespillere",
+              "fr": "Coordonner portes, meubles et rapports entre interprètes",
+              "pt": "Coordenar portas, móveis e relações entre intérpretes"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "DFI credits Aaes's design and documents the Munk adaptation. Plan a fictional room where the positions and distances of performers carry dramatic meaning.",
+          "nb": "DFI krediterer Aaes' scenografi og dokumenterer Munk-adaptasjonen. Planlegg et fiktivt rom der skuespillernes plassering og avstand bærer dramatisk mening.",
+          "fr": "Le DFI crédite les décors d’Aaes et l’adaptation de Munk. Concevez une pièce fictive où positions et distances des interprètes portent le sens dramatique.",
+          "pt": "O DFI credita a cenografia de Aaes e a adaptação de Munk. Planeie uma sala fictícia onde posições e distâncias dos intérpretes transmitem sentido dramático."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "ordet-quiet",
+        "area": "sound",
+        "prompt": {
+          "en": "How can quiet and voices sustain an intense chamber scene?",
+          "nb": "Hvordan kan stillhet og stemmer bære en intens kammerscene?",
+          "fr": "Comment le silence et les voix soutiennent-ils une scène de chambre intense ?",
+          "pt": "Como podem silêncio e vozes sustentar uma cena de câmara intensa?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Preserve pauses, audible speech and selective environmental cues",
+              "nb": "Bevar pauser, tydelig tale og utvalgt miljølyd",
+              "fr": "Préserver pauses, parole audible et sons ambiants choisis",
+              "pt": "Preservar pausas, fala audível e sons ambientais selecionados"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use loud music to explain every emotional beat",
+              "nb": "Bruk høy musikk til å forklare hvert følelsesmessige vendepunkt",
+              "fr": "Employer une musique forte pour expliquer chaque émotion",
+              "pt": "Usar música alta para explicar cada momento emocional"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Remove all dialogue timing from the rehearsal plan",
+              "nb": "Fjern all dialogtiming fra prøveplanen",
+              "fr": "Supprimer tout rythme du dialogue du plan de répétition",
+              "pt": "Eliminar todo o ritmo do diálogo do plano de ensaio"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "DFI identifies the sound and music collaborators, and BFI describes sound as central to the restrained staging. Create an original scene using carefully chosen silence.",
+          "nb": "DFI identifiserer lyd- og musikkmedarbeiderne, og BFI beskriver lyd som sentral i den tilbakeholdne iscenesettelsen. Lag en egen scene med bevisst valgt stillhet.",
+          "fr": "Le DFI identifie les collaborateurs sonores et musicaux ; le BFI souligne le son dans la mise en scène retenue. Créez une scène au silence choisi.",
+          "pt": "O DFI identifica colaboradores de som e música; o BFI destaca o som na encenação contida. Crie uma cena com silêncio cuidadosamente escolhido."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
         ]
       }
     ]
