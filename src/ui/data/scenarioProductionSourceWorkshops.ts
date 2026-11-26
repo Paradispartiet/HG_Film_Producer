@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Eighty-eight pre-existing Production Cases receive evidence-backed craft decisions.
+ * Ninety-two pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -15373,6 +15373,761 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
         "sourceIds": [
           "s0",
           "s1",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_stagecoach_1939",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Stagecoach: landscape, ensemble and continuity.",
+      "nb": "Stagecoach: landskap, ensemble og kontinuitet.",
+      "fr": "Stagecoach : paysage, ensemble et continuité.",
+      "pt": "Stagecoach: paisagem, elenco e continuidade."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Stagecoach",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/4173-STAGECOACH"
+      },
+      {
+        "id": "s1",
+        "title": "Stagecoach (1939)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/7074fd5e-0658-5aaa-ab2b-49b0246858c3/stagecoach"
+      },
+      {
+        "id": "s2",
+        "title": "Where to begin with John Ford",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/where-begin-with-john-ford"
+      },
+      {
+        "id": "s3",
+        "title": "National Film Registry descriptions and essays",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/programs/national-film-preservation-board/film-registry/descriptions-and-essays/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "stagecoach-landscape",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a journey establish a coherent screen geography?",
+          "nb": "Hvordan kan en reise etablere en sammenhengende filmgeografi?",
+          "fr": "Comment établir une géographie cohérente du voyage à l’écran ?",
+          "pt": "Como estabelecer uma geografia coerente da viagem no ecrã?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Relate wide landscape views to the travelers’ route",
+              "nb": "Knytt vide landskapsbilder til de reisendes rute",
+              "fr": "Relier les vues larges du paysage au trajet des voyageurs",
+              "pt": "Relacionar planos abertos da paisagem com o percurso"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use unrelated landscapes without spatial connections",
+              "nb": "Bruk urelaterte landskap uten romlige forbindelser",
+              "fr": "Utiliser des paysages sans relations spatiales",
+              "pt": "Usar paisagens sem relações espaciais"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Replace every exterior with identical close-ups",
+              "nb": "Erstatt alle eksteriører med identiske nærbilder",
+              "fr": "Remplacer tous les extérieurs par des gros plans identiques",
+              "pt": "Substituir todos os exteriores por grandes planos idênticos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI connects the ensemble journey with Monument Valley. Make an original location storyboard that relates landscape to character movement.",
+          "nb": "BFI knytter ensemblereisen til Monument Valley. Lag et eget location-storyboard som forbinder landskap og figurenes bevegelser.",
+          "fr": "Le BFI relie le voyage collectif à Monument Valley. Créez un storyboard original reliant paysage et déplacements.",
+          "pt": "O BFI relaciona a viagem coletiva com Monument Valley. Crie um storyboard original que ligue paisagem e deslocações."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "stagecoach-continuity",
+        "area": "camera",
+        "prompt": {
+          "en": "How should a fictional chase be edited for clarity?",
+          "nb": "Hvordan bør en fiktiv forfølgelse klippes for tydelighet?",
+          "fr": "Comment monter une poursuite fictive pour la rendre lisible ?",
+          "pt": "Como montar uma perseguição fictícia com clareza?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Remove all spatial cues between successive shots",
+              "nb": "Fjern alle romlige signaler mellom påfølgende bilder",
+              "fr": "Supprimer tous les repères spatiaux entre les plans",
+              "pt": "Eliminar referências espaciais entre planos sucessivos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Maintain screen direction and recognizable landmarks",
+              "nb": "Behold skjermretning og gjenkjennelige landemerker",
+              "fr": "Maintenir la direction à l’écran et des repères reconnaissables",
+              "pt": "Manter a direção no ecrã e referências reconhecíveis"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Randomize direction at every cut without motivation",
+              "nb": "Bytt retning tilfeldig ved hvert klipp uten motivasjon",
+              "fr": "Changer de direction au hasard à chaque coupe",
+              "pt": "Mudar de direção aleatoriamente em cada corte"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI analyzes the chase as an editing model, while AFI records editing and stunt credits. Study continuity through paper storyboards, not hazardous stunt recreation.",
+          "nb": "BFI analyserer forfølgelsen som klippemodell, mens AFI registrerer klippe- og stuntkreditering. Studer kontinuitet på papir, ikke ved farlig stuntgjenskaping.",
+          "fr": "Le BFI analyse le montage de la poursuite et l’AFI documente montage et cascades. Étudiez la continuité sur papier, sans reproduire de cascades dangereuses.",
+          "pt": "O BFI analisa a montagem da perseguição e a AFI documenta montagem e duplos. Estude continuidade em papel, sem recriar acrobacias perigosas."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "stagecoach-ensemble",
+        "area": "research",
+        "prompt": {
+          "en": "How should the traveling ensemble and its historical context be studied?",
+          "nb": "Hvordan bør reiseensemblet og dets historiske kontekst studeres?",
+          "fr": "Comment étudier le groupe de voyageurs et son contexte historique ?",
+          "pt": "Como estudar o grupo de viajantes e o seu contexto histórico?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat western conventions as neutral historical documentation",
+              "nb": "Behandle westernkonvensjoner som nøytral historisk dokumentasjon",
+              "fr": "Traiter les conventions du western comme documentation neutre",
+              "pt": "Tratar convenções do western como documentação histórica neutra"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Attribute all collaborative decisions to the director alone",
+              "nb": "Tilskriv alle samarbeidsvalg til regissøren alene",
+              "fr": "Attribuer toutes les décisions collectives au seul réalisateur",
+              "pt": "Atribuir todas as decisões coletivas apenas ao realizador"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Distinguish social roles, production credits and genre conventions",
+              "nb": "Skill sosiale roller, produksjonskreditering og sjangerkonvensjoner",
+              "fr": "Distinguer rôles sociaux, crédits et conventions du genre",
+              "pt": "Distinguir papéis sociais, créditos e convenções do género"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI identifies the adaptation and crew, and BFI discusses the ensemble and landscape. Analyze genre representation critically rather than treating fiction as a historical record.",
+          "nb": "AFI identifiserer adaptasjonen og filmteamet, og BFI drøfter ensemble og landskap. Analyser sjangerens representasjon kritisk fremfor å behandle fiksjon som historisk dokumentasjon.",
+          "fr": "L’AFI identifie adaptation et équipe, le BFI analyse ensemble et paysage. Étudiez la représentation du genre sans prendre la fiction pour une archive historique.",
+          "pt": "A AFI identifica adaptação e equipa, e o BFI analisa elenco e paisagem. Estude criticamente a representação do género sem tomar a ficção por documento histórico."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_wizard_of_oz_1939",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "The Wizard of Oz: color, song and studio coordination.",
+      "nb": "The Wizard of Oz: farge, sang og studiosamordning.",
+      "fr": "The Wizard of Oz : couleur, chanson et coordination du studio.",
+      "pt": "The Wizard of Oz: cor, canção e coordenação de estúdio."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The Wizard of Oz",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/7892-THE-WIZARD-OF-OZ"
+      },
+      {
+        "id": "s1",
+        "title": "The Wizard of Oz (1939)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/f2142b94-8e66-581d-88d3-d7e2fc5a2f17/the-wizard-of-oz"
+      },
+      {
+        "id": "s2",
+        "title": "Hidden treasure in a film can: notes on our Technicolor rediscovery",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/technicolor-fragments-louise-brooks"
+      },
+      {
+        "id": "s3",
+        "title": "National Film Registry descriptions and essays",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/programs/national-film-preservation-board/film-registry/descriptions-and-essays/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "thewizardofoz-color",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a color transition distinguish two story worlds?",
+          "nb": "Hvordan kan en fargeovergang skille to fortellingsverdener?",
+          "fr": "Comment une transition chromatique distingue-t-elle deux univers narratifs ?",
+          "pt": "Como pode uma transição cromática distinguir dois mundos narrativos?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume modern digital grading reproduces the historical process",
+              "nb": "Anta at moderne digital fargegradering gjenskaper den historiske prosessen",
+              "fr": "Supposer que l’étalonnage numérique reproduit le procédé historique",
+              "pt": "Supor que a gradação digital reproduz o processo histórico"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Design contrasting palettes and a meaningful transition",
+              "nb": "Utform kontrasterende paletter og en meningsfull overgang",
+              "fr": "Concevoir des palettes contrastées et une transition signifiante",
+              "pt": "Conceber paletas contrastantes e uma transição significativa"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Apply the same palette to both worlds without distinction",
+              "nb": "Bruk samme palett i begge verdener uten forskjell",
+              "fr": "Appliquer la même palette aux deux univers sans distinction",
+              "pt": "Aplicar a mesma paleta aos dois mundos sem distinção"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI distinguishes sepia Kansas from Technicolor Oz and explains three-strip color. Plan an original palette transition without equating digital tools with historical photography.",
+          "nb": "BFI skiller sepia-Kansas fra Technicolor-Oz og forklarer trefargeprosessen. Planlegg en egen palettovergang uten å likestille digitale verktøy med historisk foto.",
+          "fr": "Le BFI distingue le Kansas sépia d’Oz en Technicolor et explique le procédé trichrome. Concevez une transition originale sans assimiler numérique et photographie historique.",
+          "pt": "O BFI distingue Kansas em sépia de Oz em Technicolor e explica o processo tricromático. Planeie uma transição original sem equiparar digital e fotografia histórica."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "thewizardofoz-song",
+        "area": "sound",
+        "prompt": {
+          "en": "How should a musical number be coordinated before filming?",
+          "nb": "Hvordan bør et musikalnummer samordnes før opptak?",
+          "fr": "Comment coordonner un numéro musical avant le tournage ?",
+          "pt": "Como coordenar um número musical antes da filmagem?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Record unrelated music only after all scenes are edited",
+              "nb": "Spill inn urelatert musikk først etter at alle scener er klippet",
+              "fr": "Enregistrer une musique sans rapport après tout le montage",
+              "pt": "Gravar música sem relação apenas após toda a montagem"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore the relation between vocal performance and image",
+              "nb": "Ignorer forholdet mellom sangprestasjon og bilde",
+              "fr": "Ignorer le lien entre chant et image",
+              "pt": "Ignorar a relação entre desempenho vocal e imagem"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Prepare musical timing and rehearse movement against playback",
+              "nb": "Forbered musikalsk timing og øv bevegelser mot avspilling",
+              "fr": "Préparer le rythme musical et répéter les gestes sur playback",
+              "pt": "Preparar o ritmo musical e ensaiar movimentos com reprodução sonora"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI documents pre-scoring and integrated songs. Create an original timing plan linking musical phrases, performance and camera coverage.",
+          "nb": "AFI dokumenterer forhåndsinnspilling og integrerte sanger. Lag en egen tidsplan som knytter musikalske fraser, fremføring og kameradekning sammen.",
+          "fr": "L’AFI documente le préenregistrement et les chansons intégrées. Créez un plan rythmique reliant phrases musicales, jeu et prises de vues.",
+          "pt": "A AFI documenta a pré-gravação e as canções integradas. Crie um plano temporal que ligue frases musicais, interpretação e filmagem."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "thewizardofoz-departments",
+        "area": "research",
+        "prompt": {
+          "en": "How should the fantasy world’s production be organized?",
+          "nb": "Hvordan bør produksjonen av fantasiverdenen organiseres?",
+          "fr": "Comment organiser la production de cet univers fantastique ?",
+          "pt": "Como organizar a produção deste mundo fantástico?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Coordinate sets, costumes, makeup, photography and effects",
+              "nb": "Samordne scenografi, kostymer, sminke, foto og effekter",
+              "fr": "Coordonner décors, costumes, maquillage, image et effets",
+              "pt": "Coordenar cenários, figurinos, maquilhagem, fotografia e efeitos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Let every department plan without shared visual references",
+              "nb": "La alle avdelinger planlegge uten felles visuelle referanser",
+              "fr": "Laisser chaque métier travailler sans références visuelles communes",
+              "pt": "Deixar cada departamento trabalhar sem referências visuais comuns"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Credit the entire visual world to one performer alone",
+              "nb": "Tilskriv hele den visuelle verdenen til én skuespiller alene",
+              "fr": "Attribuer tout l’univers visuel à un seul interprète",
+              "pt": "Atribuir todo o universo visual apenas a um intérprete"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI records the MGM art, makeup, photographic and effects departments. An original design plan should preserve their distinct responsibilities and coordination.",
+          "nb": "AFI dokumenterer MGMs scenografi-, sminke-, foto- og effektavdelinger. En egen designplan bør bevare deres ulike ansvar og samordning.",
+          "fr": "L’AFI documente les métiers MGM du décor, maquillage, image et effets. Un plan original doit distinguer leurs responsabilités et leur coordination.",
+          "pt": "A AFI documenta os departamentos MGM de cenografia, maquilhagem, fotografia e efeitos. Um plano original deve distinguir responsabilidades e coordenação."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_citizen_kane_1941",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Citizen Kane: deep focus, testimony and sound perspective.",
+      "nb": "Citizen Kane: dybdeskarphet, vitnesbyrd og lydperspektiv.",
+      "fr": "Citizen Kane : profondeur de champ, témoignages et perspective sonore.",
+      "pt": "Citizen Kane: profundidade de campo, testemunhos e perspetiva sonora."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Citizen Kane",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Catalog/moviedetails/27624"
+      },
+      {
+        "id": "s1",
+        "title": "AFI Movie Club: Citizen Kane",
+        "publisher": "American Film Institute",
+        "url": "https://www.afi.com/news/afi-movie-club-citizen-kane/"
+      },
+      {
+        "id": "s2",
+        "title": "Orson Welles. Citizen Kane. 1941",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/collection/works/304183"
+      },
+      {
+        "id": "s3",
+        "title": "Citizen Kane (1941)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/f4c92833-af39-5cd6-a41e-8df5933d0dc1/citizen-kane"
+      }
+    ],
+    "questions": [
+      {
+        "id": "citizenkane-depth",
+        "area": "camera",
+        "prompt": {
+          "en": "How can competing actions remain legible in one composition?",
+          "nb": "Hvordan kan konkurrerende handlinger forbli lesbare i samme komposisjon?",
+          "fr": "Comment rendre lisibles des actions concurrentes dans une composition ?",
+          "pt": "Como manter ações concorrentes legíveis numa composição?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Blur every background regardless of narrative importance",
+              "nb": "Gjør alle bakgrunner uskarpe uansett fortellingsbetydning",
+              "fr": "Flouter tout arrière-plan quelle que soit son importance",
+              "pt": "Desfocar todo o fundo independentemente da importância narrativa"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat a low angle alone as proof of deep focus",
+              "nb": "Behandle lav kameravinkel alene som bevis på dybdeskarphet",
+              "fr": "Prendre un angle bas seul pour preuve de profondeur de champ",
+              "pt": "Tomar um ângulo baixo como prova de profundidade de campo"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan foreground and background action with deep focus",
+              "nb": "Planlegg handling i forgrunn og bakgrunn med dybdeskarphet",
+              "fr": "Prévoir des actions nettes au premier et à l’arrière-plan",
+              "pt": "Planear ações nítidas no primeiro plano e no fundo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI documents Toland’s collaboration, low angles and built ceilings. Plan depth through staging, lighting and focus rather than assuming every shot used the same method.",
+          "nb": "AFI dokumenterer Tolands samarbeid, lave vinkler og bygde tak. Planlegg dybde gjennom iscenesettelse, lys og fokus uten å anta samme metode i alle bilder.",
+          "fr": "L’AFI documente la collaboration de Toland, les angles bas et les plafonds construits. Concevez la profondeur par placement, lumière et mise au point sans généraliser.",
+          "pt": "A AFI documenta a colaboração de Toland, ângulos baixos e tetos construídos. Planeie profundidade com encenação, luz e foco sem generalizar o método."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "citizenkane-testimony",
+        "area": "research",
+        "prompt": {
+          "en": "How can a biography be told through conflicting witnesses?",
+          "nb": "Hvordan kan en biografi fortelles gjennom motstridende vitner?",
+          "fr": "Comment raconter une biographie par des témoignages contradictoires ?",
+          "pt": "Como contar uma biografia através de testemunhos contraditórios?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Build a timeline that separates testimony from chronology",
+              "nb": "Bygg en tidslinje som skiller vitnesbyrd fra kronologi",
+              "fr": "Construire une chronologie distinguant témoignages et événements",
+              "pt": "Construir uma cronologia que distinga testemunhos e acontecimentos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat every recollection as objective and complete evidence",
+              "nb": "Behandle alle minner som objektive og fullstendige bevis",
+              "fr": "Traiter chaque souvenir comme preuve objective et complète",
+              "pt": "Tratar cada memória como prova objetiva e completa"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Force all scenes into an uninterrupted chronological account",
+              "nb": "Tving alle scener inn i en uavbrutt kronologisk fremstilling",
+              "fr": "Forcer toutes les scènes dans un récit chronologique continu",
+              "pt": "Forçar todas as cenas num relato cronológico contínuo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "MoMA and BFI discuss flashbacks and nonlinear narration. Construct an original witness map that preserves perspective and does not mistake recollection for objective truth.",
+          "nb": "MoMA og BFI drøfter tilbakeblikk og ikke-lineær fortelling. Lag et eget vitnekart som bevarer perspektiv uten å forveksle erindring med objektiv sannhet.",
+          "fr": "Le MoMA et le BFI analysent flashbacks et récit non linéaire. Créez une carte originale des témoins sans confondre mémoire et vérité objective.",
+          "pt": "O MoMA e o BFI analisam flashbacks e narrativa não linear. Crie um mapa original de testemunhas sem confundir memória com verdade objetiva."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "citizenkane-sound",
+        "area": "sound",
+        "prompt": {
+          "en": "How can overlapping dialogue guide attention within a scene?",
+          "nb": "Hvordan kan overlappende dialog styre oppmerksomheten i en scene?",
+          "fr": "Comment les dialogues superposés orientent-ils l’attention dans une scène ?",
+          "pt": "Como pode o diálogo sobreposto orientar a atenção numa cena?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Remove every pause and contrast from the dialogue",
+              "nb": "Fjern alle pauser og kontraster fra dialogen",
+              "fr": "Supprimer toute pause et tout contraste du dialogue",
+              "pt": "Eliminar todas as pausas e contrastes do diálogo"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Organize voices by distance, emphasis and narrative priority",
+              "nb": "Organiser stemmer etter avstand, betoning og fortellingsprioritet",
+              "fr": "Organiser les voix par distance, accent et priorité narrative",
+              "pt": "Organizar vozes por distância, ênfase e prioridade narrativa"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Make every voice equally loud and indistinguishable",
+              "nb": "Gjør alle stemmer like høye og umulige å skille",
+              "fr": "Rendre toutes les voix aussi fortes et indiscernables",
+              "pt": "Tornar todas as vozes igualmente altas e indistintas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI identifies overlapping dialogue and MoMA discusses radio influence. Design an original voice hierarchy while keeping Herrmann’s score a distinct contribution.",
+          "nb": "BFI identifiserer overlappende dialog, og MoMA drøfter radiopåvirkning. Lag et eget stemmehierarki og behold Herrmanns filmmusikk som et selvstendig bidrag.",
+          "fr": "Le BFI relève les dialogues superposés et le MoMA l’influence radiophonique. Concevez une hiérarchie des voix en distinguant la musique de Herrmann.",
+          "pt": "O BFI identifica diálogos sobrepostos e o MoMA a influência da rádio. Crie uma hierarquia de vozes, distinguindo a música de Herrmann."
+        },
+        "sourceIds": [
+          "s0",
+          "s2",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_casablanca_1942",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Casablanca: collaborative writing, studio geography and wartime sound.",
+      "nb": "Casablanca: manusarbeid, studiorom og lyd i krigstid.",
+      "fr": "Casablanca : écriture collective, espace de studio et son en temps de guerre.",
+      "pt": "Casablanca: escrita coletiva, espaço de estúdio e som em tempo de guerra."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Casablanca",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/27175-CASABLANCA"
+      },
+      {
+        "id": "s1",
+        "title": "Casablanca (1942)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/61d5c0dc-151e-5c9c-92ef-4a3039aa82f2/casablanca"
+      },
+      {
+        "id": "s2",
+        "title": "National Film Registry descriptions and essays",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/programs/national-film-preservation-board/film-registry/descriptions-and-essays/"
+      },
+      {
+        "id": "s3",
+        "title": "Michael Curtiz's Casablanca",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/explore/inside_out/2011/05/31/michael-curtizs-casablanca/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "casablanca-revision",
+        "area": "research",
+        "prompt": {
+          "en": "How should a changing screenplay be tracked during production?",
+          "nb": "Hvordan bør et manus i endring følges gjennom produksjonen?",
+          "fr": "Comment suivre un scénario évolutif pendant la production ?",
+          "pt": "Como acompanhar um argumento em mudança durante a produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Keep dated revisions, scene dependencies and writer credits",
+              "nb": "Behold daterte revisjoner, sceneavhengigheter og manusforfatterkreditering",
+              "fr": "Conserver versions datées, dépendances des scènes et crédits d’écriture",
+              "pt": "Manter revisões datadas, dependências das cenas e créditos de escrita"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume the release script was fixed before filming began",
+              "nb": "Anta at det endelige manuset var fastlagt før opptakene startet",
+              "fr": "Supposer que le scénario final était fixé avant le tournage",
+              "pt": "Supor que o argumento final estava fixado antes da filmagem"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Attribute every revision to one star without evidence",
+              "nb": "Tilskriv alle revisjoner til én stjerne uten dokumentasjon",
+              "fr": "Attribuer toutes les révisions à une vedette sans preuve",
+              "pt": "Atribuir todas as revisões a uma estrela sem provas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI records multiple credited writers and ending revisions. Keep a revision log for a fictional scene without inventing the authorship of undocumented changes.",
+          "nb": "AFI dokumenterer flere krediterte forfattere og endringer i slutten. Før en revisjonslogg for en fiktiv scene uten å dikte opp opphav til udokumenterte endringer.",
+          "fr": "L’AFI documente plusieurs scénaristes et les révisions de la fin. Tenez un journal fictif sans inventer l’auteur de changements non documentés.",
+          "pt": "A AFI documenta vários argumentistas e revisões do final. Mantenha um registo fictício sem inventar a autoria de alterações não documentadas."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "casablanca-studio",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a studio set suggest an international crossroads?",
+          "nb": "Hvordan kan en studiokulisse antyde et internasjonalt knutepunkt?",
+          "fr": "Comment un décor de studio peut-il suggérer un carrefour international ?",
+          "pt": "Como pode um cenário de estúdio sugerir um cruzamento internacional?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Remove all entrances and spatial relations from the set plan",
+              "nb": "Fjern alle innganger og romlige forhold fra scenografiplanen",
+              "fr": "Supprimer les entrées et relations spatiales du plan de décor",
+              "pt": "Eliminar entradas e relações espaciais da planta do cenário"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Coordinate set geography, ensemble movement and lighting",
+              "nb": "Samordne scenografiens geografi, ensemblebevegelser og lys",
+              "fr": "Coordonner géographie du décor, mouvements du groupe et lumière",
+              "pt": "Coordenar geografia do cenário, movimentos do elenco e luz"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume every scene was filmed in the real city",
+              "nb": "Anta at alle scener ble filmet i den virkelige byen",
+              "fr": "Supposer que chaque scène a été tournée dans la ville réelle",
+              "pt": "Supor que cada cena foi filmada na cidade real"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI describes the Warner studio world and multinational ensemble; AFI records the art and photography credits. Design a fictional shared space without treating the studio as location documentary.",
+          "nb": "BFI beskriver Warner-studioets verden og det multinasjonale ensemblet; AFI registrerer scenografi- og fotokreditering. Utform et fiktivt fellesrom uten å behandle studioet som stedsdokumentar.",
+          "fr": "Le BFI décrit l’univers de studio Warner et l’ensemble multinational ; l’AFI recense décor et photographie. Concevez un espace fictif sans le prendre pour un documentaire de lieu.",
+          "pt": "O BFI descreve o universo de estúdio Warner e o elenco multinacional; a AFI regista cenografia e fotografia. Conceba um espaço fictício sem o tratar como documentário local."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "casablanca-music",
+        "area": "sound",
+        "prompt": {
+          "en": "How can music connect personal drama with wartime context?",
+          "nb": "Hvordan kan musikk knytte personlig drama til krigstidens kontekst?",
+          "fr": "Comment relier drame personnel et contexte de guerre par la musique ?",
+          "pt": "Como ligar o drama pessoal ao contexto de guerra através da música?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat every musical cue as identical background decoration",
+              "nb": "Behandle alle musikalske innslag som identisk bakgrunnspynt",
+              "fr": "Traiter chaque intervention musicale comme simple décor sonore",
+              "pt": "Tratar cada intervenção musical como decoração sonora idêntica"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use the soundtrack as proof of actual wartime events",
+              "nb": "Bruk lydsporet som bevis på faktiske krigshendelser",
+              "fr": "Prendre la bande sonore pour preuve d’événements de guerre réels",
+              "pt": "Usar a banda sonora como prova de acontecimentos reais da guerra"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Distinguish songs heard by characters from dramatic score",
+              "nb": "Skill sanger figurene hører fra dramatisk filmmusikk",
+              "fr": "Distinguer les chansons entendues par les personnages de la musique dramatique",
+              "pt": "Distinguir canções ouvidas pelas personagens da música dramática"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI identifies Steiner’s score and song credits, while the Registry dossier describes wartime reception. Design original cues and distinguish fictional expression from historical evidence.",
+          "nb": "AFI identifiserer Steiners musikk og sangkreditering, mens registerdokumentasjonen beskriver mottakelsen i krigstid. Lag egne lydsignaler og skill fiksjonsuttrykk fra historiske bevis.",
+          "fr": "L’AFI identifie la musique de Steiner et les chansons, le dossier du registre décrit la réception en temps de guerre. Créez des repères originaux et distinguez fiction et preuve historique.",
+          "pt": "A AFI identifica música de Steiner e canções, e o dossier do registo descreve a receção em tempo de guerra. Crie marcas originais e distinga ficção de prova histórica."
+        },
+        "sourceIds": [
+          "s0",
           "s2"
         ]
       }

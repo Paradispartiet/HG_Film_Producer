@@ -97,15 +97,19 @@ const ids = [
   "scenario_modern_times_1936",
   "scenario_snow_white_and_the_seven_dwarfs_1937",
   "scenario_the_rules_of_the_game_1939",
+  "scenario_stagecoach_1939",
+  "scenario_the_wizard_of_oz_1939",
+  "scenario_citizen_kane_1941",
+  "scenario_casablanca_1942",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly eighty-eight existing cases have two hundred and sixty-four original, source-backed decisions", () => {
+test("Exactly ninety-two existing cases have two hundred and seventy-six original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 88);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 264);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 92);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 276);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -288,6 +292,14 @@ test("Exactly eighty-eight existing cases have two hundred and sixty-four origin
     } else if (["scenario_king_kong_1933","scenario_modern_times_1936","scenario_snow_white_and_the_seven_dwarfs_1937","scenario_the_rules_of_the_game_1939"].includes(workshop.scenarioId)) {
       assert.ok(readFileSync("src/core/earlyCinemaExpansion.ts", "utf8").includes(workshop.scenarioId));
       const verification = readFileSync("src/ui/data/scenarioProductionVerification1930sProductionSystemsBatch.ts", "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const next = verification.indexOf("\n  },", start);
+      const section = verification.slice(start, next < 0 ? undefined : next);
+      for (const source of workshop.sources) assert.ok(section.includes(source.url));
+    } else if (["scenario_stagecoach_1939","scenario_the_wizard_of_oz_1939","scenario_citizen_kane_1941","scenario_casablanca_1942"].includes(workshop.scenarioId)) {
+      assert.ok(readFileSync("src/core/earlyCinemaExpansion.ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync("src/ui/data/scenarioProductionVerificationClassicalHollywoodBatch.ts", "utf8");
       const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
       assert.ok(start >= 0);
       const next = verification.indexOf("\n  },", start);
@@ -774,4 +786,12 @@ test("1930s production workshops retain film-specific questions", () => {
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_modern_times_1936")?.questions.map(q => q.id), ["moderntimes-pantomime","moderntimes-voices","moderntimes-production"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_snow_white_and_the_seven_dwarfs_1937")?.questions.map(q => q.id), ["snowwhiteandthesevendwarfs-personality","snowwhiteandthesevendwarfs-depth","snowwhiteandthesevendwarfs-pipeline"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_rules_of_the_game_1939")?.questions.map(q => q.id), ["therulesofthegame-staging","therulesofthegame-rhythm","therulesofthegame-reconstruction"]);
+});
+
+
+test("Classical Hollywood workshops preserve film-specific craft and evidence", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_stagecoach_1939")?.questions.map(q => q.id), ["stagecoach-landscape","stagecoach-continuity","stagecoach-ensemble"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_wizard_of_oz_1939")?.questions.map(q => q.id), ["thewizardofoz-color","thewizardofoz-song","thewizardofoz-departments"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_citizen_kane_1941")?.questions.map(q => q.id), ["citizenkane-depth","citizenkane-testimony","citizenkane-sound"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_casablanca_1942")?.questions.map(q => q.id), ["casablanca-revision","casablanca-studio","casablanca-music"]);
 });
