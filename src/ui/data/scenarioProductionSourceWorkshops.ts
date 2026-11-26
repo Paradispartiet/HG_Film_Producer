@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Fifty-four pre-existing Production Cases receive evidence-backed craft decisions.
+ * Fifty-six pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -8802,6 +8802,382 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
           "s0",
           "s2",
           "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_battleship_potemkin_1925",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore montage contrast, collective representation and the distinction between historical events and cinematic construction.",
+      "nb": "Utforsk montasjekontraster, kollektive fremstillinger og skillet mellom historiske hendelser og filmatisk konstruksjon.",
+      "fr": "Explorez les contrastes de montage, la représentation collective et la distinction entre événements historiques et construction filmique.",
+      "pt": "Explore contrastes de montagem, representação coletiva e a distinção entre acontecimentos históricos e construção fílmica."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Battleship Potemkin",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/collection/works/305815?art_term_slug=montage&sov_referrer=art_term"
+      },
+      {
+        "id": "s1",
+        "title": "Battleship Potemkin",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/9c02c20b-1487-52c8-bbfc-0849e204fe59/battleship-potemkin"
+      },
+      {
+        "id": "s2",
+        "title": "Battleship Potemkin – 1925 programme record",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/calendar/events/6129"
+      },
+      {
+        "id": "s3",
+        "title": "Battleship Potemkin",
+        "publisher": "International Documentary Film Festival Amsterdam",
+        "url": "https://www.idfa.nl/en/film/a599f835-9770-4bb9-a9f9-93aa604fb946/battleship-potemkin/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "potemkin-contrast",
+        "area": "camera",
+        "prompt": {
+          "en": "How could juxtaposition change the meaning of two drawings in a benign fictional sequence?",
+          "nb": "Hvordan kan sammenstilling endre betydningen av to tegninger i en ufarlig fiktiv sekvens?",
+          "fr": "Comment la juxtaposition peut-elle modifier le sens de deux dessins dans une séquence fictive anodine ?",
+          "pt": "Como pode a justaposição alterar o sentido de dois desenhos numa sequência fictícia inofensiva?"
+        },
+        "options": [
+          {
+            "id": "contrast",
+            "label": {
+              "en": "Compare two arrangements of contrasting shapes and everyday objects",
+              "nb": "Sammenlign to sammenstillinger av kontrasterende former og hverdagsgjenstander",
+              "fr": "Comparer deux agencements de formes contrastées et d'objets quotidiens",
+              "pt": "Comparar dois arranjos de formas contrastantes e objetos quotidianos"
+            }
+          },
+          {
+            "id": "fixed",
+            "label": {
+              "en": "Assume each image has exactly the same meaning in every context",
+              "nb": "Anta at hvert bilde har nøyaktig samme betydning i enhver kontekst",
+              "fr": "Supposer que chaque image a exactement le même sens dans tout contexte",
+              "pt": "Supor que cada imagem tem exatamente o mesmo sentido em qualquer contexto"
+            }
+          },
+          {
+            "id": "universal",
+            "label": {
+              "en": "Declare one montage interpretation inevitable for every viewer",
+              "nb": "Erklær én montasjetolkning uunngåelig for alle seere",
+              "fr": "Déclarer une interprétation du montage inévitable pour chaque spectateur",
+              "pt": "Declarar uma interpretação da montagem inevitável para todos os espectadores"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "contrast",
+        "explanation": {
+          "en": "MoMA analyzes repetition and contrast in Eisenstein's montage; BFI emphasizes its dynamic composition. Compare original drawings of everyday objects to examine how relationships between images shape interpretation, without reenacting historical violence or assuming a universal audience response.",
+          "nb": "MoMA analyserer gjentakelse og kontrast i Eisensteins montasje; BFI fremhever dynamisk komposisjon. Sammenlign egne tegninger av hverdagsgjenstander for å undersøke hvordan bildeforhold former tolkning, uten å gjenskape historisk vold eller anta en universell publikumsreaksjon.",
+          "fr": "Le MoMA analyse répétition et contraste dans le montage d'Eisenstein ; le BFI souligne la composition dynamique. Comparez des dessins originaux d'objets quotidiens pour étudier leurs rapports sans reconstituer la violence historique ni présumer une réaction universelle.",
+          "pt": "O MoMA analisa repetição e contraste na montagem de Eisenstein; o BFI destaca composição dinâmica. Compare desenhos originais de objetos quotidianos para estudar relações entre imagens sem reconstituir violência histórica nem presumir uma reação universal."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "potemkin-duration",
+        "area": "camera",
+        "prompt": {
+          "en": "How might editing change the perceived duration of an invented everyday event?",
+          "nb": "Hvordan kan klipping endre den opplevde varigheten av en oppdiktet hverdagshendelse?",
+          "fr": "Comment le montage peut-il modifier la durée perçue d'un événement quotidien inventé ?",
+          "pt": "Como pode a montagem alterar a duração percebida de um acontecimento quotidiano inventado?"
+        },
+        "options": [
+          {
+            "id": "literal",
+            "label": {
+              "en": "Assume screen duration must always equal the event's actual duration",
+              "nb": "Anta at filmens varighet alltid må tilsvare hendelsens faktiske varighet",
+              "fr": "Supposer que la durée à l'écran doit toujours égaler celle de l'événement",
+              "pt": "Supor que a duração no ecrã deve sempre igualar a duração real do acontecimento"
+            }
+          },
+          {
+            "id": "duration",
+            "label": {
+              "en": "Compare a compact and an expanded storyboard of the same neutral event",
+              "nb": "Sammenlign et komprimert og et utvidet storyboard av samme nøytrale hendelse",
+              "fr": "Comparer un storyboard condensé et un storyboard développé du même événement neutre",
+              "pt": "Comparar um storyboard condensado e outro expandido do mesmo acontecimento neutro"
+            }
+          },
+          {
+            "id": "record",
+            "label": {
+              "en": "Treat the edited duration as proof of historical chronology",
+              "nb": "Behandle den klipte varigheten som bevis for historisk kronologi",
+              "fr": "Traiter la durée montée comme preuve de chronologie historique",
+              "pt": "Tratar a duração montada como prova de cronologia histórica"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "duration",
+        "explanation": {
+          "en": "MoMA documents temporal compression and expansion in the film. Compare two storyboard versions of a mundane activity, such as arranging a vase of flowers. Distinguish screen duration from actual event duration; the constructed sequence is not a historical measurement.",
+          "nb": "MoMA dokumenterer tidskomprimering og utvidelse i filmen. Sammenlign to storyboardversjoner av en hverdagsaktivitet, for eksempel å arrangere blomster i en vase. Skill filmvarighet fra faktisk varighet; den konstruerte sekvensen er ikke en historisk måling.",
+          "fr": "Le MoMA documente compression et expansion temporelles. Comparez deux storyboards d'une activité ordinaire, comme arranger des fleurs. Distinguez durée à l'écran et durée réelle ; la séquence construite n'est pas une mesure historique.",
+          "pt": "O MoMA documenta compressão e expansão temporal. Compare dois storyboards de uma atividade comum, como arranjar flores. Distinga duração no ecrã de duração real; a sequência construída não é uma medição histórica."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "potemkin-evidence",
+        "area": "research",
+        "prompt": {
+          "en": "How should a researcher distinguish the film's political representation from historical evidence?",
+          "nb": "Hvordan bør en forsker skille filmens politiske fremstilling fra historisk dokumentasjon?",
+          "fr": "Comment distinguer la représentation politique du film des preuves historiques ?",
+          "pt": "Como distinguir a representação política do filme da evidência histórica?"
+        },
+        "options": [
+          {
+            "id": "neutral",
+            "label": {
+              "en": "Present every dramatic image as neutral documentary evidence",
+              "nb": "Presenter alle dramatiske bilder som nøytral dokumentasjon",
+              "fr": "Présenter chaque image dramatique comme un document neutre",
+              "pt": "Apresentar todas as imagens dramáticas como evidência documental neutra"
+            }
+          },
+          {
+            "id": "erase",
+            "label": {
+              "en": "Remove production credits and the political context from the account",
+              "nb": "Fjern produksjonskreditering og politisk kontekst fra beskrivelsen",
+              "fr": "Supprimer les crédits de production et le contexte politique",
+              "pt": "Remover créditos de produção e contexto político do relato"
+            }
+          },
+          {
+            "id": "context",
+            "label": {
+              "en": "Separate the historical event, staged reconstruction, editorial argument and craft credits",
+              "nb": "Skill den historiske hendelsen, iscenesatt rekonstruksjon, redaksjonelt argument og fagkreditering",
+              "fr": "Distinguer événement historique, reconstitution mise en scène, argument éditorial et crédits techniques",
+              "pt": "Distinguir acontecimento histórico, reconstituição encenada, argumento editorial e créditos técnicos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "context",
+        "explanation": {
+          "en": "IDFA distinguishes historical reconstruction from revolutionary statement, while MoMA identifies Eisenstein and cinematographer Eduard Tisse. Record the film's constructed argument and documented collaboration separately from claims about the historical event.",
+          "nb": "IDFA skiller historisk rekonstruksjon fra revolusjonært utsagn, mens MoMA identifiserer Eisenstein og filmfotograf Eduard Tisse. Registrer filmens konstruerte argument og dokumenterte samarbeid separat fra påstander om den historiske hendelsen.",
+          "fr": "L'IDFA distingue reconstitution historique et déclaration révolutionnaire ; le MoMA identifie Eisenstein et l'opérateur Eduard Tisse. Consignez l'argument construit et la collaboration documentée séparément des affirmations sur l'événement historique.",
+          "pt": "O IDFA distingue reconstituição histórica de declaração revolucionária; o MoMA identifica Eisenstein e o diretor de fotografia Eduard Tisse. Registe o argumento construído e a colaboração documentada separadamente de afirmações sobre o acontecimento histórico."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_man_with_a_movie_camera_1929",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore documentary construction, collective authorship and the presentation of a constructed city day.",
+      "nb": "Utforsk dokumentarisk konstruksjon, kollektivt forfatterskap og fremstillingen av en konstruert bydag.",
+      "fr": "Explorez la construction documentaire, la création collective et la représentation d'une journée urbaine construite.",
+      "pt": "Explore construção documental, autoria coletiva e representação de um dia urbano construído."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The Man with a Movie Camera",
+        "publisher": "Eye Filmmuseum",
+        "url": "https://www.eyefilm.nl/en/whats-on/the-man-with-a-movie-camera/1346017"
+      },
+      {
+        "id": "s1",
+        "title": "Reconstructing the original music for Man with a Movie Camera",
+        "publisher": "Eye Filmmuseum",
+        "url": "https://www.eyefilm.nl/en/magazine/reconstructing-the-original-music-for-man-with-a-movie-camera/1636481"
+      },
+      {
+        "id": "s2",
+        "title": "Man with a Movie Camera",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/collection/works/303131"
+      },
+      {
+        "id": "s3",
+        "title": "10 great Soviet films of the 1920s",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-soviet-films-1920s"
+      }
+    ],
+    "questions": [
+      {
+        "id": "vertov-city",
+        "area": "camera",
+        "prompt": {
+          "en": "How could an original city-day sequence show patterns without claiming to be an unedited record?",
+          "nb": "Hvordan kan en egen bydagsekvens vise mønstre uten å hevde å være et uredigert opptak?",
+          "fr": "Comment une séquence urbaine originale peut-elle montrer des motifs sans prétendre être un enregistrement non monté ?",
+          "pt": "Como pode uma sequência urbana original mostrar padrões sem alegar ser um registo não montado?"
+        },
+        "options": [
+          {
+            "id": "construct",
+            "label": {
+              "en": "Arrange drawings of everyday urban activities and label the constructed time relationships",
+              "nb": "Sett sammen tegninger av hverdagslige byaktiviteter og merk de konstruerte tidsforholdene",
+              "fr": "Agencer des dessins d'activités urbaines quotidiennes et signaler les rapports temporels construits",
+              "pt": "Organizar desenhos de atividades urbanas quotidianas e identificar as relações temporais construídas"
+            }
+          },
+          {
+            "id": "literal",
+            "label": {
+              "en": "Claim a montage assembled from different places records one continuous day",
+              "nb": "Hevd at montasje satt sammen fra ulike steder registrerer én sammenhengende dag",
+              "fr": "Affirmer qu'un montage de lieux différents enregistre une journée continue",
+              "pt": "Afirmar que uma montagem de locais diferentes regista um dia contínuo"
+            }
+          },
+          {
+            "id": "covert",
+            "label": {
+              "en": "Film identifiable strangers secretly to reproduce historical camera practice",
+              "nb": "Film identifiserbare fremmede i skjul for å gjenskape historisk kamerapraksis",
+              "fr": "Filmer secrètement des inconnus identifiables pour reproduire la pratique historique",
+              "pt": "Filmar secretamente desconhecidos identificáveis para reproduzir a prática histórica"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "construct",
+        "explanation": {
+          "en": "Eye describes the city-day structure; BFI documents the multi-city production and editorial construction. Use drawings or consenting collaborators and disclose how the sequence combines places and times rather than claiming uninterrupted observation.",
+          "nb": "Eye beskriver bydagsstrukturen; BFI dokumenterer produksjon i flere byer og redaksjonell konstruksjon. Bruk tegninger eller samtykkende samarbeidspartnere og gjør rede for hvordan sekvensen kombinerer steder og tider fremfor å hevde uavbrutt observasjon.",
+          "fr": "Eye décrit la structure d'une journée urbaine ; le BFI documente la production dans plusieurs villes et la construction éditoriale. Utilisez des dessins ou des collaborateurs consentants et précisez les combinaisons de lieux et de temps.",
+          "pt": "Eye descreve a estrutura do dia urbano; o BFI documenta a produção em várias cidades e a construção editorial. Use desenhos ou colaboradores que consintam e explicite as combinações de lugares e tempos."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "vertov-collaboration",
+        "area": "research",
+        "prompt": {
+          "en": "How should a researcher credit the camera and editing work that makes the documentary self-reflexive?",
+          "nb": "Hvordan bør en forsker kreditere kamera- og klippearbeidet som gjør dokumentaren selvrefleksiv?",
+          "fr": "Comment créditer le travail de prise de vues et de montage qui rend le documentaire réflexif ?",
+          "pt": "Como creditar o trabalho de câmara e montagem que torna o documentário autorreflexivo?"
+        },
+        "options": [
+          {
+            "id": "solo",
+            "label": {
+              "en": "Assign every visual and editorial contribution to Vertov alone",
+              "nb": "Tilskriv alle visuelle og redaksjonelle bidrag Vertov alene",
+              "fr": "Attribuer tous les apports visuels et éditoriaux au seul Vertov",
+              "pt": "Atribuir todos os contributos visuais e editoriais apenas a Vertov"
+            }
+          },
+          {
+            "id": "team",
+            "label": {
+              "en": "Distinguish Vertov's direction, Kaufman's cinematography and Svilova's editing",
+              "nb": "Skill Vertovs regi, Kaufmans filmfoto og Svilovas klipping",
+              "fr": "Distinguer la réalisation de Vertov, l'image de Kaufman et le montage de Svilova",
+              "pt": "Distinguir realização de Vertov, fotografia de Kaufman e montagem de Svilova"
+            }
+          },
+          {
+            "id": "invisible",
+            "label": {
+              "en": "Treat the visible filming and editing process as irrelevant to the film's meaning",
+              "nb": "Behandle den synlige film- og klippeprosessen som irrelevant for filmens mening",
+              "fr": "Considérer le tournage et le montage visibles comme sans rapport avec le sens du film",
+              "pt": "Tratar o processo visível de filmagem e montagem como irrelevante para o sentido do filme"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "team",
+        "explanation": {
+          "en": "MoMA analyzes the film's exposure of the camera and editor; BFI identifies Kaufman's photography and Svilova's editorial work. Credit their separate contributions and explore how revealing the filmmaking process becomes part of documentary form.",
+          "nb": "MoMA analyserer filmens synliggjøring av kamera og klipper; BFI identifiserer Kaufmans filmfoto og Svilovas klippearbeid. Krediter de ulike bidragene og utforsk hvordan synliggjøring av filmprosessen blir en del av dokumentarformen.",
+          "fr": "Le MoMA analyse la mise en évidence de la caméra et de la monteuse ; le BFI identifie l'image de Kaufman et le montage de Svilova. Créditez leurs contributions distinctes et étudiez la réflexivité documentaire.",
+          "pt": "O MoMA analisa a exposição da câmara e da montadora; o BFI identifica a fotografia de Kaufman e a montagem de Svilova. Credite os contributos distintos e explore a reflexividade documental."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "vertov-music",
+        "area": "sound",
+        "prompt": {
+          "en": "How should reconstructed premiere accompaniment and later replacement scores be documented?",
+          "nb": "Hvordan bør rekonstruert premiereakkompagnement og senere erstatningsmusikk dokumenteres?",
+          "fr": "Comment documenter l'accompagnement de première reconstruit et les musiques de remplacement ultérieures ?",
+          "pt": "Como documentar o acompanhamento reconstruído da estreia e músicas de substituição posteriores?"
+        },
+        "options": [
+          {
+            "id": "original",
+            "label": {
+              "en": "Assume the reconstructed score is an untouched original sound recording",
+              "nb": "Anta at den rekonstruerte musikken er et urørt originallydopptak",
+              "fr": "Supposer que la musique reconstruite est un enregistrement sonore original intact",
+              "pt": "Supor que a música reconstruída é uma gravação sonora original intacta"
+            }
+          },
+          {
+            "id": "same",
+            "label": {
+              "en": "Assume every modern screening uses the same musical presentation",
+              "nb": "Anta at alle moderne visninger bruker samme musikkpresentasjon",
+              "fr": "Supposer que chaque projection moderne utilise la même musique",
+              "pt": "Supor que todas as exibições modernas usam a mesma apresentação musical"
+            }
+          },
+          {
+            "id": "evidence",
+            "label": {
+              "en": "Document cue evidence, reconstructed accompaniment and the edition being presented",
+              "nb": "Dokumenter musikkskjemaets belegg, rekonstruert akkompagnement og utgaven som vises",
+              "fr": "Documenter indices musicaux, accompagnement reconstruit et édition présentée",
+              "pt": "Documentar indicações musicais, acompanhamento reconstruído e edição apresentada"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "evidence",
+        "explanation": {
+          "en": "Eye documents reconstruction of the intended premiere music from archival cue notes and distinguishes later scores. Record the evidence and the specific presentation without calling a modern reconstruction an original recorded soundtrack.",
+          "nb": "Eye dokumenterer rekonstruksjon av den tiltenkte premieremusikken fra arkiverte musikknotater og skiller senere musikk ut. Registrer belegget og den konkrete visningen uten å kalle en moderne rekonstruksjon et opprinnelig innspilt lydspor.",
+          "fr": "Eye documente la reconstruction de la musique prévue pour la première à partir de notes d'archives et distingue les musiques ultérieures. Consignez les preuves et la présentation sans qualifier une reconstruction moderne de bande sonore originale enregistrée.",
+          "pt": "Eye documenta a reconstrução da música prevista para a estreia a partir de notas de arquivo e distingue músicas posteriores. Registe evidência e apresentação específica sem chamar à reconstrução uma banda sonora original gravada."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
         ]
       }
     ]
