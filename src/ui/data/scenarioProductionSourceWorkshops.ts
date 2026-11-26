@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Ninety-two pre-existing Production Cases receive evidence-backed craft decisions.
+ * Ninety-six pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -16129,6 +16129,760 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
         "sourceIds": [
           "s0",
           "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_rome_open_city_1945",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Rome, Open City: production under scarcity, performance and historical evidence.",
+      "nb": "Rome, Open City: produksjon under knapphet, skuespill og historisk dokumentasjon.",
+      "fr": "Rome, ville ouverte : production en pénurie, jeu et preuves historiques.",
+      "pt": "Roma, Cidade Aberta: produção em escassez, interpretação e evidência histórica."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "80 years of Rome, Open City: tracking down Roberto Rossellini's locations today",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/rome-open-city-roberto-rossellini-locations"
+      },
+      {
+        "id": "s1",
+        "title": "Rome, Open City: Roberto Rossellini's great leap for realism on screen",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/rome-open-city-roberto-rossellinis-great-leap-realism-screen"
+      },
+      {
+        "id": "s2",
+        "title": "Rome Open City",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/975-rome-open-city"
+      },
+      {
+        "id": "s3",
+        "title": "Roma città aperta (1945)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/c11c5649-553c-530b-be9f-db54ffeb4cbf/roma-citta-aperta"
+      }
+    ],
+    "questions": [
+      {
+        "id": "romeopencity-locations",
+        "area": "camera",
+        "prompt": {
+          "en": "How should a fictional scene use an existing city street?",
+          "nb": "Hvordan bør en fiktiv scene bruke en eksisterende bygate?",
+          "fr": "Comment une scène fictive peut-elle utiliser une rue existante ?",
+          "pt": "Como pode uma cena fictícia usar uma rua existente?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan available light, street geography and practical access",
+              "nb": "Planlegg tilgjengelig lys, gategeografi og praktisk tilgang",
+              "fr": "Prévoir lumière disponible, géographie de la rue et accès pratique",
+              "pt": "Planear luz disponível, geografia da rua e acesso prático"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume every street shot is spontaneous documentary footage",
+              "nb": "Anta at alle gatebilder er spontane dokumentaropptak",
+              "fr": "Supposer que chaque plan de rue est un documentaire spontané",
+              "pt": "Supor que cada plano de rua é um documentário espontâneo"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Build an elaborate studio set regardless of resources",
+              "nb": "Bygg en omfattende studiokulisse uansett ressurser",
+              "fr": "Construire un décor de studio complexe sans égard aux ressources",
+              "pt": "Construir um cenário de estúdio complexo sem atender aos recursos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI documents Rome locations and damaged studio infrastructure. Plan an original scene around actual constraints without equating location shooting with documentary truth.",
+          "nb": "BFI dokumenterer Roma-locations og skadet studioinfrastruktur. Planlegg en egen scene ut fra reelle begrensninger uten å likestille stedsopptak med dokumentarisk sannhet.",
+          "fr": "Le BFI documente les lieux romains et les studios endommagés. Concevez une scène originale selon ces contraintes sans assimiler tournage en extérieur et vérité documentaire.",
+          "pt": "O BFI documenta locais romanos e estúdios danificados. Planeie uma cena original segundo as limitações sem equiparar filmagem em exteriores e verdade documental."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "romeopencity-performance",
+        "area": "research",
+        "prompt": {
+          "en": "How should different kinds of performers be credited?",
+          "nb": "Hvordan bør ulike typer skuespillere krediteres?",
+          "fr": "Comment créditer différents types d’interprètes ?",
+          "pt": "Como creditar diferentes tipos de intérpretes?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat dramatic dialogue as verified oral testimony",
+              "nb": "Behandle dramatisk dialog som verifisert muntlig vitnesbyrd",
+              "fr": "Traiter le dialogue dramatique comme témoignage oral vérifié",
+              "pt": "Tratar diálogo dramático como testemunho oral verificado"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Distinguish professional performers, other participants and scripted action",
+              "nb": "Skill profesjonelle skuespillere, andre medvirkende og manusbasert handling",
+              "fr": "Distinguer acteurs professionnels, autres participants et action scénarisée",
+              "pt": "Distinguir atores profissionais, outros participantes e ação escrita"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume every participant was an untrained local resident",
+              "nb": "Anta at alle medvirkende var lokale amatører",
+              "fr": "Supposer que tous les participants étaient des habitants amateurs",
+              "pt": "Supor que todos os participantes eram residentes amadores"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion and BFI identify the cast and writing team, including Magnani and Fabrizi. Recognize mixed performance texture and the distinction between staged action and testimony.",
+          "nb": "Criterion og BFI identifiserer skuespillerne og manusforfatterne, blant dem Magnani og Fabrizi. Skill ulike skuespilluttrykk fra faktisk vitnesbyrd.",
+          "fr": "Criterion et le BFI identifient distribution et scénaristes, dont Magnani et Fabrizi. Distinguez les formes de jeu du témoignage réel.",
+          "pt": "A Criterion e o BFI identificam elenco e argumentistas, incluindo Magnani e Fabrizi. Distinga formas de interpretação de testemunho real."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "romeopencity-stock",
+        "area": "research",
+        "prompt": {
+          "en": "How should scarce film materials be discussed in a production dossier?",
+          "nb": "Hvordan bør knappe filmmaterialer omtales i en produksjonsmappe?",
+          "fr": "Comment décrire la pénurie de pellicule dans un dossier de production ?",
+          "pt": "Como descrever a escassez de película num dossier de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Invent a different film stock for every historical shot",
+              "nb": "Dikt opp en annen filmtype for hvert historiske bilde",
+              "fr": "Inventer une pellicule différente pour chaque plan historique",
+              "pt": "Inventar uma película diferente para cada plano histórico"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat a restored digital copy as proof of original stock",
+              "nb": "Bruk en restaurert digital kopi som bevis på original filmtype",
+              "fr": "Prendre une copie numérique restaurée pour preuve de la pellicule originale",
+              "pt": "Tomar uma cópia digital restaurada como prova da película original"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record documented stock and resource constraints without embellishment",
+              "nb": "Registrer dokumenterte filmtyper og ressursbegrensninger uten overdrivelse",
+              "fr": "Consigner pellicules et contraintes attestées sans embellissement",
+              "pt": "Registar películas e limitações documentadas sem exagero"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI describes scarce resources and mixed stock; Criterion documents the restored presentation. Keep original production conditions separate from later restoration evidence.",
+          "nb": "BFI beskriver knappe ressurser og blandede filmtyper; Criterion dokumenterer restaurert visning. Skill opprinnelige produksjonsforhold fra senere restaureringsbelegg.",
+          "fr": "Le BFI décrit la pénurie et les pellicules variées ; Criterion documente la présentation restaurée. Distinguez conditions originales et restauration ultérieure.",
+          "pt": "O BFI descreve escassez e películas variadas; a Criterion documenta a apresentação restaurada. Separe condições originais e restauro posterior."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_double_indemnity_1944",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Double Indemnity: confession, shadow and studio regulation.",
+      "nb": "Double Indemnity: tilståelse, skygge og studioregulering.",
+      "fr": "Assurance sur la mort : confession, ombre et réglementation du studio.",
+      "pt": "Double Indemnity: confissão, sombra e regulação do estúdio."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Double Indemnity",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/2201-DOUBLE-INDEMNITY"
+      },
+      {
+        "id": "s1",
+        "title": "Double Indemnity (1944)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/fbc40f9d-5a17-565a-a2bd-b809efb588fb/double-indemnity"
+      },
+      {
+        "id": "s2",
+        "title": "On this day in 1944: Double Indemnity premiered",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/double-indemnity"
+      },
+      {
+        "id": "s3",
+        "title": "National Film Registry descriptions and essays",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/programs/national-film-preservation-board/film-registry/descriptions-and-essays/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "doubleindemnity-confession",
+        "area": "sound",
+        "prompt": {
+          "en": "How can recorded narration frame a fictional flashback?",
+          "nb": "Hvordan kan innspilt fortellerstemme ramme inn et fiktivt tilbakeblikk?",
+          "fr": "Comment une narration enregistrée encadre-t-elle un flashback fictif ?",
+          "pt": "Como pode uma narração gravada enquadrar um flashback fictício?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat the narrator as automatically objective and omniscient",
+              "nb": "Behandle fortelleren som automatisk objektiv og allvitende",
+              "fr": "Considérer le narrateur comme forcément objectif et omniscient",
+              "pt": "Considerar o narrador automaticamente objetivo e omnisciente"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Establish a narrator whose account structures the remembered scenes",
+              "nb": "Etabler en forteller hvis beretning organiserer de erindrede scenene",
+              "fr": "Établir un narrateur dont le récit structure les scènes remémorées",
+              "pt": "Estabelecer um narrador cujo relato estrutura as cenas recordadas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Make the narration unrelated to the remembered events",
+              "nb": "Gjør fortellerstemmen urelatert til de erindrede hendelsene",
+              "fr": "Rendre la narration sans rapport avec les événements remémorés",
+              "pt": "Tornar a narração alheia aos acontecimentos recordados"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI and the Registry describe the dictaphone confession and flashback frame. Design an original recording-led structure while recognizing the narrator’s limited perspective.",
+          "nb": "BFI og filmregisteret beskriver diktafontilståelsen og tilbakeblikksrammen. Utform en egen struktur med innspilt fortellerstemme og begrenset perspektiv.",
+          "fr": "Le BFI et le registre décrivent la confession au dictaphone et les flashbacks. Concevez une structure originale à voix enregistrée en reconnaissant son point de vue limité.",
+          "pt": "O BFI e o registo descrevem a confissão ao ditafone e os flashbacks. Conceba uma estrutura original com voz gravada reconhecendo a perspetiva limitada."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "doubleindemnity-shadow",
+        "area": "camera",
+        "prompt": {
+          "en": "How can lighting support a character’s restricted perspective?",
+          "nb": "Hvordan kan lys støtte en figurs begrensede perspektiv?",
+          "fr": "Comment la lumière peut-elle soutenir le point de vue limité d’un personnage ?",
+          "pt": "Como pode a luz apoiar a perspetiva limitada de uma personagem?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Make every frame dark without spatial or dramatic purpose",
+              "nb": "Gjør alle bilder mørke uten romlig eller dramatisk hensikt",
+              "fr": "Assombrir chaque image sans fonction spatiale ou dramatique",
+              "pt": "Escurecer cada imagem sem função espacial ou dramática"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use modern grading as proof of the original lighting setup",
+              "nb": "Bruk moderne fargegradering som bevis for det opprinnelige lysoppsettet",
+              "fr": "Prendre l’étalonnage moderne pour preuve de l’éclairage original",
+              "pt": "Usar gradação moderna como prova da iluminação original"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use motivated contrasts and carefully placed shadows",
+              "nb": "Bruk motiverte kontraster og bevisst plasserte skygger",
+              "fr": "Utiliser des contrastes motivés et des ombres placées avec soin",
+              "pt": "Usar contrastes motivados e sombras colocadas com cuidado"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI credits John F. Seitz, and BFI discusses controlled shadows and angles. Make an original lighting diagram without claiming to reconstruct an undocumented setup.",
+          "nb": "AFI krediterer John F. Seitz, og BFI drøfter kontrollerte skygger og vinkler. Lag et eget lysskjema uten å påstå at et udokumentert oppsett er rekonstruert.",
+          "fr": "L’AFI crédite John F. Seitz et le BFI analyse ombres et angles. Dessinez un éclairage original sans prétendre reconstruire un dispositif non documenté.",
+          "pt": "A AFI credita John F. Seitz e o BFI analisa sombras e ângulos. Desenhe iluminação original sem alegar reconstrução de um dispositivo não documentado."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "doubleindemnity-regulation",
+        "area": "research",
+        "prompt": {
+          "en": "How should the film’s censorship and genre history be recorded?",
+          "nb": "Hvordan bør filmens sensur- og sjangerhistorie dokumenteres?",
+          "fr": "Comment documenter la censure et l’histoire du genre du film ?",
+          "pt": "Como documentar a censura e a história do género do filme?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Separate Production Code negotiations from later noir classification",
+              "nb": "Skill Production Code-forhandlinger fra senere noir-klassifisering",
+              "fr": "Distinguer négociations du Code de production et classement noir ultérieur",
+              "pt": "Separar negociações do Código de Produção da classificação noir posterior"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume film noir was a fixed contemporary studio label",
+              "nb": "Anta at film noir var en fast samtidig studiobetegnelse",
+              "fr": "Supposer que film noir était une catégorie de studio fixe à l’époque",
+              "pt": "Supor que film noir era uma categoria fixa dos estúdios da época"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Invent specific censorship demands without records",
+              "nb": "Dikt opp bestemte sensurkrav uten dokumentasjon",
+              "fr": "Inventer des exigences de censure sans archives",
+              "pt": "Inventar exigências de censura sem registos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI documents Code negotiations and BFI places the film in a cycle later called noir. Distinguish production records from retrospective critical terminology.",
+          "nb": "AFI dokumenterer kodeforhandlinger, og BFI plasserer filmen i en syklus som senere ble kalt noir. Skill produksjonsdokumentasjon fra retrospektive kritikerbegreper.",
+          "fr": "L’AFI documente les négociations du Code et le BFI situe le film dans un cycle nommé noir plus tard. Distinguez archives de production et terminologie critique rétrospective.",
+          "pt": "A AFI documenta negociações do Código e o BFI situa o filme num ciclo mais tarde chamado noir. Distinga arquivos de produção e terminologia crítica retrospetiva."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_brief_encounter_1945",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Brief Encounter: memory, emotional restraint and musical recurrence.",
+      "nb": "Brief Encounter: erindring, følelsesmessig tilbakeholdenhet og musikalsk gjentakelse.",
+      "fr": "Brève Rencontre : mémoire, retenue émotionnelle et retour musical.",
+      "pt": "Breve Encontro: memória, contenção emocional e recorrência musical."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Brief Encounter (1945)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/9fb16d4b-9efa-5913-b073-90bff73bf1e4/brief-encounter"
+      },
+      {
+        "id": "s1",
+        "title": "Brief Encounter credits",
+        "publisher": "British Film Institute",
+        "url": "https://old.bfi.org.uk/lean/material.php?theme=1&title=brief_encounter&type=Credits"
+      },
+      {
+        "id": "s2",
+        "title": "Brief Encounter",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/345-brief-encounter"
+      },
+      {
+        "id": "s3",
+        "title": "Brief Encounter – a return ticket to Temptation",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/brief-encounter-return-ticket-temptation"
+      }
+    ],
+    "questions": [
+      {
+        "id": "briefencounter-memory",
+        "area": "research",
+        "prompt": {
+          "en": "How can a framing scene change the meaning of remembered events?",
+          "nb": "Hvordan kan en rammescene endre betydningen av erindrede hendelser?",
+          "fr": "Comment une scène-cadre transforme-t-elle le sens des événements remémorés ?",
+          "pt": "Como pode uma cena de enquadramento alterar o sentido dos acontecimentos recordados?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Flatten every memory into an objective chronological account",
+              "nb": "Gjør alle minner til en objektiv kronologisk beretning",
+              "fr": "Réduire tous les souvenirs à un récit chronologique objectif",
+              "pt": "Reduzir todas as memórias a um relato cronológico objetivo"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Make the framing scene unrelated to the emotional conflict",
+              "nb": "Gjør rammescenen urelatert til følelseskonflikten",
+              "fr": "Rendre la scène-cadre étrangère au conflit émotionnel",
+              "pt": "Tornar a cena de enquadramento alheia ao conflito emocional"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map the framing present and the character’s remembered sequence",
+              "nb": "Kartlegg nåtidens ramme og figurens erindrede hendelsesforløp",
+              "fr": "Cartographier le présent du cadre et la séquence remémorée",
+              "pt": "Mapear o presente do enquadramento e a sequência recordada"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The BFI dossier identifies the Coward adaptation and restrained melodrama. Plan an original memory frame that gives earlier actions a changed emotional meaning.",
+          "nb": "BFI-dokumentasjonen identifiserer Coward-adaptasjonen og det tilbakeholdne melodramaet. Planlegg en egen minneramme som endrer handlingenes følelsesmessige betydning.",
+          "fr": "Le dossier BFI identifie l’adaptation de Coward et le mélodrame retenu. Concevez un cadre mémoriel original qui change le sens affectif des actions.",
+          "pt": "O dossier BFI identifica a adaptação de Coward e o melodrama contido. Conceba um enquadramento de memória original que altere o sentido emocional das ações."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "briefencounter-station",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a railway setting express tension through ordinary activity?",
+          "nb": "Hvordan kan et jernbanemiljø uttrykke spenning gjennom hverdagsaktivitet?",
+          "fr": "Comment un cadre ferroviaire exprime-t-il la tension par l’activité quotidienne ?",
+          "pt": "Como pode um ambiente ferroviário exprimir tensão através da atividade quotidiana?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Coordinate blocking, waiting spaces and passing background movement",
+              "nb": "Samordne plassering, venterom og passerende bakgrunnsbevegelse",
+              "fr": "Coordonner placement, espaces d’attente et mouvements en arrière-plan",
+              "pt": "Coordenar marcação, espaços de espera e movimento de fundo"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Ignore the station layout when cutting between characters",
+              "nb": "Ignorer stasjonens plan når du klipper mellom figurer",
+              "fr": "Ignorer la disposition de la gare en montant les personnages",
+              "pt": "Ignorar a disposição da estação ao montar as personagens"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume every station image is an unaltered location shot",
+              "nb": "Anta at alle stasjonsbilder er uendrede stedsopptak",
+              "fr": "Supposer que chaque image de gare est une prise réelle non modifiée",
+              "pt": "Supor que cada imagem da estação é uma tomada local inalterada"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI records Krasker’s photography and back projection; Criterion discusses atmosphere and performance. Design an original station scene while distinguishing constructed and location elements.",
+          "nb": "BFI dokumenterer Kraskers foto og bakprojeksjon; Criterion drøfter atmosfære og skuespill. Utform en egen stasjonsscene med skille mellom konstruerte elementer og stedsopptak.",
+          "fr": "Le BFI documente la photographie de Krasker et la transparence ; Criterion analyse atmosphère et jeu. Concevez une gare fictive en distinguant décor et lieux réels.",
+          "pt": "O BFI documenta fotografia de Krasker e retroprojeção; a Criterion analisa atmosfera e interpretação. Conceba uma estação fictícia distinguindo cenários e locais reais."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "briefencounter-music",
+        "area": "sound",
+        "prompt": {
+          "en": "How can recurring music shape the emotional arc of a scene?",
+          "nb": "Hvordan kan gjentakende musikk forme scenens følelseskurve?",
+          "fr": "Comment une musique récurrente façonne-t-elle l’arc émotionnel d’une scène ?",
+          "pt": "Como pode música recorrente moldar o arco emocional de uma cena?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume all soundtrack music was performed on camera",
+              "nb": "Anta at all lydspormusikk ble fremført foran kamera",
+              "fr": "Supposer que toute la musique a été jouée devant la caméra",
+              "pt": "Supor que toda a música foi executada diante da câmara"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Vary when a musical motif returns and when silence intervenes",
+              "nb": "Varier når et musikalsk motiv kommer tilbake og når stillhet bryter inn",
+              "fr": "Varier le retour du motif musical et les interventions du silence",
+              "pt": "Variar o regresso do motivo musical e a intervenção do silêncio"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Repeat an identical cue continuously without dramatic purpose",
+              "nb": "Gjenta et identisk lydinnslag kontinuerlig uten dramatisk formål",
+              "fr": "Répéter un signal identique en continu sans fonction dramatique",
+              "pt": "Repetir um sinal idêntico continuamente sem função dramática"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI identifies the Rachmaninoff concerto and Criterion discusses recurring music. Plan an original motif and distinguish recorded score from sounds within the fictional setting.",
+          "nb": "BFI identifiserer Rachmaninoffs konsert, og Criterion drøfter gjentakende musikk. Planlegg et eget motiv og skill innspilt filmmusikk fra lyd i fiksjonsmiljøet.",
+          "fr": "Le BFI identifie le concerto de Rachmaninov et Criterion analyse la musique récurrente. Concevez un motif original distinct des sons de l’espace fictif.",
+          "pt": "O BFI identifica o concerto de Rachmaninoff e a Criterion analisa música recorrente. Conceba um motivo original distinto dos sons do espaço fictício."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_third_man_1949",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "The Third Man: location, multi-unit continuity and distinctive score.",
+      "nb": "The Third Man: location, kontinuitet mellom opptaksteam og særpreget filmmusikk.",
+      "fr": "Le Troisième Homme : lieux, continuité des équipes et musique singulière.",
+      "pt": "O Terceiro Homem: locais, continuidade entre equipas e música singular."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The Third Man (1949)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/66989662-47c2-5fc6-9085-b0107ca99723/the-third-man"
+      },
+      {
+        "id": "s1",
+        "title": "How we made The Third Man",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/interviews/how-we-made-third-man-angela-allen-orson-welles-carol-reed"
+      },
+      {
+        "id": "s2",
+        "title": "The Third Man",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/236-the-third-man"
+      },
+      {
+        "id": "s3",
+        "title": "Behind The Third Man",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/current/posts/1020-behind-the-third-man"
+      }
+    ],
+    "questions": [
+      {
+        "id": "thethirdman-space",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a location express a character’s uncertainty?",
+          "nb": "Hvordan kan et sted uttrykke en figurs usikkerhet?",
+          "fr": "Comment un lieu exprime-t-il l’incertitude d’un personnage ?",
+          "pt": "Como pode um local exprimir a incerteza de uma personagem?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use architecture, selective framing and purposeful tilted compositions",
+              "nb": "Bruk arkitektur, selektive utsnitt og målrettede skrå komposisjoner",
+              "fr": "Utiliser architecture, cadrages sélectifs et compositions inclinées motivées",
+              "pt": "Usar arquitetura, enquadramento seletivo e composições inclinadas motivadas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Tilt every image without regard to dramatic context",
+              "nb": "Gjør alle bilder skrå uansett dramatisk sammenheng",
+              "fr": "Incliner chaque image sans tenir compte du contexte dramatique",
+              "pt": "Inclinar todas as imagens sem atender ao contexto dramático"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat a fictional shot as a complete record of the city",
+              "nb": "Behandle et fiktivt bilde som en fullstendig dokumentasjon av byen",
+              "fr": "Traiter un plan fictif comme un relevé complet de la ville",
+              "pt": "Tratar um plano fictício como registo completo da cidade"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI connects Krasker’s angled imagery with damaged Vienna locations. Design original frames that express uncertainty while retaining location context.",
+          "nb": "BFI knytter Kraskers skrå bilder til det ødelagte Wien. Utform egne utsnitt som uttrykker usikkerhet samtidig som stedets kontekst bevares.",
+          "fr": "Le BFI relie les angles de Krasker aux lieux viennois endommagés. Créez des cadrages originaux exprimant l’incertitude tout en conservant le contexte du lieu.",
+          "pt": "O BFI relaciona os ângulos de Krasker com locais danificados de Viena. Crie enquadramentos originais que expressem incerteza preservando o contexto do lugar."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "thethirdman-units",
+        "area": "research",
+        "prompt": {
+          "en": "How can separate filming units maintain coherent screen continuity?",
+          "nb": "Hvordan kan separate opptaksteam opprettholde sammenhengende filmkontinuitet?",
+          "fr": "Comment des équipes séparées maintiennent-elles une continuité cohérente ?",
+          "pt": "Como podem equipas separadas manter continuidade coerente no ecrã?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume all studio reconstructions were filmed on location",
+              "nb": "Anta at alle studiorekonstruksjoner ble filmet på location",
+              "fr": "Supposer que toutes les reconstitutions de studio ont été tournées sur place",
+              "pt": "Supor que todas as reconstruções de estúdio foram filmadas no local"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Share reference frames, continuity notes and matching requirements",
+              "nb": "Del referansebilder, kontinuitetsnotater og krav til samsvar",
+              "fr": "Partager images de référence, notes de continuité et exigences de raccord",
+              "pt": "Partilhar imagens de referência, notas de continuidade e requisitos de correspondência"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Let each unit independently change screen direction and lighting",
+              "nb": "La hvert team endre skjermretning og lys uavhengig",
+              "fr": "Laisser chaque équipe modifier seule direction et éclairage",
+              "pt": "Deixar cada equipa alterar independentemente direção e iluminação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Angela Allen’s BFI interview and Criterion document multiple units, plates and studio reconstruction. Plan a fictional handoff without inventing individual shot histories.",
+          "nb": "Angela Allens BFI-intervju og Criterion dokumenterer flere team, bakgrunnsopptak og studiorekonstruksjon. Planlegg en fiktiv overlevering uten å dikte opp historien til enkeltbilder.",
+          "fr": "L’entretien BFI d’Angela Allen et Criterion documentent équipes multiples, plaques et reconstruction. Concevez un relais fictif sans inventer l’histoire de chaque plan.",
+          "pt": "A entrevista BFI de Angela Allen e a Criterion documentam equipas múltiplas, placas e reconstrução. Planeie uma passagem fictícia sem inventar a história de cada plano."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "thethirdman-score",
+        "area": "sound",
+        "prompt": {
+          "en": "How can a distinctive instrumental score alter a thriller’s tone?",
+          "nb": "Hvordan kan særpreget instrumentalmusikk endre thrillerens tone?",
+          "fr": "Comment une musique instrumentale singulière modifie-t-elle le ton d’un thriller ?",
+          "pt": "Como pode uma música instrumental singular alterar o tom de um thriller?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Replace the score with generic suspense music in every scene",
+              "nb": "Erstatt musikken med generisk spenningsmusikk i alle scener",
+              "fr": "Remplacer la musique par un suspense sonore générique dans chaque scène",
+              "pt": "Substituir a música por suspense sonoro genérico em todas as cenas"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume every instrumental cue represents a sound within the scene",
+              "nb": "Anta at hvert instrumentale innslag er en lyd i scenen",
+              "fr": "Supposer que chaque intervention instrumentale est un son de la scène",
+              "pt": "Supor que cada intervenção instrumental é um som da cena"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Experiment with contrast between musical character and dramatic tension",
+              "nb": "Eksperimenter med kontrast mellom musikkens karakter og dramatisk spenning",
+              "fr": "Expérimenter le contraste entre caractère musical et tension dramatique",
+              "pt": "Experimentar o contraste entre caráter musical e tensão dramática"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI and Criterion identify Anton Karas’s zither score and its production history. Create an original contrastive cue without copying the existing music.",
+          "nb": "BFI og Criterion identifiserer Anton Karas' sitermusikk og produksjonshistorie. Lag et eget kontrasterende lydinnslag uten å kopiere den eksisterende musikken.",
+          "fr": "Le BFI et Criterion identifient la cithare d’Anton Karas et son histoire de production. Créez un contraste musical original sans copier la musique existante.",
+          "pt": "O BFI e a Criterion identificam a cítara de Anton Karas e a sua história de produção. Crie um contraste musical original sem copiar a música existente."
+        },
+        "sourceIds": [
+          "s0",
+          "s2",
+          "s3"
         ]
       }
     ]

@@ -101,15 +101,19 @@ const ids = [
   "scenario_the_wizard_of_oz_1939",
   "scenario_citizen_kane_1941",
   "scenario_casablanca_1942",
+  "scenario_rome_open_city_1945",
+  "scenario_double_indemnity_1944",
+  "scenario_brief_encounter_1945",
+  "scenario_the_third_man_1949",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly ninety-two existing cases have two hundred and seventy-six original, source-backed decisions", () => {
+test("Exactly ninety-six existing cases have two hundred and eighty-eight original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 92);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 276);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 96);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 288);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -300,6 +304,14 @@ test("Exactly ninety-two existing cases have two hundred and seventy-six origina
     } else if (["scenario_stagecoach_1939","scenario_the_wizard_of_oz_1939","scenario_citizen_kane_1941","scenario_casablanca_1942"].includes(workshop.scenarioId)) {
       assert.ok(readFileSync("src/core/earlyCinemaExpansion.ts", "utf8").includes(workshop.scenarioId));
       const verification = readFileSync("src/ui/data/scenarioProductionVerificationClassicalHollywoodBatch.ts", "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const next = verification.indexOf("\n  },", start);
+      const section = verification.slice(start, next < 0 ? undefined : next);
+      for (const source of workshop.sources) assert.ok(section.includes(source.url));
+    } else if (["scenario_rome_open_city_1945","scenario_double_indemnity_1944","scenario_brief_encounter_1945","scenario_the_third_man_1949"].includes(workshop.scenarioId)) {
+      assert.ok(readFileSync("src/core/earlyCinemaExpansion.ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync("src/ui/data/scenarioProductionVerification1940sNoirRealismBatch.ts", "utf8");
       const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
       assert.ok(start >= 0);
       const next = verification.indexOf("\n  },", start);
@@ -794,4 +806,12 @@ test("Classical Hollywood workshops preserve film-specific craft and evidence", 
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_wizard_of_oz_1939")?.questions.map(q => q.id), ["thewizardofoz-color","thewizardofoz-song","thewizardofoz-departments"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_citizen_kane_1941")?.questions.map(q => q.id), ["citizenkane-depth","citizenkane-testimony","citizenkane-sound"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_casablanca_1942")?.questions.map(q => q.id), ["casablanca-revision","casablanca-studio","casablanca-music"]);
+});
+
+
+test("Postwar and wartime transition workshops preserve film-specific evidence", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_rome_open_city_1945")?.questions.map(q => q.id), ["romeopencity-locations","romeopencity-performance","romeopencity-stock"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_double_indemnity_1944")?.questions.map(q => q.id), ["doubleindemnity-confession","doubleindemnity-shadow","doubleindemnity-regulation"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_brief_encounter_1945")?.questions.map(q => q.id), ["briefencounter-memory","briefencounter-station","briefencounter-music"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_third_man_1949")?.questions.map(q => q.id), ["thethirdman-space","thethirdman-units","thethirdman-score"]);
 });
