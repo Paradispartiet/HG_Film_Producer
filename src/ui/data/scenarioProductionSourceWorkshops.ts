@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Forty-six pre-existing Production Cases receive evidence-backed craft decisions.
+ * Forty-eight pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -7290,6 +7290,382 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
         "sourceIds": [
           "s0",
           "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_coeur_fidele_1923",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore subjective perception, rhythmic editing and collaborative French Impressionist production.",
+      "nb": "Utforsk subjektiv persepsjon, rytmisk klipping og samarbeid i fransk impresjonistisk filmproduksjon.",
+      "fr": "Explorez la perception subjective, le montage rythmique et la production collective impressionniste française.",
+      "pt": "Explore a perceção subjetiva, a montagem rítmica e a produção colaborativa impressionista francesa."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Cœur fidèle",
+        "publisher": "La Cinémathèque française",
+        "url": "https://www.cinematheque.fr/film/48086.html"
+      },
+      {
+        "id": "s1",
+        "title": "Jean Epstein — Catalogue des restaurations et tirages",
+        "publisher": "La Cinémathèque française",
+        "url": "https://www.cinematheque.fr/catalogues/restaurations-tirages/corpus.php?id=7"
+      },
+      {
+        "id": "s2",
+        "title": "10 great films of 1923",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-films-1923"
+      },
+      {
+        "id": "s3",
+        "title": "10 great silent romances",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-silent-romances"
+      }
+    ],
+    "questions": [
+      {
+        "id": "coeur-rhythm",
+        "area": "camera",
+        "prompt": {
+          "en": "How could editing rhythm change the experience of an ordinary fictional fairground?",
+          "nb": "Hvordan kan klipperytmen endre opplevelsen av et vanlig fiktivt tivoli?",
+          "fr": "Comment le rythme du montage peut-il modifier l'expérience d'une fête foraine fictive ?",
+          "pt": "Como pode o ritmo da montagem alterar a experiência de uma feira fictícia?"
+        },
+        "options": [
+          {
+            "id": "rhythm",
+            "label": {
+              "en": "Compare two drawn sequences with different durations and viewpoints",
+              "nb": "Sammenlign to tegnede sekvenser med ulike varigheter og synsvinkler",
+              "fr": "Comparer deux séquences dessinées aux durées et points de vue différents",
+              "pt": "Comparar duas sequências desenhadas com durações e pontos de vista diferentes"
+            }
+          },
+          {
+            "id": "random",
+            "label": {
+              "en": "Change every image at random without considering perception",
+              "nb": "Endre hvert bilde tilfeldig uten hensyn til persepsjon",
+              "fr": "Modifier chaque image au hasard sans considérer la perception",
+              "pt": "Alterar cada imagem ao acaso sem considerar a perceção"
+            }
+          },
+          {
+            "id": "copy",
+            "label": {
+              "en": "Claim the exercise reproduces the exact historical editing pattern",
+              "nb": "Hevd at øvelsen gjengir det eksakte historiske klippemønsteret",
+              "fr": "Prétendre reproduire le montage historique exact",
+              "pt": "Afirmar que o exercício reproduz a montagem histórica exata"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "rhythm",
+        "explanation": {
+          "en": "BFI highlights subjective camera work and the fairground sequence. Compare the rhythm of original drawings to explore perception and emotion, without presenting an invented sequence as the historical cut.",
+          "nb": "BFI fremhever subjektivt kamera og tivolisekvensen. Sammenlign rytmen i egne tegninger for å utforske persepsjon og følelser uten å fremstille en oppdiktet sekvens som den historiske klippen.",
+          "fr": "Le BFI souligne la caméra subjective et la fête foraine. Comparez le rythme de dessins originaux pour explorer perception et émotion sans les présenter comme le montage historique.",
+          "pt": "O BFI destaca a câmara subjetiva e a feira. Compare o ritmo de desenhos originais para explorar perceção e emoção sem os apresentar como a montagem histórica."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "coeur-photogenie",
+        "area": "research",
+        "prompt": {
+          "en": "How should photogénie be approached as a historical film-theory concept?",
+          "nb": "Hvordan bør fotogeni behandles som et historisk filmteoretisk begrep?",
+          "fr": "Comment aborder la photogénie comme notion historique de théorie du cinéma ?",
+          "pt": "Como abordar a fotogenia como conceito histórico de teoria cinematográfica?"
+        },
+        "options": [
+          {
+            "id": "preset",
+            "label": {
+              "en": "Define it as a single universal camera filter",
+              "nb": "Definer begrepet som ett universelt kamerafilter",
+              "fr": "Le définir comme un filtre de caméra universel",
+              "pt": "Definir o conceito como um filtro universal de câmara"
+            }
+          },
+          {
+            "id": "theory",
+            "label": {
+              "en": "Compare transformations of an object through framing, duration and movement",
+              "nb": "Sammenlign hvordan en gjenstand forvandles gjennom utsnitt, varighet og bevegelse",
+              "fr": "Comparer les transformations d'un objet par le cadre, la durée et le mouvement",
+              "pt": "Comparar transformações de um objeto pelo enquadramento, duração e movimento"
+            }
+          },
+          {
+            "id": "score",
+            "label": {
+              "en": "Assign a definitive numerical photogénie score to all films",
+              "nb": "Gi alle filmer en definitiv numerisk fotogenipoengsum",
+              "fr": "Attribuer à tous les films une note définitive de photogénie",
+              "pt": "Atribuir a todos os filmes uma nota definitiva de fotogenia"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "theory",
+        "explanation": {
+          "en": "The Cinémathèque's Epstein corpus connects photogénie with time, movement and transformation. Explore the concept through contrasting original images rather than reducing a historical theory to a fixed effect or score.",
+          "nb": "Cinémathèques Epstein-korpus knytter fotogeni til tid, bevegelse og forvandling. Utforsk begrepet gjennom kontrasterende egne bilder fremfor å redusere historisk teori til en fast effekt eller poengsum.",
+          "fr": "Le corpus Epstein de la Cinémathèque relie la photogénie au temps, au mouvement et à la transformation. Explorez la notion par des images originales contrastées plutôt que par un effet ou une note fixe.",
+          "pt": "O corpus Epstein da Cinémathèque relaciona fotogenia com tempo, movimento e transformação. Explore o conceito com imagens originais contrastantes em vez de um efeito ou nota fixa."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "coeur-credits",
+        "area": "research",
+        "prompt": {
+          "en": "How should the film's creative collaboration and formal experiments be credited?",
+          "nb": "Hvordan bør filmens kreative samarbeid og formeksperimenter krediteres?",
+          "fr": "Comment attribuer les collaborations créatives et les expériences formelles du film ?",
+          "pt": "Como atribuir as colaborações criativas e experiências formais do filme?"
+        },
+        "options": [
+          {
+            "id": "solo",
+            "label": {
+              "en": "Credit every contribution and technique exclusively to Jean Epstein",
+              "nb": "Tilskriv alle bidrag og teknikker utelukkende Jean Epstein",
+              "fr": "Attribuer chaque contribution et technique au seul Jean Epstein",
+              "pt": "Atribuir cada contributo e técnica exclusivamente a Jean Epstein"
+            }
+          },
+          {
+            "id": "invent",
+            "label": {
+              "en": "Declare that the film invented every technique it uses",
+              "nb": "Erklær at filmen oppfant alle teknikkene den bruker",
+              "fr": "Déclarer que le film invente toutes les techniques utilisées",
+              "pt": "Declarar que o filme inventou todas as técnicas utilizadas"
+            }
+          },
+          {
+            "id": "team",
+            "label": {
+              "en": "Distinguish the Epstein writing collaboration, camera team and production company",
+              "nb": "Skill Epstein-samarbeidet om manus, kamerateamet og produksjonsselskapet",
+              "fr": "Distinguer l'écriture des Epstein, l'équipe image et la société de production",
+              "pt": "Distinguir a escrita dos Epstein, a equipa de fotografia e a produtora"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "team",
+        "explanation": {
+          "en": "The Cinémathèque identifies Jean and Marie Epstein, Paul Guichard, camera operators and Pathé Consortium Cinéma. Preserve documented roles and its caution about treating the film's synthesis as an invention of every technique.",
+          "nb": "Cinémathèque identifiserer Jean og Marie Epstein, Paul Guichard, kameraoperatører og Pathé Consortium Cinéma. Bevar dokumenterte roller og forbeholdet mot å fremstille filmens syntese som oppfinnelsen av alle teknikkene.",
+          "fr": "La Cinémathèque identifie Jean et Marie Epstein, Paul Guichard, les opérateurs et Pathé Consortium Cinéma. Préservez les rôles attestés et sa réserve envers les affirmations d'invention de toutes les techniques.",
+          "pt": "A Cinémathèque identifica Jean e Marie Epstein, Paul Guichard, operadores e Pathé Consortium Cinéma. Preserve os papéis documentados e a reserva quanto à invenção de todas as técnicas."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_smiling_madame_beudet_1923",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore interior subjectivity, domestic space and feminist interpretation in Germaine Dulac's film.",
+      "nb": "Utforsk indre subjektivitet, hjemmets rom og feministisk tolkning i Germaine Dulacs film.",
+      "fr": "Explorez la subjectivité intérieure, l'espace domestique et l'interprétation féministe du film de Germaine Dulac.",
+      "pt": "Explore a subjetividade interior, o espaço doméstico e a interpretação feminista do filme de Germaine Dulac."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "La Souriante madame Beudet",
+        "publisher": "La Cinémathèque française",
+        "url": "https://www.cinematheque.fr/film/57083.html"
+      },
+      {
+        "id": "s1",
+        "title": "Germaine Dulac : sensations cinégraphiques à la Maison des rêves",
+        "publisher": "La Cinémathèque française",
+        "url": "https://www.cinematheque.fr/article/1755.html"
+      },
+      {
+        "id": "s2",
+        "title": "Programme Germaine Dulac",
+        "publisher": "Fondation Jérôme Seydoux-Pathé",
+        "url": "https://www.fondation-jeromeseydoux-pathe.com/event/3234"
+      },
+      {
+        "id": "s3",
+        "title": "10 great films of 1923 — The Smiling Madame Beudet",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-films-1923"
+      }
+    ],
+    "questions": [
+      {
+        "id": "beudet-inner",
+        "area": "camera",
+        "prompt": {
+          "en": "How can an original visual sequence distinguish an imagined moment from everyday surroundings?",
+          "nb": "Hvordan kan en egen visuell sekvens skille et forestilt øyeblikk fra hverdagslige omgivelser?",
+          "fr": "Comment une séquence visuelle originale peut-elle distinguer un moment imaginé du cadre quotidien ?",
+          "pt": "Como pode uma sequência visual original distinguir um momento imaginado do ambiente quotidiano?"
+        },
+        "options": [
+          {
+            "id": "contrast",
+            "label": {
+              "en": "Compare ordinary room drawings with associative images of a character's imagined freedom",
+              "nb": "Sammenlign tegninger av et vanlig rom med assosiative bilder av figurens forestilte frihet",
+              "fr": "Comparer des dessins d'une pièce ordinaire et des images associatives de liberté imaginée",
+              "pt": "Comparar desenhos de uma divisão comum com imagens associativas de liberdade imaginada"
+            }
+          },
+          {
+            "id": "literal",
+            "label": {
+              "en": "Treat every imagined image as a literal event in the story",
+              "nb": "Behandle alle forestilte bilder som bokstavelige hendelser i fortellingen",
+              "fr": "Traiter chaque image imaginée comme un événement littéral du récit",
+              "pt": "Tratar cada imagem imaginada como acontecimento literal da narrativa"
+            }
+          },
+          {
+            "id": "erase",
+            "label": {
+              "en": "Remove the character's perspective from every framing choice",
+              "nb": "Fjern figurens perspektiv fra alle valg av utsnitt",
+              "fr": "Supprimer le point de vue du personnage de chaque cadrage",
+              "pt": "Eliminar o ponto de vista da personagem de cada enquadramento"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "contrast",
+        "explanation": {
+          "en": "Cinémathèque scholarship and BFI connect Dulac's associative imagery with women's interior lives and the contrast between domestic constraint and imagination. Explore this through a new benign scene, not a reenactment of the film.",
+          "nb": "Cinémathèques fagstoff og BFI knytter Dulacs assosiative bilder til kvinners indre liv og kontrasten mellom hjemmets begrensninger og fantasi. Utforsk dette gjennom en egen ufarlig scene, ikke en rekonstruksjon av filmen.",
+          "fr": "La Cinémathèque et le BFI relient les images associatives de Dulac à la vie intérieure des femmes et au contraste entre contrainte domestique et imagination. Explorez ce lien dans une nouvelle scène sans danger.",
+          "pt": "A Cinémathèque e o BFI relacionam imagens associativas de Dulac com a vida interior das mulheres e o contraste entre restrição doméstica e imaginação. Explore essa relação numa nova cena inofensiva."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "beudet-pointofview",
+        "area": "research",
+        "prompt": {
+          "en": "How should the film's feminist perspective inform a new production exercise?",
+          "nb": "Hvordan bør filmens feministiske perspektiv informere en ny produksjonsøvelse?",
+          "fr": "Comment le point de vue féministe du film doit-il éclairer un nouvel exercice de production ?",
+          "pt": "Como deve a perspetiva feminista do filme orientar um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "stereotype",
+            "label": {
+              "en": "Replace character choices with a fixed stereotype of women",
+              "nb": "Erstatt figurens valg med en fast stereotypi om kvinner",
+              "fr": "Remplacer les choix du personnage par un stéréotype fixe des femmes",
+              "pt": "Substituir as escolhas da personagem por um estereótipo fixo das mulheres"
+            }
+          },
+          {
+            "id": "agency",
+            "label": {
+              "en": "Explore whose perspective organizes the images and whose choices are constrained",
+              "nb": "Utforsk hvilket perspektiv som organiserer bildene og hvilke valg som begrenses",
+              "fr": "Examiner quel point de vue organise les images et quels choix sont limités",
+              "pt": "Examinar que perspetiva organiza as imagens e que escolhas são limitadas"
+            }
+          },
+          {
+            "id": "first",
+            "label": {
+              "en": "Declare a single film the invention of all feminist cinema",
+              "nb": "Erklær én film som oppfinnelsen av all feministisk film",
+              "fr": "Déclarer un film à l'origine de tout cinéma féministe",
+              "pt": "Declarar um filme como invenção de todo o cinema feminista"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "agency",
+        "explanation": {
+          "en": "BFI describes the film's explicitly feminist stance and the Cinémathèque situates it in Dulac's wider work. Analyze point of view and agency without stereotyping characters or asserting a universal first-film claim.",
+          "nb": "BFI beskriver filmens uttrykkelig feministiske holdning, og Cinémathèque plasserer den i Dulacs bredere arbeid. Analyser synsvinkel og handlekraft uten å stereotypisere figurer eller hevde en universell førstefilm.",
+          "fr": "Le BFI décrit la position féministe du film et la Cinémathèque le situe dans l'œuvre de Dulac. Analysez point de vue et autonomie sans stéréotypes ni affirmation de primauté absolue.",
+          "pt": "O BFI descreve a posição feminista do filme e a Cinémathèque situa-o na obra de Dulac. Analise perspetiva e autonomia sem estereótipos nem alegações de primazia absoluta."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "beudet-versions",
+        "area": "research",
+        "prompt": {
+          "en": "How should different archive durations and adaptation credits be documented?",
+          "nb": "Hvordan bør ulike arkivvarigheter og adaptasjonskrediteringer dokumenteres?",
+          "fr": "Comment documenter les différentes durées d'archives et les crédits d'adaptation ?",
+          "pt": "Como documentar diferentes durações de arquivo e créditos de adaptação?"
+        },
+        "options": [
+          {
+            "id": "average",
+            "label": {
+              "en": "Average the two durations and claim a definitive original runtime",
+              "nb": "Beregn gjennomsnittet av varighetene og hev én definitiv originalvarighet",
+              "fr": "Moyenner les durées pour affirmer une durée originale définitive",
+              "pt": "Calcular a média das durações e afirmar uma duração original definitiva"
+            }
+          },
+          {
+            "id": "solo",
+            "label": {
+              "en": "Assign all writing and production credits to the director alone",
+              "nb": "Tilskriv alle manus- og produksjonsbidrag regissøren alene",
+              "fr": "Attribuer tous les crédits d'écriture et de production à la seule réalisatrice",
+              "pt": "Atribuir todos os créditos de escrita e produção apenas à realizadora"
+            }
+          },
+          {
+            "id": "records",
+            "label": {
+              "en": "Keep each copy duration and documented adaptation and production roles separate",
+              "nb": "Hold hver kopis varighet og dokumenterte adaptasjons- og produksjonsroller adskilt",
+              "fr": "Distinguer la durée de chaque copie et les rôles attestés d'adaptation et de production",
+              "pt": "Distinguir a duração de cada cópia e os papéis documentados de adaptação e produção"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "records",
+        "explanation": {
+          "en": "The Cinémathèque lists 36 minutes and Fondation Pathé records a 38-minute Eye Filmmuseum print. Both document collaborative credits. Keep copy-specific duration and credited roles distinct rather than inventing a definitive master.",
+          "nb": "Cinémathèque oppgir 36 minutter, mens Fondation Pathé registrerer en 38-minutters kopi fra Eye Filmmuseum. Begge dokumenterer samarbeid. Hold kopispesifikk varighet og krediterte roller adskilt fremfor å dikte opp en definitiv master.",
+          "fr": "La Cinémathèque indique 36 minutes et la Fondation Pathé une copie de 38 minutes d'Eye Filmmuseum. Toutes deux documentent des collaborations. Distinguez durées des copies et crédits sans inventer un original définitif.",
+          "pt": "A Cinémathèque indica 36 minutos e a Fondation Pathé uma cópia de 38 minutos do Eye Filmmuseum. Ambas documentam colaborações. Distinga duração de cada cópia e créditos sem inventar um original definitivo."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
         ]
       }
     ]
