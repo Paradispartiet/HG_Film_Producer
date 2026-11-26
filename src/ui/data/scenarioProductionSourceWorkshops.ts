@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Seventy-seven pre-existing Production Cases receive evidence-backed craft decisions.
+ * Eighty-four pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -13255,6 +13255,1372 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
           "s0",
           "s1",
           "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_public_enemy_1931",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Study studio collaboration, performance and censorship chronology.",
+      "nb": "Studer studiosamarbeid, skuespill og sensurhistorie.",
+      "fr": "Étudiez collaboration en studio, interprétation et chronologie de la censure.",
+      "pt": "Estude colaboração em estúdio, interpretação e cronologia da censura."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The Public Enemy (1931)",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/3860-THE-PUBLIC-ENEMY"
+      },
+      {
+        "id": "s1",
+        "title": "The Public Enemy (1931) — National Film Registry description",
+        "publisher": "Library of Congress / National Film Preservation Board",
+        "url": "https://www.loc.gov/programs/national-film-preservation-board/film-registry/descriptions-and-essays/"
+      },
+      {
+        "id": "s2",
+        "title": "The Public Enemy (1931)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/9fdaa05f-3c4d-58a4-aa44-53ea85add6ff/the-public-enemy"
+      },
+      {
+        "id": "s3",
+        "title": "When ‘Pre-’ Met ‘Code’ — Eighty Years Ago Today",
+        "publisher": "Library of Congress / Now See Hear!",
+        "url": "https://blogs.loc.gov/now-see-hear/2014/07/when-pre-met-code-eighty-years-ago-today/"
+      },
+      {
+        "id": "s4",
+        "title": "Motion Picture Association of America. Production Code Administration records",
+        "publisher": "Academy of Motion Picture Arts and Sciences / Margaret Herrick Library",
+        "url": "https://digitalcollections.oscars.org/digital/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "publicenemy-studio",
+        "area": "research",
+        "prompt": {
+          "en": "How should the Warner production be credited?",
+          "nb": "Hvordan bør Warner-produksjonen krediteres?",
+          "fr": "Comment créditer la production Warner ?",
+          "pt": "Como creditar a produção Warner?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Document the writers, director and specialist departments",
+              "nb": "Dokumenter manusforfattere, regissør og fagavdelinger",
+              "fr": "Documenter les auteurs, réalisateur et métiers spécialisés",
+              "pt": "Documentar argumentistas, realizador e departamentos técnicos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Credit only the leading actor",
+              "nb": "Krediter bare hovedrolleinnehaveren",
+              "fr": "Créditer uniquement l'acteur principal",
+              "pt": "Creditar apenas o ator principal"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Repeat the disputed casting story as fact",
+              "nb": "Gjengi den omstridte rollehistorien som faktum",
+              "fr": "Répéter le récit contesté de casting comme un fait",
+              "pt": "Repetir o relato contestado do elenco como facto"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI documents Wellman and the studio team and corrects the casting-switch story. Distinguish credits from star mythology.",
+          "nb": "AFI dokumenterer Wellman og studiolaget og korrigerer rollebyttehistorien. Skill kreditering fra stjernemytologi.",
+          "fr": "L'AFI documente Wellman et l'équipe et corrige le récit du changement de rôle. Distinguez crédits et mythologie.",
+          "pt": "O AFI documenta Wellman e a equipa e corrige o relato da troca de papéis. Distinga créditos de mitologia."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "publicenemy-voice",
+        "area": "sound",
+        "prompt": {
+          "en": "How can voice shape a new comic dialogue scene?",
+          "nb": "Hvordan kan stemmen forme en ny komisk dialogscene?",
+          "fr": "Comment la voix peut-elle façonner une nouvelle scène comique ?",
+          "pt": "Como pode a voz moldar uma nova cena cómica?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat every reading as interchangeable",
+              "nb": "Behandle alle lesninger som utskiftbare",
+              "fr": "Traiter toutes les lectures comme interchangeables",
+              "pt": "Tratar todas as leituras como intercambiáveis"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare pauses and delivery in original dialogue",
+              "nb": "Sammenlign pauser og fremføring i egen dialog",
+              "fr": "Comparer pauses et jeu dans un dialogue original",
+              "pt": "Comparar pausas e interpretação num diálogo original"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Infer an exact microphone from the actor's voice",
+              "nb": "Utled en eksakt mikrofon fra skuespillerens stemme",
+              "fr": "Déduire un microphone précis de la voix",
+              "pt": "Deduzir um microfone exato da voz"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The Library of Congress identifies Cagney's star-making sound performance. Compare original dialogue readings without inventing equipment details.",
+          "nb": "Library of Congress identifiserer Cagneys gjennombrudd i lydfilm. Sammenlign egne dialoglesninger uten å dikte opp utstyrsdetaljer.",
+          "fr": "La Library of Congress situe la percée sonore de Cagney. Comparez des lectures originales sans inventer de matériel.",
+          "pt": "A Library of Congress situa a ascensão sonora de Cagney. Compare leituras originais sem inventar equipamento."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "publicenemy-code",
+        "area": "research",
+        "prompt": {
+          "en": "Which censorship chronology applies to 1931?",
+          "nb": "Hvilken sensurhistorie gjelder for 1931?",
+          "fr": "Quelle chronologie de censure s'applique en 1931 ?",
+          "pt": "Que cronologia de censura se aplica a 1931?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Apply the 1934 seal retroactively to the shoot",
+              "nb": "Bruk seglet fra 1934 retroaktivt på opptaket",
+              "fr": "Appliquer rétroactivement le visa de 1934 au tournage",
+              "pt": "Aplicar retroativamente o selo de 1934 à filmagem"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume there was no earlier censorship",
+              "nb": "Anta at det ikke fantes tidligere sensur",
+              "fr": "Supposer qu'il n'existait aucune censure antérieure",
+              "pt": "Supor que não existia censura anterior"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Distinguish the 1930 Code from the 1934 enforcement regime",
+              "nb": "Skill kodeksen fra 1930 fra håndhevingen i 1934",
+              "fr": "Distinguer le Code de 1930 de son application en 1934",
+              "pt": "Distinguir Código de 1930 de aplicação em 1934"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Library of Congress and Academy records distinguish the Code's introduction from centralized PCA enforcement. Use the production's actual chronology.",
+          "nb": "Library of Congress og Academy skiller kodeksens innføring fra sentralisert PCA-håndheving. Bruk produksjonens faktiske kronologi.",
+          "fr": "La Library of Congress et l'Academy distinguent introduction du Code et contrôle PCA centralisé. Respectez la chronologie réelle.",
+          "pt": "A Library of Congress e a Academy distinguem introdução do Código e aplicação centralizada. Respeite a cronologia real."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_dracula_1931",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Study parallel language versions, shared studios and visual atmosphere.",
+      "nb": "Studer parallelle språkversjoner, felles studioer og visuell atmosfære.",
+      "fr": "Étudiez versions linguistiques parallèles, studios partagés et atmosphère visuelle.",
+      "pt": "Estude versões linguísticas paralelas, estúdios partilhados e atmosfera visual."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Dracula (1931)",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/7690-DRACULA"
+      },
+      {
+        "id": "s1",
+        "title": "Drácula (1931)",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Catalog/moviedetails/1306"
+      },
+      {
+        "id": "s2",
+        "title": "DRÁCULA (1931)",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://pstlala.oscars.org/event/dracula-1931/"
+      },
+      {
+        "id": "s3",
+        "title": "From the National Film Registry: Drácula (1931)",
+        "publisher": "Library of Congress / National Audio-Visual Conservation Center",
+        "url": "https://blogs.loc.gov/now-see-hear/2022/10/from-the-national-film-registry-drcula-1931/"
+      },
+      {
+        "id": "s4",
+        "title": "Where to begin with the Universal horror cycle",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/where-begin-universal-horror-cycle"
+      }
+    ],
+    "questions": [
+      {
+        "id": "dracula-versions",
+        "area": "research",
+        "prompt": {
+          "en": "How should the two Dracula productions be catalogued?",
+          "nb": "Hvordan bør de to Dracula-produksjonene katalogiseres?",
+          "fr": "Comment cataloguer les deux productions de Dracula ?",
+          "pt": "Como catalogar as duas produções de Dracula?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat Spanish Dracula as a dubbed English print",
+              "nb": "Behandle spansk Dracula som en dubbet engelsk kopi",
+              "fr": "Traiter Dracula espagnol comme une copie anglaise doublée",
+              "pt": "Tratar Dracula espanhol como cópia inglesa dobrada"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Maintain distinct language, crew and runtime records",
+              "nb": "Behold separate språk-, team- og varighetsoppføringer",
+              "fr": "Conserver des notices distinctes de langue, équipe et durée",
+              "pt": "Manter registos distintos de idioma, equipa e duração"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Credit Freund as photographer of both versions",
+              "nb": "Krediter Freund som fotograf på begge versjoner",
+              "fr": "Créditer Freund comme opérateur des deux versions",
+              "pt": "Creditar Freund como fotógrafo de ambas as versões"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI credits Browning and Freund for English, Melford and Robinson for Spanish. Keep distinct crew and duration evidence.",
+          "nb": "AFI krediterer Browning og Freund for engelsk, Melford og Robinson for spansk. Behold særskilt team- og varighetsbelegg.",
+          "fr": "L'AFI crédite Browning et Freund pour l'anglais, Melford et Robinson pour l'espagnol. Distinguez équipes et durées.",
+          "pt": "O AFI credita Browning e Freund no inglês, Melford e Robinson no espanhol. Distinga equipas e durações."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "dracula-sets",
+        "area": "research",
+        "prompt": {
+          "en": "How should shared sets be handled in a fictional bilingual production?",
+          "nb": "Hvordan bør felles kulisser håndteres i en fiktiv tospråklig produksjon?",
+          "fr": "Comment gérer les décors partagés dans une production bilingue fictive ?",
+          "pt": "Como gerir cenários partilhados numa produção bilingue fictícia?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume shared sets mean identical performances",
+              "nb": "Anta at felles kulisser betyr identiske fremføringer",
+              "fr": "Supposer que les décors communs impliquent un jeu identique",
+              "pt": "Supor que cenários comuns implicam interpretação idêntica"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Invent the exact historical shooting order",
+              "nb": "Finn på den eksakte historiske opptaksrekkefølgen",
+              "fr": "Inventer l'ordre historique exact du tournage",
+              "pt": "Inventar a ordem histórica exata de filmagem"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Coordinate space while preserving separate crew responsibilities",
+              "nb": "Samordne rom og behold separate teamansvar",
+              "fr": "Coordonner les espaces en préservant les responsabilités distinctes",
+              "pt": "Coordenar espaços mantendo responsabilidades distintas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI and Academy document shared sets and mainly nighttime Spanish filming. Plan separate fictional units without claiming an authenticated historical schedule.",
+          "nb": "AFI og Academy dokumenterer felles kulisser og hovedsakelig spanske nattopptak. Planlegg fiktive team uten å hevde en autentisk historisk opptaksplan.",
+          "fr": "L'AFI et l'Academy documentent décors communs et tournage espagnol surtout nocturne. Planifiez des équipes fictives sans prétendre restituer le calendrier.",
+          "pt": "O AFI e a Academy documentam cenários comuns e filmagem espanhola sobretudo noturna. Planeie equipas fictícias sem alegar um calendário autenticado."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "dracula-atmosphere",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a benign mystery scene explore studio atmosphere?",
+          "nb": "Hvordan kan en ufarlig mysteriescene utforske studioatmosfære?",
+          "fr": "Comment une scène de mystère anodine peut-elle explorer l'atmosphère ?",
+          "pt": "Como pode uma cena de mistério inofensiva explorar atmosfera?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare drawn shadows, empty space and posture",
+              "nb": "Sammenlign tegnede skygger, tomrom og kroppsholdning",
+              "fr": "Comparer ombres dessinées, espace vide et posture",
+              "pt": "Comparar sombras desenhadas, espaço vazio e postura"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Claim a drawing proves exact historical lighting equipment",
+              "nb": "Hevd at en tegning beviser eksakt historisk lysutstyr",
+              "fr": "Prétendre qu'un dessin prouve le matériel lumineux exact",
+              "pt": "Afirmar que um desenho prova equipamento de luz exato"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat every Universal horror film as visually identical",
+              "nb": "Behandle alle Universals skrekkfilmer som visuelt identiske",
+              "fr": "Traiter tous les films Universal comme visuellement identiques",
+              "pt": "Tratar todos os filmes Universal como visualmente idênticos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI places Dracula in Universal horror and AFI credits design and photography. Explore atmosphere through original drawings, not a reconstructed equipment list.",
+          "nb": "BFI plasserer Dracula i Universals skrekkfilm og AFI krediterer scenografi og foto. Utforsk atmosfære med egne tegninger, ikke en rekonstruert utstyrsliste.",
+          "fr": "Le BFI situe Dracula dans le cycle Universal et l'AFI crédite décors et image. Explorez l'atmosphère par des dessins originaux, non une liste de matériel reconstruite.",
+          "pt": "O BFI situa Dracula no ciclo Universal e o AFI credita cenografia e fotografia. Explore atmosfera com desenhos originais, não uma lista de equipamento reconstruída."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_42nd_street_1933",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Study cinema choreography, prerecorded sound and specialist labor.",
+      "nb": "Studer filmkoreografi, forhåndsinnspilt lyd og spesialisert arbeid.",
+      "fr": "Étudiez chorégraphie filmique, son préenregistré et métiers spécialisés.",
+      "pt": "Estude coreografia cinematográfica, som pré-gravado e trabalho especializado."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "42nd Street (1933)",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/3955-42ND-STREET"
+      },
+      {
+        "id": "s1",
+        "title": "The 6th Academy Awards | 1934",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/oscars/ceremonies/1934"
+      },
+      {
+        "id": "s2",
+        "title": "Complete National Film Registry Listing",
+        "publisher": "Library of Congress / National Film Preservation Board",
+        "url": "https://www.loc.gov/programs/national-film-preservation-board/film-registry/complete-national-film-registry-listing/"
+      },
+      {
+        "id": "s3",
+        "title": "National Film Registry Personnel Credits",
+        "publisher": "Library of Congress / National Film Preservation Board",
+        "url": "https://www.loc.gov/static/programs/national-film-preservation-board/film-registry/personnel-credits.html"
+      },
+      {
+        "id": "s4",
+        "title": "Where to begin with Busby Berkeley",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/where-begin-busby-berkeley"
+      }
+    ],
+    "questions": [
+      {
+        "id": "42ndstreet-choreography",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a geometric dance pattern be designed for the camera?",
+          "nb": "Hvordan kan et geometrisk dansemønster utformes for kameraet?",
+          "fr": "Comment concevoir un motif de danse géométrique pour la caméra ?",
+          "pt": "Como conceber um padrão geométrico de dança para a câmara?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Keep one fixed theatrical viewpoint for every pattern",
+              "nb": "Behold én fast teatervinkel for alle mønstre",
+              "fr": "Conserver un point de vue théâtral fixe pour tous les motifs",
+              "pt": "Manter um ponto de vista teatral fixo para todos os padrões"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Infer exact historical rigging from the drawings",
+              "nb": "Utled eksakt historisk rigging fra tegningene",
+              "fr": "Déduire le dispositif historique exact des dessins",
+              "pt": "Deduzir a montagem histórica exata dos desenhos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare overhead and frontal drawings of the same pattern",
+              "nb": "Sammenlign tegninger ovenfra og forfra av samme mønster",
+              "fr": "Comparer dessins en plongée et de face du même motif",
+              "pt": "Comparar desenhos de cima e de frente do mesmo padrão"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI describes Berkeley's choreography for cinema and AFI credits his dance staging. Compare original paper figures without claiming exact historical equipment.",
+          "nb": "BFI beskriver Berkeleys filmkoreografi og AFI krediterer danseiscenesettelsen. Sammenlign egne papirfigurer uten å hevde eksakt historisk utstyr.",
+          "fr": "Le BFI décrit la chorégraphie filmique de Berkeley et l'AFI crédite son travail. Comparez des figures originales en papier sans prétendre connaître le matériel exact.",
+          "pt": "O BFI descreve coreografia cinematográfica de Berkeley e o AFI credita o trabalho. Compare figuras originais de papel sem alegar equipamento exato."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
+        ]
+      },
+      {
+        "id": "42ndstreet-playback",
+        "area": "sound",
+        "prompt": {
+          "en": "How can rhythmic cues coordinate a musical storyboard?",
+          "nb": "Hvordan kan rytmiske signaler samordne et musikalstoryboard?",
+          "fr": "Comment des repères rythmiques peuvent-ils coordonner un storyboard musical ?",
+          "pt": "Como podem sinais rítmicos coordenar um storyboard musical?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map original sound cues against drawn movement",
+              "nb": "Kartlegg egne lydsignaler mot tegnet bevegelse",
+              "fr": "Associer des repères sonores originaux aux mouvements dessinés",
+              "pt": "Mapear sinais sonoros originais com movimento desenhado"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume all musical numbers were recorded identically live",
+              "nb": "Anta at alle musikalnumre ble tatt opp identisk direkte",
+              "fr": "Supposer que tous les numéros ont été enregistrés en direct de façon identique",
+              "pt": "Supor que todos os números foram gravados ao vivo de forma idêntica"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Guess the microphone model from the dance pattern",
+              "nb": "Gjett mikrofonmodellen fra dansemønsteret",
+              "fr": "Deviner le microphone à partir de la danse",
+              "pt": "Adivinhar o microfone pelo padrão de dança"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI describes Berkeley's use of prerecorded tracks. Explore synchronization with original cues while avoiding unsupported claims about every individual sequence.",
+          "nb": "BFI beskriver Berkeleys bruk av forhåndsinnspilte spor. Utforsk synkronisering med egne signaler uten udokumenterte påstander om hver sekvens.",
+          "fr": "Le BFI décrit les pistes préenregistrées de Berkeley. Explorez la synchronisation avec des repères originaux sans généraliser à chaque séquence.",
+          "pt": "O BFI descreve pistas pré-gravadas de Berkeley. Explore sincronização com sinais originais sem generalizar a cada sequência."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
+        ]
+      },
+      {
+        "id": "42ndstreet-labor",
+        "area": "research",
+        "prompt": {
+          "en": "How should studio labor and schedule be recorded?",
+          "nb": "Hvordan bør studioarbeid og tidsplan registreres?",
+          "fr": "Comment documenter travail de studio et calendrier ?",
+          "pt": "Como registar trabalho de estúdio e calendário?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Credit the choreographer with every department",
+              "nb": "Krediter koreografen for alle avdelinger",
+              "fr": "Créditer le chorégraphe pour tous les métiers",
+              "pt": "Creditar o coreógrafo por todos os departamentos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Distinguish direction, dance staging, sound and documented schedule",
+              "nb": "Skill regi, danseiscenesettelse, lyd og dokumentert tidsplan",
+              "fr": "Distinguer réalisation, danse, son et calendrier attesté",
+              "pt": "Distinguir realização, dança, som e calendário documentado"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use award nominations as proof of every craft detail",
+              "nb": "Bruk prisnominasjoner som bevis på alle fagdetaljer",
+              "fr": "Utiliser les nominations comme preuve de chaque détail",
+              "pt": "Usar nomeações como prova de cada detalhe"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI credits Bacon, Berkeley and the specialist teams and records a 28-day shoot. Academy sound recognition is separate from the production evidence.",
+          "nb": "AFI krediterer Bacon, Berkeley og fagteamene og registrerer 28 opptaksdager. Academys lydanerkjennelse er adskilt fra produksjonsbelegget.",
+          "fr": "L'AFI crédite Bacon, Berkeley et les équipes et indique 28 jours de tournage. La reconnaissance sonore de l'Academy est distincte des preuves de production.",
+          "pt": "O AFI credita Bacon, Berkeley e equipas e regista 28 dias de filmagem. O reconhecimento sonoro da Academy é distinto da evidência de produção."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_scarface_1932",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Study independent production, censorship and version provenance.",
+      "nb": "Studer uavhengig produksjon, sensur og versjonsproveniens.",
+      "fr": "Étudiez production indépendante, censure et provenance des versions.",
+      "pt": "Estude produção independente, censura e proveniência das versões."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Scarface (1932)",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/1134-SCARFACE"
+      },
+      {
+        "id": "s1",
+        "title": "Complete National Film Registry Listing",
+        "publisher": "Library of Congress / National Film Preservation Board",
+        "url": "https://www.loc.gov/programs/national-film-preservation-board/film-registry/complete-national-film-registry-listing/"
+      },
+      {
+        "id": "s2",
+        "title": "10 great Hollywood gangster films of the 1930s",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-hollywood-gangster-films-1930s"
+      },
+      {
+        "id": "s3",
+        "title": "Pre-Code: Hollywood before the censors",
+        "publisher": "British Film Institute / Sight and Sound",
+        "url": "https://www.bfi.org.uk/sight-and-sound/features/deep-focus/pre-code-hollywood"
+      },
+      {
+        "id": "s4",
+        "title": "Motion Picture Association of America. Production Code Administration records",
+        "publisher": "Academy of Motion Picture Arts and Sciences / Margaret Herrick Library",
+        "url": "https://digitalcollections.oscars.org/digital/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "scarface-versions",
+        "area": "research",
+        "prompt": {
+          "en": "How should the alternate Scarface cuts be recorded?",
+          "nb": "Hvordan bør alternative Scarface-klipp registreres?",
+          "fr": "Comment documenter les montages alternatifs de Scarface ?",
+          "pt": "Como registar montagens alternativas de Scarface?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Track versions A, B and C and their documented alterations",
+              "nb": "Følg versjon A, B og C og deres dokumenterte endringer",
+              "fr": "Suivre les versions A, B et C et leurs modifications attestées",
+              "pt": "Acompanhar versões A, B e C e alterações documentadas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Declare the longest copy the only historical original",
+              "nb": "Erklær den lengste kopien som eneste historiske original",
+              "fr": "Déclarer la copie la plus longue seul original historique",
+              "pt": "Declarar a cópia mais longa único original histórico"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Average the durations into an invented original",
+              "nb": "Beregn gjennomsnittet til en oppdiktet originalvarighet",
+              "fr": "Moyenner les durées en un original inventé",
+              "pt": "Calcular a média para inventar duração original"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI documents alternate versions, retakes and censor negotiations. Preserve edition-specific evidence rather than assuming one immutable original.",
+          "nb": "AFI dokumenterer alternative versjoner, nye opptak og sensurforhandlinger. Bevar utgavespesifikt belegg fremfor å anta én uforanderlig original.",
+          "fr": "L'AFI documente versions, reprises et négociations de censure. Préservez les preuves propres à chaque édition.",
+          "pt": "O AFI documenta versões, refilmagens e negociações de censura. Preserve evidências de cada edição."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "scarface-regulation",
+        "area": "research",
+        "prompt": {
+          "en": "How should the pre-1934 censorship context be described?",
+          "nb": "Hvordan bør sensurkonteksten før 1934 beskrives?",
+          "fr": "Comment décrire la censure avant 1934 ?",
+          "pt": "Como descrever a censura antes de 1934?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Apply the later mandatory seal to the 1931 shoot",
+              "nb": "Bruk det senere obligatoriske seglet på opptaket i 1931",
+              "fr": "Appliquer le visa obligatoire ultérieur au tournage de 1931",
+              "pt": "Aplicar selo obrigatório posterior à filmagem de 1931"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Distinguish local boards and negotiations from later centralized enforcement",
+              "nb": "Skill lokale sensurorganer og forhandlinger fra senere sentralisert håndheving",
+              "fr": "Distinguer commissions locales et négociations du contrôle centralisé ultérieur",
+              "pt": "Distinguir comissões locais e negociações do controlo centralizado posterior"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume censorship had no effect on the release",
+              "nb": "Anta at sensur ikke påvirket utgivelsen",
+              "fr": "Supposer que la censure n'a pas influencé la sortie",
+              "pt": "Supor que censura não influenciou a estreia"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI and BFI document extensive negotiations; Academy records distinguish the 1930 Code and later centralized enforcement. Respect the actual chronology.",
+          "nb": "AFI og BFI dokumenterer omfattende forhandlinger; Academy skiller kodeksen fra 1930 og senere sentralisert håndheving. Respekter den faktiske kronologien.",
+          "fr": "L'AFI et le BFI documentent les négociations ; l'Academy distingue Code de 1930 et contrôle ultérieur. Respectez la chronologie.",
+          "pt": "O AFI e o BFI documentam negociações; a Academy distingue Código de 1930 e aplicação posterior. Respeite a cronologia."
+        },
+        "sourceIds": [
+          "s0",
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "scarface-package",
+        "area": "research",
+        "prompt": {
+          "en": "How should the production and distribution structure be credited?",
+          "nb": "Hvordan bør produksjons- og distribusjonsstrukturen krediteres?",
+          "fr": "Comment créditer la structure de production et distribution ?",
+          "pt": "Como creditar a estrutura de produção e distribuição?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat all gangster films as Warner productions",
+              "nb": "Behandle alle gangsterfilmer som Warner-produksjoner",
+              "fr": "Traiter tous les films de gangsters comme productions Warner",
+              "pt": "Tratar todos os filmes de gangsters como produções Warner"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Infer undocumented effects methods from the finished film",
+              "nb": "Utled udokumenterte effektmetoder fra den ferdige filmen",
+              "fr": "Déduire des effets non attestés du film fini",
+              "pt": "Deduzir métodos de efeitos não documentados do filme final"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Separate Caddo production, United Artists distribution and craft credits",
+              "nb": "Skill Caddo-produksjon, United Artists-distribusjon og fagkrediteringer",
+              "fr": "Distinguer production Caddo, distribution United Artists et métiers",
+              "pt": "Distinguir produção Caddo, distribuição United Artists e créditos técnicos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI identifies Caddo, Hughes and United Artists and the credited crafts. Preserve the independent production structure rather than collapsing every gangster film into one studio.",
+          "nb": "AFI identifiserer Caddo, Hughes og United Artists samt de krediterte fagene. Bevar den uavhengige produksjonsstrukturen fremfor å plassere alle gangsterfilmer i ett studio.",
+          "fr": "L'AFI identifie Caddo, Hughes, United Artists et les métiers. Préservez la structure indépendante plutôt que d'assimiler tous les films à un studio.",
+          "pt": "O AFI identifica Caddo, Hughes, United Artists e funções técnicas. Preserve a estrutura independente em vez de atribuir todos os filmes a um estúdio."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_it_happened_one_night_1934",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Study smaller-studio production, dialogue rhythm and award chronology.",
+      "nb": "Studer produksjon i mindre studioer, dialogrytme og prishistorie.",
+      "fr": "Étudiez petit studio, rythme des dialogues et chronologie des prix.",
+      "pt": "Estude estúdio menor, ritmo do diálogo e cronologia dos prémios."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "It Happened One Night (1934)",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/6316-IT-HAPPENEDONENIGHT"
+      },
+      {
+        "id": "s1",
+        "title": "The 7th Academy Awards | 1935",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/oscars/ceremonies/1935"
+      },
+      {
+        "id": "s2",
+        "title": "It Happened One Night — National Film Registry essay",
+        "publisher": "Library of Congress / National Film Preservation Board",
+        "url": "https://www.loc.gov/static/programs/national-film-preservation-board/documents/it_happened.pdf"
+      },
+      {
+        "id": "s3",
+        "title": "Complete National Film Registry Listing",
+        "publisher": "Library of Congress / National Film Preservation Board",
+        "url": "https://www.loc.gov/programs/national-film-preservation-board/film-registry/complete-national-film-registry-listing/"
+      },
+      {
+        "id": "s4",
+        "title": "It Happened One Night (1934)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/7a1146e1-5ea3-5a8b-8e89-895ada9f3220/it-happened-one-night"
+      }
+    ],
+    "questions": [
+      {
+        "id": "ithappenedonenight-stars",
+        "area": "research",
+        "prompt": {
+          "en": "How should a studio plan production with borrowed stars?",
+          "nb": "Hvordan bør et studio planlegge produksjon med innlånte stjerner?",
+          "fr": "Comment planifier une production avec des vedettes prêtées ?",
+          "pt": "Como planear produção com estrelas cedidas?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume all performers are on the same permanent contract",
+              "nb": "Anta at alle skuespillere har samme faste kontrakt",
+              "fr": "Supposer que tous les acteurs ont le même contrat permanent",
+              "pt": "Supor que todos os atores têm o mesmo contrato permanente"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Account for studio agreements and separate craft responsibilities",
+              "nb": "Ta hensyn til studioavtaler og særskilte fagansvar",
+              "fr": "Tenir compte des accords et responsabilités distinctes",
+              "pt": "Considerar acordos e responsabilidades técnicas distintas"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use future awards as a guaranteed production resource",
+              "nb": "Bruk fremtidige priser som garantert produksjonsressurs",
+              "fr": "Utiliser des prix futurs comme ressource garantie",
+              "pt": "Usar prémios futuros como recurso garantido"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI records Columbia borrowing Gable from MGM and Colbert from Paramount. Account for inter-studio arrangements and keep later awards separate.",
+          "nb": "AFI registrerer at Columbia lånte Gable fra MGM og Colbert fra Paramount. Ta hensyn til studioavtaler og hold senere priser adskilt.",
+          "fr": "L'AFI documente le prêt de Gable par MGM et de Colbert par Paramount. Considérez les accords et distinguez les prix ultérieurs.",
+          "pt": "O AFI documenta cedência de Gable pela MGM e Colbert pela Paramount. Considere acordos e distinga prémios posteriores."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "ithappenedonenight-dialogue",
+        "area": "sound",
+        "prompt": {
+          "en": "How can original comic dialogue explore timing?",
+          "nb": "Hvordan kan egen komisk dialog utforske timing?",
+          "fr": "Comment un dialogue comique original peut-il explorer le rythme ?",
+          "pt": "Como pode diálogo cómico original explorar ritmo?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Require identical delivery speed for every comic scene",
+              "nb": "Krev identisk talehastighet for alle komiske scener",
+              "fr": "Exiger un débit identique pour chaque scène comique",
+              "pt": "Exigir velocidade de fala idêntica para cada cena cómica"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Guess exact recording equipment from dialogue rhythm",
+              "nb": "Gjett eksakt opptaksutstyr fra dialogrytmen",
+              "fr": "Deviner le matériel exact à partir du rythme",
+              "pt": "Adivinhar equipamento exato pelo ritmo"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare two readings with different pauses and responses",
+              "nb": "Sammenlign to lesninger med ulike pauser og svar",
+              "fr": "Comparer deux lectures avec pauses et réponses différentes",
+              "pt": "Comparar duas leituras com pausas e respostas diferentes"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI situates the work in screwball comedy and AFI credits Riskin and the sound team. Compare original readings without reducing all comedy to a single technique.",
+          "nb": "BFI plasserer verket i screwballkomedien og AFI krediterer Riskin og lydteamet. Sammenlign egne lesninger uten å redusere all komedie til én teknikk.",
+          "fr": "Le BFI situe l'œuvre dans la screwball comedy et l'AFI crédite Riskin et l'équipe son. Comparez des lectures originales sans réduire la comédie à une technique.",
+          "pt": "O BFI situa a obra na screwball comedy e o AFI credita Riskin e equipa de som. Compare leituras originais sem reduzir comédia a uma técnica."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
+        ]
+      },
+      {
+        "id": "ithappenedonenight-reception",
+        "area": "research",
+        "prompt": {
+          "en": "How should production dates and award recognition be separated?",
+          "nb": "Hvordan bør produksjonsdatoer og prisanerkjennelse skilles?",
+          "fr": "Comment distinguer dates de production et prix ?",
+          "pt": "Como distinguir datas de produção e prémios?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record shooting and retakes separately from awards and preservation",
+              "nb": "Registrer opptak og nye opptak separat fra priser og bevaring",
+              "fr": "Consigner tournage et reprises séparément des prix et préservation",
+              "pt": "Registar filmagem e refilmagens separadamente de prémios e preservação"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use later awards as proof of every original decision",
+              "nb": "Bruk senere priser som bevis på alle opprinnelige valg",
+              "fr": "Utiliser les prix comme preuve de chaque décision originale",
+              "pt": "Usar prémios como prova de cada decisão original"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Apply the July 1934 seal retroactively to the 1933 shoot",
+              "nb": "Bruk seglet fra juli 1934 retroaktivt på opptaket i 1933",
+              "fr": "Appliquer rétroactivement le visa de juillet 1934 au tournage de 1933",
+              "pt": "Aplicar retroativamente selo de julho de 1934 à filmagem de 1933"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI records the 1933 shoot and January 1934 retakes; the Academy records later awards. Distinguish production chronology from regulation, reception and preservation.",
+          "nb": "AFI registrerer opptaket i 1933 og nye opptak i januar 1934; Academy registrerer senere priser. Skill produksjonskronologi fra regulering, mottakelse og bevaring.",
+          "fr": "L'AFI documente tournage de 1933 et reprises de janvier 1934 ; l'Academy consigne les prix. Distinguez production, réglementation, réception et préservation.",
+          "pt": "O AFI documenta filmagem de 1933 e refilmagens de janeiro de 1934; a Academy regista prémios. Distinga produção, regulação, receção e preservação."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_top_hat_1935",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Study dance framing, rehearsal, costume and musical collaboration.",
+      "nb": "Studer danseutsnitt, prøver, kostyme og musikalsamarbeid.",
+      "fr": "Étudiez cadrage de danse, répétitions, costumes et collaboration musicale.",
+      "pt": "Estude enquadramento de dança, ensaios, figurinos e colaboração musical."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Top Hat (1935)",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/6707-TOP-HAT"
+      },
+      {
+        "id": "s1",
+        "title": "The 8th Academy Awards | 1936",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/oscars/ceremonies/1936"
+      },
+      {
+        "id": "s2",
+        "title": "Complete National Film Registry Listing",
+        "publisher": "Library of Congress / National Film Preservation Board",
+        "url": "https://www.loc.gov/programs/national-film-preservation-board/film-registry/complete-national-film-registry-listing/"
+      },
+      {
+        "id": "s3",
+        "title": "Top Hat (1935)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/7205d174-cb74-5045-bdf3-510c9dcc80dc/top-hat"
+      },
+      {
+        "id": "s4",
+        "title": "Ginger Rogers: 6 essential dance routines",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/ginger-rogers-6-essential-dance-routines"
+      }
+    ],
+    "questions": [
+      {
+        "id": "tophat-framing",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a drawn dance study preserve readable movement?",
+          "nb": "Hvordan kan en tegnet dansestudie bevare lesbar bevegelse?",
+          "fr": "Comment une étude dessinée de danse peut-elle préserver la lisibilité du mouvement ?",
+          "pt": "Como pode estudo desenhado de dança preservar movimento legível?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume every historical dance used identical shots",
+              "nb": "Anta at alle historiske danser brukte identiske bilder",
+              "fr": "Supposer que chaque danse historique avait les mêmes plans",
+              "pt": "Supor que cada dança histórica usou planos idênticos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Evaluate dancing skill only by physical appearance",
+              "nb": "Vurder danseferdighet bare etter utseende",
+              "fr": "Évaluer la danse uniquement selon l'apparence",
+              "pt": "Avaliar dança apenas pela aparência"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare sustained full-body framing with fragmented coverage",
+              "nb": "Sammenlign vedvarende helkroppsutsnitt med fragmenterte utsnitt",
+              "fr": "Comparer cadrage en pied soutenu et couverture fragmentée",
+              "pt": "Comparar enquadramento de corpo inteiro e cobertura fragmentada"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI contextualizes the Astaire-Rogers dance system and AFI credits dance specialists. Compare original drawings without universalizing framing across the film.",
+          "nb": "BFI kontekstualiserer Astaire-Rogers-systemet og AFI krediterer dansefagene. Sammenlign egne tegninger uten å generalisere utsnitt til hele filmen.",
+          "fr": "Le BFI contextualise le système Astaire-Rogers et l'AFI crédite les spécialistes. Comparez des dessins originaux sans généraliser le cadrage.",
+          "pt": "O BFI contextualiza sistema Astaire-Rogers e o AFI credita especialistas. Compare desenhos originais sem generalizar enquadramento."
+        },
+        "sourceIds": [
+          "s0",
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "tophat-rehearsal",
+        "area": "research",
+        "prompt": {
+          "en": "How should rehearsal and costume choices be coordinated?",
+          "nb": "Hvordan bør prøver og kostymevalg samordnes?",
+          "fr": "Comment coordonner répétitions et choix de costumes ?",
+          "pt": "Como coordenar ensaios e escolhas de figurinos?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test movement and costume compatibility in a paper plan",
+              "nb": "Undersøk bevegelse og kostymekompatibilitet i en papirplan",
+              "fr": "Tester mouvement et compatibilité des costumes dans un plan sur papier",
+              "pt": "Testar movimento e compatibilidade dos figurinos num plano em papel"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume costume cannot affect movement",
+              "nb": "Anta at kostyme ikke kan påvirke bevegelse",
+              "fr": "Supposer que le costume n'affecte pas le mouvement",
+              "pt": "Supor que figurino não afeta movimento"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Invent exact rehearsal schedules for every number",
+              "nb": "Finn på eksakte prøveplaner for hvert nummer",
+              "fr": "Inventer les calendriers exacts des répétitions",
+              "pt": "Inventar calendários exatos de ensaios"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI documents extensive rehearsals and the feather-dress issue. Plan original costume and rehearsal coordination without inventing historical schedules.",
+          "nb": "AFI dokumenterer omfattende prøver og problemet med fjærkjolen. Planlegg eget kostyme- og prøvesamarbeid uten å dikte opp historiske tidsplaner.",
+          "fr": "L'AFI documente répétitions et problème de la robe à plumes. Planifiez une coordination originale sans inventer de calendriers historiques.",
+          "pt": "O AFI documenta ensaios e problema do vestido de penas. Planeie coordenação original sem inventar calendários históricos."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
+        ]
+      },
+      {
+        "id": "tophat-credits",
+        "area": "research",
+        "prompt": {
+          "en": "How should songs, design and release versions be documented?",
+          "nb": "Hvordan bør sanger, design og utgivelsesversjoner dokumenteres?",
+          "fr": "Comment documenter chansons, décors et versions ?",
+          "pt": "Como documentar canções, cenografia e versões?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Attribute every decision to the star pair alone",
+              "nb": "Tilskriv alle valg stjerneparet alene",
+              "fr": "Attribuer tous les choix au seul couple vedette",
+              "pt": "Atribuir todas as escolhas apenas ao par de estrelas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record distinct writing, song, design and dance roles and edition changes",
+              "nb": "Registrer ulike manus-, sang-, design- og danseroller samt utgaveendringer",
+              "fr": "Consigner écriture, chansons, décors, danse et changements de version",
+              "pt": "Registar escrita, canções, cenografia, dança e mudanças de edição"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat all reissues as identical to the original release",
+              "nb": "Behandle alle gjenutgivelser som identiske med originalen",
+              "fr": "Traiter toutes les rééditions comme identiques à l'original",
+              "pt": "Tratar todas as reedições como idênticas ao original"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI records Berlin's songs, RKO departments and preview and reissue changes. Distinguish collaborative roles and edition provenance from later recognition.",
+          "nb": "AFI registrerer Berlins sanger, RKO-avdelinger og endringer ved forhåndsvisning og gjenutgivelse. Skill samarbeid og utgaveproveniens fra senere anerkjennelse.",
+          "fr": "L'AFI documente chansons de Berlin, métiers RKO et modifications des versions. Distinguez collaboration, provenance et reconnaissance ultérieure.",
+          "pt": "O AFI documenta canções de Berlin, departamentos RKO e alterações de versões. Distinga colaboração, proveniência e reconhecimento posterior."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_gone_with_the_wind_1939",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Study multi-unit epic production, color design and critical historical representation.",
+      "nb": "Studer storfilmproduksjon med flere team, fargedesign og kritisk historisk representasjon.",
+      "fr": "Étudiez production épique à plusieurs équipes, couleurs et représentation historique critique.",
+      "pt": "Estude produção épica com várias equipas, cor e representação histórica crítica."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Gone with the Wind (1939)",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/1181-GONE-WITH-THE-WIND"
+      },
+      {
+        "id": "s1",
+        "title": "The 12th Academy Awards | 1940",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/oscars/ceremonies/1940"
+      },
+      {
+        "id": "s2",
+        "title": "Complete National Film Registry Listing",
+        "publisher": "Library of Congress / National Film Preservation Board",
+        "url": "https://www.loc.gov/programs/national-film-preservation-board/film-registry/complete-national-film-registry-listing/"
+      },
+      {
+        "id": "s3",
+        "title": "Gone with the Wind (1939)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/c00d4d53-3498-5f3d-b461-748d678a837e/gone-with-the-wind"
+      },
+      {
+        "id": "s4",
+        "title": "Gone with the Wind — BFI Player contextual note",
+        "publisher": "British Film Institute",
+        "url": "https://player.bfi.org.uk/rentals/film/watch-gone-with-the-wind-1939-online"
+      }
+    ],
+    "questions": [
+      {
+        "id": "gonewiththewind-package",
+        "area": "research",
+        "prompt": {
+          "en": "How should a multi-unit prestige production be organized on paper?",
+          "nb": "Hvordan bør en prestisjeproduksjon med flere team organiseres på papir?",
+          "fr": "Comment organiser sur papier une production de prestige à plusieurs équipes ?",
+          "pt": "Como organizar em papel uma produção de prestígio com várias equipas?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map producer coordination and distinct production departments",
+              "nb": "Kartlegg produsentens samordning og ulike produksjonsavdelinger",
+              "fr": "Cartographier coordination du producteur et métiers distincts",
+              "pt": "Mapear coordenação do produtor e departamentos distintos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume one director made every production decision",
+              "nb": "Anta at én regissør tok alle produksjonsvalg",
+              "fr": "Supposer qu'un réalisateur a pris toutes les décisions",
+              "pt": "Supor que um realizador tomou todas as decisões"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use award records as evidence for undocumented techniques",
+              "nb": "Bruk prisoppføringer som bevis for udokumenterte teknikker",
+              "fr": "Utiliser les prix comme preuves de techniques non attestées",
+              "pt": "Usar prémios como provas de técnicas não documentadas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI documents Selznick, multiple directors and units, and Menzies's design. Plan fictional departmental responsibilities without a single-author explanation.",
+          "nb": "AFI dokumenterer Selznick, flere regissører og team samt Menzies' design. Planlegg fiktive avdelingsansvar uten en eneforfatterforklaring.",
+          "fr": "L'AFI documente Selznick, plusieurs réalisateurs et équipes, et Menzies. Planifiez des responsabilités fictives distinctes sans auteur unique.",
+          "pt": "O AFI documenta Selznick, vários realizadores e equipas e Menzies. Planeie responsabilidades fictícias distintas sem autor único."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "gonewiththewind-color",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a color storyboard coordinate different departments?",
+          "nb": "Hvordan kan et fargestoryboard samordne ulike fagavdelinger?",
+          "fr": "Comment un storyboard couleur peut-il coordonner différents métiers ?",
+          "pt": "Como pode storyboard a cores coordenar diferentes departamentos?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Claim a new drawing proves historical camera configurations",
+              "nb": "Hevd at en ny tegning beviser historiske kameraoppsett",
+              "fr": "Prétendre qu'un dessin prouve les configurations historiques",
+              "pt": "Afirmar que desenho prova configurações históricas de câmara"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare original color, costume and setting plans",
+              "nb": "Sammenlign egne farge-, kostyme- og miljøplaner",
+              "fr": "Comparer plans originaux de couleur, costumes et décors",
+              "pt": "Comparar planos originais de cor, figurinos e cenários"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume one documented setup applies to the entire epic",
+              "nb": "Anta at ett dokumentert oppsett gjelder hele storfilmen",
+              "fr": "Supposer qu'un dispositif attesté vaut pour toute l'épopée",
+              "pt": "Supor que configuração documentada vale para toda a epopeia"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI documents Menzies's watercolor storyboards and Technicolor. Compare original color plans without extending a particular historical setup to every scene.",
+          "nb": "AFI dokumenterer Menzies' akvarellstoryboard og Technicolor. Sammenlign egne fargeplaner uten å utvide et konkret historisk oppsett til alle scener.",
+          "fr": "L'AFI documente les aquarelles de Menzies et Technicolor. Comparez des plans couleur originaux sans généraliser un dispositif à toutes les scènes.",
+          "pt": "O AFI documenta aguarelas de Menzies e Technicolor. Compare planos de cor originais sem generalizar uma configuração a todas as cenas."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "gonewiththewind-representation",
+        "area": "research",
+        "prompt": {
+          "en": "How should craft and the romanticized depiction of slavery be assessed?",
+          "nb": "Hvordan bør håndverk og romantisert fremstilling av slaveri vurderes?",
+          "fr": "Comment évaluer les métiers et la représentation romancée de l'esclavage ?",
+          "pt": "Como avaliar técnica e representação romantizada da escravatura?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use technical achievement to excuse racist stereotypes",
+              "nb": "Bruk teknisk prestasjon til å unnskylde rasistiske stereotypier",
+              "fr": "Utiliser la réussite technique pour excuser les stéréotypes racistes",
+              "pt": "Usar realização técnica para desculpar estereótipos racistas"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat plantation nostalgia as neutral historical evidence",
+              "nb": "Behandle plantasjenostalgi som nøytralt historisk belegg",
+              "fr": "Traiter la nostalgie des plantations comme preuve neutre",
+              "pt": "Tratar nostalgia das plantações como evidência neutra"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Critically analyze racist representation and Lost Cause mythology separately from craft",
+              "nb": "Analyser rasistisk representasjon og Lost Cause-mytologi kritisk, separat fra håndverket",
+              "fr": "Analyser représentation raciste et mythe de la Cause perdue séparément des métiers",
+              "pt": "Analisar representação racista e mito da Causa Perdida separadamente da técnica"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI contextualizes the film's racial stereotyping and romanticization of slavery. Production achievement does not excuse historical distortions or discriminatory representation.",
+          "nb": "BFI kontekstualiserer filmens rasistiske stereotypier og romantisering av slaveri. Produksjonsprestasjon unnskylder ikke historiske fordreininger eller diskriminerende representasjon.",
+          "fr": "Le BFI contextualise les stéréotypes racistes et la vision romancée de l'esclavage. La réussite technique n'excuse ni distorsion historique ni discrimination.",
+          "pt": "O BFI contextualiza estereótipos racistas e romantização da escravatura. Realização técnica não desculpa distorções históricas nem discriminação."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
         ]
       }
     ]
