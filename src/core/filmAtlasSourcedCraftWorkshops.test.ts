@@ -50,15 +50,17 @@ const ids = [
   "scenario_it_1927",
   "scenario_wings_1927",
   "scenario_the_crowd_1928",
+  "scenario_the_cabinet_of_dr_caligari_1920",
+  "scenario_nosferatu_1922",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly forty-one existing cases have one hundred and twenty-three original, source-backed decisions", () => {
+test("Exactly forty-three existing cases have one hundred and twenty-nine original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 41);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 123);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 43);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 129);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -124,6 +126,14 @@ test("Exactly forty-one existing cases have one hundred and twenty-three origina
       const definition = readFileSync("src/core/earlyCinemaExpansion.ts", "utf8");
       assert.ok(definition.includes(workshop.scenarioId));
       const verification = readFileSync("src/ui/data/scenarioProductionVerificationSilentStudioSystemsBatch.ts", "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const dossier = verification.slice(start, verification.indexOf("\n  },", start));
+      for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (["scenario_the_cabinet_of_dr_caligari_1920", "scenario_nosferatu_1922"].includes(workshop.scenarioId)) {
+      const definition = readFileSync("src/core/earlyCinemaExpansion.ts", "utf8");
+      assert.ok(definition.includes(workshop.scenarioId));
+      const verification = readFileSync("src/ui/data/scenarioProductionVerificationSilentFoundationsBatch.ts", "utf8");
       const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
       assert.ok(start >= 0);
       const dossier = verification.slice(start, verification.indexOf("\n  },", start));
@@ -521,4 +531,9 @@ test("Mature silent Hollywood workshops distinguish publicity, collaboration and
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_it_1927")?.questions.map(q => q.bestSupportedOptionId), ["gesture","system","credit"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_wings_1927")?.questions.map(q => q.bestSupportedOptionId), ["map","roles","layers"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_crowd_1928")?.questions.map(q => q.bestSupportedOptionId), ["scale","consent","versions"]);
+});
+
+test("Weimar workshops distinguish constructed space, location atmosphere and edition history", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_cabinet_of_dr_caligari_1920")?.questions.map(q => q.bestSupportedOptionId), ["graphic","perspective","layers"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_nosferatu_1922")?.questions.map(q => q.bestSupportedOptionId), ["frame","study","version"]);
 });

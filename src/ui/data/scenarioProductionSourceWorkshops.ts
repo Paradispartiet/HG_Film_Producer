@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Forty-one pre-existing Production Cases receive evidence-backed craft decisions.
+ * Forty-three pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -6333,6 +6333,376 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
         },
         "sourceIds": [
           "s0"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_cabinet_of_dr_caligari_1920",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore graphic architecture, stylized performance and narrative ambiguity in Expressionist cinema.",
+      "nb": "Utforsk grafisk arkitektur, stilisert skuespill og fortellermessig tvetydighet i ekspresjonistisk film.",
+      "fr": "Explorez l'architecture graphique, le jeu stylisé et l'ambiguïté narrative du cinéma expressionniste.",
+      "pt": "Explore a arquitetura gráfica, a interpretação estilizada e a ambiguidade narrativa do cinema expressionista."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "100 years of The Cabinet of Dr. Caligari",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/100-years-cabinet-dr-caligari"
+      },
+      {
+        "id": "s1",
+        "title": "Das Cabinet des Dr. Caligari",
+        "publisher": "filmportal.de",
+        "url": "https://www.filmportal.de/en/movie/das-cabinet-des-dr-caligari_ea43d4a69c1a5006e03053d50b37753d"
+      },
+      {
+        "id": "s2",
+        "title": "Be Caligari! – The Virtual Cabinet",
+        "publisher": "Deutsche Kinemathek",
+        "url": "https://www.deutsche-kinemathek.de/en/visit/exhibitions/be-caligari-virtual-cabinet"
+      },
+      {
+        "id": "s3",
+        "title": "Der expressionistische Film",
+        "publisher": "filmportal.de",
+        "url": "https://www.filmportal.de/en/node/6103/material/758439"
+      }
+    ],
+    "questions": [
+      {
+        "id": "caligari-design",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a constructed interior communicate a fictional character's uncertainty?",
+          "nb": "Hvordan kan et konstruert interiør formidle en fiktiv figurs usikkerhet?",
+          "fr": "Comment un intérieur construit peut-il exprimer l'incertitude d'un personnage fictif ?",
+          "pt": "Como pode um interior construído comunicar a incerteza de uma personagem fictícia?"
+        },
+        "options": [
+          {
+            "id": "graphic",
+            "label": {
+              "en": "Compare angular forms and painted shadows in original drawings",
+              "nb": "Sammenlign kantete former og malte skygger i egne tegninger",
+              "fr": "Comparer formes anguleuses et ombres peintes dans des dessins originaux",
+              "pt": "Comparar formas angulares e sombras pintadas em desenhos originais"
+            }
+          },
+          {
+            "id": "neutral",
+            "label": {
+              "en": "Assume all architectural choices have identical expressive effects",
+              "nb": "Anta at alle arkitektoniske valg har identisk uttrykksvirkning",
+              "fr": "Supposer que tous les choix architecturaux ont le même effet expressif",
+              "pt": "Supor que todas as escolhas arquitetónicas têm o mesmo efeito expressivo"
+            }
+          },
+          {
+            "id": "copy",
+            "label": {
+              "en": "Claim the original exercise reproduces an authenticated historical set",
+              "nb": "Hevd at øvelsen gjenskaper et autentisert historisk filmsett",
+              "fr": "Prétendre que l'exercice reproduit un décor historique authentifié",
+              "pt": "Afirmar que o exercício reproduz um cenário histórico autenticado"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "graphic",
+        "explanation": {
+          "en": "BFI and the contemporary filmportal record connect angular architecture, graphic lighting and psychological expression. Use an original drawn room to test how visual form contributes to mood without claiming an exact historical reconstruction.",
+          "nb": "BFI og den samtidige filmportal-oppføringen knytter kantete arkitektur og grafisk lys til psykologisk uttrykk. Bruk et eget tegnet rom til å teste hvordan visuell form skaper stemning uten å hevde en eksakt historisk rekonstruksjon.",
+          "fr": "Le BFI et la notice contemporaine de filmportal relient architecture anguleuse, lumière graphique et expression psychologique. Dessinez une pièce originale pour étudier l'atmosphère sans prétendre à une reconstruction exacte.",
+          "pt": "O BFI e o registo contemporâneo da filmportal ligam arquitetura angular, luz gráfica e expressão psicológica. Desenhe uma divisão original para estudar a atmosfera sem alegar uma reconstrução exata."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "caligari-frame",
+        "area": "research",
+        "prompt": {
+          "en": "How could a framing narrative change the interpretation of a fictional event?",
+          "nb": "Hvordan kan en rammefortelling endre tolkningen av en fiktiv hendelse?",
+          "fr": "Comment un récit-cadre peut-il modifier l'interprétation d'un événement fictif ?",
+          "pt": "Como pode uma narrativa-quadro alterar a interpretação de um acontecimento fictício?"
+        },
+        "options": [
+          {
+            "id": "fixed",
+            "label": {
+              "en": "Declare that a framing story can never alter interpretation",
+              "nb": "Erklær at en rammefortelling aldri kan endre tolkningen",
+              "fr": "Déclarer qu'un récit-cadre ne peut jamais modifier l'interprétation",
+              "pt": "Declarar que uma narrativa-quadro nunca pode alterar a interpretação"
+            }
+          },
+          {
+            "id": "perspective",
+            "label": {
+              "en": "Compare two readings of an invented everyday event with different narrators",
+              "nb": "Sammenlign to lesninger av en oppdiktet hverdagshendelse med ulike fortellere",
+              "fr": "Comparer deux lectures d'un événement quotidien inventé avec des narrateurs différents",
+              "pt": "Comparar duas leituras de um acontecimento quotidiano inventado com narradores diferentes"
+            }
+          },
+          {
+            "id": "diagnose",
+            "label": {
+              "en": "Treat stylized design as a clinical diagnosis of a real person",
+              "nb": "Behandle stilisert scenografi som en klinisk diagnose av en virkelig person",
+              "fr": "Traiter le décor stylisé comme un diagnostic clinique d'une personne réelle",
+              "pt": "Tratar cenários estilizados como diagnóstico clínico de uma pessoa real"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "perspective",
+        "explanation": {
+          "en": "The BFI account discusses the ambiguous frame story and psychological world. Compare alternative narrative frames for an original event; retain interpretive uncertainty instead of turning fiction or visual style into a real-world diagnosis.",
+          "nb": "BFI drøfter den tvetydige rammefortellingen og den psykologiske verdenen. Sammenlign alternative fortellerrammer for en egen hendelse; bevar tolkningsusikkerheten fremfor å gjøre fiksjon eller visuell stil til en virkelig diagnose.",
+          "fr": "Le BFI examine le récit-cadre ambigu et l'univers psychologique. Comparez des cadres narratifs pour un événement original ; préservez l'incertitude interprétative sans transformer la fiction ou le style en diagnostic réel.",
+          "pt": "O BFI aborda a narrativa-quadro ambígua e o universo psicológico. Compare enquadramentos narrativos para um acontecimento original; preserve a incerteza interpretativa sem transformar ficção ou estilo num diagnóstico real."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "caligari-restoration",
+        "area": "research",
+        "prompt": {
+          "en": "How should restored tinting and intertitles be documented?",
+          "nb": "Hvordan bør restaurert fargetoning og mellomtekster dokumenteres?",
+          "fr": "Comment documenter les teintes et intertitres restaurés ?",
+          "pt": "Como documentar as tintagens e os intertítulos restaurados?"
+        },
+        "options": [
+          {
+            "id": "untouched",
+            "label": {
+              "en": "Describe every digital presentation as an untouched original print",
+              "nb": "Beskriv enhver digital visning som en urørt originalkopi",
+              "fr": "Décrire toute présentation numérique comme une copie originale intacte",
+              "pt": "Descrever toda apresentação digital como uma cópia original intacta"
+            }
+          },
+          {
+            "id": "erase",
+            "label": {
+              "en": "Ignore missing elements and restoration decisions entirely",
+              "nb": "Ignorer manglende elementer og restaureringsvalg fullstendig",
+              "fr": "Ignorer entièrement les éléments manquants et les choix de restauration",
+              "pt": "Ignorar completamente elementos em falta e decisões de restauro"
+            }
+          },
+          {
+            "id": "layers",
+            "label": {
+              "en": "Distinguish surviving elements, reconstructed material and presentation choices",
+              "nb": "Skill bevarte elementer, rekonstruert materiale og visningsvalg",
+              "fr": "Distinguer éléments conservés, matériaux reconstruits et choix de présentation",
+              "pt": "Distinguir elementos preservados, materiais reconstruídos e escolhas de apresentação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "layers",
+        "explanation": {
+          "en": "Filmportal records the tinted silent format; Deutsche Kinemathek documents restoration from surviving elements and replacement material. Identify the edition and distinguish original evidence from reconstruction and later presentation.",
+          "nb": "Filmportal registrerer det fargetonede stumfilmformatet; Deutsche Kinemathek dokumenterer restaurering fra bevarte elementer og erstatningsmateriale. Identifiser utgaven og skill originalbelegg fra rekonstruksjon og senere visning.",
+          "fr": "Filmportal recense le format muet teinté ; la Deutsche Kinemathek documente les éléments conservés et de remplacement. Identifiez l'édition et distinguez preuves originales, reconstruction et présentation ultérieure.",
+          "pt": "Filmportal regista o formato mudo tingido; a Deutsche Kinemathek documenta elementos preservados e de substituição. Identifique a edição e distinga evidência original, reconstrução e apresentação posterior."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_nosferatu_1922",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore location-based atmosphere, expressive silhouettes and version-aware silent-film presentation.",
+      "nb": "Utforsk stedsbasert atmosfære, uttrykksfulle silhuetter og versjonsbevisst stumfilmvisning.",
+      "fr": "Explorez l'atmosphère des lieux réels, les silhouettes expressives et la présentation des versions muettes.",
+      "pt": "Explore a atmosfera dos locais reais, as silhuetas expressivas e a apresentação das versões mudas."
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "10 great German expressionist films",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-german-expressionist-films"
+      },
+      {
+        "id": "s2",
+        "title": "Nosferatu – production and versions",
+        "publisher": "filmportal.de",
+        "url": "https://www.filmportal.de/film/nosferatu_d70835e558264328a39112994449d17f"
+      },
+      {
+        "id": "s3",
+        "title": "Contemporary review of Nosferatu",
+        "publisher": "filmportal.de",
+        "url": "https://www.filmportal.de/en/node/3737/material/693225"
+      }
+    ],
+    "questions": [
+      {
+        "id": "nosferatu-location",
+        "area": "camera",
+        "prompt": {
+          "en": "How could familiar architecture become uncanny in a fictional scene without altering the actual location?",
+          "nb": "Hvordan kan kjent arkitektur bli uhyggelig i en fiktiv scene uten å endre det virkelige stedet?",
+          "fr": "Comment une architecture familière peut-elle devenir inquiétante dans une fiction sans modifier le lieu réel ?",
+          "pt": "Como pode uma arquitetura familiar tornar-se inquietante numa ficção sem alterar o local real?"
+        },
+        "options": [
+          {
+            "id": "frame",
+            "label": {
+              "en": "Compare drawn viewpoints and shadows in an original architectural study",
+              "nb": "Sammenlign tegnede synsvinkler og skygger i en egen arkitekturstudie",
+              "fr": "Comparer points de vue dessinés et ombres dans une étude architecturale originale",
+              "pt": "Comparar pontos de vista desenhados e sombras num estudo arquitetónico original"
+            }
+          },
+          {
+            "id": "paint",
+            "label": {
+              "en": "Assume German Expressionist films always required entirely painted sets",
+              "nb": "Anta at tyske ekspresjonistiske filmer alltid krevde fullstendig malte kulisser",
+              "fr": "Supposer que les films expressionnistes allemands exigeaient toujours des décors entièrement peints",
+              "pt": "Supor que filmes expressionistas alemães exigiam sempre cenários totalmente pintados"
+            }
+          },
+          {
+            "id": "copy",
+            "label": {
+              "en": "Present a hypothetical image as authenticated historical location evidence",
+              "nb": "Presenter et hypotetisk bilde som autentisert historisk stedsbelegg",
+              "fr": "Présenter une image hypothétique comme preuve historique authentifiée du lieu",
+              "pt": "Apresentar uma imagem hipotética como evidência histórica autenticada do local"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "frame",
+        "explanation": {
+          "en": "The BFI comparison distinguishes Nosferatu's real architecture and landscapes from wholly painted studio worlds. Study how framing and shadows transform an invented location drawing without claiming to reconstruct an exact shot.",
+          "nb": "BFIs sammenligning skiller Nosferatus virkelige arkitektur og landskap fra fullstendig malte studioverdener. Studer hvordan utsnitt og skygger forvandler en egen stedstegning uten å hevde å rekonstruere et eksakt bilde.",
+          "fr": "La comparaison du BFI distingue les architectures et paysages réels de Nosferatu des décors entièrement peints. Étudiez comment cadrage et ombres transforment un dessin original sans prétendre restituer un plan exact.",
+          "pt": "A comparação do BFI distingue arquitetura e paisagens reais de Nosferatu de cenários totalmente pintados. Estude como enquadramento e sombras transformam um desenho original sem alegar reconstruir um plano exato."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "nosferatu-silhouette",
+        "area": "camera",
+        "prompt": {
+          "en": "How could an original nonviolent scene use a silhouette to create atmosphere?",
+          "nb": "Hvordan kan en egen ikke-voldelig scene bruke en silhuett til å skape atmosfære?",
+          "fr": "Comment une scène originale non violente peut-elle créer une atmosphère par une silhouette ?",
+          "pt": "Como pode uma cena original não violenta criar atmosfera através de uma silhueta?"
+        },
+        "options": [
+          {
+            "id": "flat",
+            "label": {
+              "en": "Use identical outlines and framing regardless of the desired atmosphere",
+              "nb": "Bruk identiske konturer og utsnitt uansett ønsket atmosfære",
+              "fr": "Utiliser des contours et cadres identiques quelle que soit l'atmosphère",
+              "pt": "Usar contornos e enquadramentos idênticos independentemente da atmosfera"
+            }
+          },
+          {
+            "id": "study",
+            "label": {
+              "en": "Compare paper silhouettes against different drawn backgrounds",
+              "nb": "Sammenlign papirsilhuetter mot ulike tegnede bakgrunner",
+              "fr": "Comparer des silhouettes en papier sur différents fonds dessinés",
+              "pt": "Comparar silhuetas de papel sobre diferentes fundos desenhados"
+            }
+          },
+          {
+            "id": "equipment",
+            "label": {
+              "en": "Invent the precise historical equipment from the silhouette alone",
+              "nb": "Finn på det nøyaktige historiske utstyret ut fra silhuetten alene",
+              "fr": "Inventer le matériel historique précis à partir de la seule silhouette",
+              "pt": "Inventar o equipamento histórico preciso apenas a partir da silhueta"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "study",
+        "explanation": {
+          "en": "BFI and the contemporary review discuss physical presence, shadows and the film's visual atmosphere. Compare harmless paper shapes to explore contrast and scale; this is an original exercise, not evidence of exact historical lighting equipment.",
+          "nb": "BFI og den samtidige anmeldelsen omtaler fysisk nærvær, skygger og filmens visuelle atmosfære. Sammenlign ufarlige papirformer for å utforske kontrast og skala; dette er en egen øvelse, ikke belegg for eksakt historisk lysutstyr.",
+          "fr": "Le BFI et la critique contemporaine évoquent présence physique, ombres et atmosphère visuelle. Comparez des formes en papier pour étudier contraste et échelle ; ce n'est pas une preuve du matériel historique exact.",
+          "pt": "O BFI e a crítica contemporânea abordam presença física, sombras e atmosfera visual. Compare formas de papel para estudar contraste e escala; não é evidência do equipamento histórico exato."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "nosferatu-edition",
+        "area": "sound",
+        "prompt": {
+          "en": "How should historical musical accompaniment and restored editions be distinguished?",
+          "nb": "Hvordan bør historisk musikkakkompagnement og restaurerte utgaver skilles?",
+          "fr": "Comment distinguer accompagnement musical historique et éditions restaurées ?",
+          "pt": "Como distinguir acompanhamento musical histórico e edições restauradas?"
+        },
+        "options": [
+          {
+            "id": "recorded",
+            "label": {
+              "en": "Treat the original cinema music as proof of recorded synchronized dialogue",
+              "nb": "Behandle den opprinnelige kinomusikken som bevis på innspilt synkron dialog",
+              "fr": "Traiter la musique de cinéma originale comme preuve d'un dialogue synchrone enregistré",
+              "pt": "Tratar a música cinematográfica original como prova de diálogo sincronizado gravado"
+            }
+          },
+          {
+            "id": "universal",
+            "label": {
+              "en": "Assume all restored prints use the same images and music",
+              "nb": "Anta at alle restaurerte kopier bruker identiske bilder og musikk",
+              "fr": "Supposer que toutes les copies restaurées utilisent les mêmes images et la même musique",
+              "pt": "Supor que todas as cópias restauradas usam as mesmas imagens e música"
+            }
+          },
+          {
+            "id": "version",
+            "label": {
+              "en": "Record the specific edition and separate its music from production format",
+              "nb": "Registrer den konkrete utgaven og skill dens musikk fra produksjonsformatet",
+              "fr": "Consigner l'édition précise et distinguer sa musique du format de production",
+              "pt": "Registar a edição específica e distinguir a sua música do formato de produção"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "version",
+        "explanation": {
+          "en": "Filmportal's version record and contemporary review document musical presentation, including Erdmann's score. Tie each claim to its source and distinguish silent production from the accompaniment and the specific restored edition.",
+          "nb": "Filmportals versjonsoppføring og den samtidige anmeldelsen dokumenterer musikkvisning, inkludert Erdmanns musikk. Knytt hver påstand til kilden og skill stumfilmproduksjon fra akkompagnement og den konkrete restaurerte utgaven.",
+          "fr": "La notice des versions de filmportal et la critique contemporaine documentent la présentation musicale, dont la partition d'Erdmann. Reliez chaque affirmation à sa source et distinguez production muette, accompagnement et édition restaurée.",
+          "pt": "O registo de versões da filmportal e a crítica contemporânea documentam a apresentação musical, incluindo a partitura de Erdmann. Relacione cada afirmação com a fonte e distinga produção muda, acompanhamento e edição restaurada."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
         ]
       }
     ]
