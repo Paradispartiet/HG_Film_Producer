@@ -140,7 +140,8 @@ jobs:
     # The version-matched Playwright image includes WebKit and system libraries.
     # Avoid slow apt mirrors on ephemeral runners; retain all real browser checks.
     container: mcr.microsoft.com/playwright:v1.56.1-noble
-    timeout-minutes: 20
+    # The complete four-language workshop suite exceeds the old 20-minute limit.
+    timeout-minutes: 45
 
     steps:
       - name: Checkout
