@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Fifty pre-existing Production Cases receive evidence-backed craft decisions.
+ * Fifty-two pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -8048,6 +8048,383 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
         "sourceIds": [
           "s1",
           "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_un_chien_andalou_1929",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore Surrealist image associations, collaborative authorship and alternative exhibition through original harmless exercises.",
+      "nb": "Utforsk surrealistiske billedassosiasjoner, felles forfatterskap og alternativ filmvisning gjennom egne ufarlige øvelser.",
+      "fr": "Explorez les associations d'images surréalistes, la création collective et la projection alternative par des exercices originaux sans danger.",
+      "pt": "Explore associações de imagens surrealistas, autoria colaborativa e exibição alternativa através de exercícios originais seguros."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Un chien andalou",
+        "publisher": "La Cinémathèque française",
+        "url": "https://www.cinematheque.fr/film/47197.html"
+      },
+      {
+        "id": "s1",
+        "title": "Salvador Dalí: Creator/Collaborator",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/calendar/film/610"
+      },
+      {
+        "id": "s2",
+        "title": "Luis Buñuel",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/collection/artists/31258"
+      },
+      {
+        "id": "s3",
+        "title": "10 great French avant-garde films of the 1920s",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-french-avant-garde-films-1920s"
+      }
+    ],
+    "questions": [
+      {
+        "id": "andalou-association",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a sequence of harmless objects suggest dream logic without conventional continuity?",
+          "nb": "Hvordan kan en sekvens av ufarlige gjenstander antyde drømmelogikk uten konvensjonell kontinuitet?",
+          "fr": "Comment une suite d'objets inoffensifs peut-elle suggérer une logique onirique sans continuité classique ?",
+          "pt": "Como pode uma sequência de objetos inofensivos sugerir lógica onírica sem continuidade convencional?"
+        },
+        "options": [
+          {
+            "id": "association",
+            "label": {
+              "en": "Compare drawn images linked by shape, movement or an unexpected association",
+              "nb": "Sammenlign tegnede bilder forbundet gjennom form, bevegelse eller en uventet assosiasjon",
+              "fr": "Comparer des dessins liés par la forme, le mouvement ou une association inattendue",
+              "pt": "Comparar desenhos ligados por forma, movimento ou associação inesperada"
+            }
+          },
+          {
+            "id": "random",
+            "label": {
+              "en": "Assume every Surrealist sequence is completely random",
+              "nb": "Anta at enhver surrealistisk sekvens er fullstendig tilfeldig",
+              "fr": "Supposer que toute séquence surréaliste est entièrement aléatoire",
+              "pt": "Supor que toda sequência surrealista é inteiramente aleatória"
+            }
+          },
+          {
+            "id": "harm",
+            "label": {
+              "en": "Reproduce the historical film's harmful imagery literally",
+              "nb": "Gjenskap filmens skadelige bilder bokstavelig",
+              "fr": "Reproduire littéralement les images nocives du film historique",
+              "pt": "Reproduzir literalmente as imagens nocivas do filme histórico"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "association",
+        "explanation": {
+          "en": "MoMA describes dream-like visual poetry and BFI identifies discontinuous montage and transformations. Explore associations through paper drawings of everyday objects; no injury to people or animals is part of the exercise.",
+          "nb": "MoMA beskriver drømmeaktig visuell poesi, og BFI identifiserer diskontinuerlig montasje og forvandlinger. Utforsk assosiasjoner med papirtegnede hverdagsgjenstander; skade på mennesker eller dyr inngår ikke i øvelsen.",
+          "fr": "Le MoMA décrit une poésie visuelle onirique et le BFI identifie montage discontinu et transformations. Explorez des associations avec des dessins d'objets quotidiens, sans blesser personnes ni animaux.",
+          "pt": "O MoMA descreve poesia visual onírica e o BFI identifica montagem descontínua e transformações. Explore associações com desenhos de objetos quotidianos, sem ferir pessoas ou animais."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "andalou-authorship",
+        "area": "research",
+        "prompt": {
+          "en": "How should a small collaborative avant-garde production be credited?",
+          "nb": "Hvordan bør en liten avantgardefilm med flere samarbeidspartnere krediteres?",
+          "fr": "Comment créditer une petite production d'avant-garde collective ?",
+          "pt": "Como creditar uma pequena produção de vanguarda colaborativa?"
+        },
+        "options": [
+          {
+            "id": "solo",
+            "label": {
+              "en": "Attribute every creative and technical role to one famous artist",
+              "nb": "Tilskriv alle kreative og tekniske roller én berømt kunstner",
+              "fr": "Attribuer tous les rôles créatifs et techniques à un seul artiste célèbre",
+              "pt": "Atribuir todos os papéis criativos e técnicos a um único artista famoso"
+            }
+          },
+          {
+            "id": "roles",
+            "label": {
+              "en": "Distinguish the shared scenario, direction, photography, design and production roles",
+              "nb": "Skill det felles manuset, regi, foto, scenografi og produksjonsroller",
+              "fr": "Distinguer scénario partagé, réalisation, image, décors et production",
+              "pt": "Distinguir argumento partilhado, realização, fotografia, cenografia e produção"
+            }
+          },
+          {
+            "id": "ignore",
+            "label": {
+              "en": "Ignore the documented collaborators because the budget was small",
+              "nb": "Ignorer dokumenterte samarbeidspartnere fordi budsjettet var lite",
+              "fr": "Ignorer les collaborateurs attestés parce que le budget était modeste",
+              "pt": "Ignorar colaboradores documentados porque o orçamento era pequeno"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "roles",
+        "explanation": {
+          "en": "The Cinémathèque records Buñuel and Dalí's screenplay collaboration alongside photography, design and production credits. MoMA contextualizes the partnership. Small-scale independent production does not erase collective authorship.",
+          "nb": "Cinémathèque dokumenterer Buñuel og Dalís manussamarbeid sammen med foto-, scenografi- og produksjonskrediteringer. MoMA setter samarbeidet i kontekst. Småskala uavhengig produksjon opphever ikke kollektivt forfatterskap.",
+          "fr": "La Cinémathèque recense le scénario de Buñuel et Dalí ainsi que les crédits image, décors et production. Le MoMA contextualise leur partenariat. Une petite production indépendante n'efface pas la création collective.",
+          "pt": "A Cinémathèque regista o argumento de Buñuel e Dalí e créditos de fotografia, cenografia e produção. O MoMA contextualiza a parceria. Uma pequena produção independente não apaga a autoria coletiva."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "andalou-exhibition",
+        "area": "research",
+        "prompt": {
+          "en": "How should you distinguish original exhibition from later restored access copies?",
+          "nb": "Hvordan bør du skille original filmvisning fra senere restaurerte tilgangskopier?",
+          "fr": "Comment distinguer la projection originale des copies d'accès restaurées ultérieures ?",
+          "pt": "Como distinguir a exibição original das cópias de acesso restauradas posteriores?"
+        },
+        "options": [
+          {
+            "id": "universal",
+            "label": {
+              "en": "Treat every modern copy as the exact original exhibition experience",
+              "nb": "Behandle enhver moderne kopi som den eksakte opprinnelige visningsopplevelsen",
+              "fr": "Traiter chaque copie moderne comme l'expérience exacte de la projection originale",
+              "pt": "Tratar cada cópia moderna como a experiência exata da exibição original"
+            }
+          },
+          {
+            "id": "commercial",
+            "label": {
+              "en": "Assume every avant-garde short followed standard feature distribution",
+              "nb": "Anta at enhver avantgardekortfilm fulgte vanlig langfilmdistribusjon",
+              "fr": "Supposer que tout court métrage d'avant-garde suivait la distribution classique",
+              "pt": "Supor que toda curta de vanguarda seguia distribuição convencional"
+            }
+          },
+          {
+            "id": "context",
+            "label": {
+              "en": "Record the specialist venue, financing context and restoration separately",
+              "nb": "Registrer spesialkinoen, finansieringskonteksten og restaureringen separat",
+              "fr": "Consigner séparément le lieu spécialisé, le financement et la restauration",
+              "pt": "Registar separadamente o local especializado, financiamento e restauro"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "context",
+        "explanation": {
+          "en": "The Cinémathèque records the Studio des Ursulines presentation and later digital restoration; BFI describes small-scale family financing. Keep the alternative exhibition and production context separate from the modern access object.",
+          "nb": "Cinémathèque registrerer visningen på Studio des Ursulines og senere digital restaurering; BFI beskriver familiefinansiering i liten skala. Hold alternativ visnings- og produksjonskontekst adskilt fra den moderne tilgangskopien.",
+          "fr": "La Cinémathèque recense la projection au Studio des Ursulines et la restauration numérique ultérieure ; le BFI décrit un financement familial modeste. Distinguez contexte de projection et de production de l'objet d'accès moderne.",
+          "pt": "A Cinémathèque regista a exibição no Studio des Ursulines e restauro digital posterior; o BFI descreve financiamento familiar modesto. Distinga o contexto de exibição e produção do objeto de acesso moderno."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_passion_of_joan_of_arc_1928",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore expressive close-ups, emotional coherence and the distinction between historical records and dramatic adaptation.",
+      "nb": "Utforsk uttrykksfulle nærbilder, emosjonell sammenheng og skillet mellom historiske dokumenter og dramatisk adaptasjon.",
+      "fr": "Explorez les gros plans expressifs, la cohérence émotionnelle et la distinction entre documents historiques et adaptation dramatique.",
+      "pt": "Explore grandes planos expressivos, coerência emocional e a distinção entre documentos históricos e adaptação dramática."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Where to begin with Carl Dreyer",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/where-begin-carl-dreyer"
+      },
+      {
+        "id": "s1",
+        "title": "4 rules of filmmaking and how The Passion of Joan of Arc breaks them",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/passion-joan-arc-carl-dreyer-style"
+      },
+      {
+        "id": "s2",
+        "title": "The peak of silent cinema",
+        "publisher": "BFI Sight and Sound",
+        "url": "https://www.bfi.org.uk/sight-and-sound/features/peak-silent-cinema"
+      },
+      {
+        "id": "s3",
+        "title": "Carl Th. Dreyer",
+        "publisher": "Danish Film Institute",
+        "url": "https://www.dfi.dk/en/viden-om-film/filmdatabasen/person/carl-th-dreyer"
+      }
+    ],
+    "questions": [
+      {
+        "id": "joan-closeup",
+        "area": "camera",
+        "prompt": {
+          "en": "How could a neutral fictional conversation use close-ups to express a character's changing feelings?",
+          "nb": "Hvordan kan en nøytral fiktiv samtale bruke nærbilder til å uttrykke figurens skiftende følelser?",
+          "fr": "Comment une conversation fictive neutre peut-elle exprimer les émotions changeantes par les gros plans ?",
+          "pt": "Como pode uma conversa fictícia neutra expressar emoções variáveis através de grandes planos?"
+        },
+        "options": [
+          {
+            "id": "faces",
+            "label": {
+              "en": "Compare drawn facial expressions, framing and simplified backgrounds",
+              "nb": "Sammenlign tegnede ansiktsuttrykk, utsnitt og forenklede bakgrunner",
+              "fr": "Comparer expressions faciales dessinées, cadrages et fonds simplifiés",
+              "pt": "Comparar expressões faciais desenhadas, enquadramentos e fundos simplificados"
+            }
+          },
+          {
+            "id": "cost",
+            "label": {
+              "en": "Assume sparse screen space proves the entire production was inexpensive",
+              "nb": "Anta at sparsomme bilder beviser at hele produksjonen var billig",
+              "fr": "Supposer qu'un espace à l'écran dépouillé prouve une production bon marché",
+              "pt": "Supor que espaço visual austero prova uma produção barata"
+            }
+          },
+          {
+            "id": "rating",
+            "label": {
+              "en": "Judge a performer's skill only by appearance",
+              "nb": "Vurder skuespillerens ferdighet bare etter utseende",
+              "fr": "Juger le talent de l'interprète uniquement selon son apparence",
+              "pt": "Avaliar o talento do intérprete apenas pela aparência"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "faces",
+        "explanation": {
+          "en": "BFI describes close-ups and sparse décor, while Sight and Sound notes substantial sets and Falconetti's performance. Compare original drawings of expressions and backgrounds; minimalist imagery does not itself establish low production costs.",
+          "nb": "BFI beskriver nærbilder og sparsom dekor, mens Sight and Sound omtaler omfattende kulisser og Falconettis spill. Sammenlign egne tegninger av uttrykk og bakgrunner; minimalistiske bilder beviser ikke lave produksjonskostnader.",
+          "fr": "Le BFI décrit gros plans et décors dépouillés, tandis que Sight and Sound évoque des décors importants et le jeu de Falconetti. Comparez des dessins originaux ; une image minimaliste ne prouve pas un faible coût.",
+          "pt": "O BFI descreve grandes planos e cenários austeros, enquanto Sight and Sound refere cenários substanciais e a interpretação de Falconetti. Compare desenhos originais; uma imagem minimalista não prova baixo custo."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "joan-editing",
+        "area": "camera",
+        "prompt": {
+          "en": "How might a sequence remain emotionally coherent while departing from conventional continuity?",
+          "nb": "Hvordan kan en sekvens bevare emosjonell sammenheng samtidig som den avviker fra konvensjonell kontinuitet?",
+          "fr": "Comment une séquence peut-elle rester émotionnellement cohérente en s'écartant des raccords classiques ?",
+          "pt": "Como pode uma sequência manter coerência emocional ao afastar-se da continuidade convencional?"
+        },
+        "options": [
+          {
+            "id": "rule",
+            "label": {
+              "en": "Assume every sequence must follow every continuity convention",
+              "nb": "Anta at alle sekvenser må følge alle kontinuitetskonvensjoner",
+              "fr": "Supposer que toute séquence doit respecter chaque convention de raccord",
+              "pt": "Supor que toda sequência deve seguir todas as convenções de continuidade"
+            }
+          },
+          {
+            "id": "emotion",
+            "label": {
+              "en": "Compare conventional and deliberately discontinuous edits of an invented conversation",
+              "nb": "Sammenlign konvensjonell og bevisst diskontinuerlig klipping av en oppdiktet samtale",
+              "fr": "Comparer des montages classiques et volontairement discontinus d'une conversation inventée",
+              "pt": "Comparar montagens convencionais e deliberadamente descontínuas de uma conversa inventada"
+            }
+          },
+          {
+            "id": "random",
+            "label": {
+              "en": "Remove all narrative and emotional relationships between the images",
+              "nb": "Fjern alle fortellingsmessige og emosjonelle forbindelser mellom bildene",
+              "fr": "Supprimer tout rapport narratif et émotionnel entre les images",
+              "pt": "Eliminar todas as relações narrativas e emocionais entre as imagens"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "emotion",
+        "explanation": {
+          "en": "BFI analyzes Dreyer's departures from matching eyelines and master shots while emphasizing emotional coherence. Compare two original storyboard edits to see how each shapes attention; neither is a universal rule.",
+          "nb": "BFI analyserer Dreyers avvik fra samsvarende blikkretninger og oversiktsbilder, samtidig som emosjonell sammenheng fremheves. Sammenlign to egne storyboardklipp for å se hvordan de former oppmerksomheten; ingen er en universell regel.",
+          "fr": "Le BFI analyse les écarts de Dreyer aux raccords de regard et plans d'ensemble tout en soulignant la cohérence émotionnelle. Comparez deux montages dessinés originaux ; aucun n'est une règle universelle.",
+          "pt": "O BFI analisa os desvios de Dreyer em raccords de olhar e planos gerais, salientando coerência emocional. Compare duas montagens desenhadas originais; nenhuma é uma regra universal."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "joan-history",
+        "area": "research",
+        "prompt": {
+          "en": "How should trial documents, dramatic compression and recovered film versions be documented?",
+          "nb": "Hvordan bør rettsdokumenter, dramatisk komprimering og gjenfunne filmversjoner dokumenteres?",
+          "fr": "Comment documenter les actes du procès, la compression dramatique et les versions retrouvées ?",
+          "pt": "Como documentar os autos do julgamento, a compressão dramática e as versões recuperadas?"
+        },
+        "options": [
+          {
+            "id": "literal",
+            "label": {
+              "en": "Treat the film as an unedited audiovisual record of the historical trial",
+              "nb": "Behandle filmen som et uredigert audiovisuelt opptak av den historiske rettssaken",
+              "fr": "Traiter le film comme un enregistrement audiovisuel non monté du procès historique",
+              "pt": "Tratar o filme como gravação audiovisual não montada do julgamento histórico"
+            }
+          },
+          {
+            "id": "same",
+            "label": {
+              "en": "Assume all surviving release copies contain the same original editing",
+              "nb": "Anta at alle bevarte utgivelseskopier inneholder samme originalklipp",
+              "fr": "Supposer que toutes les copies conservées ont le même montage original",
+              "pt": "Supor que todas as cópias preservadas têm a mesma montagem original"
+            }
+          },
+          {
+            "id": "distinguish",
+            "label": {
+              "en": "Separate documentary sources, fictional adaptation, release cuts and recovery history",
+              "nb": "Skill dokumentkilder, dramatisk adaptasjon, utgivelsesklipp og gjenfinningshistorie",
+              "fr": "Distinguer sources documentaires, adaptation dramatique, montages de sortie et redécouverte",
+              "pt": "Distinguir fontes documentais, adaptação dramática, montagens de estreia e redescoberta"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "distinguish",
+        "explanation": {
+          "en": "BFI documents the trial-transcript basis and compression into a single day; Sight and Sound describes shortening and the recovery in Oslo. Distinguish historical evidence from dramatic construction and identify the particular surviving edition.",
+          "nb": "BFI dokumenterer rettsprotokollene som kilde og komprimeringen til én dag; Sight and Sound beskriver forkorting og gjenoppdagelsen i Oslo. Skill historisk belegg fra dramatisk konstruksjon og identifiser den konkrete bevarte utgaven.",
+          "fr": "Le BFI documente les transcriptions du procès et leur compression en une journée ; Sight and Sound décrit les coupes et la redécouverte à Oslo. Distinguez preuves historiques et construction dramatique, puis identifiez l'édition conservée.",
+          "pt": "O BFI documenta as transcrições do julgamento e compressão num dia; Sight and Sound descreve cortes e a redescoberta em Oslo. Distinga evidência histórica de construção dramática e identifique a edição preservada."
+        },
+        "sourceIds": [
+          "s0",
+          "s2",
+          "s3"
         ]
       }
     ]
