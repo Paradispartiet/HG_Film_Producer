@@ -70,15 +70,21 @@ const ids = [
   "scenario_mr_west_bolsheviks_1924",
   "scenario_a_page_of_madness_1926",
   "scenario_laborers_love_1922",
+  "scenario_a_throw_of_dice_1929",
+  "scenario_growth_of_the_soil_1921",
+  "scenario_orochi_1925",
+  "scenario_the_red_heroine_1929",
+  "scenario_haxan_1922",
+  "scenario_the_phantom_carriage_1921",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly sixty-one existing cases have one hundred and eighty-three original, source-backed decisions", () => {
+test("Exactly sixty-seven existing cases have two hundred and one original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 61);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 183);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 67);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 201);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -225,6 +231,16 @@ test("Exactly sixty-one existing cases have one hundred and eighty-three origina
       const definition = readFileSync(page ? "src/core/chapterTenSilentCinemasExpansion.ts" : "src/core/chapterTenLaborersLoveExpansion.ts", "utf8");
       assert.ok(definition.includes(workshop.scenarioId));
       const dossier = readFileSync(page ? "src/ui/data/scenarioProductionVerificationAPageOfMadness.ts" : "src/ui/data/scenarioProductionVerificationLaborersLove.ts", "utf8");
+      for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (["scenario_a_throw_of_dice_1929", "scenario_growth_of_the_soil_1921", "scenario_orochi_1925", "scenario_the_red_heroine_1929", "scenario_haxan_1922", "scenario_the_phantom_carriage_1921"].includes(workshop.scenarioId)) {
+      const files: Record<string, [string, string]> = {"scenario_a_throw_of_dice_1929":["src/core/chapterTenAThrowOfDiceExpansion.ts","src/ui/data/scenarioProductionVerificationAThrowOfDice.ts"],"scenario_growth_of_the_soil_1921":["src/core/chapterTenGrowthOfTheSoilExpansion.ts","src/ui/data/scenarioProductionVerificationGrowthOfTheSoil.ts"],"scenario_orochi_1925":["src/core/chapterTenOrochiExpansion.ts","src/ui/data/scenarioProductionVerificationOrochi.ts"],"scenario_the_red_heroine_1929":["src/core/chapterTenRedHeroineExpansion.ts","src/ui/data/scenarioProductionVerificationRedHeroine.ts"],"scenario_haxan_1922":["src/core/chapterTenHaxanExpansion.ts","src/ui/data/scenarioProductionVerificationHaxan.ts"],"scenario_the_phantom_carriage_1921":["src/core/scandinavianEuropeanExpansion.ts","src/ui/data/scenarioProductionVerificationSilentStudioSystemsBatch.ts"]};
+      const [definitionFile, verificationFile] = files[workshop.scenarioId]!;
+      assert.ok(readFileSync(definitionFile, "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(verificationFile, "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const next = verification.indexOf("\n  },", start);
+      const dossier = verification.slice(start, next < 0 ? undefined : next);
       for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
     } else if (workshop.scenarioId === "scenario_a_trip_to_the_moon_1902") {
       const definition = readFileSync("src/core/earlyCinemaExpansion.ts", "utf8");
@@ -664,4 +680,13 @@ test("Montage and early Asian cinema workshops distinguish interpretation, colla
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_mr_west_bolsheviks_1924")?.questions.map(q => q.bestSupportedOptionId), ["connect","compare","roles"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_a_page_of_madness_1926")?.questions.map(q => q.bestSupportedOptionId), ["rhythm","roles","version"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_laborers_love_1922")?.questions.map(q => q.bestSupportedOptionId), ["timing","compare","context"]);
+});
+
+test("World silent cinema workshops distinguish collaboration, survival and restoration evidence", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_a_throw_of_dice_1929")?.questions.map(q => q.bestSupportedOptionId), ["choice-0","choice-1","choice-2"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_growth_of_the_soil_1921")?.questions.map(q => q.bestSupportedOptionId), ["choice-0","choice-1","choice-2"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_orochi_1925")?.questions.map(q => q.bestSupportedOptionId), ["choice-0","choice-1","choice-2"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_red_heroine_1929")?.questions.map(q => q.bestSupportedOptionId), ["choice-0","choice-1","choice-2"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_haxan_1922")?.questions.map(q => q.bestSupportedOptionId), ["choice-0","choice-1","choice-2"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_phantom_carriage_1921")?.questions.map(q => q.bestSupportedOptionId), ["choice-0","choice-1","choice-2"]);
 });
