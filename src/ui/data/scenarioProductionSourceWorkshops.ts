@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Thirty-six pre-existing Production Cases receive evidence-backed craft decisions.
+ * Thirty-eight pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -5396,6 +5396,391 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
         "sourceIds": [
           "s0",
           "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_cheat_1915",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore expressive illumination, collaborative studio design and critical interpretation of historical representations.",
+      "nb": "Utforsk uttrykksfull lyssetting, samarbeid om studioscenografi og kritisk tolkning av historiske fremstillinger.",
+      "fr": "Explorez l'éclairage expressif, les décors conçus en collaboration et l'interprétation critique des représentations historiques.",
+      "pt": "Explore a iluminação expressiva, os cenários colaborativos e a interpretação crítica das representações históricas."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The Cheat — AFI Catalog",
+        "publisher": "American Film Institute",
+        "url": "https://catalog.afi.com/Catalog/moviedetails/1815"
+      },
+      {
+        "id": "s1",
+        "title": "The Cheat (1915) — National Film Registry description",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/programs/national-film-preservation-board/film-registry/descriptions-and-essays/"
+      },
+      {
+        "id": "s2",
+        "title": "The Cheat / The Golden Chance",
+        "publisher": "UCLA Film & Television Archive",
+        "url": "https://cinema.ucla.edu/events/the-cheat-the-golden-chance-02-07-15/"
+      },
+      {
+        "id": "s3",
+        "title": "Out of the Vaults: Cecil B. deMille's The Cheat, 1915",
+        "publisher": "The Film Foundation",
+        "url": "https://www.film-foundation.org/hfpa-cheat"
+      },
+      {
+        "id": "s4",
+        "title": "D. W. Griffith's Competitors: Ince and DeMille",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/explore/inside_out/2009/12/01/d-w-griffiths-competitors-ince-and-demille/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "cheat-light",
+        "area": "camera",
+        "prompt": {
+          "en": "How can selective lighting make an ordinary fictional interior expressive?",
+          "nb": "Hvordan kan selektiv lyssetting gjøre et vanlig fiktivt interiør uttrykksfullt?",
+          "fr": "Comment un éclairage sélectif peut-il rendre expressif un intérieur fictif ordinaire ?",
+          "pt": "Como pode a iluminação seletiva tornar expressivo um interior fictício comum?"
+        },
+        "options": [
+          {
+            "id": "contrast",
+            "label": {
+              "en": "Compare light and shadow in an original tabletop sketch",
+              "nb": "Sammenlign lys og skygge i en egen skisse av en bordmodell",
+              "fr": "Comparer lumière et ombre dans un croquis original de maquette",
+              "pt": "Comparar luz e sombra num esboço original de maquete"
+            }
+          },
+          {
+            "id": "uniform",
+            "label": {
+              "en": "Remove all tonal variation regardless of the narrative purpose",
+              "nb": "Fjern alle tonevariasjoner uansett fortellingsformål",
+              "fr": "Supprimer toute variation tonale indépendamment du récit",
+              "pt": "Eliminar toda a variação tonal independentemente da narrativa"
+            }
+          },
+          {
+            "id": "exact",
+            "label": {
+              "en": "Claim the sketch reproduces the exact historical lighting setup",
+              "nb": "Hevd at skissen gjengir det eksakte historiske lysoppsettet",
+              "fr": "Prétendre reproduire exactement le dispositif historique d'éclairage",
+              "pt": "Afirmar que o esboço reproduz a instalação histórica exata"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "contrast",
+        "explanation": {
+          "en": "The Film Foundation describes selective low-key illumination and silhouettes. Compare an original neutral interior using drawings; study visual emphasis without imitating the film's racialized narrative or claiming exact equipment reconstruction.",
+          "nb": "Film Foundation beskriver selektiv lavmælt lyssetting og silhuetter. Sammenlign tegninger av et eget nøytralt interiør; studer visuelt fokus uten å etterligne filmens rasialiserte fortelling eller hevde en eksakt rekonstruksjon.",
+          "fr": "La Film Foundation décrit un éclairage contrasté et des silhouettes. Comparez des dessins d'un intérieur neutre original ; étudiez l'accent visuel sans imiter le récit racialisé ni prétendre reconstruire le matériel exact.",
+          "pt": "A Film Foundation descreve iluminação contrastada e silhuetas. Compare desenhos de um interior neutro original; estude a ênfase visual sem imitar a narrativa racializada nem alegar reconstruir o equipamento exato."
+        },
+        "sourceIds": [
+          "s3",
+          "s0"
+        ]
+      },
+      {
+        "id": "cheat-collaboration",
+        "area": "research",
+        "prompt": {
+          "en": "How should the distinctive studio style be credited?",
+          "nb": "Hvordan bør den særpregede studiostilen krediteres?",
+          "fr": "Comment attribuer les contributions au style distinctif du studio ?",
+          "pt": "Como atribuir os contributos para o estilo distintivo do estúdio?"
+        },
+        "options": [
+          {
+            "id": "solo",
+            "label": {
+              "en": "Assign every visual contribution to the director alone",
+              "nb": "Tilskriv alle visuelle bidrag regissøren alene",
+              "fr": "Attribuer toute contribution visuelle au seul réalisateur",
+              "pt": "Atribuir todo contributo visual apenas ao realizador"
+            }
+          },
+          {
+            "id": "team",
+            "label": {
+              "en": "Distinguish direction, writing, photography, design and performance",
+              "nb": "Skill regi, manus, filmfoto, scenografi og skuespillerprestasjon",
+              "fr": "Distinguer réalisation, écriture, photographie, décors et interprétation",
+              "pt": "Distinguir realização, escrita, fotografia, cenografia e interpretação"
+            }
+          },
+          {
+            "id": "distributor",
+            "label": {
+              "en": "Treat the distribution company as the only creative author",
+              "nb": "Behandle distribusjonsselskapet som eneste kreative opphav",
+              "fr": "Traiter le distributeur comme seul auteur créatif",
+              "pt": "Tratar a distribuidora como único autor criativo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "team",
+        "explanation": {
+          "en": "AFI and UCLA identify the Lasky production, DeMille, the writers and Wyckoff; AFI also credits Buckland's design. Preserve collaborative roles and distinguish Paramount distribution from production.",
+          "nb": "AFI og UCLA identifiserer Lasky-produksjonen, DeMille, manusforfatterne og Wyckoff; AFI krediterer også Bucklands scenografi. Bevar samarbeidsrollene og skill Paramounts distribusjon fra produksjon.",
+          "fr": "AFI et UCLA identifient la production Lasky, DeMille, les scénaristes et Wyckoff ; AFI crédite aussi les décors de Buckland. Préservez les rôles collectifs et distinguez distribution Paramount et production.",
+          "pt": "AFI e UCLA identificam a produção Lasky, DeMille, os argumentistas e Wyckoff; AFI credita também os cenários de Buckland. Preserve os papéis colaborativos e distinga a distribuição Paramount da produção."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "cheat-context",
+        "area": "research",
+        "prompt": {
+          "en": "How should the 1915 film and its 1918 reissue be discussed critically?",
+          "nb": "Hvordan bør filmen fra 1915 og nyutgivelsen fra 1918 drøftes kritisk?",
+          "fr": "Comment discuter de manière critique le film de 1915 et sa réédition de 1918 ?",
+          "pt": "Como discutir criticamente o filme de 1915 e a reedição de 1918?"
+        },
+        "options": [
+          {
+            "id": "neutral",
+            "label": {
+              "en": "Treat racist characterization as a neutral account of real people",
+              "nb": "Behandle rasistisk karakterisering som en nøytral beskrivelse av virkelige mennesker",
+              "fr": "Traiter les caractérisations racistes comme un portrait neutre de personnes réelles",
+              "pt": "Tratar caracterizações racistas como retrato neutro de pessoas reais"
+            }
+          },
+          {
+            "id": "collapse",
+            "label": {
+              "en": "Treat the reissue and later restored score as unchanged original material",
+              "nb": "Behandle nyutgivelsen og senere restaureringsmusikk som uendret originalmateriale",
+              "fr": "Traiter la réédition et la musique restaurée ultérieure comme un original inchangé",
+              "pt": "Tratar a reedição e a música restaurada posterior como original inalterado"
+            }
+          },
+          {
+            "id": "critical",
+            "label": {
+              "en": "Document the stereotype, protests, changed character identity and version history",
+              "nb": "Dokumenter stereotypien, protestene, endret figuridentitet og versjonshistorien",
+              "fr": "Documenter le stéréotype, les protestations, l'identité modifiée et l'histoire des versions",
+              "pt": "Documentar o estereótipo, os protestos, a identidade alterada e a história das versões"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "critical",
+        "explanation": {
+          "en": "AFI documents protest and the character's re-identification in 1918; the Film Foundation and MoMA contextualize racialized representation. Distinguish historical critique from craft practice and identify the later score as a separate presentation layer.",
+          "nb": "AFI dokumenterer protest og endringen i figurens identitet i 1918; Film Foundation og MoMA kontekstualiserer rasialisert fremstilling. Skill historisk kritikk fra håndverksøvelse og identifiser senere musikk som et eget visningslag.",
+          "fr": "AFI documente les protestations et la modification de l'identité du personnage en 1918 ; la Film Foundation et le MoMA contextualisent la représentation racialisée. Distinguez critique historique et exercice technique, et identifiez la musique ultérieure comme une couche de présentation distincte.",
+          "pt": "AFI documenta protestos e a alteração da identidade da personagem em 1918; a Film Foundation e o MoMA contextualizam a representação racializada. Distinga crítica histórica de prática técnica e identifique a música posterior como camada de apresentação distinta."
+        },
+        "sourceIds": [
+          "s0",
+          "s3",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_gold_rush_1925",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore independent star production, location and studio integration, and the differences between silent and sound editions.",
+      "nb": "Utforsk uavhengig stjerneproduksjon, samspillet mellom location og studio og forskjellene mellom stumfilm- og lydutgaver.",
+      "fr": "Explorez la production indépendante d'une vedette, l'intégration des lieux et du studio, et les différences entre éditions muette et sonore.",
+      "pt": "Explore a produção independente de uma estrela, a integração de locais e estúdio e as diferenças entre edições muda e sonora."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The Gold Rush — AFI Catalog",
+        "publisher": "American Film Institute",
+        "url": "https://catalog.afi.com/Film/9427-THE-GOLD-RUSH"
+      },
+      {
+        "id": "s1",
+        "title": "Filming The Gold Rush",
+        "publisher": "Charlie Chaplin / Roy Export",
+        "url": "https://www.charliechaplin.com/en/films/2-The-Gold-Rush/articles/5-Filming-The-Gold-Rush"
+      },
+      {
+        "id": "s2",
+        "title": "The Music of The Gold Rush",
+        "publisher": "Charlie Chaplin / Roy Export",
+        "url": "https://www.charliechaplin.com/en/films/2-The-Gold-Rush/articles/248-The-Music-of-The-Gold-Rush"
+      },
+      {
+        "id": "s3",
+        "title": "La febbre dell'oro — 4K restoration",
+        "publisher": "Cineteca di Bologna",
+        "url": "https://cinetecadibologna.it/distribuzione/film/la-febbre-delloro/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "goldrush-world",
+        "area": "camera",
+        "prompt": {
+          "en": "How could a miniature exercise combine a location reference with a constructed set?",
+          "nb": "Hvordan kan en miniatyrøvelse kombinere en stedsreferanse med en konstruert scenografi?",
+          "fr": "Comment une maquette peut-elle associer une référence de lieu à un décor construit ?",
+          "pt": "Como pode uma maquete combinar uma referência de local com um cenário construído?"
+        },
+        "options": [
+          {
+            "id": "match",
+            "label": {
+              "en": "Compare a landscape drawing and miniature for consistent scale and framing",
+              "nb": "Sammenlign en landskapstegning og en miniatyr med hensyn til skala og utsnitt",
+              "fr": "Comparer un dessin de paysage et une maquette pour la cohérence d'échelle et de cadre",
+              "pt": "Comparar um desenho de paisagem e uma maquete quanto à coerência de escala e enquadramento"
+            }
+          },
+          {
+            "id": "separate",
+            "label": {
+              "en": "Ignore the visual relationship between location and constructed scenery",
+              "nb": "Ignorer den visuelle sammenhengen mellom opptakssted og konstruert dekor",
+              "fr": "Ignorer le rapport visuel entre lieu et décor construit",
+              "pt": "Ignorar a relação visual entre local e cenário construído"
+            }
+          },
+          {
+            "id": "hazard",
+            "label": {
+              "en": "Recreate hazardous historical conditions instead of using a model",
+              "nb": "Gjenskap farlige historiske forhold i stedet for å bruke en modell",
+              "fr": "Recréer des conditions historiques dangereuses au lieu d'une maquette",
+              "pt": "Recriar condições históricas perigosas em vez de usar uma maquete"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "match",
+        "explanation": {
+          "en": "Chaplin's archive documents the Truckee shoot and constructed mountain scenery in Hollywood. Compare safe drawings and a miniature of an invented setting to explore visual continuity, not to reproduce dangerous historical production conditions.",
+          "nb": "Chaplins arkiv dokumenterer Truckee-opptakene og konstruert fjellscenografi i Hollywood. Sammenlign trygge tegninger og en miniatyr av et oppdiktet sted for å utforske visuell kontinuitet, ikke for å gjenskape farlige historiske produksjonsforhold.",
+          "fr": "Les archives Chaplin documentent le tournage à Truckee et les montagnes construites à Hollywood. Comparez des dessins et une maquette sûre d'un lieu inventé pour étudier la continuité visuelle, non les conditions historiques dangereuses.",
+          "pt": "O arquivo Chaplin documenta a rodagem em Truckee e a montanha construída em Hollywood. Compare desenhos e uma maquete segura de um local inventado para explorar continuidade visual, sem reproduzir condições históricas perigosas."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "goldrush-independence",
+        "area": "research",
+        "prompt": {
+          "en": "How should you map star-producer control, craft collaboration and distribution?",
+          "nb": "Hvordan bør du kartlegge stjerneprodusentens kontroll, fagsamarbeid og distribusjon?",
+          "fr": "Comment cartographier le contrôle de la vedette-producteur, les collaborations et la distribution ?",
+          "pt": "Como mapear o controlo da estrela-produtora, a colaboração técnica e a distribuição?"
+        },
+        "options": [
+          {
+            "id": "solo",
+            "label": {
+              "en": "Assume Chaplin personally performed every credited craft task",
+              "nb": "Anta at Chaplin personlig utførte alle krediterte fagoppgaver",
+              "fr": "Supposer que Chaplin a personnellement accompli toutes les tâches créditées",
+              "pt": "Supor que Chaplin executou pessoalmente todas as tarefas creditadas"
+            }
+          },
+          {
+            "id": "roles",
+            "label": {
+              "en": "Distinguish Chaplin's multiple roles, the craft team and United Artists distribution",
+              "nb": "Skill Chaplins mange roller, fagteamet og United Artists-distribusjonen",
+              "fr": "Distinguer les multiples rôles de Chaplin, l'équipe technique et la distribution United Artists",
+              "pt": "Distinguir os vários papéis de Chaplin, a equipa técnica e a distribuição United Artists"
+            }
+          },
+          {
+            "id": "studio",
+            "label": {
+              "en": "Identify United Artists as the sole maker of the film",
+              "nb": "Identifiser United Artists som filmens eneste produsent",
+              "fr": "Identifier United Artists comme seul producteur du film",
+              "pt": "Identificar a United Artists como única produtora do filme"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "roles",
+        "explanation": {
+          "en": "AFI records Chaplin's production, writing, direction and editing roles, the photography and design credits and United Artists distribution. Independent creative control and collaboration can coexist; record documented roles separately.",
+          "nb": "AFI registrerer Chaplins produksjon, manus, regi og klipp, foto- og scenografikrediteringer og United Artists-distribusjon. Uavhengig kreativ kontroll og samarbeid kan eksistere samtidig; registrer dokumenterte roller separat.",
+          "fr": "AFI recense production, écriture, réalisation et montage de Chaplin, les crédits image et décors et la distribution United Artists. Contrôle indépendant et collaboration peuvent coexister ; consignez les rôles séparément.",
+          "pt": "AFI regista produção, escrita, realização e montagem de Chaplin, créditos de fotografia e cenografia e distribuição United Artists. Controlo independente e colaboração podem coexistir; registe os papéis separadamente."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "goldrush-versions",
+        "area": "sound",
+        "prompt": {
+          "en": "How should you distinguish the 1925 release from Chaplin's 1942 reissue?",
+          "nb": "Hvordan bør du skille utgivelsen fra 1925 fra Chaplins nyutgivelse i 1942?",
+          "fr": "Comment distinguer la sortie de 1925 de la réédition de Chaplin en 1942 ?",
+          "pt": "Como distinguir a estreia de 1925 da reedição de Chaplin em 1942?"
+        },
+        "options": [
+          {
+            "id": "original",
+            "label": {
+              "en": "Attribute the 1942 recorded narration and score to the original silent release",
+              "nb": "Tilskriv fortellerstemmen og musikken fra 1942 den opprinnelige stumfilmutgivelsen",
+              "fr": "Attribuer narration enregistrée et musique de 1942 à la sortie muette originale",
+              "pt": "Atribuir narração gravada e música de 1942 à estreia muda original"
+            }
+          },
+          {
+            "id": "identical",
+            "label": {
+              "en": "Assume both editions have the same footage and presentation",
+              "nb": "Anta at begge utgavene har identisk opptaksmateriale og visning",
+              "fr": "Supposer que les deux éditions ont les mêmes images et la même présentation",
+              "pt": "Supor que ambas as edições têm as mesmas imagens e apresentação"
+            }
+          },
+          {
+            "id": "distinguish",
+            "label": {
+              "en": "Document the silent accompaniment, later narration and score, and editing changes",
+              "nb": "Dokumenter stumfilmakkompagnement, senere fortellerstemme og musikk samt klippeendringer",
+              "fr": "Documenter l'accompagnement muet, la narration et la musique ultérieures, et les changements de montage",
+              "pt": "Documentar acompanhamento mudo, narração e música posteriores e alterações de montagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "distinguish",
+        "explanation": {
+          "en": "The Chaplin archive distinguishes the compiled 1925 accompaniment from the newly composed synchronized score, narration and altered footage of the 1942 edition. Tie each claim to the edition and keep restoration metadata separate.",
+          "nb": "Chaplins arkiv skiller det sammenstilte akkompagnementet fra 1925 fra den nykomponerte synkrone musikken, fortellerstemmen og endrede opptak i 1942-utgaven. Knytt hver påstand til riktig utgave og hold restaureringsmetadata adskilt.",
+          "fr": "Les archives Chaplin distinguent l'accompagnement compilé de 1925 de la musique synchronisée nouvelle, de la narration et des images modifiées en 1942. Reliez chaque affirmation à son édition et séparez les métadonnées de restauration.",
+          "pt": "O arquivo Chaplin distingue o acompanhamento compilado de 1925 da nova música sincronizada, narração e imagens alteradas de 1942. Relacione cada afirmação com a edição correspondente e separe os metadados de restauro."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2",
+          "s3"
         ]
       }
     ]

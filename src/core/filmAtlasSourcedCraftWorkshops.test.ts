@@ -45,15 +45,17 @@ const ids = [
   "scenario_afgrunden_1910",
   "scenario_atlantis_1913",
   "scenario_the_general_1926",
+  "scenario_the_cheat_1915",
+  "scenario_the_gold_rush_1925",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly thirty-six existing cases have one hundred and eight original, source-backed decisions", () => {
+test("Exactly thirty-eight existing cases have one hundred and fourteen original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 36);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 108);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 38);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 114);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -101,6 +103,12 @@ test("Exactly thirty-six existing cases have one hundred and eight original, sou
       const definitions = readFileSync("src/core/chapterFiveInternationalExpansion.ts", "utf8");
       assert.ok(definitions.includes(workshop.scenarioId));
       const dossierFiles: Record<string, string> = {"scenario_afgrunden_1910":"src/ui/data/scenarioProductionVerificationAfgrunden.ts","scenario_atlantis_1913":"src/ui/data/scenarioProductionVerificationAtlantis.ts"};
+      const dossier = readFileSync(dossierFiles[workshop.scenarioId]!, "utf8");
+      for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (["scenario_the_cheat_1915", "scenario_the_gold_rush_1925"].includes(workshop.scenarioId)) {
+      const definitions = readFileSync("src/core/chapterSixHollywoodExpansion.ts", "utf8");
+      assert.ok(definitions.includes(workshop.scenarioId));
+      const dossierFiles: Record<string, string> = {"scenario_the_cheat_1915":"src/ui/data/scenarioProductionVerificationTheCheat.ts","scenario_the_gold_rush_1925":"src/ui/data/scenarioProductionVerificationGoldRush.ts"};
       const dossier = readFileSync(dossierFiles[workshop.scenarioId]!, "utf8");
       for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
     } else if (workshop.scenarioId === "scenario_the_general_1926") {
@@ -493,4 +501,9 @@ test("The General workshop distinguishes visual comedy, collaborative credits an
   const general = getSourceBackedCaseWorkshop("scenario_the_general_1926");
   assert.ok(general);
   assert.deepEqual(general.questions.map(q => q.bestSupportedOptionId), ["clear","team","context"]);
+});
+
+test("Hollywood workshops distinguish expressive craft, collaboration and edition histories", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_cheat_1915")?.questions.map(q => q.bestSupportedOptionId), ["contrast","team","critical"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_gold_rush_1925")?.questions.map(q => q.bestSupportedOptionId), ["match","roles","distinguish"]);
 });
