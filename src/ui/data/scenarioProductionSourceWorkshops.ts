@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Thirty-eight pre-existing Production Cases receive evidence-backed craft decisions.
+ * Forty-one pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -5781,6 +5781,558 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
           "s1",
           "s2",
           "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_it_1927",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore silent performance, adaptation and the studio construction of a star image.",
+      "nb": "Utforsk stumfilmspill, adaptasjon og studioets utvikling av en stjerneidentitet.",
+      "fr": "Explorez le jeu muet, l'adaptation et la construction d'une image de vedette par le studio.",
+      "pt": "Explore a interpretação muda, a adaptação e a construção da imagem de estrela pelo estúdio."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "It — AFI Catalog",
+        "publisher": "American Film Institute",
+        "url": "https://catalog.afi.com/Film/9977-IT"
+      },
+      {
+        "id": "s1",
+        "title": "It (1927) — National Film Registry description",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/programs/national-film-preservation-board/film-registry/descriptions-and-essays/"
+      },
+      {
+        "id": "s2",
+        "title": "It / Children of Divorce",
+        "publisher": "UCLA Film & Television Archive",
+        "url": "https://cinema.ucla.edu/events/it-1927-children-of-divorce-1927-01-11-13/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "it-performance",
+        "area": "camera",
+        "prompt": {
+          "en": "How can you build a recognizable fictional character without rating a performer's appearance?",
+          "nb": "Hvordan kan du utvikle en gjenkjennelig fiktiv figur uten å rangere skuespillerens utseende?",
+          "fr": "Comment créer un personnage reconnaissable sans noter l'apparence de l'interprète ?",
+          "pt": "Como criar uma personagem reconhecível sem avaliar a aparência do intérprete?"
+        },
+        "options": [
+          {
+            "id": "gesture",
+            "label": {
+              "en": "Compare gestures, costume sketches and framing that support character agency",
+              "nb": "Sammenlign gester, kostymeskisser og utsnitt som støtter figurens handlekraft",
+              "fr": "Comparer gestes, croquis de costumes et cadrages qui soutiennent l'autonomie du personnage",
+              "pt": "Comparar gestos, esboços de figurinos e enquadramentos que apoiem a autonomia da personagem"
+            }
+          },
+          {
+            "id": "rating",
+            "label": {
+              "en": "Reduce character identity to a numerical beauty rating",
+              "nb": "Reduser figurens identitet til en tallfestet skjønnhetsvurdering",
+              "fr": "Réduire l'identité du personnage à une note de beauté",
+              "pt": "Reduzir a identidade da personagem a uma nota de beleza"
+            }
+          },
+          {
+            "id": "ignore",
+            "label": {
+              "en": "Ignore acting and framing when planning a star vehicle",
+              "nb": "Ignorer skuespillerarbeid og utsnitt når en stjernefilm planlegges",
+              "fr": "Ignorer le jeu et le cadrage dans la conception d'un film de vedette",
+              "pt": "Ignorar interpretação e enquadramento ao planear um filme de estrela"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "gesture",
+        "explanation": {
+          "en": "UCLA and the Library of Congress describe Bow's central star presence. An original exercise can explore how performance and visual choices communicate character, without reproducing period publicity as appearance scoring.",
+          "nb": "UCLA og Library of Congress beskriver Bows sentrale stjernenærvær. En egen øvelse kan utforske hvordan spill og visuelle valg formidler karakter, uten å gjenskape tidens markedsføring som utseendepoeng.",
+          "fr": "UCLA et la Library of Congress décrivent la présence centrale de Bow. Un exercice original explore le jeu et les choix visuels sans transformer la publicité d'époque en notation physique.",
+          "pt": "UCLA e Library of Congress descrevem a presença central de Bow. Um exercício original explora interpretação e escolhas visuais sem transformar publicidade histórica em avaliação física."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "it-publicity",
+        "area": "research",
+        "prompt": {
+          "en": "How should a producer connect adaptation, promotion and film production?",
+          "nb": "Hvordan bør en produsent knytte adaptasjon, markedsføring og filmproduksjon sammen?",
+          "fr": "Comment relier adaptation, promotion et production cinématographique ?",
+          "pt": "Como relacionar adaptação, promoção e produção cinematográfica?"
+        },
+        "options": [
+          {
+            "id": "fiction",
+            "label": {
+              "en": "Treat promotional claims as objective descriptions of every performer",
+              "nb": "Behandle reklamepåstander som objektive beskrivelser av alle skuespillere",
+              "fr": "Traiter les slogans publicitaires comme descriptions objectives de chaque interprète",
+              "pt": "Tratar afirmações publicitárias como descrições objetivas de cada intérprete"
+            }
+          },
+          {
+            "id": "system",
+            "label": {
+              "en": "Map the literary concept, media arrangement, studio and publicity separately",
+              "nb": "Kartlegg litterært konsept, medieavtale, studio og markedsføring hver for seg",
+              "fr": "Cartographier séparément le concept littéraire, l'accord médiatique, le studio et la publicité",
+              "pt": "Mapear separadamente o conceito literário, o acordo mediático, o estúdio e a publicidade"
+            }
+          },
+          {
+            "id": "erase",
+            "label": {
+              "en": "Remove the literary and media context from the production account",
+              "nb": "Fjern litteratur- og mediekonteksten fra produksjonsbeskrivelsen",
+              "fr": "Supprimer le contexte littéraire et médiatique du récit de production",
+              "pt": "Eliminar o contexto literário e mediático do relato de produção"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "system",
+        "explanation": {
+          "en": "AFI records Glyn's adaptation and the publication arrangement; the Library of Congress describes Paramount's publicity strategy around Bow. Distinguish documented commercial coordination from the claims used to market a star.",
+          "nb": "AFI dokumenterer Glyns adaptasjon og publiseringsavtalen; Library of Congress beskriver Paramounts markedsføring av Bow. Skill dokumentert kommersielt samarbeid fra påstandene brukt til å markedsføre en stjerne.",
+          "fr": "AFI documente l'adaptation de Glyn et l'accord de publication ; la Library of Congress décrit la stratégie publicitaire de Paramount autour de Bow. Distinguez coordination commerciale et slogans.",
+          "pt": "AFI documenta a adaptação de Glyn e o acordo de publicação; a Library of Congress descreve a estratégia publicitária da Paramount em torno de Bow. Distinga coordenação comercial de afirmações promocionais."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "it-credits",
+        "area": "research",
+        "prompt": {
+          "en": "How should different levels of directing and craft credits be recorded?",
+          "nb": "Hvordan bør ulike regi- og fagkrediteringer registreres?",
+          "fr": "Comment consigner les différents crédits de réalisation et des métiers du film ?",
+          "pt": "Como registar os diferentes créditos de realização e das funções técnicas?"
+        },
+        "options": [
+          {
+            "id": "solo",
+            "label": {
+              "en": "Attribute all directing and craft contributions to one famous name",
+              "nb": "Tilskriv all regi og alle fagbidrag ett kjent navn",
+              "fr": "Attribuer toute réalisation et tous les métiers à un seul nom célèbre",
+              "pt": "Atribuir toda a realização e funções técnicas a um único nome famoso"
+            }
+          },
+          {
+            "id": "guess",
+            "label": {
+              "en": "Invent a precise division of work not supported by the records",
+              "nb": "Finn på en nøyaktig arbeidsdeling som kildene ikke støtter",
+              "fr": "Inventer une répartition précise du travail sans preuve",
+              "pt": "Inventar uma divisão precisa do trabalho sem apoio documental"
+            }
+          },
+          {
+            "id": "credit",
+            "label": {
+              "en": "Keep the source-specific direction credits and separate writing, photography and editing",
+              "nb": "Behold kildespesifikke regikrediteringer og skill manus, foto og klipp",
+              "fr": "Conserver les crédits de réalisation selon les sources et distinguer scénario, image et montage",
+              "pt": "Manter créditos de realização por fonte e distinguir argumento, fotografia e montagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "credit",
+        "explanation": {
+          "en": "AFI records additional direction and multiple writing credits, while UCLA confirms core craft credits and the silent presentation. Preserve the source-specific distinctions rather than inferring an exact undocumented division of labour.",
+          "nb": "AFI registrerer tilleggsregi og flere manusbidrag, mens UCLA bekrefter sentrale fagkrediteringer og stumfilmvisningen. Bevar kildespesifikke forskjeller fremfor å utlede en udokumentert arbeidsdeling.",
+          "fr": "AFI recense une réalisation additionnelle et plusieurs crédits d'écriture ; UCLA confirme les principaux métiers et la projection muette. Préservez les distinctions documentées sans déduire une répartition inconnue.",
+          "pt": "AFI regista realização adicional e vários créditos de escrita; UCLA confirma funções centrais e exibição muda. Preserve as distinções documentadas sem deduzir uma divisão de trabalho desconhecida."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_wings_1927",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore large-unit collaboration, readable visual scale and the distinction between release and restoration editions.",
+      "nb": "Utforsk samarbeid i store produksjonsteam, tydelig visuell skala og skillet mellom utgivelses- og restaureringsversjoner.",
+      "fr": "Explorez la collaboration de grandes équipes, la lisibilité de l'échelle visuelle et les distinctions entre éditions de sortie et de restauration.",
+      "pt": "Explore a colaboração de grandes equipas, a clareza da escala visual e a distinção entre edições de estreia e restauro."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Wings — AFI Catalog",
+        "publisher": "American Film Institute",
+        "url": "https://catalog.afi.com/Film/13362-WINGS"
+      },
+      {
+        "id": "s1",
+        "title": "Wings — 2011 digital restoration screening",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/events/wings-2011"
+      },
+      {
+        "id": "s2",
+        "title": "The 1st Academy Awards — 1929",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/oscars/ceremonies/1929"
+      },
+      {
+        "id": "s3",
+        "title": "Films Selected to the National Film Registry 1997",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/loc/lcib/9712/nfr.html"
+      }
+    ],
+    "questions": [
+      {
+        "id": "wings-space",
+        "area": "camera",
+        "prompt": {
+          "en": "How could a safe tabletop exercise explore visual clarity across a large fictional space?",
+          "nb": "Hvordan kan en trygg bordøvelse utforske visuell tydelighet i et stort fiktivt rom?",
+          "fr": "Comment une maquette sûre peut-elle explorer la lisibilité d'un vaste espace fictif ?",
+          "pt": "Como pode uma maquete segura explorar a clareza de um grande espaço fictício?"
+        },
+        "options": [
+          {
+            "id": "map",
+            "label": {
+              "en": "Draw a benign fictional scene with landmarks and consistent viewpoints",
+              "nb": "Tegn en ufarlig fiktiv scene med landemerker og konsistente synsvinkler",
+              "fr": "Dessiner une scène fictive sans danger avec repères et points de vue cohérents",
+              "pt": "Desenhar uma cena fictícia inofensiva com referências e pontos de vista coerentes"
+            }
+          },
+          {
+            "id": "risk",
+            "label": {
+              "en": "Attempt real historical stunt activity instead of a drawing",
+              "nb": "Forsøk virkelig historisk stuntaktivitet fremfor en tegning",
+              "fr": "Tenter des cascades historiques réelles au lieu d'un dessin",
+              "pt": "Tentar acrobacias históricas reais em vez de um desenho"
+            }
+          },
+          {
+            "id": "confuse",
+            "label": {
+              "en": "Remove all spatial relationships between the selected views",
+              "nb": "Fjern alle romlige forbindelser mellom de valgte bildene",
+              "fr": "Supprimer toutes les relations spatiales entre les vues choisies",
+              "pt": "Eliminar todas as relações espaciais entre as vistas escolhidas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "map",
+        "explanation": {
+          "en": "AFI and the Academy document a large specialist photography team. Use drawings of an invented everyday scene to compare spatial clarity across views; this is not an aviation or stunt exercise and does not reconstruct the film's action.",
+          "nb": "AFI og Academy dokumenterer et stort spesialisert fototeam. Bruk tegninger av en oppdiktet hverdagsscene til å sammenligne romlig tydelighet; dette er ingen fly- eller stuntøvelse og rekonstruerer ikke filmens handling.",
+          "fr": "AFI et l'Academy documentent une importante équipe image spécialisée. Utilisez des dessins d'une scène quotidienne inventée pour comparer la lisibilité spatiale, sans exercice aérien ni cascade ni reconstitution de l'action.",
+          "pt": "AFI e Academy documentam uma grande equipa especializada de fotografia. Use desenhos de uma cena quotidiana inventada para comparar clareza espacial, sem exercício aéreo, acrobacias ou reconstrução da ação."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "wings-team",
+        "area": "research",
+        "prompt": {
+          "en": "How should a researcher represent a large studio production's specialist collaboration?",
+          "nb": "Hvordan bør en forsker fremstille spesialistsamarbeidet i en stor studioproduksjon?",
+          "fr": "Comment représenter la collaboration spécialisée d'une grande production de studio ?",
+          "pt": "Como representar a colaboração especializada de uma grande produção de estúdio?"
+        },
+        "options": [
+          {
+            "id": "single",
+            "label": {
+              "en": "Credit every specialist contribution to the director alone",
+              "nb": "Krediter alle spesialistbidrag til regissøren alene",
+              "fr": "Attribuer toutes les contributions spécialisées au seul réalisateur",
+              "pt": "Atribuir todos os contributos especializados apenas ao realizador"
+            }
+          },
+          {
+            "id": "roles",
+            "label": {
+              "en": "Document production, photography, editing, design and engineering credits separately",
+              "nb": "Dokumenter produksjon, foto, klipp, scenografi og tekniske krediteringer separat",
+              "fr": "Documenter séparément production, image, montage, décors et ingénierie",
+              "pt": "Documentar separadamente produção, fotografia, montagem, cenografia e engenharia"
+            }
+          },
+          {
+            "id": "award",
+            "label": {
+              "en": "Treat a film award as proof of every undocumented production claim",
+              "nb": "Behandle en filmpris som bevis på alle udokumenterte produksjonspåstander",
+              "fr": "Traiter un prix comme preuve de toute affirmation de production non documentée",
+              "pt": "Tratar um prémio como prova de toda afirmação de produção não documentada"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "roles",
+        "explanation": {
+          "en": "AFI and the Academy identify the production team and technical credits; the Academy separately records Pomeroy's Engineering Effects award. Map documented roles without inferring an operational effects method or attributing all craft to one filmmaker.",
+          "nb": "AFI og Academy identifiserer produksjonsteamet og tekniske krediteringer; Academy registrerer også Pomeroys effektpris. Kartlegg dokumenterte roller uten å utlede en operativ effektmetode eller tilskrive alt én filmskaper.",
+          "fr": "AFI et l'Academy identifient les équipes et crédits techniques ; l'Academy consigne séparément le prix d'effets de Pomeroy. Cartographiez les rôles sans déduire de méthode opérationnelle ni tout attribuer à une personne.",
+          "pt": "AFI e Academy identificam equipas e créditos técnicos; a Academy regista separadamente o prémio de efeitos de Pomeroy. Mapeie papéis sem deduzir um método operacional nem atribuir tudo a uma pessoa."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "wings-versions",
+        "area": "sound",
+        "prompt": {
+          "en": "How should the 1927 roadshow, later national release and restored presentation be distinguished?",
+          "nb": "Hvordan bør turnévisningen fra 1927, senere nasjonal utgivelse og restaurert visning skilles?",
+          "fr": "Comment distinguer les projections itinérantes de 1927, la sortie nationale ultérieure et la restauration ?",
+          "pt": "Como distinguir a exibição itinerante de 1927, a estreia nacional posterior e a apresentação restaurada?"
+        },
+        "options": [
+          {
+            "id": "original",
+            "label": {
+              "en": "Attribute every later sound and colour choice to the first release",
+              "nb": "Tilskriv alle senere lyd- og fargevalg den første utgivelsen",
+              "fr": "Attribuer tous les choix sonores et chromatiques ultérieurs à la première sortie",
+              "pt": "Atribuir todas as escolhas posteriores de som e cor à primeira estreia"
+            }
+          },
+          {
+            "id": "identical",
+            "label": {
+              "en": "Assume all versions have identical presentation elements",
+              "nb": "Anta at alle versjoner har identiske visningselementer",
+              "fr": "Supposer que toutes les versions ont des éléments de présentation identiques",
+              "pt": "Supor que todas as versões têm elementos de apresentação idênticos"
+            }
+          },
+          {
+            "id": "layers",
+            "label": {
+              "en": "Document the release-specific sound additions and restoration choices separately",
+              "nb": "Dokumenter utgivelsesspesifikke lydtillegg og restaureringsvalg separat",
+              "fr": "Documenter séparément les ajouts sonores de sortie et les choix de restauration",
+              "pt": "Documentar separadamente os acréscimos sonoros de estreia e as escolhas de restauro"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "layers",
+        "explanation": {
+          "en": "AFI distinguishes the 1927 roadshow from the 1929 national release with added score and sound effects. The Academy describes the 2011 restoration's colour treatment and live organ presentation. Keep these edition-specific facts separate.",
+          "nb": "AFI skiller turnévisningen fra 1927 fra den nasjonale utgivelsen i 1929 med tilført musikk og lydeffekter. Academy beskriver fargebehandlingen i restaureringen fra 2011 og levende orgelmusikk. Hold utgavespesifikke fakta adskilt.",
+          "fr": "AFI distingue les projections de 1927 de la sortie nationale de 1929 avec musique et effets sonores ajoutés. L'Academy décrit la couleur restaurée en 2011 et l'orgue en direct. Séparez ces faits propres aux éditions.",
+          "pt": "AFI distingue a exibição de 1927 da estreia nacional de 1929 com música e efeitos sonoros acrescentados. A Academy descreve a cor restaurada em 2011 e o órgão ao vivo. Separe estes factos específicos das edições."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_crowd_1928",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore the relationship between urban scale, ordinary characters, studio craft and the history of alternate endings.",
+      "nb": "Utforsk forholdet mellom urban skala, hverdagsfigurer, studiohåndverk og historien til alternative avslutninger.",
+      "fr": "Explorez le rapport entre échelle urbaine, personnages ordinaires, métiers du studio et histoire des fins alternatives.",
+      "pt": "Explore a relação entre escala urbana, personagens comuns, ofícios de estúdio e história dos finais alternativos."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The Crowd — AFI Catalog",
+        "publisher": "American Film Institute",
+        "url": "https://catalog.afi.com/Film/3514-THE-CROWD"
+      },
+      {
+        "id": "s1",
+        "title": "The Crowd (1928) — National Film Registry description",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/programs/national-film-preservation-board/film-registry/descriptions-and-essays/"
+      },
+      {
+        "id": "s2",
+        "title": "The 1st Academy Awards — 1929",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/oscars/ceremonies/1929"
+      }
+    ],
+    "questions": [
+      {
+        "id": "crowd-scale",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a drawn city-to-interior sequence communicate the relationship between an individual and a large institution?",
+          "nb": "Hvordan kan en tegnet sekvens fra by til interiør formidle forholdet mellom individet og en stor institusjon?",
+          "fr": "Comment une séquence dessinée de la ville à l'intérieur peut-elle montrer le rapport entre individu et institution ?",
+          "pt": "Como pode uma sequência desenhada da cidade ao interior mostrar a relação entre indivíduo e instituição?"
+        },
+        "options": [
+          {
+            "id": "scale",
+            "label": {
+              "en": "Compare city scale, a shared interior and an individual character in connected drawings",
+              "nb": "Sammenlign byskala, et felles interiør og én figur i sammenhengende tegninger",
+              "fr": "Comparer échelle urbaine, intérieur collectif et personnage dans des dessins reliés",
+              "pt": "Comparar escala urbana, interior coletivo e personagem em desenhos ligados"
+            }
+          },
+          {
+            "id": "unrelated",
+            "label": {
+              "en": "Use disconnected images with no relationship to the character",
+              "nb": "Bruk løsrevne bilder uten forbindelse til figuren",
+              "fr": "Utiliser des images disjointes sans rapport avec le personnage",
+              "pt": "Usar imagens desligadas sem relação com a personagem"
+            }
+          },
+          {
+            "id": "claim",
+            "label": {
+              "en": "Claim the drawing reveals an exact undocumented historical effects technique",
+              "nb": "Hevd at tegningen avslører en eksakt udokumentert historisk effektteknikk",
+              "fr": "Affirmer que le dessin révèle une technique historique non documentée",
+              "pt": "Afirmar que o desenho revela uma técnica histórica não documentada"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "scale",
+        "explanation": {
+          "en": "The Library of Congress describes the transition from skyscraper scale to a vast office. Draw a new setting to compare the social meaning of scale and framing without asserting an exact historical effects recipe.",
+          "nb": "Library of Congress beskriver overgangen fra skyskraperskala til et enormt kontor. Tegn et nytt miljø for å sammenligne sosial betydning av skala og utsnitt uten å hevde en eksakt historisk effektmetode.",
+          "fr": "La Library of Congress décrit le passage de l'échelle des gratte-ciel à un vaste bureau. Dessinez un nouveau lieu pour comparer le sens social de l'échelle et du cadre sans prétendre connaître la technique exacte.",
+          "pt": "A Library of Congress descreve a passagem da escala dos arranha-céus para um vasto escritório. Desenhe um novo local para comparar o sentido social da escala e enquadramento sem afirmar conhecer a técnica exata."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "crowd-location",
+        "area": "research",
+        "prompt": {
+          "en": "How could you combine location observation and studio planning in a consent-aware exercise?",
+          "nb": "Hvordan kan du kombinere stedsobservasjon og studioplanlegging i en øvelse som ivaretar samtykke?",
+          "fr": "Comment combiner observation des lieux et préparation en studio dans un exercice respectant le consentement ?",
+          "pt": "Como combinar observação de locais e planeamento de estúdio num exercício que respeite o consentimento?"
+        },
+        "options": [
+          {
+            "id": "hidden",
+            "label": {
+              "en": "Secretly record identifiable strangers to imitate historical practice",
+              "nb": "Film identifiserbare fremmede i skjul for å etterligne historisk praksis",
+              "fr": "Filmer secrètement des inconnus identifiables pour imiter la pratique historique",
+              "pt": "Filmar secretamente desconhecidos identificáveis para imitar a prática histórica"
+            }
+          },
+          {
+            "id": "consent",
+            "label": {
+              "en": "Use drawings, unoccupied settings or consenting collaborators to plan the connection",
+              "nb": "Bruk tegninger, tomme miljøer eller samtykkende samarbeidspartnere til å planlegge forbindelsen",
+              "fr": "Utiliser dessins, lieux vides ou collaborateurs consentants pour préparer le raccord",
+              "pt": "Usar desenhos, locais vazios ou colaboradores que consintam para planear a ligação"
+            }
+          },
+          {
+            "id": "erase",
+            "label": {
+              "en": "Ignore the distinction between location material and constructed interiors",
+              "nb": "Ignorer forskjellen mellom stedsmateriale og konstruerte interiører",
+              "fr": "Ignorer la distinction entre lieux réels et intérieurs construits",
+              "pt": "Ignorar a distinção entre locais reais e interiores construídos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "consent",
+        "explanation": {
+          "en": "AFI and the Library of Congress describe historical New York location work, including concealed cameras. Study location and studio integration through privacy-respecting original materials; historical practice is not a direction to repeat it.",
+          "nb": "AFI og Library of Congress beskriver historiske opptak i New York, inkludert skjulte kameraer. Studer samspillet mellom sted og studio med egne personvernvennlige materialer; historisk praksis er ikke en oppfordring til å gjenta den.",
+          "fr": "AFI et la Library of Congress décrivent les tournages historiques à New York, notamment en caméra cachée. Étudiez l'intégration des lieux et du studio avec des matériaux respectueux de la vie privée, sans reproduire cette pratique.",
+          "pt": "AFI e Library of Congress descrevem filmagens históricas em Nova Iorque, incluindo câmaras ocultas. Estude a integração de locais e estúdio com materiais que respeitem a privacidade, sem repetir essa prática."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "crowd-endings",
+        "area": "research",
+        "prompt": {
+          "en": "How should the alternative endings and later restoration score be documented?",
+          "nb": "Hvordan bør de alternative avslutningene og den senere restaureringsmusikken dokumenteres?",
+          "fr": "Comment documenter les fins alternatives et la musique de restauration ultérieure ?",
+          "pt": "Como documentar os finais alternativos e a música de restauro posterior?"
+        },
+        "options": [
+          {
+            "id": "one",
+            "label": {
+              "en": "Declare one ending to be the only release option without evidence",
+              "nb": "Erklær én avslutning som eneste utgivelsesalternativ uten belegg",
+              "fr": "Déclarer une fin seule option de sortie sans preuve",
+              "pt": "Declarar um final como única opção de estreia sem evidência"
+            }
+          },
+          {
+            "id": "score",
+            "label": {
+              "en": "Describe the later Carl Davis score as original synchronized production sound",
+              "nb": "Beskriv Carl Davis' senere musikk som synkron originallyd",
+              "fr": "Décrire la musique ultérieure de Carl Davis comme son synchrone original",
+              "pt": "Descrever a música posterior de Carl Davis como som sincronizado original"
+            }
+          },
+          {
+            "id": "versions",
+            "label": {
+              "en": "Distinguish previewed endings, exhibitor options and the later restoration presentation",
+              "nb": "Skill forhåndsviste avslutninger, kinoenes valg og den senere restaurerte visningen",
+              "fr": "Distinguer fins testées, options des exploitants et présentation restaurée ultérieure",
+              "pt": "Distinguir finais testados, opções dos exibidores e apresentação restaurada posterior"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "versions",
+        "explanation": {
+          "en": "AFI records multiple previewed endings, two options made available to exhibitors and the later 1981 restoration with Carl Davis music. Preserve the differences between production decisions, release options and archival presentation.",
+          "nb": "AFI registrerer flere forhåndsviste avslutninger, to alternativer tilgjengelige for kinoene og restaureringen fra 1981 med musikk av Carl Davis. Bevar forskjellene mellom produksjonsvalg, utgivelsesalternativer og arkivvisning.",
+          "fr": "AFI recense plusieurs fins testées, deux options proposées aux exploitants et la restauration de 1981 avec musique de Carl Davis. Préservez les différences entre choix de production, options de sortie et présentation archivistique.",
+          "pt": "AFI regista vários finais testados, duas opções oferecidas aos exibidores e o restauro de 1981 com música de Carl Davis. Preserve as diferenças entre decisões de produção, opções de estreia e apresentação arquivística."
+        },
+        "sourceIds": [
+          "s0"
         ]
       }
     ]
