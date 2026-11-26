@@ -76,15 +76,40 @@ const ids = [
   "scenario_the_red_heroine_1929",
   "scenario_haxan_1922",
   "scenario_the_phantom_carriage_1921",
+  "scenario_the_jazz_singer_1927",
+  "scenario_blackmail_1929",
+  "scenario_applause_1929",
+  "scenario_the_neighbors_wife_and_mine_1931",
+  "scenario_the_broadway_melody_1929",
+  "scenario_sous_les_toits_de_paris_1930",
+  "scenario_enthusiasm_1930",
+  "scenario_the_blue_angel_1930",
+  "scenario_m_1931",
+  "scenario_city_lights_1931",
+  "scenario_the_public_enemy_1931",
+  "scenario_dracula_1931",
+  "scenario_42nd_street_1933",
+  "scenario_scarface_1932",
+  "scenario_it_happened_one_night_1934",
+  "scenario_top_hat_1935",
+  "scenario_gone_with_the_wind_1939",
+  "scenario_king_kong_1933",
+  "scenario_modern_times_1936",
+  "scenario_snow_white_and_the_seven_dwarfs_1937",
+  "scenario_the_rules_of_the_game_1939",
+  "scenario_stagecoach_1939",
+  "scenario_the_wizard_of_oz_1939",
+  "scenario_citizen_kane_1941",
+  "scenario_casablanca_1942",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly sixty-seven existing cases have two hundred and one original, source-backed decisions", () => {
+test("Exactly ninety-two existing cases have two hundred and seventy-six original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 67);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 201);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 92);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 276);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -242,6 +267,44 @@ test("Exactly sixty-seven existing cases have two hundred and one original, sour
       const next = verification.indexOf("\n  },", start);
       const dossier = verification.slice(start, next < 0 ? undefined : next);
       for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (["scenario_the_jazz_singer_1927", "scenario_blackmail_1929", "scenario_applause_1929", "scenario_the_neighbors_wife_and_mine_1931", "scenario_the_broadway_melody_1929"].includes(workshop.scenarioId)) {
+      const files: Record<string, [string, string]> = {"scenario_the_jazz_singer_1927":["src/core/chapterElevenJazzSingerExpansion.ts","src/ui/data/scenarioProductionVerificationJazzSinger.ts"],"scenario_blackmail_1929":["src/core/chapterElevenBlackmailExpansion.ts","src/ui/data/scenarioProductionVerificationBlackmail.ts"],"scenario_applause_1929":["src/core/chapterElevenApplauseExpansion.ts","src/ui/data/scenarioProductionVerificationApplause.ts"],"scenario_the_neighbors_wife_and_mine_1931":["src/core/chapterElevenNeighborsWifeExpansion.ts","src/ui/data/scenarioProductionVerificationNeighborsWife.ts"],"scenario_the_broadway_melody_1929":["src/core/chapterElevenBroadwayMelodyExpansion.ts","src/ui/data/scenarioProductionVerificationBroadwayMelody.ts"]};
+      const [definitionFile, verificationFile] = files[workshop.scenarioId]!;
+      assert.ok(readFileSync(definitionFile, "utf8").includes(workshop.scenarioId));
+      const dossier = readFileSync(verificationFile, "utf8");
+      for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (["scenario_sous_les_toits_de_paris_1930", "scenario_enthusiasm_1930", "scenario_the_blue_angel_1930", "scenario_m_1931", "scenario_city_lights_1931"].includes(workshop.scenarioId)) {
+      const files: Record<string, [string, string]> = {"scenario_sous_les_toits_de_paris_1930":["src/core/chapterElevenSousLesToitsExpansion.ts","src/ui/data/scenarioProductionVerificationSousLesToits.ts"],"scenario_enthusiasm_1930":["src/core/chapterElevenEnthusiasmExpansion.ts","src/ui/data/scenarioProductionVerificationEnthusiasm.ts"],"scenario_the_blue_angel_1930":["src/core/chapterElevenBlueAngelExpansion.ts","src/ui/data/scenarioProductionVerificationBlueAngel.ts"],"scenario_m_1931":["src/core/earlyCinemaExpansion.ts","src/ui/data/scenarioProductionVerificationLateSilentEarlySoundBatch.ts"],"scenario_city_lights_1931":["src/core/earlyCinemaExpansion.ts","src/ui/data/scenarioProductionVerificationLateSilentEarlySoundBatch.ts"]};
+      const [definitionFile, verificationFile] = files[workshop.scenarioId]!;
+      assert.ok(readFileSync(definitionFile, "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(verificationFile, "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const next = verification.indexOf("\n  },", start);
+      const dossier = verification.slice(start, next < 0 ? undefined : next);
+      for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (["scenario_the_public_enemy_1931", "scenario_dracula_1931", "scenario_42nd_street_1933", "scenario_scarface_1932", "scenario_it_happened_one_night_1934", "scenario_top_hat_1935", "scenario_gone_with_the_wind_1939"].includes(workshop.scenarioId)) {
+      const files: Record<string, [string, string]> = {"scenario_the_public_enemy_1931":["src/core/chapterTwelvePublicEnemyExpansion.ts","src/ui/data/scenarioProductionVerificationPublicEnemy.ts"],"scenario_dracula_1931":["src/core/chapterTwelveDraculaExpansion.ts","src/ui/data/scenarioProductionVerificationDracula.ts"],"scenario_42nd_street_1933":["src/core/chapterTwelve42ndStreetExpansion.ts","src/ui/data/scenarioProductionVerification42ndStreet.ts"],"scenario_scarface_1932":["src/core/chapterTwelveScarfaceExpansion.ts","src/ui/data/scenarioProductionVerificationScarface.ts"],"scenario_it_happened_one_night_1934":["src/core/chapterTwelveItHappenedOneNightExpansion.ts","src/ui/data/scenarioProductionVerificationItHappenedOneNight.ts"],"scenario_top_hat_1935":["src/core/chapterTwelveTopHatExpansion.ts","src/ui/data/scenarioProductionVerificationTopHat.ts"],"scenario_gone_with_the_wind_1939":["src/core/chapterTwelveGoneWithTheWindExpansion.ts","src/ui/data/scenarioProductionVerificationGoneWithTheWind.ts"]};
+      const [definitionFile, verificationFile] = files[workshop.scenarioId]!;
+      assert.ok(readFileSync(definitionFile, "utf8").includes(workshop.scenarioId));
+      const dossier = readFileSync(verificationFile, "utf8");
+      for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (["scenario_king_kong_1933","scenario_modern_times_1936","scenario_snow_white_and_the_seven_dwarfs_1937","scenario_the_rules_of_the_game_1939"].includes(workshop.scenarioId)) {
+      assert.ok(readFileSync("src/core/earlyCinemaExpansion.ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync("src/ui/data/scenarioProductionVerification1930sProductionSystemsBatch.ts", "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const next = verification.indexOf("\n  },", start);
+      const section = verification.slice(start, next < 0 ? undefined : next);
+      for (const source of workshop.sources) assert.ok(section.includes(source.url));
+    } else if (["scenario_stagecoach_1939","scenario_the_wizard_of_oz_1939","scenario_citizen_kane_1941","scenario_casablanca_1942"].includes(workshop.scenarioId)) {
+      assert.ok(readFileSync("src/core/earlyCinemaExpansion.ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync("src/ui/data/scenarioProductionVerificationClassicalHollywoodBatch.ts", "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const next = verification.indexOf("\n  },", start);
+      const section = verification.slice(start, next < 0 ? undefined : next);
+      for (const source of workshop.sources) assert.ok(section.includes(source.url));
     } else if (workshop.scenarioId === "scenario_a_trip_to_the_moon_1902") {
       const definition = readFileSync("src/core/earlyCinemaExpansion.ts", "utf8");
       assert.ok(definition.includes(workshop.scenarioId));
@@ -689,4 +752,46 @@ test("World silent cinema workshops distinguish collaboration, survival and rest
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_red_heroine_1929")?.questions.map(q => q.bestSupportedOptionId), ["choice-0","choice-1","choice-2"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_haxan_1922")?.questions.map(q => q.bestSupportedOptionId), ["choice-0","choice-1","choice-2"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_phantom_carriage_1921")?.questions.map(q => q.bestSupportedOptionId), ["choice-0","choice-1","choice-2"]);
+});
+
+test("Early sound workshops distinguish formats, collaboration, version history and representation", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_jazz_singer_1927")?.questions.map(q => q.bestSupportedOptionId), ["choice-0","choice-1","choice-2"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_blackmail_1929")?.questions.map(q => q.bestSupportedOptionId), ["choice-1","choice-0","choice-2"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_applause_1929")?.questions.map(q => q.bestSupportedOptionId), ["choice-2","choice-0","choice-1"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_neighbors_wife_and_mine_1931")?.questions.map(q => q.bestSupportedOptionId), ["choice-0","choice-2","choice-1"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_broadway_melody_1929")?.questions.map(q => q.bestSupportedOptionId), ["choice-1","choice-0","choice-2"]);
+});
+
+test("Sound cinema workshops distinguish sound perspective, counterpoint, language versions and pantomime", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_sous_les_toits_de_paris_1930")?.questions.map(q => q.bestSupportedOptionId), ["choice-0","choice-1","choice-2"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_enthusiasm_1930")?.questions.map(q => q.bestSupportedOptionId), ["choice-1","choice-2","choice-0"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_blue_angel_1930")?.questions.map(q => q.bestSupportedOptionId), ["choice-0","choice-1","choice-2"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_m_1931")?.questions.map(q => q.bestSupportedOptionId), ["choice-1","choice-0","choice-2"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_city_lights_1931")?.questions.map(q => q.bestSupportedOptionId), ["choice-0","choice-1","choice-2"]);
+});
+
+test("Studio-system workshops preserve the distinct film cases and question choices", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_public_enemy_1931")?.questions.map(q => q.id), ["publicenemy-studio","publicenemy-voice","publicenemy-code"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_dracula_1931")?.questions.map(q => q.id), ["dracula-versions","dracula-sets","dracula-atmosphere"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_42nd_street_1933")?.questions.map(q => q.id), ["42ndstreet-choreography","42ndstreet-playback","42ndstreet-labor"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_scarface_1932")?.questions.map(q => q.id), ["scarface-versions","scarface-regulation","scarface-package"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_it_happened_one_night_1934")?.questions.map(q => q.id), ["ithappenedonenight-stars","ithappenedonenight-dialogue","ithappenedonenight-reception"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_top_hat_1935")?.questions.map(q => q.id), ["tophat-framing","tophat-rehearsal","tophat-credits"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_gone_with_the_wind_1939")?.questions.map(q => q.id), ["gonewiththewind-package","gonewiththewind-color","gonewiththewind-representation"]);
+});
+
+
+test("1930s production workshops retain film-specific questions", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_king_kong_1933")?.questions.map(q => q.id), ["kingkong-scale","kingkong-score","kingkong-versions"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_modern_times_1936")?.questions.map(q => q.id), ["moderntimes-pantomime","moderntimes-voices","moderntimes-production"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_snow_white_and_the_seven_dwarfs_1937")?.questions.map(q => q.id), ["snowwhiteandthesevendwarfs-personality","snowwhiteandthesevendwarfs-depth","snowwhiteandthesevendwarfs-pipeline"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_rules_of_the_game_1939")?.questions.map(q => q.id), ["therulesofthegame-staging","therulesofthegame-rhythm","therulesofthegame-reconstruction"]);
+});
+
+
+test("Classical Hollywood workshops preserve film-specific craft and evidence", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_stagecoach_1939")?.questions.map(q => q.id), ["stagecoach-landscape","stagecoach-continuity","stagecoach-ensemble"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_wizard_of_oz_1939")?.questions.map(q => q.id), ["thewizardofoz-color","thewizardofoz-song","thewizardofoz-departments"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_citizen_kane_1941")?.questions.map(q => q.id), ["citizenkane-depth","citizenkane-testimony","citizenkane-sound"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_casablanca_1942")?.questions.map(q => q.id), ["casablanca-revision","casablanca-studio","casablanca-music"]);
 });
