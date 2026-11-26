@@ -76,15 +76,20 @@ const ids = [
   "scenario_the_red_heroine_1929",
   "scenario_haxan_1922",
   "scenario_the_phantom_carriage_1921",
+  "scenario_the_jazz_singer_1927",
+  "scenario_blackmail_1929",
+  "scenario_applause_1929",
+  "scenario_the_neighbors_wife_and_mine_1931",
+  "scenario_the_broadway_melody_1929",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly sixty-seven existing cases have two hundred and one original, source-backed decisions", () => {
+test("Exactly seventy-two existing cases have two hundred and sixteen original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 67);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 201);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 72);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 216);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -241,6 +246,12 @@ test("Exactly sixty-seven existing cases have two hundred and one original, sour
       assert.ok(start >= 0);
       const next = verification.indexOf("\n  },", start);
       const dossier = verification.slice(start, next < 0 ? undefined : next);
+      for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (["scenario_the_jazz_singer_1927", "scenario_blackmail_1929", "scenario_applause_1929", "scenario_the_neighbors_wife_and_mine_1931", "scenario_the_broadway_melody_1929"].includes(workshop.scenarioId)) {
+      const files: Record<string, [string, string]> = {"scenario_the_jazz_singer_1927":["src/core/chapterElevenJazzSingerExpansion.ts","src/ui/data/scenarioProductionVerificationJazzSinger.ts"],"scenario_blackmail_1929":["src/core/chapterElevenBlackmailExpansion.ts","src/ui/data/scenarioProductionVerificationBlackmail.ts"],"scenario_applause_1929":["src/core/chapterElevenApplauseExpansion.ts","src/ui/data/scenarioProductionVerificationApplause.ts"],"scenario_the_neighbors_wife_and_mine_1931":["src/core/chapterElevenNeighborsWifeExpansion.ts","src/ui/data/scenarioProductionVerificationNeighborsWife.ts"],"scenario_the_broadway_melody_1929":["src/core/chapterElevenBroadwayMelodyExpansion.ts","src/ui/data/scenarioProductionVerificationBroadwayMelody.ts"]};
+      const [definitionFile, verificationFile] = files[workshop.scenarioId]!;
+      assert.ok(readFileSync(definitionFile, "utf8").includes(workshop.scenarioId));
+      const dossier = readFileSync(verificationFile, "utf8");
       for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
     } else if (workshop.scenarioId === "scenario_a_trip_to_the_moon_1902") {
       const definition = readFileSync("src/core/earlyCinemaExpansion.ts", "utf8");
@@ -689,4 +700,12 @@ test("World silent cinema workshops distinguish collaboration, survival and rest
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_red_heroine_1929")?.questions.map(q => q.bestSupportedOptionId), ["choice-0","choice-1","choice-2"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_haxan_1922")?.questions.map(q => q.bestSupportedOptionId), ["choice-0","choice-1","choice-2"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_phantom_carriage_1921")?.questions.map(q => q.bestSupportedOptionId), ["choice-0","choice-1","choice-2"]);
+});
+
+test("Early sound workshops distinguish formats, collaboration, version history and representation", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_jazz_singer_1927")?.questions.map(q => q.bestSupportedOptionId), ["choice-0","choice-1","choice-2"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_blackmail_1929")?.questions.map(q => q.bestSupportedOptionId), ["choice-1","choice-0","choice-2"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_applause_1929")?.questions.map(q => q.bestSupportedOptionId), ["choice-2","choice-0","choice-1"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_neighbors_wife_and_mine_1931")?.questions.map(q => q.bestSupportedOptionId), ["choice-0","choice-2","choice-1"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_broadway_melody_1929")?.questions.map(q => q.bestSupportedOptionId), ["choice-1","choice-0","choice-2"]);
 });

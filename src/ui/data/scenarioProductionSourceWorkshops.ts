@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Sixty-seven pre-existing Production Cases receive evidence-backed craft decisions.
+ * Seventy-two pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -11303,6 +11303,994 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
         "sourceIds": [
           "s0",
           "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_jazz_singer_1927",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore the part-talkie, exhibition infrastructure and critical historical representation.",
+      "nb": "Utforsk delvis lydfilm, kinoinfrastruktur og kritisk historisk representasjon.",
+      "fr": "Explorez le film partiellement parlant, les infrastructures de projection et la représentation historique critique.",
+      "pt": "Explore o filme parcialmente falado, a infraestrutura de exibição e a representação histórica crítica."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The Jazz Singer (1927)",
+        "publisher": "AFI Catalog of Feature Films",
+        "url": "https://catalog.afi.com/Film/1535-THE-JAZZ-SINGER"
+      },
+      {
+        "id": "s1",
+        "title": "All about film sound and how we restore it",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/all-about-film-sound-how-we-restore-it"
+      },
+      {
+        "id": "s2",
+        "title": "Western Electric Vitaphone System 35mm Universal Base Projector, ca. 1927",
+        "publisher": "Museum of the Moving Image",
+        "url": "https://movingimage.org/collection/motion-picture-projector-western-electric-vitaphone-system-35mm-universal-base-projector-ca-1927-2/"
+      },
+      {
+        "id": "s3",
+        "title": "Al Jolson in The Jazz Singer — Warner Bros. supreme triumph",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/resource/ppmsc.03756/"
+      },
+      {
+        "id": "s4",
+        "title": "You Ain't Heard Nothing Yet! Curator Dwight Blocker Bowers on the birth of motion picture sound",
+        "publisher": "National Museum of American History, Smithsonian Institution",
+        "url": "https://americanhistory.si.edu/blog/2012/07/you-aint-heard-nothing-yet-curator-dwight-blocker-bowers-on-the-birth-of-motion-picture-sound.html"
+      }
+    ],
+    "questions": [
+      {
+        "id": "jazzsinger-format",
+        "area": "sound",
+        "prompt": {
+          "en": "How should a film with selected synchronized sound sequences be classified?",
+          "nb": "Hvordan bør en film med enkelte synkroniserte lydsekvenser klassifiseres?",
+          "fr": "Comment classer un film comportant certaines séquences sonores synchronisées ?",
+          "pt": "Como classificar um filme com algumas sequências sonoras sincronizadas?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Distinguish silent passages from synchronized music and speech",
+              "nb": "Skill stumme partier fra synkronisert musikk og tale",
+              "fr": "Distinguer passages muets, musique et paroles synchronisées",
+              "pt": "Distinguir passagens mudas de música e fala sincronizadas"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Describe the entire film as continuous recorded dialogue",
+              "nb": "Beskriv hele filmen som kontinuerlig innspilt dialog",
+              "fr": "Décrire tout le film comme un dialogue enregistré continu",
+              "pt": "Descrever todo o filme como diálogo gravado contínuo"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Claim that no synchronized film existed before this production",
+              "nb": "Hevd at ingen synkronisert film eksisterte før denne produksjonen",
+              "fr": "Affirmer qu'aucun film synchronisé n'existait auparavant",
+              "pt": "Afirmar que nenhum filme sincronizado existia antes"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-0",
+        "explanation": {
+          "en": "AFI classifies the film as silent with sound sequences and rejects an absolute first-talking-picture claim. Distinguish its specific format from its substantial industrial influence.",
+          "nb": "AFI klassifiserer filmen som stumfilm med lydsekvenser og avviser en absolutt påstand om den første talefilmen. Skill det konkrete formatet fra filmens store industrielle betydning.",
+          "fr": "L'AFI classe le film comme muet avec séquences sonores et récuse une primauté absolue. Distinguez son format de son influence industrielle majeure.",
+          "pt": "O AFI classifica o filme como mudo com sequências sonoras e rejeita primazia absoluta. Distinga o formato da sua influência industrial."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "jazzsinger-disc",
+        "area": "sound",
+        "prompt": {
+          "en": "What does a historically informed exhibition plan need to consider for sound-on-disc?",
+          "nb": "Hva må en historisk informert visningsplan vurdere ved lyd på plate?",
+          "fr": "Que doit considérer un plan de projection historique pour le son sur disque ?",
+          "pt": "Que deve considerar um plano histórico de exibição de som em disco?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Assume a film print alone contains all recorded sound",
+              "nb": "Anta at filmkopien alene inneholder all innspilt lyd",
+              "fr": "Supposer que la copie contient à elle seule tout le son enregistré",
+              "pt": "Supor que a cópia contém todo o som gravado"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Account for separate records, synchronization and compatible cinema equipment",
+              "nb": "Ta hensyn til separate plater, synkronisering og kompatibelt kinoutstyr",
+              "fr": "Tenir compte des disques séparés, de la synchronisation et du matériel compatible",
+              "pt": "Considerar discos separados, sincronização e equipamento compatível"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Treat all sound systems as technologically identical",
+              "nb": "Behandle alle lydsystemer som teknologisk identiske",
+              "fr": "Traiter tous les systèmes sonores comme identiques",
+              "pt": "Tratar todos os sistemas sonoros como idênticos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-1",
+        "explanation": {
+          "en": "BFI and the Museum of the Moving Image document Vitaphone as separate disc and film media. In a paper exhibition plan, identify the synchronization and equipment requirements instead of assuming an optical soundtrack.",
+          "nb": "BFI og Museum of the Moving Image dokumenterer Vitaphone som separate plate- og filmmedier. Identifiser kravene til synkronisering og utstyr i en visningsplan på papir fremfor å anta optisk lydspor.",
+          "fr": "Le BFI et le Museum of the Moving Image documentent les supports disque et film distincts de Vitaphone. Identifiez les besoins de synchronisation et d'équipement plutôt que de supposer une piste optique.",
+          "pt": "O BFI e o Museum of the Moving Image documentam suportes separados do Vitaphone. Identifique requisitos de sincronização e equipamento em vez de presumir uma pista ótica."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "jazzsinger-representation",
+        "area": "research",
+        "prompt": {
+          "en": "How should the film's historically racist performance practice and Jewish cultural context be studied?",
+          "nb": "Hvordan bør filmens historisk rasistiske fremføringspraksis og jødiske kulturkontekst studeres?",
+          "fr": "Comment étudier la pratique raciste historique du film et son contexte culturel juif ?",
+          "pt": "Como estudar a prática racista histórica do filme e o contexto cultural judaico?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Reward imitation of racist performance conventions",
+              "nb": "Belønn etterligning av rasistiske fremføringskonvensjoner",
+              "fr": "Récompenser l'imitation de conventions racistes",
+              "pt": "Recompensar a imitação de convenções racistas"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Reduce Jewish cultural identity to stereotyped accents and costumes",
+              "nb": "Reduser jødisk kulturidentitet til stereotypiske aksenter og kostymer",
+              "fr": "Réduire l'identité culturelle juive à des accents et costumes stéréotypés",
+              "pt": "Reduzir identidade cultural judaica a sotaques e figurinos estereotipados"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Analyze historical evidence, cultural specificity and harmful representation critically",
+              "nb": "Analyser historisk belegg, kulturell egenart og skadelig representasjon kritisk",
+              "fr": "Analyser les preuves, la spécificité culturelle et les représentations nuisibles",
+              "pt": "Analisar criticamente evidência, especificidade cultural e representações nocivas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-2",
+        "explanation": {
+          "en": "Library of Congress and Smithsonian records document blackface and the film's reception. Critically contextualize the racist convention and specific Jewish family and religious setting without asking players to imitate discriminatory performance.",
+          "nb": "Library of Congress og Smithsonian dokumenterer blackface og filmens mottakelse. Kontekstualiser den rasistiske konvensjonen og den konkrete jødiske familie- og religionskonteksten kritisk uten å be spillere etterligne diskriminerende fremføring.",
+          "fr": "La Library of Congress et le Smithsonian documentent le blackface et la réception. Contextualisez cette convention raciste et le cadre familial et religieux juif sans demander de reproduire une performance discriminatoire.",
+          "pt": "A Library of Congress e o Smithsonian documentam blackface e receção. Contextualize criticamente a convenção racista e o contexto familiar e religioso judaico sem pedir imitação discriminatória."
+        },
+        "sourceIds": [
+          "s0",
+          "s3",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_blackmail_1929",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore parallel silent and sound versions, selective sound and collaborative voice performance.",
+      "nb": "Utforsk parallelle stum- og lydversjoner, selektiv lyd og samarbeid om stemmebruk.",
+      "fr": "Explorez les versions muette et sonore, le son sélectif et la collaboration vocale.",
+      "pt": "Explore versões muda e sonora, som seletivo e colaboração vocal."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Blackmail (1929)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/bc5f7958-d424-517f-b707-791d7bc8ed55/blackmail"
+      },
+      {
+        "id": "s1",
+        "title": "Object of the week: 96-year-old footage of Alfred Hitchcock in a test take for his thriller Blackmail",
+        "publisher": "British Film Institute National Archive",
+        "url": "https://www.bfi.org.uk/features/object-week-alfred-hitchcock-sound-test-blackmail"
+      },
+      {
+        "id": "s2",
+        "title": "10 great early sound films",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-early-sound-films"
+      },
+      {
+        "id": "s3",
+        "title": "The Hitchcock 9 – international touring programme",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/bfi-distribution/bfi-international-distribution/touring-programmes/hitchcock-9"
+      },
+      {
+        "id": "s4",
+        "title": "On set with Alfred Hitchcock",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/set-alfred-hitchcock"
+      },
+      {
+        "id": "s5",
+        "title": "Short length of Photophone film",
+        "publisher": "Science Museum Group Collection",
+        "url": "https://collection.sciencemuseumgroup.org.uk/objects/co18625/short-length-of-photophone-film"
+      }
+    ],
+    "questions": [
+      {
+        "id": "blackmail-versions",
+        "area": "research",
+        "prompt": {
+          "en": "How should the silent and sound editions be compared?",
+          "nb": "Hvordan bør stum- og lydutgavene sammenlignes?",
+          "fr": "Comment comparer les éditions muette et sonore ?",
+          "pt": "Como comparar as edições muda e sonora?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Assume the sound edition simply adds audio to identical images",
+              "nb": "Anta at lydutgaven bare legger lyd til identiske bilder",
+              "fr": "Supposer que la version sonore ajoute simplement du son aux mêmes images",
+              "pt": "Supor que a versão sonora apenas acrescenta som a imagens idênticas"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Compare the documented editing, performance and presentation of each edition",
+              "nb": "Sammenlign dokumentert klipping, skuespill og visning i hver utgave",
+              "fr": "Comparer montage, jeu et projection documentés de chaque édition",
+              "pt": "Comparar montagem, interpretação e exibição documentadas de cada edição"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Average runtimes to invent a definitive single master",
+              "nb": "Beregn gjennomsnittlig varighet for å dikte opp én definitiv master",
+              "fr": "Moyenner les durées pour inventer un master unique",
+              "pt": "Calcular a média das durações para inventar um master único"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-1",
+        "explanation": {
+          "en": "BFI records distinct silent and sound versions with differing lengths and visual strategies. Compare each version as a separate production and exhibition object rather than assuming a single master.",
+          "nb": "BFI registrerer ulike stum- og lydversjoner med forskjellig varighet og visuelle strategier. Sammenlign hver versjon som et eget produksjons- og visningsobjekt fremfor å anta én master.",
+          "fr": "Le BFI documente deux versions distinctes aux durées et stratégies visuelles différentes. Comparez chaque version comme objet de production et de projection propre plutôt que de supposer un master unique.",
+          "pt": "O BFI documenta versões distintas com durações e estratégias visuais diferentes. Compare cada versão como objeto de produção e exibição próprio em vez de presumir um master único."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "blackmail-voice",
+        "area": "sound",
+        "prompt": {
+          "en": "How should a shared on-screen and audible performance be credited?",
+          "nb": "Hvordan bør en delt synlig og hørbar fremføring krediteres?",
+          "fr": "Comment créditer une interprétation visible et audible partagée ?",
+          "pt": "Como creditar uma interpretação visual e audível partilhada?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Distinguish the visible performer and the documented off-camera voice",
+              "nb": "Skill den synlige skuespilleren fra den dokumenterte stemmen utenfor bildet",
+              "fr": "Distinguer l'interprète visible et la voix hors champ documentée",
+              "pt": "Distinguir a intérprete visível e a voz fora de campo documentada"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Assume the face on screen proves whose voice is recorded",
+              "nb": "Anta at ansiktet på skjermen beviser hvem sin stemme som er innspilt",
+              "fr": "Supposer que le visage prouve l'identité de la voix enregistrée",
+              "pt": "Supor que o rosto prova a identidade da voz gravada"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Infer an exact unverified microphone brand from the dialogue",
+              "nb": "Utled et eksakt uverifisert mikrofonmerke fra dialogen",
+              "fr": "Déduire une marque de microphone non vérifiée du dialogue",
+              "pt": "Deduzir uma marca de microfone não verificada do diálogo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-0",
+        "explanation": {
+          "en": "BFI documents Anny Ondra's visible performance and Joan Barry speaking off camera. Credit both contributions and distinguish the documented dubbing method from unsupported hardware claims.",
+          "nb": "BFI dokumenterer Anny Ondras synlige fremføring og Joan Barrys tale utenfor bildet. Krediter begge bidrag og skill dokumentert dubbingmetode fra udokumenterte utstyrspåstander.",
+          "fr": "Le BFI documente le jeu visible d'Anny Ondra et la voix hors champ de Joan Barry. Créditez les deux et distinguez le procédé attesté des affirmations matérielles non étayées.",
+          "pt": "O BFI documenta interpretação visível de Anny Ondra e voz fora de campo de Joan Barry. Credite ambas e distinga o método documentado de alegações de equipamento sem prova."
+        },
+        "sourceIds": [
+          "s1",
+          "s2",
+          "s5"
+        ]
+      },
+      {
+        "id": "blackmail-attention",
+        "area": "sound",
+        "prompt": {
+          "en": "How can selective sound shape attention in an original benign scene?",
+          "nb": "Hvordan kan selektiv lyd styre oppmerksomheten i en egen ufarlig scene?",
+          "fr": "Comment le son sélectif peut-il orienter l'attention dans une scène originale anodine ?",
+          "pt": "Como pode o som seletivo orientar a atenção numa cena original inofensiva?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Record every sound at identical perceived importance",
+              "nb": "Gi hver lyd identisk opplevd betydning",
+              "fr": "Donner à chaque son la même importance perceptive",
+              "pt": "Dar a cada som a mesma importância percetiva"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Claim a sound effect proves a real person's mental state",
+              "nb": "Hevd at en lydeffekt beviser en virkelig persons mentale tilstand",
+              "fr": "Affirmer qu'un effet sonore prouve l'état mental d'une personne réelle",
+              "pt": "Afirmar que um efeito sonoro prova o estado mental de uma pessoa real"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Compare neutral repeated sounds and selective silence in two cue sheets",
+              "nb": "Sammenlign nøytrale gjentatte lyder og selektiv stillhet i to lydplaner",
+              "fr": "Comparer sons neutres répétés et silences sélectifs dans deux plans sonores",
+              "pt": "Comparar sons neutros repetidos e silêncios seletivos em dois planos sonoros"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-2",
+        "explanation": {
+          "en": "BFI describes selective psychological sound in the sound version. Use harmless everyday sounds to compare how emphasis changes attention, without equating dramatic subjectivity with clinical evidence.",
+          "nb": "BFI beskriver selektiv psykologisk lyd i lydversjonen. Bruk ufarlige hverdagslyder til å sammenligne hvordan vektlegging endrer oppmerksomhet, uten å likestille dramatisk subjektivitet med klinisk belegg.",
+          "fr": "Le BFI décrit le son psychologique sélectif. Comparez des sons quotidiens anodins pour étudier l'attention, sans assimiler subjectivité dramatique et preuve clinique.",
+          "pt": "O BFI descreve som psicológico seletivo. Compare sons quotidianos inofensivos para estudar atenção, sem equiparar subjetividade dramática a evidência clínica."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_applause_1929",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore mobile early-sound cinema, recording constraints and layered sound composition.",
+      "nb": "Utforsk bevegelig tidlig lydfilm, opptaksbegrensninger og lagdelt lydkomposisjon.",
+      "fr": "Explorez la mobilité du premier cinéma sonore, les contraintes d'enregistrement et la composition sonore.",
+      "pt": "Explore mobilidade do cinema sonoro inicial, restrições de gravação e composição sonora."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Applause",
+        "publisher": "AFI Catalog of Feature Films",
+        "url": "https://catalog.afi.com/Film/2614-APPLAUSE"
+      },
+      {
+        "id": "s1",
+        "title": "Of Note: Lessons from a Director's Chair",
+        "publisher": "Library of Congress, Manuscript Division",
+        "url": "https://blogs.loc.gov/manuscripts/2022/02/of-note-lessons-from-a-directors-chair/"
+      },
+      {
+        "id": "s2",
+        "title": "Rouben Mamoulian's Applause",
+        "publisher": "Museum of Modern Art, Department of Film",
+        "url": "https://www.moma.org/explore/inside_out/2010/07/06/rouben-mamoulians-applause/"
+      },
+      {
+        "id": "s3",
+        "title": "Librarian of Congress Adds Home Movie, Silent Films and Hollywood Classics to Film Preservation List",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/item/prn-06-234/"
+      },
+      {
+        "id": "s4",
+        "title": "Applause",
+        "publisher": "Museum of the Moving Image",
+        "url": "https://movingimage.org/?p=13202"
+      },
+      {
+        "id": "s5",
+        "title": "The Astoria Studio",
+        "publisher": "Museum of the Moving Image",
+        "url": "https://movingimage.org/feature/the-astoria-studio/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "applause-booths",
+        "area": "research",
+        "prompt": {
+          "en": "How should documented camera-noise constraints inform a studio production plan?",
+          "nb": "Hvordan bør dokumenterte begrensninger knyttet til kamerastøy påvirke en studioplan?",
+          "fr": "Comment les contraintes de bruit de caméra doivent-elles éclairer un plan de studio ?",
+          "pt": "Como devem as restrições de ruído da câmara orientar um plano de estúdio?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Assume camera noise has no relationship to microphone recordings",
+              "nb": "Anta at kamerastøy ikke har sammenheng med mikrofonopptak",
+              "fr": "Supposer que le bruit de caméra n'affecte pas l'enregistrement",
+              "pt": "Supor que ruído da câmara não afeta gravações"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Declare that early sound prohibited all mobile cinematography",
+              "nb": "Erklær at tidlig lydfilm forbød all bevegelig fotografering",
+              "fr": "Déclarer que le premier cinéma sonore interdisait toute caméra mobile",
+              "pt": "Declarar que o cinema sonoro inicial proibia toda câmara móvel"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Map recording constraints and compare documented solutions with camera movement",
+              "nb": "Kartlegg opptaksbegrensninger og sammenlign dokumenterte løsninger med kamerabevegelse",
+              "fr": "Cartographier contraintes et solutions documentées en lien avec la mobilité",
+              "pt": "Mapear restrições e soluções documentadas relacionadas com mobilidade"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-2",
+        "explanation": {
+          "en": "Library of Congress preserves evidence of soundproof camera booths, while MoMA describes camera fluidity. Treat these as specific constraints and artistic responses, not proof that all early talkies were static.",
+          "nb": "Library of Congress bevarer belegg for lydisolerte kamerabokser, mens MoMA beskriver kameraflyt. Behandle dette som konkrete begrensninger og kunstneriske løsninger, ikke bevis på at all tidlig lydfilm var statisk.",
+          "fr": "La Library of Congress conserve des preuves de cabines insonorisées, tandis que le MoMA décrit la mobilité. Distinguez contraintes et réponses artistiques plutôt qu'une immobilité universelle.",
+          "pt": "A Library of Congress preserva evidência de cabines insonorizadas e o MoMA descreve mobilidade. Distinga restrições e respostas artísticas, não uma imobilidade universal."
+        },
+        "sourceIds": [
+          "s1",
+          "s2",
+          "s4"
+        ]
+      },
+      {
+        "id": "applause-layers",
+        "area": "sound",
+        "prompt": {
+          "en": "How can different sound sources be explored in a simple original cue sheet?",
+          "nb": "Hvordan kan ulike lydkilder utforskes i en enkel egen lydplan?",
+          "fr": "Comment explorer différentes sources sonores dans un plan sonore original ?",
+          "pt": "Como explorar diferentes fontes sonoras num plano sonoro original?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Compare separate ambience and speech cues and their relative prominence",
+              "nb": "Sammenlign separate miljølyd- og talepunkter og deres relative fremtreden",
+              "fr": "Comparer ambiance et parole distinctes et leur importance relative",
+              "pt": "Comparar ambiente e fala distintos e a sua proeminência relativa"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Assume simultaneous tracks prove modern digital multitrack recording",
+              "nb": "Anta at samtidige spor beviser moderne digital flersporsopptak",
+              "fr": "Supposer que des pistes simultanées prouvent un enregistrement numérique moderne",
+              "pt": "Supor que pistas simultâneas provam gravação digital moderna"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Give every sound source the same fixed level in every scene",
+              "nb": "Gi alle lydkilder samme faste nivå i alle scener",
+              "fr": "Donner à chaque source le même niveau dans toutes les scènes",
+              "pt": "Dar a cada fonte o mesmo nível em todas as cenas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-0",
+        "explanation": {
+          "en": "AFI documents two simultaneous sound tracks and MoMA describes urban ambience. Compare a modern paper cue sheet without claiming that the historical production used digital multitracking or an unverified device.",
+          "nb": "AFI dokumenterer to samtidige lydspor, og MoMA beskriver byens miljølyd. Sammenlign en moderne lydplan på papir uten å hevde at produksjonen brukte digital flersporsteknikk eller uverifisert utstyr.",
+          "fr": "L'AFI documente deux pistes simultanées et le MoMA l'ambiance urbaine. Comparez un plan sonore sur papier sans attribuer au film un dispositif numérique ou non vérifié.",
+          "pt": "O AFI documenta duas pistas simultâneas e o MoMA ambiente urbano. Compare um plano sonoro em papel sem atribuir à produção tecnologia digital ou equipamento não verificado."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "applause-formats",
+        "area": "research",
+        "prompt": {
+          "en": "How should the documented sound and silent release formats be distinguished?",
+          "nb": "Hvordan bør dokumenterte lyd- og stumfilmutgaver skilles?",
+          "fr": "Comment distinguer les formats de sortie sonore et muette documentés ?",
+          "pt": "Como distinguir os formatos de estreia sonora e muda documentados?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Identify every early sound system as Vitaphone",
+              "nb": "Identifiser alle tidlige lydsystemer som Vitaphone",
+              "fr": "Identifier tous les premiers systèmes comme Vitaphone",
+              "pt": "Identificar todos os primeiros sistemas como Vitaphone"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Record the Movietone sound version and separate silent availability",
+              "nb": "Registrer Movietone-lydversjonen og separat stumfilmtilgjengelighet",
+              "fr": "Consigner la version Movietone et la disponibilité muette distincte",
+              "pt": "Registar versão Movietone e disponibilidade muda separada"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Infer undocumented microphones from the film's sound quality",
+              "nb": "Utled udokumenterte mikrofoner fra filmens lydkvalitet",
+              "fr": "Déduire des microphones non attestés de la qualité sonore",
+              "pt": "Deduzir microfones não documentados da qualidade sonora"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-1",
+        "explanation": {
+          "en": "AFI records Movietone sound-on-film and silent availability, together with craft credits. Preserve those documented distinctions without assigning an unsupported recording device or conflating sound-on-film and disc systems.",
+          "nb": "AFI registrerer Movietone-lyd på film og stumfilmtilgjengelighet, samt fagkrediteringer. Bevar disse dokumenterte skillene uten å tilskrive uverifisert opptaksutstyr eller blande lyd på film og plate.",
+          "fr": "L'AFI documente son sur film Movietone, disponibilité muette et métiers. Préservez ces distinctions sans attribuer de matériel non attesté ni confondre disque et son sur film.",
+          "pt": "O AFI documenta som Movietone em película, disponibilidade muda e créditos técnicos. Preserve distinções sem atribuir equipamento não comprovado nem confundir disco e película."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_neighbors_wife_and_mine_1931",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore Japanese synchronous sound, everyday noise and collaborative studio engineering.",
+      "nb": "Utforsk japansk synkronlyd, hverdagsstøy og samarbeid om studioteknikk.",
+      "fr": "Explorez le son synchrone japonais, les bruits quotidiens et l'ingénierie collective de studio.",
+      "pt": "Explore som sincronizado japonês, ruídos quotidianos e engenharia colaborativa de estúdio."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Madamu to Nyobo / The Neighbor's Wife and Mine",
+        "publisher": "National Film Archive of Japan",
+        "url": "https://nfad.nfaj.go.jp/det.php?data_id=1766"
+      },
+      {
+        "id": "s1",
+        "title": "Madamu to Nyobo",
+        "publisher": "Shochiku",
+        "url": "https://www.shochiku.co.jp/cinema/database/01302/"
+      },
+      {
+        "id": "s2",
+        "title": "Heinosuke Gosho, 40 years after his death — The Neighbor's Wife and Mine",
+        "publisher": "National Film Archive of Japan",
+        "url": "https://www.nfaj.go.jp/program/gosho202109-1/"
+      },
+      {
+        "id": "s3",
+        "title": "Shochiku film-production history Part 4 — Japan's first talkie and the move to Ofuna",
+        "publisher": "Shochiku",
+        "url": "https://www.shochiku.co.jp/cinema/history/archive/shochiku-history4/"
+      },
+      {
+        "id": "s4",
+        "title": "Shochiku First Principles: 100 Years of Shochiku Cinema — The Neighbor's Wife and Mine",
+        "publisher": "National Film Archive of Japan",
+        "url": "https://www.nfaj.go.jp/program/shochiku202006-6/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "neighbor-continuity",
+        "area": "sound",
+        "prompt": {
+          "en": "How could a paper scene plan maintain sound continuity across different viewpoints?",
+          "nb": "Hvordan kan en sceneplan på papir bevare lydkontinuitet mellom ulike synsvinkler?",
+          "fr": "Comment un plan de scène sur papier peut-il préserver la continuité sonore entre différents points de vue ?",
+          "pt": "Como pode um plano de cena em papel preservar continuidade sonora entre pontos de vista?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Map a continuous sound event against alternate camera views",
+              "nb": "Kartlegg en sammenhengende lydhendelse mot ulike kameravinkler",
+              "fr": "Cartographier un événement sonore continu face à plusieurs vues",
+              "pt": "Mapear um evento sonoro contínuo perante várias vistas"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Assume each change of viewpoint must interrupt all sound",
+              "nb": "Anta at hvert synsvinkelskifte må avbryte all lyd",
+              "fr": "Supposer que chaque changement de vue doit interrompre tout son",
+              "pt": "Supor que cada mudança de vista deve interromper todo o som"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Claim the exercise reconstructs exact unrecorded take order",
+              "nb": "Hevd at øvelsen gjenskaper eksakt udokumentert opptaksrekkefølge",
+              "fr": "Prétendre restituer un ordre de prises non documenté",
+              "pt": "Afirmar que o exercício restitui ordem de tomadas não documentada"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-0",
+        "explanation": {
+          "en": "Shochiku documents three cameras running together to preserve continuous recorded sound across cuts. Map an original everyday scene on paper; distinguish the documented principle from an invented historical take order.",
+          "nb": "Shochiku dokumenterer tre kameraer som gikk samtidig for å bevare kontinuerlig innspilt lyd gjennom klipp. Kartlegg en egen hverdagsscene på papir; skill det dokumenterte prinsippet fra en oppdiktet historisk opptaksrekkefølge.",
+          "fr": "Shochiku documente trois caméras simultanées pour préserver le son continu aux coupes. Cartographiez une scène quotidienne sur papier sans inventer un ordre historique de prises.",
+          "pt": "Shochiku documenta três câmaras simultâneas para preservar som contínuo nos cortes. Mapeie cena quotidiana em papel sem inventar uma ordem histórica de tomadas."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "neighbor-engineering",
+        "area": "research",
+        "prompt": {
+          "en": "How should the studio's sound engineering be credited?",
+          "nb": "Hvordan bør studioets lydtekniske arbeid krediteres?",
+          "fr": "Comment créditer l'ingénierie sonore du studio ?",
+          "pt": "Como creditar a engenharia sonora do estúdio?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Attribute every recording invention to the director alone",
+              "nb": "Tilskriv alle opptaksoppfinnelser regissøren alene",
+              "fr": "Attribuer toutes les inventions au seul réalisateur",
+              "pt": "Atribuir todas as invenções apenas ao realizador"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Replace documented Japanese technology with a guessed imported system",
+              "nb": "Erstatt dokumentert japansk teknologi med et antatt importert system",
+              "fr": "Remplacer la technologie japonaise attestée par un système importé supposé",
+              "pt": "Substituir tecnologia japonesa documentada por sistema importado presumido"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Distinguish the Tsuchihashi brothers, studio investment and other crew roles",
+              "nb": "Skill Tsuchihashi-brødrene, studioinvesteringer og andre fagroller",
+              "fr": "Distinguer les frères Tsuchihashi, l'investissement du studio et les autres métiers",
+              "pt": "Distinguir irmãos Tsuchihashi, investimento do estúdio e outros ofícios"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-2",
+        "explanation": {
+          "en": "NFAJ credits the recording team and Shochiku-Phone process; Shochiku documents domestic research and institutional investment. Preserve the collaborative engineering history rather than inventing foreign equipment or individual authorship.",
+          "nb": "NFAJ krediterer opptaksteamet og Shochiku-Phone-prosessen; Shochiku dokumenterer hjemlig forskning og institusjonelle investeringer. Bevar samarbeidshistorien fremfor å dikte opp utenlandsk utstyr eller individuelt forfatterskap.",
+          "fr": "Le NFAJ crédite l'équipe sonore et le procédé Shochiku-Phone ; Shochiku documente la recherche nationale et l'investissement. Préservez la collaboration sans inventer du matériel étranger ni un auteur unique.",
+          "pt": "O NFAJ credita equipa sonora e processo Shochiku-Phone; Shochiku documenta investigação nacional e investimento. Preserve colaboração sem inventar equipamento estrangeiro ou autoria individual."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "neighbor-noise",
+        "area": "sound",
+        "prompt": {
+          "en": "How can familiar everyday sound become part of an original comic scene?",
+          "nb": "Hvordan kan velkjent hverdagslyd bli del av en egen komisk scene?",
+          "fr": "Comment un bruit quotidien familier peut-il participer à une scène comique originale ?",
+          "pt": "Como pode um ruído quotidiano familiar integrar uma cena cómica original?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Remove all ambient sound regardless of dramatic purpose",
+              "nb": "Fjern all miljølyd uavhengig av dramatisk funksjon",
+              "fr": "Supprimer toute ambiance indépendamment de sa fonction dramatique",
+              "pt": "Remover todo ambiente independentemente da função dramática"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Compare contrasting cue sheets of ordinary household and street sounds",
+              "nb": "Sammenlign kontrasterende lydplaner med vanlige hus- og gatelyder",
+              "fr": "Comparer des plans sonores de bruits domestiques et urbains ordinaires",
+              "pt": "Comparar planos sonoros de ruídos domésticos e urbanos comuns"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Assume the first successful talkie ended all Japanese silent production",
+              "nb": "Anta at den første vellykkede talefilmen avsluttet all japansk stumfilmproduksjon",
+              "fr": "Supposer que le premier succès parlant a mis fin à tout film muet japonais",
+              "pt": "Supor que o primeiro sucesso falado encerrou todo cinema mudo japonês"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-1",
+        "explanation": {
+          "en": "NFAJ and Shochiku document synchronous recording, movement and music in the film. Compare an original sound-based comedy scene while preserving the historical coexistence of silent and sound practices.",
+          "nb": "NFAJ og Shochiku dokumenterer synkronopptak, bevegelse og musikk i filmen. Sammenlign en egen lydbasert komediescene og bevar den historiske sameksistensen mellom stumfilm- og lydfilmpraksis.",
+          "fr": "Le NFAJ et Shochiku documentent synchronisme, mouvement et musique. Comparez une comédie sonore originale en conservant la coexistence historique du muet et du sonore.",
+          "pt": "O NFAJ e Shochiku documentam sincronismo, movimento e música. Compare uma comédia sonora original preservando a coexistência histórica de práticas mudas e sonoras."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_broadway_melody_1929",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore early musical sound balance, playback and version-specific production evidence.",
+      "nb": "Utforsk tidlig musikallydbalanse, playback og utgavespesifikt produksjonsbelegg.",
+      "fr": "Explorez équilibre sonore des premières comédies musicales, playback et preuves propres aux versions.",
+      "pt": "Explore equilíbrio sonoro dos primeiros musicais, playback e evidência específica das versões."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The Broadway Melody (1929)",
+        "publisher": "AFI Catalog of Feature Films",
+        "url": "https://catalog.afi.com/Film/3068-THE-BROADWAY-MELODY"
+      },
+      {
+        "id": "s1",
+        "title": "10 great early sound films — The Broadway Melody",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-early-sound-films"
+      },
+      {
+        "id": "s2",
+        "title": "The Broadway Melody, 1929 — Motion Picture Copyright Descriptions Collection",
+        "publisher": "Library of Congress",
+        "url": "https://findingaids.loc.gov/repositories/5/archival_objects/307629"
+      },
+      {
+        "id": "s3",
+        "title": "The Broadway Melody — film excerpts",
+        "publisher": "George Eastman Museum",
+        "url": "https://collections.eastman.org/search/%2A/objects?filter=people%3ABessie+Love"
+      },
+      {
+        "id": "s4",
+        "title": "1930 Academy Awards — The Broadway Melody",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/oscars/ceremonies/1930"
+      }
+    ],
+    "questions": [
+      {
+        "id": "broadway-balance",
+        "area": "sound",
+        "prompt": {
+          "en": "How can an original musical scene plan balance voices and accompaniment?",
+          "nb": "Hvordan kan en egen musikalsceneplan balansere stemmer og akkompagnement?",
+          "fr": "Comment un plan de scène musicale original peut-il équilibrer voix et accompagnement ?",
+          "pt": "Como pode um plano original de cena musical equilibrar vozes e acompanhamento?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Give accompaniment maximum prominence regardless of words",
+              "nb": "Gi akkompagnementet maksimal fremtreden uansett tekst",
+              "fr": "Donner une présence maximale à l'accompagnement quels que soient les mots",
+              "pt": "Dar proeminência máxima ao acompanhamento independentemente das palavras"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Compare cue sheets for intelligible voices, rhythm and accompaniment",
+              "nb": "Sammenlign lydplaner for tydelige stemmer, rytme og akkompagnement",
+              "fr": "Comparer des plans sonores pour intelligibilité des voix, rythme et accompagnement",
+              "pt": "Comparar planos sonoros para inteligibilidade das vozes, ritmo e acompanhamento"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Assume historical recording had unlimited modern mixing flexibility",
+              "nb": "Anta at historiske opptak hadde ubegrenset moderne miksefleksibilitet",
+              "fr": "Supposer que l'enregistrement historique avait une souplesse numérique illimitée",
+              "pt": "Supor que a gravação histórica tinha flexibilidade digital ilimitada"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-1",
+        "explanation": {
+          "en": "AFI documents intelligible dialogue amid dance movement; BFI discusses live orchestra balance difficulties. Plan an original paper musical scene around competing sound priorities without projecting modern mixing tools onto 1929.",
+          "nb": "AFI dokumenterer tydelig dialog under dansebevegelse; BFI drøfter utfordringer med balanse ved levende orkester. Planlegg en egen musikalscene på papir rundt konkurrerende lydprioriteter uten å projisere moderne mikseverktøy på 1929.",
+          "fr": "L'AFI documente le dialogue intelligible pendant la danse ; le BFI évoque les difficultés d'équilibre orchestral. Planifiez une scène originale sur papier sans projeter les outils modernes sur 1929.",
+          "pt": "O AFI documenta diálogo inteligível durante dança; o BFI aborda dificuldades de equilíbrio orquestral. Planeie cena original em papel sem projetar ferramentas modernas em 1929."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "broadway-playback",
+        "area": "sound",
+        "prompt": {
+          "en": "How should the documented use of playback be distinguished from live recording?",
+          "nb": "Hvordan bør dokumentert bruk av playback skilles fra direkteopptak?",
+          "fr": "Comment distinguer l'utilisation attestée du playback de l'enregistrement direct ?",
+          "pt": "Como distinguir o playback documentado da gravação direta?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Distinguish a planned sound reference and separately coordinated picture performance",
+              "nb": "Skill en planlagt lydreferanse fra separat koordinert billedfremføring",
+              "fr": "Distinguer une référence sonore prévue et une interprétation visuelle coordonnée",
+              "pt": "Distinguir referência sonora planeada e interpretação visual coordenada"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Claim every musical number used identical documented recording methods",
+              "nb": "Hevd at alle musikalnumre brukte identiske dokumenterte opptaksmetoder",
+              "fr": "Affirmer que tous les numéros utilisaient les mêmes procédés attestés",
+              "pt": "Afirmar que todos os números usaram métodos documentados idênticos"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Infer an exact unverified microphone model from the scene",
+              "nb": "Utled en eksakt uverifisert mikrofonmodell fra scenen",
+              "fr": "Déduire de la scène un modèle de microphone non attesté",
+              "pt": "Deduzir da cena um modelo de microfone não documentado"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-0",
+        "explanation": {
+          "en": "BFI documents playback when the Painted Doll number was reworked. Distinguish that specific production solution from live recording and avoid generalizing it to every sequence or claiming undocumented equipment.",
+          "nb": "BFI dokumenterer playback da Painted Doll-nummeret ble omarbeidet. Skill denne konkrete produksjonsløsningen fra direkteopptak, og unngå å generalisere til alle sekvenser eller hevde udokumentert utstyr.",
+          "fr": "Le BFI documente le playback lors du remaniement du numéro Painted Doll. Distinguez ce procédé de l'enregistrement direct sans le généraliser ni inventer du matériel.",
+          "pt": "O BFI documenta playback na reformulação do número Painted Doll. Distinga essa solução da gravação direta sem a generalizar nem inventar equipamento."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "broadway-versions",
+        "area": "research",
+        "prompt": {
+          "en": "How should the silent version and lost color sequence be recorded?",
+          "nb": "Hvordan bør stumversjonen og den tapte fargesekvensen registreres?",
+          "fr": "Comment documenter la version muette et la séquence couleur perdue ?",
+          "pt": "Como registar a versão muda e a sequência a cores perdida?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Assume surviving monochrome copies prove no color was filmed",
+              "nb": "Anta at bevarte svart-hvitt-kopier beviser at ingen farge ble filmet",
+              "fr": "Supposer que les copies monochromes prouvent l'absence de tournage couleur",
+              "pt": "Supor que cópias monocromáticas provam ausência de filmagem a cores"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Treat the award record as proof of every technical production detail",
+              "nb": "Behandle prisoppføringen som bevis på alle tekniske produksjonsdetaljer",
+              "fr": "Traiter le palmarès comme preuve de chaque détail technique",
+              "pt": "Tratar o prémio como prova de cada pormenor técnico"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Document separate release versions and lost color material explicitly",
+              "nb": "Dokumenter separate utgivelsesversjoner og tapt fargemateriale uttrykkelig",
+              "fr": "Documenter explicitement versions distinctes et matériaux couleur perdus",
+              "pt": "Documentar explicitamente versões distintas e material a cores perdido"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-2",
+        "explanation": {
+          "en": "AFI identifies a separate silent release and a lost two-strip Technicolor number; the Library of Congress preserves cutting continuity. Distinguish original production evidence from surviving copies and do not invent missing color imagery.",
+          "nb": "AFI identifiserer separat stumutgivelse og et tapt tofarget Technicolor-nummer; Library of Congress bevarer klippekontinuitet. Skill originalt produksjonsbelegg fra bevarte kopier og ikke dikt opp manglende fargebilder.",
+          "fr": "L'AFI identifie une sortie muette distincte et un numéro Technicolor bichrome perdu ; la Library of Congress conserve le découpage. Distinguez preuves de production et copies conservées sans inventer les images couleur.",
+          "pt": "O AFI identifica estreia muda separada e número Technicolor de duas cores perdido; a Library of Congress preserva continuidade de montagem. Distinga evidência de produção e cópias preservadas sem inventar imagens a cores."
+        },
+        "sourceIds": [
+          "s0",
+          "s2",
+          "s3"
         ]
       }
     ]
