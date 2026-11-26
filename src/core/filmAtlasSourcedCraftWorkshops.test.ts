@@ -61,15 +61,17 @@ const ids = [
   "scenario_napoleon_1927",
   "scenario_un_chien_andalou_1929",
   "scenario_the_passion_of_joan_of_arc_1928",
+  "scenario_mother_1926",
+  "scenario_the_fall_of_the_romanov_dynasty_1927",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly fifty-two existing cases have one hundred and fifty-six original, source-backed decisions", () => {
+test("Exactly fifty-four existing cases have one hundred and sixty-two original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 52);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 156);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 54);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 162);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -181,6 +183,14 @@ test("Exactly fifty-two existing cases have one hundred and fifty-six original, 
       const definition = readFileSync("src/core/earlyCinemaExpansion.ts", "utf8");
       assert.ok(definition.includes(workshop.scenarioId));
       const verification = readFileSync("src/ui/data/scenarioProductionVerificationLateSilentEarlySoundBatch.ts", "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const dossier = verification.slice(start, verification.indexOf("\n  },", start));
+      for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (["scenario_mother_1926", "scenario_the_fall_of_the_romanov_dynasty_1927"].includes(workshop.scenarioId)) {
+      const definition = readFileSync("src/core/chapterNineSovietMontageExpansion.ts", "utf8");
+      assert.ok(definition.includes(workshop.scenarioId));
+      const verification = readFileSync("src/ui/data/scenarioProductionVerificationSovietMontageBatch.ts", "utf8");
       const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
       assert.ok(start >= 0);
       const dossier = verification.slice(start, verification.indexOf("\n  },", start));
@@ -605,4 +615,9 @@ test("French experimental workshops distinguish event cinema, triptych design an
 test("French workshops distinguish surreal association, emotional coherence and historical evidence", () => {
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_un_chien_andalou_1929")?.questions.map(q => q.bestSupportedOptionId), ["association","roles","context"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_passion_of_joan_of_arc_1928")?.questions.map(q => q.bestSupportedOptionId), ["faces","emotion","distinguish"]);
+});
+
+test("Pudovkin and Shub workshops distinguish linkage, archival provenance and edition evidence", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_mother_1926")?.questions.map(q => q.bestSupportedOptionId), ["link","roles","copies"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_fall_of_the_romanov_dynasty_1927")?.questions.map(q => q.bestSupportedOptionId), ["provenance","compare","preserve"]);
 });
