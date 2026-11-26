@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Eighty-four pre-existing Production Cases receive evidence-backed craft decisions.
+ * Eighty-eight pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -14621,6 +14621,759 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
         "sourceIds": [
           "s3",
           "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_king_kong_1933",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Miniatures, scale and synchronized sound",
+      "nb": "Miniatyrer, skala og synkron lyd",
+      "fr": "Miniatures, échelle et son synchronisé",
+      "pt": "Miniaturas, escala e som sincronizado"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "King Kong (1933)",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/4005-KING-KONG"
+      },
+      {
+        "id": "s1",
+        "title": "King Kong",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/item/89716156/"
+      },
+      {
+        "id": "s2",
+        "title": "King Kong: National Film Registry #3",
+        "publisher": "Library of Congress",
+        "url": "https://blogs.loc.gov/now-see-hear/?p=8665"
+      },
+      {
+        "id": "s3",
+        "title": "Cooper and Schoedsack's King Kong",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/explore/inside_out/2010/10/12/cooper-and-schoedsacks-king-kong/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "kingkong-scale",
+        "area": "animation",
+        "prompt": {
+          "en": "How can a miniature creature share a scene with live actors?",
+          "nb": "Hvordan kan en miniatyrfigur dele en scene med levende skuespillere?",
+          "fr": "Comment une créature miniature peut-elle partager une scène avec des acteurs ?",
+          "pt": "Como pode uma criatura em miniatura partilhar uma cena com atores?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan matched miniature and live-action composite images",
+              "nb": "Planlegg samstemte miniatyr- og realfilmkompositter",
+              "fr": "Prévoir des composites cohérents de miniatures et prises réelles",
+              "pt": "Planear composições coerentes de miniaturas e ação real"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Film a full-size creature without any effects",
+              "nb": "Film en figur i full størrelse uten effekter",
+              "fr": "Filmer une créature grandeur nature sans effets",
+              "pt": "Filmar uma criatura à escala real sem efeitos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore the relation between the two scales",
+              "nb": "Ignorer forholdet mellom de to skalaene",
+              "fr": "Ignorer le rapport entre les deux échelles",
+              "pt": "Ignorar a relação entre as duas escalas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The AFI and Library records identify coordinated photography and O’Brien’s creature work. Plan a fictional composite without claiming a single technique for every shot.",
+          "nb": "AFI og Library of Congress dokumenterer samordnet foto og O’Briens figurarbeid. Planlegg en fiktiv kompositt uten å anta én teknikk for alle bilder.",
+          "fr": "L’AFI et la Bibliothèque du Congrès documentent la photographie coordonnée et le travail d’O’Brien. Concevez un composite fictif sans généraliser une technique.",
+          "pt": "A AFI e a Biblioteca do Congresso documentam fotografia coordenada e o trabalho de O’Brien. Planeie uma composição fictícia sem generalizar uma técnica."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "kingkong-score",
+        "area": "sound",
+        "prompt": {
+          "en": "How should the creature sequence be organized in sound?",
+          "nb": "Hvordan bør lyden i monstersekvensen organiseres?",
+          "fr": "Comment organiser le son de la séquence de la créature ?",
+          "pt": "Como organizar o som da sequência da criatura?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use the score as proof of the exact effects process",
+              "nb": "Bruk musikken som bevis for den eksakte effektprosessen",
+              "fr": "Prendre la musique pour preuve du procédé d’effets",
+              "pt": "Usar a música como prova do processo de efeitos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Coordinate musical cues with image and effects",
+              "nb": "Samordne musikalske signaler med bilde og effekter",
+              "fr": "Coordonner les repères musicaux avec image et effets",
+              "pt": "Coordenar marcas musicais com imagem e efeitos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume all music was performed live in theaters",
+              "nb": "Anta at all musikk ble spilt live i kinoene",
+              "fr": "Supposer que toute musique était jouée en salle",
+              "pt": "Supor que toda a música era tocada ao vivo nas salas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI records RCA sound and the Library identifies Max Steiner. Design an original cue sheet that distinguishes score, effects and image timing.",
+          "nb": "AFI dokumenterer RCA-lyd, og Library of Congress identifiserer Max Steiner. Lag en egen lydplan som skiller musikk, effekter og bildetiming.",
+          "fr": "L’AFI atteste le son RCA et la Bibliothèque identifie Max Steiner. Créez un plan sonore distinct pour musique, effets et image.",
+          "pt": "A AFI regista som RCA e a Biblioteca identifica Max Steiner. Crie um plano sonoro que distinga música, efeitos e tempos da imagem."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "kingkong-versions",
+        "area": "research",
+        "prompt": {
+          "en": "How should a restored print be compared with a reissue?",
+          "nb": "Hvordan bør en restaurert kopi sammenlignes med en gjenutgivelse?",
+          "fr": "Comment comparer une copie restaurée et une ressortie ?",
+          "pt": "Como comparar uma cópia restaurada e uma reedição?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat every circulating print as identical",
+              "nb": "Behandle alle sirkulerende kopier som identiske",
+              "fr": "Traiter toutes les copies comme identiques",
+              "pt": "Tratar todas as cópias em circulação como idênticas"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Infer original footage from modern publicity alone",
+              "nb": "Utled originalopptak fra moderne reklame alene",
+              "fr": "Déduire les images originales de la publicité moderne seule",
+              "pt": "Inferir imagens originais apenas de publicidade moderna"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record censorship, reissue and restoration provenance",
+              "nb": "Registrer sensur, gjenutgivelse og restaureringsproveniens",
+              "fr": "Consigner censure, ressortie et provenance de restauration",
+              "pt": "Registar censura, reedição e proveniência da restauração"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI records censorship and reissues; the Registry documents preservation. Identify the edition before drawing conclusions about missing or restored material.",
+          "nb": "AFI dokumenterer sensur og gjenutgivelser, mens registeret dokumenterer bevaring. Identifiser utgaven før du trekker slutninger om manglende materiale.",
+          "fr": "L’AFI documente censure et ressorties, le registre la préservation. Identifiez l’édition avant de conclure sur les éléments manquants.",
+          "pt": "A AFI documenta censura e reedições, e o registo a preservação. Identifique a edição antes de concluir sobre material ausente."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_modern_times_1936",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Pantomime, machinery and selective dialogue",
+      "nb": "Pantomime, maskiner og selektiv dialog",
+      "fr": "Pantomime, machines et dialogue sélectif",
+      "pt": "Pantomima, máquinas e diálogo seletivo"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Filming Modern Times",
+        "publisher": "Charlie Chaplin Official Website",
+        "url": "https://www.charliechaplin.com/en/films/6-Modern-Times/articles/6-Filming-Modern-Times"
+      },
+      {
+        "id": "s1",
+        "title": "Modern Times (1936)",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/4149-MODERN-TIMES"
+      },
+      {
+        "id": "s2",
+        "title": "Modern Times (1936)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/4cdccc6d-f143-506d-a2b1-4c34605cb088/modern-times"
+      },
+      {
+        "id": "s3",
+        "title": "Charles Chaplin's Modern Times",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/explore/inside_out/2010/11/30/charles-chaplins-modern-times/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "moderntimes-pantomime",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a factory gag be made legible without dialogue?",
+          "nb": "Hvordan kan en fabrikkgag bli forståelig uten dialog?",
+          "fr": "Comment rendre un gag d’usine lisible sans dialogue ?",
+          "pt": "Como tornar uma gag de fábrica legível sem diálogo?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Remove the visual relationship to the machinery",
+              "nb": "Fjern det visuelle forholdet til maskinene",
+              "fr": "Supprimer le rapport visuel aux machines",
+              "pt": "Eliminar a relação visual com as máquinas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Stage repeated gestures against the rhythm of machinery",
+              "nb": "Iscenesett gjentatte bevegelser mot maskinenes rytme",
+              "fr": "Mettre en scène des gestes répétés au rythme des machines",
+              "pt": "Encenar gestos repetidos ao ritmo das máquinas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Explain every gesture through continuous dialogue",
+              "nb": "Forklar hver bevegelse med kontinuerlig dialog",
+              "fr": "Expliquer chaque geste par un dialogue continu",
+              "pt": "Explicar cada gesto com diálogo contínuo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Chaplin’s archive describes the abandoned dialogue plan and deliberate visual action. Build a new gag around readable bodily timing.",
+          "nb": "Chaplin-arkivet beskriver den forkastede dialogplanen og bevisst visuell handling. Bygg en ny gag med tydelig kroppslig timing.",
+          "fr": "Les archives Chaplin décrivent le projet de dialogue abandonné et l’action visuelle. Construisez un gag inédit au rythme corporel lisible.",
+          "pt": "O arquivo Chaplin descreve o plano de diálogo abandonado e a ação visual. Crie uma gag inédita com ritmo corporal legível."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "moderntimes-voices",
+        "area": "sound",
+        "prompt": {
+          "en": "Which sound plan preserves the film’s technological satire?",
+          "nb": "Hvilken lydplan bevarer filmens teknologiske satire?",
+          "fr": "Quel plan sonore préserve la satire technologique du film ?",
+          "pt": "Que plano sonoro preserva a sátira tecnológica do filme?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Give every character uninterrupted spoken dialogue",
+              "nb": "Gi hver figur uavbrutt muntlig dialog",
+              "fr": "Donner à chaque personnage un dialogue ininterrompu",
+              "pt": "Dar a cada personagem diálogo falado ininterrupto"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Remove the synchronized soundtrack entirely",
+              "nb": "Fjern det synkroniserte lydsporet helt",
+              "fr": "Supprimer entièrement la bande sonore synchronisée",
+              "pt": "Eliminar por completo a banda sonora sincronizada"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Contrast mediated voices with music and pantomime",
+              "nb": "Sett formidlede stemmer opp mot musikk og pantomime",
+              "fr": "Opposer les voix médiatisées à la musique et à la pantomime",
+              "pt": "Contrastar vozes mediadas com música e pantomima"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The archive and BFI describe selective speech, handmade effects and synchronized music. The film is not simply a silent print.",
+          "nb": "Arkivet og BFI beskriver selektiv tale, håndlagde effekter og synkron musikk. Filmen er ikke bare en stumfilmkopi.",
+          "fr": "Les archives et le BFI décrivent parole sélective, effets artisanaux et musique synchronisée. Ce n’est pas un simple film muet.",
+          "pt": "O arquivo e o BFI descrevem fala seletiva, efeitos artesanais e música sincronizada. Não é apenas um filme mudo."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "moderntimes-production",
+        "area": "research",
+        "prompt": {
+          "en": "How should Chaplin’s independent production be credited?",
+          "nb": "Hvordan bør Chaplins uavhengige produksjon krediteres?",
+          "fr": "Comment créditer la production indépendante de Chaplin ?",
+          "pt": "Como creditar a produção independente de Chaplin?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Distinguish Chaplin’s multiple roles from crew contributions",
+              "nb": "Skill Chaplins mange roller fra medarbeidernes bidrag",
+              "fr": "Distinguer les multiples fonctions de Chaplin des apports de l’équipe",
+              "pt": "Distinguir os múltiplos papéis de Chaplin dos contributos da equipa"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Attribute photography and all effects solely to Chaplin",
+              "nb": "Tilskriv alt foto og alle effekter til Chaplin alene",
+              "fr": "Attribuer toute photographie et tous les effets à Chaplin seul",
+              "pt": "Atribuir toda a fotografia e efeitos apenas a Chaplin"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume the studio financed all independent work",
+              "nb": "Anta at studioet finansierte alt uavhengig arbeid",
+              "fr": "Supposer que le studio finançait tout travail indépendant",
+              "pt": "Supor que o estúdio financiou todo o trabalho independente"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "MoMA records Chaplin’s multiple roles, while AFI lists cinematographers and production work. Preserve both creative control and collaboration.",
+          "nb": "MoMA dokumenterer Chaplins mange roller, mens AFI oppgir fotografer og produksjonsarbeid. Bevar både kreativ kontroll og samarbeid.",
+          "fr": "Le MoMA documente les fonctions de Chaplin, l’AFI les opérateurs et la production. Préservez contrôle créatif et collaboration.",
+          "pt": "O MoMA documenta as funções de Chaplin e a AFI os operadores e a produção. Preserve controlo criativo e colaboração."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_snow_white_and_the_seven_dwarfs_1937",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Character animation, layered space and studio labor",
+      "nb": "Figuranimasjon, lagdelt rom og studioarbeid",
+      "fr": "Animation de personnages, espace en couches et travail de studio",
+      "pt": "Animação de personagens, espaço em camadas e trabalho de estúdio"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Snow White and the Seven Dwarfs (1937)",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/5865-SNOW-WHITE-AND-THE-SEVEN-DWARFS"
+      },
+      {
+        "id": "s1",
+        "title": "Multiplane Classroom Kit",
+        "publisher": "The Walt Disney Family Museum",
+        "url": "https://www.waltdisney.org/multiplane-classroom-kit"
+      },
+      {
+        "id": "s2",
+        "title": "The Fairest One of All",
+        "publisher": "The Walt Disney Family Museum",
+        "url": "https://www.waltdisney.org/blog/fairest-one-all"
+      },
+      {
+        "id": "s3",
+        "title": "Snow White and the Seven Dwarfs",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/item/91721340/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "snowwhiteandthesevendwarfs-personality",
+        "area": "animation",
+        "prompt": {
+          "en": "How can seven animated characters remain recognizable?",
+          "nb": "Hvordan kan sju animerte figurer forbli gjenkjennelige?",
+          "fr": "Comment rendre sept personnages animés reconnaissables ?",
+          "pt": "Como manter sete personagens animadas reconhecíveis?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Give every character identical movement patterns",
+              "nb": "Gi alle figurene identiske bevegelsesmønstre",
+              "fr": "Donner à tous les mêmes mouvements",
+              "pt": "Dar a todas as personagens movimentos idênticos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Rely on costume color as the only distinction",
+              "nb": "Bruk kostymefarge som eneste kjennetegn",
+              "fr": "Compter uniquement sur la couleur du costume",
+              "pt": "Usar apenas a cor do figurino como distinção"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Develop distinct silhouettes, gestures and timing",
+              "nb": "Utvikle ulike silhuetter, bevegelser og rytmer",
+              "fr": "Développer silhouettes, gestes et rythmes distincts",
+              "pt": "Desenvolver silhuetas, gestos e ritmos distintos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The museum documents deliberate dwarf personalities and extensive production drawings. Develop original movement studies rather than copying existing animation.",
+          "nb": "Museet dokumenterer bevisst utviklede dvergpersonligheter og omfattende tegnearbeid. Lag egne bevegelsesstudier i stedet for å kopiere animasjonen.",
+          "fr": "Le musée documente les personnalités des nains et les dessins préparatoires. Créez des études originales plutôt que de copier l’animation.",
+          "pt": "O museu documenta as personalidades dos anões e os desenhos de produção. Crie estudos originais em vez de copiar a animação."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "snowwhiteandthesevendwarfs-depth",
+        "area": "camera",
+        "prompt": {
+          "en": "How can painted scenery create an impression of depth?",
+          "nb": "Hvordan kan malt scenografi skape en opplevelse av dybde?",
+          "fr": "Comment un décor peint peut-il produire une impression de profondeur ?",
+          "pt": "Como pode um cenário pintado criar uma impressão de profundidade?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan separate foreground and background layers",
+              "nb": "Planlegg separate forgrunns- og bakgrunnslag",
+              "fr": "Prévoir des couches de premier plan et d’arrière-plan",
+              "pt": "Planear camadas separadas de primeiro plano e fundo"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Flatten every layer into one unchanging plane",
+              "nb": "Slå alle lag sammen til ett uforanderlig plan",
+              "fr": "Aplatir toutes les couches en un seul plan fixe",
+              "pt": "Achatar todas as camadas num único plano fixo"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume every scene used the same camera setup",
+              "nb": "Anta at alle scener brukte samme kameraoppsett",
+              "fr": "Supposer un dispositif identique pour chaque scène",
+              "pt": "Supor a mesma configuração de câmara em todas as cenas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The Disney Family Museum explains multiplane depth and its feature application. An original layered plan demonstrates the principle without assigning it to every historical shot.",
+          "nb": "Disney Family Museum forklarer flerlagsdybde og bruken i langfilm. En egen lagplan demonstrerer prinsippet uten å tilskrive det alle historiske bilder.",
+          "fr": "Le musée Disney explique la profondeur multiplane et son usage en long métrage. Un plan original illustre le principe sans l’attribuer à chaque plan historique.",
+          "pt": "O museu Disney explica a profundidade multiplano e o uso na longa-metragem. Um plano original demonstra o princípio sem o atribuir a cada plano histórico."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "snowwhiteandthesevendwarfs-pipeline",
+        "area": "research",
+        "prompt": {
+          "en": "How should an animated feature’s labor be planned?",
+          "nb": "Hvordan bør arbeidet med en animert langfilm planlegges?",
+          "fr": "Comment organiser le travail d’un long métrage animé ?",
+          "pt": "Como organizar o trabalho de uma longa-metragem animada?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Record only the studio name and ignore departments",
+              "nb": "Registrer bare studionavnet og ignorer avdelingene",
+              "fr": "Noter uniquement le studio et ignorer les métiers",
+              "pt": "Registar apenas o estúdio e ignorar os departamentos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map story, animation, painting, camera and sound handoffs",
+              "nb": "Kartlegg overleveringer mellom historie, animasjon, maling, foto og lyd",
+              "fr": "Cartographier les relais entre récit, animation, peinture, image et son",
+              "pt": "Mapear passagens entre história, animação, pintura, câmara e som"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assign the entire production to a single animator",
+              "nb": "Tildel hele produksjonen til én animatør",
+              "fr": "Confier toute la production à un seul animateur",
+              "pt": "Atribuir toda a produção a um único animador"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI documents departmental labor, cels, songs and color; the Library records the sound feature. Plan a fictional workflow that credits distinct contributions.",
+          "nb": "AFI dokumenterer avdelingsarbeid, celler, sanger og farge, mens biblioteket registrerer lydfilmen. Planlegg en fiktiv arbeidsflyt med tydelige bidrag.",
+          "fr": "L’AFI documente métiers, cellulos, chansons et couleur ; la Bibliothèque atteste le film sonore. Concevez un flux fictif qui crédite les contributions.",
+          "pt": "A AFI documenta departamentos, acetatos, canções e cor; a Biblioteca regista o filme sonoro. Planeie um fluxo fictício que credite os contributos."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_rules_of_the_game_1939",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Ensemble staging, depth and reconstruction",
+      "nb": "Ensembleiscenesettelse, dybde og rekonstruksjon",
+      "fr": "Mise en scène chorale, profondeur et reconstruction",
+      "pt": "Encenação de conjunto, profundidade e reconstrução"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "La Règle du jeu (1939)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/725ff1e4-895e-5c6e-8a6e-b03825197e99/la-regle-du-jeu"
+      },
+      {
+        "id": "s1",
+        "title": "The Rules of the Game",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/295-the-rules-of-the-game"
+      },
+      {
+        "id": "s2",
+        "title": "The Rules of the Game: Everyone Has Their Reasons",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/current/posts/308-the-rules-of-the-game-everyone-has-their-reasons"
+      },
+      {
+        "id": "s3",
+        "title": "Staging in Jean Renoir's The Rules of the Game",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/current/posts/4613-staging-in-jean-renoir-s-the-rules-of-the-game"
+      }
+    ],
+    "questions": [
+      {
+        "id": "therulesofthegame-staging",
+        "area": "camera",
+        "prompt": {
+          "en": "How can several social interactions coexist in one shot?",
+          "nb": "Hvordan kan flere sosiale samspill eksistere i samme bilde?",
+          "fr": "Comment plusieurs interactions sociales coexistent-elles dans un plan ?",
+          "pt": "Como podem várias interações sociais coexistir num plano?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Block simultaneous action across foreground and background",
+              "nb": "Plasser samtidige handlinger i forgrunn og bakgrunn",
+              "fr": "Disposer des actions simultanées au premier et à l’arrière-plan",
+              "pt": "Distribuir ações simultâneas no primeiro plano e no fundo"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Isolate every actor in unrelated close-ups",
+              "nb": "Isoler hver skuespiller i urelaterte nærbilder",
+              "fr": "Isoler chaque acteur dans des gros plans sans lien",
+              "pt": "Isolar cada ator em grandes planos sem ligação"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Remove all relationships between rooms and people",
+              "nb": "Fjern alle forhold mellom rom og mennesker",
+              "fr": "Supprimer tous les liens entre pièces et personnages",
+              "pt": "Eliminar todas as relações entre espaços e pessoas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI and Criterion analyze controlled long takes and shared depth. Draw original blocking that lets viewers notice simultaneous social action.",
+          "nb": "BFI og Criterion analyserer kontrollerte lange tagninger og felles dybde. Tegn en egen iscenesettelse der publikum oppdager samtidige handlinger.",
+          "fr": "Le BFI et Criterion analysent les plans longs et la profondeur partagée. Dessinez une mise en place originale révélant des actions simultanées.",
+          "pt": "O BFI e a Criterion analisam planos longos e profundidade partilhada. Desenhe uma marcação original que revele ações simultâneas."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "therulesofthegame-rhythm",
+        "area": "camera",
+        "prompt": {
+          "en": "How can an ensemble sequence vary its editing rhythm?",
+          "nb": "Hvordan kan en ensemblesekvens variere klipperytmen?",
+          "fr": "Comment varier le rythme de montage d’une séquence chorale ?",
+          "pt": "Como variar o ritmo de montagem de uma sequência de conjunto?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume that long takes exclude montage entirely",
+              "nb": "Anta at lange tagninger utelukker montasje helt",
+              "fr": "Supposer que les plans longs excluent tout montage",
+              "pt": "Supor que planos longos excluem toda a montagem"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Contrast sustained staging with purposeful montage",
+              "nb": "Sett sammenhengende iscenesettelse opp mot målrettet montasje",
+              "fr": "Opposer mise en scène continue et montage intentionnel",
+              "pt": "Contrastar encenação sustentada com montagem intencional"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use identical shot duration throughout every scene",
+              "nb": "Bruk identisk bildelengde gjennom alle scener",
+              "fr": "Employer la même durée de plan dans chaque scène",
+              "pt": "Usar duração idêntica de planos em todas as cenas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion describes deep-space long takes alongside the hunt montage. Choose rhythm according to the scene, not a universal rule.",
+          "nb": "Criterion beskriver lange dybdetagninger sammen med jaktmontasjen. Velg rytme etter scenen, ikke en universell regel.",
+          "fr": "Criterion décrit plans longs en profondeur et montage de la chasse. Choisissez le rythme selon la scène, non une règle universelle.",
+          "pt": "A Criterion descreve planos longos em profundidade e montagem da caça. Escolha o ritmo conforme a cena, não uma regra universal."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "therulesofthegame-reconstruction",
+        "area": "research",
+        "prompt": {
+          "en": "How should the 1959 reconstruction be described?",
+          "nb": "Hvordan bør rekonstruksjonen fra 1959 beskrives?",
+          "fr": "Comment décrire la reconstruction de 1959 ?",
+          "pt": "Como descrever a reconstrução de 1959?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume the reconstruction is the untouched premiere print",
+              "nb": "Anta at rekonstruksjonen er den urørte premiereutgaven",
+              "fr": "Supposer que la reconstruction est la copie intacte de la première",
+              "pt": "Supor que a reconstrução é a cópia intacta da estreia"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore the film’s censorship and recovery history",
+              "nb": "Ignorer filmens sensur- og gjenfinningshistorie",
+              "fr": "Ignorer l’histoire de la censure et du sauvetage",
+              "pt": "Ignorar a história da censura e recuperação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Distinguish the premiere, cuts, lost negative and reconstruction",
+              "nb": "Skill premieren, klippene, det tapte negativet og rekonstruksjonen",
+              "fr": "Distinguer première, coupes, négatif perdu et reconstruction",
+              "pt": "Distinguir estreia, cortes, negativo perdido e reconstrução"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion and BFI record the cuts, ban and later recovery. Identify the reconstructed edition instead of claiming unbroken survival of the original negative.",
+          "nb": "Criterion og BFI dokumenterer klipp, forbud og senere gjenfinning. Identifiser den rekonstruerte utgaven fremfor å hevde at originalnegativet er bevart.",
+          "fr": "Criterion et le BFI documentent coupes, interdiction et redécouverte. Identifiez l’édition reconstruite plutôt que de prétendre à la survie du négatif.",
+          "pt": "Criterion e BFI documentam cortes, proibição e recuperação. Identifique a edição reconstruída em vez de alegar a sobrevivência do negativo."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
         ]
       }
     ]

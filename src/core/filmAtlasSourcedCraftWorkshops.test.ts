@@ -93,15 +93,19 @@ const ids = [
   "scenario_it_happened_one_night_1934",
   "scenario_top_hat_1935",
   "scenario_gone_with_the_wind_1939",
+  "scenario_king_kong_1933",
+  "scenario_modern_times_1936",
+  "scenario_snow_white_and_the_seven_dwarfs_1937",
+  "scenario_the_rules_of_the_game_1939",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly eighty-four existing cases have two hundred and fifty-two original, source-backed decisions", () => {
+test("Exactly eighty-eight existing cases have two hundred and sixty-four original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 84);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 252);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 88);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 264);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -281,6 +285,14 @@ test("Exactly eighty-four existing cases have two hundred and fifty-two original
       assert.ok(readFileSync(definitionFile, "utf8").includes(workshop.scenarioId));
       const dossier = readFileSync(verificationFile, "utf8");
       for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (["scenario_king_kong_1933","scenario_modern_times_1936","scenario_snow_white_and_the_seven_dwarfs_1937","scenario_the_rules_of_the_game_1939"].includes(workshop.scenarioId)) {
+      assert.ok(readFileSync("src/core/earlyCinemaExpansion.ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync("src/ui/data/scenarioProductionVerification1930sProductionSystemsBatch.ts", "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const next = verification.indexOf("\n  },", start);
+      const section = verification.slice(start, next < 0 ? undefined : next);
+      for (const source of workshop.sources) assert.ok(section.includes(source.url));
     } else if (workshop.scenarioId === "scenario_a_trip_to_the_moon_1902") {
       const definition = readFileSync("src/core/earlyCinemaExpansion.ts", "utf8");
       assert.ok(definition.includes(workshop.scenarioId));
@@ -754,4 +766,12 @@ test("Studio-system workshops preserve the distinct film cases and question choi
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_it_happened_one_night_1934")?.questions.map(q => q.id), ["ithappenedonenight-stars","ithappenedonenight-dialogue","ithappenedonenight-reception"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_top_hat_1935")?.questions.map(q => q.id), ["tophat-framing","tophat-rehearsal","tophat-credits"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_gone_with_the_wind_1939")?.questions.map(q => q.id), ["gonewiththewind-package","gonewiththewind-color","gonewiththewind-representation"]);
+});
+
+
+test("1930s production workshops retain film-specific questions", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_king_kong_1933")?.questions.map(q => q.id), ["kingkong-scale","kingkong-score","kingkong-versions"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_modern_times_1936")?.questions.map(q => q.id), ["moderntimes-pantomime","moderntimes-voices","moderntimes-production"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_snow_white_and_the_seven_dwarfs_1937")?.questions.map(q => q.id), ["snowwhiteandthesevendwarfs-personality","snowwhiteandthesevendwarfs-depth","snowwhiteandthesevendwarfs-pipeline"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_rules_of_the_game_1939")?.questions.map(q => q.id), ["therulesofthegame-staging","therulesofthegame-rhythm","therulesofthegame-reconstruction"]);
 });
