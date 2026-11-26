@@ -65,15 +65,20 @@ const ids = [
   "scenario_the_fall_of_the_romanov_dynasty_1927",
   "scenario_battleship_potemkin_1925",
   "scenario_man_with_a_movie_camera_1929",
+  "scenario_earth_1930",
+  "scenario_october_1928",
+  "scenario_mr_west_bolsheviks_1924",
+  "scenario_a_page_of_madness_1926",
+  "scenario_laborers_love_1922",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly fifty-six existing cases have one hundred and sixty-eight original, source-backed decisions", () => {
+test("Exactly sixty-one existing cases have one hundred and eighty-three original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 56);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 168);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 61);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 183);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -206,6 +211,20 @@ test("Exactly fifty-six existing cases have one hundred and sixty-eight original
       assert.ok(start >= 0);
       const next = verification.indexOf("\n  },", start);
       const dossier = verification.slice(start, next >= 0 ? next : verification.indexOf("\n  }\n]", start));
+      for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (["scenario_earth_1930", "scenario_october_1928", "scenario_mr_west_bolsheviks_1924"].includes(workshop.scenarioId)) {
+      const definition = readFileSync("src/core/chapterNineSovietMontageExpansion.ts", "utf8");
+      assert.ok(definition.includes(workshop.scenarioId));
+      const verification = readFileSync("src/ui/data/scenarioProductionVerificationSovietMontageBatch.ts", "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const dossier = verification.slice(start, verification.indexOf("\n  },", start));
+      for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (["scenario_a_page_of_madness_1926", "scenario_laborers_love_1922"].includes(workshop.scenarioId)) {
+      const page = workshop.scenarioId === "scenario_a_page_of_madness_1926";
+      const definition = readFileSync(page ? "src/core/chapterTenSilentCinemasExpansion.ts" : "src/core/chapterTenLaborersLoveExpansion.ts", "utf8");
+      assert.ok(definition.includes(workshop.scenarioId));
+      const dossier = readFileSync(page ? "src/ui/data/scenarioProductionVerificationAPageOfMadness.ts" : "src/ui/data/scenarioProductionVerificationLaborersLove.ts", "utf8");
       for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
     } else if (workshop.scenarioId === "scenario_a_trip_to_the_moon_1902") {
       const definition = readFileSync("src/core/earlyCinemaExpansion.ts", "utf8");
@@ -637,4 +656,12 @@ test("Pudovkin and Shub workshops distinguish linkage, archival provenance and e
 test("Eisenstein and Vertov workshops distinguish contrast, constructed time and documentary evidence", () => {
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_battleship_potemkin_1925")?.questions.map(q => q.bestSupportedOptionId), ["contrast","duration","context"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_man_with_a_movie_camera_1929")?.questions.map(q => q.bestSupportedOptionId), ["construct","team","evidence"]);
+});
+
+test("Montage and early Asian cinema workshops distinguish interpretation, collaboration and historical provenance", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_earth_1930")?.questions.map(q => q.bestSupportedOptionId), ["lyric","context","chronology"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_october_1928")?.questions.map(q => q.bestSupportedOptionId), ["idea","distinguish","edition"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_mr_west_bolsheviks_1924")?.questions.map(q => q.bestSupportedOptionId), ["connect","compare","roles"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_a_page_of_madness_1926")?.questions.map(q => q.bestSupportedOptionId), ["rhythm","roles","version"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_laborers_love_1922")?.questions.map(q => q.bestSupportedOptionId), ["timing","compare","context"]);
 });
