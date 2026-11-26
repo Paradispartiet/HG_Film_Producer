@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Forty-eight pre-existing Production Cases receive evidence-backed craft decisions.
+ * Fifty pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -7666,6 +7666,388 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
         "sourceIds": [
           "s0",
           "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_entr_acte_1924",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore experimental image rhythm, cross-art commissions and event-specific exhibition.",
+      "nb": "Utforsk eksperimentell billedrytme, bestillingsverk på tvers av kunstarter og visning knyttet til et arrangement.",
+      "fr": "Explorez le rythme visuel expérimental, les commandes interdisciplinaires et la projection événementielle.",
+      "pt": "Explore o ritmo visual experimental, as encomendas interdisciplinares e a exibição ligada a eventos."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Entr'acte",
+        "publisher": "La Cinémathèque française",
+        "url": "https://www.cinematheque.fr/film/47671.html"
+      },
+      {
+        "id": "s1",
+        "title": "Restaurations — Entr'acte, René Clair, 1924",
+        "publisher": "Fondation Jérôme Seydoux-Pathé",
+        "url": "https://www.fondation-jeromeseydoux-pathe.com/cms/restaurations"
+      },
+      {
+        "id": "s2",
+        "title": "Entr'acte",
+        "publisher": "Centre Pompidou",
+        "url": "https://www.centrepompidou.fr/fr/ressources/oeuvre/cByj8A"
+      },
+      {
+        "id": "s3",
+        "title": "10 great films of 1924 — Entr'acte",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-films-1924"
+      }
+    ],
+    "questions": [
+      {
+        "id": "entracte-rhythm",
+        "area": "camera",
+        "prompt": {
+          "en": "How could an original paper-animation exercise explore comic rhythm and visual transformation?",
+          "nb": "Hvordan kan en egen papiranimasjon utforske komisk rytme og visuell forvandling?",
+          "fr": "Comment une animation originale en papier peut-elle explorer le rythme comique et la transformation visuelle ?",
+          "pt": "Como pode uma animação original em papel explorar o ritmo cómico e a transformação visual?"
+        },
+        "options": [
+          {
+            "id": "rhythm",
+            "label": {
+              "en": "Compare repetition, changed image duration and playful visual associations",
+              "nb": "Sammenlign gjentakelse, endret bildevarighet og lekne visuelle assosiasjoner",
+              "fr": "Comparer répétition, variation des durées et associations visuelles ludiques",
+              "pt": "Comparar repetição, variação da duração e associações visuais lúdicas"
+            }
+          },
+          {
+            "id": "random",
+            "label": {
+              "en": "Assume that experimental cinema requires entirely random editing",
+              "nb": "Anta at eksperimentell film krever fullstendig tilfeldig klipping",
+              "fr": "Supposer que le cinéma expérimental exige un montage entièrement aléatoire",
+              "pt": "Supor que o cinema experimental exige montagem inteiramente aleatória"
+            }
+          },
+          {
+            "id": "first",
+            "label": {
+              "en": "Claim Clair invented every animation and trick-film technique",
+              "nb": "Hevd at Clair oppfant alle animasjons- og trickfilmteknikker",
+              "fr": "Affirmer que Clair a inventé toutes les techniques d'animation et de trucage",
+              "pt": "Afirmar que Clair inventou todas as técnicas de animação e trucagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "rhythm",
+        "explanation": {
+          "en": "Fondation Pathé documents frame-by-frame and accelerated imagery and earlier trick-film traditions; BFI describes rapid editing and playful reversals. Compare invented paper shapes and durations, not a reconstruction of the historical scenes.",
+          "nb": "Fondation Pathé dokumenterer bilde-for-bilde-opptak, akselererte bilder og tidligere trickfilmtradisjoner; BFI beskriver rask klipping og lekne omvendinger. Sammenlign egne papirformer og varigheter, ikke en rekonstruksjon av de historiske scenene.",
+          "fr": "La Fondation Pathé documente les images par image, accélérations et traditions de trucage ; le BFI décrit montage rapide et renversements ludiques. Comparez des formes en papier et durées originales, sans reconstituer les scènes historiques.",
+          "pt": "A Fondation Pathé documenta imagens quadro a quadro, aceleração e tradições de trucagem; o BFI descreve montagem rápida e inversões lúdicas. Compare formas de papel e durações originais, sem reconstituir as cenas históricas."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "entracte-commission",
+        "area": "research",
+        "prompt": {
+          "en": "How should you plan a short film commissioned for an interdisciplinary performance?",
+          "nb": "Hvordan bør du planlegge en kortfilm bestilt til en tverrkunstnerisk forestilling?",
+          "fr": "Comment préparer un court métrage commandé pour un spectacle interdisciplinaire ?",
+          "pt": "Como preparar uma curta-metragem encomendada para um espetáculo interdisciplinar?"
+        },
+        "options": [
+          {
+            "id": "ignore",
+            "label": {
+              "en": "Ignore the event programme and the collaborators from other arts",
+              "nb": "Ignorer arrangementsprogrammet og samarbeidspartnere fra andre kunstarter",
+              "fr": "Ignorer le programme du spectacle et les collaborateurs des autres arts",
+              "pt": "Ignorar o programa do espetáculo e os colaboradores de outras artes"
+            }
+          },
+          {
+            "id": "event",
+            "label": {
+              "en": "Coordinate film duration, performance context and distinct creative roles",
+              "nb": "Samordne filmens varighet, forestillingskontekst og ulike kreative roller",
+              "fr": "Coordonner durée du film, contexte du spectacle et rôles créatifs distincts",
+              "pt": "Coordenar duração do filme, contexto do espetáculo e papéis criativos distintos"
+            }
+          },
+          {
+            "id": "solo",
+            "label": {
+              "en": "Credit every theatrical, visual and musical contribution to the director",
+              "nb": "Tilskriv alle teatrale, visuelle og musikalske bidrag regissøren",
+              "fr": "Attribuer tous les apports scéniques, visuels et musicaux au réalisateur",
+              "pt": "Atribuir todos os contributos cénicos, visuais e musicais ao realizador"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "event",
+        "explanation": {
+          "en": "Centre Pompidou connects the film to Relâche, while the Cinémathèque identifies Clair, Picabia, de Maré, Berliet and Satie. Plan a fictional arts event around the film's function and the collaborators' documented distinct roles.",
+          "nb": "Centre Pompidou knytter filmen til Relâche, mens Cinémathèque identifiserer Clair, Picabia, de Maré, Berliet og Satie. Planlegg et fiktivt kunstarrangement rundt filmens funksjon og samarbeidspartnernes dokumenterte ulike roller.",
+          "fr": "Le Centre Pompidou relie le film à Relâche ; la Cinémathèque identifie Clair, Picabia, de Maré, Berliet et Satie. Préparez un événement fictif en tenant compte de la fonction du film et des rôles distincts.",
+          "pt": "O Centre Pompidou relaciona o filme com Relâche; a Cinémathèque identifica Clair, Picabia, de Maré, Berliet e Satie. Planeie um evento fictício considerando a função do filme e os papéis distintos."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "entracte-versions",
+        "area": "sound",
+        "prompt": {
+          "en": "How should the original accompaniment and later changes to the film be documented?",
+          "nb": "Hvordan bør det opprinnelige musikkakkompagnementet og senere endringer i filmen dokumenteres?",
+          "fr": "Comment documenter l'accompagnement original et les modifications ultérieures du film ?",
+          "pt": "Como documentar o acompanhamento original e as alterações posteriores do filme?"
+        },
+        "options": [
+          {
+            "id": "identical",
+            "label": {
+              "en": "Assume all circulating editions contain identical images and music",
+              "nb": "Anta at alle tilgjengelige utgaver har identiske bilder og musikk",
+              "fr": "Supposer que toutes les éditions contiennent les mêmes images et la même musique",
+              "pt": "Supor que todas as edições contêm imagens e música idênticas"
+            }
+          },
+          {
+            "id": "soundtrack",
+            "label": {
+              "en": "Treat the original accompaniment as proof of recorded synchronized dialogue",
+              "nb": "Behandle det opprinnelige akkompagnementet som bevis for innspilt synkron dialog",
+              "fr": "Traiter l'accompagnement original comme preuve de dialogue synchrone enregistré",
+              "pt": "Tratar o acompanhamento original como prova de diálogo sincronizado gravado"
+            }
+          },
+          {
+            "id": "edition",
+            "label": {
+              "en": "Separate the original event, the 1967 removals and the later restoration",
+              "nb": "Skill det opprinnelige arrangementet, klippene som ble fjernet i 1967, og senere restaurering",
+              "fr": "Distinguer l'événement original, les retraits de 1967 et la restauration ultérieure",
+              "pt": "Distinguir o evento original, os cortes de 1967 e o restauro posterior"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "edition",
+        "explanation": {
+          "en": "Fondation Pathé documents Satie's accompaniment, Clair's later removals and restoration from surviving materials. The Cinémathèque records another presentation duration. Identify the edition instead of declaring a single unchanged original runtime.",
+          "nb": "Fondation Pathé dokumenterer Saties akkompagnement, Clairs senere fjerning av materiale og restaurering fra bevarte elementer. Cinémathèque oppgir en annen visningsvarighet. Identifiser utgaven fremfor å erklære én uendret originalvarighet.",
+          "fr": "La Fondation Pathé documente l'accompagnement de Satie, les retraits ultérieurs de Clair et la restauration à partir d'éléments conservés. La Cinémathèque indique une autre durée. Identifiez l'édition sans affirmer une durée originale unique.",
+          "pt": "A Fondation Pathé documenta o acompanhamento de Satie, os cortes posteriores de Clair e o restauro de materiais preservados. A Cinémathèque indica outra duração. Identifique a edição sem afirmar uma duração original única."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_napoleon_1927",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore triple-screen composition, collective production and the complex history of an epic's editions.",
+      "nb": "Utforsk treskjermskomposisjon, kollektiv produksjon og den komplekse versjonshistorien til en storfilm.",
+      "fr": "Explorez la composition sur trois écrans, la production collective et l'histoire complexe des versions d'une épopée.",
+      "pt": "Explore a composição em três ecrãs, a produção coletiva e a história complexa das edições de uma epopeia."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Napoléon vu par Abel Gance",
+        "publisher": "La Cinémathèque française",
+        "url": "https://www.cinematheque.fr/film/48685.html"
+      },
+      {
+        "id": "s1",
+        "title": "The Napoléon Comet: The Expert Appraisal of a Collection",
+        "publisher": "La Cinémathèque française",
+        "url": "https://www.cinematheque.fr/article/662.html"
+      },
+      {
+        "id": "s2",
+        "title": "Machines — Le triple écran d'Abel Gance",
+        "publisher": "La Cinémathèque française",
+        "url": "https://www.cinematheque.fr/exposition-machines-guide.html"
+      },
+      {
+        "id": "s3",
+        "title": "Napoleon: 10 unmissable highlights from Abel Gance's five-and-a-half-hour masterpiece",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/napoleon-highlights-abel-gance-silent-film"
+      },
+      {
+        "id": "s4",
+        "title": "Napoléon vu par Abel Gance — current Grande Version parts 1 and 2",
+        "publisher": "La Cinémathèque française",
+        "url": "https://www.cinematheque.fr/film/154798.html"
+      }
+    ],
+    "questions": [
+      {
+        "id": "napoleon-triptych",
+        "area": "camera",
+        "prompt": {
+          "en": "How could a three-panel storyboard explore the relationship between adjacent images?",
+          "nb": "Hvordan kan et storyboard med tre paneler utforske forholdet mellom tilstøtende bilder?",
+          "fr": "Comment un storyboard à trois panneaux peut-il explorer les rapports entre images adjacentes ?",
+          "pt": "Como pode um storyboard de três painéis explorar a relação entre imagens adjacentes?"
+        },
+        "options": [
+          {
+            "id": "panels",
+            "label": {
+              "en": "Compare a continuous landscape panorama with three related independent images",
+              "nb": "Sammenlign et sammenhengende landskapspanorama med tre beslektede selvstendige bilder",
+              "fr": "Comparer un panorama paysager continu et trois images indépendantes liées",
+              "pt": "Comparar um panorama paisagístico contínuo e três imagens independentes relacionadas"
+            }
+          },
+          {
+            "id": "single",
+            "label": {
+              "en": "Assume three panels can only repeat the same central image",
+              "nb": "Anta at tre paneler bare kan gjenta det samme sentrale bildet",
+              "fr": "Supposer que trois panneaux ne peuvent que répéter l'image centrale",
+              "pt": "Supor que três painéis só podem repetir a imagem central"
+            }
+          },
+          {
+            "id": "reconstruct",
+            "label": {
+              "en": "Claim the new storyboard is an authenticated historical projection plan",
+              "nb": "Hevd at det nye storyboardet er en autentisert historisk visningsplan",
+              "fr": "Affirmer que le nouveau storyboard est un plan de projection historique authentifié",
+              "pt": "Afirmar que o novo storyboard é um plano de projeção histórico autenticado"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "panels",
+        "explanation": {
+          "en": "The Cinémathèque's machine exhibit explains adjacent projections and their ability to present separate images or a panorama. Draw a new nonviolent landscape triptych to compare these compositional relationships without claiming an exact historical reconstruction.",
+          "nb": "Cinémathèques maskinutstilling forklarer tilstøtende projeksjoner og muligheten for separate bilder eller et panorama. Tegn en egen ikke-voldelig landskapstriptyk for å sammenligne komposisjonsforholdene uten å hevde en eksakt historisk rekonstruksjon.",
+          "fr": "L'exposition des machines de la Cinémathèque explique les projections adjacentes, distinctes ou panoramiques. Dessinez un triptyque paysager original sans violence pour comparer ces rapports, sans prétendre reconstruire exactement la projection historique.",
+          "pt": "A exposição de máquinas da Cinémathèque explica projeções adjacentes, distintas ou panorâmicas. Desenhe um tríptico paisagístico original não violento para comparar estas relações, sem alegar reconstrução histórica exata."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "napoleon-team",
+        "area": "research",
+        "prompt": {
+          "en": "How should a producer document a complex multi-camera production's creative collaboration?",
+          "nb": "Hvordan bør en produsent dokumentere kreativt samarbeid i en kompleks flerkameraproduksjon?",
+          "fr": "Comment documenter la collaboration créative d'une production complexe à plusieurs caméras ?",
+          "pt": "Como documentar a colaboração criativa de uma produção complexa com várias câmaras?"
+        },
+        "options": [
+          {
+            "id": "solo",
+            "label": {
+              "en": "Assign every camera, design and editing contribution to the director alone",
+              "nb": "Tilskriv alle foto-, scenografi- og klippebidrag regissøren alene",
+              "fr": "Attribuer tous les apports image, décors et montage au seul réalisateur",
+              "pt": "Atribuir todas as contribuições de fotografia, cenografia e montagem apenas ao realizador"
+            }
+          },
+          {
+            "id": "roles",
+            "label": {
+              "en": "Record cinematographers, editors, designers and production companies separately",
+              "nb": "Registrer filmfotografer, klippere, scenografer og produksjonsselskaper hver for seg",
+              "fr": "Consigner séparément opérateurs, monteurs, décorateurs et sociétés de production",
+              "pt": "Registar separadamente diretores de fotografia, montadores, cenógrafos e produtoras"
+            }
+          },
+          {
+            "id": "invent",
+            "label": {
+              "en": "Infer undocumented crew responsibilities from the scale of the finished film",
+              "nb": "Utled udokumenterte teamroller fra den ferdige filmens omfang",
+              "fr": "Déduire des responsabilités non documentées de l'ampleur du film achevé",
+              "pt": "Deduzir funções não documentadas da escala do filme final"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "roles",
+        "explanation": {
+          "en": "The Cinémathèque catalogue credits several cinematographers and Gance and Beaugé in editing, alongside extensive specialist labour. Distinguish the documented roles and collaborative apparatus from unsupported claims of individual invention.",
+          "nb": "Cinémathèques katalog krediterer flere fotografer og Gance og Beaugé for klipp, sammen med omfattende spesialistarbeid. Skill dokumenterte roller og felles produksjonsapparat fra udokumenterte påstander om individuelle oppfinnelser.",
+          "fr": "Le catalogue de la Cinémathèque crédite plusieurs opérateurs, Gance et Beaugé au montage et de nombreux spécialistes. Distinguez les rôles attestés et le dispositif collectif des affirmations d'invention individuelle non étayées.",
+          "pt": "O catálogo da Cinémathèque credita vários diretores de fotografia, Gance e Beaugé na montagem e numerosos especialistas. Distinga papéis documentados e o dispositivo coletivo de alegações de invenção individual sem apoio."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "napoleon-editions",
+        "area": "research",
+        "prompt": {
+          "en": "How should a researcher describe the different 1927 presentations, export cuts and modern reconstruction?",
+          "nb": "Hvordan bør en forsker beskrive de ulike visningene i 1927, eksportversjonene og moderne rekonstruksjon?",
+          "fr": "Comment décrire les différentes projections de 1927, les montages d'exportation et la reconstruction moderne ?",
+          "pt": "Como descrever as diferentes apresentações de 1927, montagens de exportação e reconstrução moderna?"
+        },
+        "options": [
+          {
+            "id": "universal",
+            "label": {
+              "en": "Treat the modern two-part presentation as an untouched original master",
+              "nb": "Behandle den moderne todelte visningen som en urørt originalmaster",
+              "fr": "Traiter la présentation moderne en deux parties comme un original intact",
+              "pt": "Tratar a apresentação moderna em duas partes como original intacto"
+            }
+          },
+          {
+            "id": "average",
+            "label": {
+              "en": "Average different catalogue runtimes to invent one original duration",
+              "nb": "Beregn gjennomsnittet av katalogvarigheter for å finne på én originalvarighet",
+              "fr": "Moyenner les durées des catalogues pour inventer une durée originale",
+              "pt": "Calcular a média das durações dos catálogos para inventar uma duração original"
+            }
+          },
+          {
+            "id": "provenance",
+            "label": {
+              "en": "Document each presentation and cut with its own archival evidence",
+              "nb": "Dokumenter hver visning og klippeversjon med sitt eget arkivbelegg",
+              "fr": "Documenter chaque projection et montage avec ses propres preuves d'archives",
+              "pt": "Documentar cada apresentação e montagem com a sua própria evidência de arquivo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "provenance",
+        "explanation": {
+          "en": "The Cinémathèque distinguishes the Opéra and Apollo presentations, export recutting and later reconstruction. Its Grande Version record describes two modern parts. Keep edition-specific evidence separate rather than merging durations into a supposedly universal original.",
+          "nb": "Cinémathèque skiller Opéra- og Apollo-visningene, omklipping for eksport og senere rekonstruksjon. Oppføringen for Grande Version beskriver to moderne deler. Hold utgavespesifikt belegg adskilt fremfor å slå sammen varigheter til en antatt universell original.",
+          "fr": "La Cinémathèque distingue les projections Opéra et Apollo, les remontages d'exportation et la reconstruction ultérieure. Sa notice Grande Version décrit deux parties modernes. Séparez les preuves propres aux éditions sans inventer un original universel.",
+          "pt": "A Cinémathèque distingue as apresentações Opéra e Apollo, remontagens de exportação e reconstrução posterior. O registo Grande Version descreve duas partes modernas. Separe evidências de cada edição sem inventar um original universal."
+        },
+        "sourceIds": [
+          "s1",
+          "s4"
         ]
       }
     ]
