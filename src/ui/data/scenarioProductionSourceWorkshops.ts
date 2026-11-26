@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Forty-three pre-existing Production Cases receive evidence-backed craft decisions.
+ * Forty-six pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -6703,6 +6703,593 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
         "sourceIds": [
           "s2",
           "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_last_laugh_1924",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore motivated camera movement, visual narration and collaborative studio craft.",
+      "nb": "Utforsk motivert kamerabevegelse, visuell fortelling og samarbeid om studiohåndverk.",
+      "fr": "Explorez le mouvement de caméra motivé, la narration visuelle et les métiers collectifs du studio.",
+      "pt": "Explore o movimento de câmara motivado, a narração visual e os ofícios colaborativos do estúdio."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Der letzte Mann",
+        "publisher": "filmportal.de",
+        "url": "https://www.filmportal.de/en/movie/der-letzte-mann_ea43d4a6d0975006e03053d50b37753d"
+      },
+      {
+        "id": "s1",
+        "title": "Die entfesselte Kamera",
+        "publisher": "filmportal.de",
+        "url": "https://www.filmportal.de/thema/die-entfesselte-kamera"
+      },
+      {
+        "id": "s2",
+        "title": "Dream Factory and State Enterprise – The History of Ufa",
+        "publisher": "filmportal.de",
+        "url": "https://www.filmportal.de/en/topic/dream-factory-and-state-enterprise-the-history-of-ufa"
+      },
+      {
+        "id": "s3",
+        "title": "10 great films of 1924",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-films-1924"
+      },
+      {
+        "id": "s4",
+        "title": "F. W. Murnaus Tabu – Die Edition der Outtakes",
+        "publisher": "Deutsche Kinemathek",
+        "url": "https://www.deutsche-kinemathek.de/de/sammlungen-archive/sammlung-digital/murnaus-tabu"
+      }
+    ],
+    "questions": [
+      {
+        "id": "lastlaugh-motion",
+        "area": "camera",
+        "prompt": {
+          "en": "How can camera movement express a character's changing experience of a space?",
+          "nb": "Hvordan kan kamerabevegelse uttrykke en figurs endrede opplevelse av et rom?",
+          "fr": "Comment le mouvement de caméra peut-il exprimer l'expérience changeante d'un lieu par un personnage ?",
+          "pt": "Como pode o movimento de câmara expressar a experiência variável de um espaço pela personagem?"
+        },
+        "options": [
+          {
+            "id": "motivated",
+            "label": {
+              "en": "Draw a sequence comparing static framing and character-motivated movement",
+              "nb": "Tegn en sekvens som sammenligner fast utsnitt og bevegelse motivert av figuren",
+              "fr": "Dessiner une séquence comparant cadre fixe et mouvement motivé par le personnage",
+              "pt": "Desenhar uma sequência comparando quadro fixo e movimento motivado pela personagem"
+            }
+          },
+          {
+            "id": "random",
+            "label": {
+              "en": "Add unrelated motion to every image",
+              "nb": "Legg tilfeldig bevegelse til hvert bilde",
+              "fr": "Ajouter un mouvement sans rapport à chaque image",
+              "pt": "Acrescentar movimento sem relação a cada imagem"
+            }
+          },
+          {
+            "id": "first",
+            "label": {
+              "en": "Declare that this film invented all moving-camera practice",
+              "nb": "Erklær at denne filmen oppfant all bevegelig kamerabruk",
+              "fr": "Déclarer que ce film a inventé toute caméra mobile",
+              "pt": "Declarar que este filme inventou toda a prática da câmara móvel"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "motivated",
+        "explanation": {
+          "en": "Filmportal describes Freund's unusually systematic mobile-camera practice, not a first-ever invention. Compare drawn viewpoints in an original scene, without claiming to reconstruct the historical apparatus.",
+          "nb": "Filmportal beskriver Freunds uvanlig systematiske bevegelige kamerabruk, ikke en førstegangsoppfinnelse. Sammenlign tegnede synsvinkler i en egen scene uten å hevde å rekonstruere det historiske apparatet.",
+          "fr": "Filmportal décrit la mobilité systématique de Freund, non une invention absolue. Comparez des points de vue dessinés dans une scène originale sans prétendre reconstruire l'appareil historique.",
+          "pt": "Filmportal descreve a mobilidade sistemática de Freund, não uma invenção absoluta. Compare pontos de vista desenhados numa cena original sem alegar reconstruir o aparelho histórico."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "lastlaugh-visual",
+        "area": "research",
+        "prompt": {
+          "en": "How could a silent scene convey a change in social status with minimal text?",
+          "nb": "Hvordan kan en stumfilmscene formidle endret sosial status med lite tekst?",
+          "fr": "Comment une scène muette peut-elle exprimer un changement de statut social avec peu de texte ?",
+          "pt": "Como pode uma cena muda comunicar uma mudança de estatuto social com pouco texto?"
+        },
+        "options": [
+          {
+            "id": "explain",
+            "label": {
+              "en": "Explain every gesture using unrelated written commentary",
+              "nb": "Forklar hver gest med løsrevet skriftlig kommentar",
+              "fr": "Expliquer chaque geste par un commentaire écrit sans rapport",
+              "pt": "Explicar cada gesto com comentário escrito sem relação"
+            }
+          },
+          {
+            "id": "visual",
+            "label": {
+              "en": "Compare performance, objects and framing as narrative information",
+              "nb": "Sammenlign spill, gjenstander og utsnitt som fortellingsinformasjon",
+              "fr": "Comparer jeu, objets et cadrage comme informations narratives",
+              "pt": "Comparar interpretação, objetos e enquadramento como informação narrativa"
+            }
+          },
+          {
+            "id": "absolute",
+            "label": {
+              "en": "Claim the film contains no intertitle or exceptional coda whatsoever",
+              "nb": "Hevd at filmen ikke har noen mellomtekst eller særskilt epilog",
+              "fr": "Affirmer que le film ne contient aucun intertitre ni épilogue exceptionnel",
+              "pt": "Afirmar que o filme não contém qualquer intertítulo nem epílogo excecional"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "visual",
+        "explanation": {
+          "en": "BFI discusses Jannings' performance, subjective images and near-absence of intertitles, as well as the exceptional satirical coda. Test visual storytelling in an invented everyday scene without erasing the film's documented exception.",
+          "nb": "BFI omtaler Jannings' spill, subjektive bilder og nesten fraværende mellomtekster, samt den særskilte satiriske epilogen. Prøv visuell fortelling i en egen hverdagsscene uten å viske ut filmens dokumenterte unntak.",
+          "fr": "Le BFI évoque le jeu de Jannings, les images subjectives, la quasi-absence d'intertitres et l'épilogue satirique. Testez une narration visuelle originale sans effacer cette exception documentée.",
+          "pt": "O BFI aborda a interpretação de Jannings, imagens subjetivas, a quase ausência de intertítulos e o epílogo satírico. Experimente uma narrativa visual original sem apagar esta exceção documentada."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "lastlaugh-team",
+        "area": "research",
+        "prompt": {
+          "en": "How should the mobile visual style be attributed within UFA's production system?",
+          "nb": "Hvordan bør den bevegelige visuelle stilen tilskrives innenfor UFAs produksjonssystem?",
+          "fr": "Comment attribuer le style visuel mobile au sein du système de production UFA ?",
+          "pt": "Como atribuir o estilo visual móvel no sistema de produção da UFA?"
+        },
+        "options": [
+          {
+            "id": "director",
+            "label": {
+              "en": "Assign every documented visual contribution to Murnau alone",
+              "nb": "Tilskriv alle dokumenterte visuelle bidrag Murnau alene",
+              "fr": "Attribuer toutes les contributions visuelles documentées au seul Murnau",
+              "pt": "Atribuir todas as contribuições visuais documentadas apenas a Murnau"
+            }
+          },
+          {
+            "id": "later",
+            "label": {
+              "en": "Use Murnau's later Hollywood career as proof of every production detail",
+              "nb": "Bruk Murnaus senere Hollywood-karriere som bevis for alle produksjonsdetaljer",
+              "fr": "Utiliser la carrière hollywoodienne ultérieure comme preuve de chaque détail",
+              "pt": "Usar a carreira posterior em Hollywood como prova de cada pormenor"
+            }
+          },
+          {
+            "id": "collaboration",
+            "label": {
+              "en": "Document the distinct roles of director, writer, camera, design and producer",
+              "nb": "Dokumenter de ulike rollene til regissør, manusforfatter, foto, scenografi og produsent",
+              "fr": "Documenter les rôles distincts de réalisation, scénario, image, décors et production",
+              "pt": "Documentar os papéis distintos de realização, argumento, fotografia, cenografia e produção"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "collaboration",
+        "explanation": {
+          "en": "Filmportal documents Murnau, Mayer, Freund, Herlth, Röhrig and Pommer within UFA's organization. Treat camera mobility as a collaborative production achievement rather than an isolated invention; keep later international reception separate.",
+          "nb": "Filmportal dokumenterer Murnau, Mayer, Freund, Herlth, Röhrig og Pommer innenfor UFAs organisasjon. Behandle kamerabevegelse som en felles produksjonsprestasjon fremfor en isolert oppfinnelse; skill senere internasjonal mottakelse ut.",
+          "fr": "Filmportal documente Murnau, Mayer, Freund, Herlth, Röhrig et Pommer dans l'organisation UFA. Considérez la mobilité comme une réalisation collective, non une invention isolée ; distinguez la réception internationale ultérieure.",
+          "pt": "Filmportal documenta Murnau, Mayer, Freund, Herlth, Röhrig e Pommer na organização UFA. Considere a mobilidade uma realização colaborativa, não invenção isolada; distinga a receção internacional posterior."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_metropolis_1927",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore monumental design, collaborative effects and the reconstruction of a complex silent film.",
+      "nb": "Utforsk monumental scenografi, effektsamarbeid og rekonstruksjonen av en kompleks stumfilm.",
+      "fr": "Explorez les décors monumentaux, les effets collectifs et la reconstruction d'un film muet complexe.",
+      "pt": "Explore cenários monumentais, efeitos colaborativos e reconstrução de um filme mudo complexo."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Metropolis",
+        "publisher": "filmportal.de",
+        "url": "https://www.filmportal.de/en/movie/metropolis_ea43d4a6990b5006e03053d50b37753d"
+      },
+      {
+        "id": "s1",
+        "title": "Fritz Lang's Metropolis Over Time",
+        "publisher": "filmportal.de",
+        "url": "https://www.filmportal.de/en/topic/fritz-langs-metropolis-over-time"
+      },
+      {
+        "id": "s2",
+        "title": "Metropolis",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/bda6ff8a-ed7e-5942-980d-c2910c0120ec/metropolis"
+      },
+      {
+        "id": "s3",
+        "title": "Fritz Langs Metropolis",
+        "publisher": "Deutsche Kinemathek",
+        "url": "https://www.deutsche-kinemathek.de/en/node/787"
+      },
+      {
+        "id": "s4",
+        "title": "Metropolis – Memory of the World",
+        "publisher": "UNESCO",
+        "url": "https://www.unesco.org/en/memory-world/metropolis-sicherungsstuck-nr-1-negative-restored-and-reconstructed-version-2001"
+      }
+    ],
+    "questions": [
+      {
+        "id": "metropolis-city",
+        "area": "camera",
+        "prompt": {
+          "en": "How can an original miniature city express a fictional society's differences in power?",
+          "nb": "Hvordan kan en egen miniatyrby uttrykke maktforskjeller i et fiktivt samfunn?",
+          "fr": "Comment une ville miniature originale peut-elle exprimer les rapports de pouvoir d'une société fictive ?",
+          "pt": "Como pode uma cidade em miniatura original expressar diferenças de poder numa sociedade fictícia?"
+        },
+        "options": [
+          {
+            "id": "scale",
+            "label": {
+              "en": "Compare architectural levels, scale and character placement in drawn designs",
+              "nb": "Sammenlign arkitektoniske nivåer, skala og figurplassering i tegnede utkast",
+              "fr": "Comparer niveaux architecturaux, échelle et placement des personnages dans des dessins",
+              "pt": "Comparar níveis arquitetónicos, escala e posição de personagens em desenhos"
+            }
+          },
+          {
+            "id": "decor",
+            "label": {
+              "en": "Treat every architectural difference as purely decorative",
+              "nb": "Behandle alle arkitektoniske forskjeller som rent dekorative",
+              "fr": "Traiter chaque différence architecturale comme purement décorative",
+              "pt": "Tratar todas as diferenças arquitetónicas como puramente decorativas"
+            }
+          },
+          {
+            "id": "exact",
+            "label": {
+              "en": "Claim a new sketch proves the precise historical effects apparatus",
+              "nb": "Hevd at en ny skisse beviser det nøyaktige historiske effektapparatet",
+              "fr": "Affirmer qu'un nouveau croquis prouve le dispositif historique exact des effets",
+              "pt": "Afirmar que um novo esboço prova o equipamento histórico exato de efeitos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "scale",
+        "explanation": {
+          "en": "The BFI connects the future city, social inequality and miniature imagery; UNESCO recognizes the architectural significance. Use an original drawing to explore spatial hierarchy without claiming to reproduce the original effects setup.",
+          "nb": "BFI knytter fremtidsbyen til sosial ulikhet og miniatyrbilder; UNESCO anerkjenner den arkitektoniske betydningen. Bruk en egen tegning til å utforske romlig hierarki uten å hevde å gjenskape det originale effektoppsettet.",
+          "fr": "Le BFI relie ville future, inégalités et miniatures ; l'UNESCO reconnaît l'importance architecturale. Utilisez un dessin original pour étudier la hiérarchie spatiale sans prétendre reproduire les effets originaux.",
+          "pt": "O BFI relaciona cidade futura, desigualdade e miniaturas; a UNESCO reconhece a importância arquitetónica. Use um desenho original para estudar a hierarquia espacial sem alegar reproduzir os efeitos originais."
+        },
+        "sourceIds": [
+          "s2",
+          "s4"
+        ]
+      },
+      {
+        "id": "metropolis-craft",
+        "area": "research",
+        "prompt": {
+          "en": "How should a production plan represent the collaboration behind a large constructed world?",
+          "nb": "Hvordan bør en produksjonsplan fremstille samarbeidet bak en stor konstruert verden?",
+          "fr": "Comment un plan de production doit-il représenter la collaboration derrière un vaste monde construit ?",
+          "pt": "Como deve um plano de produção representar a colaboração por trás de um grande mundo construído?"
+        },
+        "options": [
+          {
+            "id": "single",
+            "label": {
+              "en": "Attribute all design and camera contributions to Lang alone",
+              "nb": "Tilskriv alle scenografiske og fotografiske bidrag Lang alene",
+              "fr": "Attribuer tous les apports des décors et de l'image au seul Lang",
+              "pt": "Atribuir todas as contribuições de cenografia e fotografia apenas a Lang"
+            }
+          },
+          {
+            "id": "roles",
+            "label": {
+              "en": "Map the documented writing, photography, design and production roles",
+              "nb": "Kartlegg dokumenterte roller innen manus, foto, scenografi og produksjon",
+              "fr": "Cartographier les rôles documentés du scénario, de l'image, des décors et de la production",
+              "pt": "Mapear funções documentadas de argumento, fotografia, cenografia e produção"
+            }
+          },
+          {
+            "id": "guess",
+            "label": {
+              "en": "Infer exact undocumented responsibilities from the final images",
+              "nb": "Utled eksakte udokumenterte ansvarsområder fra de ferdige bildene",
+              "fr": "Déduire des responsabilités précises non documentées à partir des images finales",
+              "pt": "Deduzir responsabilidades exatas não documentadas a partir das imagens finais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "roles",
+        "explanation": {
+          "en": "Filmportal and Deutsche Kinemathek document UFA, Pommer, Lang, von Harbou, camera and design contributions, and surviving production artifacts. Separate documented credits from hypotheses about individual effects.",
+          "nb": "Filmportal og Deutsche Kinemathek dokumenterer UFA, Pommer, Lang, von Harbou, foto- og scenografibidrag samt bevarte produksjonsgjenstander. Skill dokumentert kreditering fra hypoteser om enkelte effekter.",
+          "fr": "Filmportal et la Deutsche Kinemathek documentent UFA, Pommer, Lang, von Harbou, les contributions image et décors et les objets conservés. Distinguez crédits attestés et hypothèses sur les effets.",
+          "pt": "Filmportal e Deutsche Kinemathek documentam UFA, Pommer, Lang, von Harbou, contribuições de fotografia e cenografia e objetos preservados. Distinga créditos documentados de hipóteses sobre efeitos."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "metropolis-restoration",
+        "area": "sound",
+        "prompt": {
+          "en": "How should different cuts, recovered footage and music be described?",
+          "nb": "Hvordan bør ulike klippeversjoner, gjenfunne opptak og musikk beskrives?",
+          "fr": "Comment décrire les différents montages, les images retrouvées et la musique ?",
+          "pt": "Como descrever diferentes montagens, imagens recuperadas e música?"
+        },
+        "options": [
+          {
+            "id": "universal",
+            "label": {
+              "en": "Treat all circulating copies as one complete unchanged original",
+              "nb": "Behandle alle sirkulerende kopier som én komplett uendret original",
+              "fr": "Traiter toutes les copies en circulation comme un original complet et inchangé",
+              "pt": "Tratar todas as cópias em circulação como um original completo e inalterado"
+            }
+          },
+          {
+            "id": "erase",
+            "label": {
+              "en": "Ignore missing material and the archival reconstruction history",
+              "nb": "Ignorer manglende materiale og arkivenes rekonstruksjonshistorie",
+              "fr": "Ignorer les matériaux manquants et l'histoire de la reconstruction archivistique",
+              "pt": "Ignorar materiais em falta e a história da reconstrução arquivística"
+            }
+          },
+          {
+            "id": "provenance",
+            "label": {
+              "en": "Identify the edition, surviving elements, reconstruction and score evidence",
+              "nb": "Identifiser utgaven, bevarte elementer, rekonstruksjon og musikkbelegg",
+              "fr": "Identifier l'édition, les éléments conservés, la reconstruction et les preuves musicales",
+              "pt": "Identificar edição, elementos preservados, reconstrução e evidência musical"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "provenance",
+        "explanation": {
+          "en": "Filmportal and Deutsche Kinemathek document recutting, the Buenos Aires discovery and the 2010 nearly complete reconstruction, with Huppertz's music. Distinguish surviving evidence, reconstruction and presentation rather than assuming one intact master.",
+          "nb": "Filmportal og Deutsche Kinemathek dokumenterer omklipping, funnet i Buenos Aires og den nesten komplette rekonstruksjonen fra 2010 med Huppertz' musikk. Skill bevart belegg, rekonstruksjon og visning fremfor å anta én intakt master.",
+          "fr": "Filmportal et la Deutsche Kinemathek documentent les remontages, la découverte à Buenos Aires et la reconstruction presque complète de 2010 avec la musique de Huppertz. Distinguez preuves conservées, reconstruction et présentation.",
+          "pt": "Filmportal e Deutsche Kinemathek documentam remontagens, a descoberta em Buenos Aires e a reconstrução quase completa de 2010 com música de Huppertz. Distinga evidência preservada, reconstrução e apresentação."
+        },
+        "sourceIds": [
+          "s1",
+          "s3",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_pandoras_box_1929",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore naturalistic performance, social spaces and the history of adaptation and circulation.",
+      "nb": "Utforsk naturalistisk skuespill, sosiale rom og adaptasjons- og distribusjonshistorie.",
+      "fr": "Explorez le jeu naturaliste, les espaces sociaux et l'histoire de l'adaptation et de la circulation.",
+      "pt": "Explore interpretação naturalista, espaços sociais e história da adaptação e circulação."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Die Büchse der Pandora",
+        "publisher": "filmportal.de",
+        "url": "https://www.filmportal.de/en/movie/die-buchse-der-pandora_ea43d4a69b2c5006e03053d50b37753d"
+      },
+      {
+        "id": "s1",
+        "title": "G. W. Pabst",
+        "publisher": "filmportal.de",
+        "url": "https://www.filmportal.de/person/g-w-pabst_c5b49311e6c44fafa3c1329cc833aca4"
+      },
+      {
+        "id": "s2",
+        "title": "Louise Brooks",
+        "publisher": "filmportal.de",
+        "url": "https://www.filmportal.de/person/louise-brooks_f92cd465f41c417095f57586b2bf6181"
+      },
+      {
+        "id": "s3",
+        "title": "Where to begin with G.W. Pabst",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/where-begin-gw-pabst"
+      },
+      {
+        "id": "s4",
+        "title": "Availability — Die Büchse der Pandora",
+        "publisher": "filmportal.de",
+        "url": "https://www.filmportal.de/en/node/10095/availability"
+      }
+    ],
+    "questions": [
+      {
+        "id": "pandora-performance",
+        "area": "camera",
+        "prompt": {
+          "en": "How could an original scene communicate a character's relationship with changing social surroundings?",
+          "nb": "Hvordan kan en egen scene formidle en figurs forhold til skiftende sosiale omgivelser?",
+          "fr": "Comment une scène originale peut-elle exprimer le rapport d'un personnage à des milieux sociaux changeants ?",
+          "pt": "Como pode uma cena original comunicar a relação de uma personagem com ambientes sociais variáveis?"
+        },
+        "options": [
+          {
+            "id": "gesture",
+            "label": {
+              "en": "Compare gestures, framing and settings that communicate choices and relationships",
+              "nb": "Sammenlign gester, utsnitt og miljøer som formidler valg og relasjoner",
+              "fr": "Comparer gestes, cadrages et décors exprimant choix et relations",
+              "pt": "Comparar gestos, enquadramento e ambientes que expressem escolhas e relações"
+            }
+          },
+          {
+            "id": "rating",
+            "label": {
+              "en": "Reduce the character to appearance or sexuality scores",
+              "nb": "Reduser figuren til poeng for utseende eller seksualitet",
+              "fr": "Réduire le personnage à des notes d'apparence ou de sexualité",
+              "pt": "Reduzir a personagem a notas de aparência ou sexualidade"
+            }
+          },
+          {
+            "id": "uniform",
+            "label": {
+              "en": "Assume every Weimar film uses the same stylized visual approach",
+              "nb": "Anta at alle Weimar-filmer bruker samme stiliserte visuelle tilnærming",
+              "fr": "Supposer que tous les films de Weimar adoptent la même approche stylisée",
+              "pt": "Supor que todos os filmes de Weimar usam a mesma abordagem estilizada"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "gesture",
+        "explanation": {
+          "en": "BFI and filmportal discuss Pabst's naturalism and Brooks's distinctive performance in changing social spaces. Study an original everyday interaction through gesture and composition, without scoring identity or appearance.",
+          "nb": "BFI og filmportal omtaler Pabsts naturalisme og Brooks' særpregede spill i skiftende sosiale rom. Studer en egen hverdagslig interaksjon gjennom gest og komposisjon uten å poengsette identitet eller utseende.",
+          "fr": "Le BFI et filmportal évoquent le naturalisme de Pabst et le jeu singulier de Brooks dans des espaces sociaux variés. Étudiez une interaction quotidienne originale par le geste et la composition, sans noter identité ni apparence.",
+          "pt": "O BFI e filmportal abordam o naturalismo de Pabst e a interpretação singular de Brooks em espaços sociais variados. Estude uma interação quotidiana original por gesto e composição, sem pontuar identidade ou aparência."
+        },
+        "sourceIds": [
+          "s1",
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "pandora-adaptation",
+        "area": "research",
+        "prompt": {
+          "en": "How should you describe the relationship between adaptation, performance and production credits?",
+          "nb": "Hvordan bør forholdet mellom adaptasjon, skuespill og produksjonskreditering beskrives?",
+          "fr": "Comment décrire le rapport entre adaptation, interprétation et crédits de production ?",
+          "pt": "Como descrever a relação entre adaptação, interpretação e créditos de produção?"
+        },
+        "options": [
+          {
+            "id": "single",
+            "label": {
+              "en": "Assign every literary and screen contribution to the director",
+              "nb": "Tilskriv alle litterære og filmatiske bidrag regissøren",
+              "fr": "Attribuer tous les apports littéraires et filmiques au réalisateur",
+              "pt": "Atribuir todas as contribuições literárias e fílmicas ao realizador"
+            }
+          },
+          {
+            "id": "credits",
+            "label": {
+              "en": "Distinguish source plays, adaptation, direction, acting, design and photography",
+              "nb": "Skill kildeskuespill, adaptasjon, regi, skuespill, scenografi og foto",
+              "fr": "Distinguer pièces sources, adaptation, réalisation, jeu, décors et image",
+              "pt": "Distinguir peças originais, adaptação, realização, interpretação, cenografia e fotografia"
+            }
+          },
+          {
+            "id": "identity",
+            "label": {
+              "en": "Use fictional characterization as evidence about a real performer's identity",
+              "nb": "Bruk fiktiv karakterisering som belegg for en virkelig skuespillers identitet",
+              "fr": "Utiliser la caractérisation fictive comme preuve de l'identité réelle d'un interprète",
+              "pt": "Usar caracterização ficcional como prova da identidade real de um intérprete"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "credits",
+        "explanation": {
+          "en": "Filmportal identifies Wedekind's plays, Vajda's adaptation, Pabst and the Nero-Film team. Document distinct creative responsibilities and analyze fictional representation without treating a role as proof of a performer's private identity.",
+          "nb": "Filmportal identifiserer Wedekinds skuespill, Vajdas adaptasjon, Pabst og Nero-Film-teamet. Dokumenter ulike kreative ansvarsområder og analyser fiktiv fremstilling uten å behandle en rolle som bevis for skuespillerens private identitet.",
+          "fr": "Filmportal identifie les pièces de Wedekind, l'adaptation de Vajda, Pabst et l'équipe Nero-Film. Documentez les responsabilités distinctes et analysez la représentation fictive sans déduire l'identité privée de l'interprète.",
+          "pt": "Filmportal identifica peças de Wedekind, adaptação de Vajda, Pabst e equipa Nero-Film. Documente responsabilidades distintas e analise a representação ficcional sem deduzir a identidade privada do intérprete."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "pandora-versions",
+        "area": "research",
+        "prompt": {
+          "en": "How should a researcher describe different national and later archival versions?",
+          "nb": "Hvordan bør en forsker beskrive ulike nasjonale og senere arkivversjoner?",
+          "fr": "Comment décrire les différentes versions nationales et archivistiques ultérieures ?",
+          "pt": "Como descrever diferentes versões nacionais e arquivísticas posteriores?"
+        },
+        "options": [
+          {
+            "id": "same",
+            "label": {
+              "en": "Assume every national and modern version contains identical material",
+              "nb": "Anta at alle nasjonale og moderne versjoner inneholder identisk materiale",
+              "fr": "Supposer que chaque version nationale et moderne contient le même matériau",
+              "pt": "Supor que todas as versões nacionais e modernas contêm material idêntico"
+            }
+          },
+          {
+            "id": "unverified",
+            "label": {
+              "en": "Present modern home-video runtime as the unique original duration",
+              "nb": "Presenter moderne hjemmevideovarighet som den eneste originalvarigheten",
+              "fr": "Présenter la durée vidéo moderne comme l'unique durée originale",
+              "pt": "Apresentar a duração de vídeo moderna como a única duração original"
+            }
+          },
+          {
+            "id": "edition",
+            "label": {
+              "en": "Identify documented release, censorship, reconstruction and access-copy differences",
+              "nb": "Identifiser dokumenterte forskjeller i utgivelse, sensur, rekonstruksjon og tilgangskopi",
+              "fr": "Identifier les différences documentées de sortie, censure, reconstruction et copie d'accès",
+              "pt": "Identificar diferenças documentadas de estreia, censura, reconstrução e cópia de acesso"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "edition",
+        "explanation": {
+          "en": "Filmportal records the German original, American-version work, later reconstruction and modern availability. Tie each claim to the particular record and distinguish modern music and access metadata from the original production.",
+          "nb": "Filmportal registrerer den tyske originalen, arbeid med amerikansk versjon, senere rekonstruksjon og moderne tilgjengelighet. Knytt hver påstand til den konkrete oppføringen og skill moderne musikk og tilgangsmetadata fra originalproduksjonen.",
+          "fr": "Filmportal recense l'original allemand, le travail de version américaine, la reconstruction et la disponibilité modernes. Reliez chaque affirmation à sa notice et distinguez musique et accès modernes de la production originale.",
+          "pt": "Filmportal regista o original alemão, trabalho de versão americana, reconstrução e disponibilidade modernas. Relacione cada afirmação com o registo e distinga música e acesso modernos da produção original."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
         ]
       }
     ]
