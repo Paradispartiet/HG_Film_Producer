@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Targeted browser interaction QA for all one hundred and fourteen sourced film-workshop decisions.
+ * Targeted browser interaction QA for all one hundred and fifty-six sourced film-workshop decisions.
  * No new workflow job; not a substitute for physical iPad or editorial review.
  */
 import assert from "node:assert/strict";
@@ -39,8 +39,8 @@ const cases = data.SOURCE_BACKED_CASE_WORKSHOPS.map(workshop => {
   assert.equal(briefs.resolveScenarioProductionBrief(scenario).briefType, "production_case", "Missing playable brief: " + workshop.scenarioId);
   return { workshop, scenario };
 });
-assert.equal(cases.length, 38);
-assert.equal(cases.reduce((n, c) => n + c.workshop.questions.length, 0), 114);
+assert.equal(cases.length, 52);
+assert.equal(cases.reduce((n, c) => n + c.workshop.questions.length, 0), 156);
 
 async function check(browser, language, item) {
   const context = await browser.newContext({
@@ -60,12 +60,26 @@ async function check(browser, language, item) {
     const search = page.locator(".scenario-search input[type=search]");
     await search.waitFor({ state: "visible" });
     await search.fill(item.scenario.film.title);
-    const card = page.locator(".scenario-card").filter({ has: page.getByRole("heading", { name: item.scenario.film.title, exact: true }) });
+    // The search can match many films (especially short titles such as "It").
+    // Expand only the target decade, not a snapshot of buttons whose nth indices
+    // change whenever a React-rendered expansion removes one of them.
+    const decade = String(Math.floor(item.scenario.film.year / 10) * 10) + "s";
+    const era = page.locator(".scenario-era").filter({
+      has: page.locator(".scenario-era-rail b").filter({ hasText: new RegExp("^" + decade + "$") }),
+    });
+    await era.waitFor({ state: "visible" });
+    assert.equal(await era.count(), 1, label + ": unique decade");
+    const card = era.locator(".scenario-card")
+      .filter({ has: page.getByRole("heading", { name: item.scenario.film.title, exact: true }) })
+      .filter({ has: page.locator(".scenario-meta dd").filter({ hasText: new RegExp("^" + item.scenario.film.year + "$") }) });
     if (await card.count() === 0) {
-      for (const button of await page.locator(".scenario-era-show-all").all()) await button.click();
+      const expand = era.locator(".scenario-era-show-all");
+      await expand.waitFor({ state: "visible" });
+      assert.equal(await expand.count(), 1, label + ": unique decade expansion");
+      await expand.click();
     }
     await card.waitFor({ state: "visible" });
-    assert.equal(await card.count(), 1, label + ": unique film");
+    assert.equal(await card.count(), 1, label + ": unique film and year");
     await card.locator("button").last().click();
 
     const panel = page.locator(".scenario-source-workshop");
@@ -127,7 +141,7 @@ try {
   failures.push({ setup: String(error?.stack ?? error) });
 } finally { await browser?.close(); }
 await writeFile(resolve(REPORT_DIR, "sourced-workshop-" + (tablet ? "webkit" : "chromium") + "-summary.json"), JSON.stringify({
-  scope: "Thirty-eight existing films, one hundred and fourteen decisions, four languages; real UI clicks, source URLs and preserved progress, but not physical iPad or editorial approval",
+  scope: "Fifty-two existing films, one hundred and fifty-six decisions, four languages; real UI clicks, source URLs and preserved progress, but not physical iPad or editorial approval",
   expected: languages.length * cases.length, passed, failures,
 }, null, 2) + "\n");
 console.log("Sourced workshop " + (tablet ? "WebKit" : "Chromium") + ": " + passed.length + "/" + (languages.length * cases.length) + " passed, " + failures.length + " failures");

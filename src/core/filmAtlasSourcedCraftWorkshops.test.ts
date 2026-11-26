@@ -47,15 +47,29 @@ const ids = [
   "scenario_the_general_1926",
   "scenario_the_cheat_1915",
   "scenario_the_gold_rush_1925",
+  "scenario_it_1927",
+  "scenario_wings_1927",
+  "scenario_the_crowd_1928",
+  "scenario_the_cabinet_of_dr_caligari_1920",
+  "scenario_nosferatu_1922",
+  "scenario_the_last_laugh_1924",
+  "scenario_metropolis_1927",
+  "scenario_pandoras_box_1929",
+  "scenario_coeur_fidele_1923",
+  "scenario_the_smiling_madame_beudet_1923",
+  "scenario_entr_acte_1924",
+  "scenario_napoleon_1927",
+  "scenario_un_chien_andalou_1929",
+  "scenario_the_passion_of_joan_of_arc_1928",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly thirty-eight existing cases have one hundred and fourteen original, source-backed decisions", () => {
+test("Exactly fifty-two existing cases have one hundred and fifty-six original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 38);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 114);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 52);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 156);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -111,10 +125,62 @@ test("Exactly thirty-eight existing cases have one hundred and fourteen original
       const dossierFiles: Record<string, string> = {"scenario_the_cheat_1915":"src/ui/data/scenarioProductionVerificationTheCheat.ts","scenario_the_gold_rush_1925":"src/ui/data/scenarioProductionVerificationGoldRush.ts"};
       const dossier = readFileSync(dossierFiles[workshop.scenarioId]!, "utf8");
       for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (["scenario_it_1927", "scenario_wings_1927", "scenario_the_crowd_1928"].includes(workshop.scenarioId)) {
+      const definitions = readFileSync("src/core/chapterSixHollywoodExpansion.ts", "utf8");
+      assert.ok(definitions.includes(workshop.scenarioId));
+      const dossierFiles: Record<string, string> = {"scenario_it_1927":"src/ui/data/scenarioProductionVerificationIt.ts","scenario_wings_1927":"src/ui/data/scenarioProductionVerificationWings.ts","scenario_the_crowd_1928":"src/ui/data/scenarioProductionVerificationTheCrowd.ts"};
+      const dossier = readFileSync(dossierFiles[workshop.scenarioId]!, "utf8");
+      for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
     } else if (workshop.scenarioId === "scenario_the_general_1926") {
       const definition = readFileSync("src/core/earlyCinemaExpansion.ts", "utf8");
       assert.ok(definition.includes(workshop.scenarioId));
       const verification = readFileSync("src/ui/data/scenarioProductionVerificationSilentStudioSystemsBatch.ts", "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const dossier = verification.slice(start, verification.indexOf("\n  },", start));
+      for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (["scenario_the_cabinet_of_dr_caligari_1920", "scenario_nosferatu_1922"].includes(workshop.scenarioId)) {
+      const definition = readFileSync("src/core/earlyCinemaExpansion.ts", "utf8");
+      assert.ok(definition.includes(workshop.scenarioId));
+      const verification = readFileSync("src/ui/data/scenarioProductionVerificationSilentFoundationsBatch.ts", "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const dossier = verification.slice(start, verification.indexOf("\n  },", start));
+      for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (workshop.scenarioId === "scenario_metropolis_1927") {
+      const definition = readFileSync("src/core/earlyCinemaExpansion.ts", "utf8");
+      assert.ok(definition.includes(workshop.scenarioId));
+      const verification = readFileSync("src/ui/data/scenarioProductionVerificationSilentStudioSystemsBatch.ts", "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const dossier = verification.slice(start, verification.indexOf("\n  },", start));
+      for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (["scenario_the_last_laugh_1924", "scenario_pandoras_box_1929"].includes(workshop.scenarioId)) {
+      const definition = readFileSync("src/core/chapterSevenWeimarExpansion.ts", "utf8");
+      assert.ok(definition.includes(workshop.scenarioId));
+      const dossier = readFileSync(workshop.scenarioId === "scenario_the_last_laugh_1924" ? "src/ui/data/scenarioProductionVerificationTheLastLaugh.ts" : "src/ui/data/scenarioProductionVerificationPandorasBox.ts", "utf8");
+      for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (["scenario_coeur_fidele_1923", "scenario_the_smiling_madame_beudet_1923"].includes(workshop.scenarioId)) {
+      const definition = readFileSync("src/core/chapterEightFrenchAvantGardeExpansion.ts", "utf8");
+      assert.ok(definition.includes(workshop.scenarioId));
+      const dossierFiles: Record<string, string> = {"scenario_coeur_fidele_1923":"src/ui/data/scenarioProductionVerificationCoeurFidele.ts","scenario_the_smiling_madame_beudet_1923":"src/ui/data/scenarioProductionVerificationSmilingMadameBeudet.ts"};
+      const dossier = readFileSync(dossierFiles[workshop.scenarioId]!, "utf8");
+      for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (["scenario_entr_acte_1924", "scenario_napoleon_1927"].includes(workshop.scenarioId)) {
+      const definition = readFileSync("src/core/chapterEightFrenchAvantGardeExpansion.ts", "utf8");
+      assert.ok(definition.includes(workshop.scenarioId));
+      const dossierFiles: Record<string, string> = {"scenario_entr_acte_1924":"src/ui/data/scenarioProductionVerificationEntrActe.ts","scenario_napoleon_1927":"src/ui/data/scenarioProductionVerificationNapoleon.ts"};
+      const dossier = readFileSync(dossierFiles[workshop.scenarioId]!, "utf8");
+      for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (workshop.scenarioId === "scenario_un_chien_andalou_1929") {
+      const definition = readFileSync("src/core/chapterEightFrenchAvantGardeExpansion.ts", "utf8");
+      assert.ok(definition.includes(workshop.scenarioId));
+      const dossier = readFileSync("src/ui/data/scenarioProductionVerificationUnChienAndalou.ts", "utf8");
+      for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (workshop.scenarioId === "scenario_the_passion_of_joan_of_arc_1928") {
+      const definition = readFileSync("src/core/earlyCinemaExpansion.ts", "utf8");
+      assert.ok(definition.includes(workshop.scenarioId));
+      const verification = readFileSync("src/ui/data/scenarioProductionVerificationLateSilentEarlySoundBatch.ts", "utf8");
       const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
       assert.ok(start >= 0);
       const dossier = verification.slice(start, verification.indexOf("\n  },", start));
@@ -180,7 +246,7 @@ test("Exactly thirty-eight existing cases have one hundred and fourteen original
     for (const source of workshop.sources) {
       assert.match(source.url, /^https:\/\//);
       assert.ok(source.publisher.trim().length > 0, `Missing publisher for ${workshop.scenarioId}: ${source.id}`);
-      assert.ok(source.title.length > 10);
+      assert.ok(source.title.trim().length > 0, `Missing title for ${workshop.scenarioId}: ${source.id}`);
     }
     for (const question of workshop.questions) {
       assert.equal(question.options.length, 3);
@@ -506,4 +572,37 @@ test("The General workshop distinguishes visual comedy, collaborative credits an
 test("Hollywood workshops distinguish expressive craft, collaboration and edition histories", () => {
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_cheat_1915")?.questions.map(q => q.bestSupportedOptionId), ["contrast","team","critical"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_gold_rush_1925")?.questions.map(q => q.bestSupportedOptionId), ["match","roles","distinguish"]);
+});
+
+test("Mature silent Hollywood workshops distinguish publicity, collaboration and versions", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_it_1927")?.questions.map(q => q.bestSupportedOptionId), ["gesture","system","credit"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_wings_1927")?.questions.map(q => q.bestSupportedOptionId), ["map","roles","layers"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_crowd_1928")?.questions.map(q => q.bestSupportedOptionId), ["scale","consent","versions"]);
+});
+
+test("Weimar workshops distinguish constructed space, location atmosphere and edition history", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_cabinet_of_dr_caligari_1920")?.questions.map(q => q.bestSupportedOptionId), ["graphic","perspective","layers"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_nosferatu_1922")?.questions.map(q => q.bestSupportedOptionId), ["frame","study","version"]);
+});
+
+test("Weimar workshops distinguish mobile camera, collaborative design and version evidence", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_last_laugh_1924")?.questions.map(q => q.bestSupportedOptionId), ["motivated","visual","collaboration"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_metropolis_1927")?.questions.map(q => q.bestSupportedOptionId), ["scale","roles","provenance"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_pandoras_box_1929")?.questions.map(q => q.bestSupportedOptionId), ["gesture","credits","edition"]);
+  assert.ok(getSourceBackedCaseWorkshop("scenario_metropolis_1927")?.sources.some(s => s.title === "Metropolis" && s.publisher === "filmportal.de"));
+});
+
+test("French Impressionist workshops distinguish perception, agency and source evidence", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_coeur_fidele_1923")?.questions.map(q => q.bestSupportedOptionId), ["rhythm","theory","team"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_smiling_madame_beudet_1923")?.questions.map(q => q.bestSupportedOptionId), ["contrast","agency","records"]);
+});
+
+test("French experimental workshops distinguish event cinema, triptych design and archival editions", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_entr_acte_1924")?.questions.map(q => q.bestSupportedOptionId), ["rhythm","event","edition"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_napoleon_1927")?.questions.map(q => q.bestSupportedOptionId), ["panels","roles","provenance"]);
+});
+
+test("French workshops distinguish surreal association, emotional coherence and historical evidence", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_un_chien_andalou_1929")?.questions.map(q => q.bestSupportedOptionId), ["association","roles","context"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_passion_of_joan_of_arc_1928")?.questions.map(q => q.bestSupportedOptionId), ["faces","emotion","distinguish"]);
 });
