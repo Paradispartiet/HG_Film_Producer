@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Seventy-two pre-existing Production Cases receive evidence-backed craft decisions.
+ * Seventy-seven pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -12290,6 +12290,970 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
         "sourceIds": [
           "s0",
           "s2",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_sous_les_toits_de_paris_1930",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore studio geography, selective sound and the creative separation of image and sound.",
+      "nb": "Utforsk studiogeografi, selektiv lyd og kreativ adskillelse av bilde og lyd.",
+      "fr": "Explorez la géographie du studio, le son sélectif et la dissociation créative de l'image et du son.",
+      "pt": "Explore a geografia do estúdio, o som seletivo e a separação criativa entre imagem e som."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Sous les toits de Paris (René Clair, 1930)",
+        "publisher": "La Cinémathèque française",
+        "url": "https://www.cinematheque.fr/film/47691.html"
+      },
+      {
+        "id": "s1",
+        "title": "10 great early sound films — Sous les toits de Paris",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-early-sound-films"
+      },
+      {
+        "id": "s2",
+        "title": "Under the Roofs of Paris",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/715-under-the-roofs-of-paris"
+      },
+      {
+        "id": "s3",
+        "title": "Under the Roofs of Paris — Lucy Sante essay",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/current/posts/220-under-the-roofs-of-paris"
+      },
+      {
+        "id": "s4",
+        "title": "René Clair — restoration and print catalogue",
+        "publisher": "La Cinémathèque française",
+        "url": "https://www.cinematheque.fr/catalogues/restaurations-tirages/corpus.php?id=13"
+      }
+    ],
+    "questions": [
+      {
+        "id": "roofs-distance",
+        "area": "sound",
+        "prompt": {
+          "en": "How can an original courtyard scene suggest the distance of an unseen sound source?",
+          "nb": "Hvordan kan en egen bakgårdsscene antyde avstanden til en usynlig lydkilde?",
+          "fr": "Comment une scène originale de cour peut-elle suggérer la distance d'une source sonore invisible ?",
+          "pt": "Como pode uma cena original de pátio sugerir a distância de uma fonte sonora invisível?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Compare sound cues for changing viewpoints and closed doors",
+              "nb": "Sammenlign lydsignaler ved skiftende synsvinkler og lukkede dører",
+              "fr": "Comparer les indications sonores selon les points de vue et les portes fermées",
+              "pt": "Comparar indicações sonoras segundo pontos de vista e portas fechadas"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Keep every sound at identical perceived distance",
+              "nb": "Behold alle lyder på identisk opplevd avstand",
+              "fr": "Maintenir tous les sons à la même distance perçue",
+              "pt": "Manter todos os sons à mesma distância percebida"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Assume unseen sound always indicates a recording mistake",
+              "nb": "Anta at usynlig lyd alltid betyr en opptaksfeil",
+              "fr": "Supposer qu'un son invisible révèle toujours une erreur d'enregistrement",
+              "pt": "Supor que som invisível indica sempre erro de gravação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-0",
+        "explanation": {
+          "en": "BFI describes changes in apparent loudness and sound blocked by doors in Clair's studio world. Compare original cue sheets for an ordinary courtyard to explore sound perspective as an expressive choice.",
+          "nb": "BFI beskriver endret opplevd lydstyrke og lyd som stenges ute av dører i Clairs studioverden. Sammenlign egne lydplaner for en vanlig bakgård for å utforske lydperspektiv som uttrykksvalg.",
+          "fr": "Le BFI décrit les variations de volume apparent et le son bloqué par les portes. Comparez des plans sonores originaux d'une cour ordinaire pour explorer la perspective sonore.",
+          "pt": "O BFI descreve variações do volume aparente e som bloqueado por portas. Compare planos sonoros originais de um pátio comum para explorar a perspetiva sonora."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "roofs-selective",
+        "area": "sound",
+        "prompt": {
+          "en": "How could deliberate silence change an original scene's rhythm?",
+          "nb": "Hvordan kan bevisst stillhet endre rytmen i en egen scene?",
+          "fr": "Comment le silence délibéré peut-il modifier le rythme d'une scène originale ?",
+          "pt": "Como pode o silêncio deliberado alterar o ritmo de uma cena original?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Require continuous dialogue whenever a performer is visible",
+              "nb": "Krev kontinuerlig dialog når en skuespiller er synlig",
+              "fr": "Exiger un dialogue continu dès qu'un interprète est visible",
+              "pt": "Exigir diálogo contínuo sempre que um intérprete é visível"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Compare a synchronized version with a selectively silent version",
+              "nb": "Sammenlign en synkronisert versjon med en selektivt stille versjon",
+              "fr": "Comparer une version synchronisée et une version sélectivement silencieuse",
+              "pt": "Comparar versão sincronizada e versão seletivamente silenciosa"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Treat every interruption of sound as a defective print",
+              "nb": "Behandle hvert lydavbrudd som en defekt filmkopi",
+              "fr": "Traiter toute interruption du son comme un défaut de copie",
+              "pt": "Tratar toda interrupção do som como defeito da cópia"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-1",
+        "explanation": {
+          "en": "BFI and Criterion discuss Clair's selective sound and image-sound separation. Use a benign invented scene to compare two sound plans without assuming silence or asynchronous sound is a technical defect.",
+          "nb": "BFI og Criterion omtaler Clairs selektive lyd og skillet mellom bilde og lyd. Bruk en ufarlig oppdiktet scene til å sammenligne to lydplaner uten å anta at stillhet eller asynkron lyd er en teknisk feil.",
+          "fr": "Le BFI et Criterion évoquent le son sélectif et la dissociation image-son. Comparez deux plans sonores d'une scène inventée sans assimiler le silence ou l'asynchronisme à un défaut.",
+          "pt": "O BFI e Criterion abordam som seletivo e separação imagem-som. Compare dois planos sonoros de uma cena inventada sem confundir silêncio ou assincronia com defeito técnico."
+        },
+        "sourceIds": [
+          "s1",
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "roofs-restoration",
+        "area": "research",
+        "prompt": {
+          "en": "How should studio collaboration and the restored sound materials be documented?",
+          "nb": "Hvordan bør studiosamarbeid og restaurert lydmateriale dokumenteres?",
+          "fr": "Comment documenter la collaboration en studio et les éléments sonores restaurés ?",
+          "pt": "Como documentar colaboração de estúdio e materiais sonoros restaurados?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Attribute all design and recording work to Clair alone",
+              "nb": "Tilskriv alt scenografi- og opptaksarbeid Clair alene",
+              "fr": "Attribuer tous les décors et enregistrements au seul Clair",
+              "pt": "Atribuir toda cenografia e gravação apenas a Clair"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Identify the company name as proof of an exact recording device",
+              "nb": "Bruk selskapsnavnet som bevis for et eksakt opptaksapparat",
+              "fr": "Prendre le nom de la société pour preuve d'un appareil précis",
+              "pt": "Usar nome da empresa como prova de aparelho específico"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Record distinct crew roles and restoration source elements",
+              "nb": "Registrer ulike fagroller og kildemateriale til restaureringen",
+              "fr": "Consigner les métiers distincts et les éléments sources de restauration",
+              "pt": "Registar funções distintas e elementos de origem do restauro"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-2",
+        "explanation": {
+          "en": "The Cinémathèque credits the sound and design teams and documents the 2019 restoration from image and sound elements. Separate original production roles from later restoration choices, without inferring an undocumented equipment model.",
+          "nb": "Cinémathèque krediterer lyd- og scenografiteamene og dokumenterer restaureringen i 2019 fra bilde- og lydelementer. Skill opprinnelige produksjonsroller fra senere restaureringsvalg uten å utlede en udokumentert utstyrsmodell.",
+          "fr": "La Cinémathèque crédite les équipes son et décors et documente la restauration de 2019. Distinguez les métiers de production des choix ultérieurs sans déduire un modèle d'appareil non attesté.",
+          "pt": "A Cinémathèque credita equipas de som e cenografia e documenta restauro de 2019. Distinga funções originais de escolhas posteriores sem deduzir modelo de equipamento não documentado."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_enthusiasm_1930",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore sound-image counterpoint, documentary argument and the archival history of synchronization.",
+      "nb": "Utforsk kontrapunkt mellom lyd og bilde, dokumentarisk argumentasjon og synkroniseringens arkivhistorie.",
+      "fr": "Explorez le contrepoint image-son, l'argument documentaire et l'histoire archivistique du synchronisme.",
+      "pt": "Explore contraponto imagem-som, argumento documental e história arquivística da sincronização."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "10 great early sound films — Enthusiasm",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-early-sound-films"
+      },
+      {
+        "id": "s1",
+        "title": "Enthusiasm — Edition Filmmuseum",
+        "publisher": "Austrian Film Museum",
+        "url": "https://www.filmmuseum.at/en/shop/shop_detail?shop_produkte_id=1215680370589"
+      },
+      {
+        "id": "s2",
+        "title": "Film preservation projects since 2002 — Entuziazm",
+        "publisher": "Austrian Film Museum",
+        "url": "https://www.filmmuseum.at/en/collections/film_collection/film_preservation/projects_since_2002"
+      },
+      {
+        "id": "s3",
+        "title": "Dziga Vertov",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/calendar/film/1149"
+      },
+      {
+        "id": "s4",
+        "title": "Dziga Vertov Collection",
+        "publisher": "Austrian Film Museum",
+        "url": "https://vertov.filmmuseum.at/en/collection"
+      }
+    ],
+    "questions": [
+      {
+        "id": "enthusiasm-counterpoint",
+        "area": "sound",
+        "prompt": {
+          "en": "How can an original sound plan explore the relation between two everyday images and sounds?",
+          "nb": "Hvordan kan en egen lydplan utforske forholdet mellom to hverdagsbilder og lyder?",
+          "fr": "Comment un plan sonore original peut-il explorer les rapports entre images et sons quotidiens ?",
+          "pt": "Como pode um plano sonoro original explorar relações entre imagens e sons quotidianos?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Require each sound to match only its visible source",
+              "nb": "Krev at hver lyd bare samsvarer med sin synlige kilde",
+              "fr": "Exiger que chaque son corresponde uniquement à sa source visible",
+              "pt": "Exigir que cada som corresponda apenas à sua fonte visível"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Compare matching and contrasting sound-image associations",
+              "nb": "Sammenlign samsvarende og kontrasterende lyd-bilde-assosiasjoner",
+              "fr": "Comparer des associations image-son concordantes et contrastées",
+              "pt": "Comparar associações imagem-som concordantes e contrastantes"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Assume contrasting sound proves a synchronization error",
+              "nb": "Anta at kontrasterende lyd beviser en synkroniseringsfeil",
+              "fr": "Supposer qu'un son contrasté prouve une erreur de synchronisation",
+              "pt": "Supor que som contrastante prova erro de sincronização"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-1",
+        "explanation": {
+          "en": "BFI describes Vertov's complementary and contrapuntal sound-image construction. Compare original cue sheets using ordinary household sounds, distinguishing intentional montage from accidental synchronization problems.",
+          "nb": "BFI beskriver Vertovs komplementære og kontrapunktiske lyd-bilde-konstruksjon. Sammenlign egne lydplaner med vanlige huslyder, og skill tilsiktet montasje fra utilsiktede synkroniseringsproblemer.",
+          "fr": "Le BFI décrit les rapports complémentaires et contrapuntiques de Vertov. Comparez des plans sonores de bruits domestiques en distinguant montage intentionnel et problèmes accidentels de synchronisation.",
+          "pt": "O BFI descreve relações complementares e contrapontísticas de Vertov. Compare planos sonoros de ruídos domésticos distinguindo montagem intencional de problemas acidentais de sincronização."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "enthusiasm-context",
+        "area": "research",
+        "prompt": {
+          "en": "How should the film's industrial imagery and political commission be contextualized?",
+          "nb": "Hvordan bør filmens industribilder og politiske bestilling kontekstualiseres?",
+          "fr": "Comment contextualiser les images industrielles et la commande politique du film ?",
+          "pt": "Como contextualizar imagens industriais e encomenda política do filme?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Treat every edited image as neutral proof of industrial outcomes",
+              "nb": "Behandle alle klipte bilder som nøytralt bevis på industrielle resultater",
+              "fr": "Traiter chaque image montée comme preuve neutre des résultats industriels",
+              "pt": "Tratar cada imagem montada como prova neutra dos resultados industriais"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Erase Ukrainian geography from the production account",
+              "nb": "Fjern ukrainsk geografi fra produksjonsbeskrivelsen",
+              "fr": "Effacer la géographie ukrainienne du récit de production",
+              "pt": "Apagar geografia ucraniana do relato de produção"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Distinguish Ukrainian location, commission, edited representation and independent evidence",
+              "nb": "Skill ukrainsk opptakssted, bestilling, klippet fremstilling og uavhengig belegg",
+              "fr": "Distinguer lieu ukrainien, commande, représentation montée et preuves indépendantes",
+              "pt": "Distinguir local ucraniano, encomenda, representação montada e evidência independente"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-2",
+        "explanation": {
+          "en": "BFI situates the work in Ukraine's Donbas and Soviet industrialization propaganda. Preserve that geography and distinguish constructed documentary argument from independent historical evidence about economic or religious life.",
+          "nb": "BFI plasserer verket i Ukrainas Donbas og sovjetisk industrialiseringspropaganda. Bevar geografien og skill konstruert dokumentarisk argumentasjon fra uavhengige historiske kilder om økonomisk eller religiøst liv.",
+          "fr": "Le BFI situe l'œuvre dans le Donbas ukrainien et la propagande industrielle soviétique. Préservez cette géographie et distinguez argument construit et preuves historiques indépendantes sur la vie économique ou religieuse.",
+          "pt": "O BFI situa a obra no Donbas ucraniano e na propaganda industrial soviética. Preserve essa geografia e distinga argumento construído de evidência histórica independente sobre vida económica ou religiosa."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "enthusiasm-sync",
+        "area": "research",
+        "prompt": {
+          "en": "How should restored and unrestored synchronization states be compared?",
+          "nb": "Hvordan bør restaurerte og urestaurerte synkroniseringstilstander sammenlignes?",
+          "fr": "Comment comparer les états de synchronisation restaurés et non restaurés ?",
+          "pt": "Como comparar estados de sincronização restaurados e não restaurados?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Identify the version and document the specific synchronization intervention",
+              "nb": "Identifiser utgaven og dokumenter det konkrete synkroniseringsinngrepet",
+              "fr": "Identifier la version et documenter l'intervention de synchronisation",
+              "pt": "Identificar a versão e documentar a intervenção de sincronização"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Treat all versions as an unchanged original soundtrack",
+              "nb": "Behandle alle utgaver som ett uendret originallydspor",
+              "fr": "Traiter toutes les versions comme une bande sonore originale inchangée",
+              "pt": "Tratar todas as versões como faixa sonora original inalterada"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Invent an exact recording-machine model from the restored sound",
+              "nb": "Finn på en eksakt opptaksmaskinmodell ut fra restaurert lyd",
+              "fr": "Inventer un modèle d'enregistreur à partir du son restauré",
+              "pt": "Inventar modelo de gravador a partir do som restaurado"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-0",
+        "explanation": {
+          "en": "The Austrian Film Museum documents restored and unrestored versions and the 1972 synchronization work by Kubelka and Schlemmer. Compare the archival states explicitly without equating a later intervention with original production equipment.",
+          "nb": "Austrian Film Museum dokumenterer restaurerte og urestaurerte versjoner og synkroniseringsarbeidet til Kubelka og Schlemmer i 1972. Sammenlign arkivtilstandene uttrykkelig uten å likestille et senere inngrep med opprinnelig produksjonsutstyr.",
+          "fr": "Le Musée autrichien du film documente les versions et la resynchronisation de 1972 par Kubelka et Schlemmer. Comparez les états archivistiques sans assimiler une intervention ultérieure au matériel original.",
+          "pt": "O Museu Austríaco do Cinema documenta versões e ressincronização de 1972 por Kubelka e Schlemmer. Compare os estados de arquivo sem equiparar intervenção posterior ao equipamento original."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_blue_angel_1930",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore parallel language versions, integrated studio recording and cabaret performance.",
+      "nb": "Utforsk parallelle språkversjoner, integrert studioopptak og kabaretfremføring.",
+      "fr": "Explorez les versions linguistiques parallèles, l'enregistrement en studio et le cabaret.",
+      "pt": "Explore versões linguísticas paralelas, gravação em estúdio e interpretação de cabaré."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Der blaue Engel",
+        "publisher": "filmportal.de / Deutsches Filminstitut & Filmmuseum",
+        "url": "https://www.filmportal.de/en/movie/der-blaue-engel_ea43d4a69a155006e03053d50b37753d"
+      },
+      {
+        "id": "s1",
+        "title": "The Blue Angel — English version",
+        "publisher": "filmportal.de / Deutsches Filminstitut & Filmmuseum",
+        "url": "https://www.filmportal.de/en/movie/the-blue-angel_ea43d4a75f475006e03053d50b37753d"
+      },
+      {
+        "id": "s2",
+        "title": "Der Blaue Engel",
+        "publisher": "Friedrich-Wilhelm-Murnau-Stiftung",
+        "url": "https://www.murnau-stiftung.de/movie/78"
+      },
+      {
+        "id": "s3",
+        "title": "The Blue Angel",
+        "publisher": "Friedrich-Wilhelm-Murnau-Stiftung",
+        "url": "https://www.murnau-stiftung.de/movie/17173"
+      },
+      {
+        "id": "s4",
+        "title": "1918–1933: Weimarer Kino",
+        "publisher": "Friedrich-Wilhelm-Murnau-Stiftung",
+        "url": "https://www.murnau-stiftung.de/filmbestand/geschichte/weimarer-kino"
+      }
+    ],
+    "questions": [
+      {
+        "id": "blueangel-language",
+        "area": "research",
+        "prompt": {
+          "en": "How should separately catalogued German and English versions be managed?",
+          "nb": "Hvordan bør separat katalogiserte tyske og engelske versjoner håndteres?",
+          "fr": "Comment gérer les versions allemande et anglaise cataloguées séparément ?",
+          "pt": "Como gerir versões alemã e inglesa catalogadas separadamente?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Track language, adaptation credits and each edition's metadata separately",
+              "nb": "Registrer språk, adaptasjonskreditering og metadata for hver utgave separat",
+              "fr": "Suivre séparément langue, crédits d'adaptation et métadonnées de chaque édition",
+              "pt": "Registar separadamente idioma, créditos de adaptação e metadados de cada edição"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Assume both records describe the same master with subtitles",
+              "nb": "Anta at begge oppføringer beskriver samme master med undertekster",
+              "fr": "Supposer que les deux notices décrivent un master sous-titré identique",
+              "pt": "Supor que os dois registos descrevem o mesmo master legendado"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Infer an undocumented order of all language-version takes",
+              "nb": "Utled en udokumentert rekkefølge for alle språkopptak",
+              "fr": "Déduire un ordre non documenté des prises de chaque langue",
+              "pt": "Deduzir ordem não documentada das tomadas em cada idioma"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-0",
+        "explanation": {
+          "en": "Filmportal and Murnau-Stiftung maintain separate German and English records. Track distinct version and adaptation metadata rather than assuming a single dubbed or subtitled master or inventing a shooting schedule.",
+          "nb": "Filmportal og Murnau-Stiftung fører separate tyske og engelske oppføringer. Registrer særskilte versjons- og adaptasjonsmetadata fremfor å anta én dubbet eller tekstet master eller dikte opp opptaksrekkefølge.",
+          "fr": "Filmportal et la Murnau-Stiftung conservent des notices allemandes et anglaises distinctes. Suivez les métadonnées propres sans supposer un master doublé ou sous-titré unique ni inventer le tournage.",
+          "pt": "Filmportal e Murnau-Stiftung mantêm registos alemães e ingleses distintos. Registe metadados próprios sem presumir um master dobrado ou legendado único nem inventar ordem de filmagem."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "blueangel-cabaret",
+        "area": "sound",
+        "prompt": {
+          "en": "How could a new cabaret scene plan integrate music, speech and studio space?",
+          "nb": "Hvordan kan en ny kabaretsceneplan integrere musikk, tale og studiorom?",
+          "fr": "Comment un nouveau plan de scène de cabaret peut-il intégrer musique, parole et espace du studio ?",
+          "pt": "Como pode um novo plano de cabaré integrar música, fala e espaço de estúdio?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Treat the music as unrelated to performance and scene space",
+              "nb": "Behandle musikken som løsrevet fra fremføring og scenerom",
+              "fr": "Traiter la musique comme indépendante du jeu et de l'espace",
+              "pt": "Tratar música como desligada da interpretação e do espaço"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Compare cue sheets for original music, dialogue and spatial presence",
+              "nb": "Sammenlign lydplaner for egen musikk, dialog og romlig nærvær",
+              "fr": "Comparer plans sonores de musique originale, dialogue et présence spatiale",
+              "pt": "Comparar planos sonoros de música original, diálogo e presença espacial"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Claim a modern cue sheet reveals the exact historical microphone model",
+              "nb": "Hevd at en moderne lydplan avslører den eksakte historiske mikrofonmodellen",
+              "fr": "Prétendre qu'un plan moderne révèle le modèle historique du microphone",
+              "pt": "Afirmar que plano moderno revela o modelo histórico exato do microfone"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-1",
+        "explanation": {
+          "en": "Filmportal documents Tobis-Klangfilm, musical contributors and recording credits. Compare original cues and staging, recognizing department coordination without inferring undocumented recording channels or equipment.",
+          "nb": "Filmportal dokumenterer Tobis-Klangfilm, musikkbidrag og opptakskrediteringer. Sammenlign egne lydsignaler og iscenesettelse, og anerkjenn samordning mellom fag uten å utlede udokumenterte opptakskanaler eller utstyr.",
+          "fr": "Filmportal documente Tobis-Klangfilm, les musiciens et les crédits son. Comparez des indications originales et la mise en scène sans déduire des canaux ou appareils non attestés.",
+          "pt": "Filmportal documenta Tobis-Klangfilm, músicos e créditos de som. Compare indicações originais e encenação sem deduzir canais ou aparelhos não documentados."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
+        ]
+      },
+      {
+        "id": "blueangel-credits",
+        "area": "research",
+        "prompt": {
+          "en": "How should star performance and the wider UFA production be credited?",
+          "nb": "Hvordan bør stjernefremføring og den bredere UFA-produksjonen krediteres?",
+          "fr": "Comment créditer la vedette et l'ensemble de la production UFA ?",
+          "pt": "Como creditar a estrela e a produção UFA mais ampla?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Attribute every documented contribution to the star alone",
+              "nb": "Tilskriv alle dokumenterte bidrag stjernen alene",
+              "fr": "Attribuer chaque contribution attestée à la vedette seule",
+              "pt": "Atribuir todos os contributos documentados apenas à estrela"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Use later celebrity mythology as evidence for every production decision",
+              "nb": "Bruk senere kjendismytologi som bevis for alle produksjonsvalg",
+              "fr": "Utiliser la mythologie ultérieure de la vedette comme preuve de chaque décision",
+              "pt": "Usar mitologia posterior da celebridade como prova de cada decisão"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Record the producer, direction, performers and separate craft departments",
+              "nb": "Registrer produsent, regi, skuespillere og ulike fagavdelinger",
+              "fr": "Consigner producteur, réalisation, interprètes et métiers distincts",
+              "pt": "Registar produtor, realização, intérpretes e departamentos distintos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-2",
+        "explanation": {
+          "en": "Filmportal records Pommer, Sternberg and detailed writing, camera, design and sound credits. Murnau-Stiftung contextualizes Dietrich's breakthrough. Preserve the collaborative production history separately from subsequent star reception.",
+          "nb": "Filmportal registrerer Pommer, Sternberg og detaljerte manus-, foto-, scenografi- og lydkrediteringer. Murnau-Stiftung kontekstualiserer Dietrichs gjennombrudd. Bevar samarbeidshistorien separat fra senere stjernemottakelse.",
+          "fr": "Filmportal documente Pommer, Sternberg et les crédits détaillés. La Murnau-Stiftung contextualise la percée de Dietrich. Distinguez collaboration de production et réception ultérieure de la vedette.",
+          "pt": "Filmportal documenta Pommer, Sternberg e créditos detalhados. Murnau-Stiftung contextualiza a ascensão de Dietrich. Distinga colaboração de produção e receção posterior da estrela."
+        },
+        "sourceIds": [
+          "s0",
+          "s2",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_m_1931",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore offscreen sound, selective silence and sound bridges in Lang's first sound film.",
+      "nb": "Utforsk lyd utenfor bildet, selektiv stillhet og lydbroer i Langs første lydfilm.",
+      "fr": "Explorez le son hors champ, le silence sélectif et les raccords sonores du premier film sonore de Lang.",
+      "pt": "Explore som fora de campo, silêncio seletivo e pontes sonoras no primeiro filme sonoro de Lang."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "M",
+        "publisher": "filmportal.de",
+        "url": "https://www.filmportal.de/en/movie/m_ea43d4a7669a5006e03053d50b37753d"
+      },
+      {
+        "id": "s1",
+        "title": "M (1931)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/77dfae8a-b9af-517e-97ca-257f6cb87849/m"
+      },
+      {
+        "id": "s2",
+        "title": "10 great early sound films",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-early-sound-films"
+      },
+      {
+        "id": "s3",
+        "title": "Fritz Langs erster Tonfilm",
+        "publisher": "filmportal.de",
+        "url": "https://www.filmportal.de/node/20141/material/740341"
+      }
+    ],
+    "questions": [
+      {
+        "id": "m-offscreen",
+        "area": "sound",
+        "prompt": {
+          "en": "How could an original everyday scene suggest a source beyond the visible frame?",
+          "nb": "Hvordan kan en egen hverdagsscene antyde en kilde utenfor det synlige utsnittet?",
+          "fr": "Comment une scène quotidienne originale peut-elle suggérer une source au-delà du cadre visible ?",
+          "pt": "Como pode uma cena quotidiana original sugerir uma fonte além do enquadramento visível?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Show every sound source before the sound can be heard",
+              "nb": "Vis alle lydkilder før lyden kan høres",
+              "fr": "Montrer chaque source sonore avant qu'elle soit entendue",
+              "pt": "Mostrar cada fonte sonora antes de ser ouvida"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Compare a recurring benign sound with and without its source visible",
+              "nb": "Sammenlign en gjentatt ufarlig lyd med og uten synlig kilde",
+              "fr": "Comparer un son anodin récurrent avec et sans source visible",
+              "pt": "Comparar som inofensivo recorrente com e sem fonte visível"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Use an inferred sound association as proof of a real person's guilt",
+              "nb": "Bruk en antatt lydassosiasjon som bevis på en virkelig persons skyld",
+              "fr": "Utiliser une association sonore supposée comme preuve de culpabilité réelle",
+              "pt": "Usar associação sonora inferida como prova de culpa real"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-1",
+        "explanation": {
+          "en": "BFI analyzes offscreen sound and a recurring whistle in M. Compare an original cue such as a kettle or a clock to explore viewer inference, not a reenactment of harm or a claim that sound proves real-world guilt.",
+          "nb": "BFI analyserer lyd utenfor bildet og en gjentatt plystring i M. Sammenlign et eget lydsignal som en vannkoker eller klokke for å utforske publikums slutninger, ikke gjenskaping av skade eller en påstand om at lyd beviser virkelig skyld.",
+          "fr": "Le BFI analyse le son hors champ et un sifflement récurrent dans M. Comparez un signal original, comme une bouilloire ou une horloge, pour étudier l'inférence sans reconstituer de violence ni prétendre prouver une culpabilité réelle.",
+          "pt": "O BFI analisa som fora de campo e assobio recorrente em M. Compare sinal original como chaleira ou relógio para estudar inferência sem recriar violência nem alegar prova de culpa real."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "m-bridge",
+        "area": "sound",
+        "prompt": {
+          "en": "How can an ordinary sound bridge connect two invented spaces?",
+          "nb": "Hvordan kan en vanlig lydbro forbinde to oppdiktede rom?",
+          "fr": "Comment un raccord sonore ordinaire peut-il relier deux espaces inventés ?",
+          "pt": "Como pode uma ponte sonora comum ligar dois espaços inventados?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Compare a cue continuing across a cut with a version that stops at the cut",
+              "nb": "Sammenlign et lydsignal som fortsetter over et klipp med en versjon som stopper ved klippet",
+              "fr": "Comparer un signal continu au raccord avec une version qui s'arrête à la coupe",
+              "pt": "Comparar sinal contínuo através do corte com versão que termina no corte"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Assume every sound must stop when the picture changes",
+              "nb": "Anta at all lyd må stoppe når bildet endres",
+              "fr": "Supposer que tout son doit s'arrêter au changement d'image",
+              "pt": "Supor que todo som deve parar quando a imagem muda"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Declare that silence has no expressive function in a sound film",
+              "nb": "Erklær at stillhet ikke har noen uttrykksfunksjon i lydfilm",
+              "fr": "Déclarer que le silence n'a aucune fonction expressive dans un film sonore",
+              "pt": "Declarar que silêncio não tem função expressiva num filme sonoro"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-0",
+        "explanation": {
+          "en": "BFI describes sound bridges and strategic silence in Lang's editing. Use a new nonviolent scene and compare alternative cue sheets to examine how continuity and interruption affect the viewer's understanding of space.",
+          "nb": "BFI beskriver lydbroer og strategisk stillhet i Langs klipping. Bruk en ny ikke-voldelig scene og sammenlign lydplaner for å undersøke hvordan kontinuitet og avbrudd påvirker publikums romforståelse.",
+          "fr": "Le BFI décrit raccords sonores et silences stratégiques. Comparez des plans sonores d'une nouvelle scène non violente pour étudier continuité, interruption et compréhension de l'espace.",
+          "pt": "O BFI descreve pontes sonoras e silêncios estratégicos. Compare planos sonoros de nova cena não violenta para estudar continuidade, interrupção e compreensão espacial."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "m-production",
+        "area": "research",
+        "prompt": {
+          "en": "How should the recording format and collaborative production history be documented?",
+          "nb": "Hvordan bør opptaksformatet og den kollektive produksjonshistorien dokumenteres?",
+          "fr": "Comment documenter le format sonore et l'histoire collaborative de la production ?",
+          "pt": "Como documentar formato sonoro e história colaborativa da produção?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Infer an exact microphone model from the audible dialogue",
+              "nb": "Utled en eksakt mikrofonmodell fra den hørbare dialogen",
+              "fr": "Déduire un modèle précis de microphone du dialogue audible",
+              "pt": "Deduzir modelo exato de microfone do diálogo audível"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Attribute the entire work to the director without other credits",
+              "nb": "Tilskriv hele verket regissøren uten andre krediteringer",
+              "fr": "Attribuer toute l'œuvre au réalisateur sans autres crédits",
+              "pt": "Atribuir toda a obra ao realizador sem outros créditos"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Record the documented company, sound format and distinct production roles",
+              "nb": "Registrer dokumentert selskap, lydformat og ulike produksjonsroller",
+              "fr": "Consigner société, format sonore et métiers documentés",
+              "pt": "Registar empresa, formato sonoro e funções documentadas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-2",
+        "explanation": {
+          "en": "Filmportal documents Nero-Film, Lang, von Harbou and Tobis-Klangfilm; BFI situates the work as Lang's first talkie. Preserve the documented production facts without inventing hardware models or equating reception with technical evidence.",
+          "nb": "Filmportal dokumenterer Nero-Film, Lang, von Harbou og Tobis-Klangfilm; BFI plasserer verket som Langs første talefilm. Bevar dokumenterte produksjonsfakta uten å dikte opp utstyrsmodeller eller likestille mottakelse med teknisk belegg.",
+          "fr": "Filmportal documente Nero-Film, Lang, von Harbou et Tobis-Klangfilm ; le BFI situe le film comme premier parlant de Lang. Préservez les faits attestés sans inventer de matériel ni confondre réception et preuve technique.",
+          "pt": "Filmportal documenta Nero-Film, Lang, von Harbou e Tobis-Klangfilm; o BFI situa a obra como primeiro falado de Lang. Preserve factos documentados sem inventar equipamento nem confundir receção e evidência técnica."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_city_lights_1931",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore visual performance, synchronized music and selective effects in the talkie era.",
+      "nb": "Utforsk visuelt skuespill, synkronisert musikk og selektive effekter i talefilmens tid.",
+      "fr": "Explorez le jeu visuel, la musique synchronisée et les effets sélectifs à l'époque du parlant.",
+      "pt": "Explore interpretação visual, música sincronizada e efeitos seletivos na época do cinema falado."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Filming City Lights",
+        "publisher": "Charlie Chaplin Official Website",
+        "url": "https://www.charliechaplin.com/en/films/5-city-lights/articles/4-Filming-City-Lights"
+      },
+      {
+        "id": "s1",
+        "title": "AFI Movie Club: City Lights",
+        "publisher": "American Film Institute",
+        "url": "https://www.afi.com/news/afi-movie-club-city-lights/"
+      },
+      {
+        "id": "s2",
+        "title": "City Lights (1931)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/18e7950b-fa7e-5a5e-a897-a782a40f1c5c/city-lights"
+      },
+      {
+        "id": "s3",
+        "title": "Brief descriptions and expanded essays of National Film Registry titles",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/programs/national-film-preservation-board/film-registry/descriptions-and-essays/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "citylights-gesture",
+        "area": "camera",
+        "prompt": {
+          "en": "How could a new scene communicate a relationship without recorded dialogue?",
+          "nb": "Hvordan kan en ny scene formidle en relasjon uten innspilt dialog?",
+          "fr": "Comment une nouvelle scène peut-elle exprimer une relation sans dialogue enregistré ?",
+          "pt": "Como pode uma nova cena comunicar uma relação sem diálogo gravado?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Compare gesture, object placement and reaction in original storyboard panels",
+              "nb": "Sammenlign gest, gjenstandsplassering og reaksjon i egne storyboardruter",
+              "fr": "Comparer geste, placement d'objet et réaction dans des cases originales",
+              "pt": "Comparar gesto, posição de objetos e reação em quadros originais"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Assume spoken exposition is necessary for every emotional change",
+              "nb": "Anta at muntlig forklaring er nødvendig for enhver følelsesendring",
+              "fr": "Supposer qu'une explication parlée est nécessaire à toute évolution émotionnelle",
+              "pt": "Supor que explicação falada é necessária para toda mudança emocional"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Treat disability as an automatic comedic or emotional score",
+              "nb": "Behandle funksjonsnedsettelse som automatisk komisk eller emosjonell poengsum",
+              "fr": "Traiter le handicap comme un score comique ou émotionnel automatique",
+              "pt": "Tratar deficiência como pontuação cómica ou emocional automática"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-0",
+        "explanation": {
+          "en": "Chaplin's production account and AFI emphasize visual performance and extensive rehearsal. Compare an original benign relationship scene through gestures and reactions without turning a character's disability into a reward or stereotype.",
+          "nb": "Chaplins produksjonsbeskrivelse og AFI fremhever visuelt skuespill og omfattende prøver. Sammenlign en egen ufarlig relasjonsscene gjennom gester og reaksjoner uten å gjøre en figurs funksjonsnedsettelse til belønning eller stereotypi.",
+          "fr": "Le récit de production de Chaplin et l'AFI soulignent jeu visuel et répétitions. Comparez une scène relationnelle originale par gestes et réactions sans transformer le handicap en récompense ou stéréotype.",
+          "pt": "O relato de produção de Chaplin e o AFI destacam interpretação visual e ensaios. Compare cena relacional original por gestos e reações sem transformar deficiência em recompensa ou estereótipo."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "citylights-format",
+        "area": "sound",
+        "prompt": {
+          "en": "How should the deliberate absence of dialogue and synchronized soundtrack be classified?",
+          "nb": "Hvordan bør bevisst fravær av dialog og synkronisert lydspor klassifiseres?",
+          "fr": "Comment classer l'absence délibérée de dialogue et la bande sonore synchronisée ?",
+          "pt": "Como classificar ausência deliberada de diálogo e faixa sonora sincronizada?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Describe the work as having no recorded sound at all",
+              "nb": "Beskriv verket som uten innspilt lyd overhodet",
+              "fr": "Décrire l'œuvre comme entièrement dépourvue de son enregistré",
+              "pt": "Descrever a obra como totalmente sem som gravado"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Distinguish visual pantomime from synchronized music and selective effects",
+              "nb": "Skill visuell pantomime fra synkronisert musikk og selektive effekter",
+              "fr": "Distinguer pantomime visuelle, musique synchronisée et effets sélectifs",
+              "pt": "Distinguir pantomima visual de música sincronizada e efeitos seletivos"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Assume every film made in 1931 must contain continuous spoken dialogue",
+              "nb": "Anta at alle filmer fra 1931 må inneholde kontinuerlig muntlig dialog",
+              "fr": "Supposer que tout film de 1931 doit contenir un dialogue parlé continu",
+              "pt": "Supor que todo filme de 1931 deve conter diálogo falado contínuo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-1",
+        "explanation": {
+          "en": "AFI and BFI describe the deliberate visual storytelling and synchronized musical and effect track. Distinguish the film's particular hybrid of pantomime and recorded sound from both a fully silent print and a dialogue-led talkie.",
+          "nb": "AFI og BFI beskriver bevisst visuell fortelling og synkronisert musikk- og effektspor. Skill filmens kombinasjon av pantomime og innspilt lyd fra både en helt stum kopi og en dialogdrevet talefilm.",
+          "fr": "L'AFI et le BFI décrivent le récit visuel délibéré et la piste musicale et d'effets synchronisée. Distinguez cette combinaison d'une copie entièrement muette et d'un parlant dominé par le dialogue.",
+          "pt": "O AFI e o BFI descrevem narrativa visual deliberada e faixa musical e de efeitos sincronizada. Distinga essa combinação de uma cópia totalmente muda e de um filme falado centrado no diálogo."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "citylights-rehearsal",
+        "area": "research",
+        "prompt": {
+          "en": "How could an original production exercise use rehearsal evidence responsibly?",
+          "nb": "Hvordan kan en egen produksjonsøvelse bruke prøvearbeidets dokumentasjon på en ansvarlig måte?",
+          "fr": "Comment un exercice original de production peut-il utiliser les preuves des répétitions de manière responsable ?",
+          "pt": "Como pode um exercício original usar evidência dos ensaios responsavelmente?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Treat one surviving take as evidence of every rehearsal decision",
+              "nb": "Behandle ett bevart opptak som bevis på alle prøvebeslutninger",
+              "fr": "Traiter une prise conservée comme preuve de toutes les décisions de répétition",
+              "pt": "Tratar uma tomada preservada como prova de todas as decisões de ensaio"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Use later critical acclaim as a substitute for documenting production",
+              "nb": "Bruk senere kritikerros som erstatning for produksjonsdokumentasjon",
+              "fr": "Utiliser le succès critique ultérieur à la place de la documentation",
+              "pt": "Usar elogios críticos posteriores em vez de documentação"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Compare multiple storyboard revisions and document why changes were made",
+              "nb": "Sammenlign flere storyboardrevisjoner og dokumenter hvorfor endringene ble gjort",
+              "fr": "Comparer plusieurs révisions de storyboard et documenter les raisons des changements",
+              "pt": "Comparar revisões de storyboard e documentar razões das alterações"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-2",
+        "explanation": {
+          "en": "Chaplin's account documents the long process of developing the film's visual performance. Record the purpose and revision of original storyboard drafts while keeping the documented production process distinct from subsequent critical recognition.",
+          "nb": "Chaplins beskrivelse dokumenterer den lange prosessen med å utvikle filmens visuelle skuespill. Registrer formål og revisjoner av egne storyboardutkast, og skill dokumentert produksjonsprosess fra senere kritisk anerkjennelse.",
+          "fr": "Le récit de Chaplin documente le long développement du jeu visuel. Consignez objectifs et révisions de storyboards originaux en distinguant processus documenté et reconnaissance critique ultérieure.",
+          "pt": "O relato de Chaplin documenta o longo desenvolvimento da interpretação visual. Registe objetivos e revisões de storyboards originais distinguindo processo documentado e reconhecimento crítico posterior."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
           "s3"
         ]
       }

@@ -81,15 +81,20 @@ const ids = [
   "scenario_applause_1929",
   "scenario_the_neighbors_wife_and_mine_1931",
   "scenario_the_broadway_melody_1929",
+  "scenario_sous_les_toits_de_paris_1930",
+  "scenario_enthusiasm_1930",
+  "scenario_the_blue_angel_1930",
+  "scenario_m_1931",
+  "scenario_city_lights_1931",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly seventy-two existing cases have two hundred and sixteen original, source-backed decisions", () => {
+test("Exactly seventy-seven existing cases have two hundred and thirty-one original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 72);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 216);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 77);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 231);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -252,6 +257,16 @@ test("Exactly seventy-two existing cases have two hundred and sixteen original, 
       const [definitionFile, verificationFile] = files[workshop.scenarioId]!;
       assert.ok(readFileSync(definitionFile, "utf8").includes(workshop.scenarioId));
       const dossier = readFileSync(verificationFile, "utf8");
+      for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
+    } else if (["scenario_sous_les_toits_de_paris_1930", "scenario_enthusiasm_1930", "scenario_the_blue_angel_1930", "scenario_m_1931", "scenario_city_lights_1931"].includes(workshop.scenarioId)) {
+      const files: Record<string, [string, string]> = {"scenario_sous_les_toits_de_paris_1930":["src/core/chapterElevenSousLesToitsExpansion.ts","src/ui/data/scenarioProductionVerificationSousLesToits.ts"],"scenario_enthusiasm_1930":["src/core/chapterElevenEnthusiasmExpansion.ts","src/ui/data/scenarioProductionVerificationEnthusiasm.ts"],"scenario_the_blue_angel_1930":["src/core/chapterElevenBlueAngelExpansion.ts","src/ui/data/scenarioProductionVerificationBlueAngel.ts"],"scenario_m_1931":["src/core/earlyCinemaExpansion.ts","src/ui/data/scenarioProductionVerificationLateSilentEarlySoundBatch.ts"],"scenario_city_lights_1931":["src/core/earlyCinemaExpansion.ts","src/ui/data/scenarioProductionVerificationLateSilentEarlySoundBatch.ts"]};
+      const [definitionFile, verificationFile] = files[workshop.scenarioId]!;
+      assert.ok(readFileSync(definitionFile, "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(verificationFile, "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const next = verification.indexOf("\n  },", start);
+      const dossier = verification.slice(start, next < 0 ? undefined : next);
       for (const source of workshop.sources) assert.ok(dossier.includes(source.url));
     } else if (workshop.scenarioId === "scenario_a_trip_to_the_moon_1902") {
       const definition = readFileSync("src/core/earlyCinemaExpansion.ts", "utf8");
@@ -708,4 +723,12 @@ test("Early sound workshops distinguish formats, collaboration, version history 
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_applause_1929")?.questions.map(q => q.bestSupportedOptionId), ["choice-2","choice-0","choice-1"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_neighbors_wife_and_mine_1931")?.questions.map(q => q.bestSupportedOptionId), ["choice-0","choice-2","choice-1"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_broadway_melody_1929")?.questions.map(q => q.bestSupportedOptionId), ["choice-1","choice-0","choice-2"]);
+});
+
+test("Sound cinema workshops distinguish sound perspective, counterpoint, language versions and pantomime", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_sous_les_toits_de_paris_1930")?.questions.map(q => q.bestSupportedOptionId), ["choice-0","choice-1","choice-2"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_enthusiasm_1930")?.questions.map(q => q.bestSupportedOptionId), ["choice-1","choice-2","choice-0"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_blue_angel_1930")?.questions.map(q => q.bestSupportedOptionId), ["choice-0","choice-1","choice-2"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_m_1931")?.questions.map(q => q.bestSupportedOptionId), ["choice-1","choice-0","choice-2"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_city_lights_1931")?.questions.map(q => q.bestSupportedOptionId), ["choice-0","choice-1","choice-2"]);
 });
