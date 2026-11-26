@@ -1,7 +1,7 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
 
 /**
- * Fifty-two pre-existing Production Cases receive evidence-backed craft decisions.
+ * Sixty-seven pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -8425,6 +8425,2884 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
           "s0",
           "s2",
           "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_mother_1926",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore performance-centered montage, literary adaptation and version-specific exhibition in Pudovkin's film.",
+      "nb": "Utforsk skuespillersentrert montasje, litterær adaptasjon og utgavespesifikk visning i Pudovkins film.",
+      "fr": "Explorez le montage centré sur le jeu, l'adaptation littéraire et les versions de projection chez Poudovkine.",
+      "pt": "Explore a montagem centrada na interpretação, a adaptação literária e as versões de exibição no filme de Pudovkin."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Russian Films in the Library of Congress — MAT' (MOTHER)",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/rr/mopic/findaid/russian.html"
+      },
+      {
+        "id": "s1",
+        "title": "10 great Soviet films of the 1920s",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-soviet-films-1920s"
+      },
+      {
+        "id": "s2",
+        "title": "Mother",
+        "publisher": "Harvard Film Archive",
+        "url": "https://harvardfilmarchive.org/calendar/mother-2017-10"
+      },
+      {
+        "id": "s3",
+        "title": "MAT (1926)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/0adcb28e-fae8-5b9b-b946-1a4fcca56a04/mat"
+      }
+    ],
+    "questions": [
+      {
+        "id": "mother-linkage",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a sequence of connected images develop a fictional character's emotional change?",
+          "nb": "Hvordan kan en sekvens med sammenhengende bilder utvikle en fiktiv figurs følelsesmessige endring?",
+          "fr": "Comment une suite d'images reliées peut-elle développer l'évolution émotionnelle d'un personnage fictif ?",
+          "pt": "Como pode uma sequência de imagens ligadas desenvolver a mudança emocional de uma personagem fictícia?"
+        },
+        "options": [
+          {
+            "id": "link",
+            "label": {
+              "en": "Connect a gesture, an observed object and a reaction in an original everyday scene",
+              "nb": "Knytt en gest, en observert gjenstand og en reaksjon sammen i en egen hverdagsscene",
+              "fr": "Relier un geste, un objet observé et une réaction dans une scène quotidienne originale",
+              "pt": "Ligar um gesto, um objeto observado e uma reação numa cena quotidiana original"
+            }
+          },
+          {
+            "id": "arbitrary",
+            "label": {
+              "en": "Shuffle the drawings without considering character or performance",
+              "nb": "Bland tegningene uten hensyn til figur eller skuespill",
+              "fr": "Mélanger les dessins sans tenir compte du personnage ni du jeu",
+              "pt": "Baralhar os desenhos sem considerar a personagem nem a interpretação"
+            }
+          },
+          {
+            "id": "law",
+            "label": {
+              "en": "Declare linkage the only valid form of cinematic montage",
+              "nb": "Erklær sammenkobling som den eneste gyldige montasjeformen",
+              "fr": "Déclarer que la liaison est la seule forme valide de montage",
+              "pt": "Declarar a ligação como única forma válida de montagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "link",
+        "explanation": {
+          "en": "BFI distinguishes Pudovkin's linkage approach from Eisenstein's collision model, while Harvard emphasizes performance nuance. Compare original storyboard edits and consider how the sequence builds character; neither theory is a universal law.",
+          "nb": "BFI skiller Pudovkins sammenkobling fra Eisensteins kollisjonsmodell, mens Harvard fremhever nyanser i skuespillet. Sammenlign egne storyboardklipp og vurder hvordan sekvensen bygger karakter; ingen av teoriene er en universell lov.",
+          "fr": "Le BFI distingue la liaison chez Poudovkine de la collision chez Eisenstein ; Harvard souligne les nuances du jeu. Comparez des montages dessinés originaux pour étudier la construction du personnage, sans ériger une théorie en loi universelle.",
+          "pt": "O BFI distingue a ligação de Pudovkin da colisão de Eisenstein; Harvard destaca nuances da interpretação. Compare montagens desenhadas originais para estudar a construção da personagem, sem transformar uma teoria em lei universal."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "mother-adaptation",
+        "area": "research",
+        "prompt": {
+          "en": "How should a researcher document the literary source and collaborative film production?",
+          "nb": "Hvordan bør en forsker dokumentere litterær kilde og kollektiv filmproduksjon?",
+          "fr": "Comment documenter la source littéraire et la production cinématographique collective ?",
+          "pt": "Como documentar a fonte literária e a produção cinematográfica colaborativa?"
+        },
+        "options": [
+          {
+            "id": "solo",
+            "label": {
+              "en": "Attribute the novel, adaptation and technical work to the director alone",
+              "nb": "Tilskriv romanen, adaptasjonen og det tekniske arbeidet regissøren alene",
+              "fr": "Attribuer le roman, l'adaptation et les métiers techniques au seul réalisateur",
+              "pt": "Atribuir o romance, a adaptação e o trabalho técnico apenas ao realizador"
+            }
+          },
+          {
+            "id": "roles",
+            "label": {
+              "en": "Distinguish the novelist, screenwriter, director, cast, photography and design",
+              "nb": "Skill romanforfatter, manusforfatter, regissør, skuespillere, foto og scenografi",
+              "fr": "Distinguer romancier, scénariste, réalisateur, interprètes, image et décors",
+              "pt": "Distinguir romancista, argumentista, realizador, elenco, fotografia e cenografia"
+            }
+          },
+          {
+            "id": "literal",
+            "label": {
+              "en": "Treat the adaptation as a documentary recording of the novel's events",
+              "nb": "Behandle adaptasjonen som et dokumentarisk opptak av romanens hendelser",
+              "fr": "Traiter l'adaptation comme un enregistrement documentaire des événements du roman",
+              "pt": "Tratar a adaptação como um registo documental dos acontecimentos do romance"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "roles",
+        "explanation": {
+          "en": "The Library of Congress identifies Gorky's novel, Zarkhi's adaptation, Pudovkin and the credited cast and craft team. Document their distinct roles and treat the adaptation as constructed dramatic representation rather than a direct historical record.",
+          "nb": "Library of Congress identifiserer Gorkijs roman, Zarkhis adaptasjon, Pudovkin og de krediterte skuespillerne og fagarbeiderne. Dokumenter ulike roller og behandle adaptasjonen som konstruert dramatisk fremstilling, ikke en direkte historisk dokumentasjon.",
+          "fr": "La Library of Congress identifie le roman de Gorki, l'adaptation de Zarkhi, Poudovkine, les interprètes et les techniciens. Documentez les rôles distincts et considérez l'adaptation comme une construction dramatique, non comme un document direct.",
+          "pt": "A Library of Congress identifica o romance de Górki, a adaptação de Zarkhi, Pudovkin, elenco e equipa técnica. Documente papéis distintos e trate a adaptação como construção dramática, não como registo histórico direto."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "mother-versions",
+        "area": "sound",
+        "prompt": {
+          "en": "How should the different recorded presentation durations and music be described?",
+          "nb": "Hvordan bør de ulike registrerte visningsvarighetene og musikken beskrives?",
+          "fr": "Comment décrire les différentes durées de projection documentées et la musique ?",
+          "pt": "Como descrever as diferentes durações de exibição documentadas e a música?"
+        },
+        "options": [
+          {
+            "id": "average",
+            "label": {
+              "en": "Average the archive runtimes to invent one definitive original duration",
+              "nb": "Beregn gjennomsnittet av arkivvarighetene for å finne på én definitiv originalvarighet",
+              "fr": "Moyenner les durées d'archives pour inventer une durée originale définitive",
+              "pt": "Calcular a média das durações de arquivo para inventar uma duração original definitiva"
+            }
+          },
+          {
+            "id": "sync",
+            "label": {
+              "en": "Attribute later musical presentation to original synchronized dialogue",
+              "nb": "Tilskriv senere musikkvisning opprinnelig synkron dialog",
+              "fr": "Attribuer la musique ultérieure à un dialogue synchrone original",
+              "pt": "Atribuir música de exibição posterior a diálogo sincronizado original"
+            }
+          },
+          {
+            "id": "copies",
+            "label": {
+              "en": "Identify the separate institutional runtime records and presentation-specific music",
+              "nb": "Identifiser de ulike institusjonelle varighetsoppføringene og visningsspesifikk musikk",
+              "fr": "Identifier les durées institutionnelles distinctes et la musique propre à la projection",
+              "pt": "Identificar os registos institucionais de duração distintos e a música específica da exibição"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "copies",
+        "explanation": {
+          "en": "BFI records a 106-minute duration, while Harvard documents a 90-minute 35mm presentation with a later music track. Preserve the separate records and distinguish silent production from a particular accompaniment.",
+          "nb": "BFI registrerer en varighet på 106 minutter, mens Harvard dokumenterer en 90-minutters 35mm-visning med et senere musikkspor. Bevar de separate oppføringene og skill stumfilmproduksjon fra et bestemt akkompagnement.",
+          "fr": "Le BFI indique 106 minutes ; Harvard documente une projection 35 mm de 90 minutes avec une piste musicale ultérieure. Préservez les notices distinctes et distinguez production muette et accompagnement particulier.",
+          "pt": "O BFI regista 106 minutos; Harvard documenta uma apresentação de 90 minutos em 35 mm com faixa musical posterior. Preserve os registos distintos e distinga produção muda de um acompanhamento específico."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_fall_of_the_romanov_dynasty_1927",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore archival provenance, editorial selection and preservation through transparent compilation exercises.",
+      "nb": "Utforsk arkivproveniens, redaksjonell utvelgelse og bevaring gjennom transparente kompilasjonsøvelser.",
+      "fr": "Explorez la provenance archivistique, la sélection éditoriale et la préservation par des exercices de compilation transparents.",
+      "pt": "Explore proveniência de arquivo, seleção editorial e preservação através de exercícios transparentes de compilação."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "10 great Soviet films of the 1920s",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-soviet-films-1920s"
+      },
+      {
+        "id": "s1",
+        "title": "Padeniye dinasti Romanovikh (The Fall of the Romanov Dynasty)",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/collection/works/301141"
+      },
+      {
+        "id": "s2",
+        "title": "The Fall of the Romanov Dynasty — Carte Blanche: Joan Jonas",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/calendar/events/9537"
+      },
+      {
+        "id": "s3",
+        "title": "A MOVIE Shorts Program 1",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/calendar/events/2310"
+      }
+    ],
+    "questions": [
+      {
+        "id": "shub-provenance",
+        "area": "research",
+        "prompt": {
+          "en": "What should be recorded before editing a collection of existing archival images?",
+          "nb": "Hva bør registreres før en samling eksisterende arkivbilder klippes sammen?",
+          "fr": "Que faut-il consigner avant de monter une collection d'images d'archives existantes ?",
+          "pt": "O que deve ser registado antes de montar uma coleção de imagens de arquivo existentes?"
+        },
+        "options": [
+          {
+            "id": "provenance",
+            "label": {
+              "en": "Record each image's origin, date when known, original context and uncertainties",
+              "nb": "Registrer hvert bildes opphav, dato når kjent, opprinnelig kontekst og usikkerheter",
+              "fr": "Consigner l'origine, la date connue, le contexte initial et les incertitudes de chaque image",
+              "pt": "Registar origem, data conhecida, contexto inicial e incertezas de cada imagem"
+            }
+          },
+          {
+            "id": "strip",
+            "label": {
+              "en": "Remove all provenance labels to make the compilation seem seamless",
+              "nb": "Fjern alle proveniensopplysninger for å få kompilasjonen til å virke sømløs",
+              "fr": "Supprimer toute indication de provenance pour rendre la compilation homogène",
+              "pt": "Remover indicações de proveniência para tornar a compilação homogénea"
+            }
+          },
+          {
+            "id": "invent",
+            "label": {
+              "en": "Invent dates and locations for unidentified archival material",
+              "nb": "Finn på datoer og steder for uidentifisert arkivmateriale",
+              "fr": "Inventer dates et lieux pour les archives non identifiées",
+              "pt": "Inventar datas e locais para materiais de arquivo não identificados"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "provenance",
+        "explanation": {
+          "en": "BFI documents Shub's extensive archival search and the collaboration with Tseitlin. An original compilation plan should preserve source identity and uncertainty; selection is creative work, not permission to manufacture facts.",
+          "nb": "BFI dokumenterer Shubs omfattende arkivsøk og samarbeidet med Tseitlin. En egen kompilasjonsplan bør bevare kildeidentitet og usikkerhet; utvelgelse er kreativt arbeid, ikke tillatelse til å dikte opp fakta.",
+          "fr": "Le BFI documente les recherches d'archives de Choub et sa collaboration avec Tseitlin. Un projet de compilation doit préserver identité et incertitudes des sources ; sélectionner ne permet pas d'inventer des faits.",
+          "pt": "O BFI documenta a pesquisa de arquivo de Shub e a colaboração com Tseitlin. Um plano de compilação deve preservar identidade e incertezas das fontes; selecionar não autoriza inventar factos."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "shub-context",
+        "area": "camera",
+        "prompt": {
+          "en": "How can two arrangements of the same existing images be compared responsibly?",
+          "nb": "Hvordan kan to sammenstillinger av de samme eksisterende bildene sammenlignes på en ansvarlig måte?",
+          "fr": "Comment comparer de manière responsable deux agencements des mêmes images existantes ?",
+          "pt": "Como comparar responsavelmente dois arranjos das mesmas imagens existentes?"
+        },
+        "options": [
+          {
+            "id": "neutral",
+            "label": {
+              "en": "Present every editorial arrangement as a neutral record of events",
+              "nb": "Presenter enhver redaksjonell sammenstilling som en nøytral dokumentasjon av hendelser",
+              "fr": "Présenter chaque agencement éditorial comme un document neutre des événements",
+              "pt": "Apresentar cada arranjo editorial como registo neutro dos acontecimentos"
+            }
+          },
+          {
+            "id": "compare",
+            "label": {
+              "en": "Compare two labeled edits of original neutral drawings and explain the changed emphasis",
+              "nb": "Sammenlign to merkede klipp av egne nøytrale tegninger og forklar endret vektlegging",
+              "fr": "Comparer deux montages légendés de dessins neutres originaux et expliquer les différences d'accent",
+              "pt": "Comparar duas montagens identificadas de desenhos neutros originais e explicar a mudança de ênfase"
+            }
+          },
+          {
+            "id": "mislabel",
+            "label": {
+              "en": "Use a fabricated caption to turn an unrelated image into apparent evidence",
+              "nb": "Bruk en oppdiktet bildetekst for å gjøre et urelatert bilde til tilsynelatende bevis",
+              "fr": "Utiliser une légende inventée pour transformer une image sans rapport en preuve apparente",
+              "pt": "Usar uma legenda inventada para transformar uma imagem sem relação em prova aparente"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "compare",
+        "explanation": {
+          "en": "MoMA discusses Shub's transformation of existing material, and BFI documents selection and intertitle collaboration. Compare arrangements of benign original drawings with transparent labels and commentary; changed emphasis does not create new historical facts.",
+          "nb": "MoMA omtaler Shubs bearbeiding av eksisterende materiale, og BFI dokumenterer utvelgelse og samarbeid om mellomtekster. Sammenlign sammenstillinger av egne ufarlige tegninger med tydelige merkelapper og kommentar; endret vektlegging skaper ikke nye historiske fakta.",
+          "fr": "Le MoMA évoque la transformation de matériaux existants par Choub ; le BFI documente la sélection et les intertitres. Comparez des dessins originaux anodins avec légendes transparentes ; une nouvelle emphase ne crée pas de nouveaux faits historiques.",
+          "pt": "O MoMA aborda a transformação de material existente por Shub; o BFI documenta seleção e intertítulos. Compare desenhos originais inofensivos com legendas transparentes; uma nova ênfase não cria novos factos históricos."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "shub-preservation",
+        "area": "research",
+        "prompt": {
+          "en": "How should preservation and differing screening records be represented in the research notes?",
+          "nb": "Hvordan bør bevaring og ulike visningsoppføringer fremstilles i forskningsnotatene?",
+          "fr": "Comment représenter la préservation et les différentes notices de projection dans les notes de recherche ?",
+          "pt": "Como representar preservação e diferentes registos de exibição nas notas de investigação?"
+        },
+        "options": [
+          {
+            "id": "discard",
+            "label": {
+              "en": "Discard unselected original material once a compilation is finished",
+              "nb": "Kast originalmateriale som ikke ble valgt når kompilasjonen er ferdig",
+              "fr": "Éliminer les matériaux originaux non sélectionnés après la compilation",
+              "pt": "Descartar materiais originais não selecionados após a compilação"
+            }
+          },
+          {
+            "id": "same",
+            "label": {
+              "en": "Assume all archival presentations have identical duration and accompaniment",
+              "nb": "Anta at alle arkivvisninger har identisk varighet og akkompagnement",
+              "fr": "Supposer que toutes les projections d'archives ont la même durée et le même accompagnement",
+              "pt": "Supor que todas as exibições de arquivo têm duração e acompanhamento idênticos"
+            }
+          },
+          {
+            "id": "preserve",
+            "label": {
+              "en": "Preserve originals and document the selected edition, duration and accompaniment separately",
+              "nb": "Bevar originalene og dokumenter valgt utgave, varighet og akkompagnement separat",
+              "fr": "Préserver les originaux et documenter séparément édition, durée et accompagnement",
+              "pt": "Preservar originais e documentar separadamente edição, duração e acompanhamento"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "preserve",
+        "explanation": {
+          "en": "BFI notes that Shub's work preserved footage that might otherwise have been lost. MoMA records different presentation durations and later accompaniment. Keep preservation history and edition-specific evidence distinct from the new compilation.",
+          "nb": "BFI påpeker at Shubs arbeid bevarte opptak som ellers kunne gått tapt. MoMA registrerer ulike visningsvarigheter og senere akkompagnement. Hold bevaringshistorie og utgavespesifikt belegg adskilt fra den nye kompilasjonen.",
+          "fr": "Le BFI souligne que Choub a préservé des images qui auraient pu disparaître. Le MoMA documente des durées différentes et un accompagnement ultérieur. Distinguez histoire de la préservation, preuves propres aux éditions et nouvelle compilation.",
+          "pt": "O BFI salienta que Shub preservou imagens que poderiam ter-se perdido. O MoMA regista durações diferentes e acompanhamento posterior. Distinga história de preservação, evidência específica da edição e nova compilação."
+        },
+        "sourceIds": [
+          "s0",
+          "s2",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_battleship_potemkin_1925",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore montage contrast, collective representation and the distinction between historical events and cinematic construction.",
+      "nb": "Utforsk montasjekontraster, kollektive fremstillinger og skillet mellom historiske hendelser og filmatisk konstruksjon.",
+      "fr": "Explorez les contrastes de montage, la représentation collective et la distinction entre événements historiques et construction filmique.",
+      "pt": "Explore contrastes de montagem, representação coletiva e a distinção entre acontecimentos históricos e construção fílmica."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Battleship Potemkin",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/collection/works/305815?art_term_slug=montage&sov_referrer=art_term"
+      },
+      {
+        "id": "s1",
+        "title": "Battleship Potemkin",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/9c02c20b-1487-52c8-bbfc-0849e204fe59/battleship-potemkin"
+      },
+      {
+        "id": "s2",
+        "title": "Battleship Potemkin – 1925 programme record",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/calendar/events/6129"
+      },
+      {
+        "id": "s3",
+        "title": "Battleship Potemkin",
+        "publisher": "International Documentary Film Festival Amsterdam",
+        "url": "https://www.idfa.nl/en/film/a599f835-9770-4bb9-a9f9-93aa604fb946/battleship-potemkin/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "potemkin-contrast",
+        "area": "camera",
+        "prompt": {
+          "en": "How could juxtaposition change the meaning of two drawings in a benign fictional sequence?",
+          "nb": "Hvordan kan sammenstilling endre betydningen av to tegninger i en ufarlig fiktiv sekvens?",
+          "fr": "Comment la juxtaposition peut-elle modifier le sens de deux dessins dans une séquence fictive anodine ?",
+          "pt": "Como pode a justaposição alterar o sentido de dois desenhos numa sequência fictícia inofensiva?"
+        },
+        "options": [
+          {
+            "id": "contrast",
+            "label": {
+              "en": "Compare two arrangements of contrasting shapes and everyday objects",
+              "nb": "Sammenlign to sammenstillinger av kontrasterende former og hverdagsgjenstander",
+              "fr": "Comparer deux agencements de formes contrastées et d'objets quotidiens",
+              "pt": "Comparar dois arranjos de formas contrastantes e objetos quotidianos"
+            }
+          },
+          {
+            "id": "fixed",
+            "label": {
+              "en": "Assume each image has exactly the same meaning in every context",
+              "nb": "Anta at hvert bilde har nøyaktig samme betydning i enhver kontekst",
+              "fr": "Supposer que chaque image a exactement le même sens dans tout contexte",
+              "pt": "Supor que cada imagem tem exatamente o mesmo sentido em qualquer contexto"
+            }
+          },
+          {
+            "id": "universal",
+            "label": {
+              "en": "Declare one montage interpretation inevitable for every viewer",
+              "nb": "Erklær én montasjetolkning uunngåelig for alle seere",
+              "fr": "Déclarer une interprétation du montage inévitable pour chaque spectateur",
+              "pt": "Declarar uma interpretação da montagem inevitável para todos os espectadores"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "contrast",
+        "explanation": {
+          "en": "MoMA analyzes repetition and contrast in Eisenstein's montage; BFI emphasizes its dynamic composition. Compare original drawings of everyday objects to examine how relationships between images shape interpretation, without reenacting historical violence or assuming a universal audience response.",
+          "nb": "MoMA analyserer gjentakelse og kontrast i Eisensteins montasje; BFI fremhever dynamisk komposisjon. Sammenlign egne tegninger av hverdagsgjenstander for å undersøke hvordan bildeforhold former tolkning, uten å gjenskape historisk vold eller anta en universell publikumsreaksjon.",
+          "fr": "Le MoMA analyse répétition et contraste dans le montage d'Eisenstein ; le BFI souligne la composition dynamique. Comparez des dessins originaux d'objets quotidiens pour étudier leurs rapports sans reconstituer la violence historique ni présumer une réaction universelle.",
+          "pt": "O MoMA analisa repetição e contraste na montagem de Eisenstein; o BFI destaca composição dinâmica. Compare desenhos originais de objetos quotidianos para estudar relações entre imagens sem reconstituir violência histórica nem presumir uma reação universal."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "potemkin-duration",
+        "area": "camera",
+        "prompt": {
+          "en": "How might editing change the perceived duration of an invented everyday event?",
+          "nb": "Hvordan kan klipping endre den opplevde varigheten av en oppdiktet hverdagshendelse?",
+          "fr": "Comment le montage peut-il modifier la durée perçue d'un événement quotidien inventé ?",
+          "pt": "Como pode a montagem alterar a duração percebida de um acontecimento quotidiano inventado?"
+        },
+        "options": [
+          {
+            "id": "literal",
+            "label": {
+              "en": "Assume screen duration must always equal the event's actual duration",
+              "nb": "Anta at filmens varighet alltid må tilsvare hendelsens faktiske varighet",
+              "fr": "Supposer que la durée à l'écran doit toujours égaler celle de l'événement",
+              "pt": "Supor que a duração no ecrã deve sempre igualar a duração real do acontecimento"
+            }
+          },
+          {
+            "id": "duration",
+            "label": {
+              "en": "Compare a compact and an expanded storyboard of the same neutral event",
+              "nb": "Sammenlign et komprimert og et utvidet storyboard av samme nøytrale hendelse",
+              "fr": "Comparer un storyboard condensé et un storyboard développé du même événement neutre",
+              "pt": "Comparar um storyboard condensado e outro expandido do mesmo acontecimento neutro"
+            }
+          },
+          {
+            "id": "record",
+            "label": {
+              "en": "Treat the edited duration as proof of historical chronology",
+              "nb": "Behandle den klipte varigheten som bevis for historisk kronologi",
+              "fr": "Traiter la durée montée comme preuve de chronologie historique",
+              "pt": "Tratar a duração montada como prova de cronologia histórica"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "duration",
+        "explanation": {
+          "en": "MoMA documents temporal compression and expansion in the film. Compare two storyboard versions of a mundane activity, such as arranging a vase of flowers. Distinguish screen duration from actual event duration; the constructed sequence is not a historical measurement.",
+          "nb": "MoMA dokumenterer tidskomprimering og utvidelse i filmen. Sammenlign to storyboardversjoner av en hverdagsaktivitet, for eksempel å arrangere blomster i en vase. Skill filmvarighet fra faktisk varighet; den konstruerte sekvensen er ikke en historisk måling.",
+          "fr": "Le MoMA documente compression et expansion temporelles. Comparez deux storyboards d'une activité ordinaire, comme arranger des fleurs. Distinguez durée à l'écran et durée réelle ; la séquence construite n'est pas une mesure historique.",
+          "pt": "O MoMA documenta compressão e expansão temporal. Compare dois storyboards de uma atividade comum, como arranjar flores. Distinga duração no ecrã de duração real; a sequência construída não é uma medição histórica."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "potemkin-evidence",
+        "area": "research",
+        "prompt": {
+          "en": "How should a researcher distinguish the film's political representation from historical evidence?",
+          "nb": "Hvordan bør en forsker skille filmens politiske fremstilling fra historisk dokumentasjon?",
+          "fr": "Comment distinguer la représentation politique du film des preuves historiques ?",
+          "pt": "Como distinguir a representação política do filme da evidência histórica?"
+        },
+        "options": [
+          {
+            "id": "neutral",
+            "label": {
+              "en": "Present every dramatic image as neutral documentary evidence",
+              "nb": "Presenter alle dramatiske bilder som nøytral dokumentasjon",
+              "fr": "Présenter chaque image dramatique comme un document neutre",
+              "pt": "Apresentar todas as imagens dramáticas como evidência documental neutra"
+            }
+          },
+          {
+            "id": "erase",
+            "label": {
+              "en": "Remove production credits and the political context from the account",
+              "nb": "Fjern produksjonskreditering og politisk kontekst fra beskrivelsen",
+              "fr": "Supprimer les crédits de production et le contexte politique",
+              "pt": "Remover créditos de produção e contexto político do relato"
+            }
+          },
+          {
+            "id": "context",
+            "label": {
+              "en": "Separate the historical event, staged reconstruction, editorial argument and craft credits",
+              "nb": "Skill den historiske hendelsen, iscenesatt rekonstruksjon, redaksjonelt argument og fagkreditering",
+              "fr": "Distinguer événement historique, reconstitution mise en scène, argument éditorial et crédits techniques",
+              "pt": "Distinguir acontecimento histórico, reconstituição encenada, argumento editorial e créditos técnicos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "context",
+        "explanation": {
+          "en": "IDFA distinguishes historical reconstruction from revolutionary statement, while MoMA identifies Eisenstein and cinematographer Eduard Tisse. Record the film's constructed argument and documented collaboration separately from claims about the historical event.",
+          "nb": "IDFA skiller historisk rekonstruksjon fra revolusjonært utsagn, mens MoMA identifiserer Eisenstein og filmfotograf Eduard Tisse. Registrer filmens konstruerte argument og dokumenterte samarbeid separat fra påstander om den historiske hendelsen.",
+          "fr": "L'IDFA distingue reconstitution historique et déclaration révolutionnaire ; le MoMA identifie Eisenstein et l'opérateur Eduard Tisse. Consignez l'argument construit et la collaboration documentée séparément des affirmations sur l'événement historique.",
+          "pt": "O IDFA distingue reconstituição histórica de declaração revolucionária; o MoMA identifica Eisenstein e o diretor de fotografia Eduard Tisse. Registe o argumento construído e a colaboração documentada separadamente de afirmações sobre o acontecimento histórico."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_man_with_a_movie_camera_1929",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore documentary construction, collective authorship and the presentation of a constructed city day.",
+      "nb": "Utforsk dokumentarisk konstruksjon, kollektivt forfatterskap og fremstillingen av en konstruert bydag.",
+      "fr": "Explorez la construction documentaire, la création collective et la représentation d'une journée urbaine construite.",
+      "pt": "Explore construção documental, autoria coletiva e representação de um dia urbano construído."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The Man with a Movie Camera",
+        "publisher": "Eye Filmmuseum",
+        "url": "https://www.eyefilm.nl/en/whats-on/the-man-with-a-movie-camera/1346017"
+      },
+      {
+        "id": "s1",
+        "title": "Reconstructing the original music for Man with a Movie Camera",
+        "publisher": "Eye Filmmuseum",
+        "url": "https://www.eyefilm.nl/en/magazine/reconstructing-the-original-music-for-man-with-a-movie-camera/1636481"
+      },
+      {
+        "id": "s2",
+        "title": "Man with a Movie Camera",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/collection/works/303131"
+      },
+      {
+        "id": "s3",
+        "title": "10 great Soviet films of the 1920s",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-soviet-films-1920s"
+      }
+    ],
+    "questions": [
+      {
+        "id": "vertov-city",
+        "area": "camera",
+        "prompt": {
+          "en": "How could an original city-day sequence show patterns without claiming to be an unedited record?",
+          "nb": "Hvordan kan en egen bydagsekvens vise mønstre uten å hevde å være et uredigert opptak?",
+          "fr": "Comment une séquence urbaine originale peut-elle montrer des motifs sans prétendre être un enregistrement non monté ?",
+          "pt": "Como pode uma sequência urbana original mostrar padrões sem alegar ser um registo não montado?"
+        },
+        "options": [
+          {
+            "id": "construct",
+            "label": {
+              "en": "Arrange drawings of everyday urban activities and label the constructed time relationships",
+              "nb": "Sett sammen tegninger av hverdagslige byaktiviteter og merk de konstruerte tidsforholdene",
+              "fr": "Agencer des dessins d'activités urbaines quotidiennes et signaler les rapports temporels construits",
+              "pt": "Organizar desenhos de atividades urbanas quotidianas e identificar as relações temporais construídas"
+            }
+          },
+          {
+            "id": "literal",
+            "label": {
+              "en": "Claim a montage assembled from different places records one continuous day",
+              "nb": "Hevd at montasje satt sammen fra ulike steder registrerer én sammenhengende dag",
+              "fr": "Affirmer qu'un montage de lieux différents enregistre une journée continue",
+              "pt": "Afirmar que uma montagem de locais diferentes regista um dia contínuo"
+            }
+          },
+          {
+            "id": "covert",
+            "label": {
+              "en": "Film identifiable strangers secretly to reproduce historical camera practice",
+              "nb": "Film identifiserbare fremmede i skjul for å gjenskape historisk kamerapraksis",
+              "fr": "Filmer secrètement des inconnus identifiables pour reproduire la pratique historique",
+              "pt": "Filmar secretamente desconhecidos identificáveis para reproduzir a prática histórica"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "construct",
+        "explanation": {
+          "en": "Eye describes the city-day structure; BFI documents the multi-city production and editorial construction. Use drawings or consenting collaborators and disclose how the sequence combines places and times rather than claiming uninterrupted observation.",
+          "nb": "Eye beskriver bydagsstrukturen; BFI dokumenterer produksjon i flere byer og redaksjonell konstruksjon. Bruk tegninger eller samtykkende samarbeidspartnere og gjør rede for hvordan sekvensen kombinerer steder og tider fremfor å hevde uavbrutt observasjon.",
+          "fr": "Eye décrit la structure d'une journée urbaine ; le BFI documente la production dans plusieurs villes et la construction éditoriale. Utilisez des dessins ou des collaborateurs consentants et précisez les combinaisons de lieux et de temps.",
+          "pt": "Eye descreve a estrutura do dia urbano; o BFI documenta a produção em várias cidades e a construção editorial. Use desenhos ou colaboradores que consintam e explicite as combinações de lugares e tempos."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "vertov-collaboration",
+        "area": "research",
+        "prompt": {
+          "en": "How should a researcher credit the camera and editing work that makes the documentary self-reflexive?",
+          "nb": "Hvordan bør en forsker kreditere kamera- og klippearbeidet som gjør dokumentaren selvrefleksiv?",
+          "fr": "Comment créditer le travail de prise de vues et de montage qui rend le documentaire réflexif ?",
+          "pt": "Como creditar o trabalho de câmara e montagem que torna o documentário autorreflexivo?"
+        },
+        "options": [
+          {
+            "id": "solo",
+            "label": {
+              "en": "Assign every visual and editorial contribution to Vertov alone",
+              "nb": "Tilskriv alle visuelle og redaksjonelle bidrag Vertov alene",
+              "fr": "Attribuer tous les apports visuels et éditoriaux au seul Vertov",
+              "pt": "Atribuir todos os contributos visuais e editoriais apenas a Vertov"
+            }
+          },
+          {
+            "id": "team",
+            "label": {
+              "en": "Distinguish Vertov's direction, Kaufman's cinematography and Svilova's editing",
+              "nb": "Skill Vertovs regi, Kaufmans filmfoto og Svilovas klipping",
+              "fr": "Distinguer la réalisation de Vertov, l'image de Kaufman et le montage de Svilova",
+              "pt": "Distinguir realização de Vertov, fotografia de Kaufman e montagem de Svilova"
+            }
+          },
+          {
+            "id": "invisible",
+            "label": {
+              "en": "Treat the visible filming and editing process as irrelevant to the film's meaning",
+              "nb": "Behandle den synlige film- og klippeprosessen som irrelevant for filmens mening",
+              "fr": "Considérer le tournage et le montage visibles comme sans rapport avec le sens du film",
+              "pt": "Tratar o processo visível de filmagem e montagem como irrelevante para o sentido do filme"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "team",
+        "explanation": {
+          "en": "MoMA analyzes the film's exposure of the camera and editor; BFI identifies Kaufman's photography and Svilova's editorial work. Credit their separate contributions and explore how revealing the filmmaking process becomes part of documentary form.",
+          "nb": "MoMA analyserer filmens synliggjøring av kamera og klipper; BFI identifiserer Kaufmans filmfoto og Svilovas klippearbeid. Krediter de ulike bidragene og utforsk hvordan synliggjøring av filmprosessen blir en del av dokumentarformen.",
+          "fr": "Le MoMA analyse la mise en évidence de la caméra et de la monteuse ; le BFI identifie l'image de Kaufman et le montage de Svilova. Créditez leurs contributions distinctes et étudiez la réflexivité documentaire.",
+          "pt": "O MoMA analisa a exposição da câmara e da montadora; o BFI identifica a fotografia de Kaufman e a montagem de Svilova. Credite os contributos distintos e explore a reflexividade documental."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "vertov-music",
+        "area": "sound",
+        "prompt": {
+          "en": "How should reconstructed premiere accompaniment and later replacement scores be documented?",
+          "nb": "Hvordan bør rekonstruert premiereakkompagnement og senere erstatningsmusikk dokumenteres?",
+          "fr": "Comment documenter l'accompagnement de première reconstruit et les musiques de remplacement ultérieures ?",
+          "pt": "Como documentar o acompanhamento reconstruído da estreia e músicas de substituição posteriores?"
+        },
+        "options": [
+          {
+            "id": "original",
+            "label": {
+              "en": "Assume the reconstructed score is an untouched original sound recording",
+              "nb": "Anta at den rekonstruerte musikken er et urørt originallydopptak",
+              "fr": "Supposer que la musique reconstruite est un enregistrement sonore original intact",
+              "pt": "Supor que a música reconstruída é uma gravação sonora original intacta"
+            }
+          },
+          {
+            "id": "same",
+            "label": {
+              "en": "Assume every modern screening uses the same musical presentation",
+              "nb": "Anta at alle moderne visninger bruker samme musikkpresentasjon",
+              "fr": "Supposer que chaque projection moderne utilise la même musique",
+              "pt": "Supor que todas as exibições modernas usam a mesma apresentação musical"
+            }
+          },
+          {
+            "id": "evidence",
+            "label": {
+              "en": "Document cue evidence, reconstructed accompaniment and the edition being presented",
+              "nb": "Dokumenter musikkskjemaets belegg, rekonstruert akkompagnement og utgaven som vises",
+              "fr": "Documenter indices musicaux, accompagnement reconstruit et édition présentée",
+              "pt": "Documentar indicações musicais, acompanhamento reconstruído e edição apresentada"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "evidence",
+        "explanation": {
+          "en": "Eye documents reconstruction of the intended premiere music from archival cue notes and distinguishes later scores. Record the evidence and the specific presentation without calling a modern reconstruction an original recorded soundtrack.",
+          "nb": "Eye dokumenterer rekonstruksjon av den tiltenkte premieremusikken fra arkiverte musikknotater og skiller senere musikk ut. Registrer belegget og den konkrete visningen uten å kalle en moderne rekonstruksjon et opprinnelig innspilt lydspor.",
+          "fr": "Eye documente la reconstruction de la musique prévue pour la première à partir de notes d'archives et distingue les musiques ultérieures. Consignez les preuves et la présentation sans qualifier une reconstruction moderne de bande sonore originale enregistrée.",
+          "pt": "Eye documenta a reconstrução da música prevista para a estreia a partir de notas de arquivo e distingue músicas posteriores. Registe evidência e apresentação específica sem chamar à reconstrução uma banda sonora original gravada."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_earth_1930",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore lyrical montage, Ukrainian production history and the distinction between commission and historical hindsight.",
+      "nb": "Utforsk lyrisk montasje, ukrainsk produksjonshistorie og skillet mellom bestilling og historisk etterpåklokskap.",
+      "fr": "Explorez le montage lyrique, la production ukrainienne et la distinction entre commande et recul historique.",
+      "pt": "Explore montagem lírica, produção ucraniana e a distinção entre encomenda e conhecimento histórico posterior."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Earth (1930)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/7ecb717a-9c37-5071-a235-93386e7167b7/earth"
+      },
+      {
+        "id": "s1",
+        "title": "Inside Ukraine's film archive",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/sight-and-sound/features/inside-ukraines-film-archive"
+      },
+      {
+        "id": "s2",
+        "title": "10 great Soviet films of the 1920s",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-soviet-films-1920s"
+      }
+    ],
+    "questions": [
+      {
+        "id": "earth-lyric",
+        "area": "camera",
+        "prompt": {
+          "en": "How can an original sequence of landscapes and ordinary objects create poetic associations?",
+          "nb": "Hvordan kan en egen sekvens av landskap og hverdagsgjenstander skape poetiske assosiasjoner?",
+          "fr": "Comment une séquence originale de paysages et d'objets quotidiens peut-elle créer des associations poétiques ?",
+          "pt": "Como pode uma sequência original de paisagens e objetos quotidianos criar associações poéticas?"
+        },
+        "options": [
+          {
+            "id": "lyric",
+            "label": {
+              "en": "Compare drawings linked by texture, rhythm and recurring natural motifs",
+              "nb": "Sammenlign tegninger knyttet sammen av tekstur, rytme og gjentatte naturmotiver",
+              "fr": "Comparer des dessins liés par texture, rythme et motifs naturels récurrents",
+              "pt": "Comparar desenhos ligados por textura, ritmo e motivos naturais recorrentes"
+            }
+          },
+          {
+            "id": "literal",
+            "label": {
+              "en": "Require every image to describe a literal plot action",
+              "nb": "Krev at hvert bilde beskriver en bokstavelig handling",
+              "fr": "Exiger que chaque image décrive une action littérale",
+              "pt": "Exigir que cada imagem descreva uma ação literal"
+            }
+          },
+          {
+            "id": "universal",
+            "label": {
+              "en": "Claim that one poetic montage pattern works for every film",
+              "nb": "Hevd at ett poetisk montasjemønster fungerer for alle filmer",
+              "fr": "Affirmer qu'un motif de montage poétique convient à tous les films",
+              "pt": "Afirmar que um padrão de montagem poética serve para todos os filmes"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "lyric",
+        "explanation": {
+          "en": "BFI describes Dovzhenko's lyrical emphasis on landscape, faces and objects. Compare original drawings of nature and everyday life to explore visual association, without reducing the film to a single montage formula.",
+          "nb": "BFI beskriver Dovzhenkos lyriske vekt på landskap, ansikter og gjenstander. Sammenlign egne tegninger av natur og hverdagsliv for å utforske visuell assosiasjon uten å redusere filmen til én montasjeformel.",
+          "fr": "Le BFI décrit l'accent lyrique sur paysages, visages et objets. Comparez des dessins originaux de la nature et du quotidien pour étudier l'association sans réduire le film à une formule.",
+          "pt": "O BFI descreve a ênfase lírica em paisagens, rostos e objetos. Compare desenhos originais da natureza e do quotidiano para explorar associação sem reduzir o filme a uma fórmula."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "earth-ukraine",
+        "area": "research",
+        "prompt": {
+          "en": "How should the film's Ukrainian production context be represented?",
+          "nb": "Hvordan bør filmens ukrainske produksjonskontekst fremstilles?",
+          "fr": "Comment représenter le contexte ukrainien de production du film ?",
+          "pt": "Como representar o contexto ucraniano de produção do filme?"
+        },
+        "options": [
+          {
+            "id": "erase",
+            "label": {
+              "en": "Erase the Ukrainian film institution from the production history",
+              "nb": "Fjern den ukrainske filminstitusjonen fra produksjonshistorien",
+              "fr": "Effacer l'institution cinématographique ukrainienne de l'histoire de production",
+              "pt": "Apagar a instituição cinematográfica ucraniana da história de produção"
+            }
+          },
+          {
+            "id": "context",
+            "label": {
+              "en": "Distinguish VUFKU and Ukrainian cinema within the wider Soviet system",
+              "nb": "Skill VUFKU og ukrainsk film innenfor det bredere sovjetiske systemet",
+              "fr": "Distinguer VUFKU et cinéma ukrainien au sein du système soviétique",
+              "pt": "Distinguir VUFKU e cinema ucraniano dentro do sistema soviético"
+            }
+          },
+          {
+            "id": "solo",
+            "label": {
+              "en": "Describe the work as an isolated director's creation without institutions",
+              "nb": "Beskriv verket som en isolert regissørskapelse uten institusjoner",
+              "fr": "Décrire l'œuvre comme une création isolée sans institutions",
+              "pt": "Descrever a obra como criação isolada sem instituições"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "context",
+        "explanation": {
+          "en": "BFI's archive feature documents VUFKU's distinct Ukrainian production and education infrastructure and its later centralization. Keep that institutional identity visible rather than treating Soviet cinema as one undifferentiated national system.",
+          "nb": "BFIs arkivartikkel dokumenterer VUFKUs særskilte ukrainske produksjons- og utdanningssystem og senere sentralisering. Synliggjør denne institusjonelle identiteten fremfor å behandle sovjetisk film som ett udifferensiert nasjonalt system.",
+          "fr": "Le BFI documente les structures ukrainiennes propres de VUFKU et leur centralisation ultérieure. Préservez cette identité institutionnelle plutôt que de traiter le cinéma soviétique comme un ensemble national indifférencié.",
+          "pt": "O BFI documenta as estruturas ucranianas próprias da VUFKU e a centralização posterior. Preserve essa identidade institucional em vez de tratar o cinema soviético como sistema nacional indiferenciado."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "earth-hindsight",
+        "area": "research",
+        "prompt": {
+          "en": "How should the 1930 commission and later knowledge of collectivization be distinguished?",
+          "nb": "Hvordan bør bestillingen fra 1930 og senere kunnskap om kollektiviseringen skilles?",
+          "fr": "Comment distinguer la commande de 1930 et les connaissances ultérieures sur la collectivisation ?",
+          "pt": "Como distinguir a encomenda de 1930 do conhecimento posterior sobre a coletivização?"
+        },
+        "options": [
+          {
+            "id": "predict",
+            "label": {
+              "en": "Assume the filmmaker knew all later historical consequences",
+              "nb": "Anta at filmskaperen kjente alle senere historiske konsekvenser",
+              "fr": "Supposer que le cinéaste connaissait toutes les conséquences ultérieures",
+              "pt": "Supor que o cineasta conhecia todas as consequências posteriores"
+            }
+          },
+          {
+            "id": "neutral",
+            "label": {
+              "en": "Treat the commissioned film as neutral evidence of agricultural outcomes",
+              "nb": "Behandle bestillingsfilmen som nøytralt bevis på landbruksresultater",
+              "fr": "Traiter le film commandé comme preuve neutre des résultats agricoles",
+              "pt": "Tratar o filme encomendado como prova neutra dos resultados agrícolas"
+            }
+          },
+          {
+            "id": "chronology",
+            "label": {
+              "en": "Distinguish commission, poetic form, contemporary knowledge and later historical reception",
+              "nb": "Skill bestilling, poetisk form, samtidens kunnskap og senere historisk mottakelse",
+              "fr": "Distinguer commande, forme poétique, savoir contemporain et réception historique ultérieure",
+              "pt": "Distinguir encomenda, forma poética, conhecimento contemporâneo e receção histórica posterior"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "chronology",
+        "explanation": {
+          "en": "BFI distinguishes the collectivization commission from the film's lyrical form and cautions against attributing knowledge of the later famine to its 1930 production. Document the chronology and critically contextualize the propaganda commission without erasing later consequences.",
+          "nb": "BFI skiller kollektiviseringsbestillingen fra filmens lyriske form og advarer mot å tilskrive 1930-produksjonen kunnskap om den senere hungersnøden. Dokumenter kronologien og kontekstualiser propagandaoppdraget kritisk uten å viske ut senere konsekvenser.",
+          "fr": "Le BFI distingue la commande de collectivisation de la forme lyrique et avertit contre l'attribution du savoir sur la famine ultérieure à la production de 1930. Documentez la chronologie et contextualisez la propagande sans effacer ses conséquences ultérieures.",
+          "pt": "O BFI distingue a encomenda de coletivização da forma lírica e alerta contra atribuir à produção de 1930 conhecimento da fome posterior. Documente a cronologia e contextualize criticamente a propaganda sem apagar consequências posteriores."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_october_1928",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore intellectual montage, staged historical representation and politically altered editions.",
+      "nb": "Utforsk intellektuell montasje, iscenesatt historisk fremstilling og politisk endrede utgaver.",
+      "fr": "Explorez le montage intellectuel, la représentation historique mise en scène et les éditions modifiées politiquement.",
+      "pt": "Explore montagem intelectual, representação histórica encenada e edições alteradas politicamente."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "October. 1927. Directed by Sergei Eisenstein",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/calendar/events/5338"
+      },
+      {
+        "id": "s1",
+        "title": "Oktjabr'. 1928",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/collection/works/304654"
+      },
+      {
+        "id": "s2",
+        "title": "Where to begin with Sergei Eisenstein",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/where-begin-sergei-eisenstein"
+      },
+      {
+        "id": "s3",
+        "title": "10 great silent epics",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-silent-epics"
+      }
+    ],
+    "questions": [
+      {
+        "id": "october-concept",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a pair of neutral drawings suggest an abstract idea through juxtaposition?",
+          "nb": "Hvordan kan et par nøytrale tegninger antyde en abstrakt idé gjennom sammenstilling?",
+          "fr": "Comment deux dessins neutres peuvent-ils suggérer une idée abstraite par juxtaposition ?",
+          "pt": "Como podem dois desenhos neutros sugerir uma ideia abstrata por justaposição?"
+        },
+        "options": [
+          {
+            "id": "idea",
+            "label": {
+              "en": "Compare different pairings of everyday objects and explain the possible associations",
+              "nb": "Sammenlign ulike par av hverdagsgjenstander og forklar mulige assosiasjoner",
+              "fr": "Comparer des paires d'objets quotidiens et expliquer les associations possibles",
+              "pt": "Comparar pares de objetos quotidianos e explicar associações possíveis"
+            }
+          },
+          {
+            "id": "fixed",
+            "label": {
+              "en": "Assume the combination has one inevitable interpretation for all viewers",
+              "nb": "Anta at kombinasjonen har én uunngåelig tolkning for alle seere",
+              "fr": "Supposer une interprétation inévitable pour tous les spectateurs",
+              "pt": "Supor uma interpretação inevitável para todos os espectadores"
+            }
+          },
+          {
+            "id": "fact",
+            "label": {
+              "en": "Treat a symbolic association as independent factual proof",
+              "nb": "Behandle en symbolsk assosiasjon som uavhengig faktabevis",
+              "fr": "Traiter une association symbolique comme preuve factuelle indépendante",
+              "pt": "Tratar uma associação simbólica como prova factual independente"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "idea",
+        "explanation": {
+          "en": "BFI emphasizes symbolic and intellectual montage. Compare original benign drawings to study how juxtaposition suggests ideas, while keeping interpretation distinct from factual evidence and acknowledging that audiences may read images differently.",
+          "nb": "BFI fremhever symbolsk og intellektuell montasje. Sammenlign egne ufarlige tegninger for å studere hvordan sammenstilling antyder ideer, samtidig som tolkning skilles fra faktabelegg og ulike publikumslesninger anerkjennes.",
+          "fr": "Le BFI souligne le montage symbolique et intellectuel. Comparez des dessins originaux anodins pour étudier les idées suggérées, en distinguant interprétation et preuve et en reconnaissant la diversité des lectures.",
+          "pt": "O BFI salienta montagem simbólica e intelectual. Compare desenhos originais inofensivos para estudar ideias sugeridas, distinguindo interpretação de evidência e reconhecendo a diversidade de leituras."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "october-reconstruction",
+        "area": "research",
+        "prompt": {
+          "en": "How should the film's anniversary commission and historical reconstruction be documented?",
+          "nb": "Hvordan bør filmens jubileumsbestilling og historiske rekonstruksjon dokumenteres?",
+          "fr": "Comment documenter la commande anniversaire et la reconstitution historique du film ?",
+          "pt": "Como documentar a encomenda comemorativa e a reconstituição histórica do filme?"
+        },
+        "options": [
+          {
+            "id": "news",
+            "label": {
+              "en": "Label staged images as authentic news footage of the original events",
+              "nb": "Merk iscenesatte bilder som autentiske nyhetsopptak av de opprinnelige hendelsene",
+              "fr": "Étiqueter les images mises en scène comme actualités authentiques des événements",
+              "pt": "Identificar imagens encenadas como notícias autênticas dos acontecimentos"
+            }
+          },
+          {
+            "id": "distinguish",
+            "label": {
+              "en": "Separate historical events, anniversary commission, staged images and documented credits",
+              "nb": "Skill historiske hendelser, jubileumsbestilling, iscenesatte bilder og dokumenterte krediteringer",
+              "fr": "Distinguer événements historiques, commande anniversaire, images mises en scène et crédits attestés",
+              "pt": "Distinguir acontecimentos históricos, encomenda comemorativa, imagens encenadas e créditos documentados"
+            }
+          },
+          {
+            "id": "erase",
+            "label": {
+              "en": "Remove the commission and political setting from the historical account",
+              "nb": "Fjern bestillingen og den politiske konteksten fra den historiske beskrivelsen",
+              "fr": "Supprimer commande et contexte politique du récit historique",
+              "pt": "Remover encomenda e contexto político do relato histórico"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "distinguish",
+        "explanation": {
+          "en": "MoMA identifies the anniversary commission and Eisenstein's collaboration with Aleksandrov. BFI describes the political function and montage. Keep the staged reconstruction separate from primary records of the historical events.",
+          "nb": "MoMA identifiserer jubileumsbestillingen og Eisensteins samarbeid med Aleksandrov. BFI beskriver den politiske funksjonen og montasjen. Hold den iscenesatte rekonstruksjonen adskilt fra primærkilder til de historiske hendelsene.",
+          "fr": "Le MoMA identifie la commande anniversaire et la collaboration avec Aleksandrov. Le BFI décrit la fonction politique et le montage. Distinguez la reconstitution mise en scène des sources primaires des événements.",
+          "pt": "O MoMA identifica a encomenda comemorativa e a colaboração com Aleksandrov. O BFI descreve função política e montagem. Distinga a reconstituição encenada das fontes primárias dos acontecimentos."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "october-cuts",
+        "area": "research",
+        "prompt": {
+          "en": "How should political recutting and differing exhibition records be handled?",
+          "nb": "Hvordan bør politisk omklipping og ulike visningsoppføringer håndteres?",
+          "fr": "Comment traiter les remontages politiques et les différentes notices de projection ?",
+          "pt": "Como tratar remontagens políticas e diferentes registos de exibição?"
+        },
+        "options": [
+          {
+            "id": "ignore",
+            "label": {
+              "en": "Ignore documented political intervention in the editing history",
+              "nb": "Ignorer dokumentert politisk innblanding i klippehistorien",
+              "fr": "Ignorer l'intervention politique documentée dans l'histoire du montage",
+              "pt": "Ignorar a intervenção política documentada na história da montagem"
+            }
+          },
+          {
+            "id": "same",
+            "label": {
+              "en": "Assume all versions share identical content and presentation duration",
+              "nb": "Anta at alle utgaver har identisk innhold og visningsvarighet",
+              "fr": "Supposer que toutes les versions ont un contenu et une durée identiques",
+              "pt": "Supor que todas as versões têm conteúdo e duração idênticos"
+            }
+          },
+          {
+            "id": "edition",
+            "label": {
+              "en": "Record documented alterations, commission context and the specific screened edition",
+              "nb": "Registrer dokumenterte endringer, bestillingskontekst og den konkrete viste utgaven",
+              "fr": "Consigner modifications attestées, contexte de commande et édition projetée",
+              "pt": "Registar alterações documentadas, contexto da encomenda e edição exibida"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "edition",
+        "explanation": {
+          "en": "BFI documents political intervention including removal of references to Trotsky; MoMA records a particular silent screening duration. Document the changes and identify the edition rather than treating all circulating copies as one unchanged master.",
+          "nb": "BFI dokumenterer politisk innblanding, inkludert fjerning av referanser til Trotskij; MoMA registrerer en bestemt stumfilmvisning. Dokumenter endringene og identifiser utgaven fremfor å behandle alle kopier som én uendret master.",
+          "fr": "Le BFI documente l'intervention politique, dont le retrait de références à Trotski ; le MoMA indique une durée de projection muette particulière. Documentez les changements et identifiez l'édition plutôt qu'un original unique inchangé.",
+          "pt": "O BFI documenta intervenção política, incluindo remoção de referências a Trotsky; o MoMA regista uma duração específica de exibição muda. Documente alterações e identifique a edição em vez de presumir um original único inalterado."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_mr_west_bolsheviks_1924",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore constructive editing, workshop collaboration and transnational comic conventions.",
+      "nb": "Utforsk konstruktiv klipping, verkstedsamarbeid og transnasjonale komiske konvensjoner.",
+      "fr": "Explorez le montage constructif, la collaboration d'atelier et les conventions comiques transnationales.",
+      "pt": "Explore montagem construtiva, colaboração de oficina e convenções cómicas transnacionais."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The Extraordinary Adventures of Mr. West in the Land of the Bolsheviks",
+        "publisher": "Harvard Film Archive",
+        "url": "https://harvardfilmarchive.org/calendar/the-extraordinary-adventures-of-mr-west-in-the-land-of-the-bolsh"
+      },
+      {
+        "id": "s1",
+        "title": "10 great Soviet films of the 1920s",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-soviet-films-1920s"
+      },
+      {
+        "id": "s2",
+        "title": "360 classic feature films",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/360-classic-feature-films-how-archive-project-sought-show-canon-all-year-round"
+      }
+    ],
+    "questions": [
+      {
+        "id": "west-geography",
+        "area": "camera",
+        "prompt": {
+          "en": "How could two drawings of different ordinary spaces suggest a coherent fictional location?",
+          "nb": "Hvordan kan to tegninger av ulike hverdagsrom antyde ett sammenhengende fiktivt sted?",
+          "fr": "Comment deux dessins d'espaces ordinaires différents peuvent-ils suggérer un lieu fictif cohérent ?",
+          "pt": "Como podem dois desenhos de espaços quotidianos diferentes sugerir um local fictício coerente?"
+        },
+        "options": [
+          {
+            "id": "connect",
+            "label": {
+              "en": "Compare matching directions and related objects in an invented harmless scene",
+              "nb": "Sammenlign samsvarende retninger og beslektede gjenstander i en oppdiktet ufarlig scene",
+              "fr": "Comparer directions concordantes et objets liés dans une scène inventée anodine",
+              "pt": "Comparar direções concordantes e objetos relacionados numa cena inventada inofensiva"
+            }
+          },
+          {
+            "id": "actual",
+            "label": {
+              "en": "Assert that screen geography proves the two places are physically connected",
+              "nb": "Hevd at filmens geografi beviser at stedene fysisk henger sammen",
+              "fr": "Affirmer que la géographie filmique prouve la liaison physique des lieux",
+              "pt": "Afirmar que a geografia fílmica prova a ligação física dos lugares"
+            }
+          },
+          {
+            "id": "law",
+            "label": {
+              "en": "Assume every viewer makes exactly the same spatial inference",
+              "nb": "Anta at alle seere trekker nøyaktig samme romlige slutning",
+              "fr": "Supposer que tous les spectateurs font la même inférence spatiale",
+              "pt": "Supor que todos os espectadores fazem a mesma inferência espacial"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "connect",
+        "explanation": {
+          "en": "Harvard situates the film in Kuleshov's workshop and BFI discusses its editing and comic traditions. Compare original drawings to explore constructed screen geography; viewer inference is a question for testing, not an automatic psychological law.",
+          "nb": "Harvard plasserer filmen i Kuleshovs verksted, og BFI omtaler klipping og komiske tradisjoner. Sammenlign egne tegninger for å utforske konstruert filmgeografi; publikums slutninger må undersøkes, ikke behandles som en automatisk psykologisk lov.",
+          "fr": "Harvard situe le film dans l'atelier de Koulechov et le BFI aborde montage et traditions comiques. Comparez des dessins originaux pour étudier la géographie construite ; l'inférence du public reste une question à tester.",
+          "pt": "Harvard situa o filme na oficina de Kuleshov e o BFI aborda montagem e tradições cómicas. Compare desenhos originais para estudar geografia construída; a inferência do público é questão a testar."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "west-genre",
+        "area": "research",
+        "prompt": {
+          "en": "How should transnational genre borrowing and political satire be interpreted?",
+          "nb": "Hvordan bør transnasjonale sjangerlån og politisk satire tolkes?",
+          "fr": "Comment interpréter les emprunts de genres transnationaux et la satire politique ?",
+          "pt": "Como interpretar empréstimos de géneros transnacionais e sátira política?"
+        },
+        "options": [
+          {
+            "id": "copy",
+            "label": {
+              "en": "Treat parody as an exact copy of all American film conventions",
+              "nb": "Behandle parodi som en eksakt kopi av alle amerikanske filmkonvensjoner",
+              "fr": "Traiter la parodie comme copie exacte de toutes les conventions américaines",
+              "pt": "Tratar paródia como cópia exata de todas as convenções americanas"
+            }
+          },
+          {
+            "id": "compare",
+            "label": {
+              "en": "Compare documented genre influences with the film's transformed satirical context",
+              "nb": "Sammenlign dokumenterte sjangerpåvirkninger med filmens omformede satiriske kontekst",
+              "fr": "Comparer influences de genre attestées et contexte satirique transformé",
+              "pt": "Comparar influências de género documentadas e contexto satírico transformado"
+            }
+          },
+          {
+            "id": "literal",
+            "label": {
+              "en": "Treat comic stereotypes as factual descriptions of national populations",
+              "nb": "Behandle komiske stereotypier som faktabeskrivelser av nasjonale befolkninger",
+              "fr": "Traiter les stéréotypes comiques comme descriptions factuelles de populations nationales",
+              "pt": "Tratar estereótipos cómicos como descrições factuais de populações nacionais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "compare",
+        "explanation": {
+          "en": "BFI discusses slapstick, parody of American filmmakers and politically complicated reception. Compare the formal borrowing and transformed context without treating comic stereotypes or satire as neutral national descriptions.",
+          "nb": "BFI omtaler slapstick, parodi på amerikanske filmskapere og politisk sammensatt mottakelse. Sammenlign formelle lån og omformet kontekst uten å behandle komiske stereotypier eller satire som nøytrale nasjonale beskrivelser.",
+          "fr": "Le BFI évoque burlesque, parodie de cinéastes américains et réception politiquement complexe. Comparez emprunts formels et contexte transformé sans traiter les stéréotypes comme descriptions nationales neutres.",
+          "pt": "O BFI aborda comédia física, paródia de cineastas americanos e receção politicamente complexa. Compare empréstimos formais e contexto transformado sem tratar estereótipos como descrições nacionais neutras."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "west-workshop",
+        "area": "research",
+        "prompt": {
+          "en": "How should workshop pedagogy, performers and exhibition history be credited?",
+          "nb": "Hvordan bør verkstedpedagogikk, skuespillere og visningshistorie krediteres?",
+          "fr": "Comment documenter pédagogie d'atelier, interprètes et histoire de projection ?",
+          "pt": "Como documentar pedagogia de oficina, intérpretes e história de exibição?"
+        },
+        "options": [
+          {
+            "id": "solo",
+            "label": {
+              "en": "Attribute all workshop contributions to one filmmaker without evidence",
+              "nb": "Tilskriv alle verkstedsbidrag én filmskaper uten belegg",
+              "fr": "Attribuer tous les apports de l'atelier à un cinéaste sans preuve",
+              "pt": "Atribuir todos os contributos da oficina a um cineasta sem evidência"
+            }
+          },
+          {
+            "id": "sync",
+            "label": {
+              "en": "Describe later live piano accompaniment as synchronized original dialogue",
+              "nb": "Beskriv senere levende pianoakkompagnement som synkron originaldialog",
+              "fr": "Décrire le piano joué en direct comme dialogue original synchrone",
+              "pt": "Descrever piano ao vivo como diálogo original sincronizado"
+            }
+          },
+          {
+            "id": "roles",
+            "label": {
+              "en": "Distinguish workshop collaboration, performance credits and particular screening conditions",
+              "nb": "Skill verkstedsamarbeid, skuespillerkrediteringer og konkrete visningsforhold",
+              "fr": "Distinguer collaboration d'atelier, crédits d'interprétation et conditions de projection",
+              "pt": "Distinguir colaboração de oficina, créditos de interpretação e condições de exibição"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "roles",
+        "explanation": {
+          "en": "Harvard records Kuleshov's workshop, performers and a silent 35mm screening with piano. BFI discusses Pudovkin's performance and the film's comic forms. Record the collaborative and presentation histories separately.",
+          "nb": "Harvard registrerer Kuleshovs verksted, skuespillere og en 35mm-stumfilmvisning med piano. BFI omtaler Pudovkins spill og filmens komiske former. Registrer samarbeids- og visningshistoriene separat.",
+          "fr": "Harvard documente l'atelier de Koulechov, les interprètes et une projection muette 35 mm avec piano. Le BFI aborde le jeu de Poudovkine et les formes comiques. Consignez séparément collaboration et projection.",
+          "pt": "Harvard documenta a oficina de Kuleshov, intérpretes e uma exibição muda em 35 mm com piano. O BFI aborda a interpretação de Pudovkin e formas cómicas. Registe separadamente colaboração e exibição."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_a_page_of_madness_1926",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore Japanese modernist collaboration, subjective editing and benshi exhibition without stigmatizing mental illness.",
+      "nb": "Utforsk japansk modernistisk samarbeid, subjektiv klipping og benshi-visning uten å stigmatisere psykisk sykdom.",
+      "fr": "Explorez la collaboration moderniste japonaise, le montage subjectif et la projection avec benshi sans stigmatiser les troubles psychiques.",
+      "pt": "Explore colaboração modernista japonesa, montagem subjetiva e exibição com benshi sem estigmatizar sofrimento psíquico."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Kurutta ippeiji / A Page of Madness – NFAJ collection record",
+        "publisher": "National Film Archive of Japan",
+        "url": "https://nfad.nfaj.go.jp/det.php?data_id=66794"
+      },
+      {
+        "id": "s1",
+        "title": "Nihon Eiga: The History of Japanese Film",
+        "publisher": "National Film Archive of Japan",
+        "url": "https://www.nfaj.go.jp/english/exhibition/historyofjapanesefilm/"
+      },
+      {
+        "id": "s2",
+        "title": "A Page of Madness: Cinema and Modernity in 1920s Japan",
+        "publisher": "University of Michigan Press",
+        "url": "https://press.umich.edu/Books/A/A-Page-of-Madness2"
+      },
+      {
+        "id": "s3",
+        "title": "A Page of Madness (1926)",
+        "publisher": "Routledge Encyclopedia of Modernism",
+        "url": "https://www.rem.routledge.com/articles/a-page-of-madness-1926"
+      },
+      {
+        "id": "s4",
+        "title": "10 great films of 1926",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-films-1926"
+      },
+      {
+        "id": "s5",
+        "title": "A Page of Madness – BFI Player",
+        "publisher": "British Film Institute",
+        "url": "https://player.bfi.org.uk/subscription/film/watch-a-page-of-madness-1926-online"
+      }
+    ],
+    "questions": [
+      {
+        "id": "page-subjectivity",
+        "area": "camera",
+        "prompt": {
+          "en": "How can an original sequence express uncertainty through image rhythm without diagnosing a character?",
+          "nb": "Hvordan kan en egen sekvens uttrykke usikkerhet gjennom billedrytme uten å diagnostisere en figur?",
+          "fr": "Comment une séquence originale peut-elle exprimer l'incertitude par le rythme sans diagnostiquer un personnage ?",
+          "pt": "Como pode uma sequência original expressar incerteza pelo ritmo sem diagnosticar uma personagem?"
+        },
+        "options": [
+          {
+            "id": "rhythm",
+            "label": {
+              "en": "Compare overlapping drawings and different durations of an ordinary imagined moment",
+              "nb": "Sammenlign overlappende tegninger og ulike varigheter av et vanlig forestilt øyeblikk",
+              "fr": "Comparer dessins superposés et durées différentes d'un moment ordinaire imaginé",
+              "pt": "Comparar desenhos sobrepostos e durações diferentes de um momento comum imaginado"
+            }
+          },
+          {
+            "id": "diagnose",
+            "label": {
+              "en": "Treat a visual style as a reliable clinical diagnostic tool",
+              "nb": "Behandle en visuell stil som et pålitelig klinisk diagnoseverktøy",
+              "fr": "Traiter un style visuel comme outil de diagnostic clinique fiable",
+              "pt": "Tratar um estilo visual como instrumento de diagnóstico clínico fiável"
+            }
+          },
+          {
+            "id": "stigma",
+            "label": {
+              "en": "Use mental illness as a score for frightening characters",
+              "nb": "Bruk psykisk sykdom som poengsum for skremmende figurer",
+              "fr": "Utiliser les troubles psychiques comme score de personnages effrayants",
+              "pt": "Usar doença mental como pontuação de personagens assustadoras"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "rhythm",
+        "explanation": {
+          "en": "Gerow and BFI describe rapid cutting, optical transformations and subjective form. Compare original nonviolent drawings to explore perception and uncertainty, without treating film style as clinical evidence or stigmatizing people with mental illness.",
+          "nb": "Gerow og BFI beskriver rask klipping, optiske forvandlinger og subjektiv form. Sammenlign egne ikke-voldelige tegninger for å utforske persepsjon og usikkerhet uten å behandle filmstil som klinisk belegg eller stigmatisere mennesker med psykisk sykdom.",
+          "fr": "Gerow et le BFI décrivent montage rapide, transformations optiques et forme subjective. Comparez des dessins originaux non violents pour étudier perception et incertitude sans diagnostic ni stigmatisation.",
+          "pt": "Gerow e o BFI descrevem montagem rápida, transformações óticas e forma subjetiva. Compare desenhos originais não violentos para estudar perceção e incerteza sem diagnóstico ou estigmatização."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "page-collaboration",
+        "area": "research",
+        "prompt": {
+          "en": "How should the Japanese modernist production and writing collaboration be recorded?",
+          "nb": "Hvordan bør den japanske modernistiske produksjonen og manussamarbeidet registreres?",
+          "fr": "Comment documenter la production moderniste japonaise et la collaboration d'écriture ?",
+          "pt": "Como registar a produção modernista japonesa e a colaboração na escrita?"
+        },
+        "options": [
+          {
+            "id": "solo",
+            "label": {
+              "en": "Credit every writing and technical contribution to Kinugasa alone",
+              "nb": "Tilskriv alle manus- og tekniske bidrag Kinugasa alene",
+              "fr": "Attribuer tous les apports d'écriture et techniques au seul Kinugasa",
+              "pt": "Atribuir todos os contributos de escrita e técnicos apenas a Kinugasa"
+            }
+          },
+          {
+            "id": "roles",
+            "label": {
+              "en": "Distinguish the literary circle, writing, camera, lighting and design credits",
+              "nb": "Skill den litterære kretsen, manus, foto, lys og scenografikrediteringer",
+              "fr": "Distinguer cercle littéraire, écriture, image, lumière et décors",
+              "pt": "Distinguir círculo literário, escrita, fotografia, luz e cenografia"
+            }
+          },
+          {
+            "id": "erase",
+            "label": {
+              "en": "Remove the Japanese institutions from the modernist production history",
+              "nb": "Fjern japanske institusjoner fra den modernistiske produksjonshistorien",
+              "fr": "Effacer les institutions japonaises de l'histoire de production moderniste",
+              "pt": "Apagar instituições japonesas da história da produção modernista"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "roles",
+        "explanation": {
+          "en": "NFAJ documents the production entities and detailed writing and craft credits; Gerow situates the independent production in its Japanese literary and exhibition context. Preserve the shared contributions and institutional setting.",
+          "nb": "NFAJ dokumenterer produksjonsenhetene og detaljerte manus- og fagkrediteringer; Gerow plasserer den uavhengige produksjonen i japansk litterær kontekst og visningskultur. Bevar felles bidrag og institusjonell sammenheng.",
+          "fr": "Le NFAJ documente les organismes de production et crédits détaillés ; Gerow situe la production indépendante dans son contexte littéraire et de projection japonais. Préservez contributions et institutions.",
+          "pt": "O NFAJ documenta entidades de produção e créditos detalhados; Gerow situa a produção independente no contexto literário e de exibição japonês. Preserve contribuições e instituições."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "page-benshi",
+        "area": "sound",
+        "prompt": {
+          "en": "How should benshi narration and the rediscovered version be distinguished from original production sound?",
+          "nb": "Hvordan bør benshi-fortelling og den gjenoppdagede versjonen skilles fra opprinnelig produksjonslyd?",
+          "fr": "Comment distinguer narration benshi et version redécouverte du son original de production ?",
+          "pt": "Como distinguir narração benshi e versão redescoberta do som original de produção?"
+        },
+        "options": [
+          {
+            "id": "sync",
+            "label": {
+              "en": "Treat live benshi narration as recorded synchronized film dialogue",
+              "nb": "Behandle levende benshi-fortelling som innspilt synkron filmdialog",
+              "fr": "Traiter la narration benshi en direct comme dialogue synchrone enregistré",
+              "pt": "Tratar narração benshi ao vivo como diálogo sincronizado gravado"
+            }
+          },
+          {
+            "id": "identical",
+            "label": {
+              "en": "Assume the surviving rerelease version is identical to the original",
+              "nb": "Anta at den bevarte nyutgivelsen er identisk med originalen",
+              "fr": "Supposer la réédition conservée identique à l'original",
+              "pt": "Supor que a reedição preservada é idêntica ao original"
+            }
+          },
+          {
+            "id": "version",
+            "label": {
+              "en": "Document the silent film, original exhibition practice and later surviving version separately",
+              "nb": "Dokumenter stumfilmen, opprinnelig visningspraksis og senere bevart versjon separat",
+              "fr": "Documenter séparément film muet, projection initiale et version ultérieure conservée",
+              "pt": "Documentar separadamente filme mudo, prática de exibição original e versão posterior preservada"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "version",
+        "explanation": {
+          "en": "Gerow and BFI describe benshi narration and the absence of intertitles, while Gerow distinguishes the rediscovered version from the original release. Identify the exhibition context and edition without confusing live narration or modern music with synchronized production sound.",
+          "nb": "Gerow og BFI beskriver benshi-fortelling og fravær av mellomtekster, mens Gerow skiller den gjenoppdagede versjonen fra originalutgivelsen. Identifiser visningskontekst og utgave uten å forveksle levende fortelling eller moderne musikk med synkron produksjonslyd.",
+          "fr": "Gerow et le BFI décrivent la narration benshi et l'absence d'intertitres ; Gerow distingue la version redécouverte de la sortie initiale. Identifiez contexte et édition sans confondre narration en direct, musique moderne et son synchrone.",
+          "pt": "Gerow e o BFI descrevem narração benshi e ausência de intertítulos; Gerow distingue a versão redescoberta da estreia. Identifique contexto e edição sem confundir narração ao vivo, música moderna e som sincronizado."
+        },
+        "sourceIds": [
+          "s2",
+          "s3",
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_laborers_love_1922",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore early Shanghai studio comedy, bilingual intertitles and the limits of surviving film evidence.",
+      "nb": "Utforsk tidlig studiokomedie i Shanghai, tospråklige mellomtekster og grensene for bevart filmbelegg.",
+      "fr": "Explorez la comédie de studio à Shanghai, les intertitres bilingues et les limites des films conservés.",
+      "pt": "Explore comédia de estúdio em Xangai, intertítulos bilingues e limites da evidência cinematográfica preservada."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Labor's Love",
+        "publisher": "Hong Kong Film Archive",
+        "url": "https://www.filmarchive.gov.hk/en/web/hkfa/2009/early-chinese-films/pe-event-2009-early-chinese-films-fs-film01.html"
+      },
+      {
+        "id": "s1",
+        "title": "Labourer's Love",
+        "publisher": "China Film Archive",
+        "url": "https://www.cfa.org.cn/cfaen/gz/dymlcx/dy/2023053114391333102/index.html"
+      },
+      {
+        "id": "s2",
+        "title": "Mingxing Film Company",
+        "publisher": "China Film Archive",
+        "url": "https://www.cfa.org.cn/eportal/ui?articleKey=faf3782c7d5447cb942f67d2220a74fb&columnId=aee8c2276575443880b0930ac8406c81&pageId=2a6abc370b534133aa7cc904b3be9db1"
+      },
+      {
+        "id": "s3",
+        "title": "Laborer's Love (1922)",
+        "publisher": "Chinese Film Classics",
+        "url": "https://chinesefilmclassics.org/laborers-love-1922/"
+      },
+      {
+        "id": "s4",
+        "title": "Module 1: Laborer's Love (1922)",
+        "publisher": "Chinese Film Classics",
+        "url": "https://chinesefilmclassics.org/course/module-1-laborers-love-1922/"
+      },
+      {
+        "id": "s5",
+        "title": "New 4K restoration of Laborer's Love premieres at Il Cinema Ritrovato",
+        "publisher": "China Film Archive",
+        "url": "https://www.cfa.org.cn/cfa/fy/dyjz26/gnjz/2025022409032510237/index.html"
+      }
+    ],
+    "questions": [
+      {
+        "id": "labor-comedy",
+        "area": "camera",
+        "prompt": {
+          "en": "How could an original harmless paper storyboard explore the timing of a visual joke?",
+          "nb": "Hvordan kan et eget ufarlig papirstoryboard utforske timingen i en visuell vits?",
+          "fr": "Comment un storyboard original sans danger peut-il explorer le rythme d'un gag visuel ?",
+          "pt": "Como pode um storyboard original seguro explorar o ritmo de uma piada visual?"
+        },
+        "options": [
+          {
+            "id": "timing",
+            "label": {
+              "en": "Compare a setup, unexpected object change and reaction using drawn props",
+              "nb": "Sammenlign etablering, uventet gjenstandsendring og reaksjon med tegnede rekvisitter",
+              "fr": "Comparer préparation, changement inattendu d'objet et réaction avec accessoires dessinés",
+              "pt": "Comparar preparação, mudança inesperada de objeto e reação com adereços desenhados"
+            }
+          },
+          {
+            "id": "risk",
+            "label": {
+              "en": "Reenact a potentially dangerous physical gag with real people",
+              "nb": "Gjenskap en potensielt farlig fysisk vits med virkelige mennesker",
+              "fr": "Rejouer un gag physique potentiellement dangereux avec de vraies personnes",
+              "pt": "Recriar uma piada física potencialmente perigosa com pessoas reais"
+            }
+          },
+          {
+            "id": "copy",
+            "label": {
+              "en": "Claim the new drawings reproduce exact historical trick equipment",
+              "nb": "Hevd at de nye tegningene gjengir eksakt historisk trickutstyr",
+              "fr": "Prétendre que les dessins reproduisent exactement le matériel historique de trucage",
+              "pt": "Afirmar que os desenhos reproduzem exatamente o equipamento histórico de trucagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "timing",
+        "explanation": {
+          "en": "Chinese Film Classics discusses visual puns, artisanal objects and trick cinematography. Use paper props and an original benign joke to compare timing and visual expectation, without recreating risky stunts or asserting undocumented equipment details.",
+          "nb": "Chinese Film Classics omtaler visuelle ordspill, håndverksgjenstander og trickfilm. Bruk papirrekvisitter og en egen ufarlig vits til å sammenligne timing og visuell forventning uten risikofylte stunt eller udokumenterte utstyrspåstander.",
+          "fr": "Chinese Film Classics aborde jeux visuels, objets artisanaux et trucages. Utilisez des accessoires en papier et un gag original sans danger pour comparer rythme et attente, sans cascade risquée ni matériel non attesté.",
+          "pt": "Chinese Film Classics aborda jogos visuais, objetos artesanais e trucagens. Use adereços de papel e uma piada original segura para comparar ritmo e expectativa, sem acrobacias arriscadas nem equipamento não documentado."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
+        ]
+      },
+      {
+        "id": "labor-bilingual",
+        "area": "research",
+        "prompt": {
+          "en": "How should bilingual intertitles be handled in a new subtitling exercise?",
+          "nb": "Hvordan bør tospråklige mellomtekster håndteres i en ny tekstingsøvelse?",
+          "fr": "Comment traiter les intertitres bilingues dans un nouvel exercice de sous-titrage ?",
+          "pt": "Como tratar intertítulos bilingues num novo exercício de legendagem?"
+        },
+        "options": [
+          {
+            "id": "erase",
+            "label": {
+              "en": "Replace both historical language tracks with a single unmarked modern translation",
+              "nb": "Erstatt begge historiske språkspor med én umerket moderne oversettelse",
+              "fr": "Remplacer les deux pistes linguistiques historiques par une traduction moderne non signalée",
+              "pt": "Substituir as duas versões linguísticas históricas por uma tradução moderna não identificada"
+            }
+          },
+          {
+            "id": "compare",
+            "label": {
+              "en": "Preserve the two documented language tracks and label interpretive differences",
+              "nb": "Bevar de to dokumenterte språksporene og merk tolkningsforskjeller",
+              "fr": "Préserver les deux versions linguistiques documentées et signaler les différences interprétatives",
+              "pt": "Preservar as duas versões linguísticas documentadas e indicar diferenças interpretativas"
+            }
+          },
+          {
+            "id": "sync",
+            "label": {
+              "en": "Treat printed intertitles as proof of recorded bilingual dialogue",
+              "nb": "Behandle trykte mellomtekster som bevis på innspilt tospråklig dialog",
+              "fr": "Traiter les intertitres imprimés comme preuve de dialogue bilingue enregistré",
+              "pt": "Tratar intertítulos impressos como prova de diálogo bilingue gravado"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "compare",
+        "explanation": {
+          "en": "Hong Kong Film Archive and Chinese Film Classics document Chinese and English intertitles, including meaningful differences. Keep historical text and new translations identifiable, and distinguish written titles from recorded dialogue.",
+          "nb": "Hong Kong Film Archive og Chinese Film Classics dokumenterer kinesiske og engelske mellomtekster, inkludert meningsfulle forskjeller. Hold historisk tekst og nye oversettelser identifiserbare, og skill skriftlige tekster fra innspilt dialog.",
+          "fr": "Hong Kong Film Archive et Chinese Film Classics documentent les intertitres chinois et anglais, dont des différences significatives. Identifiez texte historique et traductions nouvelles et distinguez titres écrits et dialogue enregistré.",
+          "pt": "Hong Kong Film Archive e Chinese Film Classics documentam intertítulos chineses e ingleses, incluindo diferenças significativas. Identifique texto histórico e traduções novas e distinga títulos escritos de diálogo gravado."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "labor-survival",
+        "area": "research",
+        "prompt": {
+          "en": "How should early studio history and the survival of this film be described?",
+          "nb": "Hvordan bør tidlig studiohistorie og bevaringen av denne filmen beskrives?",
+          "fr": "Comment décrire l'histoire du premier studio et la survie de ce film ?",
+          "pt": "Como descrever a história inicial do estúdio e a sobrevivência deste filme?"
+        },
+        "options": [
+          {
+            "id": "first",
+            "label": {
+              "en": "Declare the earliest surviving complete film the first Chinese film ever made",
+              "nb": "Erklær den tidligste bevarte komplette filmen som den første kinesiske filmen noensinne",
+              "fr": "Déclarer le plus ancien film complet conservé premier film chinois jamais réalisé",
+              "pt": "Declarar o filme completo preservado mais antigo como primeiro filme chinês de sempre"
+            }
+          },
+          {
+            "id": "master",
+            "label": {
+              "en": "Treat the modern 4K restoration as an untouched original presentation",
+              "nb": "Behandle den moderne 4K-restaureringen som en urørt originalvisning",
+              "fr": "Traiter la restauration 4K moderne comme projection originale intacte",
+              "pt": "Tratar o restauro moderno em 4K como exibição original intacta"
+            }
+          },
+          {
+            "id": "context",
+            "label": {
+              "en": "Distinguish Mingxing's production history, survival evidence and modern restoration",
+              "nb": "Skill Mingxings produksjonshistorie, bevaringsbelegg og moderne restaurering",
+              "fr": "Distinguer histoire de Mingxing, preuves de conservation et restauration moderne",
+              "pt": "Distinguir história da Mingxing, evidência de preservação e restauro moderno"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "context",
+        "explanation": {
+          "en": "China Film Archive documents Mingxing's Shanghai founding and a modern 4K restoration; Chinese Film Classics describes the earliest known surviving complete Chinese-made film. Survival is not proof of the beginning of filmmaking; document restoration separately.",
+          "nb": "China Film Archive dokumenterer Mingxings etablering i Shanghai og en moderne 4K-restaurering; Chinese Film Classics omtaler den tidligste kjente bevarte komplette kinesiskproduserte filmen. Bevaring beviser ikke filmproduksjonens begynnelse; dokumenter restaurering separat.",
+          "fr": "China Film Archive documente la fondation de Mingxing à Shanghai et une restauration 4K ; Chinese Film Classics décrit le plus ancien film chinois complet conservé connu. La survie ne prouve pas le début du cinéma ; documentez la restauration séparément.",
+          "pt": "China Film Archive documenta a fundação da Mingxing em Xangai e restauro 4K; Chinese Film Classics descreve o filme chinês completo preservado mais antigo conhecido. Sobrevivência não prova o início do cinema; documente o restauro separadamente."
+        },
+        "sourceIds": [
+          "s2",
+          "s3",
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_a_throw_of_dice_1929",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore Indian landscape, international film production and the adaptation of an epic episode.",
+      "nb": "Utforsk indisk landskap, internasjonal filmproduksjon og adaptasjon av en episk episode.",
+      "fr": "Explorez le paysage indien, la coproduction et l'adaptation d'un épisode épique.",
+      "pt": "Explore a paisagem indiana, a coprodução e a adaptação de um episódio épico."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Schicksalswürfel (1929)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/9331d899-b4d1-5f45-9aa0-4a5736b697b4/schicksalswurfel"
+      },
+      {
+        "id": "s1",
+        "title": "Schicksalswürfel",
+        "publisher": "filmportal.de",
+        "url": "https://www.filmportal.de/film/schicksalswuerfel_6e66091243ed403ebca68a3491428bf9"
+      },
+      {
+        "id": "s2",
+        "title": "Faith and creation: Anoushka Shankar on her score for Shiraz",
+        "publisher": "BFI Sight and Sound",
+        "url": "https://www.bfi.org.uk/sight-and-sound/interviews/faith-creation-anoushka-shankar-her-score-shiraz"
+      },
+      {
+        "id": "s3",
+        "title": "A Throw of Dice",
+        "publisher": "San Francisco Silent Film Festival",
+        "url": "https://silentfilm.org/a-throw-of-dice/"
+      },
+      {
+        "id": "s4",
+        "title": "Bombay Talkies",
+        "publisher": "Australian Centre for the Moving Image",
+        "url": "https://artsandculture.google.com/story/bombay-talkies-australian-centre-for-the-moving-image/uAVR3NfKZE3JKw?hl=en"
+      }
+    ],
+    "questions": [
+      {
+        "id": "dice-landscape",
+        "area": "camera",
+        "prompt": {
+          "en": "How can landscape support a fictional dramatic scene?",
+          "nb": "Hvordan kan landskapet støtte en fiktiv dramatisk scene?",
+          "fr": "Comment le paysage peut-il servir une scène dramatique fictive ?",
+          "pt": "Como pode a paisagem apoiar uma cena dramática fictícia?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Compare scale and character placement in original drawings",
+              "nb": "Sammenlign skala og figurplassering i egne tegninger",
+              "fr": "Comparer échelle et placement des personnages dans des dessins originaux",
+              "pt": "Comparar escala e posição das personagens em desenhos originais"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Treat every location as an interchangeable background",
+              "nb": "Behandle alle steder som utskiftbare bakgrunner",
+              "fr": "Traiter tous les lieux comme des fonds interchangeables",
+              "pt": "Tratar todos os locais como fundos intercambiáveis"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Label an invented drawing as historical location evidence",
+              "nb": "Merk en oppdiktet tegning som historisk stedsbelegg",
+              "fr": "Présenter un dessin inventé comme preuve historique du lieu",
+              "pt": "Apresentar desenho inventado como evidência histórica do local"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-0",
+        "explanation": {
+          "en": "Filmportal documents Indian location shooting and credits Schünemann and Nath. Compare original landscape compositions without claiming they depict authenticated historical locations.",
+          "nb": "Filmportal dokumenterer opptak i India og krediterer Schünemann og Nath. Sammenlign egne landskapskomposisjoner uten å hevde at de viser autentiserte historiske opptakssteder.",
+          "fr": "Filmportal documente le tournage en Inde et crédite Schünemann et Nath. Comparez des compositions originales sans les présenter comme des lieux historiques authentifiés.",
+          "pt": "Filmportal documenta filmagens na Índia e credita Schünemann e Nath. Compare composições originais sem as apresentar como locais históricos autenticados."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "dice-coproduction",
+        "area": "research",
+        "prompt": {
+          "en": "How should the international production be credited?",
+          "nb": "Hvordan bør den internasjonale produksjonen krediteres?",
+          "fr": "Comment attribuer les crédits de la production internationale ?",
+          "pt": "Como creditar a produção internacional?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Assign the entire production to one national industry",
+              "nb": "Tilskriv hele produksjonen én nasjonal filmindustri",
+              "fr": "Attribuer toute la production à une industrie nationale",
+              "pt": "Atribuir toda a produção a uma indústria nacional"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Distinguish Indian producer and cast, companies and technical roles",
+              "nb": "Skill indisk produsent og skuespillere, selskaper og tekniske roller",
+              "fr": "Distinguer producteur et acteurs indiens, sociétés et métiers",
+              "pt": "Distinguir produtor e elenco indianos, empresas e funções técnicas"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Erase the local production context from the account",
+              "nb": "Fjern den lokale produksjonskonteksten fra beskrivelsen",
+              "fr": "Effacer le contexte local de production du récit",
+              "pt": "Apagar o contexto local de produção do relato"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-1",
+        "explanation": {
+          "en": "BFI and filmportal identify Rai, Osten and international companies. Preserve Indian production agency and the separate creative roles rather than assigning national purity to the film.",
+          "nb": "BFI og filmportal identifiserer Rai, Osten og internasjonale selskaper. Bevar indisk produksjonsinnsats og de ulike kreative rollene fremfor å tilskrive filmen én nasjonal identitet.",
+          "fr": "Le BFI et filmportal identifient Rai, Osten et les sociétés internationales. Préservez l'initiative indienne et les rôles distincts plutôt que d'attribuer une identité nationale unique.",
+          "pt": "O BFI e filmportal identificam Rai, Osten e empresas internacionais. Preserve a agência indiana e os papéis distintos em vez de atribuir uma identidade nacional única."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s4"
+        ]
+      },
+      {
+        "id": "dice-score",
+        "area": "sound",
+        "prompt": {
+          "en": "How should a modern score be distinguished from original production?",
+          "nb": "Hvordan bør moderne filmmusikk skilles fra originalproduksjonen?",
+          "fr": "Comment distinguer une musique moderne de la production originale ?",
+          "pt": "Como distinguir música moderna da produção original?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Describe later music as original synchronized dialogue",
+              "nb": "Beskriv senere musikk som opprinnelig synkron dialog",
+              "fr": "Décrire la musique ultérieure comme dialogue synchrone original",
+              "pt": "Descrever música posterior como diálogo sincronizado original"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Assume every screening has identical accompaniment",
+              "nb": "Anta at alle visninger har identisk akkompagnement",
+              "fr": "Supposer que toutes les projections ont le même accompagnement",
+              "pt": "Supor que todas as exibições têm acompanhamento idêntico"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Document silent format and later score separately",
+              "nb": "Dokumenter stumfilmformat og senere musikk separat",
+              "fr": "Documenter séparément format muet et musique ultérieure",
+              "pt": "Documentar separadamente formato mudo e música posterior"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-2",
+        "explanation": {
+          "en": "Filmportal records silent format and BFI distinguishes the later Sawhney commission. Identify the screened edition and distinguish accompaniment from synchronized production sound.",
+          "nb": "Filmportal registrerer stumfilmformat og BFI skiller ut Sawhneys senere musikkbestilling. Identifiser utgaven som vises, og skill akkompagnement fra synkron produksjonslyd.",
+          "fr": "Filmportal indique le format muet et le BFI distingue la commande ultérieure à Sawhney. Identifiez l'édition projetée et distinguez accompagnement et son synchrone.",
+          "pt": "Filmportal regista formato mudo e o BFI distingue a encomenda posterior a Sawhney. Identifique a edição exibida e distinga acompanhamento de som sincronizado."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_growth_of_the_soil_1921",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore Norwegian literary adaptation, landscape and restoration of silent cinema.",
+      "nb": "Utforsk norsk litterær adaptasjon, landskap og restaurering av stumfilm.",
+      "fr": "Explorez adaptation littéraire norvégienne, paysage et restauration du cinéma muet.",
+      "pt": "Explore adaptação literária norueguesa, paisagem e restauro de cinema mudo."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Markens grøde (1921) – Norsk filmografi",
+        "publisher": "Nasjonalbiblioteket",
+        "url": "https://www.nb.no/filmografi/show?id=793756"
+      },
+      {
+        "id": "s1",
+        "title": "Markens Grøde – Originalmusikken til filmen",
+        "publisher": "Nasjonalbiblioteket",
+        "url": "https://www.nb.no/sheet-music/product/markens-grode-originalmusikken-til-filmen-less1921greater/"
+      },
+      {
+        "id": "s2",
+        "title": "Markens Grøde – Filmdatabasen",
+        "publisher": "Danish Film Institute",
+        "url": "https://www.dfi.dk/en/viden-om-film/filmdatabasen/film/markens-grode"
+      },
+      {
+        "id": "s3",
+        "title": "Markens Grøde – Cinemateket",
+        "publisher": "Danish Film Institute",
+        "url": "https://www.dfi.dk/cinemateket/biograf/alle-film/film/markens-grode"
+      },
+      {
+        "id": "s4",
+        "title": "Storstreik, flytragedie og fotballfeber – slik var nyhetsåret 1921",
+        "publisher": "Nasjonalbiblioteket",
+        "url": "https://www.nb.no/historier-fra-samlingen/nyttarskavalkade-1921/"
+      },
+      {
+        "id": "s5",
+        "title": "Markens grøde (1921)",
+        "publisher": "Filmweb",
+        "url": "https://www.filmweb.no/film/EDI20260263"
+      }
+    ],
+    "questions": [
+      {
+        "id": "soil-landscape",
+        "area": "camera",
+        "prompt": {
+          "en": "How could a rural landscape contribute to a new fictional story?",
+          "nb": "Hvordan kan et bygdelandskap bidra til en ny fiktiv fortelling?",
+          "fr": "Comment un paysage rural peut-il contribuer à un nouveau récit fictif ?",
+          "pt": "Como pode uma paisagem rural contribuir para uma nova narrativa fictícia?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Compare seasonal light and human scale in drawn scenes",
+              "nb": "Sammenlign årstidslys og menneskelig skala i tegnede scener",
+              "fr": "Comparer lumière saisonnière et échelle humaine dans des dessins",
+              "pt": "Comparar luz sazonal e escala humana em desenhos"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Ignore every relationship between landscape and narrative",
+              "nb": "Ignorer alle forbindelser mellom landskap og fortelling",
+              "fr": "Ignorer tout rapport entre paysage et récit",
+              "pt": "Ignorar relações entre paisagem e narrativa"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Use fictional scenery to stereotype real rural communities",
+              "nb": "Bruk fiktive omgivelser til å stereotypisere virkelige bygdesamfunn",
+              "fr": "Utiliser un décor fictif pour stéréotyper les communautés rurales",
+              "pt": "Usar cenário fictício para estereotipar comunidades rurais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-0",
+        "explanation": {
+          "en": "DFI documents Nordland location shooting, and Nasjonalbiblioteket records the production. Explore a new drawn landscape rather than claiming to reconstruct exact shots or stereotyping rural communities.",
+          "nb": "DFI dokumenterer opptak i Nordland, og Nasjonalbiblioteket registrerer produksjonen. Utforsk et nytt tegnet landskap fremfor å hevde eksakt rekonstruksjon eller stereotypisere bygdesamfunn.",
+          "fr": "Le DFI documente le tournage au Nordland et la Bibliothèque nationale la production. Explorez un nouveau paysage dessiné sans prétendre restituer des plans exacts ni stéréotyper les communautés.",
+          "pt": "O DFI documenta filmagens em Nordland e a Biblioteca Nacional a produção. Explore nova paisagem desenhada sem alegar reconstrução exata nem estereotipar comunidades."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "soil-adaptation",
+        "area": "research",
+        "prompt": {
+          "en": "How should adaptation and later political reception be distinguished?",
+          "nb": "Hvordan bør adaptasjon og senere politisk mottakelse skilles?",
+          "fr": "Comment distinguer adaptation et réception politique ultérieure ?",
+          "pt": "Como distinguir adaptação e receção política posterior?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Attribute every production decision to the novelist",
+              "nb": "Tilskriv alle produksjonsvalg romanforfatteren",
+              "fr": "Attribuer toutes les décisions de production au romancier",
+              "pt": "Atribuir todas as decisões de produção ao romancista"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Document the novel, film adaptation and historical reception separately",
+              "nb": "Dokumenter romanen, filmadaptasjonen og historisk mottakelse separat",
+              "fr": "Documenter séparément roman, adaptation et réception historique",
+              "pt": "Documentar separadamente romance, adaptação e receção histórica"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Treat later reception as proof of all 1921 intentions",
+              "nb": "Behandle senere mottakelse som bevis på alle intensjoner i 1921",
+              "fr": "Traiter la réception ultérieure comme preuve de toutes les intentions de 1921",
+              "pt": "Tratar receção posterior como prova de todas as intenções de 1921"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-1",
+        "explanation": {
+          "en": "The Norwegian filmography and DFI identify Sommerfeldt, Schnéevoigt and Norrøna Film. Discuss Hamsun and the social context critically while distinguishing documented 1921 decisions from subsequent reception.",
+          "nb": "Norsk filmografi og DFI identifiserer Sommerfeldt, Schnéevoigt og Norrøna Film. Drøft Hamsun og samfunnskonteksten kritisk, men skill dokumenterte valg i 1921 fra senere mottakelse.",
+          "fr": "La filmographie norvégienne et le DFI identifient Sommerfeldt, Schnéevoigt et Norrøna Film. Analysez Hamsun et le contexte social en distinguant décisions de 1921 et réception ultérieure.",
+          "pt": "A filmografia norueguesa e o DFI identificam Sommerfeldt, Schnéevoigt e Norrøna Film. Analise Hamsun e o contexto social distinguindo decisões de 1921 e receção posterior."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "soil-music",
+        "area": "sound",
+        "prompt": {
+          "en": "How should original music and restored film materials be documented?",
+          "nb": "Hvordan bør originalmusikk og restaurert filmmateriale dokumenteres?",
+          "fr": "Comment documenter musique originale et matériaux restaurés ?",
+          "pt": "Como documentar música original e materiais fílmicos restaurados?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Treat orchestral music as synchronized original dialogue",
+              "nb": "Behandle orkestermusikk som synkron originaldialog",
+              "fr": "Traiter la musique orchestrale comme dialogue synchrone original",
+              "pt": "Tratar música orquestral como diálogo sincronizado original"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Assume the reconstruction is an unchanged complete original",
+              "nb": "Anta at rekonstruksjonen er en uendret komplett original",
+              "fr": "Supposer que la reconstruction est un original complet inchangé",
+              "pt": "Supor que a reconstrução é um original completo inalterado"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Separate surviving elements, color evidence and music arrangements",
+              "nb": "Skill bevarte elementer, fargebelegg og musikkarrangementer",
+              "fr": "Distinguer éléments conservés, preuves de couleur et arrangements musicaux",
+              "pt": "Distinguir elementos preservados, evidência de cor e arranjos musicais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-2",
+        "explanation": {
+          "en": "Nasjonalbiblioteket preserves Halvorsen's 1921 music and records tinting and toning; DFI documents later reconstruction. Keep original composition, surviving film and later performance distinct.",
+          "nb": "Nasjonalbiblioteket bevarer Halvorsens musikk fra 1921 og registrerer tinting og toning; DFI dokumenterer senere rekonstruksjon. Hold originalkomposisjon, bevart film og senere fremføring adskilt.",
+          "fr": "La Bibliothèque nationale conserve la musique de Halvorsen de 1921 et documente les teintes ; le DFI documente la reconstruction. Distinguez composition, film conservé et interprétation ultérieure.",
+          "pt": "A Biblioteca Nacional preserva música de Halvorsen de 1921 e regista tintagem; o DFI documenta reconstrução. Distinga composição original, filme preservado e interpretação posterior."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_orochi_1925",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore independent Japanese star production, editing and benshi exhibition.",
+      "nb": "Utforsk uavhengig japansk stjerneproduksjon, klipping og benshi-visning.",
+      "fr": "Explorez production indépendante japonaise, montage et projection benshi.",
+      "pt": "Explore produção independente japonesa, montagem e exibição benshi."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "A great Japanese film for every year – from 1925 to now: Orochi",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/great-japanese-film-every-year-from-1925-now"
+      },
+      {
+        "id": "s1",
+        "title": "10 great films of 1925: Orochi",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-films-1925"
+      },
+      {
+        "id": "s2",
+        "title": "NFAJ Digital Gallery No. 28 – Prewar Japanese film studios: Bantsuma Kanto Studio",
+        "publisher": "National Film Archive of Japan",
+        "url": "https://www.nfaj.go.jp/onlineservice/digital-gallery/nfaj-digital-gallery-no-28/"
+      },
+      {
+        "id": "s3",
+        "title": "Top 16 Japanese Films – Orochi (Serpent)",
+        "publisher": "Matsuda Film Productions",
+        "url": "https://www.matsudafilm.com/matsuda/e_pages/e_ee.html"
+      },
+      {
+        "id": "s4",
+        "title": "Orochi – Lumière Festival",
+        "publisher": "Institut Lumière",
+        "url": "https://www.festival-lumiere.org/manifestations/orochi.html"
+      },
+      {
+        "id": "s5",
+        "title": "Orochi / Gyakuryu – image-library record",
+        "publisher": "Musashino Art University Museum & Library",
+        "url": "https://img-lib.musabi.ac.jp/search/index.php/document/detail/12436"
+      }
+    ],
+    "questions": [
+      {
+        "id": "orochi-motion",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a safe drawn sequence communicate dramatic motion?",
+          "nb": "Hvordan kan en trygg tegnet sekvens formidle dramatisk bevegelse?",
+          "fr": "Comment une séquence dessinée sûre peut-elle exprimer le mouvement dramatique ?",
+          "pt": "Como pode uma sequência desenhada segura transmitir movimento dramático?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Compare framing and duration in a nonviolent storyboard",
+              "nb": "Sammenlign utsnitt og varighet i et ikke-voldelig storyboard",
+              "fr": "Comparer cadrage et durée dans un storyboard non violent",
+              "pt": "Comparar enquadramento e duração num storyboard não violento"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Recreate dangerous combat with real performers",
+              "nb": "Gjenskap farlig kamp med virkelige skuespillere",
+              "fr": "Reconstituer des combats dangereux avec de vrais interprètes",
+              "pt": "Recriar combate perigoso com intérpretes reais"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Ignore the relationship between movement and editing",
+              "nb": "Ignorer forholdet mellom bevegelse og klipping",
+              "fr": "Ignorer le rapport entre mouvement et montage",
+              "pt": "Ignorar a relação entre movimento e montagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-0",
+        "explanation": {
+          "en": "BFI identifies tracking, close-ups and rapid cutting. Compare original drawings of benign movement and timing without staging combat; the exercise studies visual form, not fighting methods.",
+          "nb": "BFI identifiserer kamerakjøring, nærbilder og rask klipping. Sammenlign egne tegninger av ufarlig bevegelse og timing uten å iscenesette kamp; øvelsen studerer visuell form, ikke kampmetoder.",
+          "fr": "Le BFI identifie travellings, gros plans et montage rapide. Comparez des dessins de mouvements anodins sans rejouer de combat ; étudiez la forme visuelle, non les méthodes de combat.",
+          "pt": "O BFI identifica travellings, grandes planos e montagem rápida. Compare desenhos de movimentos inofensivos sem encenar combate; estude forma visual, não métodos de luta."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "orochi-company",
+        "area": "research",
+        "prompt": {
+          "en": "How should an independent star company and its craft team be credited?",
+          "nb": "Hvordan bør et uavhengig stjerneselskap og fagteam krediteres?",
+          "fr": "Comment créditer une société indépendante de vedette et ses techniciens ?",
+          "pt": "Como creditar uma empresa independente de estrela e a equipa técnica?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Attribute all technical work to the star alone",
+              "nb": "Tilskriv alt teknisk arbeid stjernen alene",
+              "fr": "Attribuer tous les travaux techniques à la vedette seule",
+              "pt": "Atribuir todo o trabalho técnico apenas à estrela"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Distinguish Bando's company and the separate craft roles",
+              "nb": "Skill Bandos selskap og de ulike fagrollene",
+              "fr": "Distinguer la société de Bando et les métiers distincts",
+              "pt": "Distinguir a empresa de Bando e funções técnicas distintas"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Erase independent production from the historical account",
+              "nb": "Fjern uavhengig produksjon fra den historiske beskrivelsen",
+              "fr": "Effacer la production indépendante du récit historique",
+              "pt": "Apagar produção independente do relato histórico"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-1",
+        "explanation": {
+          "en": "NFAJ documents Bando's independent production, and Lumière identifies camera and design credits. Recognize star-producer agency without replacing documented collaborative authorship.",
+          "nb": "NFAJ dokumenterer Bandos uavhengige produksjon, og Lumière identifiserer foto- og scenografikrediteringer. Anerkjenn stjerneprodusentens innsats uten å erstatte dokumentert kollektivt forfatterskap.",
+          "fr": "Le NFAJ documente la production indépendante de Bando et Lumière les crédits image et décors. Reconnaissez son initiative sans effacer la création collective.",
+          "pt": "O NFAJ documenta produção independente de Bando e Lumière os créditos de fotografia e cenografia. Reconheça a iniciativa sem apagar autoria coletiva."
+        },
+        "sourceIds": [
+          "s2",
+          "s4"
+        ]
+      },
+      {
+        "id": "orochi-edition",
+        "area": "sound",
+        "prompt": {
+          "en": "How should later benshi narration and restoration be described?",
+          "nb": "Hvordan bør senere benshi-fortelling og restaurering beskrives?",
+          "fr": "Comment décrire narration benshi ultérieure et restauration ?",
+          "pt": "Como descrever narração benshi posterior e restauro?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Label later narration as synchronized dialogue from 1925",
+              "nb": "Merk senere fortelling som synkron dialog fra 1925",
+              "fr": "Présenter narration ultérieure comme dialogue synchrone de 1925",
+              "pt": "Apresentar narração posterior como diálogo sincronizado de 1925"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Assume every later presentation is the identical original print",
+              "nb": "Anta at enhver senere visning er den identiske originalkopien",
+              "fr": "Supposer que toute projection ultérieure est la copie originale identique",
+              "pt": "Supor que toda exibição posterior é a cópia original idêntica"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Distinguish preserved negative, narration and restoration",
+              "nb": "Skill bevart negativ, fortelling og restaurering",
+              "fr": "Distinguer négatif conservé, narration et restauration",
+              "pt": "Distinguir negativo preservado, narração e restauro"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-2",
+        "explanation": {
+          "en": "BFI records Bando's preservation and Matsuda's later benshi tradition; Lumière documents modern 4K restoration. Identify the edition and distinguish silent production from later narration.",
+          "nb": "BFI registrerer Bandos bevaringsarbeid og Matsudas senere benshi-tradisjon; Lumière dokumenterer moderne 4K-restaurering. Identifiser utgaven og skill stumfilmproduksjon fra senere fortelling.",
+          "fr": "Le BFI documente la préservation par Bando et la tradition benshi de Matsuda ; Lumière documente la restauration 4K. Identifiez l'édition et distinguez film muet et narration ultérieure.",
+          "pt": "O BFI documenta preservação por Bando e tradição benshi de Matsuda; Lumière documenta restauro 4K. Identifique edição e distinga filme mudo de narração posterior."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_red_heroine_1929",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore Shanghai wuxia serial production, heroine agency and incomplete film survival.",
+      "nb": "Utforsk wuxia-serieproduksjon i Shanghai, heltinnens handlekraft og ufullstendig filmbevaring.",
+      "fr": "Explorez séries wuxia de Shanghai, autonomie de l'héroïne et conservation incomplète.",
+      "pt": "Explore séries wuxia de Xangai, autonomia da heroína e preservação incompleta."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Red Heroine (China, 1929)",
+        "publisher": "UCLA Film & Television Archive",
+        "url": "https://www.cinema.ucla.edu/events/2024/04/27/red-heroine"
+      },
+      {
+        "id": "s1",
+        "title": "Red Heroine / The Red Errant Knight – 2K",
+        "publisher": "China Film Archive",
+        "url": "https://www.cfa.org.cn/cfaen/gz/dymlcx/dy/2023053116474486795/index.html"
+      },
+      {
+        "id": "s2",
+        "title": "Silent Film Renaissance 2019 – Red Heroine",
+        "publisher": "National Film Archive of Japan",
+        "url": "https://www.nfaj.go.jp/exhibition/silent2019/"
+      },
+      {
+        "id": "s3",
+        "title": "China Film Archive restored classic-film catalogue – Red Heroine",
+        "publisher": "China Film Archive",
+        "url": "https://www.cfa.org.cn/cfaen/gz/dymlcx/index.html"
+      }
+    ],
+    "questions": [
+      {
+        "id": "redheroine-agency",
+        "area": "camera",
+        "prompt": {
+          "en": "How can an original scene communicate a heroine's choices?",
+          "nb": "Hvordan kan en egen scene formidle heltinnens valg?",
+          "fr": "Comment une scène originale peut-elle exprimer les choix de l'héroïne ?",
+          "pt": "Como pode uma cena original transmitir as escolhas da heroína?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Show her decisions in a benign drawn scene",
+              "nb": "Vis hennes beslutninger i en ufarlig tegnet scene",
+              "fr": "Montrer ses décisions dans une scène dessinée anodine",
+              "pt": "Mostrar as suas decisões numa cena desenhada inofensiva"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Make coercion and threatened injury a gameplay reward",
+              "nb": "Gjør tvang og truet skade til spillbelønning",
+              "fr": "Transformer contrainte et menace de blessure en récompense",
+              "pt": "Transformar coerção e ameaça de lesão em recompensa"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Reenact dangerous stunts with real actors",
+              "nb": "Gjenskap farlige stunt med virkelige skuespillere",
+              "fr": "Rejouer des cascades dangereuses avec de vrais acteurs",
+              "pt": "Recriar acrobacias perigosas com atores reais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-0",
+        "explanation": {
+          "en": "UCLA and China Film Archive identify the wuxia production. Explore the heroine's agency with original nonviolent drawings instead of rewarding peril or reproducing historical stunt activity.",
+          "nb": "UCLA og China Film Archive identifiserer wuxia-produksjonen. Utforsk heltinnens handlekraft med egne ikke-voldelige tegninger fremfor å belønne fare eller gjenskape historiske stunt.",
+          "fr": "UCLA et China Film Archive identifient le wuxia. Explorez l'autonomie de l'héroïne par des dessins non violents sans récompenser le danger ni reproduire des cascades.",
+          "pt": "UCLA e China Film Archive identificam wuxia. Explore autonomia da heroína com desenhos não violentos sem recompensar perigo nem reproduzir acrobacias."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "redheroine-fragment",
+        "area": "research",
+        "prompt": {
+          "en": "How should the only surviving section of a serial be documented?",
+          "nb": "Hvordan bør den eneste bevarte delen av en serie dokumenteres?",
+          "fr": "Comment documenter la seule partie conservée d'une série ?",
+          "pt": "Como documentar a única parte preservada de uma série?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Invent complete plots for missing installments",
+              "nb": "Finn på komplette handlinger for manglende episoder",
+              "fr": "Inventer les intrigues des épisodes manquants",
+              "pt": "Inventar enredos completos dos episódios desaparecidos"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Identify surviving material and mark missing installments",
+              "nb": "Identifiser bevart materiale og marker manglende episoder",
+              "fr": "Identifier le matériau conservé et signaler les épisodes manquants",
+              "pt": "Identificar material preservado e indicar episódios desaparecidos"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Present the surviving section as the complete serial",
+              "nb": "Presenter den bevarte delen som hele serien",
+              "fr": "Présenter la partie conservée comme la série entière",
+              "pt": "Apresentar a parte preservada como a série inteira"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-1",
+        "explanation": {
+          "en": "UCLA identifies the only extant section of the thirteen-part serial. Preserve that boundary and record documented credits rather than inventing the twelve missing installments.",
+          "nb": "UCLA identifiserer den eneste bevarte delen av serien på tretten deler. Bevar denne grensen og registrer dokumenterte krediteringer fremfor å dikte opp de tolv manglende delene.",
+          "fr": "UCLA identifie la seule partie conservée de la série en treize épisodes. Respectez cette limite et les crédits attestés sans inventer les douze parties manquantes.",
+          "pt": "UCLA identifica a única parte preservada da série de treze episódios. Respeite esse limite e créditos documentados sem inventar as doze partes desaparecidas."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "redheroine-copies",
+        "area": "research",
+        "prompt": {
+          "en": "How should different archival durations and projection speeds be recorded?",
+          "nb": "Hvordan bør ulike arkivvarigheter og visningshastigheter registreres?",
+          "fr": "Comment consigner les durées et vitesses de projection différentes ?",
+          "pt": "Como registar diferentes durações e velocidades de projeção?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Average the durations to invent an original runtime",
+              "nb": "Beregn gjennomsnittet for å dikte opp originalvarighet",
+              "fr": "Moyenner les durées pour inventer une durée originale",
+              "pt": "Calcular a média para inventar uma duração original"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Assume every archive edition has identical material and speed",
+              "nb": "Anta at alle arkivutgaver har identisk materiale og hastighet",
+              "fr": "Supposer matériau et vitesse identiques pour toutes les éditions",
+              "pt": "Supor material e velocidade idênticos em todas as edições"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Record each institution's edition and known presentation details",
+              "nb": "Registrer hver institusjons utgave og kjente visningsdetaljer",
+              "fr": "Consigner l'édition et les détails connus de chaque institution",
+              "pt": "Registar edição e detalhes conhecidos de cada instituição"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-2",
+        "explanation": {
+          "en": "UCLA records about 94 minutes, China Film Archive 101 minutes and NFAJ 132 minutes at 18 fps. Preserve each presentation record rather than asserting a universal original duration.",
+          "nb": "UCLA registrerer rundt 94 minutter, China Film Archive 101 minutter og NFAJ 132 minutter ved 18 bilder per sekund. Bevar hver visningsoppføring fremfor å hevde én universell originalvarighet.",
+          "fr": "UCLA indique environ 94 minutes, China Film Archive 101 et NFAJ 132 à 18 images par seconde. Préservez chaque notice sans affirmer une durée originale universelle.",
+          "pt": "UCLA indica cerca de 94 minutos, China Film Archive 101 e NFAJ 132 a 18 quadros por segundo. Preserve cada registo sem afirmar uma duração original universal."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_haxan_1922",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore staged illustration, critical evidence evaluation and Scandinavian restoration.",
+      "nb": "Utforsk iscenesatt illustrasjon, kritisk kildevurdering og skandinavisk restaurering.",
+      "fr": "Explorez illustration mise en scène, critique des preuves et restauration scandinave.",
+      "pt": "Explore ilustração encenada, crítica de evidências e restauro escandinavo."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The Witches / Heksen",
+        "publisher": "Danish Film Institute",
+        "url": "https://www.dfi.dk/en/viden-om-film/filmdatabasen/film/heksen"
+      },
+      {
+        "id": "s1",
+        "title": "Om Häxans digitala restaurering",
+        "publisher": "Swedish Film Institute",
+        "url": "https://www.filminstitutet.se/sv/nyheter/2016/om-haxans-digitala-restaurering/"
+      },
+      {
+        "id": "s2",
+        "title": "Worldwide success for Häxan",
+        "publisher": "Swedish Film Institute",
+        "url": "https://www.filminstitutet.se/en/news/2022/wordwide-success-for-haxan/"
+      },
+      {
+        "id": "s3",
+        "title": "Benjamin Christensen",
+        "publisher": "Danish Film Institute",
+        "url": "https://www.dfi.dk/viden-om-film/filmdatabasen/person/benjamin-christensen"
+      }
+    ],
+    "questions": [
+      {
+        "id": "haxan-evidence",
+        "area": "research",
+        "prompt": {
+          "en": "How should staged scenes in a historical essay film be identified?",
+          "nb": "Hvordan bør iscenesatte scener i en historisk essayfilm identifiseres?",
+          "fr": "Comment identifier les scènes jouées dans un film-essai historique ?",
+          "pt": "Como identificar cenas encenadas num filme-ensaio histórico?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Label sources, interpretations and staged illustrations separately",
+              "nb": "Merk kilder, tolkninger og iscenesatte illustrasjoner separat",
+              "fr": "Identifier séparément sources, interprétations et illustrations jouées",
+              "pt": "Identificar separadamente fontes, interpretações e ilustrações encenadas"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Present staged scenes as direct documentary evidence",
+              "nb": "Presenter iscenesatte scener som direkte dokumentarisk belegg",
+              "fr": "Présenter les scènes jouées comme preuves documentaires directes",
+              "pt": "Apresentar cenas encenadas como evidência documental direta"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Use narrative authority instead of checking sources",
+              "nb": "Bruk fortellerautoritet fremfor å undersøke kilder",
+              "fr": "Utiliser l'autorité narrative au lieu de vérifier les sources",
+              "pt": "Usar autoridade narrativa em vez de verificar fontes"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-0",
+        "explanation": {
+          "en": "DFI and SFI document the combination of exposition and staged imagery. Distinguish historical source material, explanatory claims and invented illustrations instead of treating them as equivalent evidence.",
+          "nb": "DFI og SFI dokumenterer kombinasjonen av utredning og iscenesatte bilder. Skill historisk kildemateriale, forklaringspåstander og oppdiktede illustrasjoner fremfor å behandle dem som likeverdig belegg.",
+          "fr": "Le DFI et le SFI documentent exposition et images jouées. Distinguez sources historiques, explications et illustrations inventées plutôt que de les traiter comme preuves équivalentes.",
+          "pt": "O DFI e o SFI documentam exposição e imagens encenadas. Distinga fontes históricas, explicações e ilustrações inventadas em vez de as tratar como evidência equivalente."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "haxan-ethics",
+        "area": "research",
+        "prompt": {
+          "en": "How should historical psychiatric and religious claims be interpreted today?",
+          "nb": "Hvordan bør historiske psykiatriske og religiøse påstander tolkes i dag?",
+          "fr": "Comment interpréter aujourd'hui les affirmations psychiatriques et religieuses historiques ?",
+          "pt": "Como interpretar hoje afirmações psiquiátricas e religiosas históricas?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Apply period psychiatric claims as modern clinical diagnoses",
+              "nb": "Bruk datidens psykiatriske påstander som moderne kliniske diagnoser",
+              "fr": "Appliquer les affirmations psychiatriques d'époque comme diagnostics modernes",
+              "pt": "Aplicar afirmações psiquiátricas da época como diagnósticos modernos"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Contextualize historical interpretations without rewarding stigma",
+              "nb": "Kontekstualiser historiske tolkninger uten å belønne stigma",
+              "fr": "Contextualiser les interprétations historiques sans récompenser la stigmatisation",
+              "pt": "Contextualizar interpretações históricas sem recompensar estigma"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Make persecution and suffering a spectacle score",
+              "nb": "Gjør forfølgelse og lidelse til sjokkpoeng",
+              "fr": "Transformer persécution et souffrance en score spectaculaire",
+              "pt": "Transformar perseguição e sofrimento em pontuação de choque"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-1",
+        "explanation": {
+          "en": "DFI and SFI place Christensen's film in its historical and controversial reception. Treat explanations as period interpretations, not modern medical consensus, and use critical analysis rather than reenactments of harm.",
+          "nb": "DFI og SFI plasserer Christensens film i historisk og kontroversiell mottakelse. Behandle forklaringer som datidens tolkninger, ikke dagens medisinske konsensus, og bruk kritisk analyse fremfor gjenskaping av skade.",
+          "fr": "Le DFI et le SFI situent le film dans sa réception historique controversée. Traitez les explications comme interprétations d'époque, non consensus médical actuel, et privilégiez l'analyse critique.",
+          "pt": "O DFI e o SFI situam o filme na receção histórica controversa. Trate explicações como interpretações da época, não consenso médico atual, e privilegie análise crítica."
+        },
+        "sourceIds": [
+          "s0",
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "haxan-colour",
+        "area": "camera",
+        "prompt": {
+          "en": "How should historical tinting and restored images be documented?",
+          "nb": "Hvordan bør historisk fargetoning og restaurerte bilder dokumenteres?",
+          "fr": "Comment documenter les teintes historiques et les images restaurées ?",
+          "pt": "Como documentar tintagem histórica e imagens restauradas?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Choose colors freely and call them historical evidence",
+              "nb": "Velg farger fritt og kall dem historisk belegg",
+              "fr": "Choisir librement les couleurs et les appeler preuves historiques",
+              "pt": "Escolher cores livremente e chamar-lhes evidência histórica"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Assume all later cuts reproduce the same original",
+              "nb": "Anta at alle senere klipp gjengir samme original",
+              "fr": "Supposer que tous les remontages reproduisent le même original",
+              "pt": "Supor que todas as montagens posteriores reproduzem o mesmo original"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Separate surviving elements, color instructions and restored edition",
+              "nb": "Skill bevarte elementer, fargeinstruksjoner og restaurert utgave",
+              "fr": "Distinguer éléments conservés, instructions de couleur et édition restaurée",
+              "pt": "Distinguir elementos preservados, instruções de cor e edição restaurada"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-2",
+        "explanation": {
+          "en": "SFI documents the 2016 restoration using surviving materials and period color instructions. Identify the edition and evidence; a new color study is not an authenticated historical reconstruction.",
+          "nb": "SFI dokumenterer restaureringen fra 2016 med bevart materiale og samtidige fargeinstruksjoner. Identifiser utgave og belegg; en ny fargestudie er ikke en autentisert historisk rekonstruksjon.",
+          "fr": "Le SFI documente la restauration de 2016 à partir de matériaux conservés et d'instructions d'époque. Identifiez édition et preuves ; une étude nouvelle n'est pas une reconstruction historique authentifiée.",
+          "pt": "O SFI documenta o restauro de 2016 com materiais preservados e instruções da época. Identifique edição e evidência; um estudo novo não é reconstrução histórica autenticada."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_phantom_carriage_1921",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Explore layered images, nested narratives and collaborative Swedish silent-film craft.",
+      "nb": "Utforsk lagdelte bilder, innvevde fortellinger og svensk stumfilmhåndverk.",
+      "fr": "Explorez images superposées, récits enchâssés et métiers collectifs du muet suédois.",
+      "pt": "Explore imagens sobrepostas, narrativas encaixadas e ofícios coletivos do cinema mudo sueco."
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Körkarlen",
+        "publisher": "Swedish Film Institute",
+        "url": "https://www.filminstitutet.se/sv/fa-kunskap-om-film/ta-del-av-filmsamlingarna/filmer/korkarlen/"
+      },
+      {
+        "id": "s1",
+        "title": "Körkarlen – film study guide",
+        "publisher": "Swedish Film Institute",
+        "url": "https://www.filminstitutet.se/sv/fa-kunskap-om-film/filmpedagogik/filmhandledningar/korkarlen/"
+      },
+      {
+        "id": "s2",
+        "title": "The Phantom Carriage",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/27630-the-phantom-carriage"
+      },
+      {
+        "id": "s3",
+        "title": "Phantom Forms: The Phantom Carriage",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/current/posts/2000-phantom-forms-the-phantom-carriage"
+      },
+      {
+        "id": "s4",
+        "title": "10 great silent horror films",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-silent-horror-films"
+      }
+    ],
+    "questions": [
+      {
+        "id": "phantom-layers",
+        "area": "camera",
+        "prompt": {
+          "en": "How can an original paper composition suggest overlapping visual worlds?",
+          "nb": "Hvordan kan en egen papirkomposisjon antyde overlappende visuelle verdener?",
+          "fr": "Comment une composition originale en papier peut-elle suggérer des mondes visuels superposés ?",
+          "pt": "Como pode uma composição original em papel sugerir mundos visuais sobrepostos?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Compare translucent layers and legible background contrast",
+              "nb": "Sammenlign gjennomskinnelige lag og tydelige bakgrunnskontraster",
+              "fr": "Comparer couches translucides et contrastes lisibles du fond",
+              "pt": "Comparar camadas translúcidas e contrastes legíveis do fundo"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Claim the drawing proves the exact historical camera process",
+              "nb": "Hevd at tegningen beviser den eksakte historiske kamerametoden",
+              "fr": "Prétendre que le dessin prouve le procédé historique exact",
+              "pt": "Afirmar que o desenho prova o processo histórico exato"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Ignore the relation between overlapping figures and backgrounds",
+              "nb": "Ignorer forholdet mellom overlappende figurer og bakgrunner",
+              "fr": "Ignorer le rapport entre figures superposées et fonds",
+              "pt": "Ignorar a relação entre figuras sobrepostas e fundos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-0",
+        "explanation": {
+          "en": "SFI and BFI document in-camera multiple exposures. Compare original translucent paper compositions for visual clarity, without claiming to reproduce Jaenzon's precise historical camera procedure.",
+          "nb": "SFI og BFI dokumenterer flere eksponeringer i kameraet. Sammenlign egne gjennomskinnelige papirkomposisjoner for visuell tydelighet uten å hevde å gjengi Jaenzons nøyaktige historiske kamerametode.",
+          "fr": "Le SFI et le BFI documentent les expositions multiples en caméra. Comparez des compositions translucides originales sans prétendre reproduire le procédé historique précis de Jaenzon.",
+          "pt": "O SFI e o BFI documentam exposições múltiplas na câmara. Compare composições translúcidas originais sem alegar reproduzir o procedimento histórico exato de Jaenzon."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
+        ]
+      },
+      {
+        "id": "phantom-time",
+        "area": "research",
+        "prompt": {
+          "en": "How could a new nested story make its time layers understandable?",
+          "nb": "Hvordan kan en ny innvevd fortelling gjøre tidslagene forståelige?",
+          "fr": "Comment rendre compréhensibles les niveaux temporels d'un nouveau récit enchâssé ?",
+          "pt": "Como tornar compreensíveis os níveis temporais de uma nova narrativa encaixada?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Remove distinctions between memory and present events",
+              "nb": "Fjern forskjellene mellom minner og nåtidige hendelser",
+              "fr": "Supprimer les distinctions entre souvenirs et présent",
+              "pt": "Eliminar distinções entre memórias e acontecimentos presentes"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Map a frame story, remembered scene and return to the present",
+              "nb": "Kartlegg rammefortelling, erindret scene og tilbakevending til nåtiden",
+              "fr": "Cartographier récit-cadre, souvenir et retour au présent",
+              "pt": "Mapear narrativa-quadro, cena recordada e regresso ao presente"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Treat fictional memories as verified historical records",
+              "nb": "Behandle fiktive minner som verifisert historisk dokumentasjon",
+              "fr": "Traiter les souvenirs fictifs comme documents historiques vérifiés",
+              "pt": "Tratar memórias fictícias como registos históricos verificados"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-1",
+        "explanation": {
+          "en": "SFI highlights flashbacks within flashbacks and their narrative function. Map a new story's time layers for clarity while distinguishing fictional recollection from verified factual evidence.",
+          "nb": "SFI fremhever tilbakeblikk i tilbakeblikk og deres fortellingsfunksjon. Kartlegg en ny fortellings tidslag for tydelighet, og skill fiktiv erindring fra verifisert faktabelegg.",
+          "fr": "Le SFI souligne les flashbacks enchâssés et leur fonction narrative. Cartographiez les niveaux temporels d'un récit nouveau en distinguant souvenir fictif et preuve vérifiée.",
+          "pt": "O SFI destaca flashbacks encaixados e função narrativa. Mapeie níveis temporais de uma nova história distinguindo recordação fictícia e evidência factual verificada."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "phantom-scores",
+        "area": "sound",
+        "prompt": {
+          "en": "How should collaborative credits and different musical presentations be documented?",
+          "nb": "Hvordan bør samarbeidskrediteringer og ulike musikkvisninger dokumenteres?",
+          "fr": "Comment documenter crédits collectifs et présentations musicales différentes ?",
+          "pt": "Como documentar créditos coletivos e diferentes apresentações musicais?"
+        },
+        "options": [
+          {
+            "id": "choice-0",
+            "label": {
+              "en": "Attribute all literary and technical work to the director alone",
+              "nb": "Tilskriv alt litterært og teknisk arbeid regissøren alene",
+              "fr": "Attribuer tout le travail littéraire et technique au réalisateur seul",
+              "pt": "Atribuir todo o trabalho literário e técnico apenas ao realizador"
+            }
+          },
+          {
+            "id": "choice-1",
+            "label": {
+              "en": "Treat modern scores as synchronized original dialogue",
+              "nb": "Behandle moderne musikk som synkron originaldialog",
+              "fr": "Traiter les musiques modernes comme dialogue synchrone original",
+              "pt": "Tratar músicas modernas como diálogo sincronizado original"
+            }
+          },
+          {
+            "id": "choice-2",
+            "label": {
+              "en": "Separate adaptation and craft roles from later scores and restoration",
+              "nb": "Skill adaptasjon og fagroller fra senere musikk og restaurering",
+              "fr": "Distinguer adaptation et métiers des musiques et restaurations ultérieures",
+              "pt": "Distinguir adaptação e funções técnicas de músicas e restauro posteriores"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "choice-2",
+        "explanation": {
+          "en": "SFI identifies Filmstaden and Lagerlöf collaboration; Criterion records Jaenzon, design credits and multiple scores. Preserve separate contributions and edition-specific accompaniment, not an assumed synchronized original soundtrack.",
+          "nb": "SFI identifiserer Filmstaden og Lagerlöf-samarbeidet; Criterion registrerer Jaenzon, scenografikrediteringer og flere musikkspor. Bevar separate bidrag og utgavespesifikt akkompagnement fremfor å anta synkron originallyd.",
+          "fr": "Le SFI identifie Filmstaden et la collaboration Lagerlöf ; Criterion documente Jaenzon, les décors et plusieurs musiques. Préservez les contributions distinctes et l'accompagnement propre à chaque édition.",
+          "pt": "O SFI identifica Filmstaden e colaboração Lagerlöf; Criterion documenta Jaenzon, cenografia e várias músicas. Preserve contribuições distintas e acompanhamento específico de cada edição."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
         ]
       }
     ]
