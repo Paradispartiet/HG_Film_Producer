@@ -7781,5 +7781,588 @@ export const postwarSourceWorkshops = [
         ]
       }
     ]
+  },
+  {
+    "scenarioId": "scenario_amarcord_1973",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Collective memory and studio reconstruction",
+      "nb": "Kollektiv erindring og studiorekonstruksjon",
+      "fr": "Mémoire collective et reconstruction en studio",
+      "pt": "Memória coletiva e reconstrução em estúdio"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Amarcord",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/208-amarcord"
+      },
+      {
+        "id": "s1",
+        "title": "Amarcord: Federico of the Spirits",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/current/posts/445-amarcord-federico-of-the-spirits"
+      },
+      {
+        "id": "s2",
+        "title": "Amarcord",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/90096ab6-3f75-50a9-a167-f9da9cc38bfd/amarcord"
+      },
+      {
+        "id": "s3",
+        "title": "Amarcord",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/amarcord/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "amarcord-memory",
+        "area": "research",
+        "prompt": {
+          "en": "How can episodic memories form a coherent fictional town?",
+          "nb": "Hvordan kan episodiske minner danne en sammenhengende fiktiv by?",
+          "fr": "Comment des souvenirs épisodiques composent-ils une ville fictive cohérente ?",
+          "pt": "Como podem memórias episódicas formar uma cidade fictícia coerente?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Link recurring characters, seasons and places",
+              "nb": "Knytt tilbakevendende figurer, årstider og steder sammen",
+              "fr": "Relier personnages, saisons et lieux récurrents",
+              "pt": "Ligar personagens, estações e locais recorrentes"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Present all memories as verified autobiography",
+              "nb": "Presenter alle minner som verifisert selvbiografi",
+              "fr": "Présenter tout souvenir comme autobiographie vérifiée",
+              "pt": "Apresentar todas as memórias como autobiografia verificada"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Give each episode no relationship to the others",
+              "nb": "La hver episode være uten forbindelse til de andre",
+              "fr": "Priver chaque épisode de lien avec les autres",
+              "pt": "Deixar cada episódio sem relação com os outros"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion and BFI describe the imagined town, caricature and episodic childhood material. Design fictional memories without treating them as literal biography.",
+          "nb": "Criterion og BFI beskriver den forestilte byen, karikaturen og episodisk barndomsmateriale. Lag fiktive minner uten å behandle dem som bokstavelig biografi.",
+          "fr": "Criterion et le BFI décrivent ville imaginée, caricature et enfance épisodique. Créez des souvenirs fictifs sans les traiter comme biographie littérale.",
+          "pt": "A Criterion e o BFI descrevem cidade imaginada, caricatura e infância episódica. Crie memórias fictícias sem as tratar como biografia literal."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "amarcord-sets",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a studio town suggest a remembered rather than literal place?",
+          "nb": "Hvordan kan en studioby antyde et erindret fremfor bokstavelig sted?",
+          "fr": "Comment une ville de studio évoque-t-elle un lieu remémoré plutôt que littéral ?",
+          "pt": "Como pode uma cidade de estúdio evocar um local lembrado e não literal?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Separate design from every photographic choice",
+              "nb": "Skill scenografi fra alle fotografiske valg",
+              "fr": "Séparer le décor de tout choix photographique",
+              "pt": "Separar cenografia de todas as escolhas fotográficas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Coordinate stylized sets, costumes and color references",
+              "nb": "Samordne stiliserte kulisser, kostymer og fargereferanser",
+              "fr": "Coordonner décors stylisés, costumes et références chromatiques",
+              "pt": "Coordenar cenários estilizados, figurinos e referências cromáticas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume the town was recorded entirely on location",
+              "nb": "Anta at hele byen ble tatt opp på location",
+              "fr": "Supposer que toute la ville fut filmée sur place",
+              "pt": "Supor que toda a cidade foi filmada no local"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion documents the Cinecittà reconstruction and credits Rotunno and Donati. Create an original color and set plan that acknowledges their collaborative craft.",
+          "nb": "Criterion dokumenterer Cinecittà-rekonstruksjonen og krediterer Rotunno og Donati. Lag en egen farge- og kulisseplan som anerkjenner samarbeidet.",
+          "fr": "Criterion documente la reconstruction à Cinecittà et crédite Rotunno et Donati. Créez un plan original de couleurs et décors reconnaissant leur collaboration.",
+          "pt": "A Criterion documenta reconstrução na Cinecittà e credita Rotunno e Donati. Crie um plano original de cor e cenário que reconheça a colaboração."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "amarcord-history",
+        "area": "research",
+        "prompt": {
+          "en": "How should the Fascist-era setting be analyzed?",
+          "nb": "Hvordan bør miljøet fra fascisttiden analyseres?",
+          "fr": "Comment analyser le contexte de l’époque fasciste ?",
+          "pt": "Como analisar o contexto da época fascista?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat caricature as neutral documentary evidence",
+              "nb": "Behandle karikatur som nøytral dokumentasjon",
+              "fr": "Traiter la caricature comme preuve documentaire neutre",
+              "pt": "Tratar caricatura como prova documental neutra"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore the political setting of the fictional town",
+              "nb": "Ignorer den fiktive byens politiske kontekst",
+              "fr": "Ignorer le contexte politique de la ville fictive",
+              "pt": "Ignorar o contexto político da cidade fictícia"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Distinguish historical context from satirical exaggeration",
+              "nb": "Skill historisk kontekst fra satirisk overdrivelse",
+              "fr": "Distinguer contexte historique et exagération satirique",
+              "pt": "Distinguir contexto histórico de exagero satírico"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion and BFI situate the film in provincial Fascist Italy and social satire. Compare the fictional representation with independent historical evidence.",
+          "nb": "Criterion og BFI plasserer filmen i fascisttidens provins-Italia og sosial satire. Sammenlign fiksjonen med uavhengig historisk dokumentasjon.",
+          "fr": "Criterion et le BFI situent le film dans l’Italie fasciste provinciale et la satire sociale. Comparez la fiction à des preuves historiques indépendantes.",
+          "pt": "A Criterion e o BFI situam o filme na Itália fascista provincial e sátira social. Compare a ficção com provas históricas independentes."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_manila_in_the_claws_of_light_1975",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Urban labor, mixed casting and restored editions",
+      "nb": "Byarbeid, blandet casting og restaurerte utgaver",
+      "fr": "Travail urbain, distribution mixte et éditions restaurées",
+      "pt": "Trabalho urbano, elenco misto e edições restauradas"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Manila in the Claws of Light",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/29221-manila-in-the-claws-of-light"
+      },
+      {
+        "id": "s1",
+        "title": "Manila in the Claws of Light: A Proletarian Inferno",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/current/posts/5741-manila-in-the-claws-of-light-a-proletarian-inferno"
+      },
+      {
+        "id": "s2",
+        "title": "Bringing the Grit to Philippine Cinema",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/current/posts/5748-bringing-the-grit-to-philippine-cinema"
+      },
+      {
+        "id": "s3",
+        "title": "Manila in the Claws of Light / Maynila sa mga kuko ng liwanag",
+        "publisher": "The Film Foundation – World Cinema Project",
+        "url": "https://www.film-foundation.org/world-cinema?page=5&sortBy=country&sortOrder=1"
+      },
+      {
+        "id": "s4",
+        "title": "Maynila: Sa mga Kuko ng Liwanag (Manila in the Claws of Light)",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/maynila-sa-mga-kuko-ng-liwanag/"
+      },
+      {
+        "id": "s5",
+        "title": "Maynila sa mga kuko ng liwanag (1975)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/e7c93a2a-7243-56c8-96d4-9b4602b977ed/maynila-sa-mga-kuko-ng-liwanag"
+      }
+    ],
+    "questions": [
+      {
+        "id": "manilaintheclawsoflight-city",
+        "area": "camera",
+        "prompt": {
+          "en": "How can city locations show the pressures of working life?",
+          "nb": "Hvordan kan byopptak vise arbeidslivets belastninger?",
+          "fr": "Comment les lieux urbains montrent-ils les pressions du travail ?",
+          "pt": "Como podem locais urbanos mostrar as pressões do trabalho?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat staged scenes as direct documentary evidence",
+              "nb": "Behandle iscenesatte scener som direkte dokumentasjon",
+              "fr": "Traiter les scènes jouées comme preuves directes",
+              "pt": "Tratar cenas encenadas como provas diretas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Connect people, built environments and material conditions",
+              "nb": "Knytt mennesker, bygde miljøer og materielle forhold sammen",
+              "fr": "Relier personnes, environnement bâti et conditions matérielles",
+              "pt": "Ligar pessoas, ambiente construído e condições materiais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Reduce the city to picturesque background scenery",
+              "nb": "Reduser byen til pittoresk bakgrunnsdekor",
+              "fr": "Réduire la ville à un décor pittoresque",
+              "pt": "Reduzir a cidade a cenário pitoresco"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion scholarship describes Manila locations and labor politics. Create a fictional image study that preserves social context and distinguishes realism from documentary proof.",
+          "nb": "Criterion-forskning beskriver Manila-locations og arbeidspolitikk. Lag en fiktiv bildestudie som bevarer sosial kontekst og skiller realisme fra dokumentasjon.",
+          "fr": "Criterion analyse les lieux de Manille et la politique du travail. Créez une étude fictive respectant le contexte et distinguant réalisme et preuve.",
+          "pt": "A Criterion analisa locais de Manila e política laboral. Crie um estudo fictício que preserve contexto e distinga realismo de prova."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "manilaintheclawsoflight-casting",
+        "area": "research",
+        "prompt": {
+          "en": "How should a mixed professional and community cast be approached?",
+          "nb": "Hvordan bør et blandet profesjonelt og lokalt ensemble tilnærmes?",
+          "fr": "Comment aborder une distribution professionnelle et communautaire mixte ?",
+          "pt": "Como abordar um elenco misto profissional e comunitário?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume community participants need no direction",
+              "nb": "Anta at lokale medvirkende ikke trenger regi",
+              "fr": "Supposer que les participants locaux n’ont besoin d’aucune direction",
+              "pt": "Supor que participantes locais dispensam direção"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use vulnerable participants without meaningful consent",
+              "nb": "Bruk sårbare medvirkende uten reelt samtykke",
+              "fr": "Utiliser des participants vulnérables sans consentement réel",
+              "pt": "Usar participantes vulneráveis sem consentimento efetivo"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use informed consent and clear collaborative direction",
+              "nb": "Bruk informert samtykke og tydelig samarbeidsbasert regi",
+              "fr": "Recourir au consentement éclairé et à une direction collaborative claire",
+              "pt": "Usar consentimento informado e direção colaborativa clara"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion production material documents Brocka's mix of professional and nonprofessional performers. Design a new consent-based rehearsal that respects participant agency.",
+          "nb": "Criterion-materialet dokumenterer Brockas blanding av profesjonelle og amatører. Lag en ny samtykkebasert prøve som respekterer medvirkendes selvbestemmelse.",
+          "fr": "Les documents Criterion décrivent le mélange d’acteurs professionnels et non professionnels. Concevez une répétition consentie respectant leur autonomie.",
+          "pt": "O material Criterion documenta a mistura de atores profissionais e não profissionais. Crie um ensaio consentido que respeite a autonomia dos participantes."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "manilaintheclawsoflight-versions",
+        "area": "research",
+        "prompt": {
+          "en": "How should runtime and restored editions be documented?",
+          "nb": "Hvordan bør spilletid og restaurerte utgaver dokumenteres?",
+          "fr": "Comment documenter durées et éditions restaurées ?",
+          "pt": "Como documentar durações e edições restauradas?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record each edition and its institutional provenance",
+              "nb": "Registrer hver utgave og dens institusjonelle proveniens",
+              "fr": "Consigner chaque édition et sa provenance institutionnelle",
+              "pt": "Registar cada edição e a sua proveniência institucional"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume all runtime differences indicate censorship",
+              "nb": "Anta at alle spilletidsforskjeller skyldes sensur",
+              "fr": "Supposer que toute différence de durée indique la censure",
+              "pt": "Supor que toda diferença de duração indica censura"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat restoration as original cinematography",
+              "nb": "Behandle restaurering som opprinnelig fotoarbeid",
+              "fr": "Traiter le restauro comme photographie originale",
+              "pt": "Tratar restauro como fotografia original"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion, Film Foundation and Cannes record versions and restoration materials. Preserve runtime differences without assigning undocumented causes or conflating restoration and production.",
+          "nb": "Criterion, Film Foundation og Cannes dokumenterer utgaver og restaureringsmateriale. Bevar spilletidsforskjeller uten udokumenterte årsaker eller sammenblanding av restaurering og produksjon.",
+          "fr": "Criterion, Film Foundation et Cannes documentent versions et restauration. Préservez les écarts de durée sans causes inventées ni confusion avec la production.",
+          "pt": "A Criterion, Film Foundation e Cannes documentam versões e restauro. Preserve diferenças de duração sem causas inventadas nem confusão com produção."
+        },
+        "sourceIds": [
+          "s0",
+          "s3",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_battle_of_chile_part_i_1975",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Documentary evidence and collective labor in exile",
+      "nb": "Dokumentarisk belegg og kollektivt arbeid i eksil",
+      "fr": "Preuves documentaires et travail collectif en exil",
+      "pt": "Provas documentais e trabalho coletivo no exílio"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The Battle of Chile I - II - III",
+        "publisher": "Patricio Guzmán",
+        "url": "https://www.patricio-guzman.com/en/la-batalla-de-chile-i-ii-iii"
+      },
+      {
+        "id": "s1",
+        "title": "La batalla de Chile",
+        "publisher": "Memoria Chilena – Biblioteca Nacional de Chile",
+        "url": "https://www.memoriachilena.gob.cl/602/w3-article-96647.html"
+      },
+      {
+        "id": "s2",
+        "title": "The Battle of Chile: The Insurrection of the Bourgeoisie",
+        "publisher": "IDFA Archive",
+        "url": "https://www.idfa.nl/en/film/8f9ea725-b676-4c10-a35a-d6fc7aa17a7a/the-battle-of-chile-the-insurrection-of-the-bourgeoisie/"
+      },
+      {
+        "id": "s3",
+        "title": "The Battle of Chile, Part One: The Insurrection of the Bourgeoisie",
+        "publisher": "Harvard Film Archive",
+        "url": "https://harvardfilmarchive.org/calendar/battle-of-chile-part-one-the-insurrection-of-the-bourgeoisie-202"
+      },
+      {
+        "id": "s4",
+        "title": "The Battle of Chile - Restored!",
+        "publisher": "Icarus Films",
+        "url": "https://icarusfilms.com/if-bocbd"
+      }
+    ],
+    "questions": [
+      {
+        "id": "thebattleofchileparti-evidence",
+        "area": "research",
+        "prompt": {
+          "en": "How should political documentary footage be documented?",
+          "nb": "Hvordan bør politiske dokumentaropptak dokumenteres?",
+          "fr": "Comment documenter des images de documentaire politique ?",
+          "pt": "Como documentar imagens de documentário político?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume a camera image explains all historical causes",
+              "nb": "Anta at et kamerabilde forklarer alle historiske årsaker",
+              "fr": "Supposer qu’une image explique toutes les causes historiques",
+              "pt": "Supor que uma imagem explica todas as causas históricas"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Discard context when selecting archival excerpts",
+              "nb": "Forkast konteksten ved valg av arkivutdrag",
+              "fr": "Écarter le contexte lors du choix d’extraits",
+              "pt": "Descartar contexto ao selecionar excertos de arquivo"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record provenance, context and limits of each source",
+              "nb": "Registrer proveniens, kontekst og begrensninger for hver kilde",
+              "fr": "Consigner provenance, contexte et limites de chaque source",
+              "pt": "Registar proveniência, contexto e limites de cada fonte"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "IDFA and Memoria Chilena describe the documentary's political context and field coverage. Build a source log for archival analysis, distinguishing recorded events from editorial interpretation.",
+          "nb": "IDFA og Memoria Chilena beskriver dokumentarens politiske kontekst og feltopptak. Lag en kildelogg for arkivanalyse som skiller registrerte hendelser fra klippetolkning.",
+          "fr": "IDFA et Memoria Chilena décrivent contexte politique et travail de terrain. Créez un registre de sources distinguant événements enregistrés et interprétation du montage.",
+          "pt": "A IDFA e Memoria Chilena descrevem contexto político e trabalho de campo. Crie um registo de fontes distinguindo eventos registados e interpretação da montagem."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "thebattleofchileparti-crew",
+        "area": "research",
+        "prompt": {
+          "en": "How can a documentary credit its field and editing collaborators?",
+          "nb": "Hvordan kan en dokumentar kreditere felt- og klippemedarbeidere?",
+          "fr": "Comment un documentaire crédite-t-il son équipe de terrain et de montage ?",
+          "pt": "Como pode um documentário creditar colaboradores de campo e montagem?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Separate field recording, editing and institutional support credits",
+              "nb": "Skill kreditering for feltopptak, klipp og institusjonell støtte",
+              "fr": "Distinguer crédits de terrain, montage et soutien institutionnel",
+              "pt": "Distinguir créditos de campo, montagem e apoio institucional"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Credit only the director and omit field collaborators",
+              "nb": "Krediter bare regissøren og utelat feltmedarbeidere",
+              "fr": "Créditer seulement le réalisateur et oublier l’équipe de terrain",
+              "pt": "Creditar apenas o realizador e omitir colaboradores de campo"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat later restoration as part of original field capture",
+              "nb": "Behandle senere restaurering som del av opprinnelig feltopptak",
+              "fr": "Traiter la restauration comme captation originale",
+              "pt": "Tratar restauro posterior como captação original"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Guzmán and Memoria Chilena identify the field team, Chaskel's editing and Cuban postproduction. Preserve separate contributions and the context of exile.",
+          "nb": "Guzmán og Memoria Chilena identifiserer feltteamet, Chaskels klipp og kubansk etterarbeid. Bevar separate bidrag og eksilkonteksten.",
+          "fr": "Guzmán et Memoria Chilena identifient équipe de terrain, montage de Chaskel et postproduction cubaine. Préservez les contributions et le contexte de l’exil.",
+          "pt": "Guzmán e Memoria Chilena identificam equipa de campo, montagem de Chaskel e pós-produção cubana. Preserve contributos distintos e contexto do exílio."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "thebattleofchileparti-sound",
+        "area": "sound",
+        "prompt": {
+          "en": "How can archival sound be contextualized during editing?",
+          "nb": "Hvordan kan arkivlyd kontekstualiseres under klipping?",
+          "fr": "Comment contextualiser le son d’archives au montage ?",
+          "pt": "Como contextualizar som de arquivo durante a montagem?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use narration to erase uncertainty in the record",
+              "nb": "Bruk fortellerstemme til å fjerne usikkerhet i dokumentasjonen",
+              "fr": "Utiliser la narration pour effacer les incertitudes",
+              "pt": "Usar narração para apagar incertezas do registo"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Document the relation between voices, recordings and edited images",
+              "nb": "Dokumenter forholdet mellom stemmer, opptak og klippede bilder",
+              "fr": "Documenter le rapport entre voix, enregistrements et images montées",
+              "pt": "Documentar relação entre vozes, gravações e imagens montadas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume every audio fragment belongs to any chosen image",
+              "nb": "Anta at alle lydfragmenter tilhører et vilkårlig bilde",
+              "fr": "Supposer que tout fragment sonore correspond à toute image",
+              "pt": "Supor que qualquer fragmento sonoro pertence a qualquer imagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Guzmán identifies separate sound recordings and IDFA credits Bernardo Menz. Preserve audio provenance and mark editorial juxtaposition instead of implying undocumented synchronization.",
+          "nb": "Guzmán identifiserer separate lydopptak og IDFA krediterer Bernardo Menz. Bevar lydproveniens og merk redaksjonell sammenstilling fremfor å antyde udokumentert synkronisering.",
+          "fr": "Guzmán identifie des enregistrements sonores et IDFA crédite Bernardo Menz. Préservez provenance et indiquez les rapprochements de montage sans synchronisation inventée.",
+          "pt": "Guzmán identifica gravações sonoras e IDFA credita Bernardo Menz. Preserve proveniência e assinale justaposição editorial sem sincronização inventada."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      }
+    ]
   }
 ] as const satisfies readonly SourceBackedCaseWorkshop[];

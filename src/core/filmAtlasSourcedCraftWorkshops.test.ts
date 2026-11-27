@@ -154,15 +154,18 @@ const ids = [
   "scenario_dog_day_afternoon_1975",
   "scenario_taxi_driver_1976",
   "scenario_star_wars_1977",
+  "scenario_amarcord_1973",
+  "scenario_manila_in_the_claws_of_light_1975",
+  "scenario_the_battle_of_chile_part_i_1975",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly one hundred and forty-five existing cases have four hundred and thirty-five original, source-backed decisions", () => {
+test("Exactly one hundred and forty-eight existing cases have four hundred and forty-four original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 145);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 435);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 148);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 444);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -424,6 +427,16 @@ test("Exactly one hundred and forty-five existing cases have four hundred and th
       const [path, definition] = configs[workshop.scenarioId]!;
       if (definition === "seed") assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
       else assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const next = verification.indexOf("\n  },", start);
+      const section = verification.slice(start, next < 0 ? undefined : next);
+      for (const source of workshop.sources) assert.ok(section.includes(source.url));
+    } else if (["scenario_amarcord_1973","scenario_manila_in_the_claws_of_light_1975","scenario_the_battle_of_chile_part_i_1975"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_amarcord_1973":["src/ui/data/scenarioProductionVerificationFinal1970sBatch.ts","italyFranceGermanyBeneluxExpansion"],"scenario_manila_in_the_claws_of_light_1975":["src/ui/data/scenarioProductionVerificationManilaClawsLight.ts","chapterFifteenManilaClawsLightExpansion"],"scenario_the_battle_of_chile_part_i_1975":["src/ui/data/scenarioProductionVerificationBattleChilePartOne.ts","chapterFifteenBattleChilePartOneExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
       const verification = readFileSync(path, "utf8");
       const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
       assert.ok(start >= 0);
@@ -1000,4 +1013,11 @@ test("1970s production workshops preserve distinct questions and evidence", () =
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_dog_day_afternoon_1975")?.questions.map(q => q.id), ["dogdayafternoon-rehearsal","dogdayafternoon-daylight","dogdayafternoon-media"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_taxi_driver_1976")?.questions.map(q => q.id), ["taxidriver-viewpoint","taxidriver-city","taxidriver-music"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_star_wars_1977")?.questions.map(q => q.id), ["starwars-design","starwars-pipeline","starwars-soundworld"]);
+});
+
+
+test("International 1970s cinema retains film-specific questions and sources", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_amarcord_1973")?.questions.map(q => q.id), ["amarcord-memory","amarcord-sets","amarcord-history"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_manila_in_the_claws_of_light_1975")?.questions.map(q => q.id), ["manilaintheclawsoflight-city","manilaintheclawsoflight-casting","manilaintheclawsoflight-versions"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_battle_of_chile_part_i_1975")?.questions.map(q => q.id), ["thebattleofchileparti-evidence","thebattleofchileparti-crew","thebattleofchileparti-sound"]);
 });
