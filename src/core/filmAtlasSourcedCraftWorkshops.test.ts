@@ -138,15 +138,23 @@ const ids = [
   "scenario_dr_strangelove_1964",
   "scenario_daisies_1966",
   "scenario_the_battle_of_algiers_1966",
+  "scenario_black_girl_1966",
+  "scenario_bonnie_and_clyde_1967",
+  "scenario_playtime_1967",
+  "scenario_memories_of_underdevelopment_1968",
+  "scenario_night_of_the_living_dead_1968",
+  "scenario_2001_a_space_odyssey_1968",
+  "scenario_the_godfather_1972",
+  "scenario_touki_bouki_1973",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly one hundred and twenty-nine existing cases have three hundred and eighty-seven original, source-backed decisions", () => {
+test("Exactly one hundred and thirty-seven existing cases have four hundred and eleven original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 129);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 387);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 137);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 411);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -385,6 +393,16 @@ test("Exactly one hundred and twenty-nine existing cases have three hundred and 
       for (const source of workshop.sources) assert.ok(section.includes(source.url));
     } else if (["scenario_8_1_2_1963","scenario_contempt_1963","scenario_the_leopard_1963","scenario_last_year_at_marienbad_1961","scenario_the_umbrellas_of_cherbourg_1964","scenario_dr_strangelove_1964","scenario_daisies_1966","scenario_the_battle_of_algiers_1966"].includes(workshop.scenarioId)) {
       const configs: Record<string, [string, string]> = {"scenario_8_1_2_1963":["src/ui/data/scenarioProductionVerificationEuropeanModernistProductionBatch.ts","earlyCinemaExpansion"],"scenario_contempt_1963":["src/ui/data/scenarioProductionVerificationEarly1960sProductionSystemsBatch.ts","earlyCinemaExpansion"],"scenario_the_leopard_1963":["src/ui/data/scenarioProductionVerificationEuropean1960sSpaceSystemsBatch.ts","italyFranceGermanyBeneluxExpansion"],"scenario_last_year_at_marienbad_1961":["src/ui/data/scenarioProductionVerificationEuropean1960sSpaceSystemsBatch.ts","italyFranceGermanyBeneluxExpansion"],"scenario_the_umbrellas_of_cherbourg_1964":["src/ui/data/scenarioProductionVerificationEuropeanModernistProductionBatch.ts","earlyCinemaExpansion"],"scenario_dr_strangelove_1964":["src/ui/data/scenarioProductionVerificationEarly1960sProductionSystemsBatch.ts","earlyCinemaExpansion"],"scenario_daisies_1966":["src/ui/data/scenarioProductionVerificationPostwarEuropeanModernismBatch.ts","easternIberianBritishExpansion"],"scenario_the_battle_of_algiers_1966":["src/ui/data/scenarioProductionVerificationEuropeanModernistProductionBatch.ts","earlyCinemaExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const next = verification.indexOf("\n  },", start);
+      const section = verification.slice(start, next < 0 ? undefined : next);
+      for (const source of workshop.sources) assert.ok(section.includes(source.url));
+    } else if (["scenario_black_girl_1966","scenario_bonnie_and_clyde_1967","scenario_playtime_1967","scenario_memories_of_underdevelopment_1968","scenario_night_of_the_living_dead_1968","scenario_2001_a_space_odyssey_1968","scenario_the_godfather_1972","scenario_touki_bouki_1973"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_black_girl_1966":["src/ui/data/scenarioProductionVerificationBlackGirl.ts","chapterFourteenBlackGirlExpansion"],"scenario_bonnie_and_clyde_1967":["src/ui/data/scenarioProductionVerificationNewHollywoodBlockbusterBatch.ts","earlyCinemaExpansion"],"scenario_playtime_1967":["src/ui/data/scenarioProductionVerificationEuropean1960sSpaceSystemsBatch.ts","italyFranceGermanyBeneluxExpansion"],"scenario_memories_of_underdevelopment_1968":["src/ui/data/scenarioProductionVerificationMemoriesUnderdevelopment.ts","chapterFourteenMemoriesUnderdevelopmentExpansion"],"scenario_night_of_the_living_dead_1968":["src/ui/data/scenarioProductionVerification1960sScaleIndependentBatch.ts","earlyCinemaExpansion"],"scenario_2001_a_space_odyssey_1968":["src/ui/data/scenarioProductionVerification1960sScaleIndependentBatch.ts","earlyCinemaExpansion"],"scenario_the_godfather_1972":["src/ui/data/scenarioProductionVerificationNewHollywoodBlockbusterBatch.ts","earlyCinemaExpansion"],"scenario_touki_bouki_1973":["src/ui/data/scenarioProductionVerificationToukiBouki.ts","chapterFifteenToukiBoukiExpansion"]};
       const [path, definition] = configs[workshop.scenarioId]!;
       assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
       const verification = readFileSync(path, "utf8");
@@ -939,4 +957,16 @@ test("1960s modernist workshops preserve distinct questions and production evide
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_dr_strangelove_1964")?.questions.map(q => q.id), ["drstrangelove-satire","drstrangelove-room","drstrangelove-roles"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_daisies_1966")?.questions.map(q => q.id), ["daisies-collage","daisies-improv","daisies-censor"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_battle_of_algiers_1966")?.questions.map(q => q.id), ["thebattleofalgiers-evidence","thebattleofalgiers-collaboration","thebattleofalgiers-sound"]);
+});
+
+
+test("New Waves and New Hollywood workshops preserve distinct film-specific questions", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_black_girl_1966")?.questions.map(q => q.id), ["blackgirl-voice","blackgirl-wardrobe","blackgirl-funding"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_bonnie_and_clyde_1967")?.questions.map(q => q.id), ["bonnieandclyde-development","bonnieandclyde-locations","bonnieandclyde-tone"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_playtime_1967")?.questions.map(q => q.id), ["playtime-frame","playtime-city","playtime-sound"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_memories_of_underdevelopment_1968")?.questions.map(q => q.id), ["memoriesofunderdevelopment-archive","memoriesofunderdevelopment-institution","memoriesofunderdevelopment-preservation"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_night_of_the_living_dead_1968")?.questions.map(q => q.id), ["nightofthelivingdead-collective","nightofthelivingdead-schedule","nightofthelivingdead-media"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_2001_a_space_odyssey_1968")?.questions.map(q => q.id), ["2001aspaceodyssey-development","2001aspaceodyssey-effects","2001aspaceodyssey-format"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_godfather_1972")?.questions.map(q => q.id), ["thegodfather-casting","thegodfather-palette","thegodfather-music"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_touki_bouki_1973")?.questions.map(q => q.id), ["toukibouki-montage","toukibouki-infrastructure","toukibouki-credits"]);
 });
