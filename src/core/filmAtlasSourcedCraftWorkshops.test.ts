@@ -146,15 +146,23 @@ const ids = [
   "scenario_2001_a_space_odyssey_1968",
   "scenario_the_godfather_1972",
   "scenario_touki_bouki_1973",
+  "scenario_aguirre_the_wrath_of_god_1972",
+  "scenario_mean_streets_1973",
+  "scenario_the_spirit_of_the_beehive_1973",
+  "scenario_ali_fear_eats_the_soul_1974",
+  "scenario_jaws_1975",
+  "scenario_dog_day_afternoon_1975",
+  "scenario_taxi_driver_1976",
+  "scenario_star_wars_1977",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly one hundred and thirty-seven existing cases have four hundred and eleven original, source-backed decisions", () => {
+test("Exactly one hundred and forty-five existing cases have four hundred and thirty-five original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 137);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 411);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 145);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 435);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -405,6 +413,17 @@ test("Exactly one hundred and thirty-seven existing cases have four hundred and 
       const configs: Record<string, [string, string]> = {"scenario_black_girl_1966":["src/ui/data/scenarioProductionVerificationBlackGirl.ts","chapterFourteenBlackGirlExpansion"],"scenario_bonnie_and_clyde_1967":["src/ui/data/scenarioProductionVerificationNewHollywoodBlockbusterBatch.ts","earlyCinemaExpansion"],"scenario_playtime_1967":["src/ui/data/scenarioProductionVerificationEuropean1960sSpaceSystemsBatch.ts","italyFranceGermanyBeneluxExpansion"],"scenario_memories_of_underdevelopment_1968":["src/ui/data/scenarioProductionVerificationMemoriesUnderdevelopment.ts","chapterFourteenMemoriesUnderdevelopmentExpansion"],"scenario_night_of_the_living_dead_1968":["src/ui/data/scenarioProductionVerification1960sScaleIndependentBatch.ts","earlyCinemaExpansion"],"scenario_2001_a_space_odyssey_1968":["src/ui/data/scenarioProductionVerification1960sScaleIndependentBatch.ts","earlyCinemaExpansion"],"scenario_the_godfather_1972":["src/ui/data/scenarioProductionVerificationNewHollywoodBlockbusterBatch.ts","earlyCinemaExpansion"],"scenario_touki_bouki_1973":["src/ui/data/scenarioProductionVerificationToukiBouki.ts","chapterFifteenToukiBoukiExpansion"]};
       const [path, definition] = configs[workshop.scenarioId]!;
       assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const next = verification.indexOf("\n  },", start);
+      const section = verification.slice(start, next < 0 ? undefined : next);
+      for (const source of workshop.sources) assert.ok(section.includes(source.url));
+    } else if (["scenario_aguirre_the_wrath_of_god_1972","scenario_mean_streets_1973","scenario_the_spirit_of_the_beehive_1973","scenario_ali_fear_eats_the_soul_1974","scenario_jaws_1975","scenario_dog_day_afternoon_1975","scenario_taxi_driver_1976","scenario_star_wars_1977"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_aguirre_the_wrath_of_god_1972":["src/ui/data/scenarioProductionVerificationNewGermanCinemaSystemsBatch.ts","italyFranceGermanyBeneluxExpansion"],"scenario_mean_streets_1973":["src/ui/data/scenarioProductionVerificationNewHollywoodNewYorkBatch.ts","seed"],"scenario_the_spirit_of_the_beehive_1973":["src/ui/data/scenarioProductionVerificationEuropeanPoeticMemorySystemsBatch.ts","easternIberianBritishExpansion"],"scenario_ali_fear_eats_the_soul_1974":["src/ui/data/scenarioProductionVerificationNewGermanCinemaSystemsBatch.ts","italyFranceGermanyBeneluxExpansion"],"scenario_jaws_1975":["src/ui/data/scenarioProductionVerificationNewHollywoodBlockbusterBatch.ts","earlyCinemaExpansion"],"scenario_dog_day_afternoon_1975":["src/ui/data/scenarioProductionVerificationNewHollywoodNewYorkBatch.ts","seed"],"scenario_taxi_driver_1976":["src/ui/data/scenarioProductionVerificationNewHollywoodNewYorkBatch.ts","seed"],"scenario_star_wars_1977":["src/ui/data/scenarioProductionVerificationNewHollywoodBlockbusterBatch.ts","earlyCinemaExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      if (definition === "seed") assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
+      else assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
       const verification = readFileSync(path, "utf8");
       const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
       assert.ok(start >= 0);
@@ -969,4 +988,16 @@ test("New Waves and New Hollywood workshops preserve distinct film-specific ques
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_2001_a_space_odyssey_1968")?.questions.map(q => q.id), ["2001aspaceodyssey-development","2001aspaceodyssey-effects","2001aspaceodyssey-format"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_godfather_1972")?.questions.map(q => q.id), ["thegodfather-casting","thegodfather-palette","thegodfather-music"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_touki_bouki_1973")?.questions.map(q => q.id), ["toukibouki-montage","toukibouki-infrastructure","toukibouki-credits"]);
+});
+
+
+test("1970s production workshops preserve distinct questions and evidence", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_aguirre_the_wrath_of_god_1972")?.questions.map(q => q.id), ["aguirrethewrathofgod-logistics","aguirrethewrathofgod-landscape","aguirrethewrathofgod-atmosphere"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_mean_streets_1973")?.questions.map(q => q.id), ["meanstreets-screenplay","meanstreets-locations","meanstreets-jukebox"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_spirit_of_the_beehive_1973")?.questions.map(q => q.id), ["thespiritofthebeehive-child","thespiritofthebeehive-history","thespiritofthebeehive-silence"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_ali_fear_eats_the_soul_1974")?.questions.map(q => q.id), ["alifeareatsthesoul-space","alifeareatsthesoul-schedule","alifeareatsthesoul-melodrama"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_jaws_1975")?.questions.map(q => q.id), ["jaws-marine","jaws-withholding","jaws-score"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_dog_day_afternoon_1975")?.questions.map(q => q.id), ["dogdayafternoon-rehearsal","dogdayafternoon-daylight","dogdayafternoon-media"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_taxi_driver_1976")?.questions.map(q => q.id), ["taxidriver-viewpoint","taxidriver-city","taxidriver-music"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_star_wars_1977")?.questions.map(q => q.id), ["starwars-design","starwars-pipeline","starwars-soundworld"]);
 });

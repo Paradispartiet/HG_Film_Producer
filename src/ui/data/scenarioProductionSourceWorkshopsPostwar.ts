@@ -6270,5 +6270,1516 @@ export const postwarSourceWorkshops = [
         ]
       }
     ]
+  },
+  {
+    "scenarioId": "scenario_aguirre_the_wrath_of_god_1972",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Location logistics, landscape composition and musical atmosphere",
+      "nb": "Stedslogistikk, landskapskomposisjon og musikalsk atmosfære",
+      "fr": "Logistique en extérieur, composition paysagère et atmosphère musicale",
+      "pt": "Logística em exteriores, composição da paisagem e atmosfera musical"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Aguirre, Wrath of God",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/9fa0c60c-1f79-5d0c-923c-396a6dfa317d/aguirre-wrath-of-god"
+      },
+      {
+        "id": "s1",
+        "title": "Great beginnings: Aguirre, Wrath of God",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/great-beginnings-aguirre-wrath-god"
+      },
+      {
+        "id": "s2",
+        "title": "On location with Werner Herzog",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/location-werner-herzog"
+      },
+      {
+        "id": "s3",
+        "title": "Aguirre, der Zorn Gottes",
+        "publisher": "filmportal.de",
+        "url": "https://www.filmportal.de/en/movie/aguirre-der-zorn-gottes_ea43d4a704605006e03053d50b37753d"
+      }
+    ],
+    "questions": [
+      {
+        "id": "aguirrethewrathofgod-logistics",
+        "area": "research",
+        "prompt": {
+          "en": "How should a small crew plan a remote landscape shoot?",
+          "nb": "Hvordan bør et lite team planlegge opptak i et avsides landskap?",
+          "fr": "Comment une petite équipe prépare-t-elle un tournage isolé ?",
+          "pt": "Como deve uma pequena equipa preparar uma rodagem remota?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan safe access, weather contingencies and local collaboration",
+              "nb": "Planlegg trygg adkomst, værreserver og lokalt samarbeid",
+              "fr": "Prévoir accès sûr, aléas météo et collaboration locale",
+              "pt": "Planear acesso seguro, contingências meteorológicas e colaboração local"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume transport and weather never affect the schedule",
+              "nb": "Anta at transport og vær aldri påvirker planen",
+              "fr": "Supposer que transport et météo ne modifient jamais le calendrier",
+              "pt": "Supor que transporte e clima nunca alteram o calendário"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Invent historical expenses from the landscape alone",
+              "nb": "Dikt opp historiske utgifter fra landskapet alene",
+              "fr": "Inventer les dépenses historiques à partir du paysage",
+              "pt": "Inventar despesas históricas apenas pela paisagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI documents the small crew and real Peruvian locations; filmportal identifies the production. Develop a safe fictional schedule rather than reenacting historical risks.",
+          "nb": "BFI dokumenterer det lille teamet og virkelige steder i Peru; filmportal identifiserer produksjonen. Lag en trygg fiktiv plan fremfor å gjenskape historisk risiko.",
+          "fr": "Le BFI documente la petite équipe et les lieux péruviens ; filmportal identifie la production. Créez un calendrier fictif sûr sans reproduire les risques historiques.",
+          "pt": "O BFI documenta a pequena equipa e os locais peruanos; filmportal identifica a produção. Crie um calendário fictício seguro sem reproduzir riscos históricos."
+        },
+        "sourceIds": [
+          "s1",
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "aguirrethewrathofgod-landscape",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a landscape establish the scale of human ambition?",
+          "nb": "Hvordan kan landskap etablere omfanget av menneskelig ambisjon?",
+          "fr": "Comment le paysage traduit-il l’échelle de l’ambition humaine ?",
+          "pt": "Como pode a paisagem traduzir a escala da ambição humana?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use only isolated faces without spatial context",
+              "nb": "Bruk bare isolerte ansikter uten romlig kontekst",
+              "fr": "Utiliser uniquement des visages isolés sans contexte spatial",
+              "pt": "Usar apenas rostos isolados sem contexto espacial"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat every landscape as an artificial matte",
+              "nb": "Behandle hvert landskap som et kunstig bakgrunnsbilde",
+              "fr": "Traiter tout paysage comme un cache artificiel",
+              "pt": "Tratar toda paisagem como fundo artificial"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Contrast distant figures with increasingly intimate framing",
+              "nb": "Sett fjerne figurer opp mot stadig tettere utsnitt",
+              "fr": "Opposer figures lointaines et cadrages de plus en plus intimes",
+              "pt": "Contrastar figuras distantes com enquadramentos cada vez mais íntimos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI analyses the opening's shift from landscape mass to human detail. Test a comparable spatial progression in original footage without duplicating the sequence.",
+          "nb": "BFI analyserer åpningens skifte fra landskapsmasse til menneskelige detaljer. Prøv en tilsvarende romlig utvikling i egne opptak uten å kopiere sekvensen.",
+          "fr": "Le BFI analyse le passage du paysage aux détails humains. Testez une progression spatiale comparable dans des images originales sans copier la séquence.",
+          "pt": "O BFI analisa a passagem da paisagem ao detalhe humano. Teste uma progressão espacial semelhante em imagens próprias sem copiar a sequência."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "aguirrethewrathofgod-atmosphere",
+        "area": "sound",
+        "prompt": {
+          "en": "How can music complicate the meaning of a landscape?",
+          "nb": "Hvordan kan musikk gjøre landskapets betydning mer sammensatt?",
+          "fr": "Comment la musique complexifie-t-elle le sens du paysage ?",
+          "pt": "Como pode a música tornar mais complexo o significado da paisagem?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Attribute the score to the camera department",
+              "nb": "Tilskriv musikken kameraavdelingen",
+              "fr": "Attribuer la musique au département image",
+              "pt": "Atribuir a música ao departamento de imagem"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare an original atmospheric cue with natural ambience",
+              "nb": "Sammenlign et eget atmosfærisk lydtema med naturlig atmosfærelyd",
+              "fr": "Comparer un motif atmosphérique original à l’ambiance naturelle",
+              "pt": "Comparar um motivo atmosférico original com som ambiente natural"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use music only to duplicate visible movement",
+              "nb": "Bruk musikk bare til å gjenta synlig bevegelse",
+              "fr": "Utiliser la musique uniquement pour doubler le mouvement visible",
+              "pt": "Usar música apenas para duplicar movimento visível"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Filmportal credits Popol Vuh and separate sound and editing roles. Explore an original cue as interpretation rather than historical reconstruction.",
+          "nb": "Filmportal krediterer Popol Vuh og separate lyd- og klipperoller. Utforsk et eget lydtema som tolkning fremfor historisk rekonstruksjon.",
+          "fr": "Filmportal crédite Popol Vuh et distingue son et montage. Explorez un motif original comme interprétation plutôt que reconstitution historique.",
+          "pt": "Filmportal credita Popol Vuh e distingue som e montagem. Explore um motivo original como interpretação em vez de reconstrução histórica."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_mean_streets_1973",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Personal screenplay, location continuity and popular music",
+      "nb": "Personlig manus, stedskontinuitet og populærmusikk",
+      "fr": "Scénario personnel, continuité des lieux et musique populaire",
+      "pt": "Argumento pessoal, continuidade de locais e música popular"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Mean Streets",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/55020-MEAN-STREETS"
+      },
+      {
+        "id": "s1",
+        "title": "Mean Streets",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/616bf2e0-be08-578b-8493-4de6ca709503/mean-streets"
+      },
+      {
+        "id": "s2",
+        "title": "Jukebox and Johnny Boy",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/sight-and-sound/features/jukebox-johnny-boy"
+      },
+      {
+        "id": "s3",
+        "title": "Where to begin with Martin Scorsese",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/where-begin-with-martin-scorsese"
+      }
+    ],
+    "questions": [
+      {
+        "id": "meanstreets-screenplay",
+        "area": "research",
+        "prompt": {
+          "en": "How can autobiographical observation inform fictional characters?",
+          "nb": "Hvordan kan selvbiografisk observasjon forme fiktive figurer?",
+          "fr": "Comment l’observation autobiographique nourrit-elle des personnages fictifs ?",
+          "pt": "Como pode a observação autobiográfica informar personagens fictícias?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat every fictional event as a verified personal memory",
+              "nb": "Behandle hver fiktiv hendelse som et verifisert personlig minne",
+              "fr": "Traiter chaque événement fictif comme un souvenir vérifié",
+              "pt": "Tratar cada acontecimento fictício como memória verificada"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Erase the co-writer from the development record",
+              "nb": "Fjern medforfatteren fra utviklingshistorikken",
+              "fr": "Effacer le coscénariste du dossier de développement",
+              "pt": "Apagar o coargumentista do registo de desenvolvimento"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Transform observed social relationships into original dramatic scenes",
+              "nb": "Omform observerte sosiale relasjoner til egne dramatiske scener",
+              "fr": "Transformer les relations sociales observées en scènes originales",
+              "pt": "Transformar relações sociais observadas em cenas dramáticas originais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI situates the film in Scorsese's personal cinema and credits Mardik Martin; AFI documents long development. Distinguish inspiration from factual biography.",
+          "nb": "BFI plasserer filmen i Scorseses personlige filmkunst og krediterer Mardik Martin; AFI dokumenterer lang utvikling. Skill inspirasjon fra faktisk biografi.",
+          "fr": "Le BFI situe le film dans le cinéma personnel de Scorsese et crédite Mardik Martin ; l’AFI documente le développement. Distinguez inspiration et biographie factuelle.",
+          "pt": "O BFI situa o filme no cinema pessoal de Scorsese e credita Mardik Martin; a AFI documenta desenvolvimento. Distinga inspiração de biografia factual."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "meanstreets-locations",
+        "area": "camera",
+        "prompt": {
+          "en": "How can footage from different cities share a coherent setting?",
+          "nb": "Hvordan kan opptak fra ulike byer skape ett sammenhengende miljø?",
+          "fr": "Comment des images de villes différentes forment-elles un lieu cohérent ?",
+          "pt": "Como podem imagens de cidades diferentes formar um espaço coerente?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore differences in entrances and directions",
+              "nb": "Ignorer forskjeller i innganger og retninger",
+              "fr": "Ignorer les différences d’entrées et de directions",
+              "pt": "Ignorar diferenças de entradas e direções"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Match architectural details, light and screen geography",
+              "nb": "Samordne arkitekturdetaljer, lys og filmens romgeografi",
+              "fr": "Raccorder détails architecturaux, lumière et géographie filmique",
+              "pt": "Conciliar detalhes arquitetónicos, luz e geografia fílmica"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume all photographed streets belong to the story city",
+              "nb": "Anta at alle fotograferte gater ligger i fortellingens by",
+              "fr": "Supposer que toutes les rues filmées appartiennent à la ville du récit",
+              "pt": "Supor que todas as ruas filmadas pertencem à cidade da história"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI records production in New York and Los Angeles. Plan fictional location continuity without inventing exact historical scene assignments.",
+          "nb": "AFI dokumenterer produksjon i New York og Los Angeles. Planlegg fiktiv stedskontinuitet uten å dikte opp historisk scenefordeling.",
+          "fr": "L’AFI documente New York et Los Angeles. Planifiez des raccords fictifs sans inventer l’attribution historique des scènes.",
+          "pt": "A AFI documenta Nova Iorque e Los Angeles. Planeie continuidade fictícia sem inventar a atribuição histórica das cenas."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "meanstreets-jukebox",
+        "area": "sound",
+        "prompt": {
+          "en": "How can popular music shape a character's entrance?",
+          "nb": "Hvordan kan populærmusikk forme en figurs entré?",
+          "fr": "Comment la musique populaire façonne-t-elle l’entrée d’un personnage ?",
+          "pt": "Como pode a música popular moldar a entrada de uma personagem?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test cleared musical cues against gesture and editorial rhythm",
+              "nb": "Prøv klarerte musikktemaer mot gestikk og klipperytme",
+              "fr": "Tester des motifs musicaux autorisés avec gestes et rythme du montage",
+              "pt": "Testar motivos musicais autorizados com gestos e ritmo de montagem"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Select songs only by their chart position",
+              "nb": "Velg sanger bare etter listeplassering",
+              "fr": "Choisir les chansons uniquement selon leur classement",
+              "pt": "Escolher canções apenas pela posição nas tabelas"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume a recorded song requires no rights clearance",
+              "nb": "Anta at en innspilt sang ikke trenger rettighetsklarering",
+              "fr": "Supposer qu’un enregistrement ne nécessite aucun droit",
+              "pt": "Supor que uma gravação não requer autorização"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI analyses popular music as a structural element and AFI notes the absence of a conventional score. Compare original or licensed cues rather than copying the soundtrack.",
+          "nb": "BFI analyserer populærmusikk som strukturelt element og AFI omtaler fravær av tradisjonell filmmusikk. Sammenlign egne eller lisensierte lydtemaer fremfor å kopiere lydsporet.",
+          "fr": "Le BFI analyse la musique populaire comme structure et l’AFI note l’absence de partition classique. Comparez des motifs originaux ou autorisés sans copier la bande sonore.",
+          "pt": "O BFI analisa a música popular como estrutura e a AFI regista ausência de partitura convencional. Compare motivos originais ou licenciados sem copiar a banda sonora."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_spirit_of_the_beehive_1973",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Child viewpoint, historical ellipsis and poetic sound",
+      "nb": "Barneperspektiv, historiske ellipser og poetisk lyd",
+      "fr": "Regard enfantin, ellipse historique et son poétique",
+      "pt": "Olhar infantil, elipse histórica e som poético"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The Spirit of the Beehive",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/367-the-spirit-of-the-beehive"
+      },
+      {
+        "id": "s1",
+        "title": "The Spirit of the Beehive",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/351aef87-fadc-521d-aada-811575f8051d/the-spirit-of-the-beehive"
+      },
+      {
+        "id": "s2",
+        "title": "Where to begin with Víctor Erice",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/where-begin-with-victor-erice"
+      },
+      {
+        "id": "s3",
+        "title": "The return of Spirit of the Beehive director Víctor Erice",
+        "publisher": "The Guardian",
+        "url": "https://www.theguardian.com/film/2024/apr/01/spirit-of-the-beehive-director-victor-erice-close-your-eyes"
+      }
+    ],
+    "questions": [
+      {
+        "id": "thespiritofthebeehive-child",
+        "area": "research",
+        "prompt": {
+          "en": "How should a child-centred scene be rehearsed responsibly?",
+          "nb": "Hvordan bør en scene med barneperspektiv øves inn ansvarlig?",
+          "fr": "Comment répéter de manière responsable une scène centrée sur un enfant ?",
+          "pt": "Como ensaiar responsavelmente uma cena centrada numa criança?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore the young performer's emotional comfort",
+              "nb": "Ignorer den unge skuespillerens følelsesmessige trygghet",
+              "fr": "Ignorer le confort émotionnel du jeune interprète",
+              "pt": "Ignorar o conforto emocional da criança intérprete"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use age-appropriate explanation and supported performance choices",
+              "nb": "Bruk alderstilpasset forklaring og trygge valg i skuespillet",
+              "fr": "Employer des explications adaptées à l’âge et un jeu accompagné",
+              "pt": "Usar explicações adequadas à idade e interpretação acompanhada"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume confusion between fiction and reality improves every take",
+              "nb": "Anta at forvirring mellom fiksjon og virkelighet forbedrer hvert opptak",
+              "fr": "Supposer que confondre fiction et réalité améliore chaque prise",
+              "pt": "Supor que confundir ficção e realidade melhora cada tomada"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Torrent's recollections document childhood casting and emotional difficulty; Criterion preserves cast interviews. Design supportive rehearsal rather than reproducing distress.",
+          "nb": "Torrents erindringer dokumenterer barnecasting og følelsesmessige utfordringer; Criterion bevarer intervjuer. Utform trygg øving fremfor å gjenskape ubehag.",
+          "fr": "Torrent évoque son casting enfant et des difficultés émotionnelles ; Criterion conserve des entretiens. Concevez une répétition accompagnée sans reproduire la détresse.",
+          "pt": "Torrent recorda o elenco infantil e dificuldades emocionais; a Criterion preserva entrevistas. Crie um ensaio apoiado sem reproduzir sofrimento."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "thespiritofthebeehive-history",
+        "area": "research",
+        "prompt": {
+          "en": "How can historical context emerge without explanatory dialogue?",
+          "nb": "Hvordan kan historisk kontekst tre frem uten forklarende dialog?",
+          "fr": "Comment faire émerger le contexte historique sans dialogue explicatif ?",
+          "pt": "Como pode o contexto histórico emergir sem diálogo explicativo?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Research period details and use purposeful narrative ellipses",
+              "nb": "Undersøk tidsdetaljer og bruk målrettede fortellingsellipser",
+              "fr": "Rechercher les détails d’époque et employer des ellipses choisies",
+              "pt": "Pesquisar detalhes de época e usar elipses narrativas deliberadas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat the represented year as the production year",
+              "nb": "Behandle handlingens år som produksjonsåret",
+              "fr": "Confondre l’année représentée et celle du tournage",
+              "pt": "Confundir o ano representado com o ano da rodagem"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Explain every ambiguity through a history lecture",
+              "nb": "Forklar hver tvetydighet med en historietime",
+              "fr": "Expliquer chaque ambiguïté par un cours d’histoire",
+              "pt": "Explicar cada ambiguidade com uma aula de história"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI distinguishes the 1940 setting from late-Franco production and discusses gaps and silences. Build a new scene with researched context and controlled omission.",
+          "nb": "BFI skiller handlingen i 1940 fra produksjonen under senfrankismen og drøfter hull og stillhet. Lag en ny scene med historisk research og bevisst utelatelse.",
+          "fr": "Le BFI distingue le cadre de 1940 du tournage sous le franquisme tardif et analyse les silences. Créez une scène documentée avec ellipses maîtrisées.",
+          "pt": "O BFI distingue o cenário de 1940 da produção no franquismo tardio e analisa silêncios. Crie uma cena pesquisada com omissões controladas."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "thespiritofthebeehive-silence",
+        "area": "sound",
+        "prompt": {
+          "en": "How can silence and distant sound guide a child's attention?",
+          "nb": "Hvordan kan stillhet og fjern lyd styre et barns oppmerksomhet?",
+          "fr": "Comment silence et son lointain orientent-ils l’attention d’un enfant ?",
+          "pt": "Como podem silêncio e som distante orientar a atenção de uma criança?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Fill each pause with explanatory speech",
+              "nb": "Fyll hver pause med forklarende tale",
+              "fr": "Remplir chaque pause de paroles explicatives",
+              "pt": "Preencher cada pausa com fala explicativa"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Keep every background sound at maximum prominence",
+              "nb": "Hold alle bakgrunnslyder maksimalt fremtredende",
+              "fr": "Donner une présence maximale à tous les sons de fond",
+              "pt": "Dar presença máxima a todos os sons de fundo"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use sparse original ambience and selective sound-image contrast",
+              "nb": "Bruk sparsom egen atmosfærelyd og selektiv lyd-bilde-kontrast",
+              "fr": "Employer une ambiance originale discrète et des contrastes son-image",
+              "pt": "Usar ambiente original discreto e contraste seletivo entre som e imagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI describes restrained sound-image juxtaposition and childhood spectatorship. Compare sparse and explanatory versions of an original scene.",
+          "nb": "BFI beskriver tilbakeholden lyd-bilde-sammenstilling og barnets tilskuerperspektiv. Sammenlign sparsomme og forklarende versjoner av en egen scene.",
+          "fr": "Le BFI décrit la juxtaposition sobre du son et de l’image et le regard enfantin. Comparez versions sobres et explicatives d’une scène originale.",
+          "pt": "O BFI descreve justaposição contida de som e imagem e olhar infantil. Compare versões contidas e explicativas de uma cena original."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_ali_fear_eats_the_soul_1974",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Social melodrama, spatial exclusion and compressed production",
+      "nb": "Sosialt melodrama, romlig utestenging og komprimert produksjon",
+      "fr": "Mélodrame social, exclusion spatiale et tournage condensé",
+      "pt": "Melodrama social, exclusão espacial e rodagem condensada"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Ali: Fear Eats the Soul",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/152-ali-fear-eats-the-soul"
+      },
+      {
+        "id": "s1",
+        "title": "Ali: Fear Eats the Soul: One Love, Two Oppressions",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/current/posts/1067-ali-fear-eats-the-soul-one-love-two-oppressions"
+      },
+      {
+        "id": "s2",
+        "title": "6 reasons to watch Fear Eats the Soul",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/6-reasons-watch-fear-eats-soul"
+      },
+      {
+        "id": "s3",
+        "title": "Angst essen Seele auf (Ali: Fear Eats the Soul)",
+        "publisher": "Rainer Werner Fassbinder Foundation",
+        "url": "https://www.fassbinderfoundation.de/movies/angst-essen-seele-auf/?lang=en"
+      }
+    ],
+    "questions": [
+      {
+        "id": "alifeareatsthesoul-space",
+        "area": "camera",
+        "prompt": {
+          "en": "How can framing make social exclusion visible?",
+          "nb": "Hvordan kan utsnitt synliggjøre sosial utestenging?",
+          "fr": "Comment le cadrage rend-il visible l’exclusion sociale ?",
+          "pt": "Como pode o enquadramento tornar visível a exclusão social?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use doorways, distance and group placement to express separation",
+              "nb": "Bruk døråpninger, avstand og gruppeplassering til å uttrykke adskillelse",
+              "fr": "Utiliser portes, distance et placement des groupes pour exprimer la séparation",
+              "pt": "Usar portas, distância e posição dos grupos para exprimir separação"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Frame each person without any shared spatial relationship",
+              "nb": "Ram inn hver person uten felles romlig relasjon",
+              "fr": "Cadrer chacun sans relation spatiale commune",
+              "pt": "Enquadrar cada pessoa sem relação espacial comum"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Replace all visual exclusion with explanatory captions",
+              "nb": "Erstatt all visuell utestenging med forklarende tekster",
+              "fr": "Remplacer toute exclusion visuelle par des cartons explicatifs",
+              "pt": "Substituir toda exclusão visual por legendas explicativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion's essay analyses stillness and spatialized oppression. Test an original non-discriminatory rehearsal exercise showing social distance.",
+          "nb": "Criterion-essayet analyserer stillhet i bildet og romlig undertrykking. Prøv en egen, ikke-diskriminerende øvelse som viser sosial avstand.",
+          "fr": "L’essai Criterion analyse immobilité et oppression spatiale. Testez un exercice original non discriminatoire montrant la distance sociale.",
+          "pt": "O ensaio Criterion analisa imobilidade e opressão espacial. Teste um exercício original não discriminatório que mostre distância social."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "alifeareatsthesoul-schedule",
+        "area": "research",
+        "prompt": {
+          "en": "How can a compressed schedule preserve deliberate staging?",
+          "nb": "Hvordan kan en komprimert opptaksplan bevare gjennomtenkt iscenesettelse?",
+          "fr": "Comment un calendrier condensé préserve-t-il une mise en scène réfléchie ?",
+          "pt": "Como pode um calendário condensado preservar encenação deliberada?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Remove all preparation because the shoot is short",
+              "nb": "Fjern alle forberedelser fordi opptaksperioden er kort",
+              "fr": "Supprimer toute préparation parce que le tournage est court",
+              "pt": "Eliminar toda preparação porque a rodagem é curta"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat the historical schedule as a universal rule",
+              "nb": "Behandle den historiske planen som en universell regel",
+              "fr": "Traiter le calendrier historique comme une règle universelle",
+              "pt": "Tratar o calendário histórico como regra universal"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Prioritize rehearsal, group compatible setups and track continuity",
+              "nb": "Prioriter øving, grupper kompatible oppsett og følg kontinuitet",
+              "fr": "Prioriser répétitions, regrouper dispositifs compatibles et suivre les raccords",
+              "pt": "Priorizar ensaios, agrupar configurações compatíveis e seguir continuidade"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI documents the fifteen-day shoot and the foundation records the craft team. Design a realistic fictional plan, not a mandatory historical schedule.",
+          "nb": "BFI dokumenterer femten dagers opptak og stiftelsen registrerer fagteamet. Lag en realistisk fiktiv plan, ikke en obligatorisk historisk tidsplan.",
+          "fr": "Le BFI documente quinze jours de tournage et la fondation les métiers. Créez un calendrier fictif réaliste plutôt qu’une règle historique.",
+          "pt": "O BFI documenta quinze dias de rodagem e a fundação os departamentos. Crie um plano fictício realista, não uma regra histórica."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "alifeareatsthesoul-melodrama",
+        "area": "research",
+        "prompt": {
+          "en": "How can melodrama combine empathy with critical distance?",
+          "nb": "Hvordan kan melodrama forene empati med kritisk avstand?",
+          "fr": "Comment le mélodrame associe-t-il empathie et distance critique ?",
+          "pt": "Como pode o melodrama combinar empatia com distância crítica?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat genre influence as proof of identical authorship",
+              "nb": "Behandle sjangerpåvirkning som bevis på identisk forfatterskap",
+              "fr": "Traiter l’influence du genre comme preuve d’une même signature",
+              "pt": "Tratar influência de género como prova de autoria idêntica"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare restrained performance and emotionally charged composition",
+              "nb": "Sammenlign tilbakeholdent spill og følelsesladet komposisjon",
+              "fr": "Comparer jeu retenu et composition émotionnelle",
+              "pt": "Comparar interpretação contida e composição emocional"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Reduce characters to fixed social stereotypes",
+              "nb": "Reduser figurer til fastlåste sosiale stereotypier",
+              "fr": "Réduire les personnages à des stéréotypes sociaux",
+              "pt": "Reduzir personagens a estereótipos sociais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion traces Sirk's influence and the balance between involvement and critical distance; BFI discusses racism and convention. Develop a new scene with individual agency.",
+          "nb": "Criterion følger påvirkningen fra Sirk og balansen mellom innlevelse og kritisk avstand; BFI drøfter rasisme og normer. Utform en ny scene med individuell handlekraft.",
+          "fr": "Criterion retrace l’influence de Sirk et la distance critique ; le BFI évoque racisme et conventions. Créez une scène préservant l’autonomie individuelle.",
+          "pt": "A Criterion acompanha a influência de Sirk e a distância crítica; o BFI discute racismo e convenções. Crie uma cena com autonomia individual."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_jaws_1975",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Marine logistics, withheld imagery and musical suspense",
+      "nb": "Maritim logistikk, tilbakeholdte bilder og musikalsk spenning",
+      "fr": "Logistique maritime, image retenue et suspense musical",
+      "pt": "Logística marítima, imagem contida e suspense musical"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Jaws",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/55193-JAWS"
+      },
+      {
+        "id": "s1",
+        "title": "Jaws (1975)",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/programs/national-film-preservation-board/film-registry/descriptions-and-essays/"
+      },
+      {
+        "id": "s2",
+        "title": "On Location with Jaws",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/articles/on-location-with-jaws"
+      },
+      {
+        "id": "s3",
+        "title": "Bill Butler, ASC on His Transition From Tape to Film to Jaws",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/articles/bill-butler-asc-tape-to-film-to-jaws"
+      }
+    ],
+    "questions": [
+      {
+        "id": "jaws-marine",
+        "area": "research",
+        "prompt": {
+          "en": "How should a fictional water shoot handle uncertain conditions?",
+          "nb": "Hvordan bør et fiktivt vannopptak håndtere usikre forhold?",
+          "fr": "Comment préparer un tournage fictif sur l’eau aux conditions incertaines ?",
+          "pt": "Como deve uma rodagem fictícia na água lidar com condições incertas?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume weather will match every planned shooting day",
+              "nb": "Anta at været passer hver planlagte opptaksdag",
+              "fr": "Supposer que la météo convient à chaque journée",
+              "pt": "Supor que o tempo coincide com cada dia planeado"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Continue filming despite unsafe water conditions",
+              "nb": "Fortsett opptak tross utrygge vannforhold",
+              "fr": "Poursuivre le tournage malgré des conditions dangereuses",
+              "pt": "Continuar a filmar apesar de condições aquáticas inseguras"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan professional water safety and alternate dry-land setups",
+              "nb": "Planlegg profesjonell vannsikkerhet og alternative opptaksoppsett på land",
+              "fr": "Prévoir sécurité aquatique professionnelle et dispositifs à terre",
+              "pt": "Prever segurança aquática profissional e alternativas em terra"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "ASC records the weather and marine challenges; AFI documents production disruptions. Build a fictional schedule with clear stop criteria and contingency scenes.",
+          "nb": "ASC dokumenterer vær- og marine utfordringer; AFI omtaler produksjonsavbrudd. Lag en fiktiv plan med tydelige stoppkriterier og reservescener.",
+          "fr": "L’ASC documente météo et difficultés maritimes ; l’AFI recense les interruptions. Créez un calendrier fictif avec critères d’arrêt et scènes de réserve.",
+          "pt": "A ASC documenta clima e dificuldades marítimas; a AFI regista interrupções. Crie calendário fictício com critérios de paragem e cenas de reserva."
+        },
+        "sourceIds": [
+          "s0",
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "jaws-withholding",
+        "area": "camera",
+        "prompt": {
+          "en": "How can an unseen fictional creature create suspense?",
+          "nb": "Hvordan kan en usett fiktiv skapning skape spenning?",
+          "fr": "Comment une créature fictive invisible crée-t-elle du suspense ?",
+          "pt": "Como pode uma criatura fictícia invisível criar suspense?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume an unreliable effect must remain in every scene",
+              "nb": "Anta at en upålitelig effekt må beholdes i hver scene",
+              "fr": "Supposer qu’un effet peu fiable doit rester dans chaque scène",
+              "pt": "Supor que um efeito pouco fiável deve ficar em cada cena"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use reactions, framing and selective revelation",
+              "nb": "Bruk reaksjoner, utsnitt og selektiv avsløring",
+              "fr": "Employer réactions, cadrage et révélation progressive",
+              "pt": "Usar reações, enquadramento e revelação seletiva"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Show the complete creature in every shot",
+              "nb": "Vis hele skapningen i hvert bilde",
+              "fr": "Montrer la créature entière dans chaque plan",
+              "pt": "Mostrar a criatura completa em cada plano"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI documents practical-effect failures and Fields's editing; Butler discusses the water-level viewpoint. Test an original suspense sequence in a safe controlled setting.",
+          "nb": "AFI dokumenterer svikt i praktiske effekter og Fields' klipping; Butler drøfter perspektivet ved vannflaten. Prøv en egen spenningssekvens i trygge kontrollerte omgivelser.",
+          "fr": "L’AFI documente les difficultés d’effets et le montage de Fields ; Butler évoque le regard au niveau de l’eau. Testez une séquence originale en lieu sûr.",
+          "pt": "A AFI documenta falhas de efeitos e montagem de Fields; Butler aborda o olhar ao nível da água. Teste uma sequência original em ambiente seguro."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "jaws-score",
+        "area": "sound",
+        "prompt": {
+          "en": "How can an original musical motif signal unseen narrative tension?",
+          "nb": "Hvordan kan et eget musikalsk motiv signalisere usett dramatisk spenning?",
+          "fr": "Comment un motif musical original signale-t-il une tension invisible ?",
+          "pt": "Como pode um motivo musical original sinalizar tensão narrativa invisível?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Vary cue placement and contrast music with silence",
+              "nb": "Varier plasseringen av lydtemaer og sett musikk mot stillhet",
+              "fr": "Varier les placements musicaux et opposer musique et silence",
+              "pt": "Variar a colocação musical e contrastar música com silêncio"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Copy the film's famous theme note for note",
+              "nb": "Kopier filmens berømte tema tone for tone",
+              "fr": "Copier le thème célèbre note pour note",
+              "pt": "Copiar o tema famoso nota por nota"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Keep tension music constant from beginning to end",
+              "nb": "Hold spenningsmusikken konstant fra start til slutt",
+              "fr": "Garder la musique de tension constante du début à la fin",
+              "pt": "Manter música de tensão constante do início ao fim"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI credits Williams and the Registry discusses suspense and score. Compare newly composed cues without reproducing the copyrighted music.",
+          "nb": "AFI krediterer Williams og filmregisteret drøfter spenning og musikk. Sammenlign nykomponerte temaer uten å gjengi den opphavsrettslig beskyttede musikken.",
+          "fr": "L’AFI crédite Williams et le registre analyse suspense et musique. Comparez des motifs nouvellement composés sans reproduire la musique protégée.",
+          "pt": "A AFI credita Williams e o registo analisa suspense e música. Compare motivos novos sem reproduzir a música protegida."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_dog_day_afternoon_1975",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Ensemble rehearsal, changing daylight and media perspective",
+      "nb": "Ensembleøving, skiftende dagslys og medieperspektiv",
+      "fr": "Répétition collective, lumière changeante et regard médiatique",
+      "pt": "Ensaio coletivo, luz variável e perspetiva mediática"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Dog Day Afternoon",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Catalog/moviedetails/55464"
+      },
+      {
+        "id": "s1",
+        "title": "Dog Day Afternoon",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/9afbfe9b-9438-5877-9f1b-bebd23ef1914/dog-day-afternoon"
+      },
+      {
+        "id": "s2",
+        "title": "Where to begin with Sidney Lumet",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/where-begin-with-sidney-lumet"
+      },
+      {
+        "id": "s3",
+        "title": "Victor J. Kemper, ASC — A Fitting Candidate for Kudos",
+        "publisher": "American Society of Cinematographers",
+        "url": "https://theasc.com/articles/victor-j-kemper-fitting-candidate-for-kudos"
+      }
+    ],
+    "questions": [
+      {
+        "id": "dogdayafternoon-rehearsal",
+        "area": "research",
+        "prompt": {
+          "en": "How can ensemble rehearsal support a contained drama?",
+          "nb": "Hvordan kan ensembleøving støtte et drama i et avgrenset rom?",
+          "fr": "Comment les répétitions collectives soutiennent-elles un drame en espace clos ?",
+          "pt": "Como podem ensaios coletivos apoiar um drama em espaço limitado?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore the camera team's observation of rehearsal",
+              "nb": "Ignorer kamerateamets observasjon av øving",
+              "fr": "Ignorer l’observation des répétitions par l’équipe image",
+              "pt": "Ignorar a observação dos ensaios pela equipa de imagem"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Track listening, blocking and changing relationships across rehearsals",
+              "nb": "Følg lytting, plassering og skiftende relasjoner gjennom øvingene",
+              "fr": "Suivre écoute, déplacements et relations changeantes pendant les répétitions",
+              "pt": "Acompanhar escuta, marcações e relações mutáveis nos ensaios"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Rehearse each performer in permanent isolation",
+              "nb": "Øv med hver skuespiller permanent isolert",
+              "fr": "Répéter avec chaque interprète toujours isolé",
+              "pt": "Ensaiar cada intérprete permanentemente isolado"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Kemper describes observing Lumet's rehearsals; AFI records the ensemble and craft credits. Prepare a fictional non-criminal contained drama with shared rehearsal notes.",
+          "nb": "Kemper beskriver observasjon av Lumets øvinger; AFI dokumenterer ensemble og fagkreditering. Forbered et fiktivt drama uten kriminalitet med felles øvingsnotater.",
+          "fr": "Kemper décrit son observation des répétitions de Lumet ; l’AFI recense les métiers. Préparez un drame fictif sans crime avec des notes communes.",
+          "pt": "Kemper descreve observar ensaios de Lumet; a AFI regista os ofícios. Prepare um drama fictício sem crime com notas partilhadas."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "dogdayafternoon-daylight",
+        "area": "camera",
+        "prompt": {
+          "en": "How can changing daylight convey the passage of story time?",
+          "nb": "Hvordan kan skiftende dagslys formidle fortellingstidens gang?",
+          "fr": "Comment la lumière changeante exprime-t-elle le temps du récit ?",
+          "pt": "Como pode a luz variável transmitir a passagem do tempo narrativo?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map story-time lighting states and maintain shot continuity",
+              "nb": "Kartlegg lysstadier i fortellingstiden og bevar billedkontinuitet",
+              "fr": "Cartographier les états lumineux du récit et préserver les raccords",
+              "pt": "Mapear estados luminosos do tempo narrativo e manter continuidade"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume every scene occurs under identical lighting",
+              "nb": "Anta at alle scener foregår under identisk lys",
+              "fr": "Supposer que toutes les scènes ont une lumière identique",
+              "pt": "Supor que todas as cenas ocorrem sob luz idêntica"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Invent exact historical exposure settings from a still",
+              "nb": "Dikt opp eksakte historiske eksponeringsinnstillinger fra et stillbilde",
+              "fr": "Inventer des réglages historiques précis depuis une image fixe",
+              "pt": "Inventar definições históricas exatas a partir de imagem fixa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Kemper recalls changing interior light and the rejection of polished Hollywood imagery. Design a light continuity plan for an original fictional room.",
+          "nb": "Kemper erindrer skiftende interiørlys og avvisning av polert Hollywood-estetikk. Lag en lyskontinuitetsplan for et eget fiktivt rom.",
+          "fr": "Kemper évoque la lumière intérieure changeante et le refus du brillant hollywoodien. Créez un plan de raccord lumineux pour un espace fictif.",
+          "pt": "Kemper recorda luz interior variável e rejeição do brilho de Hollywood. Crie um plano de continuidade luminosa para espaço fictício."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "dogdayafternoon-media",
+        "area": "sound",
+        "prompt": {
+          "en": "How can fictional media coverage change a character's public image?",
+          "nb": "Hvordan kan fiktiv mediedekning endre en figurs offentlige image?",
+          "fr": "Comment une couverture médiatique fictive modifie-t-elle l’image publique d’un personnage ?",
+          "pt": "Como pode cobertura mediática fictícia alterar a imagem pública de uma personagem?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Present invented media excerpts as authentic reporting",
+              "nb": "Presenter oppdiktede medieklipp som autentisk journalistikk",
+              "fr": "Présenter des extraits inventés comme reportages authentiques",
+              "pt": "Apresentar excertos inventados como reportagem autêntica"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume public perception equals objective truth",
+              "nb": "Anta at offentlig oppfatning er objektiv sannhet",
+              "fr": "Supposer que la perception publique est la vérité objective",
+              "pt": "Supor que perceção pública é verdade objetiva"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Contrast private dialogue with a clearly fictional public broadcast",
+              "nb": "Sett privat dialog opp mot en tydelig fiktiv offentlig sending",
+              "fr": "Opposer dialogue privé et diffusion publique clairement fictive",
+              "pt": "Contrastar diálogo privado com emissão pública claramente fictícia"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI discusses media spectacle and social pressures; AFI identifies the real-event adaptation. Explore a fictional public disagreement without treating dramatization as evidence.",
+          "nb": "BFI drøfter mediespektakel og sosialt press; AFI identifiserer adaptasjonen av virkelige hendelser. Utforsk en fiktiv offentlig uenighet uten å behandle dramatisering som bevis.",
+          "fr": "Le BFI analyse spectacle médiatique et pressions sociales ; l’AFI identifie l’adaptation. Explorez un désaccord public fictif sans traiter la fiction comme preuve.",
+          "pt": "O BFI analisa espetáculo mediático e pressões sociais; a AFI identifica a adaptação. Explore um desacordo público fictício sem tratar dramatização como prova."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_taxi_driver_1976",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Unreliable viewpoint, expressionist city and contrasting music",
+      "nb": "Upålitelig perspektiv, ekspresjonistisk by og kontrasterende musikk",
+      "fr": "Regard non fiable, ville expressionniste et musique contrastée",
+      "pt": "Olhar não fiável, cidade expressionista e música contrastante"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Taxi Driver",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/67969-TAXI-DRIVER"
+      },
+      {
+        "id": "s1",
+        "title": "Taxi Driver",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/d964bfb7-729b-5181-85f8-35b1bd3a21a3/taxi-driver"
+      },
+      {
+        "id": "s2",
+        "title": "Taxi Driver: 5 films that influenced Scorsese's masterpiece",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/taxi-driver-5-films-that-influenced-scorseses-masterpiece"
+      },
+      {
+        "id": "s3",
+        "title": "In Memoriam: Michael Chapman, ASC",
+        "publisher": "American Society of Cinematographers",
+        "url": "https://theasc.com/news/in-memoriam-michael-chapman-asc"
+      }
+    ],
+    "questions": [
+      {
+        "id": "taxidriver-viewpoint",
+        "area": "research",
+        "prompt": {
+          "en": "How can a film distinguish subjective narration from factual reality?",
+          "nb": "Hvordan kan en film skille subjektiv fortellerstemme fra faktisk virkelighet?",
+          "fr": "Comment distinguer narration subjective et réalité factuelle au cinéma ?",
+          "pt": "Como pode um filme distinguir narração subjetiva de realidade factual?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Contrast fictional narration with independent visual context",
+              "nb": "Sett fiktiv fortellerstemme opp mot selvstendig visuell kontekst",
+              "fr": "Opposer narration fictive et contexte visuel indépendant",
+              "pt": "Contrastar narração fictícia com contexto visual independente"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat the protagonist's judgments as objective evidence",
+              "nb": "Behandle hovedfigurens vurderinger som objektive bevis",
+              "fr": "Traiter les jugements du protagoniste comme preuves objectives",
+              "pt": "Tratar juízos do protagonista como provas objetivas"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Remove all evidence of the narrator's limited perspective",
+              "nb": "Fjern alle tegn på fortellerens begrensede perspektiv",
+              "fr": "Supprimer tout indice du regard limité du narrateur",
+              "pt": "Eliminar todos os indícios da perspetiva limitada do narrador"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI discusses urban disillusionment and literary and cinematic influences; AFI credits Schrader's screenplay. Explore critical distance in an original nonviolent scene.",
+          "nb": "BFI drøfter urban desillusjon og litterære og filmatiske påvirkninger; AFI krediterer Schraders manus. Utforsk kritisk avstand i en egen ikkevoldelig scene.",
+          "fr": "Le BFI analyse désillusion urbaine et influences littéraires et filmiques ; l’AFI crédite Schrader. Explorez la distance critique dans une scène originale non violente.",
+          "pt": "O BFI analisa desilusão urbana e influências literárias e fílmicas; a AFI credita Schrader. Explore distância crítica numa cena original não violenta."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "taxidriver-city",
+        "area": "camera",
+        "prompt": {
+          "en": "How can urban lighting express a fictional character's isolation?",
+          "nb": "Hvordan kan bylyset uttrykke en fiktiv figurs isolasjon?",
+          "fr": "Comment la lumière urbaine exprime-t-elle l’isolement d’un personnage fictif ?",
+          "pt": "Como pode a luz urbana exprimir isolamento de uma personagem fictícia?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat expressionist images as neutral urban documentation",
+              "nb": "Behandle ekspresjonistiske bilder som nøytral bydokumentasjon",
+              "fr": "Traiter les images expressionnistes comme documentation neutre",
+              "pt": "Tratar imagens expressionistas como documentação neutra"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Infer precise historical camera settings from colour alone",
+              "nb": "Utled presise historiske kamerainnstillinger bare fra farge",
+              "fr": "Déduire les réglages historiques précis de la seule couleur",
+              "pt": "Deduzir definições históricas da câmara apenas pela cor"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test reflected light, colour contrast and subjective framing",
+              "nb": "Prøv reflektert lys, fargekontrast og subjektiv innramming",
+              "fr": "Tester lumière réfléchie, contraste chromatique et cadrage subjectif",
+              "pt": "Testar luz refletida, contraste cromático e enquadramento subjetivo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI discusses neon and steam; Chapman recalls rejecting a newsreel look. Develop an original visual test that separates interpretation from documentary evidence.",
+          "nb": "BFI drøfter neonlys og damp; Chapman erindrer avvisningen av aktualitetsestetikk. Lag en egen visuell test som skiller tolkning fra dokumentarisk belegg.",
+          "fr": "Le BFI analyse néons et vapeur ; Chapman rappelle le refus du style actualités. Créez un essai distinguant interprétation et preuve documentaire.",
+          "pt": "O BFI analisa néon e vapor; Chapman recorda rejeição da estética jornalística. Crie um teste que distinga interpretação de prova documental."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "taxidriver-music",
+        "area": "sound",
+        "prompt": {
+          "en": "How can contrasting musical moods challenge a subjective image?",
+          "nb": "Hvordan kan kontrasterende musikalske stemninger utfordre et subjektivt bilde?",
+          "fr": "Comment des ambiances musicales contrastées interrogent-elles une image subjective ?",
+          "pt": "Como podem ambientes musicais contrastantes questionar uma imagem subjetiva?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Credit the musical score to the editor alone",
+              "nb": "Krediter filmmusikken bare til klipperen",
+              "fr": "Attribuer la partition uniquement au monteur",
+              "pt": "Atribuir a partitura apenas ao montador"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare original cues that create tenderness or unease",
+              "nb": "Sammenlign egne lydtemaer som skaper ømhet eller uro",
+              "fr": "Comparer des motifs originaux suscitant tendresse ou malaise",
+              "pt": "Comparar motivos originais que criam ternura ou inquietação"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume every cue confirms the character's judgments",
+              "nb": "Anta at hvert lydtema bekrefter figurens vurderinger",
+              "fr": "Supposer que chaque motif confirme les jugements du personnage",
+              "pt": "Supor que cada motivo confirma os juízos da personagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI describes Herrmann's forceful and nostalgic music, and AFI identifies separate music and editing roles. Test new musical moods without copying the score.",
+          "nb": "BFI beskriver Herrmanns kraftfulle og nostalgiske musikk, og AFI identifiserer separate musikk- og klipperoller. Prøv nye stemninger uten å kopiere musikken.",
+          "fr": "Le BFI décrit la musique puissante et nostalgique de Herrmann et l’AFI distingue les métiers. Testez des ambiances nouvelles sans copier la partition.",
+          "pt": "O BFI descreve música poderosa e nostálgica de Herrmann e a AFI distingue os ofícios. Teste ambientes novos sem copiar a partitura."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_star_wars_1977",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Used-future design, effects coordination and invented sound worlds",
+      "nb": "Brukt fremtidsdesign, effektkoordinering og oppdiktede lydverdener",
+      "fr": "Futur patiné, coordination des effets et univers sonores inventés",
+      "pt": "Futuro usado, coordenação de efeitos e mundos sonoros inventados"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Star Wars",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/55187-STAR-WARS"
+      },
+      {
+        "id": "s1",
+        "title": "Star Wars (1977)",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/programs/national-film-preservation-board/film-registry/descriptions-and-essays/"
+      },
+      {
+        "id": "s2",
+        "title": "Beyond The Frame: Star Wars: Episode IV — A New Hope",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/articles/beyond-the-frame-star-wars-episode-iv-a-new-hope-1977"
+      },
+      {
+        "id": "s3",
+        "title": "The 50th Academy Awards",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/oscars/ceremonies/1978"
+      }
+    ],
+    "questions": [
+      {
+        "id": "starwars-design",
+        "area": "camera",
+        "prompt": {
+          "en": "How can fictional technology appear to have a history?",
+          "nb": "Hvordan kan fiktiv teknologi se ut til å ha en historie?",
+          "fr": "Comment une technologie fictive peut-elle sembler avoir une histoire ?",
+          "pt": "Como pode tecnologia fictícia parecer ter uma história?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Make every prop uniformly new and pristine",
+              "nb": "Gjør alle rekvisitter ensartet nye og plettfrie",
+              "fr": "Rendre tous les accessoires uniformément neufs",
+              "pt": "Tornar todos os adereços uniformemente novos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy recognizable props without creating an original design",
+              "nb": "Kopier gjenkjennelige rekvisitter uten å lage eget design",
+              "fr": "Copier des accessoires reconnaissables sans création originale",
+              "pt": "Copiar adereços reconhecíveis sem criar design original"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Design coherent signs of wear, repair and repeated use",
+              "nb": "Utform sammenhengende tegn på slitasje, reparasjon og gjentatt bruk",
+              "fr": "Concevoir des signes cohérents d’usure, de réparation et d’usage",
+              "pt": "Conceber sinais coerentes de desgaste, reparação e uso repetido"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI documents the used-future aesthetic and Academy records recognize art direction. Design an original fictional everyday object with a plausible history.",
+          "nb": "AFI dokumenterer estetikken med en brukt fremtid og Oscar-arkivet anerkjenner scenografien. Utform en egen fiktiv hverdagsgjenstand med en troverdig historie.",
+          "fr": "L’AFI documente le futur patiné et l’Académie reconnaît la direction artistique. Concevez un objet quotidien fictif original avec une histoire plausible.",
+          "pt": "A AFI documenta o futuro usado e a Academia reconhece direção artística. Crie um objeto quotidiano fictício original com história plausível."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "starwars-pipeline",
+        "area": "camera",
+        "prompt": {
+          "en": "How should miniature effects and live action be coordinated?",
+          "nb": "Hvordan bør miniatyreffekter og realopptak samordnes?",
+          "fr": "Comment coordonner effets de miniatures et prises de vues réelles ?",
+          "pt": "Como coordenar efeitos de miniaturas e imagens de ação real?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume visual effects alone establish narrative continuity",
+              "nb": "Anta at visuelle effekter alene etablerer fortellingskontinuitet",
+              "fr": "Supposer que les effets seuls assurent la continuité narrative",
+              "pt": "Supor que efeitos visuais sozinhos estabelecem continuidade narrativa"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Share reference framing, movement and shot identifiers",
+              "nb": "Del referanseutsnitt, bevegelse og opptaksidentifikatorer",
+              "fr": "Partager cadrages de référence, mouvements et identifiants de plans",
+              "pt": "Partilhar enquadramentos de referência, movimentos e identificadores de planos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat each effects shot as independent of the scene",
+              "nb": "Behandle hvert effektopptak uavhengig av scenen",
+              "fr": "Traiter chaque plan d’effets comme indépendant de la scène",
+              "pt": "Tratar cada plano de efeitos como independente da cena"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI documents the custom effects pipeline and ASC records miniature photography; the Registry stresses integration into narrative. Plan a small original effects test.",
+          "nb": "AFI dokumenterer den spesialtilpassede effektkjeden og ASC miniatyrfoto; filmregisteret vektlegger integrasjon i fortellingen. Planlegg en liten egen effekttest.",
+          "fr": "L’AFI documente la chaîne d’effets et l’ASC les miniatures ; le registre souligne leur intégration au récit. Préparez un petit essai original.",
+          "pt": "A AFI documenta a cadeia de efeitos e a ASC as miniaturas; o registo destaca integração narrativa. Planeie um pequeno teste original."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "starwars-soundworld",
+        "area": "sound",
+        "prompt": {
+          "en": "How can invented sounds give fictional objects a consistent identity?",
+          "nb": "Hvordan kan oppdiktede lyder gi fiktive gjenstander en konsekvent identitet?",
+          "fr": "Comment des sons inventés donnent-ils une identité cohérente aux objets fictifs ?",
+          "pt": "Como podem sons inventados dar identidade coerente a objetos fictícios?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Create a library of original sounds with documented variations",
+              "nb": "Lag et bibliotek av egne lyder med dokumenterte variasjoner",
+              "fr": "Créer une bibliothèque de sons originaux avec variantes documentées",
+              "pt": "Criar biblioteca de sons originais com variantes documentadas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use the same unrelated sound for every object",
+              "nb": "Bruk samme urelaterte lyd for alle gjenstander",
+              "fr": "Employer le même son sans rapport pour tous les objets",
+              "pt": "Usar o mesmo som sem relação para todos os objetos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the film's distinctive sound recordings without permission",
+              "nb": "Kopier filmens særpregede lydopptak uten tillatelse",
+              "fr": "Copier les enregistrements distinctifs du film sans autorisation",
+              "pt": "Copiar gravações distintivas do filme sem autorização"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI records Burtt's sound work and the Academy recognizes his special achievement. Design new sounds and distinguish effects, voices and music in the cue sheet.",
+          "nb": "AFI dokumenterer Burtts lydarbeid og Oscar-arkivet anerkjenner hans særprestasjon. Lag nye lyder og skill effekter, stemmer og musikk i lydplanen.",
+          "fr": "L’AFI documente le travail de Burtt et l’Académie reconnaît sa contribution. Créez des sons nouveaux et distinguez effets, voix et musique.",
+          "pt": "A AFI documenta o trabalho de Burtt e a Academia reconhece a contribuição. Crie sons novos e distinga efeitos, vozes e música no plano sonoro."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      }
+    ]
   }
 ] as const satisfies readonly SourceBackedCaseWorkshop[];
