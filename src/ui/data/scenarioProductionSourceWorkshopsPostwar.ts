@@ -1709,4 +1709,1528 @@ export const postwarSourceWorkshops = [
       }
     ]
   }
+,
+  {
+    "scenarioId": "scenario_ugetsu_1953",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Period drama, literary adaptation and flowing camera movement",
+      "nb": "Periodedrama, litterær adaptasjon og flytende kamera",
+      "fr": "Film historique, adaptation littéraire et caméra fluide",
+      "pt": "Drama de época, adaptação literária e câmara fluida"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Ugetsu",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/369-ugetsu"
+      },
+      {
+        "id": "s1",
+        "title": "Ugetsu Monogatari",
+        "publisher": "La Biennale di Venezia / ASAC",
+        "url": "https://asac.labiennale.org/attivita/cinema/4018"
+      },
+      {
+        "id": "s2",
+        "title": "Ugetsu: From the Other Shore",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/current/posts/401-ugetsu-from-the-other-shore"
+      },
+      {
+        "id": "s3",
+        "title": "Ugetsu Monogatari (1953)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/cf595a9f-f9cf-5581-9d1b-2d04df5715ae/ugetsu-monogatari"
+      },
+      {
+        "id": "s4",
+        "title": "Out of the Vaults: Ugetsu, 1953",
+        "publisher": "The Film Foundation",
+        "url": "https://www.film-foundation.org/hfpa-ugetsu"
+      }
+    ],
+    "questions": [
+      {
+        "id": "ugetsu-adapt",
+        "area": "research",
+        "prompt": {
+          "en": "How should multiple literary sources inform the adaptation?",
+          "nb": "Hvordan bør flere litterære kilder forme adaptasjonen?",
+          "fr": "Comment plusieurs sources littéraires doivent-elles nourrir l’adaptation ?",
+          "pt": "Como devem várias fontes literárias orientar a adaptação?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Combine motifs around the cost of war",
+              "nb": "Foren motiver rundt krigens kostnad",
+              "fr": "Unir les motifs autour du coût de la guerre",
+              "pt": "Unir motivos em torno do custo da guerra"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Adapt only one tale word for word",
+              "nb": "Adapter bare én fortelling ordrett",
+              "fr": "Adapter un seul récit mot à mot",
+              "pt": "Adaptar apenas um conto palavra por palavra"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Erase the civilian point of view",
+              "nb": "Fjern sivilbefolkningens perspektiv",
+              "fr": "Effacer le point de vue des civils",
+              "pt": "Apagar o ponto de vista dos civis"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The Criterion essay describes the fusion of Ueda and Maupassant and the emphasis on ordinary people harmed by war.",
+          "nb": "Criterion-essayet beskriver kombinasjonen av Ueda og Maupassant og vektleggingen av vanlige mennesker rammet av krig.",
+          "fr": "L’essai Criterion décrit la fusion d’Ueda et Maupassant et l’accent sur les victimes civiles de la guerre.",
+          "pt": "O ensaio Criterion descreve a fusão de Ueda e Maupassant e o foco nas vítimas civis da guerra."
+        },
+        "sourceIds": [
+          "s2",
+          "s0"
+        ]
+      },
+      {
+        "id": "ugetsu-movement",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a supernatural encounter unfold within a moving shot?",
+          "nb": "Hvordan kan et overnaturlig møte utspille seg i et bevegelig bilde?",
+          "fr": "Comment déployer une rencontre surnaturelle dans un plan mobile ?",
+          "pt": "Como desenvolver um encontro sobrenatural num plano móvel?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Replace spatial staging with unrelated inserts",
+              "nb": "Erstatt romlig iscenesettelse med urelaterte innklipp",
+              "fr": "Remplacer la mise en espace par des inserts sans lien",
+              "pt": "Substituir a encenação espacial por insertos sem relação"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Claim a specific crane model without evidence",
+              "nb": "Påstå en bestemt kranmodell uten belegg",
+              "fr": "Affirmer un modèle de grue sans preuve",
+              "pt": "Afirmar um modelo de grua sem provas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse movement and transitions within the frame",
+              "nb": "Øv på bevegelse og overganger i bildet",
+              "fr": "Répéter les mouvements et transitions dans le cadre",
+              "pt": "Ensaiar movimentos e transições dentro do quadro"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Miyagawa's recollection supports crane-based staging; it does not establish the exact hardware of an individual shot.",
+          "nb": "Miyagawas erindring støtter kranbasert iscenesettelse, men fastslår ikke utstyret i hvert enkelt opptak.",
+          "fr": "Le souvenir de Miyagawa étaye les mouvements de grue sans identifier le matériel de chaque plan.",
+          "pt": "A memória de Miyagawa sustenta o uso de grua sem identificar o equipamento de cada plano."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "ugetsu-edition",
+        "area": "research",
+        "prompt": {
+          "en": "How should the 96 and 97 minute listings be recorded?",
+          "nb": "Hvordan bør oppføringene på 96 og 97 minutter registreres?",
+          "fr": "Comment consigner les durées de 96 et 97 minutes ?",
+          "pt": "Como registar as durações de 96 e 97 minutos?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat restoration as original camera work",
+              "nb": "Behandle restaurering som opprinnelig kameraarbeid",
+              "fr": "Confondre restauration et prise de vues originale",
+              "pt": "Confundir restauro com a filmagem original"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record edition and institutional provenance separately",
+              "nb": "Registrer utgave og institusjonell proveniens separat",
+              "fr": "Consigner séparément édition et provenance institutionnelle",
+              "pt": "Registar separadamente edição e proveniência institucional"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Declare an alternate cut from duration alone",
+              "nb": "Erklær en alternativ klippversjon ut fra lengden alene",
+              "fr": "Déclarer un montage alternatif d’après la durée seule",
+              "pt": "Declarar uma montagem alternativa só pela duração"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion and Venice list different durations; the Film Foundation documents later restoration, not a proven alternate cut.",
+          "nb": "Criterion og Venezia oppgir ulike lengder; Film Foundation dokumenterer senere restaurering, ikke en påvist alternativ klippversjon.",
+          "fr": "Criterion et Venise donnent des durées différentes ; la Film Foundation documente une restauration ultérieure, non un montage alternatif établi.",
+          "pt": "Criterion e Veneza indicam durações distintas; a Film Foundation documenta restauro posterior, não uma montagem alternativa comprovada."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_a_man_escaped_1956",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Restricted viewpoint, material objects and offscreen sound",
+      "nb": "Begrenset perspektiv, materielle objekter og lyd utenfor bildet",
+      "fr": "Point de vue restreint, objets et son hors champ",
+      "pt": "Ponto de vista restrito, objetos e som fora de campo"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Un condamné à mort s'est échappé",
+        "publisher": "La Cinémathèque française",
+        "url": "https://www.cinematheque.fr/film/46782.html"
+      },
+      {
+        "id": "s1",
+        "title": "A Man Escaped",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/27848-a-man-escaped"
+      },
+      {
+        "id": "s2",
+        "title": "A Man Escaped: Quintessential Bresson",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/current/posts/2628-a-man-escaped-quintessential-bresson"
+      },
+      {
+        "id": "s3",
+        "title": "10 Things I Learned: A Man Escaped",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/current/posts/5589-10-things-i-learned-a-man-escaped"
+      },
+      {
+        "id": "s4",
+        "title": "Montluc avant/après : une découverte photographique",
+        "publisher": "Mémorial national de la prison de Montluc",
+        "url": "https://www.memorial-montluc.fr/ressources/montluc-en-photos"
+      },
+      {
+        "id": "s5",
+        "title": "Un condamné à mort s'est échappé",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/un-condamne-a-mort-s-est-echappe/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "amanescaped-sound",
+        "area": "sound",
+        "prompt": {
+          "en": "How can an unseen corridor become intelligible?",
+          "nb": "Hvordan kan en usett korridor bli forståelig?",
+          "fr": "Comment rendre intelligible un couloir invisible ?",
+          "pt": "Como tornar inteligível um corredor invisível?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Show every source of sound immediately",
+              "nb": "Vis alle lydkilder umiddelbart",
+              "fr": "Montrer immédiatement chaque source sonore",
+              "pt": "Mostrar imediatamente cada fonte sonora"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Cover every cue with continuous music",
+              "nb": "Dekk alle signaler med kontinuerlig musikk",
+              "fr": "Couvrir chaque indice de musique continue",
+              "pt": "Cobrir todas as pistas com música contínua"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Design distinct offscreen cues for movement and distance",
+              "nb": "Utform tydelige lydsignaler for bevegelse og avstand utenfor bildet",
+              "fr": "Créer des indices sonores distincts de mouvement et de distance",
+              "pt": "Criar pistas sonoras distintas de movimento e distância"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion describes Bresson's restricted viewpoint and structural offscreen sound; build a fictional cue sheet rather than a literal reconstruction.",
+          "nb": "Criterion beskriver Bressons begrensede perspektiv og strukturelle lyd utenfor bildet; lag et fiktivt lydskjema, ikke en bokstavelig rekonstruksjon.",
+          "fr": "Criterion décrit le regard restreint et le son hors champ structurel ; concevez un plan sonore fictif plutôt qu’une reconstitution.",
+          "pt": "A Criterion descreve o ponto de vista restrito e o som estrutural fora de campo; crie um plano sonoro fictício, não uma reconstrução."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "amanescaped-objects",
+        "area": "research",
+        "prompt": {
+          "en": "How should researched objects shape a fictional scene?",
+          "nb": "Hvordan bør undersøkte gjenstander forme en fiktiv scene?",
+          "fr": "Comment les objets documentés doivent-ils façonner une scène fictive ?",
+          "pt": "Como devem os objetos pesquisados moldar uma cena fictícia?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Replace object work with expository dialogue",
+              "nb": "Erstatt gjenstandsarbeidet med forklarende dialog",
+              "fr": "Remplacer le travail des objets par un dialogue explicatif",
+              "pt": "Substituir o trabalho com objetos por diálogo explicativo"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use documented references for tactile continuity",
+              "nb": "Bruk dokumenterte referanser for taktil kontinuitet",
+              "fr": "Utiliser les références documentées pour la continuité tactile",
+              "pt": "Usar referências documentadas para continuidade tátil"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Invent exact historical specifications",
+              "nb": "Finn på eksakte historiske spesifikasjoner",
+              "fr": "Inventer des spécifications historiques exactes",
+              "pt": "Inventar especificações históricas exatas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion records preserved props as references and Devigny's adviser role; distinguish reference evidence from the new fictional staging.",
+          "nb": "Criterion dokumenterer bevarte gjenstander som referanser og Devignys rådgiverrolle; skill kildebelegg fra ny fiktiv iscenesettelse.",
+          "fr": "Criterion documente les objets conservés et le rôle de conseiller de Devigny ; distinguez les références de la nouvelle mise en scène.",
+          "pt": "A Criterion documenta objetos preservados e a consultoria de Devigny; distinga referências da nova encenação fictícia."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "amanescaped-framing",
+        "area": "camera",
+        "prompt": {
+          "en": "How can consistent framing support restricted knowledge?",
+          "nb": "Hvordan kan konsekvent innramming støtte begrenset kunnskap?",
+          "fr": "Comment un cadrage cohérent sert-il un savoir restreint ?",
+          "pt": "Como pode um enquadramento coerente apoiar o conhecimento restrito?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse actor position within a consistent framing rule",
+              "nb": "Øv på skuespillerposisjon innen en konsekvent billedregel",
+              "fr": "Répéter les positions dans une règle de cadrage cohérente",
+              "pt": "Ensaiar posições dos atores com uma regra de enquadramento coerente"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Change viewpoint randomly on every cut",
+              "nb": "Bytt perspektiv tilfeldig ved hvert klipp",
+              "fr": "Changer de point de vue au hasard à chaque coupe",
+              "pt": "Mudar de ponto de vista ao acaso em cada corte"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Infer an undocumented camera body",
+              "nb": "Utled et udokumentert kamerahus",
+              "fr": "Déduire un boîtier non documenté",
+              "pt": "Inferir um corpo de câmara não documentado"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion reports a fixed focal length and mixed studio and location work; continuity is a staging problem, not a claim about undocumented equipment.",
+          "nb": "Criterion omtaler fast brennvidde og både studio- og stedsopptak; kontinuitet er et iscenesettelsesproblem, ikke en påstand om udokumentert utstyr.",
+          "fr": "Criterion signale une focale fixe et des tournages en studio et en décor réel ; la continuité relève de la mise en scène, non du matériel inconnu.",
+          "pt": "A Criterion refere distância focal fixa e filmagem em estúdio e local real; a continuidade é uma questão de encenação, não de equipamento desconhecido."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_400_blows_1959",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Autobiographical youth, location work and unresolved endings",
+      "nb": "Selvbiografisk ungdom, stedsopptak og åpne avslutninger",
+      "fr": "Jeunesse autobiographique, décors réels et fin ouverte",
+      "pt": "Juventude autobiográfica, locais reais e finais abertos"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "On Film",
+        "publisher": "The New Yorker",
+        "url": "https://www.newyorker.com/magazine/1960/02/20/on-film"
+      },
+      {
+        "id": "s1",
+        "title": "The 400 Blows",
+        "publisher": "Turner Classic Movies",
+        "url": "https://www.tcm.com/articles/88149/the-400-blows"
+      },
+      {
+        "id": "s2",
+        "title": "The 400 Blows: finding that beach and the Paris locations today",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/400-blows-francois-truffaut-locations"
+      },
+      {
+        "id": "s3",
+        "title": "The 400 Blows: Close to Home",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/current/posts/528-the-400-blows-close-to-home"
+      }
+    ],
+    "questions": [
+      {
+        "id": "the400blows-youth",
+        "area": "research",
+        "prompt": {
+          "en": "How should autobiographical material shape a child character?",
+          "nb": "Hvordan bør selvbiografisk materiale forme en barnefigur?",
+          "fr": "Comment le matériau autobiographique doit-il façonner un enfant ?",
+          "pt": "Como deve o material autobiográfico moldar uma personagem infantil?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Reduce adolescence to a moral lesson",
+              "nb": "Reduser ungdomstiden til en moralsk lekse",
+              "fr": "Réduire l’adolescence à une leçon morale",
+              "pt": "Reduzir a adolescência a uma lição moral"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Transform remembered experience into a fictional viewpoint",
+              "nb": "Form om erindret erfaring til et fiktivt perspektiv",
+              "fr": "Transformer le souvenir en point de vue fictif",
+              "pt": "Transformar a memória num ponto de vista fictício"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat every scene as literal autobiography",
+              "nb": "Behandle hver scene som bokstavelig selvbiografi",
+              "fr": "Traiter chaque scène comme autobiographie littérale",
+              "pt": "Tratar cada cena como autobiografia literal"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Truffaut's interview and Criterion's essay connect the film to personal experience without making the fictional character identical to the filmmaker.",
+          "nb": "Truffauts intervju og Criterion-essayet knytter filmen til personlig erfaring uten å gjøre fiksjonsfiguren identisk med filmskaperen.",
+          "fr": "L’entretien de Truffaut et l’essai Criterion relient le film à son expérience sans identifier le personnage au cinéaste.",
+          "pt": "A entrevista de Truffaut e o ensaio Criterion ligam o filme à experiência pessoal sem identificar a personagem com o cineasta."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "the400blows-street",
+        "area": "camera",
+        "prompt": {
+          "en": "How should a small crew plan a Paris street scene?",
+          "nb": "Hvordan bør et lite team planlegge en gatescene i Paris?",
+          "fr": "Comment une petite équipe doit-elle préparer une scène de rue à Paris ?",
+          "pt": "Como deve uma pequena equipa planear uma cena de rua em Paris?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Scout routes and design mobile observational coverage",
+              "nb": "Undersøk ruter og planlegg mobil observerende dekning",
+              "fr": "Repérer les trajets et prévoir une couverture mobile d’observation",
+              "pt": "Reconhecer percursos e planear cobertura móvel de observação"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume a large studio infrastructure",
+              "nb": "Forutsett en stor studioinfrastruktur",
+              "fr": "Supposer une infrastructure de grand studio",
+              "pt": "Pressupor uma grande infraestrutura de estúdio"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore the geography of the locations",
+              "nb": "Ignorer opptaksstedenes geografi",
+              "fr": "Ignorer la géographie des lieux",
+              "pt": "Ignorar a geografia dos locais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The interview and BFI location study support an inexpensive small-crew production and meaningful real locations; plan the route before shooting.",
+          "nb": "Intervjuet og BFIs stedsstudie støtter rimelig produksjon med lite team og meningsfulle virkelige steder; planlegg ruten før opptak.",
+          "fr": "L’entretien et l’étude BFI attestent une petite équipe et des lieux réels significatifs ; préparez le trajet avant le tournage.",
+          "pt": "A entrevista e o estudo do BFI sustentam uma equipa pequena e locais reais significativos; planeie o percurso antes da rodagem."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "the400blows-ending",
+        "area": "research",
+        "prompt": {
+          "en": "How can an ending preserve uncertainty after physical movement?",
+          "nb": "Hvordan kan en avslutning bevare usikkerhet etter fysisk bevegelse?",
+          "fr": "Comment conserver l’incertitude après un mouvement physique ?",
+          "pt": "Como preservar a incerteza após o movimento físico?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Resolve every conflict with explanatory titles",
+              "nb": "Løs alle konflikter med forklarende tekstplakater",
+              "fr": "Résoudre chaque conflit par des cartons explicatifs",
+              "pt": "Resolver todos os conflitos com títulos explicativos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Cut away before the emotional turning point",
+              "nb": "Klipp bort før det emosjonelle vendepunktet",
+              "fr": "Couper avant le tournant émotionnel",
+              "pt": "Cortar antes do ponto de viragem emocional"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Contrast a sustained run with a held final image",
+              "nb": "Sett et vedvarende løp opp mot et fastholdt sluttbilde",
+              "fr": "Opposer une course prolongée à une image finale figée",
+              "pt": "Contrapor uma corrida prolongada a uma imagem final fixa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI traces the final tracking run and freeze-frame; use their contrast to design an original unresolved ending.",
+          "nb": "BFI følger den avsluttende løpesekvensen og frysebildet; bruk kontrasten til å utforme en egen åpen avslutning.",
+          "fr": "Le BFI analyse la course finale et l’arrêt sur image ; exploitez leur contraste pour une fin ouverte originale.",
+          "pt": "O BFI analisa a corrida final e a imagem congelada; use o contraste para criar um final aberto original."
+        },
+        "sourceIds": [
+          "s2",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_breathless_1960",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Small-crew street production and discontinuous montage",
+      "nb": "Gateproduksjon med lite team og diskontinuerlig montasje",
+      "fr": "Tournage de rue en petite équipe et montage discontinu",
+      "pt": "Filmagem de rua com equipa reduzida e montagem descontínua"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Breathless",
+        "publisher": "Turner Classic Movies",
+        "url": "https://www.tcm.com/articles/87665/breathless"
+      },
+      {
+        "id": "s1",
+        "title": "Behind the Camera - Breathless",
+        "publisher": "Turner Classic Movies",
+        "url": "https://www.tcm.com/articles/615686/behind-the-camera-breathless"
+      },
+      {
+        "id": "s2",
+        "title": "Where to begin with Jean-Luc Godard – the early stuff",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/where-begin-jean-luc-godard-early-stuff"
+      },
+      {
+        "id": "s3",
+        "title": "The Big Idea - Breathless",
+        "publisher": "Turner Classic Movies",
+        "url": "https://www.tcm.com/articles/615685/the-big-idea-breathless"
+      }
+    ],
+    "questions": [
+      {
+        "id": "breathless-street",
+        "area": "camera",
+        "prompt": {
+          "en": "How can mobile coverage retain street immediacy?",
+          "nb": "Hvordan kan mobil dekning bevare gatens umiddelbarhet?",
+          "fr": "Comment une couverture mobile conserve-t-elle l’immédiateté de la rue ?",
+          "pt": "Como pode a cobertura móvel preservar a imediatez da rua?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan lightweight coverage around actual street conditions",
+              "nb": "Planlegg lett opptaksdekning ut fra faktiske gateforhold",
+              "fr": "Prévoir un dispositif léger adapté aux conditions de rue",
+              "pt": "Planear cobertura leve adaptada às condições da rua"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Rebuild all locations as studio sets",
+              "nb": "Bygg alle opptakssteder som studiosett",
+              "fr": "Reconstruire tous les lieux en studio",
+              "pt": "Reconstruir todos os locais em estúdio"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Insist on identical classical coverage for every scene",
+              "nb": "Krev identisk klassisk dekning i alle scener",
+              "fr": "Imposer une couverture classique identique partout",
+              "pt": "Impor cobertura clássica idêntica em todas as cenas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "TCM and BFI describe the low-budget street shoot and Coutard's mobile camera; plan original movement without claiming an exact historical setup.",
+          "nb": "TCM og BFI beskriver lavbudsjettopptak i gatene og Coutards mobile kamera; planlegg egen bevegelse uten å hevde et eksakt historisk oppsett.",
+          "fr": "TCM et BFI décrivent le tournage de rue économique et la caméra mobile de Coutard ; concevez un mouvement original sans prétendre reproduire le dispositif.",
+          "pt": "TCM e BFI descrevem a rodagem económica na rua e a câmara móvel de Coutard; planeie movimento original sem alegar reproduzir o dispositivo."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "breathless-cuts",
+        "area": "research",
+        "prompt": {
+          "en": "How can an edit shorten a take while retaining its rough rhythm?",
+          "nb": "Hvordan kan en klippversjon forkorte et opptak og bevare den ujevne rytmen?",
+          "fr": "Comment raccourcir un plan tout en gardant son rythme heurté ?",
+          "pt": "Como encurtar um plano mantendo o ritmo irregular?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Hide every omission with a neutral insert",
+              "nb": "Skjul alle utelatelser med nøytrale innklipp",
+              "fr": "Masquer chaque omission par un insert neutre",
+              "pt": "Ocultar todas as omissões com um inserto neutro"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use discontinuity without comparing alternatives",
+              "nb": "Bruk diskontinuitet uten å sammenligne alternativer",
+              "fr": "Employer la discontinuité sans comparer les variantes",
+              "pt": "Usar descontinuidade sem comparar alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test purposeful omissions within continuous action",
+              "nb": "Prøv målrettede utelatelser innen sammenhengende handling",
+              "fr": "Tester des omissions voulues dans une action continue",
+              "pt": "Testar omissões propositadas numa ação contínua"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "TCM recounts Godard's explanation of shortening the first edit; compare a smooth cut with a deliberately disruptive cut.",
+          "nb": "TCM gjengir Godards forklaring om forkorting av første klipp; sammenlign en jevn klippversjon med en bevisst forstyrrende versjon.",
+          "fr": "TCM rapporte l’explication de Godard sur le raccourcissement du premier montage ; comparez une version fluide et une version heurtée.",
+          "pt": "A TCM relata a explicação de Godard sobre encurtar a primeira montagem; compare uma versão fluida com outra deliberadamente descontínua."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "breathless-dialogue",
+        "area": "research",
+        "prompt": {
+          "en": "How can evolving dialogue remain manageable during production?",
+          "nb": "Hvordan kan dialog i utvikling håndteres under produksjon?",
+          "fr": "Comment gérer un dialogue en évolution pendant le tournage ?",
+          "pt": "Como gerir diálogo em evolução durante a rodagem?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Discard all scene and revision records",
+              "nb": "Forkast alle scene- og revisjonsnotater",
+              "fr": "Abandonner toute trace des scènes et révisions",
+              "pt": "Descartar todos os registos de cenas e revisões"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Maintain daily revisions and performance continuity notes",
+              "nb": "Før daglige revisjoner og kontinuitetsnotater for spill",
+              "fr": "Tenir des révisions quotidiennes et des notes de continuité du jeu",
+              "pt": "Manter revisões diárias e notas de continuidade interpretativa"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume every line was fixed before shooting",
+              "nb": "Anta at alle replikker var fastlagt før opptak",
+              "fr": "Supposer chaque réplique fixée avant le tournage",
+              "pt": "Supor todas as falas fixadas antes da rodagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "TCM describes the synopsis and dialogue written during production; a revision log is a practical exercise, not an assertion about Godard's actual paperwork.",
+          "nb": "TCM beskriver synopsis og dialog skrevet under produksjon; en revisjonslogg er en praktisk øvelse, ikke en påstand om Godards faktiske papirarbeid.",
+          "fr": "TCM décrit le synopsis et les dialogues écrits en cours de tournage ; un journal de révisions est un exercice, non une affirmation sur les documents de Godard.",
+          "pt": "A TCM descreve a sinopse e o diálogo escrito durante a rodagem; um registo de revisões é um exercício, não uma afirmação sobre os documentos de Godard."
+        },
+        "sourceIds": [
+          "s3",
+          "s0"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_hiroshima_mon_amour_1959",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Memory montage, documentary origins and international collaboration",
+      "nb": "Minnemontasje, dokumentarisk opphav og internasjonalt samarbeid",
+      "fr": "Montage de mémoire, origine documentaire et collaboration internationale",
+      "pt": "Montagem da memória, origem documental e colaboração internacional"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Hiroshima mon amour",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/c174bd34-e556-5507-8a89-95b460698eb6/hiroshima-mon-amour"
+      },
+      {
+        "id": "s1",
+        "title": "Hiroshima mon amour",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/217-hiroshima-mon-amour"
+      },
+      {
+        "id": "s2",
+        "title": "10 great directorial debuts of the 1950s",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-directorial-debuts-1950s"
+      },
+      {
+        "id": "s3",
+        "title": "Cannes Classics 2013",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/2013/cannes-classics-2013/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "hiroshimamonamour-memory",
+        "area": "research",
+        "prompt": {
+          "en": "How can personal memory interact with public history?",
+          "nb": "Hvordan kan personlig minne samspille med offentlig historie?",
+          "fr": "Comment la mémoire personnelle dialogue-t-elle avec l’histoire publique ?",
+          "pt": "Como pode a memória pessoal interagir com a história pública?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat fictional dialogue as archival testimony",
+              "nb": "Behandle fiktiv dialog som arkivvitnesbyrd",
+              "fr": "Traiter le dialogue fictif comme témoignage d’archive",
+              "pt": "Tratar diálogo fictício como testemunho de arquivo"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Remove historical context from every juxtaposition",
+              "nb": "Fjern historisk kontekst fra alle sammenstillinger",
+              "fr": "Retirer le contexte historique de chaque juxtaposition",
+              "pt": "Retirar contexto histórico de cada justaposição"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Distinguish fictional memory from documented historical material",
+              "nb": "Skill fiktivt minne fra dokumentert historisk materiale",
+              "fr": "Distinguer mémoire fictive et matériau historique documenté",
+              "pt": "Distinguir memória fictícia de material histórico documentado"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI traces the documentary commission into Duras's fiction; keep a clear evidence boundary while designing fragmented memory.",
+          "nb": "BFI følger dokumentaroppdraget inn i Duras' fiksjon; behold et tydelig kildeskille når fragmenterte minner utformes.",
+          "fr": "Le BFI retrace le passage de la commande documentaire à la fiction de Duras ; maintenez une distinction des preuves dans le montage de mémoire.",
+          "pt": "O BFI acompanha a passagem da encomenda documental à ficção de Duras; mantenha a distinção das provas na montagem da memória."
+        },
+        "sourceIds": [
+          "s2",
+          "s0"
+        ]
+      },
+      {
+        "id": "hiroshimamonamour-teams",
+        "area": "camera",
+        "prompt": {
+          "en": "How should two national production teams coordinate imagery?",
+          "nb": "Hvordan bør to nasjonale produksjonsteam samordne bildene?",
+          "fr": "Comment deux équipes nationales doivent-elles coordonner les images ?",
+          "pt": "Como devem duas equipas nacionais coordenar as imagens?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Avoid coordination between production units",
+              "nb": "Unngå samordning mellom opptaksenhetene",
+              "fr": "Éviter la coordination entre unités de tournage",
+              "pt": "Evitar coordenação entre unidades de rodagem"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Agree on visual continuity and document separate credits",
+              "nb": "Avtal visuell kontinuitet og dokumenter separate krediteringer",
+              "fr": "Convenir de la continuité visuelle et documenter les crédits distincts",
+              "pt": "Acordar continuidade visual e documentar créditos distintos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Credit one cinematographer for every sequence",
+              "nb": "Krediter én fotograf for alle sekvenser",
+              "fr": "Créditer un seul chef opérateur pour toutes les séquences",
+              "pt": "Creditar um só diretor de fotografia por todas as sequências"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion records Vierny and Takahashi and the Franco-Japanese production; design a coordination sheet without inventing undocumented task assignments.",
+          "nb": "Criterion dokumenterer Vierny og Takahashi og fransk-japansk produksjon; lag et samordningsskjema uten å dikte opp udokumentert arbeidsdeling.",
+          "fr": "Criterion documente Vierny, Takahashi et la coproduction franco-japonaise ; concevez une fiche de coordination sans inventer les tâches historiques.",
+          "pt": "A Criterion documenta Vierny, Takahashi e a coprodução franco-japonesa; crie uma ficha de coordenação sem inventar tarefas históricas."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "hiroshimamonamour-rhythm",
+        "area": "sound",
+        "prompt": {
+          "en": "How can voices link images from different moments?",
+          "nb": "Hvordan kan stemmer knytte bilder fra forskjellige tidspunkter sammen?",
+          "fr": "Comment les voix relient-elles des images de moments différents ?",
+          "pt": "Como podem vozes ligar imagens de momentos diferentes?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test dialogue bridges across discontinuous images",
+              "nb": "Prøv dialogbroer over diskontinuerlige bilder",
+              "fr": "Tester des ponts de dialogue entre images discontinues",
+              "pt": "Testar pontes de diálogo entre imagens descontínuas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Require every voice to explain the visible image",
+              "nb": "Krev at hver stemme forklarer det synlige bildet",
+              "fr": "Exiger que chaque voix explique l’image visible",
+              "pt": "Exigir que cada voz explique a imagem visível"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Claim the restored soundtrack was newly composed",
+              "nb": "Påstå at det restaurerte lydsporet er nykomponert",
+              "fr": "Affirmer que la bande restaurée a été nouvellement composée",
+              "pt": "Afirmar que a banda restaurada foi composta de novo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI describes fragmented dialogue and memory; Criterion records the monaural presentation and collaborative music credits. Explore their relationship in an original sound sketch.",
+          "nb": "BFI beskriver fragmentert dialog og minne; Criterion dokumenterer monolyd og musikksamarbeidet. Utforsk forholdet i en egen lydskisse.",
+          "fr": "Le BFI décrit dialogue et mémoire fragmentés ; Criterion documente le son mono et les crédits musicaux. Explorez leur relation dans une esquisse originale.",
+          "pt": "O BFI descreve diálogo e memória fragmentados; a Criterion documenta som mono e créditos musicais. Explore a relação num esboço sonoro original."
+        },
+        "sourceIds": [
+          "s2",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_l_avventura_1960",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Landscape, duration and fragile location production",
+      "nb": "Landskap, varighet og sårbar stedsproduksjon",
+      "fr": "Paysage, durée et tournage en extérieur fragile",
+      "pt": "Paisagem, duração e rodagem em locais vulneráveis"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "L'avventura",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/209-l-avventura"
+      },
+      {
+        "id": "s1",
+        "title": "L'avventura: the film that redefined the cinema",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/sight-and-sound/features/l-avventura-michelangelo-antonioni-1960-greatest-films-poll"
+      },
+      {
+        "id": "s2",
+        "title": "L'Avventura - Cannes Classics restored print",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/l-avventura-2/"
+      },
+      {
+        "id": "s3",
+        "title": "Cannes Classics 2020",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/press/press-releases/cannes-classics-2020/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "lavventura-space",
+        "area": "camera",
+        "prompt": {
+          "en": "How can landscape carry emotional displacement?",
+          "nb": "Hvordan kan landskapet formidle emosjonell forskyvning?",
+          "fr": "Comment le paysage peut-il porter le déplacement émotionnel ?",
+          "pt": "Como pode a paisagem transmitir deslocação emocional?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use landscape only as decorative background",
+              "nb": "Bruk landskapet bare som dekorativ bakgrunn",
+              "fr": "Utiliser le paysage uniquement comme décor",
+              "pt": "Usar a paisagem apenas como fundo decorativo"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Frame figures in relation to terrain and empty space",
+              "nb": "Ram inn figurer i forhold til terreng og tomrom",
+              "fr": "Cadrer les figures par rapport au terrain et au vide",
+              "pt": "Enquadrar figuras em relação ao terreno e ao vazio"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Fill every frame with explanatory close-ups",
+              "nb": "Fyll hvert bilde med forklarende nærbilder",
+              "fr": "Remplir chaque cadre de gros plans explicatifs",
+              "pt": "Preencher cada quadro com grandes planos explicativos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI describes the shift toward landscape and duration; Criterion records Scavarda's widescreen photography. Test the emotional effect of spatial composition.",
+          "nb": "BFI beskriver dreiningen mot landskap og varighet; Criterion dokumenterer Scavardas bredformatfoto. Prøv den emosjonelle virkningen av romlig komposisjon.",
+          "fr": "Le BFI décrit le déplacement vers paysage et durée ; Criterion documente l’image large de Scavarda. Testez l’effet émotionnel de la composition spatiale.",
+          "pt": "O BFI descreve a mudança para paisagem e duração; a Criterion documenta a fotografia panorâmica de Scavarda. Teste o efeito emocional da composição espacial."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "lavventura-finance",
+        "area": "research",
+        "prompt": {
+          "en": "How should an exposed island shoot handle financial disruption?",
+          "nb": "Hvordan bør et utsatt øyopptak håndtere økonomisk avbrudd?",
+          "fr": "Comment gérer une rupture financière sur un tournage insulaire exposé ?",
+          "pt": "Como gerir uma interrupção financeira numa rodagem insular exposta?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Budget contingency and reschedule essential scenes",
+              "nb": "Sett av reservebudsjett og omplanlegg nødvendige scener",
+              "fr": "Prévoir une réserve et reprogrammer les scènes essentielles",
+              "pt": "Prever uma reserva e reagendar cenas essenciais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume financing cannot change during shooting",
+              "nb": "Anta at finansieringen ikke kan endres under opptak",
+              "fr": "Supposer le financement immuable pendant le tournage",
+              "pt": "Supor que o financiamento não muda durante a rodagem"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Invent exact historical cost figures",
+              "nb": "Finn på eksakte historiske kostnadstall",
+              "fr": "Inventer des coûts historiques précis",
+              "pt": "Inventar custos históricos exatos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI documents financing difficulties on Lisca Bianca; contingency planning is an original production exercise, not a reconstructed historical budget.",
+          "nb": "BFI dokumenterer finansieringsproblemer på Lisca Bianca; reserveplanlegging er en egen produksjonsøvelse, ikke et rekonstruert historisk budsjett.",
+          "fr": "Le BFI documente les problèmes financiers à Lisca Bianca ; la réserve est un exercice de production, non un budget historique reconstitué.",
+          "pt": "O BFI documenta dificuldades financeiras em Lisca Bianca; a reserva é um exercício de produção, não um orçamento histórico reconstruído."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "lavventura-duration",
+        "area": "research",
+        "prompt": {
+          "en": "How can a mystery scene resist a conventional resolution?",
+          "nb": "Hvordan kan en mysteriescene motstå en konvensjonell løsning?",
+          "fr": "Comment une scène de mystère résiste-t-elle à une résolution conventionnelle ?",
+          "pt": "Como pode uma cena de mistério resistir a uma resolução convencional?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Explain the mystery in every following scene",
+              "nb": "Forklar mysteriet i hver påfølgende scene",
+              "fr": "Expliquer le mystère dans chaque scène suivante",
+              "pt": "Explicar o mistério em cada cena seguinte"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Remove every pause and unresolved gesture",
+              "nb": "Fjern alle pauser og uavklarte gester",
+              "fr": "Supprimer pauses et gestes irrésolus",
+              "pt": "Eliminar todas as pausas e gestos irresolutos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Let duration and changing relationships redirect attention",
+              "nb": "La varighet og skiftende relasjoner omdirigere oppmerksomheten",
+              "fr": "Laisser durée et relations changeantes rediriger l’attention",
+              "pt": "Deixar duração e relações mutáveis redirecionarem a atenção"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI describes the formal turn away from mystery causality; compare two edits to see how duration changes audience attention.",
+          "nb": "BFI beskriver den formelle vendingen bort fra mysteriets årsakskjede; sammenlign to klipp for å se hvordan varighet endrer publikums oppmerksomhet.",
+          "fr": "Le BFI décrit l’abandon de la causalité du mystère ; comparez deux montages pour observer l’effet de la durée sur l’attention.",
+          "pt": "O BFI descreve o afastamento da causalidade do mistério; compare duas montagens para observar o efeito da duração na atenção."
+        },
+        "sourceIds": [
+          "s1",
+          "s0"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_jules_and_jim_1962",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Literary adaptation, mobile images and compressed narrative time",
+      "nb": "Litterær adaptasjon, mobile bilder og komprimert fortellingstid",
+      "fr": "Adaptation littéraire, images mobiles et temps narratif condensé",
+      "pt": "Adaptação literária, imagens móveis e tempo narrativo comprimido"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Jules and Jim",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/218-jules-and-jim"
+      },
+      {
+        "id": "s1",
+        "title": "Jules et Jim (1962)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/5d2fd6c5-beb4-5e2f-b16b-0bca499cc797/jules-et-jim"
+      },
+      {
+        "id": "s2",
+        "title": "Jules et Jim",
+        "publisher": "La Cinémathèque française",
+        "url": "https://www.cinematheque.fr/film/51574.html"
+      },
+      {
+        "id": "s3",
+        "title": "Jules et Jim (Jules and Jim). 1962. Directed by Francois Truffaut",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/calendar/events/4337"
+      }
+    ],
+    "questions": [
+      {
+        "id": "julesandjim-adapt",
+        "area": "research",
+        "prompt": {
+          "en": "How can a literary story spanning years become a compact screenplay?",
+          "nb": "Hvordan kan en litterær historie over flere år bli et konsentrert manus?",
+          "fr": "Comment condenser un récit littéraire de plusieurs années en scénario ?",
+          "pt": "Como condensar uma história literária de vários anos num argumento?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Select turning points and bridge intervals with narration",
+              "nb": "Velg vendepunkter og bygg bro over intervaller med fortellerstemme",
+              "fr": "Choisir les tournants et relier les intervalles par la narration",
+              "pt": "Escolher pontos de viragem e ligar intervalos pela narração"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Give every elapsed day equal screen time",
+              "nb": "Gi hver forløpte dag like lang skjermtid",
+              "fr": "Donner à chaque jour écoulé le même temps d’écran",
+              "pt": "Dar a cada dia decorrido igual tempo de ecrã"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Remove the literary source from the credits",
+              "nb": "Fjern den litterære kilden fra krediteringen",
+              "fr": "Retirer la source littéraire du générique",
+              "pt": "Retirar a fonte literária dos créditos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion documents the Roché adaptation and MoMA describes discontinuous story architecture; design a new timeline with selective ellipses.",
+          "nb": "Criterion dokumenterer Roché-adaptasjonen og MoMA beskriver diskontinuerlig fortellingsstruktur; lag en ny tidslinje med selektive ellipser.",
+          "fr": "Criterion documente l’adaptation de Roché et le MoMA décrit la structure discontinue ; créez une chronologie avec ellipses choisies.",
+          "pt": "A Criterion documenta a adaptação de Roché e o MoMA descreve a estrutura descontínua; crie uma cronologia com elipses seletivas."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "julesandjim-movement",
+        "area": "camera",
+        "prompt": {
+          "en": "How can outdoor movement express changing relationships?",
+          "nb": "Hvordan kan bevegelse utendørs uttrykke skiftende relasjoner?",
+          "fr": "Comment le mouvement en extérieur exprime-t-il des relations changeantes ?",
+          "pt": "Como pode o movimento ao ar livre exprimir relações mutáveis?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Keep every performer isolated in static portraits",
+              "nb": "Hold hver utøver isolert i statiske portretter",
+              "fr": "Isoler chaque interprète dans des portraits statiques",
+              "pt": "Isolar cada intérprete em retratos estáticos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Attribute the visual style to editing alone",
+              "nb": "Tilskriv bildestilen bare klippingen",
+              "fr": "Attribuer le style visuel au seul montage",
+              "pt": "Atribuir o estilo visual apenas à montagem"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse group movement and mobile camera timing",
+              "nb": "Øv på gruppebevegelse og mobil kameratiming",
+              "fr": "Répéter les déplacements du groupe et le rythme de la caméra mobile",
+              "pt": "Ensaiar movimentos do grupo e ritmo da câmara móvel"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI describes open-air spontaneity and Criterion credits Coutard; design a coordinated movement exercise without claiming exact historical blocking.",
+          "nb": "BFI beskriver spontanitet utendørs og Criterion krediterer Coutard; lag en samordnet bevegelsesøvelse uten å hevde eksakt historisk iscenesettelse.",
+          "fr": "Le BFI décrit la spontanéité en extérieur et Criterion crédite Coutard ; concevez un exercice de mouvement sans prétendre reproduire le placement historique.",
+          "pt": "O BFI descreve espontaneidade ao ar livre e a Criterion credita Coutard; crie um exercício de movimento sem alegar reproduzir a marcação histórica."
+        },
+        "sourceIds": [
+          "s1",
+          "s0"
+        ]
+      },
+      {
+        "id": "julesandjim-score",
+        "area": "sound",
+        "prompt": {
+          "en": "How can music and montage share responsibility for pacing?",
+          "nb": "Hvordan kan musikk og montasje dele ansvaret for rytmen?",
+          "fr": "Comment musique et montage partagent-ils la responsabilité du rythme ?",
+          "pt": "Como podem música e montagem partilhar a responsabilidade pelo ritmo?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Erase the editor and composer's separate credits",
+              "nb": "Fjern klipperens og komponistens separate kreditering",
+              "fr": "Effacer les crédits distincts du monteur et du compositeur",
+              "pt": "Apagar os créditos distintos da montadora e do compositor"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare musical bridges against visual transitions",
+              "nb": "Sammenlign musikalske broer med visuelle overganger",
+              "fr": "Comparer les ponts musicaux aux transitions visuelles",
+              "pt": "Comparar pontes musicais com transições visuais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use music solely to mask every cut",
+              "nb": "Bruk musikk bare til å skjule alle klipp",
+              "fr": "Utiliser la musique uniquement pour masquer les coupes",
+              "pt": "Usar música apenas para ocultar todos os cortes"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion and the Cinémathèque credit Bouché's editing and Delerue's music separately; explore their interaction with an original cue plan.",
+          "nb": "Criterion og Cinémathèque krediterer Bouchés klipp og Delerues musikk separat; utforsk samspillet med en egen musikkplan.",
+          "fr": "Criterion et la Cinémathèque créditent séparément le montage de Bouché et la musique de Delerue ; explorez leur interaction dans un plan original.",
+          "pt": "A Criterion e a Cinémathèque creditam separadamente a montagem de Bouché e a música de Delerue; explore a interação num plano original."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_persona_1966",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Facial close-ups, fractured montage and performance identity",
+      "nb": "Ansiktsnærbilder, brutt montasje og identitet i skuespillet",
+      "fr": "Gros plans de visages, montage fracturé et identité du jeu",
+      "pt": "Grandes planos faciais, montagem fragmentada e identidade interpretativa"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Persona",
+        "publisher": "Swedish Film Institute",
+        "url": "https://www.filminstitutet.se/sv/fa-kunskap-om-film/ta-del-av-filmsamlingarna/filmer/persona/"
+      },
+      {
+        "id": "s1",
+        "title": "Feature Film - Productions - Persona",
+        "publisher": "Ingmar Bergman Archive",
+        "url": "https://www.ingmarbergman.se/en/production/persona"
+      },
+      {
+        "id": "s2",
+        "title": "Persona (1966)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/d58fc7f8-fd9a-5f17-88e8-c87f27856486/persona"
+      },
+      {
+        "id": "s3",
+        "title": "Persona",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/28491-persona"
+      }
+    ],
+    "questions": [
+      {
+        "id": "persona-faces",
+        "area": "camera",
+        "prompt": {
+          "en": "How can close-ups make identity feel unstable?",
+          "nb": "Hvordan kan nærbilder gjøre identiteten ustabil?",
+          "fr": "Comment les gros plans peuvent-ils rendre l’identité instable ?",
+          "pt": "Como podem os grandes planos tornar a identidade instável?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Rely exclusively on distant establishing shots",
+              "nb": "Stol utelukkende på fjerne oversiktsbilder",
+              "fr": "S’appuyer uniquement sur des plans d’ensemble éloignés",
+              "pt": "Depender exclusivamente de planos gerais distantes"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assert exact lighting ratios from the image alone",
+              "nb": "Påstå eksakte lysforhold ut fra bildet alene",
+              "fr": "Affirmer des rapports lumineux précis d’après l’image seule",
+              "pt": "Afirmar relações de iluminação exatas só pela imagem"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test facial framing and contrasting light in paired portraits",
+              "nb": "Prøv ansiktsutsnitt og kontrasterende lys i parvise portretter",
+              "fr": "Tester cadrage des visages et lumière contrastée dans des portraits appariés",
+              "pt": "Testar enquadramento facial e luz contrastante em retratos emparelhados"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The Bergman Archive records Nykvist's emphasis on close-ups and tests; design original lighting experiments without inventing historical ratios.",
+          "nb": "Bergmanarkivet dokumenterer Nykvists vekt på nærbilder og tester; utform egne lysforsøk uten å dikte opp historiske lysforhold.",
+          "fr": "Les archives Bergman documentent les gros plans et essais de Nykvist ; concevez des tests originaux sans inventer les rapports historiques.",
+          "pt": "O arquivo Bergman documenta grandes planos e testes de Nykvist; crie experiências próprias sem inventar relações históricas."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "persona-performance",
+        "area": "research",
+        "prompt": {
+          "en": "How should two contrasting performances be rehearsed?",
+          "nb": "Hvordan bør to kontrasterende skuespillerprestasjoner øves inn?",
+          "fr": "Comment répéter deux interprétations contrastées ?",
+          "pt": "Como ensaiar duas interpretações contrastantes?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Explain every ambiguity through additional dialogue",
+              "nb": "Forklar all tvetydighet med ekstra dialog",
+              "fr": "Expliquer toute ambiguïté par du dialogue supplémentaire",
+              "pt": "Explicar toda a ambiguidade com diálogo adicional"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare speech, silence and listening across takes",
+              "nb": "Sammenlign tale, stillhet og lytting på tvers av opptak",
+              "fr": "Comparer parole, silence et écoute entre prises",
+              "pt": "Comparar fala, silêncio e escuta entre tomadas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Require both performers to use identical expression",
+              "nb": "Krev at begge utøverne bruker identiske uttrykk",
+              "fr": "Exiger des deux interprètes une expression identique",
+              "pt": "Exigir expressão idêntica das duas intérpretes"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI highlights the central performances and blurred identities; Criterion documents the cast and crafts. Use rehearsal variations rather than a single psychological verdict.",
+          "nb": "BFI fremhever hovedrollene og uklare identiteter; Criterion dokumenterer rollebesetning og fagarbeid. Bruk øvingsvariasjoner fremfor én psykologisk fasit.",
+          "fr": "Le BFI souligne les interprétations et identités brouillées ; Criterion documente les métiers. Variez les répétitions plutôt que d’imposer un verdict psychologique.",
+          "pt": "O BFI destaca as interpretações e identidades difusas; a Criterion documenta os créditos. Varie os ensaios em vez de impor um veredito psicológico."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "persona-rupture",
+        "area": "research",
+        "prompt": {
+          "en": "How can a montage reveal the medium itself?",
+          "nb": "Hvordan kan en montasje synliggjøre selve mediet?",
+          "fr": "Comment un montage peut-il révéler le médium lui-même ?",
+          "pt": "Como pode uma montagem revelar o próprio meio?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Design a deliberate rupture and compare its effect on spectatorship",
+              "nb": "Utform et bevisst brudd og sammenlign virkningen på tilskueren",
+              "fr": "Concevoir une rupture délibérée et comparer son effet sur le spectateur",
+              "pt": "Conceber uma rutura deliberada e comparar o efeito no espectador"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Smooth away every self-reflexive interruption",
+              "nb": "Glatt bort alle selvrefleksive avbrudd",
+              "fr": "Effacer chaque interruption réflexive",
+              "pt": "Suavizar todas as interrupções autorreflexivas"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat a fictional rupture as an accidental projection failure",
+              "nb": "Behandle et fiktivt brudd som en tilfeldig projeksjonsfeil",
+              "fr": "Traiter une rupture fictive comme une panne accidentelle de projection",
+              "pt": "Tratar uma rutura fictícia como falha acidental de projeção"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI identifies the fractured opening and self-reflexive ruptures; the Bergman Archive documents projector tests. Create a new montage with a purposeful break.",
+          "nb": "BFI identifiserer den brutte åpningen og selvrefleksive brudd; Bergmanarkivet dokumenterer projektortester. Lag en ny montasje med et målrettet brudd.",
+          "fr": "Le BFI décrit l’ouverture fragmentée et les ruptures réflexives ; les archives Bergman documentent les essais de projecteur. Créez un montage avec rupture intentionnelle.",
+          "pt": "O BFI descreve a abertura fragmentada e ruturas autorreflexivas; o arquivo Bergman documenta testes de projeção. Crie uma montagem com rutura intencional."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      }
+    ]
+  }
 ] as const satisfies readonly SourceBackedCaseWorkshop[];
