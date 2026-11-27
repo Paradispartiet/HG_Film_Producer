@@ -130,15 +130,23 @@ const ids = [
   "scenario_l_avventura_1960",
   "scenario_jules_and_jim_1962",
   "scenario_persona_1966",
+  "scenario_8_1_2_1963",
+  "scenario_contempt_1963",
+  "scenario_the_leopard_1963",
+  "scenario_last_year_at_marienbad_1961",
+  "scenario_the_umbrellas_of_cherbourg_1964",
+  "scenario_dr_strangelove_1964",
+  "scenario_daisies_1966",
+  "scenario_the_battle_of_algiers_1966",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly one hundred and twenty-one existing cases have three hundred and sixty-three original, source-backed decisions", () => {
+test("Exactly one hundred and twenty-nine existing cases have three hundred and eighty-seven original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 121);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 363);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 129);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 387);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -369,6 +377,16 @@ test("Exactly one hundred and twenty-one existing cases have three hundred and s
       const [path, definition] = configs[workshop.scenarioId]!;
       if (definition === "seed") assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
       else assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const next = verification.indexOf("\n  },", start);
+      const section = verification.slice(start, next < 0 ? undefined : next);
+      for (const source of workshop.sources) assert.ok(section.includes(source.url));
+    } else if (["scenario_8_1_2_1963","scenario_contempt_1963","scenario_the_leopard_1963","scenario_last_year_at_marienbad_1961","scenario_the_umbrellas_of_cherbourg_1964","scenario_dr_strangelove_1964","scenario_daisies_1966","scenario_the_battle_of_algiers_1966"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_8_1_2_1963":["src/ui/data/scenarioProductionVerificationEuropeanModernistProductionBatch.ts","earlyCinemaExpansion"],"scenario_contempt_1963":["src/ui/data/scenarioProductionVerificationEarly1960sProductionSystemsBatch.ts","earlyCinemaExpansion"],"scenario_the_leopard_1963":["src/ui/data/scenarioProductionVerificationEuropean1960sSpaceSystemsBatch.ts","italyFranceGermanyBeneluxExpansion"],"scenario_last_year_at_marienbad_1961":["src/ui/data/scenarioProductionVerificationEuropean1960sSpaceSystemsBatch.ts","italyFranceGermanyBeneluxExpansion"],"scenario_the_umbrellas_of_cherbourg_1964":["src/ui/data/scenarioProductionVerificationEuropeanModernistProductionBatch.ts","earlyCinemaExpansion"],"scenario_dr_strangelove_1964":["src/ui/data/scenarioProductionVerificationEarly1960sProductionSystemsBatch.ts","earlyCinemaExpansion"],"scenario_daisies_1966":["src/ui/data/scenarioProductionVerificationPostwarEuropeanModernismBatch.ts","easternIberianBritishExpansion"],"scenario_the_battle_of_algiers_1966":["src/ui/data/scenarioProductionVerificationEuropeanModernistProductionBatch.ts","earlyCinemaExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
       const verification = readFileSync(path, "utf8");
       const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
       assert.ok(start >= 0);
@@ -909,4 +927,16 @@ test("New Wave and modernist workshops preserve distinct film-specific questions
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_l_avventura_1960")?.questions.map(q => q.id), ["lavventura-space","lavventura-finance","lavventura-duration"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_jules_and_jim_1962")?.questions.map(q => q.id), ["julesandjim-adapt","julesandjim-movement","julesandjim-score"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_persona_1966")?.questions.map(q => q.id), ["persona-faces","persona-performance","persona-rupture"]);
+});
+
+
+test("1960s modernist workshops preserve distinct questions and production evidence", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_8_1_2_1963")?.questions.map(q => q.id), ["812-dream","812-design","812-music"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_contempt_1963")?.questions.map(q => q.id), ["contempt-negotiation","contempt-apartment","contempt-language"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_leopard_1963")?.questions.map(q => q.id), ["theleopard-adapt","theleopard-ball","theleopard-versions"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_last_year_at_marienbad_1961")?.questions.map(q => q.id), ["lastyearatmarienbad-decoupage","lastyearatmarienbad-architecture","lastyearatmarienbad-memory"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_umbrellas_of_cherbourg_1964")?.questions.map(q => q.id), ["theumbrellasofcherbourg-singing","theumbrellasofcherbourg-colour","theumbrellasofcherbourg-restoration"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_dr_strangelove_1964")?.questions.map(q => q.id), ["drstrangelove-satire","drstrangelove-room","drstrangelove-roles"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_daisies_1966")?.questions.map(q => q.id), ["daisies-collage","daisies-improv","daisies-censor"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_battle_of_algiers_1966")?.questions.map(q => q.id), ["thebattleofalgiers-evidence","thebattleofalgiers-collaboration","thebattleofalgiers-sound"]);
 });
