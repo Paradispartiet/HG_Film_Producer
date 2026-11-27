@@ -101,15 +101,68 @@ const ids = [
   "scenario_the_wizard_of_oz_1939",
   "scenario_citizen_kane_1941",
   "scenario_casablanca_1942",
+  "scenario_rome_open_city_1945",
+  "scenario_double_indemnity_1944",
+  "scenario_brief_encounter_1945",
+  "scenario_the_third_man_1949",
+  "scenario_the_maltese_falcon_1941",
+  "scenario_bicycle_thieves_1948",
+  "scenario_rashomon_1950",
+  "scenario_tokyo_story_1953",
+  "scenario_seven_samurai_1954",
+  "scenario_la_strada_1954",
+  "scenario_pather_panchali_1955",
+  "scenario_ordet_1955",
+  "scenario_the_night_of_the_hunter_1955",
+  "scenario_the_seventh_seal_1957",
+  "scenario_ashes_and_diamonds_1958",
+  "scenario_touch_of_evil_1958",
+  "scenario_vertigo_1958",
+  "scenario_paisan_1946",
+  "scenario_the_red_shoes_1948",
+  "scenario_sunset_boulevard_1950",
+  "scenario_los_olvidados_1950",
+  "scenario_ugetsu_1953",
+  "scenario_a_man_escaped_1956",
+  "scenario_the_400_blows_1959",
+  "scenario_breathless_1960",
+  "scenario_hiroshima_mon_amour_1959",
+  "scenario_l_avventura_1960",
+  "scenario_jules_and_jim_1962",
+  "scenario_persona_1966",
+  "scenario_8_1_2_1963",
+  "scenario_contempt_1963",
+  "scenario_the_leopard_1963",
+  "scenario_last_year_at_marienbad_1961",
+  "scenario_the_umbrellas_of_cherbourg_1964",
+  "scenario_dr_strangelove_1964",
+  "scenario_daisies_1966",
+  "scenario_the_battle_of_algiers_1966",
+  "scenario_black_girl_1966",
+  "scenario_bonnie_and_clyde_1967",
+  "scenario_playtime_1967",
+  "scenario_memories_of_underdevelopment_1968",
+  "scenario_night_of_the_living_dead_1968",
+  "scenario_2001_a_space_odyssey_1968",
+  "scenario_the_godfather_1972",
+  "scenario_touki_bouki_1973",
+  "scenario_aguirre_the_wrath_of_god_1972",
+  "scenario_mean_streets_1973",
+  "scenario_the_spirit_of_the_beehive_1973",
+  "scenario_ali_fear_eats_the_soul_1974",
+  "scenario_jaws_1975",
+  "scenario_dog_day_afternoon_1975",
+  "scenario_taxi_driver_1976",
+  "scenario_star_wars_1977",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly ninety-two existing cases have two hundred and seventy-six original, source-backed decisions", () => {
+test("Exactly one hundred and forty-five existing cases have four hundred and thirty-five original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 92);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 276);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 145);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 435);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -300,6 +353,78 @@ test("Exactly ninety-two existing cases have two hundred and seventy-six origina
     } else if (["scenario_stagecoach_1939","scenario_the_wizard_of_oz_1939","scenario_citizen_kane_1941","scenario_casablanca_1942"].includes(workshop.scenarioId)) {
       assert.ok(readFileSync("src/core/earlyCinemaExpansion.ts", "utf8").includes(workshop.scenarioId));
       const verification = readFileSync("src/ui/data/scenarioProductionVerificationClassicalHollywoodBatch.ts", "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const next = verification.indexOf("\n  },", start);
+      const section = verification.slice(start, next < 0 ? undefined : next);
+      for (const source of workshop.sources) assert.ok(section.includes(source.url));
+    } else if (["scenario_rome_open_city_1945","scenario_double_indemnity_1944","scenario_brief_encounter_1945","scenario_the_third_man_1949"].includes(workshop.scenarioId)) {
+      assert.ok(readFileSync("src/core/earlyCinemaExpansion.ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync("src/ui/data/scenarioProductionVerification1940sNoirRealismBatch.ts", "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const next = verification.indexOf("\n  },", start);
+      const section = verification.slice(start, next < 0 ? undefined : next);
+      for (const source of workshop.sources) assert.ok(section.includes(source.url));
+    } else if (["scenario_the_maltese_falcon_1941","scenario_bicycle_thieves_1948","scenario_rashomon_1950","scenario_tokyo_story_1953","scenario_seven_samurai_1954","scenario_la_strada_1954","scenario_pather_panchali_1955","scenario_ordet_1955"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_the_maltese_falcon_1941":["src/ui/data/scenarioProductionVerificationCrimeNoirTransformationsBatch.ts","earlyCinemaExpansion"],"scenario_bicycle_thieves_1948":["src/ui/data/scenarioProductionVerification.ts","seed"],"scenario_rashomon_1950":["src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts","earlyCinemaExpansion"],"scenario_tokyo_story_1953":["src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts","earlyCinemaExpansion"],"scenario_seven_samurai_1954":["src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts","earlyCinemaExpansion"],"scenario_la_strada_1954":["src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts","earlyCinemaExpansion"],"scenario_pather_panchali_1955":["src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts","earlyCinemaExpansion"],"scenario_ordet_1955":["src/ui/data/scenarioProductionVerificationPostwarEuropeanModernismBatch.ts","scandinavianEuropeanExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      if (definition === "seed") assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
+      else assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const next = verification.indexOf("\n  },", start);
+      const section = verification.slice(start, next < 0 ? undefined : next);
+      for (const source of workshop.sources) assert.ok(section.includes(source.url));
+    } else if (["scenario_the_night_of_the_hunter_1955","scenario_the_seventh_seal_1957","scenario_ashes_and_diamonds_1958","scenario_touch_of_evil_1958","scenario_vertigo_1958","scenario_paisan_1946","scenario_the_red_shoes_1948","scenario_sunset_boulevard_1950","scenario_los_olvidados_1950"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_the_night_of_the_hunter_1955":["src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts","earlyCinemaExpansion"],"scenario_the_seventh_seal_1957":["src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts","earlyCinemaExpansion"],"scenario_ashes_and_diamonds_1958":["src/ui/data/scenarioProductionVerificationPostwarEuropeanModernismBatch.ts","easternIberianBritishExpansion"],"scenario_touch_of_evil_1958":["src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts","earlyCinemaExpansion"],"scenario_vertigo_1958":["src/ui/data/scenarioProductionVerification.ts","seed"],"scenario_paisan_1946":["src/ui/data/scenarioProductionVerificationPaisan.ts","chapterThirteenPaisanExpansion"],"scenario_the_red_shoes_1948":["src/ui/data/scenarioProductionVerificationRedShoes.ts","chapterThirteenRedShoesExpansion"],"scenario_sunset_boulevard_1950":["src/ui/data/scenarioProductionVerificationSunsetBoulevard.ts","chapterThirteenSunsetBoulevardExpansion"],"scenario_los_olvidados_1950":["src/ui/data/scenarioProductionVerificationLosOlvidados.ts","chapterThirteenLosOlvidadosExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      if (definition === "seed") assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
+      else assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const next = verification.indexOf("\n  },", start);
+      const section = verification.slice(start, next < 0 ? undefined : next);
+      for (const source of workshop.sources) assert.ok(section.includes(source.url));
+    } else if (["scenario_ugetsu_1953","scenario_a_man_escaped_1956","scenario_the_400_blows_1959","scenario_breathless_1960","scenario_hiroshima_mon_amour_1959","scenario_l_avventura_1960","scenario_jules_and_jim_1962","scenario_persona_1966"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_ugetsu_1953":["src/ui/data/scenarioProductionVerificationUgetsu.ts","chapterThirteenUgetsuExpansion"],"scenario_a_man_escaped_1956":["src/ui/data/scenarioProductionVerificationAManEscaped.ts","chapterThirteenAManEscapedExpansion"],"scenario_the_400_blows_1959":["src/ui/data/scenarioProductionVerificationCrossEraBatch.ts","seed"],"scenario_breathless_1960":["src/ui/data/scenarioProductionVerification.ts","seed"],"scenario_hiroshima_mon_amour_1959":["src/ui/data/scenarioProductionVerificationEuropeanModernistProductionBatch.ts","earlyCinemaExpansion"],"scenario_l_avventura_1960":["src/ui/data/scenarioProductionVerificationEuropean1960sSpaceSystemsBatch.ts","italyFranceGermanyBeneluxExpansion"],"scenario_jules_and_jim_1962":["src/ui/data/scenarioProductionVerificationEarly1960sProductionSystemsBatch.ts","earlyCinemaExpansion"],"scenario_persona_1966":["src/ui/data/scenarioProductionVerificationPostwarEuropeanModernismBatch.ts","earlyCinemaExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      if (definition === "seed") assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
+      else assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const next = verification.indexOf("\n  },", start);
+      const section = verification.slice(start, next < 0 ? undefined : next);
+      for (const source of workshop.sources) assert.ok(section.includes(source.url));
+    } else if (["scenario_8_1_2_1963","scenario_contempt_1963","scenario_the_leopard_1963","scenario_last_year_at_marienbad_1961","scenario_the_umbrellas_of_cherbourg_1964","scenario_dr_strangelove_1964","scenario_daisies_1966","scenario_the_battle_of_algiers_1966"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_8_1_2_1963":["src/ui/data/scenarioProductionVerificationEuropeanModernistProductionBatch.ts","earlyCinemaExpansion"],"scenario_contempt_1963":["src/ui/data/scenarioProductionVerificationEarly1960sProductionSystemsBatch.ts","earlyCinemaExpansion"],"scenario_the_leopard_1963":["src/ui/data/scenarioProductionVerificationEuropean1960sSpaceSystemsBatch.ts","italyFranceGermanyBeneluxExpansion"],"scenario_last_year_at_marienbad_1961":["src/ui/data/scenarioProductionVerificationEuropean1960sSpaceSystemsBatch.ts","italyFranceGermanyBeneluxExpansion"],"scenario_the_umbrellas_of_cherbourg_1964":["src/ui/data/scenarioProductionVerificationEuropeanModernistProductionBatch.ts","earlyCinemaExpansion"],"scenario_dr_strangelove_1964":["src/ui/data/scenarioProductionVerificationEarly1960sProductionSystemsBatch.ts","earlyCinemaExpansion"],"scenario_daisies_1966":["src/ui/data/scenarioProductionVerificationPostwarEuropeanModernismBatch.ts","easternIberianBritishExpansion"],"scenario_the_battle_of_algiers_1966":["src/ui/data/scenarioProductionVerificationEuropeanModernistProductionBatch.ts","earlyCinemaExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const next = verification.indexOf("\n  },", start);
+      const section = verification.slice(start, next < 0 ? undefined : next);
+      for (const source of workshop.sources) assert.ok(section.includes(source.url));
+    } else if (["scenario_black_girl_1966","scenario_bonnie_and_clyde_1967","scenario_playtime_1967","scenario_memories_of_underdevelopment_1968","scenario_night_of_the_living_dead_1968","scenario_2001_a_space_odyssey_1968","scenario_the_godfather_1972","scenario_touki_bouki_1973"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_black_girl_1966":["src/ui/data/scenarioProductionVerificationBlackGirl.ts","chapterFourteenBlackGirlExpansion"],"scenario_bonnie_and_clyde_1967":["src/ui/data/scenarioProductionVerificationNewHollywoodBlockbusterBatch.ts","earlyCinemaExpansion"],"scenario_playtime_1967":["src/ui/data/scenarioProductionVerificationEuropean1960sSpaceSystemsBatch.ts","italyFranceGermanyBeneluxExpansion"],"scenario_memories_of_underdevelopment_1968":["src/ui/data/scenarioProductionVerificationMemoriesUnderdevelopment.ts","chapterFourteenMemoriesUnderdevelopmentExpansion"],"scenario_night_of_the_living_dead_1968":["src/ui/data/scenarioProductionVerification1960sScaleIndependentBatch.ts","earlyCinemaExpansion"],"scenario_2001_a_space_odyssey_1968":["src/ui/data/scenarioProductionVerification1960sScaleIndependentBatch.ts","earlyCinemaExpansion"],"scenario_the_godfather_1972":["src/ui/data/scenarioProductionVerificationNewHollywoodBlockbusterBatch.ts","earlyCinemaExpansion"],"scenario_touki_bouki_1973":["src/ui/data/scenarioProductionVerificationToukiBouki.ts","chapterFifteenToukiBoukiExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const next = verification.indexOf("\n  },", start);
+      const section = verification.slice(start, next < 0 ? undefined : next);
+      for (const source of workshop.sources) assert.ok(section.includes(source.url));
+    } else if (["scenario_aguirre_the_wrath_of_god_1972","scenario_mean_streets_1973","scenario_the_spirit_of_the_beehive_1973","scenario_ali_fear_eats_the_soul_1974","scenario_jaws_1975","scenario_dog_day_afternoon_1975","scenario_taxi_driver_1976","scenario_star_wars_1977"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_aguirre_the_wrath_of_god_1972":["src/ui/data/scenarioProductionVerificationNewGermanCinemaSystemsBatch.ts","italyFranceGermanyBeneluxExpansion"],"scenario_mean_streets_1973":["src/ui/data/scenarioProductionVerificationNewHollywoodNewYorkBatch.ts","seed"],"scenario_the_spirit_of_the_beehive_1973":["src/ui/data/scenarioProductionVerificationEuropeanPoeticMemorySystemsBatch.ts","easternIberianBritishExpansion"],"scenario_ali_fear_eats_the_soul_1974":["src/ui/data/scenarioProductionVerificationNewGermanCinemaSystemsBatch.ts","italyFranceGermanyBeneluxExpansion"],"scenario_jaws_1975":["src/ui/data/scenarioProductionVerificationNewHollywoodBlockbusterBatch.ts","earlyCinemaExpansion"],"scenario_dog_day_afternoon_1975":["src/ui/data/scenarioProductionVerificationNewHollywoodNewYorkBatch.ts","seed"],"scenario_taxi_driver_1976":["src/ui/data/scenarioProductionVerificationNewHollywoodNewYorkBatch.ts","seed"],"scenario_star_wars_1977":["src/ui/data/scenarioProductionVerificationNewHollywoodBlockbusterBatch.ts","earlyCinemaExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      if (definition === "seed") assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
+      else assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
       const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
       assert.ok(start >= 0);
       const next = verification.indexOf("\n  },", start);
@@ -794,4 +919,85 @@ test("Classical Hollywood workshops preserve film-specific craft and evidence", 
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_wizard_of_oz_1939")?.questions.map(q => q.id), ["thewizardofoz-color","thewizardofoz-song","thewizardofoz-departments"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_citizen_kane_1941")?.questions.map(q => q.id), ["citizenkane-depth","citizenkane-testimony","citizenkane-sound"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_casablanca_1942")?.questions.map(q => q.id), ["casablanca-revision","casablanca-studio","casablanca-music"]);
+});
+
+
+test("Postwar and wartime transition workshops preserve film-specific evidence", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_rome_open_city_1945")?.questions.map(q => q.id), ["romeopencity-locations","romeopencity-performance","romeopencity-stock"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_double_indemnity_1944")?.questions.map(q => q.id), ["doubleindemnity-confession","doubleindemnity-shadow","doubleindemnity-regulation"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_brief_encounter_1945")?.questions.map(q => q.id), ["briefencounter-memory","briefencounter-station","briefencounter-music"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_third_man_1949")?.questions.map(q => q.id), ["thethirdman-space","thethirdman-units","thethirdman-score"]);
+});
+
+
+test("Postwar workshops preserve distinct film-specific questions and evidence", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_maltese_falcon_1941")?.questions.map(q => q.id), ["themaltesefalcon-adaptation","themaltesefalcon-rehearsal","themaltesefalcon-lighting"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_bicycle_thieves_1948")?.questions.map(q => q.id), ["bicyclethieves-street","bicyclethieves-casting","bicyclethieves-editing"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_rashomon_1950")?.questions.map(q => q.id), ["rashomon-testimony","rashomon-forest","rashomon-score"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_tokyo_story_1953")?.questions.map(q => q.id), ["tokyostory-camera","tokyostory-performance","tokyostory-rhythm"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_seven_samurai_1954")?.questions.map(q => q.id), ["sevensamurai-ensemble","sevensamurai-coverage","sevensamurai-editions"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_la_strada_1954")?.questions.map(q => q.id), ["lastrada-gesture","lastrada-road","lastrada-music"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_pather_panchali_1955")?.questions.map(q => q.id), ["patherpanchali-observation","patherpanchali-finance","patherpanchali-sound"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_ordet_1955")?.questions.map(q => q.id), ["ordet-duration","ordet-interior","ordet-quiet"]);
+});
+
+
+test("Late 1940s and 1950s workshops preserve distinct questions and production sources", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_night_of_the_hunter_1955")?.questions.map(q => q.id), ["thenightofthehunter-silhouette","thenightofthehunter-viewpoint","thenightofthehunter-credits"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_seventh_seal_1957")?.questions.map(q => q.id), ["theseventhseal-tableau","theseventhseal-adapt","theseventhseal-budget"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_ashes_and_diamonds_1958")?.questions.map(q => q.id), ["ashesanddiamonds-time","ashesanddiamonds-image","ashesanddiamonds-context"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_touch_of_evil_1958")?.questions.map(q => q.id), ["touchofevil-movement","touchofevil-music","touchofevil-versions"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_vertigo_1958")?.questions.map(q => q.id), ["vertigo-perspective","vertigo-motifs","vertigo-revelation"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_paisan_1946")?.questions.map(q => q.id), ["paisan-episodes","paisan-location","paisan-dubbing"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_red_shoes_1948")?.questions.map(q => q.id), ["theredshoes-color","theredshoes-dance","theredshoes-score"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_sunset_boulevard_1950")?.questions.map(q => q.id), ["sunsetboulevard-memory","sunsetboulevard-space","sunsetboulevard-preview"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_los_olvidados_1950")?.questions.map(q => q.id), ["losolvidados-research","losolvidados-locations","losolvidados-ending"]);
+});
+
+
+test("New Wave and modernist workshops preserve distinct film-specific questions", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_ugetsu_1953")?.questions.map(q => q.id), ["ugetsu-adapt","ugetsu-movement","ugetsu-edition"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_a_man_escaped_1956")?.questions.map(q => q.id), ["amanescaped-sound","amanescaped-objects","amanescaped-framing"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_400_blows_1959")?.questions.map(q => q.id), ["the400blows-youth","the400blows-street","the400blows-ending"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_breathless_1960")?.questions.map(q => q.id), ["breathless-street","breathless-cuts","breathless-dialogue"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_hiroshima_mon_amour_1959")?.questions.map(q => q.id), ["hiroshimamonamour-memory","hiroshimamonamour-teams","hiroshimamonamour-rhythm"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_l_avventura_1960")?.questions.map(q => q.id), ["lavventura-space","lavventura-finance","lavventura-duration"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_jules_and_jim_1962")?.questions.map(q => q.id), ["julesandjim-adapt","julesandjim-movement","julesandjim-score"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_persona_1966")?.questions.map(q => q.id), ["persona-faces","persona-performance","persona-rupture"]);
+});
+
+
+test("1960s modernist workshops preserve distinct questions and production evidence", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_8_1_2_1963")?.questions.map(q => q.id), ["812-dream","812-design","812-music"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_contempt_1963")?.questions.map(q => q.id), ["contempt-negotiation","contempt-apartment","contempt-language"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_leopard_1963")?.questions.map(q => q.id), ["theleopard-adapt","theleopard-ball","theleopard-versions"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_last_year_at_marienbad_1961")?.questions.map(q => q.id), ["lastyearatmarienbad-decoupage","lastyearatmarienbad-architecture","lastyearatmarienbad-memory"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_umbrellas_of_cherbourg_1964")?.questions.map(q => q.id), ["theumbrellasofcherbourg-singing","theumbrellasofcherbourg-colour","theumbrellasofcherbourg-restoration"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_dr_strangelove_1964")?.questions.map(q => q.id), ["drstrangelove-satire","drstrangelove-room","drstrangelove-roles"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_daisies_1966")?.questions.map(q => q.id), ["daisies-collage","daisies-improv","daisies-censor"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_battle_of_algiers_1966")?.questions.map(q => q.id), ["thebattleofalgiers-evidence","thebattleofalgiers-collaboration","thebattleofalgiers-sound"]);
+});
+
+
+test("New Waves and New Hollywood workshops preserve distinct film-specific questions", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_black_girl_1966")?.questions.map(q => q.id), ["blackgirl-voice","blackgirl-wardrobe","blackgirl-funding"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_bonnie_and_clyde_1967")?.questions.map(q => q.id), ["bonnieandclyde-development","bonnieandclyde-locations","bonnieandclyde-tone"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_playtime_1967")?.questions.map(q => q.id), ["playtime-frame","playtime-city","playtime-sound"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_memories_of_underdevelopment_1968")?.questions.map(q => q.id), ["memoriesofunderdevelopment-archive","memoriesofunderdevelopment-institution","memoriesofunderdevelopment-preservation"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_night_of_the_living_dead_1968")?.questions.map(q => q.id), ["nightofthelivingdead-collective","nightofthelivingdead-schedule","nightofthelivingdead-media"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_2001_a_space_odyssey_1968")?.questions.map(q => q.id), ["2001aspaceodyssey-development","2001aspaceodyssey-effects","2001aspaceodyssey-format"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_godfather_1972")?.questions.map(q => q.id), ["thegodfather-casting","thegodfather-palette","thegodfather-music"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_touki_bouki_1973")?.questions.map(q => q.id), ["toukibouki-montage","toukibouki-infrastructure","toukibouki-credits"]);
+});
+
+
+test("1970s production workshops preserve distinct questions and evidence", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_aguirre_the_wrath_of_god_1972")?.questions.map(q => q.id), ["aguirrethewrathofgod-logistics","aguirrethewrathofgod-landscape","aguirrethewrathofgod-atmosphere"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_mean_streets_1973")?.questions.map(q => q.id), ["meanstreets-screenplay","meanstreets-locations","meanstreets-jukebox"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_spirit_of_the_beehive_1973")?.questions.map(q => q.id), ["thespiritofthebeehive-child","thespiritofthebeehive-history","thespiritofthebeehive-silence"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_ali_fear_eats_the_soul_1974")?.questions.map(q => q.id), ["alifeareatsthesoul-space","alifeareatsthesoul-schedule","alifeareatsthesoul-melodrama"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_jaws_1975")?.questions.map(q => q.id), ["jaws-marine","jaws-withholding","jaws-score"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_dog_day_afternoon_1975")?.questions.map(q => q.id), ["dogdayafternoon-rehearsal","dogdayafternoon-daylight","dogdayafternoon-media"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_taxi_driver_1976")?.questions.map(q => q.id), ["taxidriver-viewpoint","taxidriver-city","taxidriver-music"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_star_wars_1977")?.questions.map(q => q.id), ["starwars-design","starwars-pipeline","starwars-soundworld"]);
 });
