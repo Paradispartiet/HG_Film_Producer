@@ -1,7 +1,8 @@
 import type { FilmWorkLanguage } from "../../core/filmWorkLanguage.js";
+import { postwarSourceWorkshops } from "./scenarioProductionSourceWorkshopsPostwar.js";
 
 /**
- * One hundred and four pre-existing Production Cases receive evidence-backed craft decisions.
+ * One hundred and thirteen pre-existing Production Cases receive evidence-backed craft decisions.
  *
  * These are OPTIONAL learning exercises, not replacements for their canonical
  * six-mission Production Cases. They do not mutate progress, unlock gameplay,
@@ -18383,7 +18384,8 @@ const workshops: readonly SourceBackedCaseWorkshop[] = [
         ]
       }
     ]
-  }
+  },
+  ...postwarSourceWorkshops
 ] as const;
 
 export const SOURCE_BACKED_CASE_WORKSHOPS: readonly SourceBackedCaseWorkshop[] = workshops;

@@ -113,15 +113,24 @@ const ids = [
   "scenario_la_strada_1954",
   "scenario_pather_panchali_1955",
   "scenario_ordet_1955",
+  "scenario_the_night_of_the_hunter_1955",
+  "scenario_the_seventh_seal_1957",
+  "scenario_ashes_and_diamonds_1958",
+  "scenario_touch_of_evil_1958",
+  "scenario_vertigo_1958",
+  "scenario_paisan_1946",
+  "scenario_the_red_shoes_1948",
+  "scenario_sunset_boulevard_1950",
+  "scenario_los_olvidados_1950",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly one hundred and four existing cases have three hundred and twelve original, source-backed decisions", () => {
+test("Exactly one hundred and thirteen existing cases have three hundred and thirty-nine original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 104);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 312);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 113);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 339);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -327,6 +336,17 @@ test("Exactly one hundred and four existing cases have three hundred and twelve 
       for (const source of workshop.sources) assert.ok(section.includes(source.url));
     } else if (["scenario_the_maltese_falcon_1941","scenario_bicycle_thieves_1948","scenario_rashomon_1950","scenario_tokyo_story_1953","scenario_seven_samurai_1954","scenario_la_strada_1954","scenario_pather_panchali_1955","scenario_ordet_1955"].includes(workshop.scenarioId)) {
       const configs: Record<string, [string, string]> = {"scenario_the_maltese_falcon_1941":["src/ui/data/scenarioProductionVerificationCrimeNoirTransformationsBatch.ts","earlyCinemaExpansion"],"scenario_bicycle_thieves_1948":["src/ui/data/scenarioProductionVerification.ts","seed"],"scenario_rashomon_1950":["src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts","earlyCinemaExpansion"],"scenario_tokyo_story_1953":["src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts","earlyCinemaExpansion"],"scenario_seven_samurai_1954":["src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts","earlyCinemaExpansion"],"scenario_la_strada_1954":["src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts","earlyCinemaExpansion"],"scenario_pather_panchali_1955":["src/ui/data/scenarioProductionVerification1950sAsianPostwarBatch.ts","earlyCinemaExpansion"],"scenario_ordet_1955":["src/ui/data/scenarioProductionVerificationPostwarEuropeanModernismBatch.ts","scandinavianEuropeanExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      if (definition === "seed") assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
+      else assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const next = verification.indexOf("\n  },", start);
+      const section = verification.slice(start, next < 0 ? undefined : next);
+      for (const source of workshop.sources) assert.ok(section.includes(source.url));
+    } else if (["scenario_the_night_of_the_hunter_1955","scenario_the_seventh_seal_1957","scenario_ashes_and_diamonds_1958","scenario_touch_of_evil_1958","scenario_vertigo_1958","scenario_paisan_1946","scenario_the_red_shoes_1948","scenario_sunset_boulevard_1950","scenario_los_olvidados_1950"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_the_night_of_the_hunter_1955":["src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts","earlyCinemaExpansion"],"scenario_the_seventh_seal_1957":["src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts","earlyCinemaExpansion"],"scenario_ashes_and_diamonds_1958":["src/ui/data/scenarioProductionVerificationPostwarEuropeanModernismBatch.ts","easternIberianBritishExpansion"],"scenario_touch_of_evil_1958":["src/ui/data/scenarioProductionVerification1950sExpressivePostwarBatch.ts","earlyCinemaExpansion"],"scenario_vertigo_1958":["src/ui/data/scenarioProductionVerification.ts","seed"],"scenario_paisan_1946":["src/ui/data/scenarioProductionVerificationPaisan.ts","chapterThirteenPaisanExpansion"],"scenario_the_red_shoes_1948":["src/ui/data/scenarioProductionVerificationRedShoes.ts","chapterThirteenRedShoesExpansion"],"scenario_sunset_boulevard_1950":["src/ui/data/scenarioProductionVerificationSunsetBoulevard.ts","chapterThirteenSunsetBoulevardExpansion"],"scenario_los_olvidados_1950":["src/ui/data/scenarioProductionVerificationLosOlvidados.ts","chapterThirteenLosOlvidadosExpansion"]};
       const [path, definition] = configs[workshop.scenarioId]!;
       if (definition === "seed") assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
       else assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
@@ -845,4 +865,17 @@ test("Postwar workshops preserve distinct film-specific questions and evidence",
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_la_strada_1954")?.questions.map(q => q.id), ["lastrada-gesture","lastrada-road","lastrada-music"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_pather_panchali_1955")?.questions.map(q => q.id), ["patherpanchali-observation","patherpanchali-finance","patherpanchali-sound"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_ordet_1955")?.questions.map(q => q.id), ["ordet-duration","ordet-interior","ordet-quiet"]);
+});
+
+
+test("Late 1940s and 1950s workshops preserve distinct questions and production sources", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_night_of_the_hunter_1955")?.questions.map(q => q.id), ["thenightofthehunter-silhouette","thenightofthehunter-viewpoint","thenightofthehunter-credits"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_seventh_seal_1957")?.questions.map(q => q.id), ["theseventhseal-tableau","theseventhseal-adapt","theseventhseal-budget"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_ashes_and_diamonds_1958")?.questions.map(q => q.id), ["ashesanddiamonds-time","ashesanddiamonds-image","ashesanddiamonds-context"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_touch_of_evil_1958")?.questions.map(q => q.id), ["touchofevil-movement","touchofevil-music","touchofevil-versions"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_vertigo_1958")?.questions.map(q => q.id), ["vertigo-perspective","vertigo-motifs","vertigo-revelation"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_paisan_1946")?.questions.map(q => q.id), ["paisan-episodes","paisan-location","paisan-dubbing"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_red_shoes_1948")?.questions.map(q => q.id), ["theredshoes-color","theredshoes-dance","theredshoes-score"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_sunset_boulevard_1950")?.questions.map(q => q.id), ["sunsetboulevard-memory","sunsetboulevard-space","sunsetboulevard-preview"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_los_olvidados_1950")?.questions.map(q => q.id), ["losolvidados-research","losolvidados-locations","losolvidados-ending"]);
 });
