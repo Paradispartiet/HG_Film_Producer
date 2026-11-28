@@ -1,5 +1,7 @@
 import type { SourceBackedCaseWorkshop } from "./scenarioProductionSourceWorkshops.js";
 
+import { digitalSourceWorkshops } from "./scenarioProductionSourceWorkshopsDigital.js";
+
 export const postwarSourceWorkshops = [
   {
     "scenarioId": "scenario_the_night_of_the_hunter_1955",
@@ -21490,5 +21492,6 @@ export const postwarSourceWorkshops = [
         ]
       }
     ]
-  }
+  },
+  ...digitalSourceWorkshops
 ] as const satisfies readonly SourceBackedCaseWorkshop[];

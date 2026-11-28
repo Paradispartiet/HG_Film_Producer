@@ -223,15 +223,23 @@ const ids = [
   "scenario_the_white_ribbon_2009",
   "scenario_a_prophet_2009",
   "scenario_avatar_2009",
+  "scenario_zodiac_2007",
+  "scenario_walle_2008",
+  "scenario_slumdog_millionaire_2008",
+  "scenario_the_class_2008",
+  "scenario_district_9_2009",
+  "scenario_alamar_2009",
+  "scenario_uncle_boonmee_2010",
+  "scenario_the_social_network_2010",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly two hundred and fourteen existing cases have six hundred and forty-two original, source-backed decisions", () => {
+test("Exactly two hundred and twenty-two existing cases have six hundred and sixty-six original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 214);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 642);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 222);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 666);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -574,6 +582,14 @@ test("Exactly two hundred and fourteen existing cases have six hundred and forty
       for (const source of workshop.sources) assert.ok(verification.includes(source.url));
     } else if (["scenario_the_lives_of_others_2006","scenario_no_country_for_old_men_2007","scenario_there_will_be_blood_2007","scenario_the_white_ribbon_2009","scenario_a_prophet_2009","scenario_avatar_2009"].includes(workshop.scenarioId)) {
       const configs: Record<string, [string, string]> = {"scenario_the_lives_of_others_2006":["src/ui/data/scenarioProductionVerification.ts","seed"],"scenario_no_country_for_old_men_2007":["src/ui/data/scenarioProductionVerificationLandscapeBatch.ts","seed"],"scenario_there_will_be_blood_2007":["src/ui/data/scenarioProductionVerificationThereWillBeBlood.ts","chapterEighteenThereWillBeBloodExpansion"],"scenario_the_white_ribbon_2009":["src/ui/data/scenarioProductionVerificationEuropeanTimeIdentitySystemsBatch.ts","italyFranceGermanyBeneluxExpansion"],"scenario_a_prophet_2009":["src/ui/data/scenarioProductionVerificationNextFour2008_2009Batch.ts","seed"],"scenario_avatar_2009":["src/ui/data/scenarioProductionVerificationAvatar.ts","chapterEighteenAvatarExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      if (definition === "seed") assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
+      else assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
+      assert.ok(verification.includes('scenarioId: "' + workshop.scenarioId + '"'));
+      for (const source of workshop.sources) assert.ok(verification.includes(source.url));
+    } else if (["scenario_zodiac_2007","scenario_walle_2008","scenario_slumdog_millionaire_2008","scenario_the_class_2008","scenario_district_9_2009","scenario_alamar_2009","scenario_uncle_boonmee_2010","scenario_the_social_network_2010"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_zodiac_2007":["src/ui/data/scenarioProductionVerificationZodiac.ts","chapterEighteenZodiacExpansion"],"scenario_walle_2008":["src/ui/data/scenarioProductionVerificationNextFour2008_2009Batch.ts","seed"],"scenario_slumdog_millionaire_2008":["src/ui/data/scenarioProductionVerificationSlumdogMillionaire.ts","chapterEighteenSlumdogMillionaireExpansion"],"scenario_the_class_2008":["src/ui/data/scenarioProductionVerificationNextFour2008_2009Batch.ts","seed"],"scenario_district_9_2009":["src/ui/data/scenarioProductionVerificationModernBatch.ts","seed"],"scenario_alamar_2009":["src/ui/data/scenarioProductionVerificationNextFour2008_2009Batch.ts","seed"],"scenario_uncle_boonmee_2010":["src/ui/data/scenarioProductionVerificationUncleBoonmee.ts","chapterEighteenUncleBoonmeeExpansion"],"scenario_the_social_network_2010":["src/ui/data/scenarioProductionVerificationTheSocialNetwork.ts","chapterEighteenTheSocialNetworkExpansion"]};
       const [path, definition] = configs[workshop.scenarioId]!;
       if (definition === "seed") assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
       else assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
@@ -1259,4 +1275,16 @@ test("2006–2009 workshops retain film-specific decisions", () => {
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_white_ribbon_2009")?.questions.map(q => q.id), ["whiteribbon-authority","whiteribbon-monochrome","whiteribbon-uncertainty"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_a_prophet_2009")?.questions.map(q => q.id), ["aprophet-language","aprophet-space","aprophet-coaching"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_avatar_2009")?.questions.map(q => q.id), ["avatar2009-virtual","avatar2009-preview","avatar2009-mix"]);
+});
+
+
+test("Digital convergence workshops retain film-specific decisions", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_zodiac_2007")?.questions.map(q => q.id), ["zodiac-pipeline","zodiac-archive","zodiac-sound"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_walle_2008")?.questions.map(q => q.id), ["walle-gesture","walle-palette","walle-voice"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_slumdog_millionaire_2008")?.questions.map(q => q.id), ["slumdog-hybrid","slumdog-training","slumdog-collaboration"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_class_2008")?.questions.map(q => q.id), ["theclass-rehearsal","theclass-coverage","theclass-voices"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_district_9_2009")?.questions.map(q => q.id), ["district9-media","district9-integration","district9-improv"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_alamar_2009")?.questions.map(q => q.id), ["alamar-fiction","alamar-place","alamar-format"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_uncle_boonmee_2010")?.questions.map(q => q.id), ["uncleboonmee-memory","uncleboonmee-night","uncleboonmee-ambience"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_social_network_2010")?.questions.map(q => q.id), ["socialnetwork-metadata","socialnetwork-twins","socialnetwork-dialogue"]);
 });
