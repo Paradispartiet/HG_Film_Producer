@@ -13014,5 +13014,1658 @@ export const postwarSourceWorkshops = [
         ]
       }
     ]
+  },
+  {
+    "scenarioId": "scenario_brazil_1985",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Retro-futurist design, editorial conflict and musical motifs",
+      "nb": "Retrofuturistisk design, klippekonflikt og musikkmotiver",
+      "fr": "Design rétrofuturiste, conflit de montage et motifs musicaux",
+      "pt": "Design retrofuturista, conflito de montagem e motivos musicais"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Brazil",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/211-brazil"
+      },
+      {
+        "id": "s1",
+        "title": "Brazil (1985)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/bb840dfa-f69d-576b-bd99-dfa28efd4595/brazil"
+      },
+      {
+        "id": "s2",
+        "title": "Capturing A Brazil Look: An Interview With Production Designer Norman Garwood",
+        "publisher": "Wide Angle / Closeup",
+        "url": "https://wideanglecloseup.com/garwood.html"
+      },
+      {
+        "id": "s3",
+        "title": "Brazil",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/current/posts/59-brazil"
+      },
+      {
+        "id": "s4",
+        "title": "Brazil (1985)",
+        "publisher": "Michael Kamen Official Website",
+        "url": "https://www.michaelkamen.com/catalogue/brazil"
+      }
+    ],
+    "questions": [
+      {
+        "id": "brazil-design",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a fictional bureaucracy acquire a distinctive visual identity?",
+          "nb": "Hvordan kan et fiktivt byråkrati få en særegen visuell identitet?",
+          "fr": "Comment donner une identité visuelle à une bureaucratie fictive ?",
+          "pt": "Como dar identidade visual a uma burocracia fictícia?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Coordinate historical references, textures and repeated infrastructure",
+              "nb": "Samordne historiske referanser, teksturer og gjentatt infrastruktur",
+              "fr": "Coordonner références historiques, textures et infrastructures répétées",
+              "pt": "Coordenar referências históricas, texturas e infraestruturas recorrentes"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use unrelated decorative motifs in every room",
+              "nb": "Bruk urelaterte dekorative motiver i hvert rom",
+              "fr": "Employer des motifs décoratifs sans lien dans chaque pièce",
+              "pt": "Usar motivos decorativos sem ligação em cada sala"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume futuristic design must exclude historical references",
+              "nb": "Anta at fremtidsdesign må utelukke historiske referanser",
+              "fr": "Supposer que le futur exclut les références historiques",
+              "pt": "Supor que o futuro exclui referências históricas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Garwood describes Art Deco research, duct systems and collaboration with Pratt. Sketch a distinct fictional interior with coordinated design and photography.",
+          "nb": "Garwood beskriver art deco-research, rørsystemer og samarbeid med Pratt. Skisser et eget fiktivt interiør med samordnet scenografi og foto.",
+          "fr": "Garwood décrit les recherches Art déco, les conduits et la collaboration avec Pratt. Dessinez un intérieur fictif coordonnant décor et image.",
+          "pt": "Garwood descreve pesquisa Art déco, condutas e colaboração com Pratt. Esboce um interior fictício com cenografia e fotografia coordenadas."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "brazil-cuts",
+        "area": "research",
+        "prompt": {
+          "en": "How should conflicting editorial versions of a film be compared?",
+          "nb": "Hvordan bør motstridende klippeversjoner av en film sammenlignes?",
+          "fr": "Comment comparer des versions de montage contradictoires ?",
+          "pt": "Como comparar versões de montagem contraditórias?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat studio and director versions as identical",
+              "nb": "Behandle studioets og regissørens versjoner som identiske",
+              "fr": "Traiter les versions studio et réalisateur comme identiques",
+              "pt": "Tratar versões do estúdio e realizador como idênticas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Identify each cut and compare its narrative resolution",
+              "nb": "Identifiser hver versjon og sammenlign fortellingens avslutning",
+              "fr": "Identifier chaque montage et comparer son dénouement",
+              "pt": "Identificar cada versão e comparar o seu desfecho"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume the shortest version is always the original",
+              "nb": "Anta at den korteste versjonen alltid er originalen",
+              "fr": "Supposer que la version courte est toujours originale",
+              "pt": "Supor que a versão curta é sempre a original"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion documents the 143-minute director-approved edition and the 94-minute studio version. Compare editorial decisions using identified editions, not runtime alone.",
+          "nb": "Criterion dokumenterer den regissørgodkjente utgaven på 143 minutter og studioversjonen på 94 minutter. Sammenlign klippevalg med identifiserte utgaver, ikke spilletid alene.",
+          "fr": "Criterion documente le montage approuvé de 143 minutes et celui du studio de 94 minutes. Comparez les choix à partir des éditions identifiées.",
+          "pt": "A Criterion documenta a versão aprovada de 143 minutos e a do estúdio de 94 minutos. Compare escolhas com edições identificadas."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "brazil-motif",
+        "area": "sound",
+        "prompt": {
+          "en": "How can a repeated melody change meaning across a satirical film?",
+          "nb": "Hvordan kan en gjentatt melodi endre betydning gjennom en satirisk film?",
+          "fr": "Comment une mélodie récurrente change-t-elle de sens dans une satire ?",
+          "pt": "Como pode uma melodia recorrente mudar de sentido numa sátira?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Repeat an unchanged recording regardless of scene context",
+              "nb": "Gjenta et uendret opptak uansett scenekontekst",
+              "fr": "Répéter un enregistrement inchangé sans égard au contexte",
+              "pt": "Repetir gravação inalterada sem considerar o contexto"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Attribute the source melody to the film composer alone",
+              "nb": "Tilskriv kildemelodien filmkomponisten alene",
+              "fr": "Attribuer la mélodie source au seul compositeur du film",
+              "pt": "Atribuir a melodia original apenas ao compositor do filme"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Vary an original motif's arrangement and dramatic placement",
+              "nb": "Varier arrangement og dramatisk plassering av et eget motiv",
+              "fr": "Varier l’arrangement et la place dramatique d’un motif original",
+              "pt": "Variar arranjo e colocação dramática de um motivo original"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Kamen's archive describes the score's use of Ary Barroso's song. Create a new motif and distinguish source composition, arrangement and performance credits.",
+          "nb": "Kamens arkiv beskriver filmmusikkens bruk av Ary Barrosos sang. Lag et eget motiv og skill opphav, arrangement og fremføring.",
+          "fr": "Les archives de Kamen décrivent l’usage de la chanson de Barroso. Créez un motif original et distinguez composition, arrangement et interprétation.",
+          "pt": "O arquivo de Kamen descreve o uso da canção de Barroso. Crie um motivo original e distinga composição, arranjo e interpretação."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_cinema_paradiso_1988",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Cinema-going spaces, archival montage and release editions",
+      "nb": "Kinorom, arkivmontasje og utgivelsesversjoner",
+      "fr": "Espaces du cinéma, montage d’archives et versions",
+      "pt": "Espaços de cinema, montagem de arquivo e versões"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Cinema Paradiso (1988)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/01d342da-9a63-59d2-b9c3-c8465bcdf2c8/cinema-paradiso"
+      },
+      {
+        "id": "s1",
+        "title": "10 great films about cinemagoing",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-films-about-cinemagoing"
+      },
+      {
+        "id": "s2",
+        "title": "Nuovo Cinema Paradiso",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/nuovo-cinema-paradiso/"
+      },
+      {
+        "id": "s3",
+        "title": "1990 Academy Awards",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/oscars/ceremonies/1990"
+      },
+      {
+        "id": "s4",
+        "title": "Cinema Paradiso 4K UHD+Blu-ray",
+        "publisher": "Arrow Films",
+        "url": "https://www.arrowfilms.com/p/cinema-paradiso-4k-uhdblu-ray/12613127/"
+      },
+      {
+        "id": "s5",
+        "title": "1991 Film Awards results",
+        "publisher": "BAFTA",
+        "url": "https://www.bafta.org/awards/film?award-year=1991"
+      }
+    ],
+    "questions": [
+      {
+        "id": "cinemaparadiso-space",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a cinema interior become a recurring narrative setting?",
+          "nb": "Hvordan kan et kinointeriør bli et tilbakevendende fortellingsrom?",
+          "fr": "Comment une salle de cinéma devient-elle un lieu narratif récurrent ?",
+          "pt": "Como pode uma sala de cinema tornar-se um espaço narrativo recorrente?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore spatial relationships between viewer and screen",
+              "nb": "Ignorer romlige forhold mellom tilskuer og lerret",
+              "fr": "Ignorer les rapports spatiaux entre spectateur et écran",
+              "pt": "Ignorar relações espaciais entre espetador e ecrã"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Connect auditorium, projection booth and audience viewpoints",
+              "nb": "Knytt sal, maskinrom og publikums synsvinkler sammen",
+              "fr": "Relier salle, cabine de projection et regards du public",
+              "pt": "Ligar sala, cabine de projeção e pontos de vista do público"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat all cinema spaces as interchangeable backgrounds",
+              "nb": "Behandle alle kinorom som utskiftbare bakgrunner",
+              "fr": "Traiter tous les espaces de cinéma comme décors interchangeables",
+              "pt": "Tratar todos os espaços de cinema como cenários intercambiáveis"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI identifies the booth and town-square projection as organizing spaces. Design an original cinema-going scene with coherent geography and distinct viewer perspectives.",
+          "nb": "BFI identifiserer maskinrommet og projeksjonen på torget som organiserende rom. Lag en egen kinoscene med sammenhengende geografi og ulike tilskuerperspektiver.",
+          "fr": "Le BFI identifie la cabine et la projection sur la place comme espaces structurants. Concevez une scène originale aux perspectives distinctes.",
+          "pt": "O BFI identifica cabine e projeção na praça como espaços estruturantes. Crie uma cena original com geografia coerente e perspetivas distintas."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "cinemaparadiso-montage",
+        "area": "research",
+        "prompt": {
+          "en": "How should a montage of excerpts from other films be assembled responsibly?",
+          "nb": "Hvordan bør en montasje av utdrag fra andre filmer settes sammen ansvarlig?",
+          "fr": "Comment composer de manière responsable un montage d’extraits de films ?",
+          "pt": "Como montar excertos de outros filmes de forma responsável?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use unidentified excerpts without recording their origins",
+              "nb": "Bruk uidentifiserte utdrag uten å registrere opphav",
+              "fr": "Utiliser des extraits non identifiés sans noter leur origine",
+              "pt": "Usar excertos não identificados sem registar origem"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume a new montage changes ownership of the source images",
+              "nb": "Anta at en ny montasje endrer eierskapet til kildebildene",
+              "fr": "Supposer que le montage change la propriété des images sources",
+              "pt": "Supor que nova montagem altera propriedade das imagens originais"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Document provenance, permissions and the new editorial purpose",
+              "nb": "Dokumenter proveniens, tillatelser og det nye klippeformålet",
+              "fr": "Documenter provenance, autorisations et nouvelle fonction du montage",
+              "pt": "Documentar proveniência, permissões e nova função da montagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI discusses the final montage of censored kisses and Arrow documents its production supplement. Plan an original montage using cleared or self-produced footage.",
+          "nb": "BFI drøfter sluttmontasjen med sensurerte kyss, og Arrow dokumenterer produksjonstillegget. Planlegg en egen montasje med klarerte eller egenproduserte opptak.",
+          "fr": "Le BFI analyse le montage final et Arrow documente son supplément. Concevez un montage original avec des images autorisées ou autoproduites.",
+          "pt": "O BFI analisa a montagem final e a Arrow documenta o suplemento. Planeie montagem original com imagens autorizadas ou próprias."
+        },
+        "sourceIds": [
+          "s1",
+          "s4"
+        ]
+      },
+      {
+        "id": "cinemaparadiso-editions",
+        "area": "research",
+        "prompt": {
+          "en": "How should theatrical and extended versions be evaluated?",
+          "nb": "Hvordan bør kino- og langversjoner vurderes?",
+          "fr": "Comment évaluer les versions cinéma et longue ?",
+          "pt": "Como avaliar versões de cinema e versões longas?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare identified editions and their narrative structures",
+              "nb": "Sammenlign identifiserte utgaver og deres fortellingsstruktur",
+              "fr": "Comparer les éditions identifiées et leurs structures narratives",
+              "pt": "Comparar edições identificadas e estruturas narrativas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume every archive lists the same release version",
+              "nb": "Anta at alle arkiver oppgir samme utgivelsesversjon",
+              "fr": "Supposer que toutes les archives indiquent la même version",
+              "pt": "Supor que todos os arquivos indicam a mesma versão"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use an award to decide which cut is historically original",
+              "nb": "Bruk en pris til å avgjøre hvilken versjon som historisk er original",
+              "fr": "Utiliser un prix pour déterminer le montage historiquement original",
+              "pt": "Usar um prémio para decidir qual montagem é historicamente original"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Arrow records the 124-minute theatrical and 174-minute director's cut; BFI lists an expanded 175-minute record. Preserve edition provenance and avoid forced normalization.",
+          "nb": "Arrow dokumenterer kinoutgaven på 124 minutter og regissørutgaven på 174; BFI oppgir en utvidet utgave på 175 minutter. Bevar utgaveproveniens uten tvungen normalisering.",
+          "fr": "Arrow documente les versions de 124 et 174 minutes ; le BFI en indique 175. Préservez la provenance des éditions sans uniformisation forcée.",
+          "pt": "A Arrow documenta versões de 124 e 174 minutos; o BFI indica 175. Preserve proveniência sem normalização forçada."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_goodfellas_1990",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Moving-camera choreography, montage and period music",
+      "nb": "Kamerakoreografi, montasje og periodemusikk",
+      "fr": "Chorégraphie de caméra, montage et musique d’époque",
+      "pt": "Coreografia de câmara, montagem e música de época"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Goodfellas",
+        "publisher": "American Film Institute",
+        "url": "https://catalog.afi.com/Film/55206-GOODFELLAS"
+      },
+      {
+        "id": "s1",
+        "title": "In Memoriam: Michael Ballhaus, ASC, BVK (1935-2017)",
+        "publisher": "American Society of Cinematographers",
+        "url": "https://theasc.com/news/in-memoriam-michael-ballhaus-asc-1935-2017/"
+      },
+      {
+        "id": "s2",
+        "title": "GoodFellas (1990)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/b573c997-0970-5531-8f89-b193e2f8b143/goodfellas"
+      },
+      {
+        "id": "s3",
+        "title": "Goodfellas (1990) — National Film Registry description",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/programs/national-film-preservation-board/film-registry/descriptions-and-essays/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "goodfellas-movement",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a moving camera reveal successive social spaces?",
+          "nb": "Hvordan kan et bevegelig kamera avdekke flere sosiale rom?",
+          "fr": "Comment une caméra mobile révèle-t-elle des espaces sociaux successifs ?",
+          "pt": "Como pode uma câmara móvel revelar espaços sociais sucessivos?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Move the camera without considering performers or geography",
+              "nb": "Beveg kameraet uten å vurdere skuespillere eller geografi",
+              "fr": "Déplacer la caméra sans considérer acteurs ni géographie",
+              "pt": "Mover a câmara sem considerar atores nem geografia"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume a continuous shot needs no preparation",
+              "nb": "Anta at en sammenhengende tagning ikke trenger forberedelse",
+              "fr": "Supposer qu’un plan continu ne demande aucune préparation",
+              "pt": "Supor que um plano contínuo dispensa preparação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse a benign route with coordinated performers and framing",
+              "nb": "Øv på en ufarlig rute med samordnet skuespill og utsnitt",
+              "fr": "Répéter un parcours inoffensif avec jeu et cadrage coordonnés",
+              "pt": "Ensaiar percurso inofensivo com interpretação e enquadramento coordenados"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Ballhaus's ASC account describes the Copacabana camera choreography and collaborators. Plan an original harmless walk-through rather than duplicating the historical shot.",
+          "nb": "Ballhaus' ASC-beretning beskriver Copacabana-koreografien og medarbeiderne. Planlegg en egen ufarlig gjennomgang fremfor å kopiere den historiske tagningen.",
+          "fr": "Le récit ASC de Ballhaus décrit la chorégraphie et ses collaborateurs. Concevez un parcours original inoffensif sans copier le plan historique.",
+          "pt": "O relato ASC de Ballhaus descreve coreografia e colaboradores. Planeie percurso original inofensivo sem copiar o plano histórico."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "goodfellas-montage",
+        "area": "research",
+        "prompt": {
+          "en": "How can an adaptation compress years without implying a complete historical account?",
+          "nb": "Hvordan kan en adaptasjon komprimere år uten å antyde en fullstendig historisk beretning?",
+          "fr": "Comment condenser des années sans prétendre à un récit historique complet ?",
+          "pt": "Como condensar anos sem sugerir um relato histórico completo?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map selected narrative events and mark omitted intervals",
+              "nb": "Kartlegg valgte fortellingshendelser og marker utelatte perioder",
+              "fr": "Cartographier événements choisis et intervalles omis",
+              "pt": "Mapear eventos narrativos escolhidos e intervalos omitidos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat every dramatized scene as independently verified testimony",
+              "nb": "Behandle alle dramatiserte scener som uavhengig verifiserte vitnesbyrd",
+              "fr": "Traiter chaque scène dramatisée comme témoignage vérifié",
+              "pt": "Tratar cada cena dramatizada como testemunho verificado"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume the editor contributes nothing to temporal structure",
+              "nb": "Anta at klipperen ikke bidrar til tidsstrukturen",
+              "fr": "Supposer que le montage ne contribue pas à la temporalité",
+              "pt": "Supor que montagem não contribui para estrutura temporal"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI identifies the Pileggi adaptation and Schoonmaker's editing; the Registry describes the true-life basis. Design a fictional chronology that distinguishes selection from evidence.",
+          "nb": "AFI identifiserer Pileggi-adaptasjonen og Schoonmakers klipping; filmregisteret beskriver det virkelige forelegget. Lag en fiktiv kronologi som skiller utvalg fra dokumentasjon.",
+          "fr": "L’AFI identifie l’adaptation et le montage de Schoonmaker ; le registre décrit la base réelle. Concevez une chronologie distinguant sélection et preuve.",
+          "pt": "A AFI identifica adaptação e montagem de Schoonmaker; o registo descreve base real. Crie cronologia que distinga seleção de prova."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "goodfellas-music",
+        "area": "sound",
+        "prompt": {
+          "en": "How can period songs help organize a multi-decade narrative?",
+          "nb": "Hvordan kan periodesanger bidra til å organisere en fortelling over flere tiår?",
+          "fr": "Comment des chansons d’époque structurent-elles un récit sur plusieurs décennies ?",
+          "pt": "Como podem canções de época estruturar uma narrativa de várias décadas?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume the soundtrack proves the depicted events occurred",
+              "nb": "Anta at lydsporet beviser at hendelsene fant sted",
+              "fr": "Supposer que la bande sonore prouve les faits représentés",
+              "pt": "Supor que banda sonora prova os eventos representados"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Build a dated cue plan with licensed or original music",
+              "nb": "Lag en datert lydplan med lisensiert eller egen musikk",
+              "fr": "Créer un plan sonore daté avec musique autorisée ou originale",
+              "pt": "Criar plano sonoro datado com música licenciada ou original"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose all cues without regard to historical period",
+              "nb": "Velg alle lydinnslag uten hensyn til tidsperiode",
+              "fr": "Choisir tous les morceaux sans égard à leur époque",
+              "pt": "Escolher todas as músicas sem considerar a época"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The Registry identifies pop songs as a cohesive thread across decades. Build a new cue plan that distinguishes temporal atmosphere from historical evidence.",
+          "nb": "Filmregisteret identifiserer poplåter som en sammenbindende tråd på tvers av tiår. Lag en egen lydplan som skiller tidsatmosfære fra historisk dokumentasjon.",
+          "fr": "Le registre identifie les chansons pop comme fil conducteur. Créez un plan distinguant ambiance temporelle et preuve historique.",
+          "pt": "O registo identifica canções pop como fio condutor. Crie plano que distinga ambiente temporal de prova histórica."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_boyz_n_the_hood_1991",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Creative control, neighborhood collaboration and social context",
+      "nb": "Kreativ kontroll, nabolagssamarbeid og sosial kontekst",
+      "fr": "Contrôle créatif, collaboration locale et contexte social",
+      "pt": "Controlo criativo, colaboração local e contexto social"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Boyz N the Hood (1991)",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/58786-BOYZ-N-THE-HOOD"
+      },
+      {
+        "id": "s1",
+        "title": "John Singleton",
+        "publisher": "Television Academy Interviews",
+        "url": "https://interviews.televisionacademy.com/interviews/john-singleton"
+      },
+      {
+        "id": "s2",
+        "title": "Boyz N the Hood",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/boyz-n-the-hood/"
+      },
+      {
+        "id": "s3",
+        "title": "Boyz N' the Hood - restored print",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/boyz-n-the-hood-2/"
+      },
+      {
+        "id": "s4",
+        "title": "1992 Academy Awards",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/oscars/ceremonies/1992/M"
+      },
+      {
+        "id": "s5",
+        "title": "BOYZ N THE HOOD 25th Anniversary Celebration and Conversation",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/events/boyz-n-hood-25th-anniversary-screening-and-conversation"
+      },
+      {
+        "id": "s6",
+        "title": "Complete National Film Registry Listing",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/programs/national-film-preservation-board/film-registry/complete-national-film-registry-listing/"
+      },
+      {
+        "id": "s7",
+        "title": "John Singleton: A Celebration",
+        "publisher": "USC Visions & Voices / School of Cinematic Arts",
+        "url": "https://visionsandvoices.usc.edu/wp-content/uploads/2022/09/JohnSingleton_ThemeGuide.pdf"
+      },
+      {
+        "id": "s8",
+        "title": "AFI Movie Club: Boyz N the Hood",
+        "publisher": "American Film Institute",
+        "url": "https://www.afi.com/news/afi-movie-club-boyz-n-the-hood/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "boyznthehood-authorship",
+        "area": "research",
+        "prompt": {
+          "en": "How can a first-time writer-director preserve creative responsibility?",
+          "nb": "Hvordan kan en debuterende manusforfatter-regissør bevare kreativt ansvar?",
+          "fr": "Comment un auteur-réalisateur débutant préserve-t-il sa responsabilité créative ?",
+          "pt": "Como pode um argumentista-realizador estreante preservar responsabilidade criativa?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Clarify directing rights and shared producer responsibilities",
+              "nb": "Avklar regirettigheter og delte produsentansvar",
+              "fr": "Clarifier droits de réalisation et responsabilités des producteurs",
+              "pt": "Clarificar direitos de realização e responsabilidades dos produtores"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume selling a script guarantees directing control",
+              "nb": "Anta at manussalg garanterer regikontroll",
+              "fr": "Supposer que vendre un scénario garantit la réalisation",
+              "pt": "Supor que vender argumento garante controlo de realização"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore collaboration when documenting authorship",
+              "nb": "Ignorer samarbeid ved dokumentasjon av opphav",
+              "fr": "Ignorer la collaboration dans les crédits",
+              "pt": "Ignorar colaboração ao documentar autoria"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Singleton's oral history describes insisting on directing, and AFI documents the Columbia development context. Prepare a fictional collaboration agreement with clear roles.",
+          "nb": "Singletons muntlige historie beskriver kravet om å regissere, og AFI dokumenterer Columbia-utviklingen. Lag en fiktiv samarbeidsavtale med tydelige roller.",
+          "fr": "Singleton raconte avoir insisté pour réaliser ; l’AFI documente Columbia. Préparez un accord fictif aux responsabilités claires.",
+          "pt": "Singleton relata ter insistido em realizar; a AFI documenta Columbia. Prepare acordo fictício com funções claras."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s8"
+        ]
+      },
+      {
+        "id": "boyznthehood-neighborhood",
+        "area": "camera",
+        "prompt": {
+          "en": "How can neighborhood spaces contribute to a coming-of-age story?",
+          "nb": "Hvordan kan nabolagsrom bidra til en oppvekstfortelling?",
+          "fr": "Comment les espaces du quartier contribuent-ils à un récit d’apprentissage ?",
+          "pt": "Como podem espaços do bairro contribuir para uma história de amadurecimento?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat fiction as proof about every neighborhood resident",
+              "nb": "Behandle fiksjon som bevis om alle nabolagets beboere",
+              "fr": "Traiter la fiction comme preuve sur tous les habitants",
+              "pt": "Tratar ficção como prova sobre todos os moradores"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Connect recurring homes and streets to character relationships",
+              "nb": "Knytt tilbakevendende hjem og gater til figurenes relasjoner",
+              "fr": "Relier maisons et rues récurrentes aux rapports entre personnages",
+              "pt": "Ligar casas e ruas recorrentes às relações das personagens"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use every location as interchangeable generic background",
+              "nb": "Bruk alle steder som utskiftbar generisk bakgrunn",
+              "fr": "Utiliser tous les lieux comme décor interchangeable",
+              "pt": "Usar todos os locais como cenário genérico intercambiável"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI and Singleton's interview document South Central filming and local connections. Plan a respectful fictional location study without generalizing individual experiences.",
+          "nb": "AFI og Singleton-intervjuet dokumenterer opptak i South Central og lokale forbindelser. Lag en respektfull fiktiv stedsstudie uten å generalisere individuelle erfaringer.",
+          "fr": "L’AFI et Singleton documentent le tournage à South Central. Concevez une étude respectueuse sans généraliser les expériences individuelles.",
+          "pt": "A AFI e Singleton documentam filmagem em South Central. Crie estudo respeitoso sem generalizar experiências individuais."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "boyznthehood-score",
+        "area": "sound",
+        "prompt": {
+          "en": "How can a coming-of-age scene use music without reducing its social context?",
+          "nb": "Hvordan kan en oppvekstscene bruke musikk uten å forenkle den sosiale konteksten?",
+          "fr": "Comment une scène d’apprentissage utilise-t-elle la musique sans réduire son contexte social ?",
+          "pt": "Como pode uma cena de amadurecimento usar música sem reduzir o contexto social?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use one musical stereotype to represent an entire community",
+              "nb": "Bruk én musikalsk stereotypi til å representere et helt lokalmiljø",
+              "fr": "Utiliser un stéréotype musical pour représenter toute une communauté",
+              "pt": "Usar estereótipo musical para representar toda uma comunidade"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Credit all recorded sound to the composer alone",
+              "nb": "Krediter all innspilt lyd til komponisten alene",
+              "fr": "Créditer tout le son au seul compositeur",
+              "pt": "Creditar todo som apenas ao compositor"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare an original musical cue with dialogue and ambient sound",
+              "nb": "Sammenlign et eget musikkinnslag med dialog og miljølyd",
+              "fr": "Comparer un motif original au dialogue et aux sons ambiants",
+              "pt": "Comparar motivo original com diálogo e som ambiente"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Cannes credits Stanley Clarke, and AFI identifies distinct sound roles. Develop an original sound plan with separate authorship and respectful context.",
+          "nb": "Cannes krediterer Stanley Clarke, og AFI identifiserer ulike lydroller. Lag en egen lydplan med separat opphav og respektfull kontekst.",
+          "fr": "Cannes crédite Stanley Clarke et l’AFI identifie les métiers du son. Créez un plan original avec auteurs distincts et contexte respecté.",
+          "pt": "Cannes credita Stanley Clarke e a AFI identifica funções de som. Crie plano original com autoria distinta e contexto respeitado."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_my_own_private_idaho_1991",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Hybrid adaptation, collaborative performance and ambiguous endings",
+      "nb": "Hybridadaptasjon, kollektivt skuespill og åpne slutter",
+      "fr": "Adaptation hybride, jeu collectif et fins ambiguës",
+      "pt": "Adaptação híbrida, interpretação coletiva e finais ambíguos"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "My Own Private Idaho (1991)",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/58952-MY-OWN-PRIVATE-IDAHO"
+      },
+      {
+        "id": "s1",
+        "title": "My Own Private Idaho (1991)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/8c8e43ca-ffbf-5d40-9429-0f609bd437a1/my-own-private-idaho"
+      },
+      {
+        "id": "s2",
+        "title": "My Own Private Idaho – BFI Southbank Programme Notes",
+        "publisher": "British Film Institute",
+        "url": "https://bfidatadigipres.github.io/pdf/2022-02-08-my-own-private-idaho.pdf"
+      },
+      {
+        "id": "s3",
+        "title": "My Own Private Idaho",
+        "publisher": "La Biennale di Venezia Historical Archive",
+        "url": "https://asac.labiennale.org/attivita/cinema/7743"
+      },
+      {
+        "id": "s4",
+        "title": "My Own Private Idaho",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/249-my-own-private-idaho"
+      },
+      {
+        "id": "s5",
+        "title": "Gus Van Sant interview",
+        "publisher": "The Guardian",
+        "url": "https://www.theguardian.com/film/2009/jan/19/guardian-interview-gus-van-sant"
+      },
+      {
+        "id": "s6",
+        "title": "Gus Van Sant: Swimming Against the Current",
+        "publisher": "Focus Features",
+        "url": "https://www.focusfeatures.com/article/gus_van_sant__swimming_against_the_current"
+      },
+      {
+        "id": "s7",
+        "title": "Adams and Ollman: Paul Lee and Gus Van Sant in Conversation",
+        "publisher": "Karma",
+        "url": "https://karmakarma.org/texts/adams-and-ollman-paul-lee-and-gus-van-sant-in-convo-april-2021/"
+      },
+      {
+        "id": "s8",
+        "title": "My Own Private Idaho (1991)",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/events/my-own-private-idaho-1991"
+      },
+      {
+        "id": "s9",
+        "title": "25 Films Named to National Film Registry for Preservation",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/item/prn-24-105/25-films-named-to-national-film-registry-for-preservation/2024-12-18/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "myownprivateidaho-hybrid",
+        "area": "research",
+        "prompt": {
+          "en": "How can several writing projects become one coherent screenplay?",
+          "nb": "Hvordan kan flere skriveprosjekter bli ett sammenhengende manus?",
+          "fr": "Comment plusieurs projets d’écriture deviennent-ils un scénario cohérent ?",
+          "pt": "Como podem vários projetos de escrita tornar-se um argumento coerente?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume all material comes from a single source text",
+              "nb": "Anta at alt materiale kommer fra ett forelegg",
+              "fr": "Supposer que tout provient d’un seul texte source",
+              "pt": "Supor que todo material vem de um único texto"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map shared themes and define distinct narrative registers",
+              "nb": "Kartlegg felles temaer og definer ulike fortellingsregistre",
+              "fr": "Cartographier thèmes communs et registres narratifs distincts",
+              "pt": "Mapear temas comuns e registos narrativos distintos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Join unrelated scenes without considering their dramatic function",
+              "nb": "Slå sammen urelaterte scener uten å vurdere dramatisk funksjon",
+              "fr": "Assembler des scènes sans considérer leur fonction dramatique",
+              "pt": "Juntar cenas sem considerar função dramática"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Van Sant describes combining three writing projects; the Academy identifies the Shakespeare adaptation context. Plan a new hybrid script with documented source relationships.",
+          "nb": "Van Sant beskriver sammenslåingen av tre skriveprosjekter; Academy identifiserer Shakespeare-konteksten. Lag et nytt hybridmanus med dokumenterte kildeforhold.",
+          "fr": "Van Sant décrit trois projets réunis ; l’Académie identifie le contexte shakespearien. Concevez un scénario hybride aux sources documentées.",
+          "pt": "Van Sant descreve três projetos reunidos; a Academia identifica contexto shakespeariano. Crie argumento híbrido com fontes documentadas."
+        },
+        "sourceIds": [
+          "s5",
+          "s8"
+        ]
+      },
+      {
+        "id": "myownprivateidaho-performance",
+        "area": "research",
+        "prompt": {
+          "en": "How should an actor's contribution to a rewritten scene be documented?",
+          "nb": "Hvordan bør en skuespillers bidrag til en omskrevet scene dokumenteres?",
+          "fr": "Comment documenter l’apport d’un acteur à une scène réécrite ?",
+          "pt": "Como documentar contributo de um ator para uma cena reescrita?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat all changes as solely the director's work",
+              "nb": "Behandle alle endringer som regissørens arbeid alene",
+              "fr": "Traiter tous les changements comme le seul travail du réalisateur",
+              "pt": "Tratar todas as mudanças como trabalho exclusivo do realizador"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Claim exact authorship of undocumented dialogue",
+              "nb": "Hevd eksakt opphav til udokumentert dialog",
+              "fr": "Affirmer l’auteur exact de dialogues non documentés",
+              "pt": "Afirmar autoria exata de diálogos não documentados"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Keep revision notes and agree appropriate contribution credits",
+              "nb": "Behold revisjonsnotater og avtal passende kreditering av bidrag",
+              "fr": "Conserver notes de révision et convenir des crédits appropriés",
+              "pt": "Manter notas de revisão e acordar créditos adequados"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Van Sant describes Phoenix expanding a short scene during work with Reeves. Record collaboration in a fictional rehearsal without inventing exact historical line attribution.",
+          "nb": "Van Sant beskriver at Phoenix utvidet en kort scene i arbeidet med Reeves. Dokumenter samarbeid i en fiktiv prøve uten å dikte opp historisk replikkopphav.",
+          "fr": "Van Sant décrit Phoenix développant une scène avec Reeves. Documentez une répétition fictive sans inventer l’attribution des répliques historiques.",
+          "pt": "Van Sant descreve Phoenix a expandir uma cena com Reeves. Documente ensaio fictício sem inventar autoria de falas históricas."
+        },
+        "sourceIds": [
+          "s6",
+          "s7"
+        ]
+      },
+      {
+        "id": "myownprivateidaho-ending",
+        "area": "camera",
+        "prompt": {
+          "en": "How can an ambiguous ending remain purposeful rather than arbitrary?",
+          "nb": "Hvordan kan en åpen slutt være målrettet fremfor tilfeldig?",
+          "fr": "Comment une fin ambiguë reste-t-elle intentionnelle plutôt qu’arbitraire ?",
+          "pt": "Como pode um final ambíguo manter intenção em vez de arbitrariedade?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Resolve thematic patterns while leaving selected events uncertain",
+              "nb": "Avslutt tematiske mønstre og la utvalgte hendelser være uavklarte",
+              "fr": "Résoudre les motifs thématiques tout en laissant certains faits incertains",
+              "pt": "Resolver padrões temáticos deixando certos eventos incertos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Remove all thematic connections from the final scene",
+              "nb": "Fjern alle tematiske forbindelser fra sluttscenen",
+              "fr": "Supprimer tous les liens thématiques de la scène finale",
+              "pt": "Eliminar todas as ligações temáticas da cena final"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume the audience must receive a single explicit answer",
+              "nb": "Anta at publikum må få ett eksplisitt svar",
+              "fr": "Supposer que le public doit recevoir une réponse unique",
+              "pt": "Supor que público deve receber resposta explícita única"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Van Sant discusses his decision to keep the ending ambiguous. Storyboard two original endings and compare the thematic effect without declaring a single correct interpretation of the film.",
+          "nb": "Van Sant drøfter valget om å holde slutten åpen. Lag storyboard for to egne slutter og sammenlign tematisk effekt uten å fastsette én riktig filmtolkning.",
+          "fr": "Van Sant évoque sa fin ambiguë. Dessinez deux fins originales et comparez leur effet sans imposer une interprétation unique.",
+          "pt": "Van Sant discute o final ambíguo. Crie storyboard de dois finais originais e compare efeito sem impor interpretação única."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_hyenas_1992",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Cross-cultural adaptation, costume materials and production continuity",
+      "nb": "Tverrkulturell adaptasjon, kostymematerialer og produksjonskontinuitet",
+      "fr": "Adaptation interculturelle, matériaux de costumes et continuité",
+      "pt": "Adaptação intercultural, materiais de figurinos e continuidade"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Hyènes / Hyenas",
+        "publisher": "Swiss Films",
+        "url": "https://www.swissfilms.ch/en/movie/hyenes/714482b9e80344ae9f5dd7958d0a094f"
+      },
+      {
+        "id": "s1",
+        "title": "Hyènes (Djibril Diop Mambéty, 1992)",
+        "publisher": "La Cinémathèque française",
+        "url": "https://www.cinematheque.fr/film/38206.html"
+      },
+      {
+        "id": "s2",
+        "title": "Hyènes",
+        "publisher": "Images francophones",
+        "url": "https://www.imagesfrancophones.org/catalogue/hyenes-284"
+      },
+      {
+        "id": "s3",
+        "title": "Moussa Sene Absa",
+        "publisher": "Metrograph Journal",
+        "url": "https://metrograph.com/moussa-sene-absa/"
+      },
+      {
+        "id": "s4",
+        "title": "The Hyena's Last Laugh: A Conversation with Djibril Diop Mambéty",
+        "publisher": "Metrograph Journal",
+        "url": "https://metrograph.com/a-conversation-with-djibril-diop-mambety/"
+      },
+      {
+        "id": "s5",
+        "title": "HYÈNES (HYENAS)",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/hyenes/"
+      },
+      {
+        "id": "s6",
+        "title": "Hyenas restoration record",
+        "publisher": "The Film Foundation",
+        "url": "https://www.film-foundation.org/news?page=56"
+      }
+    ],
+    "questions": [
+      {
+        "id": "hyenas-adaptation",
+        "area": "research",
+        "prompt": {
+          "en": "How can a play be adapted into a distinct cultural setting?",
+          "nb": "Hvordan kan et teaterstykke adapteres til et særegent kulturmiljø?",
+          "fr": "Comment adapter une pièce à un contexte culturel distinct ?",
+          "pt": "Como adaptar uma peça a um contexto cultural distinto?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat the new setting as merely decorative scenery",
+              "nb": "Behandle det nye miljøet som ren dekorativ bakgrunn",
+              "fr": "Traiter le nouveau contexte comme simple décor",
+              "pt": "Tratar novo contexto como mero cenário decorativo"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume the adaptation represents every local tradition",
+              "nb": "Anta at adaptasjonen representerer alle lokale tradisjoner",
+              "fr": "Supposer que l’adaptation représente toutes les traditions locales",
+              "pt": "Supor que adaptação representa todas as tradições locais"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rework social relationships and setting through contextual research",
+              "nb": "Bearbeid sosiale relasjoner og miljø gjennom kontekstuell research",
+              "fr": "Retravailler rapports sociaux et milieu par une recherche contextualisée",
+              "pt": "Reformular relações sociais e ambiente com pesquisa contextual"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Swiss and Cannes records identify Mambéty's Dürrenmatt adaptation and Wolof production. Develop an original contextual adaptation without conflating distinct cultural traditions.",
+          "nb": "Sveitsiske og Cannes-oppføringer identifiserer Mambétys Dürrenmatt-adaptasjon og wolofproduksjon. Utvikle en egen kontekstuell adaptasjon uten å blande ulike tradisjoner.",
+          "fr": "Les notices suisse et Cannes identifient l’adaptation de Dürrenmatt en wolof. Développez une adaptation contextualisée sans confondre les traditions.",
+          "pt": "Registos suíço e Cannes identificam adaptação de Dürrenmatt em wolof. Desenvolva adaptação contextual sem confundir tradições."
+        },
+        "sourceIds": [
+          "s0",
+          "s5"
+        ]
+      },
+      {
+        "id": "hyenas-costume",
+        "area": "camera",
+        "prompt": {
+          "en": "How can inexpensive costume materials acquire dramatic meaning?",
+          "nb": "Hvordan kan rimelige kostymematerialer få dramatisk betydning?",
+          "fr": "Comment des matériaux de costumes peu coûteux acquièrent-ils un sens dramatique ?",
+          "pt": "Como podem materiais baratos de figurino adquirir sentido dramático?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test texture, silhouette and material associations within the scene",
+              "nb": "Test tekstur, silhuett og materialassosiasjoner i scenen",
+              "fr": "Tester texture, silhouette et associations matérielles dans la scène",
+              "pt": "Testar textura, silhueta e associações materiais na cena"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Equate material price with expressive quality",
+              "nb": "Likestill materialpris med uttrykkskvalitet",
+              "fr": "Assimiler le prix du matériau à sa qualité expressive",
+              "pt": "Equiparar preço do material a qualidade expressiva"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy culturally specific costume imagery without context",
+              "nb": "Kopier kulturspesifikke kostymebilder uten kontekst",
+              "fr": "Copier des costumes culturellement spécifiques sans contexte",
+              "pt": "Copiar figurinos culturalmente específicos sem contexto"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Mambéty discusses inexpensive costume materials and their meaning; institutional credits identify Oumou Sy. Design original materials with a clear dramatic rationale and attribution.",
+          "nb": "Mambéty drøfter rimelige kostymematerialer og betydningen deres; institusjonelle krediteringer identifiserer Oumou Sy. Lag egne materialvalg med dramatisk begrunnelse og kreditering.",
+          "fr": "Mambéty évoque des matériaux modestes et leur sens ; les crédits identifient Oumou Sy. Concevez des choix originaux justifiés et crédités.",
+          "pt": "Mambéty discute materiais baratos e seu significado; créditos identificam Oumou Sy. Crie escolhas originais justificadas e creditadas."
+        },
+        "sourceIds": [
+          "s1",
+          "s4"
+        ]
+      },
+      {
+        "id": "hyenas-schedule",
+        "area": "research",
+        "prompt": {
+          "en": "How should a production resume after an extended interruption?",
+          "nb": "Hvordan bør en produksjon gjenopptas etter et lengre avbrudd?",
+          "fr": "Comment reprendre une production après une longue interruption ?",
+          "pt": "Como retomar uma produção após uma longa interrupção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume a documented grant equals the complete production budget",
+              "nb": "Anta at et dokumentert tilskudd tilsvarer hele produksjonsbudsjettet",
+              "fr": "Supposer qu’une aide documentée égale le budget total",
+              "pt": "Supor que apoio documentado equivale ao orçamento total"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Review footage, continuity, responsibilities and remaining resources",
+              "nb": "Gjennomgå opptak, kontinuitet, ansvar og gjenværende ressurser",
+              "fr": "Examiner images, raccords, responsabilités et ressources restantes",
+              "pt": "Rever imagens, continuidade, responsabilidades e recursos restantes"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Restart without checking previously recorded material",
+              "nb": "Start på nytt uten å undersøke tidligere opptak",
+              "fr": "Reprendre sans vérifier les images déjà tournées",
+              "pt": "Retomar sem verificar material já gravado"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Absa describes two shooting periods, while the production record identifies a specific aid entry. Plan a fictional restart without inventing the total historical budget.",
+          "nb": "Absa beskriver to opptaksperioder, mens produksjonsregisteret identifiserer en bestemt støtteoppføring. Lag en fiktiv gjenopptakelsesplan uten å dikte opp historisk totalbudsjett.",
+          "fr": "Absa décrit deux périodes de tournage et le registre identifie une aide précise. Concevez une reprise fictive sans inventer le budget total.",
+          "pt": "Absa descreve dois períodos de filmagem e o registo identifica apoio específico. Planeie retoma fictícia sem inventar orçamento total."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_piano_1993",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Independent financing, expressive landscape and cultural collaboration",
+      "nb": "Uavhengig finansiering, uttrykksfullt landskap og kultursamarbeid",
+      "fr": "Financement indépendant, paysage expressif et collaboration culturelle",
+      "pt": "Financiamento independente, paisagem expressiva e colaboração cultural"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Memories of making The Piano – 25 years of Jane Campion's wild, windswept masterpiece",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/interviews/piano-jane-campion-jan-chapman"
+      },
+      {
+        "id": "s1",
+        "title": "The Piano",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/f/the-piano/"
+      },
+      {
+        "id": "s2",
+        "title": "The Piano",
+        "publisher": "NZ On Screen",
+        "url": "https://www.nzonscreen.com/videos/the-piano-1993/"
+      },
+      {
+        "id": "s3",
+        "title": "The Piano: Ada makes a deal",
+        "publisher": "National Film and Sound Archive of Australia",
+        "url": "https://www.nfsa.gov.au/collection/item/piano-ada-makes-deal"
+      },
+      {
+        "id": "s4",
+        "title": "Marae - The Piano Story",
+        "publisher": "NZ On Screen",
+        "url": "https://www.nzonscreen.com/all-series/marae/marae-the-piano-story-1993/"
+      },
+      {
+        "id": "s5",
+        "title": "The Piano (1992)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/cabb66ca-3bd6-562c-8c37-e704712b8ded/the-piano"
+      },
+      {
+        "id": "s6",
+        "title": "The Piano archive review: Jane Campion's realm of the senses",
+        "publisher": "BFI / Sight and Sound",
+        "url": "https://www.bfi.org.uk/sight-and-sound/reviews/piano-archive-review-jane-campions-realm-senses"
+      },
+      {
+        "id": "s7",
+        "title": "Stuart Dryburgh: on working with Jane Campion, Vincent Ward and Lee Tamahori",
+        "publisher": "NZ On Screen",
+        "url": "https://www.nzonscreen.com/interviews/stuart-dryburgh-on-working-with-jane-campion-vincent-ward-and-lee-tamahori/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "thepiano-financing",
+        "area": "research",
+        "prompt": {
+          "en": "How can international financing preserve a director's creative plan?",
+          "nb": "Hvordan kan internasjonal finansiering bevare regissørens kreative plan?",
+          "fr": "Comment le financement international préserve-t-il le projet créatif du réalisateur ?",
+          "pt": "Como pode financiamento internacional preservar o plano criativo do realizador?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Document financing conditions and negotiate creative responsibilities",
+              "nb": "Dokumenter finansieringsvilkår og forhandle kreative ansvarsområder",
+              "fr": "Documenter conditions de financement et négocier les responsabilités créatives",
+              "pt": "Documentar condições de financiamento e negociar responsabilidades criativas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume all prospective financiers offer identical terms",
+              "nb": "Anta at alle potensielle finansieringspartnere tilbyr identiske vilkår",
+              "fr": "Supposer que tous les financeurs offrent les mêmes conditions",
+              "pt": "Supor que todos os financiadores oferecem condições idênticas"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat later awards as a guarantee of initial funding",
+              "nb": "Behandle senere priser som garanti for opprinnelig finansiering",
+              "fr": "Traiter les prix ultérieurs comme garantie du financement initial",
+              "pt": "Tratar prémios posteriores como garantia de financiamento inicial"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Chapman describes failed financing attempts, the Ciby 2000 route and creative freedom. Compare hypothetical financing arrangements without inventing historical contract terms.",
+          "nb": "Chapman beskriver mislykkede finansieringsforsøk, Ciby 2000-løsningen og kreativ frihet. Sammenlign fiktive finansieringsordninger uten å dikte opp historiske kontraktsvilkår.",
+          "fr": "Chapman décrit les tentatives de financement, Ciby 2000 et la liberté créative. Comparez des accords fictifs sans inventer les clauses historiques.",
+          "pt": "Chapman descreve tentativas de financiamento, Ciby 2000 e liberdade criativa. Compare acordos fictícios sem inventar cláusulas históricas."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "thepiano-landscape",
+        "area": "camera",
+        "prompt": {
+          "en": "How can an exterior landscape support an intimate dramatic scene?",
+          "nb": "Hvordan kan et eksteriørt landskap støtte en intim dramatisk scene?",
+          "fr": "Comment un paysage extérieur soutient-il une scène dramatique intime ?",
+          "pt": "Como pode uma paisagem exterior apoiar uma cena dramática íntima?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore safety and permissions at the filming location",
+              "nb": "Ignorer sikkerhet og tillatelser på opptaksstedet",
+              "fr": "Ignorer sécurité et autorisations sur le lieu de tournage",
+              "pt": "Ignorar segurança e licenças no local de filmagem"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Coordinate scale, actor placement and practical weather planning",
+              "nb": "Samordne skala, skuespillerplassering og praktisk værplanlegging",
+              "fr": "Coordonner échelle, placement des acteurs et préparation météorologique",
+              "pt": "Coordenar escala, posição dos atores e planeamento meteorológico"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use landscape as unrelated decorative spectacle",
+              "nb": "Bruk landskap som urelatert dekorativt spektakel",
+              "fr": "Utiliser le paysage comme spectacle décoratif sans lien",
+              "pt": "Usar paisagem como espetáculo decorativo sem ligação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Chapman describes storyboard preparation and the contemporaneous set report documents Karekare Beach. Develop a new location study with safe practical constraints and acknowledge Dryburgh's contribution.",
+          "nb": "Chapman beskriver storyboardforberedelser, og opptaksreportasjen dokumenterer Karekare Beach. Lag en egen stedsstudie med trygge praktiske rammer og anerkjenn Dryburghs bidrag.",
+          "fr": "Chapman évoque les storyboards et le reportage documente Karekare Beach. Concevez une étude sûre des lieux en reconnaissant l’apport de Dryburgh.",
+          "pt": "Chapman descreve storyboards e reportagem documenta Karekare Beach. Crie estudo seguro de local reconhecendo contributo de Dryburgh."
+        },
+        "sourceIds": [
+          "s0",
+          "s4",
+          "s7"
+        ]
+      },
+      {
+        "id": "thepiano-culture",
+        "area": "research",
+        "prompt": {
+          "en": "How should culturally specific representation be planned for a historical film?",
+          "nb": "Hvordan bør kulturspesifikk representasjon planlegges i en historisk film?",
+          "fr": "Comment préparer une représentation culturelle spécifique dans un film historique ?",
+          "pt": "Como planear representação cultural específica num filme histórico?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat one historical consultation as universal cultural authorization",
+              "nb": "Behandle én historisk konsultasjon som universell kulturtillatelse",
+              "fr": "Traiter une consultation historique comme autorisation culturelle universelle",
+              "pt": "Tratar uma consulta histórica como autorização cultural universal"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy culturally significant imagery without seeking permission",
+              "nb": "Kopier kulturbetydningsfulle bilder uten å innhente tillatelse",
+              "fr": "Copier des images culturellement significatives sans autorisation",
+              "pt": "Copiar imagens culturalmente significativas sem permissão"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Consult relevant communities and document specific permissions and roles",
+              "nb": "Rådfør deg med relevante lokalmiljøer og dokumenter konkrete tillatelser og roller",
+              "fr": "Consulter les communautés concernées et documenter autorisations et rôles",
+              "pt": "Consultar comunidades relevantes e documentar permissões e funções"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The contemporaneous Marae report identifies Māori participants and advisers. Plan a new consent-based consultation process without treating the historical production as blanket permission.",
+          "nb": "Den samtidige Marae-reportasjen identifiserer maoriske medvirkende og rådgivere. Planlegg en ny samtykkebasert konsultasjon uten å behandle den historiske produksjonen som generell tillatelse.",
+          "fr": "Le reportage Marae identifie des participants et conseillers māori. Planifiez une consultation consentie sans prendre la production historique pour autorisation générale.",
+          "pt": "A reportagem Marae identifica participantes e consultores maori. Planeie consulta consentida sem tratar produção histórica como autorização geral."
+        },
+        "sourceIds": [
+          "s2",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_hoop_dreams_1994",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Longitudinal documentary, video workflow and editorial evidence",
+      "nb": "Langtidsdokumentar, videoarbeidsflyt og klippebelegg",
+      "fr": "Documentaire longitudinal, chaîne vidéo et preuves de montage",
+      "pt": "Documentário longitudinal, fluxo de vídeo e evidência de montagem"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "HOOP DREAMS",
+        "publisher": "American Film Institute Catalog",
+        "url": "https://catalog.afi.com/Film/60030-HOOP-DREAMS"
+      },
+      {
+        "id": "s1",
+        "title": "Hoop Dreams",
+        "publisher": "Kartemquin Films",
+        "url": "https://kartemquin.org/film/hoop-dreams/"
+      },
+      {
+        "id": "s2",
+        "title": "Hoop dreams",
+        "publisher": "Danish Film Institute",
+        "url": "https://www.dfi.dk/en/viden-om-film/filmdatabasen/film/hoop-dreams"
+      },
+      {
+        "id": "s3",
+        "title": "Hoop Dreams",
+        "publisher": "UCLA Film & Television Archive",
+        "url": "https://www.cinema.ucla.edu/events/2024/03/09/hoop-dreams"
+      },
+      {
+        "id": "s4",
+        "title": "Steve James on Kartemquin Films",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/current/posts/4023-steve-james-on-kartemquin-films"
+      },
+      {
+        "id": "s5",
+        "title": "Conversation with Steve James",
+        "publisher": "Wednesday Journal",
+        "url": "https://www.oakpark.com/2015/11/17/a-conversation-with-steve-james/"
+      },
+      {
+        "id": "s6",
+        "title": "Meet the Director: Steve James",
+        "publisher": "Directors Guild of America Visual History",
+        "url": "https://www.dga.org/Craft/VisualHistory/Interviews/Steve-James"
+      }
+    ],
+    "questions": [
+      {
+        "id": "hoopdreams-longitudinal",
+        "area": "research",
+        "prompt": {
+          "en": "How should a documentary following participants over several years be organized?",
+          "nb": "Hvordan bør en dokumentar som følger deltakere over flere år organiseres?",
+          "fr": "Comment organiser un documentaire suivant des participants plusieurs années ?",
+          "pt": "Como organizar documentário que acompanha participantes durante vários anos?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume all participant trajectories can be predicted in advance",
+              "nb": "Anta at alle deltakerforløp kan forutsies på forhånd",
+              "fr": "Supposer que toutes les trajectoires sont prévisibles",
+              "pt": "Supor que todas as trajetórias são previsíveis"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Renew consent and maintain chronological records and support plans",
+              "nb": "Forny samtykke og før kronologiske registre og støtteplaner",
+              "fr": "Renouveler le consentement et tenir des registres chronologiques",
+              "pt": "Renovar consentimento e manter registos cronológicos e planos de apoio"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat initial consent as unlimited permission for every later use",
+              "nb": "Behandle førstegangssamtykke som ubegrenset tillatelse til all senere bruk",
+              "fr": "Traiter le consentement initial comme autorisation illimitée",
+              "pt": "Tratar consentimento inicial como autorização ilimitada"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Kartemquin and James describe the multi-year project. Plan a fictional longitudinal documentary with ongoing consent and explicit provisions for changing circumstances.",
+          "nb": "Kartemquin og James beskriver flerårsprosjektet. Planlegg en fiktiv langtidsdokumentar med løpende samtykke og tydelige rammer for endrede omstendigheter.",
+          "fr": "Kartemquin et James décrivent le projet pluriannuel. Concevez un documentaire longitudinal fictif avec consentement continu et adaptation aux circonstances.",
+          "pt": "Kartemquin e James descrevem projeto plurianual. Planeie documentário longitudinal fictício com consentimento contínuo e adaptação às circunstâncias."
+        },
+        "sourceIds": [
+          "s1",
+          "s4",
+          "s6"
+        ]
+      },
+      {
+        "id": "hoopdreams-video",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a low-budget documentary choose an appropriate recording workflow?",
+          "nb": "Hvordan kan en lavbudsjettdokumentar velge en passende opptaksflyt?",
+          "fr": "Comment un documentaire à petit budget choisit-il une chaîne de captation adaptée ?",
+          "pt": "Como pode um documentário de baixo orçamento escolher fluxo de captação adequado?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose a costly format regardless of available resources",
+              "nb": "Velg et kostbart format uansett tilgjengelige ressurser",
+              "fr": "Choisir un format coûteux sans égard aux ressources",
+              "pt": "Escolher formato caro sem considerar recursos disponíveis"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume historical video editing was identical to modern digital editing",
+              "nb": "Anta at historisk videoklipping var identisk med moderne digital klipping",
+              "fr": "Supposer que le montage vidéo historique était identique au numérique moderne",
+              "pt": "Supor que montagem de vídeo histórica era idêntica à digital moderna"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Balance recording costs, broadcast needs and reliable backup",
+              "nb": "Balanser opptakskostnader, kringkastingsbehov og pålitelig sikkerhetskopi",
+              "fr": "Équilibrer coûts, exigences de diffusion et sauvegarde fiable",
+              "pt": "Equilibrar custos, necessidades de emissão e cópias fiáveis"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "James describes the choice of broadcast-quality video and the VHS linear offline workflow. Compare practical modern alternatives while preserving the historical distinction.",
+          "nb": "James beskriver valget av kringkastingsvideo og lineær VHS-offlineklipping. Sammenlign praktiske moderne alternativer og bevar det historiske skillet.",
+          "fr": "James décrit la vidéo de qualité diffusion et le montage linéaire VHS. Comparez des options modernes sans effacer la distinction historique.",
+          "pt": "James descreve vídeo de qualidade de emissão e montagem linear VHS. Compare opções modernas preservando distinção histórica."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "hoopdreams-editing",
+        "area": "research",
+        "prompt": {
+          "en": "How can hundreds of hours of documentary footage be selected transparently?",
+          "nb": "Hvordan kan hundrevis av timer med dokumentaropptak velges ut transparent?",
+          "fr": "Comment sélectionner de façon transparente des centaines d’heures documentaires ?",
+          "pt": "Como selecionar transparentemente centenas de horas documentais?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Log source context, themes, dates and editorial omissions",
+              "nb": "Loggfør kildekontekst, temaer, datoer og redaksjonelle utelatelser",
+              "fr": "Consigner contexte, thèmes, dates et omissions éditoriales",
+              "pt": "Registar contexto, temas, datas e omissões editoriais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Discard all contextual information once clips are selected",
+              "nb": "Forkast all kontekstinformasjon når klipp er valgt",
+              "fr": "Supprimer tout contexte après sélection des extraits",
+              "pt": "Descartar todo contexto após seleção de excertos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Present editorial compression as a complete record of participants' lives",
+              "nb": "Presenter redaksjonell komprimering som fullstendig dokumentasjon av deltakernes liv",
+              "fr": "Présenter la condensation comme dossier complet de la vie des participants",
+              "pt": "Apresentar condensação editorial como registo completo da vida dos participantes"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Archive and oral-history sources describe roughly 250 hours of footage and distinct editing credits. Build a fictional selection log that preserves context and acknowledges omissions.",
+          "nb": "Arkiv- og muntlige historiekilder beskriver rundt 250 timer opptak og separate klippekrediteringer. Lag en fiktiv utvalgslogg som bevarer kontekst og anerkjenner utelatelser.",
+          "fr": "Les archives et témoignages décrivent environ 250 heures et des crédits de montage distincts. Créez un registre fictif préservant contexte et omissions.",
+          "pt": "Arquivos e história oral descrevem cerca de 250 horas e créditos distintos de montagem. Crie registo fictício preservando contexto e omissões."
+        },
+        "sourceIds": [
+          "s0",
+          "s3",
+          "s6"
+        ]
+      }
+    ]
   }
 ] as const satisfies readonly SourceBackedCaseWorkshop[];

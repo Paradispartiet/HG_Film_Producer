@@ -181,15 +181,23 @@ const ids = [
   "scenario_robocop_1987",
   "scenario_salaam_bombay_1988",
   "scenario_do_the_right_thing_1989",
+  "scenario_brazil_1985",
+  "scenario_cinema_paradiso_1988",
+  "scenario_goodfellas_1990",
+  "scenario_boyz_n_the_hood_1991",
+  "scenario_my_own_private_idaho_1991",
+  "scenario_hyenas_1992",
+  "scenario_the_piano_1993",
+  "scenario_hoop_dreams_1994",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly one hundred and seventy-two existing cases have five hundred and sixteen original, source-backed decisions", () => {
+test("Exactly one hundred and eighty existing cases have five hundred and forty original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 172);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 516);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 180);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 540);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -489,6 +497,14 @@ test("Exactly one hundred and seventy-two existing cases have five hundred and s
       const configs: Record<string, [string, string]> = {"scenario_sugar_cane_alley_1983":["src/ui/data/scenarioProductionVerificationSugarCaneAlley.ts","chapterSixteenSugarCaneAlleyExpansion"],"scenario_the_terminator_1984":["src/ui/data/scenarioProductionVerificationTerminator.ts","chapterSixteenTerminatorExpansion"],"scenario_back_to_the_future_1985":["src/ui/data/scenarioProductionVerificationBackToTheFuture.ts","chapterSixteenBackToTheFutureExpansion"],"scenario_shes_gotta_have_it_1986":["src/ui/data/scenarioProductionVerificationShesGottaHaveIt.ts","chapterSixteenShesGottaHaveItExpansion"],"scenario_a_better_tomorrow_1986":["src/ui/data/scenarioProductionVerificationABetterTomorrow.ts","chapterSixteenABetterTomorrowExpansion"],"scenario_robocop_1987":["src/ui/data/scenarioProductionVerificationRoboCop.ts","chapterSixteenRoboCopExpansion"],"scenario_salaam_bombay_1988":["src/ui/data/scenarioProductionVerificationSalaamBombay.ts","chapterSixteenSalaamBombayExpansion"],"scenario_do_the_right_thing_1989":["src/ui/data/scenarioProductionVerificationDoTheRightThing.ts","chapterSixteenDoTheRightThingExpansion"]};
       const [path, definition] = configs[workshop.scenarioId]!;
       assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
+      assert.ok(verification.includes('scenarioId: "' + workshop.scenarioId + '"'));
+      for (const source of workshop.sources) assert.ok(verification.includes(source.url));
+    } else if (["scenario_brazil_1985","scenario_cinema_paradiso_1988","scenario_goodfellas_1990","scenario_boyz_n_the_hood_1991","scenario_my_own_private_idaho_1991","scenario_hyenas_1992","scenario_the_piano_1993","scenario_hoop_dreams_1994"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_brazil_1985":["src/ui/data/scenarioProductionVerificationBrazil.ts","seed"],"scenario_cinema_paradiso_1988":["src/ui/data/scenarioProductionVerificationCinemaParadiso.ts","italyFranceGermanyBeneluxExpansion"],"scenario_goodfellas_1990":["src/ui/data/scenarioProductionVerificationGoodfellas.ts","chapterSeventeenGoodfellasExpansion"],"scenario_boyz_n_the_hood_1991":["src/ui/data/scenarioProductionVerificationBoyzNTheHood.ts","chapterSeventeenBoyzNTheHoodExpansion"],"scenario_my_own_private_idaho_1991":["src/ui/data/scenarioProductionVerificationMyOwnPrivateIdaho.ts","chapterSeventeenMyOwnPrivateIdahoExpansion"],"scenario_hyenas_1992":["src/ui/data/scenarioProductionVerificationHyenas.ts","chapterSeventeenHyenasExpansion"],"scenario_the_piano_1993":["src/ui/data/scenarioProductionVerificationThePiano.ts","chapterSeventeenThePianoExpansion"],"scenario_hoop_dreams_1994":["src/ui/data/scenarioProductionVerificationHoopDreams.ts","chapterSeventeenHoopDreamsExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      if (definition === "seed") assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
+      else assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
       const verification = readFileSync(path, "utf8");
       assert.ok(verification.includes('scenarioId: "' + workshop.scenarioId + '"'));
       for (const source of workshop.sources) assert.ok(verification.includes(source.url));
@@ -1105,4 +1121,16 @@ test("Late 1980s workshops retain film-specific questions and evidence", () => {
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_robocop_1987")?.questions.map(q => q.id), ["robocop-reveal","robocop-miniature","robocop-versions"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_salaam_bombay_1988")?.questions.map(q => q.id), ["salaambombay-workshop","salaambombay-street","salaambombay-finance"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_do_the_right_thing_1989")?.questions.map(q => q.id), ["dotherightthing-neighborhood","dotherightthing-heat","dotherightthing-song"]);
+});
+
+
+test("International early 1990s workshops retain film-specific questions and evidence", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_brazil_1985")?.questions.map(q => q.id), ["brazil-design","brazil-cuts","brazil-motif"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_cinema_paradiso_1988")?.questions.map(q => q.id), ["cinemaparadiso-space","cinemaparadiso-montage","cinemaparadiso-editions"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_goodfellas_1990")?.questions.map(q => q.id), ["goodfellas-movement","goodfellas-montage","goodfellas-music"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_boyz_n_the_hood_1991")?.questions.map(q => q.id), ["boyznthehood-authorship","boyznthehood-neighborhood","boyznthehood-score"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_my_own_private_idaho_1991")?.questions.map(q => q.id), ["myownprivateidaho-hybrid","myownprivateidaho-performance","myownprivateidaho-ending"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_hyenas_1992")?.questions.map(q => q.id), ["hyenas-adaptation","hyenas-costume","hyenas-schedule"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_piano_1993")?.questions.map(q => q.id), ["thepiano-financing","thepiano-landscape","thepiano-culture"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_hoop_dreams_1994")?.questions.map(q => q.id), ["hoopdreams-longitudinal","hoopdreams-video","hoopdreams-editing"]);
 });
