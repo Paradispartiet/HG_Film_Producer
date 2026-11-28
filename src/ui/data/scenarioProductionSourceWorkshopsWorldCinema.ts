@@ -1,0 +1,16571 @@
+import type { SourceBackedCaseWorkshop } from "./scenarioProductionSourceWorkshops.js";
+
+export const worldCinemaSourceWorkshops = [
+  {
+    "scenarioId": "scenario_living_in_bondage_1992",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Video economics, distribution and production roles",
+      "nb": "Videoøkonomi, distribusjon og produksjonsroller",
+      "fr": "Économie vidéo, distribution et rôles de production",
+      "pt": "Economia de vídeo, distribuição e funções de produção"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "From Living in Bondage to Queen Amina: An Aesthetic Evaluation of Contemporary Nollywood",
+        "publisher": "SAGE Open",
+        "url": "https://journals.sagepub.com/doi/10.1177/21582440211032620"
+      },
+      {
+        "id": "s1",
+        "title": "The New Nollywood: Professionalization or Gentrification of Cultural Industry",
+        "publisher": "SAGE Open",
+        "url": "https://journals.sagepub.com/doi/full/10.1177/2158244020940994"
+      },
+      {
+        "id": "s2",
+        "title": "Living in Bondage: Money and Values",
+        "publisher": "Oxford Academic / University of Chicago Press",
+        "url": "https://academic.oup.com/chicago-scholarship-online/book/18664/chapter-abstract/176869060"
+      },
+      {
+        "id": "s3",
+        "title": "The African Film Industry: Trends, Challenges and Opportunities for Growth",
+        "publisher": "UNESCO",
+        "url": "https://www.unesco.org/creativity/sites/default/files/medias/fichiers/2023/01/379165eng.pdf"
+      },
+      {
+        "id": "s4",
+        "title": "Around the world in melodrama: 9 countries, 45 essential films",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/around-world-melodrama-9-countries-45-essential-films"
+      }
+    ],
+    "questions": [
+      {
+        "id": "bondage-format",
+        "area": "camera",
+        "prompt": {
+          "en": "Why test video capture for a limited-budget feature?",
+          "nb": "Hvorfor prøve videoopptak for en lavbudsjettfilm?",
+          "fr": "Pourquoi tester la vidéo pour un film à petit budget ?",
+          "pt": "Porquê testar vídeo num filme de baixo orçamento?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare equipment and duplication costs against image requirements",
+              "nb": "Sammenlign utstyrs- og kopieringskostnader med bildekrav",
+              "fr": "Comparer coûts de matériel et duplication aux besoins d’image",
+              "pt": "Comparar custos de equipamento e duplicação com requisitos de imagem"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose celluloid regardless of available financing",
+              "nb": "Velg celluloid uansett tilgjengelig finansiering",
+              "fr": "Choisir la pellicule sans tenir compte du financement",
+              "pt": "Escolher película independentemente do financiamento"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume inexpensive video guarantees commercial success",
+              "nb": "Anta at billig video garanterer kommersiell suksess",
+              "fr": "Supposer que la vidéo bon marché garantit le succès",
+              "pt": "Supor que vídeo barato garante sucesso"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "SAGE and UNESCO document video as a lower-cost alternative to celluloid. Compare hypothetical workflows rather than treating format as a guarantee of success.",
+          "nb": "SAGE og UNESCO dokumenterer video som rimeligere alternativ til celluloid. Sammenlign tenkte arbeidsflyter uten å gjøre format til suksessgaranti.",
+          "fr": "SAGE et UNESCO documentent la vidéo comme alternative économique. Comparez des chaînes fictives sans en déduire un succès garanti.",
+          "pt": "SAGE e UNESCO documentam vídeo como alternativa económica. Compare fluxos hipotéticos sem garantir sucesso."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "bondage-distribution",
+        "area": "research",
+        "prompt": {
+          "en": "How can home-video distribution change a production plan?",
+          "nb": "Hvordan kan hjemmevideodistribusjon endre en produksjonsplan?",
+          "fr": "Comment la vidéo domestique modifie-t-elle un plan de production ?",
+          "pt": "Como pode distribuição doméstica alterar plano de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Budget only for a nationwide theatrical release",
+              "nb": "Budsjetter bare for landsdekkende kinovisning",
+              "fr": "Budgéter uniquement une sortie nationale en salles",
+              "pt": "Orçamentar apenas lançamento nacional em cinema"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume every distributor is also the director",
+              "nb": "Anta at alle distributører også er regissører",
+              "fr": "Supposer que chaque distributeur est réalisateur",
+              "pt": "Supor que todo distribuidor é realizador"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan duplication, rights and audience access alongside production",
+              "nb": "Planlegg kopiering, rettigheter og publikumstilgang sammen med produksjon",
+              "fr": "Prévoir duplication, droits et accès du public avec la production",
+              "pt": "Planear duplicação, direitos e acesso do público com produção"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Haynes and BFI describe the emerging cassette market and marketer financing. Design a hypothetical direct-release budget separating production and distribution.",
+          "nb": "Haynes og BFI beskriver kassettmarkedet og finansiering fra markedsaktører. Lag et tenkt direkteutgivelsesbudsjett som skiller produksjon og distribusjon.",
+          "fr": "Haynes et le BFI décrivent marché des cassettes et financement. Créez un budget fictif séparant production et distribution.",
+          "pt": "Haynes e BFI descrevem mercado de cassetes e financiamento. Crie orçamento fictício separando produção e distribuição."
+        },
+        "sourceIds": [
+          "s1",
+          "s2",
+          "s4"
+        ]
+      },
+      {
+        "id": "bondage-roles",
+        "area": "research",
+        "prompt": {
+          "en": "How should early Nigerian video-film credits be documented?",
+          "nb": "Hvordan bør tidlige nigerianske videofilmkrediteringer dokumenteres?",
+          "fr": "Comment documenter les crédits des premiers films vidéo nigérians ?",
+          "pt": "Como documentar créditos dos primeiros filmes de vídeo nigerianos?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat a budget estimate as an audited account",
+              "nb": "Behandle et budsjettanslag som revidert regnskap",
+              "fr": "Traiter une estimation comme un compte audité",
+              "pt": "Tratar estimativa como conta auditada"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Distinguish writer-producer, director and financier roles",
+              "nb": "Skill manusforfatter-produsent, regissør og finansieringsroller",
+              "fr": "Distinguer auteur-producteur, réalisateur et financeur",
+              "pt": "Distinguir argumentista-produtor, realizador e financiador"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assign all creative credits to the cassette marketer",
+              "nb": "Tildel alle kreative krediteringer til kassettmarkedsføreren",
+              "fr": "Attribuer tous les crédits créatifs au vendeur de cassettes",
+              "pt": "Atribuir créditos criativos ao vendedor de cassetes"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The research distinguishes Ogunjiofor, Rapu and Nnebue's contributions. Create a role ledger preserving each source's attribution and estimated costs.",
+          "nb": "Forskningen skiller Ogunjiofors, Rapus og Nnebues bidrag. Lag en rollelogg med kildenes kreditering og kostnadsanslag.",
+          "fr": "Les recherches distinguent leurs contributions. Créez un registre préservant les attributions et coûts estimés.",
+          "pt": "As pesquisas distinguem os contributos. Crie registo preservando atribuições e custos estimados."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_birds_of_passage_2018",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Wayuu collaboration, genre transformation and observational framing",
+      "nb": "Wayuu-samarbeid, sjangerforvandling og observerende utsnitt",
+      "fr": "Collaboration wayuu, transformation des genres et cadre observationnel",
+      "pt": "Colaboração wayuu, transformação de géneros e enquadramento observacional"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "Sortie en salles : Parajos de verano (Les Oiseaux de passage), réalisé par deux réalisateurs issus de l’Atelier",
+        "publisher": "Festival de Cannes — Cinéma de Demain",
+        "url": "https://cinemadedemain.festival-cannes.com/2019/sortie-en-salles-parajos-de-verano-les-oiseaux-de-passage-realise-par-deux-realisateurs-issus-de-latelier/"
+      },
+      {
+        "id": "s2",
+        "title": "Kodak 35mm paints an emotional picture of Colombia’s nascent drugs trade in 'Pájaros de Verano' ('Birds of Passage')",
+        "publisher": "Kodak",
+        "url": "https://www.kodak.com/en/motion/blog-post/pajaros-de-verano/"
+      },
+      {
+        "id": "s3",
+        "title": "Industry Insights: Interview with Birds of Passage director Cristina Gallego",
+        "publisher": "Reclaim The Frame",
+        "url": "https://www.reclaimtheframe.org/post/industry-insights-interview-with-birds-of-passage-director-cristina-gallego"
+      },
+      {
+        "id": "s4",
+        "title": "Birds of Passage",
+        "publisher": "New Zealand International Film Festival",
+        "url": "https://www.nziff.co.nz/2018/archive/birds-of-passage/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "birdswayuu-community",
+        "area": "research",
+        "prompt": {
+          "en": "How can cultural collaborators shape a fictional genre film?",
+          "nb": "Hvordan kan kulturelle samarbeidspartnere forme en fiktiv sjangerfilm?",
+          "fr": "Comment des collaborateurs culturels façonnent-ils un film de genre ?",
+          "pt": "Como podem colaboradores culturais moldar filme de género?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Consult qualified community members and credit contributions",
+              "nb": "Rådfør deg med kvalifiserte medlemmer av lokalsamfunnet og krediter bidrag",
+              "fr": "Consulter des membres qualifiés et créditer leurs apports",
+              "pt": "Consultar membros qualificados e creditar contributos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat ritual details as interchangeable exotic decoration",
+              "nb": "Behandle ritualdetaljer som utskiftbar eksotisk pynt",
+              "fr": "Traiter les rituels comme décoration exotique interchangeable",
+              "pt": "Tratar rituais como decoração exótica intercambiável"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Invent community customs without consulting anyone",
+              "nb": "Finn på lokalsamfunnets skikker uten å rådføre deg",
+              "fr": "Inventer les coutumes sans consultation",
+              "pt": "Inventar costumes sem consulta"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Gallego describes collaboration with Wayuu specialists and crew. Design a fictional research plan with consent, attribution and community review.",
+          "nb": "Gallego beskriver samarbeid med Wayuu-fagfolk og filmarbeidere. Lag en fiktiv researchplan med samtykke, kreditering og lokal gjennomgang.",
+          "fr": "Gallego décrit la collaboration avec spécialistes et équipe wayuu. Préparez une recherche avec consentement, crédits et revue communautaire.",
+          "pt": "Gallego descreve colaboração com especialistas e equipa wayuu. Planeie pesquisa com consentimento, créditos e revisão comunitária."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "birdswayuu-genre",
+        "area": "research",
+        "prompt": {
+          "en": "How can a genre convention change when the viewpoint changes?",
+          "nb": "Hvordan kan en sjangerkonvensjon endres når perspektivet endres?",
+          "fr": "Comment une convention de genre change-t-elle avec le point de vue ?",
+          "pt": "Como pode convenção de género mudar com a perspetiva?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Apply a conventional male-centered plot without reviewing context",
+              "nb": "Bruk en konvensjonell mannssentrert handling uten å vurdere kontekst",
+              "fr": "Appliquer une intrigue masculine sans revoir le contexte",
+              "pt": "Aplicar trama masculina sem rever contexto"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Reduce all genre differences to costume changes",
+              "nb": "Reduser alle sjangerforskjeller til kostymeskifter",
+              "fr": "Réduire les différences de genre aux costumes",
+              "pt": "Reduzir diferenças de género a figurinos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare character agency and social relationships across outlines",
+              "nb": "Sammenlign karakterenes handlekraft og sosiale relasjoner mellom disposisjoner",
+              "fr": "Comparer l’autonomie des personnages et relations sociales entre plans",
+              "pt": "Comparar agência das personagens e relações sociais entre planos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Gallego and Guerra discuss female viewpoint and intersecting genre frames. Compare original story outlines without claiming they represent actual Wayuu life.",
+          "nb": "Gallego og Guerra omtaler kvinnelig perspektiv og kryssende sjangerrammer. Sammenlign egne disposisjoner uten å hevde at de representerer virkelig Wayuu-liv.",
+          "fr": "Gallego et Guerra évoquent regard féminin et genres croisés. Comparez des récits originaux sans prétendre représenter la vie wayuu.",
+          "pt": "Gallego e Guerra abordam olhar feminino e géneros cruzados. Compare narrativas originais sem alegar representar vida wayuu."
+        },
+        "sourceIds": [
+          "s1",
+          "s4"
+        ]
+      },
+      {
+        "id": "birdswayuu-frame",
+        "area": "camera",
+        "prompt": {
+          "en": "How can restrained camera movement support landscape and performance?",
+          "nb": "Hvordan kan tilbakeholden kamerabevegelse støtte landskap og skuespill?",
+          "fr": "Comment un mouvement caméra retenu soutient-il paysage et jeu ?",
+          "pt": "Como pode movimento contido apoiar paisagem e interpretação?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume widescreen composition removes the need for blocking",
+              "nb": "Anta at bredformat fjerner behovet for blokkering",
+              "fr": "Supposer que le cadre large dispense de placement",
+              "pt": "Supor que quadro largo dispensa marcações"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare static compositions using researched location references",
+              "nb": "Sammenlign statiske komposisjoner med undersøkte stedsreferanser",
+              "fr": "Comparer des cadres fixes avec références de lieux documentées",
+              "pt": "Comparar quadros fixos com referências de locais pesquisadas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Move the camera continuously without dramatic purpose",
+              "nb": "Beveg kameraet kontinuerlig uten dramatisk formål",
+              "fr": "Bouger constamment la caméra sans raison dramatique",
+              "pt": "Mover câmara continuamente sem motivo dramático"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Kodak documents Gallego's 35mm and mostly static approach. Test a neutral landscape scene with deliberate placement and separately recorded capture choices.",
+          "nb": "Kodak dokumenterer Gallegos 35 mm og stort sett statiske tilnærming. Prøv en nøytral landskapsscene med bevisst plassering og separate opptakslogger.",
+          "fr": "Kodak documente le 35 mm et les cadres surtout fixes. Testez une scène neutre avec placements et données de captation.",
+          "pt": "Kodak documenta 35 mm e quadros sobretudo fixos. Teste cena neutra com marcações e dados de captação."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_motorcycle_diaries_2004",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Route research, adaptation and responsive location photography",
+      "nb": "Ruteresearch, adaptasjon og fleksibelt stedsfoto",
+      "fr": "Recherche de parcours, adaptation et photographie réactive",
+      "pt": "Pesquisa de percurso, adaptação e fotografia responsiva"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The Motorcycle Diaries - BFI Southbank Programme Notes",
+        "publisher": "British Film Institute",
+        "url": "https://bfidatadigipres.github.io/big%20screen%20classics/2022/09/10/motorcycle-diaries/"
+      },
+      {
+        "id": "s1",
+        "title": "One For Road: Focus Book Club Takes Along The Motorcycle Diaries",
+        "publisher": "Focus Features",
+        "url": "https://www.focusfeatures.com/article/focusbookclub-the-motorcycle-diaries_walter-salles"
+      },
+      {
+        "id": "s2",
+        "title": "Walter Salles",
+        "publisher": "The Guardian",
+        "url": "https://www.theguardian.com/film/2004/aug/26/features"
+      },
+      {
+        "id": "s3",
+        "title": "Script to Screen: Motorcycle Diaries",
+        "publisher": "Austin PBS",
+        "url": "https://www.pbs.org/video/script-to-screen-motorcycle-diaries-pgudi6/"
+      },
+      {
+        "id": "s6",
+        "title": "What to Watch: 8 Sundance Films About Hitchhikers",
+        "publisher": "Sundance Institute",
+        "url": "https://www.sundance.org/blogs/what-to-watch-8-sundance-films-about-hitchhikers/"
+      },
+      {
+        "id": "s9",
+        "title": "The Motorcycle Diaries: An Interview with Director Walter Salles",
+        "publisher": "Blackfilm",
+        "url": "https://www.blackfilm.com/20040917/features/waltersalles.shtml"
+      }
+    ],
+    "questions": [
+      {
+        "id": "motorcycle-route",
+        "area": "research",
+        "prompt": {
+          "en": "How can route research shape a fictional road film?",
+          "nb": "Hvordan kan ruteresearch forme en fiktiv roadmovie?",
+          "fr": "Comment la recherche d’un parcours façonne-t-elle un road movie ?",
+          "pt": "Como pode pesquisa de percurso moldar filme de estrada?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Document route references and distinguish planned and discovered scenes",
+              "nb": "Dokumenter rutereferanser og skill planlagte og oppdagede scener",
+              "fr": "Documenter le parcours et distinguer scènes prévues et découvertes",
+              "pt": "Documentar percurso e distinguir cenas previstas e descobertas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat every road encounter as a verified historical event",
+              "nb": "Behandle alle veimøter som verifiserte historiske hendelser",
+              "fr": "Traiter chaque rencontre comme événement historique vérifié",
+              "pt": "Tratar encontros como acontecimentos históricos verificados"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Fix all locations before conducting any research",
+              "nb": "Fastsett alle steder før noen research",
+              "fr": "Fixer tous les lieux avant toute recherche",
+              "pt": "Fixar locais antes de pesquisa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Salles describes years of research and repeated route journeys. Plan an original safe local route with clearly identified fictional additions.",
+          "nb": "Salles beskriver mange års research og gjentatte rutereiser. Planlegg en egen trygg lokal rute med tydelig identifiserte fiktive tillegg.",
+          "fr": "Salles décrit des années de recherche et plusieurs voyages. Préparez un parcours local sûr avec ajouts fictifs identifiés.",
+          "pt": "Salles descreve anos de pesquisa e viagens repetidas. Planeie percurso local seguro com adições fictícias identificadas."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "motorcycle-adapt",
+        "area": "research",
+        "prompt": {
+          "en": "How can a journal adaptation emphasize character development?",
+          "nb": "Hvordan kan en dagbokadaptasjon fremheve karakterutvikling?",
+          "fr": "Comment adapter un journal en privilégiant l’évolution des personnages ?",
+          "pt": "Como adaptar diário privilegiando evolução das personagens?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Attribute invented dialogue directly to the original journals",
+              "nb": "Tilskriv oppdiktet dialog direkte til originaldagbøkene",
+              "fr": "Attribuer les dialogues inventés aux journaux originaux",
+              "pt": "Atribuir diálogo inventado aos diários originais"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat later historical reputation as the character's only motivation",
+              "nb": "Behandle senere historisk omdømme som karakterens eneste motivasjon",
+              "fr": "Traiter la réputation ultérieure comme seule motivation",
+              "pt": "Tratar reputação posterior como única motivação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare source passages and map changing character relationships",
+              "nb": "Sammenlign kildepassasjer og kartlegg skiftende karakterrelasjoner",
+              "fr": "Comparer les passages sources et cartographier les relations",
+              "pt": "Comparar passagens de origem e mapear relações"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Rivera and Salles describe adaptation and attention to the travellers before later mythology. Create a fictional transformation outline distinguishing source and invention.",
+          "nb": "Rivera og Salles beskriver adaptasjon og de reisende før senere mytedannelse. Lag en fiktiv utviklingsplan som skiller kilde fra diktning.",
+          "fr": "Rivera et Salles décrivent adaptation et voyageurs avant la mythologie. Créez un récit distinguant source et invention.",
+          "pt": "Rivera e Salles descrevem adaptação e viajantes antes da mitologia. Crie narrativa distinguindo fonte e invenção."
+        },
+        "sourceIds": [
+          "s3",
+          "s6",
+          "s9"
+        ]
+      },
+      {
+        "id": "motorcycle-location",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a compact camera crew respond to unplanned location discoveries?",
+          "nb": "Hvordan kan et kompakt kamerateam reagere på uplanlagte stedsoppdagelser?",
+          "fr": "Comment une petite équipe réagit-elle aux découvertes imprévues ?",
+          "pt": "Como pode pequena equipa responder a descobertas imprevistas?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume natural light always requires no exposure tests",
+              "nb": "Anta at naturlig lys aldri krever eksponeringsprøver",
+              "fr": "Supposer que la lumière naturelle dispense d’essais",
+              "pt": "Supor que luz natural dispensa testes"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Allow safe schedule flexibility and obtain consent for new footage",
+              "nb": "Tillat trygg fleksibilitet og innhent samtykke til nye opptak",
+              "fr": "Prévoir une souplesse sûre et obtenir les consentements",
+              "pt": "Prever flexibilidade segura e obter consentimento"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Film unsuspecting people without considering their consent",
+              "nb": "Film uvitende personer uten å vurdere samtykke",
+              "fr": "Filmer des personnes à leur insu sans considérer le consentement",
+              "pt": "Filmar pessoas sem considerar consentimento"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Salles describes compact Super 16 work and improvisation. Test an ordinary permitted outdoor scene with a flexible shot plan.",
+          "nb": "Salles beskriver kompakt Super 16-arbeid og improvisasjon. Prøv en ordinær tillatt utendørsscene med fleksibel bildeplan.",
+          "fr": "Salles décrit Super 16 et improvisation. Testez une scène extérieure autorisée avec plan souple.",
+          "pt": "Salles descreve Super 16 e improvisação. Teste cena exterior autorizada com plano flexível."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_lunchbox_2013",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Delivery-system research, city locations and specific ambient sound",
+      "nb": "Research av leveringssystem, bysteder og spesifikk miljølyd",
+      "fr": "Recherche du système de livraison, lieux urbains et ambiances spécifiques",
+      "pt": "Pesquisa do sistema de entregas, locais urbanos e ambientes específicos"
+    },
+    "sources": [
+      {
+        "id": "s3",
+        "title": "Ritesh Batra, The Lunchbox",
+        "publisher": "Screen Daily",
+        "url": "https://www.screendaily.com/features/ritesh-batra-the-lunchbox/5059580.article"
+      },
+      {
+        "id": "s4",
+        "title": "Director Ritesh Batra on his Mumbai Set Love Story The Lunchbox",
+        "publisher": "Motion Picture Association",
+        "url": "https://www.motionpictures.org/2014/02/director-ritesh-batra-on-his-mumbai-set-love-story-the-lunchbox/"
+      },
+      {
+        "id": "s5",
+        "title": "The Lunchbox has two stories - one everyone sees, another's happening inside",
+        "publisher": "India Today",
+        "url": "https://www.indiatoday.in/movies/bollywood/story/ritesh-batra-the-lunchbox-director-irrfan-khan-nimrat-kaur-211825-2013-09-20"
+      },
+      {
+        "id": "s6",
+        "title": "In conversation: Ritesh Batra, director of The Lunchbox",
+        "publisher": "Business of Cinema",
+        "url": "https://businessofcinema.com/bollywood_news/conversation-ritesh-batra-director-lunchbox/104436"
+      },
+      {
+        "id": "s7",
+        "title": "Q&A: Ritesh Batra, director of The Lunchbox",
+        "publisher": "The Eagle",
+        "url": "https://www.theeagleonline.com/article/2014/01/qa-ritesh-batra-director-of-the-lunchbox"
+      },
+      {
+        "id": "s9",
+        "title": "World tucks into Lunchbox",
+        "publisher": "Civil Society Magazine",
+        "url": "https://civilsocietystaging.mahiti.org/lifestyle/world-tucks-into-lunchbox/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "lunchbox-object",
+        "area": "research",
+        "prompt": {
+          "en": "How can an everyday delivery object become a narrative link?",
+          "nb": "Hvordan kan en hverdagslig leveringsgjenstand bli en fortellerforbindelse?",
+          "fr": "Comment un objet de livraison quotidien devient-il un lien narratif ?",
+          "pt": "Como pode objeto quotidiano de entrega tornar-se ligação narrativa?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Study real object use and invent a clearly fictional relationship",
+              "nb": "Undersøk ekte gjenstandsbruk og dikt en tydelig fiktiv relasjon",
+              "fr": "Étudier l’usage réel et inventer une relation clairement fictive",
+              "pt": "Estudar uso real e inventar relação claramente fictícia"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Copy private messages from real delivery workers",
+              "nb": "Kopier private meldinger fra virkelige leveringsarbeidere",
+              "fr": "Copier les messages privés des livreurs",
+              "pt": "Copiar mensagens privadas de entregadores"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore the practical delivery system entirely",
+              "nb": "Ignorer hele det praktiske leveringssystemet",
+              "fr": "Ignorer entièrement le système de livraison",
+              "pt": "Ignorar totalmente sistema de entregas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Batra describes research with dabbawalas generating the fictional premise. Design a neutral story around an everyday object with consented research.",
+          "nb": "Batra beskriver research med dabbawalaer som utgangspunkt for fiksjon. Lag en nøytral historie rundt en hverdagsgjenstand med samtykkebasert research.",
+          "fr": "Batra décrit la recherche auprès des dabbawalas à l’origine du récit. Créez une histoire neutre issue d’une recherche consentie.",
+          "pt": "Batra descreve pesquisa com dabbawalas na origem da ficção. Crie história neutra com pesquisa consentida."
+        },
+        "sourceIds": [
+          "s4",
+          "s7"
+        ]
+      },
+      {
+        "id": "lunchbox-city",
+        "area": "camera",
+        "prompt": {
+          "en": "How can real urban locations shape a planned fictional scene?",
+          "nb": "Hvordan kan virkelige bysteder forme en planlagt fiktiv scene?",
+          "fr": "Comment les lieux urbains réels façonnent-ils une scène fictive ?",
+          "pt": "Como podem locais urbanos reais moldar cena fictícia?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume all city scenes were shot in a controlled studio",
+              "nb": "Anta at alle byscener ble tatt opp i kontrollert studio",
+              "fr": "Supposer que toutes les scènes urbaines furent tournées en studio",
+              "pt": "Supor que cenas urbanas foram filmadas em estúdio"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore ambient conditions during location preparation",
+              "nb": "Ignorer miljøforhold under stedsforberedelse",
+              "fr": "Ignorer les conditions ambiantes lors des repérages",
+              "pt": "Ignorar condições ambientais na preparação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Scout permitted locations and test framing around existing movement",
+              "nb": "Undersøk tillatte steder og prøv utsnitt rundt eksisterende bevegelse",
+              "fr": "Repérer des lieux autorisés et tester les cadres selon les mouvements",
+              "pt": "Pesquisar locais autorizados e testar quadros conforme movimentos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Batra describes months of preparation and Mumbai location photography. Plan an ordinary authorized street-scene exercise with alternative framing.",
+          "nb": "Batra beskriver måneders forberedelse og stedsfoto i Mumbai. Planlegg en ordinær tillatt gatesceneøvelse med alternative utsnitt.",
+          "fr": "Batra décrit des mois de préparation et tournage à Mumbai. Préparez une scène de rue autorisée avec cadres alternatifs.",
+          "pt": "Batra descreve meses de preparação e rodagem em Mumbai. Planeie cena de rua autorizada com quadros alternativos."
+        },
+        "sourceIds": [
+          "s3",
+          "s6"
+        ]
+      },
+      {
+        "id": "lunchbox-ambience",
+        "area": "sound",
+        "prompt": {
+          "en": "How can specific local sounds distinguish fictional environments?",
+          "nb": "Hvordan kan spesifikke lokale lyder skille fiktive miljøer?",
+          "fr": "Comment des sons locaux spécifiques distinguent-ils des lieux fictifs ?",
+          "pt": "Como podem sons locais específicos distinguir ambientes fictícios?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat every collected recording as final mixed audio",
+              "nb": "Behandle alle innsamlede opptak som ferdig mikset lyd",
+              "fr": "Traiter chaque enregistrement comme mixage final",
+              "pt": "Tratar gravações recolhidas como mistura final"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Collect permitted location-specific sounds and compare them in the edit",
+              "nb": "Samle tillatte stedsspesifikke lyder og sammenlign dem i klippen",
+              "fr": "Collecter des sons locaux autorisés et les comparer au montage",
+              "pt": "Recolher sons locais autorizados e compará-los na montagem"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Replace every city sound with one generic traffic track",
+              "nb": "Erstatt alle bylyder med ett generisk trafikkspor",
+              "fr": "Remplacer tous les sons urbains par une piste de circulation",
+              "pt": "Substituir sons urbanos por faixa genérica de trânsito"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Batra describes Kaczmarek's extensive Mumbai recordings, including office and delivery sounds. Create an original location-sound catalogue and test two environments.",
+          "nb": "Batra beskriver Kaczmareks omfattende Mumbai-opptak, blant annet kontor- og leveringslyder. Lag en egen stedslydkatalog og prøv to miljøer.",
+          "fr": "Batra décrit les nombreuses prises de Mumbai, notamment bureaux et livraisons. Créez un catalogue sonore original et testez deux lieux.",
+          "pt": "Batra descreve gravações de Mumbai, incluindo escritórios e entregas. Crie catálogo sonoro original e teste dois ambientes."
+        },
+        "sourceIds": [
+          "s5",
+          "s9"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_capernaum_2018",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Ethical casting, child-height framing and restrained editorial",
+      "nb": "Etisk casting, barnehøydeutsnitt og tilbakeholden klipping",
+      "fr": "Casting éthique, cadre à hauteur d’enfant et montage retenu",
+      "pt": "Elenco ético, quadro à altura da criança e montagem contida"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "BAFTA Screenwriters Lecture Series: Nadine Labaki",
+        "publisher": "BAFTA",
+        "url": "https://www.bafta.org/media-centre/press-releases/bafta-screenwriters-lecture-series-nadine-labaki/"
+      },
+      {
+        "id": "s1",
+        "title": "ALEXA XT and ALEXA Mini behind award-winning Lebanese film Capernaum",
+        "publisher": "ARRI",
+        "url": "https://www.arri.com/news-en/alexa-xt-and-alexa-mini-behind-capernaum-"
+      },
+      {
+        "id": "s3",
+        "title": "Capernaum",
+        "publisher": "Sony Pictures Classics",
+        "url": "https://www.sonyclassics.com/film/capernaum/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "capernaum-casting",
+        "area": "research",
+        "prompt": {
+          "en": "How can research inform casting without exploiting personal hardship?",
+          "nb": "Hvordan kan research informere casting uten å utnytte personlige vanskeligheter?",
+          "fr": "Comment la recherche informe-t-elle le casting sans exploiter les difficultés personnelles ?",
+          "pt": "Como pode pesquisa informar elenco sem explorar dificuldades pessoais?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use informed consent and supported age-appropriate fictional auditions",
+              "nb": "Bruk informert samtykke og tilrettelagte alderstilpassede fiksjonsprøver",
+              "fr": "Prévoir consentement et auditions fictives adaptées à l’âge",
+              "pt": "Prever consentimento e audições fictícias adaptadas à idade"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Require participants to relive actual distress on camera",
+              "nb": "Krev at deltakere gjenopplever virkelig uro foran kameraet",
+              "fr": "Exiger de revivre une détresse réelle devant la caméra",
+              "pt": "Exigir reviver sofrimento real perante câmara"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume lived experience automatically establishes consent",
+              "nb": "Anta at levd erfaring automatisk innebærer samtykke",
+              "fr": "Supposer que l’expérience vécue vaut consentement",
+              "pt": "Supor que experiência vivida implica consentimento"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Labaki describes research, real-life casting and rewriting. Design a neutral fictional audition with child safeguards and no required personal disclosures.",
+          "nb": "Labaki beskriver research, casting fra virkeligheten og omskriving. Lag en nøytral fiktiv prøve med barnetrygghet og uten krav om private avsløringer.",
+          "fr": "Labaki décrit recherche, casting réel et réécriture. Créez une audition fictive protégée sans confidences imposées.",
+          "pt": "Labaki descreve pesquisa, elenco real e reescrita. Crie audição fictícia protegida sem confidências exigidas."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "capernaum-height",
+        "area": "camera",
+        "prompt": {
+          "en": "How can camera height support a child's fictional viewpoint?",
+          "nb": "Hvordan kan kamerahøyde støtte et barns fiktive perspektiv?",
+          "fr": "Comment la hauteur caméra sert-elle le point de vue d’un enfant ?",
+          "pt": "Como pode altura de câmara apoiar perspetiva fictícia infantil?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use adult eye-level framing for every viewpoint",
+              "nb": "Bruk voksen øyehøyde for alle perspektiver",
+              "fr": "Employer la hauteur adulte pour tous les points de vue",
+              "pt": "Usar altura adulta para todas as perspetivas"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat handheld motion as proof that footage is documentary",
+              "nb": "Behandle håndholdt bevegelse som bevis på dokumentaropptak",
+              "fr": "Traiter la caméra portée comme preuve documentaire",
+              "pt": "Tratar câmara à mão como prova documental"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test child-height framing with safe, flexible lighting",
+              "nb": "Prøv utsnitt i barnehøyde med trygg fleksibel belysning",
+              "fr": "Tester des cadres à hauteur d’enfant avec lumière sûre et souple",
+              "pt": "Testar quadros à altura infantil com luz segura e flexível"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Aoun describes child-height handheld framing and adaptive lighting. Compare neutral original compositions without inferring documentary truth from style.",
+          "nb": "Aoun beskriver håndholdte utsnitt i barnehøyde og tilpasset lys. Sammenlign egne nøytrale komposisjoner uten å utlede dokumentarisk sannhet fra stil.",
+          "fr": "Aoun décrit caméra portée à hauteur d’enfant et lumière adaptée. Comparez des cadres neutres sans déduire une vérité documentaire du style.",
+          "pt": "Aoun descreve câmara à altura infantil e luz adaptada. Compare quadros neutros sem deduzir verdade documental do estilo."
+        },
+        "sourceIds": [
+          "s1",
+          "s0"
+        ]
+      },
+      {
+        "id": "capernaum-edit",
+        "area": "sound",
+        "prompt": {
+          "en": "How can an extensive edit avoid imposing emotion through music?",
+          "nb": "Hvordan kan omfattende klipping unngå å påtvinge følelser gjennom musikk?",
+          "fr": "Comment un long montage évite-t-il d’imposer l’émotion par la musique ?",
+          "pt": "Como pode montagem extensa evitar impor emoção pela música?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Discard all footage that differs from the initial script",
+              "nb": "Forkast alle opptak som avviker fra originalmanuset",
+              "fr": "Écarter toute prise différente du scénario initial",
+              "pt": "Descartar imagens diferentes do argumento inicial"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare restrained original score and unscored performance versions",
+              "nb": "Sammenlign dempet egen musikk med spilleversjoner uten musikk",
+              "fr": "Comparer musique originale retenue et versions sans musique",
+              "pt": "Comparar música original contida e versões sem música"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Score every difficult moment at maximum intensity",
+              "nb": "Musikklegg alle vanskelige øyeblikk med maksimal intensitet",
+              "fr": "Musicaliser chaque moment difficile à intensité maximale",
+              "pt": "Musicalizar momentos difíceis com intensidade máxima"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The production notes describe hundreds of hours of footage and a reduced score. Compare fictional edits that leave interpretive room for performance.",
+          "nb": "Produksjonsnotatene beskriver hundrevis av opptakstimer og redusert musikk. Sammenlign fiktive klipp som gir spillet tolkningsrom.",
+          "fr": "Les notes décrivent des centaines d’heures et une musique réduite. Comparez des montages fictifs laissant place au jeu.",
+          "pt": "As notas descrevem centenas de horas e música reduzida. Compare montagens fictícias deixando espaço à interpretação."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_where_is_the_friend_s_house_1987",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Rural geography, object-led dramaturgy and restoration provenance",
+      "nb": "Landsbygeografi, gjenstandsdrevet dramaturgi og restaureringsopphav",
+      "fr": "Géographie rurale, dramaturgie par objet et provenance de restauration",
+      "pt": "Geografia rural, dramaturgia por objeto e proveniência de restauro"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Where Is the Friend's House?",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/28638-where-is-the-friends-house"
+      },
+      {
+        "id": "s1",
+        "title": "The Koker Trilogy: Journeys of the Heart",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/current/posts/6555-the-koker-trilogy-journeys-of-the-heart"
+      },
+      {
+        "id": "s3",
+        "title": "Where Is the Friend's House?",
+        "publisher": "Eye Filmmuseum",
+        "url": "https://www.eyefilm.nl/en/whats-on/where-is-the-friends-house/1405393"
+      },
+      {
+        "id": "s4",
+        "title": "Where Is the Friend's House?",
+        "publisher": "DreamLab Films",
+        "url": "https://www.dreamlabfilms.com/where-is-the-friends-house/"
+      },
+      {
+        "id": "s5",
+        "title": "Where Is the Friend's House?",
+        "publisher": "Film at Lincoln Center",
+        "url": "https://www.filmlinc.org/films/where-is-the-friends-house/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "friendhouse-quest",
+        "area": "research",
+        "prompt": {
+          "en": "How can a simple object motivate a fictional journey?",
+          "nb": "Hvordan kan en enkel gjenstand motivere en fiktiv reise?",
+          "fr": "Comment un objet simple motive-t-il un trajet fictif ?",
+          "pt": "Como pode objeto simples motivar percurso fictício?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map an ordinary goal and the ethical choices along its route",
+              "nb": "Kartlegg et hverdagsmål og etiske valg langs ruten",
+              "fr": "Cartographier un but ordinaire et les choix éthiques du trajet",
+              "pt": "Mapear objetivo comum e escolhas éticas do percurso"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Add unrelated spectacle to every narrative encounter",
+              "nb": "Legg urelatert spektakel til hvert fortellermøte",
+              "fr": "Ajouter un spectacle sans rapport à chaque rencontre",
+              "pt": "Adicionar espetáculo sem relação a cada encontro"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat all fictional incidents as historical facts",
+              "nb": "Behandle alle fiktive hendelser som historiske fakta",
+              "fr": "Traiter les incidents fictifs comme faits historiques",
+              "pt": "Tratar incidentes fictícios como factos históricos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion and Lincoln Center describe the notebook quest and conflict between obedience and conscience. Plan an original everyday journey around a different object.",
+          "nb": "Criterion og Lincoln Center beskriver notatbokjakten og konflikten mellom lydighet og samvittighet. Planlegg en egen hverdagsreise rundt en annen gjenstand.",
+          "fr": "Criterion et Lincoln Center décrivent quête et conflit moral. Concevez un trajet original autour d’un autre objet.",
+          "pt": "Criterion e Lincoln Center descrevem busca e conflito moral. Planeie percurso original com outro objeto."
+        },
+        "sourceIds": [
+          "s0",
+          "s5"
+        ]
+      },
+      {
+        "id": "friendhouse-place",
+        "area": "camera",
+        "prompt": {
+          "en": "How can rural geography guide a sequence's visual continuity?",
+          "nb": "Hvordan kan landsbygeografi styre en sekvens visuelle kontinuitet?",
+          "fr": "Comment la géographie rurale guide-t-elle les raccords visuels ?",
+          "pt": "Como pode geografia rural orientar continuidade visual?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Ignore spatial relationships between successive shots",
+              "nb": "Ignorer romforbindelser mellom påfølgende bilder",
+              "fr": "Ignorer les relations spatiales entre plans",
+              "pt": "Ignorar relações espaciais entre planos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume the countryside is merely interchangeable scenery",
+              "nb": "Anta at landsbygda bare er utskiftbar kulisse",
+              "fr": "Supposer que la campagne est un décor interchangeable",
+              "pt": "Supor que campo é cenário intercambiável"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Sketch landmarks and test recurring viewpoints in a safe location",
+              "nb": "Skisser landemerker og prøv tilbakevendende utsnitt på et trygt sted",
+              "fr": "Esquisser les repères et tester des vues récurrentes en lieu sûr",
+              "pt": "Esboçar marcos e testar vistas recorrentes em local seguro"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The sources identify Koker-area locations and countryside as central to the journey. Test a new neutral route and map visual orientation without inventing shot details.",
+          "nb": "Kildene identifiserer Koker-området og landskapet som sentralt for reisen. Prøv en ny nøytral rute og kartlegg orientering uten å dikte bildedetaljer.",
+          "fr": "Les sources situent le récit près de Koker et soulignent le paysage. Testez un trajet neutre et cartographiez l’orientation.",
+          "pt": "As fontes situam narrativa perto de Koker e destacam paisagem. Teste percurso neutro e mapeie orientação."
+        },
+        "sourceIds": [
+          "s1",
+          "s3",
+          "s5"
+        ]
+      },
+      {
+        "id": "friendhouse-restore",
+        "area": "research",
+        "prompt": {
+          "en": "How should restoration data be distinguished from original production credits?",
+          "nb": "Hvordan bør restaureringsdata skilles fra opprinnelig produksjonskreditering?",
+          "fr": "Comment distinguer données de restauration et crédits originaux ?",
+          "pt": "Como distinguir dados de restauro e créditos originais?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat restoration personnel as the original sound crew",
+              "nb": "Behandle restaureringspersonell som opprinnelig lydteam",
+              "fr": "Traiter les restaurateurs comme équipe son originale",
+              "pt": "Tratar restauradores como equipa sonora original"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record restoration resolution, presentation and original credits separately",
+              "nb": "Registrer restaureringsoppløsning, visning og originalkreditering separat",
+              "fr": "Noter séparément résolution de restauration, diffusion et crédits",
+              "pt": "Registar separadamente resolução de restauro, exibição e créditos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Infer the original camera sensor from a 2K restoration",
+              "nb": "Utled original kamerasensor fra en 2K-restaurering",
+              "fr": "Déduire le capteur original d’une restauration 2K",
+              "pt": "Deduzir sensor original de restauro 2K"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion documents a 2K restoration and monaural presentation; DreamLab records original craft credits. Create separate provenance fields without guessing acquisition equipment.",
+          "nb": "Criterion dokumenterer 2K-restaurering og mono; DreamLab registrerer opprinnelig fagkreditering. Lag separate opphavsfelt uten å gjette opptaksutstyr.",
+          "fr": "Criterion documente restauration 2K et mono ; DreamLab les crédits originaux. Créez des champs distincts sans deviner le matériel.",
+          "pt": "Criterion documenta restauro 2K e mono; DreamLab créditos originais. Crie campos distintos sem adivinhar equipamento."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_kitchen_stories_2003",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Historical domestic research, controlled space and deadpan timing",
+      "nb": "Historisk hjemmearbeidsresearch, kontrollert rom og tørr komisk timing",
+      "fr": "Recherche domestique historique, espace contrôlé et rythme impassible",
+      "pt": "Pesquisa doméstica histórica, espaço controlado e ritmo impassível"
+    },
+    "sources": [
+      {
+        "id": "s3",
+        "title": "Fortnight - Kitchen Stories",
+        "publisher": "Cineuropa",
+        "url": "https://cineuropa.org/en/newsdetail/29924/"
+      },
+      {
+        "id": "s5",
+        "title": "Salmer fra kjøkkenet",
+        "publisher": "Cinemateket",
+        "url": "https://www.cinemateket.no/filmer/salmer-fra-kjokkenet"
+      },
+      {
+        "id": "s6",
+        "title": "Household utensils",
+        "publisher": "Nationalmuseum",
+        "url": "https://collection.nationalmuseum.se/en/collection/item/213171/"
+      },
+      {
+        "id": "s7",
+        "title": "Delicately put and yet awfully fun",
+        "publisher": "Los Angeles Times",
+        "url": "https://www.latimes.com/archives/la-xpm-2004-feb-20-et-kenny20-story.html"
+      },
+      {
+        "id": "s8",
+        "title": "Long day's journey to the fridge",
+        "publisher": "The Guardian",
+        "url": "https://www.theguardian.com/film/2003/may/20/artsfeatures.cannes2003"
+      }
+    ],
+    "questions": [
+      {
+        "id": "kitchen-history",
+        "area": "research",
+        "prompt": {
+          "en": "How can a real historical institution inspire fictional satire?",
+          "nb": "Hvordan kan en virkelig historisk institusjon inspirere fiktiv satire?",
+          "fr": "Comment une institution historique inspire-t-elle une satire fictive ?",
+          "pt": "Como pode instituição histórica inspirar sátira fictícia?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Separate archival institutional facts from invented observation rules",
+              "nb": "Skill arkiverte institusjonsfakta fra oppdiktede observasjonsregler",
+              "fr": "Distinguer faits institutionnels et règles fictives d’observation",
+              "pt": "Distinguir factos institucionais e regras fictícias de observação"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat every satirical event as a verified research record",
+              "nb": "Behandle alle satiriske hendelser som verifisert forskningsmateriale",
+              "fr": "Traiter chaque satire comme archive scientifique vérifiée",
+              "pt": "Tratar sátira como registo científico verificado"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Conduct intrusive observations without household consent",
+              "nb": "Utfør påtrengende observasjoner uten husstandens samtykke",
+              "fr": "Mener des observations intrusives sans consentement",
+              "pt": "Fazer observações intrusivas sem consentimento"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Nationalmuseum documents the Swedish home research institute; Cinemateket contextualizes the film's satire. Design a harmless fictional observation exercise with consent.",
+          "nb": "Nationalmuseum dokumenterer det svenske hjemforskningsinstituttet; Cinemateket kontekstualiserer satiren. Lag en ufarlig fiktiv observasjonsøvelse med samtykke.",
+          "fr": "Nationalmuseum documente l’institut ; Cinemateket contextualise la satire. Concevez une observation fictive consentie et sûre.",
+          "pt": "Nationalmuseum documenta instituto; Cinemateket contextualiza sátira. Conceba observação fictícia consentida e segura."
+        },
+        "sourceIds": [
+          "s5",
+          "s6"
+        ]
+      },
+      {
+        "id": "kitchen-space",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a controlled kitchen layout support visual comedy?",
+          "nb": "Hvordan kan en kontrollert kjøkkenplan støtte visuell komedie?",
+          "fr": "Comment un plan de cuisine contrôlé sert-il la comédie visuelle ?",
+          "pt": "Como pode planta controlada de cozinha apoiar comédia visual?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Move furniture randomly between connected shots",
+              "nb": "Flytt møbler tilfeldig mellom sammenhengende bilder",
+              "fr": "Déplacer les meubles au hasard entre plans liés",
+              "pt": "Mover móveis ao acaso entre planos ligados"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose framing independently of the observer's position",
+              "nb": "Velg utsnitt uavhengig av observatørens plassering",
+              "fr": "Choisir le cadre sans considérer la position de l’observateur",
+              "pt": "Escolher quadro sem considerar posição do observador"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test sightlines, furniture placement and restricted framing",
+              "nb": "Prøv siktlinjer, møbelplassering og avgrensede utsnitt",
+              "fr": "Tester axes, meubles et cadres restreints",
+              "pt": "Testar linhas de visão, móveis e quadros restritos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Cineuropa and Cinemateket describe minimalist interiors and controlled kitchen geography. Make an original floor plan and test its comic spatial relationships.",
+          "nb": "Cineuropa og Cinemateket beskriver minimalistiske interiører og kontrollert kjøkkengeografi. Lag en egen planløsning og prøv komiske romforhold.",
+          "fr": "Cineuropa et Cinemateket décrivent intérieurs minimalistes et géographie contrôlée. Créez un plan original et testez les rapports comiques.",
+          "pt": "Cineuropa e Cinemateket descrevem interiores minimalistas e geografia controlada. Crie planta original e teste relações cómicas."
+        },
+        "sourceIds": [
+          "s3",
+          "s5",
+          "s7"
+        ]
+      },
+      {
+        "id": "kitchen-timing",
+        "area": "research",
+        "prompt": {
+          "en": "How can restrained performance create deadpan comic timing?",
+          "nb": "Hvordan kan tilbakeholdent skuespill skape tørr komisk timing?",
+          "fr": "Comment un jeu retenu crée-t-il un rythme comique impassible ?",
+          "pt": "Como pode interpretação contida criar ritmo cómico impassível?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume restrained acting needs no rehearsal or timing",
+              "nb": "Anta at tilbakeholdent spill ikke trenger prøver eller timing",
+              "fr": "Supposer que le jeu retenu dispense de répétitions",
+              "pt": "Supor que interpretação contida dispensa ensaios"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare pauses and small gestures in the same composition",
+              "nb": "Sammenlign pauser og små gester i samme komposisjon",
+              "fr": "Comparer pauses et petits gestes dans le même cadre",
+              "pt": "Comparar pausas e pequenos gestos no mesmo quadro"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Add an emphatic reaction to every quiet beat",
+              "nb": "Legg en påtrengende reaksjon til hvert stille øyeblikk",
+              "fr": "Ajouter une réaction appuyée à chaque silence",
+              "pt": "Adicionar reação enfática a cada silêncio"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Contemporary reviews describe controlled color, veteran performances and restrained absurdity. Compare original takes of a neutral silent exchange as a formal exercise.",
+          "nb": "Samtidige anmeldelser beskriver kontrollert farge, erfarent spill og tilbakeholden absurditet. Sammenlign egne tagninger av en nøytral ordløs utveksling som formøvelse.",
+          "fr": "Les critiques décrivent couleur contrôlée, jeu expérimenté et absurdité retenue. Comparez des prises originales d’un échange silencieux neutre.",
+          "pt": "Críticas descrevem cor controlada, atuação experiente e absurdo contido. Compare tomadas originais de troca silenciosa neutra."
+        },
+        "sourceIds": [
+          "s7",
+          "s8"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_brothers_2015",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Longitudinal documentary, family boundaries and format archive",
+      "nb": "Langtidsdokumentar, familiegrenser og formatarkiv",
+      "fr": "Documentaire longitudinal, limites familiales et archives de formats",
+      "pt": "Documentário longitudinal, limites familiares e arquivo de formatos"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Brødre",
+        "publisher": "Fenris Film",
+        "url": "https://fenrisfilm.squarespace.com/brdre"
+      },
+      {
+        "id": "s1",
+        "title": "Hot Docs 2016 Women Directors: Meet Aslaug Holm — Brothers",
+        "publisher": "Women and Hollywood",
+        "url": "https://medium.com/women-and-hollywood/2016-hot-docs-women-directors-meet-aslaug-holm-brothers-3e4b9b595e02"
+      },
+      {
+        "id": "s2",
+        "title": "En samtale med regissør Aslaug Holm om kinodokumentaren Brødre",
+        "publisher": "Montages",
+        "url": "https://montages.no/nyheter/en-samtale-med-regissor-aslaug-holm-om-kinodokumentaren-brodre/"
+      },
+      {
+        "id": "s3",
+        "title": "Review: Brothers",
+        "publisher": "POV Magazine",
+        "url": "https://povmagazine.com/articles/view/review-brothers"
+      },
+      {
+        "id": "s4",
+        "title": "Brothers (intl. version)",
+        "publisher": "LevelK",
+        "url": "https://www.levelk.dk/films/brothers-2702"
+      },
+      {
+        "id": "s5",
+        "title": "Two Norwegian documentaries win at Hot Docs in Toronto",
+        "publisher": "Cineuropa",
+        "url": "https://cineuropa.org/en/newsdetail/308876/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "brothers-consent",
+        "area": "research",
+        "prompt": {
+          "en": "How should consent be revisited in a long family documentary?",
+          "nb": "Hvordan bør samtykke vurderes på nytt i en lang familiedokumentar?",
+          "fr": "Comment réexaminer le consentement dans un documentaire familial long ?",
+          "pt": "Como revisitar consentimento num documentário familiar longo?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Review boundaries regularly and protect children's private moments",
+              "nb": "Gjennomgå grenser regelmessig og vern barns private øyeblikk",
+              "fr": "Réexaminer les limites et protéger les moments privés des enfants",
+              "pt": "Rever limites regularmente e proteger momentos privados infantis"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume family membership provides permanent filming permission",
+              "nb": "Anta at familietilhørighet gir permanent opptakstillatelse",
+              "fr": "Supposer que la famille donne une permission permanente",
+              "pt": "Supor que pertencer à família dá autorização permanente"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Prioritize recording over every caregiving responsibility",
+              "nb": "Prioriter opptak fremfor alle omsorgsoppgaver",
+              "fr": "Privilégier le tournage sur toute responsabilité de soin",
+              "pt": "Priorizar filmagem sobre responsabilidades de cuidado"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Holm discusses the tension between motherhood and filmmaking over eight years. Plan a consent-based fictional documentary protocol with ongoing review and privacy safeguards.",
+          "nb": "Holm omtaler spenningen mellom morsrolle og filmarbeid over åtte år. Lag en samtykkebasert tenkt dokumentarprotokoll med løpende gjennomgang og personvern.",
+          "fr": "Holm évoque la tension entre maternité et tournage sur huit ans. Préparez un protocole consenti avec revue continue et confidentialité.",
+          "pt": "Holm aborda tensão entre maternidade e filmagem durante oito anos. Planeie protocolo consentido com revisão contínua e privacidade."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "brothers-archive",
+        "area": "camera",
+        "prompt": {
+          "en": "How can several recording formats be preserved in a long project?",
+          "nb": "Hvordan kan flere opptaksformater bevares i et langvarig prosjekt?",
+          "fr": "Comment préserver plusieurs formats dans un projet de longue durée ?",
+          "pt": "Como preservar vários formatos num projeto longo?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Convert everything and delete all original files",
+              "nb": "Konverter alt og slett alle originalfiler",
+              "fr": "Convertir tout et effacer les originaux",
+              "pt": "Converter tudo e apagar originais"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume final DCP format describes every camera original",
+              "nb": "Anta at endelig DCP-format beskriver alle kameraoriginaler",
+              "fr": "Supposer que le DCP final décrit chaque original caméra",
+              "pt": "Supor que DCP final descreve cada original de câmara"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Catalogue originals by date and format before creating proxies",
+              "nb": "Katalogiser originaler etter dato og format før proxyer opprettes",
+              "fr": "Cataloguer les originaux par date et format avant les proxys",
+              "pt": "Catalogar originais por data e formato antes de proxies"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "LevelK documents DV, HD and Super 16; Cineuropa reports extensive footage. Design a hypothetical archive with original media, dates and derivative files separated.",
+          "nb": "LevelK dokumenterer DV, HD og Super 16; Cineuropa omtaler omfattende opptak. Lag et tenkt arkiv med originalmedier, datoer og avledede filer adskilt.",
+          "fr": "LevelK documente DV, HD et Super 16 ; Cineuropa l’ampleur des prises. Créez une archive fictive séparant originaux, dates et dérivés.",
+          "pt": "LevelK documenta DV, HD e Super 16; Cineuropa a extensão das imagens. Crie arquivo fictício separando originais, datas e derivados."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "brothers-montage",
+        "area": "research",
+        "prompt": {
+          "en": "How can a long documentary edit connect ordinary moments across years?",
+          "nb": "Hvordan kan lang dokumentarklipping knytte hverdagsøyeblikk sammen over år?",
+          "fr": "Comment un long montage relie-t-il des moments ordinaires sur plusieurs années ?",
+          "pt": "Como pode montagem longa ligar momentos comuns ao longo de anos?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Include private footage regardless of participant boundaries",
+              "nb": "Inkluder private opptak uansett deltakernes grenser",
+              "fr": "Inclure les images privées sans respecter les limites",
+              "pt": "Incluir imagens privadas sem respeitar limites"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare recurring motifs while preserving original chronology records",
+              "nb": "Sammenlign tilbakevendende motiver og bevar opprinnelig kronologilogg",
+              "fr": "Comparer les motifs récurrents en conservant la chronologie originale",
+              "pt": "Comparar motivos recorrentes preservando cronologia original"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Invent dates to make every emotional transition seem chronological",
+              "nb": "Finn på datoer for å gjøre alle følelsesoverganger kronologiske",
+              "fr": "Inventer des dates pour rendre les transitions chronologiques",
+              "pt": "Inventar datas para tornar transições cronológicas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Holm describes a three-year edit; POV discusses associative montage and family history. Compare fictional archival outlines without falsifying chronology.",
+          "nb": "Holm beskriver tre års klipping; POV omtaler assosiativ montasje og familiehistorie. Sammenlign fiktive arkivdisposisjoner uten å forfalske kronologi.",
+          "fr": "Holm décrit trois ans de montage ; POV le montage associatif. Comparez des structures fictives sans falsifier la chronologie.",
+          "pt": "Holm descreve três anos de montagem; POV montagem associativa. Compare estruturas fictícias sem falsificar cronologia."
+        },
+        "sourceIds": [
+          "s1",
+          "s3",
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_drommer_2024",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Trilogy collaboration, first-person voice and intimate framing",
+      "nb": "Trilogisamarbeid, førstepersonsstemme og intime utsnitt",
+      "fr": "Collaboration de trilogie, voix à la première personne et cadre intime",
+      "pt": "Colaboração de trilogia, voz em primeira pessoa e quadro íntimo"
+    },
+    "sources": [
+      {
+        "id": "s3",
+        "title": "Filmsamtalen med Cecilie Semec og Jens Christian Fodstad",
+        "publisher": "Rushprint",
+        "url": "https://rushprint.no/2025/04/filmsamtalen-med-cecilie-semec-og-jens-christian-fodstad/"
+      },
+      {
+        "id": "s4",
+        "title": "Dreams",
+        "publisher": "Karlovy Vary International Film Festival",
+        "url": "https://www.kviff.com/en/programme/film/75/45946-dreams"
+      },
+      {
+        "id": "s5",
+        "title": "Analysen: Drømmer (2024)",
+        "publisher": "Montages",
+        "url": "https://montages.no/2024/11/analysen-drommer-2024/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "drommer-trilogy",
+        "area": "research",
+        "prompt": {
+          "en": "How can a trilogy share collaborators while retaining distinct film languages?",
+          "nb": "Hvordan kan en trilogi dele samarbeidspartnere og samtidig bevare ulike filmspråk?",
+          "fr": "Comment une trilogie partage-t-elle une équipe tout en gardant des langages distincts ?",
+          "pt": "Como pode trilogia partilhar equipa mantendo linguagens distintas?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Document shared roles and develop separate visual rules for each film",
+              "nb": "Dokumenter felles roller og utvikle egne bilderegler for hver film",
+              "fr": "Documenter les rôles communs et développer des règles propres à chaque film",
+              "pt": "Documentar funções comuns e desenvolver regras próprias para cada filme"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use identical visual approaches merely because the crew is shared",
+              "nb": "Bruk identiske bildeuttrykk bare fordi teamet er felles",
+              "fr": "Employer les mêmes approches visuelles uniquement parce que l’équipe est commune",
+              "pt": "Usar abordagens iguais apenas porque equipa é comum"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume one film's credits automatically apply to all others",
+              "nb": "Anta at én films kreditering automatisk gjelder alle andre",
+              "fr": "Supposer que les crédits d’un film valent pour les autres",
+              "pt": "Supor que créditos de um filme valem para outros"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Rushprint describes Semec and Fodstad's collaboration across three films and distinct visual approaches. Plan an original three-part project with a shared team and separate style notes.",
+          "nb": "Rushprint beskriver Semec og Fodstads samarbeid på tre filmer og ulike bildeuttrykk. Planlegg et eget tredelt prosjekt med felles team og separate stilnotater.",
+          "fr": "Rushprint décrit collaboration sur trois films et approches distinctes. Préparez un projet original en trois parties avec notes de style séparées.",
+          "pt": "Rushprint descreve colaboração em três filmes e abordagens distintas. Planeie projeto original em três partes com notas de estilo separadas."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "drommer-voice",
+        "area": "sound",
+        "prompt": {
+          "en": "How can first-person narration guide without repeating the images?",
+          "nb": "Hvordan kan førstepersonsfortelling veilede uten å gjenta bildene?",
+          "fr": "Comment une voix à la première personne guide-t-elle sans répéter les images ?",
+          "pt": "Como pode narração em primeira pessoa orientar sem repetir imagens?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Describe every visible action verbatim in the narration",
+              "nb": "Beskriv alle synlige handlinger ordrett i fortellerstemmen",
+              "fr": "Décrire littéralement chaque action visible",
+              "pt": "Descrever literalmente cada ação visível"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat the narrator's interpretation as objective evidence",
+              "nb": "Behandle fortellerens tolkning som objektivt bevis",
+              "fr": "Traiter l’interprétation du narrateur comme preuve objective",
+              "pt": "Tratar interpretação do narrador como prova objetiva"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare original narration that adds perspective with silent versions",
+              "nb": "Sammenlign egen fortellerstemme som tilfører perspektiv med stille versjoner",
+              "fr": "Comparer une narration originale ajoutant un point de vue à des versions muettes",
+              "pt": "Comparar narração original que acrescenta perspetiva com versões silenciosas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Montages analyzes the first-person voice and guiding editorial form. Test original narration against a neutral scene as formal analysis, not a claim about recording methods.",
+          "nb": "Montages analyserer førstepersonsstemmen og den veiledende klippeformen. Prøv egen fortellerstemme mot en nøytral scene som formanalyse, ikke påstand om opptaksmetode.",
+          "fr": "Montages analyse voix et forme de montage. Testez une narration originale sur une scène neutre sans prétendre connaître la méthode d’enregistrement.",
+          "pt": "Montages analisa voz e montagem. Teste narração original em cena neutra sem alegar conhecer método de gravação."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "drommer-closeup",
+        "area": "camera",
+        "prompt": {
+          "en": "How can close-ups preserve a character's subjective perspective?",
+          "nb": "Hvordan kan nærbilder bevare en karakters subjektive perspektiv?",
+          "fr": "Comment les gros plans préservent-ils un point de vue subjectif ?",
+          "pt": "Como podem grandes planos preservar perspetiva subjetiva?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Infer exact lens settings from a critical analysis alone",
+              "nb": "Utled eksakte objektivinnstillinger bare fra en kritisk analyse",
+              "fr": "Déduire les réglages exacts d’une seule critique",
+              "pt": "Deduzir parâmetros exatos apenas de análise crítica"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare consented performance tests and motivated reaction framing",
+              "nb": "Sammenlign samtykkebaserte spilleprøver og begrunnede reaksjonsutsnitt",
+              "fr": "Comparer essais de jeu consentis et cadres de réaction motivés",
+              "pt": "Comparar ensaios consentidos e quadros de reação motivados"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose extreme close-ups for every scene without review",
+              "nb": "Velg ekstreme nærbilder for alle scener uten vurdering",
+              "fr": "Choisir des très gros plans partout sans revue",
+              "pt": "Escolher grandes planos extremos em tudo sem revisão"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Rushprint describes collaboration; Montages identifies close-up emphasis. Compare original framing tests without inventing undocumented camera or lens specifications.",
+          "nb": "Rushprint beskriver samarbeid; Montages identifiserer vekt på nærbilder. Sammenlign egne utsnitt uten å finne på udokumenterte kamera- eller objektivspesifikasjoner.",
+          "fr": "Rushprint décrit collaboration ; Montages les gros plans. Comparez des cadres sans inventer de spécifications caméra ou optiques.",
+          "pt": "Rushprint descreve colaboração; Montages grandes planos. Compare quadros sem inventar especificações de câmara ou óticas."
+        },
+        "sourceIds": [
+          "s3",
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_four_daughters_2023",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Hybrid documentary, participant agency and ethical reconstruction",
+      "nb": "Hybriddokumentar, deltakerstyring og etisk rekonstruksjon",
+      "fr": "Documentaire hybride, autonomie des participants et reconstruction éthique",
+      "pt": "Documentário híbrido, autonomia de participantes e reconstrução ética"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "Four Daughters Press Kit",
+        "publisher": "Festival de Cannes / Tanit Films / The Party Film Sales",
+        "url": "https://cdn.festival-cannes.com/media/uploads/2023/05/159327.pdf"
+      },
+      {
+        "id": "s2",
+        "title": "Kaouther Ben Hania employs a unique approach In Competition",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/2023/kaouther-ben-hania-employs-a-unique-approach-in-competition/"
+      },
+      {
+        "id": "s3",
+        "title": "A Journey That Allowed Us to Harness the Power of Storytelling: Kaouther Ben Hania on Four Daughters",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/123431-interview-four-daughters-kaouther-ben-hania/"
+      },
+      {
+        "id": "s4",
+        "title": "Kaouther Ben Hania - Director of Four Daughters",
+        "publisher": "Cineuropa",
+        "url": "https://cineuropa.org/en/interview/442834/"
+      },
+      {
+        "id": "s5",
+        "title": "In Four Daughters, a shattered Tunisian family triumphs over trauma",
+        "publisher": "Los Angeles Times",
+        "url": "https://www.latimes.com/entertainment-arts/awards/story/2024-02-13/doc-four-daughters"
+      },
+      {
+        "id": "s6",
+        "title": "A very emotional shoot: behind Four Daughters, an unusual, Oscar-tipped film",
+        "publisher": "The Guardian",
+        "url": "https://www.theguardian.com/film/2024/jan/10/a-very-emotional-shoot-behind-four-daughters-an-unusual-oscar-tipped-film"
+      }
+    ],
+    "questions": [
+      {
+        "id": "fourdaughters-reenact",
+        "area": "research",
+        "prompt": {
+          "en": "How can a documentary distinguish reenactment from recorded testimony?",
+          "nb": "Hvordan kan en dokumentar skille rekonstruksjon fra innspilt vitnesbyrd?",
+          "fr": "Comment un documentaire distingue-t-il reconstitution et témoignage ?",
+          "pt": "Como pode documentário distinguir reconstrução de testemunho?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Label fictional reconstructions and preserve participant control over boundaries",
+              "nb": "Merk fiktive rekonstruksjoner og bevar deltakerkontroll over grenser",
+              "fr": "Identifier les reconstitutions et préserver le contrôle des limites",
+              "pt": "Identificar reconstruções e preservar controlo dos limites"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Present every performed reconstruction as authentic archive footage",
+              "nb": "Presenter alle spilte rekonstruksjoner som ekte arkivopptak",
+              "fr": "Présenter toute reconstitution comme archive authentique",
+              "pt": "Apresentar reconstruções como arquivos autênticos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Require participants to reenact distressing memories",
+              "nb": "Krev at deltakere gjenskaper belastende minner",
+              "fr": "Exiger de rejouer des souvenirs douloureux",
+              "pt": "Exigir reencenar memórias dolorosas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Ben Hania describes actors as mirrors and real participants influencing reconstruction. Plan a neutral fictional memory exercise with clear distinction between testimony and performance.",
+          "nb": "Ben Hania beskriver skuespillere som speil og deltakere som påvirker rekonstruksjon. Planlegg en nøytral fiktiv minneøvelse med tydelig skille mellom vitnesbyrd og spill.",
+          "fr": "Ben Hania décrit acteurs-miroirs et participants influençant la reconstruction. Préparez un exercice neutre distinguant témoignage et jeu.",
+          "pt": "Ben Hania descreve atores como espelhos e participantes na reconstrução. Planeie exercício neutro distinguindo testemunho e interpretação."
+        },
+        "sourceIds": [
+          "s1",
+          "s2",
+          "s4"
+        ]
+      },
+      {
+        "id": "fourdaughters-safety",
+        "area": "research",
+        "prompt": {
+          "en": "How should a documentary set handle a participant's request to stop?",
+          "nb": "Hvordan bør et dokumentarsett håndtere en deltakers ønske om å stoppe?",
+          "fr": "Comment un plateau documentaire répond-il à une demande d’arrêt ?",
+          "pt": "Como deve set documental responder a pedido de parar?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Continue recording because the scene is emotionally valuable",
+              "nb": "Fortsett opptak fordi scenen er følelsesmessig verdifull",
+              "fr": "Continuer car la scène est émotionnellement précieuse",
+              "pt": "Continuar porque cena tem valor emocional"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat initial consent as irrevocable permission",
+              "nb": "Behandle innledende samtykke som ugjenkallelig tillatelse",
+              "fr": "Traiter le consentement initial comme irrévocable",
+              "pt": "Tratar consentimento inicial como irrevogável"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Stop recording and revisit consent before any voluntary restart",
+              "nb": "Stopp opptaket og avklar samtykke før eventuell frivillig omstart",
+              "fr": "Arrêter et réexaminer le consentement avant toute reprise volontaire",
+              "pt": "Parar e rever consentimento antes de reinício voluntário"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The production accounts document safe-space discussions and stopping or restarting. Design a consent protocol for a neutral exercise, without reenacting trauma.",
+          "nb": "Produksjonskildene dokumenterer trygghetsdiskusjoner og stopp eller omstart. Lag en samtykkeprotokoll for en nøytral øvelse uten å gjenskape traumer.",
+          "fr": "Les sources décrivent discussions de sécurité et arrêts ou reprises. Créez un protocole consenti sans rejouer de traumatisme.",
+          "pt": "As fontes descrevem discussões de segurança e pausas ou reinícios. Crie protocolo consentido sem reencenar trauma."
+        },
+        "sourceIds": [
+          "s1",
+          "s3",
+          "s6"
+        ]
+      },
+      {
+        "id": "fourdaughters-space",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a shared studio space make reconstruction visible as a process?",
+          "nb": "Hvordan kan et felles studiorom synliggjøre rekonstruksjon som prosess?",
+          "fr": "Comment un studio partagé rend-il visible le processus de reconstitution ?",
+          "pt": "Como pode estúdio partilhado tornar visível processo de reconstrução?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume studio footage is unaltered historical material",
+              "nb": "Anta at studioopptak er uendret historisk materiale",
+              "fr": "Supposer que les prises studio sont des archives intactes",
+              "pt": "Supor que imagens de estúdio são arquivos intactos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare framing that identifies performers and the constructed setting",
+              "nb": "Sammenlign utsnitt som identifiserer utøvere og det konstruerte miljøet",
+              "fr": "Comparer des cadres identifiant interprètes et décor construit",
+              "pt": "Comparar quadros identificando intérpretes e cenário construído"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Hide every sign that the setting was constructed",
+              "nb": "Skjul alle tegn på at miljøet ble konstruert",
+              "fr": "Cacher tout signe que le décor est construit",
+              "pt": "Ocultar sinais de que cenário foi construído"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Cannes and the Los Angeles Times document the Tunis hotel setting and direct-to-camera approach. Test a fictional neutral reconstruction that shows its own production context.",
+          "nb": "Cannes og Los Angeles Times dokumenterer hotellmiljøet i Tunis og direkte kameraform. Prøv en nøytral fiktiv rekonstruksjon som viser sin egen produksjonskontekst.",
+          "fr": "Cannes et Los Angeles Times documentent hôtel de Tunis et adresse caméra. Testez une reconstitution fictive montrant son contexte de production.",
+          "pt": "Cannes e Los Angeles Times documentam hotel em Tunes e olhar direto à câmara. Teste reconstrução fictícia mostrando contexto de produção."
+        },
+        "sourceIds": [
+          "s2",
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_taste_of_cherry_1997",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Separate performances, car framing and the video epilogue",
+      "nb": "Separate opptak, bilutsnitt og videoepilogen",
+      "fr": "Jeu séparé, cadre automobile et épilogue vidéo",
+      "pt": "Interpretação separada, quadro no carro e epílogo em vídeo"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Taste of Cherry",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/242-taste-of-cherry"
+      },
+      {
+        "id": "s2",
+        "title": "Taste of Cherry",
+        "publisher": "Harvard Film Archive",
+        "url": "https://harvardfilmarchive.org/calendar/taste-of-cherry-2023-05"
+      },
+      {
+        "id": "s5",
+        "title": "Taste of Cherry",
+        "publisher": "Turner Classic Movies",
+        "url": "https://www.tcm.com/articles/276345/taste-of-cherry"
+      },
+      {
+        "id": "s6",
+        "title": "Abbas Kiarostami interview",
+        "publisher": "The Iranian",
+        "url": "https://www.iranian.com/Arts/Aug98/Kiarostami/"
+      },
+      {
+        "id": "s7",
+        "title": "Taste of Cherry",
+        "publisher": "Busan International Film Festival",
+        "url": "https://www.biff.kr/eng/html/archive/arc_history_view.asp?m_idx=23813&pyear=2016"
+      },
+      {
+        "id": "s9",
+        "title": "How the Film Distributor Zeitgeist Made History",
+        "publisher": "The New Yorker",
+        "url": "https://www.newyorker.com/culture/the-front-row/how-the-film-distributor-zeitgeist-made-history"
+      }
+    ],
+    "questions": [
+      {
+        "id": "cherry-dialogue",
+        "area": "research",
+        "prompt": {
+          "en": "The apparent conversations were assembled from separately filmed performances. What would you test in a new production exercise?",
+          "nb": "De tilsynelatende samtalene ble satt sammen av separat innspilte prestasjoner. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Les conversations apparentes ont été assemblées à partir de prises séparées. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "As conversas aparentes foram montadas a partir de interpretações filmadas separadamente. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record matching eyelines and pauses separately",
+              "nb": "Ta opp samsvarende blikkretninger og pauser separat",
+              "fr": "Filmer séparément des regards et pauses raccordés",
+              "pt": "Filmar separadamente olhares e pausas correspondentes"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Require both actors in every shot",
+              "nb": "Krev begge skuespillerne i hvert opptak",
+              "fr": "Exiger les deux acteurs dans chaque plan",
+              "pt": "Exigir ambos os atores em cada plano"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore the offscreen response",
+              "nb": "Ignorer reaksjonen utenfor bildet",
+              "fr": "Ignorer la réponse hors champ",
+              "pt": "Ignorar a resposta fora de campo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The apparent conversations were assembled from separately filmed performances. In a hypothetical exercise: Record matching eyelines and pauses separately.",
+          "nb": "De tilsynelatende samtalene ble satt sammen av separat innspilte prestasjoner. I en tenkt øvelse: Ta opp samsvarende blikkretninger og pauser separat.",
+          "fr": "Les conversations apparentes ont été assemblées à partir de prises séparées. Dans un exercice fictif : Filmer séparément des regards et pauses raccordés.",
+          "pt": "As conversas aparentes foram montadas a partir de interpretações filmadas separadamente. Num exercício hipotético: Filmar separadamente olhares e pausas correspondentes."
+        },
+        "sourceIds": [
+          "s5",
+          "s2"
+        ]
+      },
+      {
+        "id": "cherry-car",
+        "area": "camera",
+        "prompt": {
+          "en": "Kiarostami discusses fixed camera positions and accepting window reflections. What would you test in a new production exercise?",
+          "nb": "Kiarostami beskriver faste kameraposisjoner og aksept av vindusreflekser. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Kiarostami évoque les positions fixes et les reflets acceptés. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Kiarostami descreve posições fixas e a aceitação de reflexos. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Change angles at random between lines",
+              "nb": "Bytt vinkel tilfeldig mellom replikkene",
+              "fr": "Changer d’angle au hasard entre répliques",
+              "pt": "Mudar o ângulo ao acaso entre falas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test reflections and framing with a stationary car",
+              "nb": "Prøv refleksjoner og utsnitt i en stillestående bil",
+              "fr": "Tester reflets et cadrage dans une voiture immobile",
+              "pt": "Testar reflexos e enquadramento num carro parado"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Remove all reflections digitally before testing",
+              "nb": "Fjern alle refleksjoner digitalt før prøver",
+              "fr": "Supprimer tous les reflets avant les essais",
+              "pt": "Eliminar todos os reflexos antes dos testes"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Kiarostami discusses fixed camera positions and accepting window reflections. In a hypothetical exercise: Test reflections and framing with a stationary car.",
+          "nb": "Kiarostami beskriver faste kameraposisjoner og aksept av vindusreflekser. I en tenkt øvelse: Prøv refleksjoner og utsnitt i en stillestående bil.",
+          "fr": "Kiarostami évoque les positions fixes et les reflets acceptés. Dans un exercice fictif : Tester reflets et cadrage dans une voiture immobile.",
+          "pt": "Kiarostami descreve posições fixas e a aceitação de reflexos. Num exercício hipotético: Testar reflexos e enquadramento num carro parado."
+        },
+        "sourceIds": [
+          "s6",
+          "s2"
+        ]
+      },
+      {
+        "id": "cherry-epilogue",
+        "area": "camera",
+        "prompt": {
+          "en": "The video epilogue disrupts the feature’s established visual world. What would you test in a new production exercise?",
+          "nb": "Videoepilogen bryter med spillefilmens etablerte bildeverden. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "L’épilogue vidéo rompt avec l’univers visuel établi. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "O epílogo em vídeo rompe com o universo visual estabelecido. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Match every image to the feature’s texture",
+              "nb": "Tilpass alle bilder til spillefilmens tekstur",
+              "fr": "Uniformiser toutes les textures sur celles du film",
+              "pt": "Uniformizar todas as texturas com as do filme"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat the epilogue as an accidental outtake",
+              "nb": "Behandle epilogen som et tilfeldig restopptak",
+              "fr": "Traiter l’épilogue comme une chute accidentelle",
+              "pt": "Tratar o epílogo como uma sobra acidental"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare an ending that exposes the filmmaking apparatus",
+              "nb": "Sammenlign en slutt som synliggjør filmapparatet",
+              "fr": "Comparer une fin révélant le dispositif de tournage",
+              "pt": "Comparar um final que revela o dispositivo de filmagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The video epilogue disrupts the feature’s established visual world. In a hypothetical exercise: Compare an ending that exposes the filmmaking apparatus.",
+          "nb": "Videoepilogen bryter med spillefilmens etablerte bildeverden. I en tenkt øvelse: Sammenlign en slutt som synliggjør filmapparatet.",
+          "fr": "L’épilogue vidéo rompt avec l’univers visuel établi. Dans un exercice fictif : Comparer une fin révélant le dispositif de tournage.",
+          "pt": "O epílogo em vídeo rompe com o universo visual estabelecido. Num exercício hipotético: Comparar um final que revela o dispositivo de filmagem."
+        },
+        "sourceIds": [
+          "s0",
+          "s7",
+          "s9"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_taxi_2015",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Mobile framing, performed reality and image authorship",
+      "nb": "Mobilt utsnitt, iscenesatt virkelighet og bildeopphav",
+      "fr": "Cadre mobile, réalité jouée et propriété des images",
+      "pt": "Quadro móvel, realidade encenada e autoria das imagens"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Taxi Tehran review",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/sight-and-sound/reviews/taxi-tehran-review"
+      },
+      {
+        "id": "s1",
+        "title": "Film of the Week: Taxi",
+        "publisher": "Film Comment",
+        "url": "https://www.filmcomment.com/blog/film-of-the-week-taxi/"
+      },
+      {
+        "id": "s4",
+        "title": "Taxi: A Banned Filmmaker Works From the Road",
+        "publisher": "NPR",
+        "url": "https://www.capradio.org/news/npr/story?storyid=444742781"
+      },
+      {
+        "id": "s5",
+        "title": "Jafar Panahi's Taxi",
+        "publisher": "Kino Lorber",
+        "url": "https://kinolorber.com/film/jafarpanahistaxi"
+      },
+      {
+        "id": "s9",
+        "title": "Tehran Taxi pressbook",
+        "publisher": "New Wave Films",
+        "url": "https://www.newwavefilms.co.uk/assets/1112/Taxi_Tehran_pressbook_with_cert.pdf"
+      }
+    ],
+    "questions": [
+      {
+        "id": "taxipanahi-frame",
+        "area": "camera",
+        "prompt": {
+          "en": "The dashboard camera turns the taxi interior into a limited recording space. What would you test in a new production exercise?",
+          "nb": "Dashbordkameraet gjør drosjeinteriøret til et avgrenset opptaksrom. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "La caméra du tableau de bord délimite l’espace de tournage. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "A câmara no painel delimita o espaço de filmagem. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse passenger blocking in a parked vehicle",
+              "nb": "Øv passasjerenes plassering i en parkert bil",
+              "fr": "Répéter les placements dans un véhicule à l’arrêt",
+              "pt": "Ensaiar posições dos passageiros num veículo parado"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Plan only aerial establishing shots",
+              "nb": "Planlegg bare oversiktsbilder fra luften",
+              "fr": "Prévoir uniquement des vues aériennes",
+              "pt": "Planear apenas planos aéreos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume a fixed frame captures every reaction",
+              "nb": "Anta at fast utsnitt fanger alle reaksjoner",
+              "fr": "Supposer que le cadre fixe saisit toute réaction",
+              "pt": "Supor que o quadro fixo capta todas as reações"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The dashboard camera turns the taxi interior into a limited recording space. In a hypothetical exercise: Rehearse passenger blocking in a parked vehicle.",
+          "nb": "Dashbordkameraet gjør drosjeinteriøret til et avgrenset opptaksrom. I en tenkt øvelse: Øv passasjerenes plassering i en parkert bil.",
+          "fr": "La caméra du tableau de bord délimite l’espace de tournage. Dans un exercice fictif : Répéter les placements dans un véhicule à l’arrêt.",
+          "pt": "A câmara no painel delimita o espaço de filmagem. Num exercício hipotético: Ensaiar posições dos passageiros num veículo parado."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
+        ]
+      },
+      {
+        "id": "taxipanahi-performance",
+        "area": "research",
+        "prompt": {
+          "en": "The passenger episodes deliberately blur fiction and observation. What would you test in a new production exercise?",
+          "nb": "Passasjerepisodene gjør skillet mellom fiksjon og observasjon uklart. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Les épisodes brouillent délibérément fiction et observation. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Os episódios confundem deliberadamente ficção e observação. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Remove all ambiguity through explanatory captions",
+              "nb": "Fjern all tvetydighet med forklarende tekster",
+              "fr": "Éliminer toute ambiguïté par des cartons explicatifs",
+              "pt": "Eliminar toda ambiguidade com legendas explicativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Distinguish observed behaviour from scripted performance in notes",
+              "nb": "Skill observert atferd fra manusstyrt spill i notatene",
+              "fr": "Distinguer comportement observé et jeu écrit dans les notes",
+              "pt": "Distinguir comportamento observado de atuação escrita nas notas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Label all passengers as documentary witnesses",
+              "nb": "Merk alle passasjerer som dokumentarvitner",
+              "fr": "Présenter tous les passagers comme témoins documentaires",
+              "pt": "Identificar todos os passageiros como testemunhas documentais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The passenger episodes deliberately blur fiction and observation. In a hypothetical exercise: Distinguish observed behaviour from scripted performance in notes.",
+          "nb": "Passasjerepisodene gjør skillet mellom fiksjon og observasjon uklart. I en tenkt øvelse: Skill observert atferd fra manusstyrt spill i notatene.",
+          "fr": "Les épisodes brouillent délibérément fiction et observation. Dans un exercice fictif : Distinguer comportement observé et jeu écrit dans les notes.",
+          "pt": "Os episódios confundem deliberadamente ficção e observação. Num exercício hipotético: Distinguir comportamento observado de atuação escrita nas notas."
+        },
+        "sourceIds": [
+          "s1",
+          "s5"
+        ]
+      },
+      {
+        "id": "taxipanahi-credits",
+        "area": "research",
+        "prompt": {
+          "en": "The film’s unusual credit situation makes authorship and image ownership part of its form. What would you test in a new production exercise?",
+          "nb": "Filmens uvanlige kreditering gjør opphav og bildeeierskap til del av formen. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Les crédits inhabituels inscrivent l’auteur et la propriété des images dans la forme. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Os créditos invulgares integram autoria e propriedade das imagens na forma. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Publish every participant’s identity automatically",
+              "nb": "Publiser automatisk alle deltakeres identitet",
+              "fr": "Publier automatiquement l’identité de chacun",
+              "pt": "Publicar automaticamente a identidade de todos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat missing credits as proof of missing collaborators",
+              "nb": "Tolk manglende kreditering som bevis på fravær av medarbeidere",
+              "fr": "Prendre l’absence de crédits pour une absence de collaborateurs",
+              "pt": "Tomar a falta de créditos como ausência de colaboradores"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan consent and safe attribution with participants",
+              "nb": "Planlegg samtykke og trygg kreditering med deltakerne",
+              "fr": "Prévoir consentement et attribution sûre avec les participants",
+              "pt": "Planear consentimento e atribuição segura com participantes"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The film’s unusual credit situation makes authorship and image ownership part of its form. In a hypothetical exercise: Plan consent and safe attribution with participants.",
+          "nb": "Filmens uvanlige kreditering gjør opphav og bildeeierskap til del av formen. I en tenkt øvelse: Planlegg samtykke og trygg kreditering med deltakerne.",
+          "fr": "Les crédits inhabituels inscrivent l’auteur et la propriété des images dans la forme. Dans un exercice fictif : Prévoir consentement et attribution sûre avec les participants.",
+          "pt": "Os créditos invulgares integram autoria e propriedade das imagens na forma. Num exercício hipotético: Planear consentimento e atribuição segura com participantes."
+        },
+        "sourceIds": [
+          "s0",
+          "s9"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_norte_the_end_of_history_2013",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Parallel narrative, durational framing and environmental sound",
+      "nb": "Parallellfortelling, varighet og miljølyd",
+      "fr": "Récit parallèle, durée et son ambiant",
+      "pt": "Narrativa paralela, duração e som ambiente"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Norte, Hangganan ng Kasaysayan",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/norte-hangganan-ng-kasaysayan/"
+      },
+      {
+        "id": "s1",
+        "title": "A Conversation with Lav Diaz",
+        "publisher": "Harvard Film Archive",
+        "url": "https://harvardfilmarchive.org/conversations/107"
+      },
+      {
+        "id": "s3",
+        "title": "Norte, the End of History",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/collection/works/316865"
+      },
+      {
+        "id": "s4",
+        "title": "Film of the week: Norte, the End of History",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/sight-and-sound/reviews/film-week-norte-end-history"
+      },
+      {
+        "id": "s5",
+        "title": "Cannes 2013: Norte, the End of History",
+        "publisher": "Film Comment",
+        "url": "https://www.filmcomment.com/article/cannes-2013-dennis-lim/"
+      },
+      {
+        "id": "s6",
+        "title": "Intervista a Lav Diaz",
+        "publisher": "Uzak",
+        "url": "https://www.uzak.it/rivista/uzak-11/lo-stato-delle-cose/intervista-a-lav-diaz.html"
+      }
+    ],
+    "questions": [
+      {
+        "id": "norte-adapt",
+        "area": "research",
+        "prompt": {
+          "en": "Diaz redistributes the moral problem of Crime and Punishment across several lives. What would you test in a new production exercise?",
+          "nb": "Diaz fordeler det moralske problemet fra Forbrytelse og straff på flere liv. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Diaz redistribue le dilemme de Crime et Châtiment entre plusieurs vies. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Diaz redistribui o dilema de Crime e Castigo por várias vidas. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map the consequences across parallel character arcs",
+              "nb": "Kartlegg konsekvensene i parallelle karakterforløp",
+              "fr": "Cartographier les conséquences dans des trajectoires parallèles",
+              "pt": "Mapear consequências em percursos paralelos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Follow the novel scene for scene",
+              "nb": "Følg romanen scene for scene",
+              "fr": "Suivre le roman scène par scène",
+              "pt": "Seguir o romance cena a cena"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Resolve every subplot through the protagonist",
+              "nb": "Løs alle sidehistorier gjennom hovedpersonen",
+              "fr": "Résoudre chaque intrigue par le protagoniste",
+              "pt": "Resolver todas as subtramas pelo protagonista"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Diaz redistributes the moral problem of Crime and Punishment across several lives. In a hypothetical exercise: Map the consequences across parallel character arcs.",
+          "nb": "Diaz fordeler det moralske problemet fra Forbrytelse og straff på flere liv. I en tenkt øvelse: Kartlegg konsekvensene i parallelle karakterforløp.",
+          "fr": "Diaz redistribue le dilemme de Crime et Châtiment entre plusieurs vies. Dans un exercice fictif : Cartographier les conséquences dans des trajectoires parallèles.",
+          "pt": "Diaz redistribui o dilema de Crime e Castigo por várias vidas. Num exercício hipotético: Mapear consequências em percursos paralelos."
+        },
+        "sourceIds": [
+          "s1",
+          "s4"
+        ]
+      },
+      {
+        "id": "norte-duration",
+        "area": "camera",
+        "prompt": {
+          "en": "Static and near-static long takes make ordinary time central to the film. What would you test in a new production exercise?",
+          "nb": "Statiske og nesten statiske langtakes gjør hverdagstid sentral. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Les longs plans fixes ou quasi fixes donnent une place centrale au temps ordinaire. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Planos longos fixos ou quase fixos tornam central o tempo quotidiano. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Extend the shot without rehearsing action",
+              "nb": "Forleng opptaket uten å øve handlingen",
+              "fr": "Allonger le plan sans répéter l’action",
+              "pt": "Alongar o plano sem ensaiar a ação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test a complete routine in a sustained wide shot",
+              "nb": "Prøv en hel rutine i et vedvarende totalbilde",
+              "fr": "Tester une routine entière dans un plan large prolongé",
+              "pt": "Testar uma rotina inteira num plano geral prolongado"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Cut at each small movement automatically",
+              "nb": "Klipp automatisk ved hver liten bevegelse",
+              "fr": "Couper automatiquement à chaque mouvement",
+              "pt": "Cortar automaticamente a cada movimento"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Static and near-static long takes make ordinary time central to the film. In a hypothetical exercise: Test a complete routine in a sustained wide shot.",
+          "nb": "Statiske og nesten statiske langtakes gjør hverdagstid sentral. I en tenkt øvelse: Prøv en hel rutine i et vedvarende totalbilde.",
+          "fr": "Les longs plans fixes ou quasi fixes donnent une place centrale au temps ordinaire. Dans un exercice fictif : Tester une routine entière dans un plan large prolongé.",
+          "pt": "Planos longos fixos ou quase fixos tornam central o tempo quotidiano. Num exercício hipotético: Testar uma rotina inteira num plano geral prolongado."
+        },
+        "sourceIds": [
+          "s3",
+          "s5"
+        ]
+      },
+      {
+        "id": "norte-environment",
+        "area": "sound",
+        "prompt": {
+          "en": "Diaz describes minimal manipulation and restrained added sound. What would you test in a new production exercise?",
+          "nb": "Diaz beskriver minimal bearbeiding og tilbakeholden bruk av tillagt lyd. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Diaz décrit une manipulation minimale et des ajouts sonores mesurés. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Diaz descreve manipulação mínima e som acrescentado contido. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Replace every environment with stock effects",
+              "nb": "Erstatt alle lydmiljøer med standardeffekter",
+              "fr": "Remplacer chaque ambiance par des effets de banque",
+              "pt": "Substituir todos os ambientes por efeitos de arquivo"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Fill all pauses with dramatic music",
+              "nb": "Fyll alle pauser med dramatisk musikk",
+              "fr": "Remplir toutes les pauses de musique dramatique",
+              "pt": "Preencher todas as pausas com música dramática"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record location ambience and compare a restrained mix",
+              "nb": "Ta opp stedslyd og sammenlign en tilbakeholden miks",
+              "fr": "Enregistrer l’ambiance du lieu et comparer un mix sobre",
+              "pt": "Gravar ambiente local e comparar uma mistura contida"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Diaz describes minimal manipulation and restrained added sound. In a hypothetical exercise: Record location ambience and compare a restrained mix.",
+          "nb": "Diaz beskriver minimal bearbeiding og tilbakeholden bruk av tillagt lyd. I en tenkt øvelse: Ta opp stedslyd og sammenlign en tilbakeholden miks.",
+          "fr": "Diaz décrit une manipulation minimale et des ajouts sonores mesurés. Dans un exercice fictif : Enregistrer l’ambiance du lieu et comparer un mix sobre.",
+          "pt": "Diaz descreve manipulação mínima e som acrescentado contido. Num exercício hipotético: Gravar ambiente local e comparar uma mistura contida."
+        },
+        "sourceIds": [
+          "s6",
+          "s0"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_rrr_2022",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Previsualization, continuity and hybrid effects production",
+      "nb": "Previsualisering, kontinuitet og hybride filmeffekter",
+      "fr": "Prévisualisation, continuité et effets hybrides",
+      "pt": "Pré-visualização, continuidade e efeitos híbridos"
+    },
+    "sources": [
+      {
+        "id": "s2",
+        "title": "ARRI ALEXA LF, Signature Primes, and SkyPanels on RRR",
+        "publisher": "ARRI",
+        "url": "https://www.arri.com/en/learn-help/learn-help-camera-system/camera-workflows/rrr"
+      },
+      {
+        "id": "s3",
+        "title": "RRR cinematography: K. K. Senthil Kumar",
+        "publisher": "American Society of Cinematographers",
+        "url": "https://theasc.com/articles/rrr-k-k-senthil-kumar"
+      },
+      {
+        "id": "s4",
+        "title": "RRR: Director S.S. Rajamouli and DP K.K. Senthil Kumar",
+        "publisher": "postPerspective",
+        "url": "https://postperspective.com/rrr-director-s-s-rajamouli-and-dp-k-k-senthil-kumar/"
+      },
+      {
+        "id": "s5",
+        "title": "Sabu Cyril on designing RRR",
+        "publisher": "Cinema Express",
+        "url": "https://www.cinemaexpress.com/telugu/interviews/2022/mar/31/sabu-cyril-on-designing-rrr-30615.html"
+      },
+      {
+        "id": "s7",
+        "title": "RRR Visual Effects",
+        "publisher": "Digital Domain",
+        "url": "https://digitaldomain.com/work/rrr/"
+      },
+      {
+        "id": "s8",
+        "title": "S.S. Rajamouli on the bridge sequence in RRR",
+        "publisher": "RogerEbert.com",
+        "url": "https://www.rogerebert.com/interviews/ss-rajamouli-rrr-interview"
+      }
+    ],
+    "questions": [
+      {
+        "id": "rrr-previs",
+        "area": "research",
+        "prompt": {
+          "en": "The cinematographer describes storyboards and previs as shared planning tools. What would you test in a new production exercise?",
+          "nb": "Filmfotografen beskriver storyboard og previs som felles planleggingsverktøy. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Le directeur photo décrit storyboard et prévisualisation comme outils communs de préparation. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "O diretor de fotografia descreve storyboard e pré-visualização como ferramentas comuns. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Review a previs animatic with departments before a fictional shoot",
+              "nb": "Gjennomgå en previs-animatikk med fagavdelingene før et fiktivt opptak",
+              "fr": "Revoir une animatique avec les départements avant un tournage fictif",
+              "pt": "Rever uma animática com os departamentos antes de uma filmagem fictícia"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assign all shot planning to final post-production",
+              "nb": "Overlat all opptaksplanlegging til etterarbeidet",
+              "fr": "Reporter toute préparation des plans à la postproduction",
+              "pt": "Adiar todo o planeamento para a pós-produção"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat previs as a final approved image",
+              "nb": "Behandle previs som et endelig godkjent bilde",
+              "fr": "Traiter la prévisualisation comme image finale validée",
+              "pt": "Tratar a pré-visualização como imagem final aprovada"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The cinematographer describes storyboards and previs as shared planning tools. In a hypothetical exercise: Review a previs animatic with departments before a fictional shoot.",
+          "nb": "Filmfotografen beskriver storyboard og previs som felles planleggingsverktøy. I en tenkt øvelse: Gjennomgå en previs-animatikk med fagavdelingene før et fiktivt opptak.",
+          "fr": "Le directeur photo décrit storyboard et prévisualisation comme outils communs de préparation. Dans un exercice fictif : Revoir une animatique avec les départements avant un tournage fictif.",
+          "pt": "O diretor de fotografia descreve storyboard e pré-visualização como ferramentas comuns. Num exercício hipotético: Rever uma animática com os departamentos antes de uma filmagem fictícia."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "rrr-continuity",
+        "area": "camera",
+        "prompt": {
+          "en": "Extended production required detailed camera reports to match returning material. What would you test in a new production exercise?",
+          "nb": "Langvarig produksjon krevde detaljerte kamerarapporter for å matche senere opptak. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "La production prolongée exigeait des rapports caméra détaillés pour les raccords. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "A produção prolongada exigiu relatórios de câmara detalhados para continuidade. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Change exposure arbitrarily on return",
+              "nb": "Endre eksponeringen vilkårlig ved gjenopptak",
+              "fr": "Changer arbitrairement l’exposition à la reprise",
+              "pt": "Alterar arbitrariamente a exposição no regresso"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Log lighting, lens and framing for each setup",
+              "nb": "Loggfør lys, objektiv og utsnitt for hvert oppsett",
+              "fr": "Consigner lumière, objectif et cadre de chaque installation",
+              "pt": "Registar luz, objetiva e quadro de cada montagem"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Rely solely on the operator’s memory",
+              "nb": "Stol utelukkende på fotografens hukommelse",
+              "fr": "Compter uniquement sur la mémoire de l’opérateur",
+              "pt": "Confiar apenas na memória do operador"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Extended production required detailed camera reports to match returning material. In a hypothetical exercise: Log lighting, lens and framing for each setup.",
+          "nb": "Langvarig produksjon krevde detaljerte kamerarapporter for å matche senere opptak. I en tenkt øvelse: Loggfør lys, objektiv og utsnitt for hvert oppsett.",
+          "fr": "La production prolongée exigeait des rapports caméra détaillés pour les raccords. Dans un exercice fictif : Consigner lumière, objectif et cadre de chaque installation.",
+          "pt": "A produção prolongada exigiu relatórios de câmara detalhados para continuidade. Num exercício hipotético: Registar luz, objetiva e quadro de cada montagem."
+        },
+        "sourceIds": [
+          "s2",
+          "s4"
+        ]
+      },
+      {
+        "id": "rrr-hybrid",
+        "area": "camera",
+        "prompt": {
+          "en": "The bridge sequence combined full-size builds, miniature elements and visual effects. What would you test in a new production exercise?",
+          "nb": "Brosekvensen kombinerte fullskala kulisser, miniatyrer og visuelle effekter. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "La séquence du pont combinait décors grandeur nature, miniatures et effets visuels. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "A sequência da ponte combinou cenários à escala real, miniaturas e efeitos visuais. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose one technique regardless of shot needs",
+              "nb": "Velg én teknikk uansett bildebehov",
+              "fr": "Choisir une seule technique quels que soient les plans",
+              "pt": "Escolher uma técnica independentemente dos planos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Leave all matching until the final composite",
+              "nb": "Utsett all samsvarskontroll til sluttkompositering",
+              "fr": "Reporter tous les raccords au composite final",
+              "pt": "Adiar toda a correspondência para a composição final"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Match scale and lighting across harmless tabletop elements and digital plates",
+              "nb": "Match skala og lys i ufarlige bordmodeller og digitale bildeelementer",
+              "fr": "Accorder échelle et lumière entre maquettes inoffensives et plaques numériques",
+              "pt": "Harmonizar escala e luz entre maquetes inofensivas e imagens digitais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The bridge sequence combined full-size builds, miniature elements and visual effects. In a hypothetical exercise: Match scale and lighting across harmless tabletop elements and digital plates.",
+          "nb": "Brosekvensen kombinerte fullskala kulisser, miniatyrer og visuelle effekter. I en tenkt øvelse: Match skala og lys i ufarlige bordmodeller og digitale bildeelementer.",
+          "fr": "La séquence du pont combinait décors grandeur nature, miniatures et effets visuels. Dans un exercice fictif : Accorder échelle et lumière entre maquettes inoffensives et plaques numériques.",
+          "pt": "A sequência da ponte combinou cenários à escala real, miniaturas e efeitos visuais. Num exercício hipotético: Harmonizar escala e luz entre maquetes inofensivas e imagens digitais."
+        },
+        "sourceIds": [
+          "s5",
+          "s7",
+          "s8"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_boy_from_heaven_2022",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Location substitution, lens discipline and co-production",
+      "nb": "Stedserstatning, objektivdisiplin og samproduksjon",
+      "fr": "Substitution de lieux, discipline optique et coproduction",
+      "pt": "Substituição de locais, disciplina ótica e coprodução"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "Boy from Heaven",
+        "publisher": "Atmo",
+        "url": "https://www.atmo.se/films/boy-from-heaven"
+      },
+      {
+        "id": "s2",
+        "title": "Boy from Heaven producer Kristina Åberg on working with Tarik Saleh",
+        "publisher": "Nordisk Film & TV Fond",
+        "url": "https://nordiskfilmogtvfond.com/news/stories/boy-from-heaven-producer-kristina-aberg-on-working-with-tarik-saleh"
+      },
+      {
+        "id": "s3",
+        "title": "Four co-productions competing for Palme d’Or in Cannes",
+        "publisher": "Film i Väst",
+        "url": "https://filmivast.com/news-press/news/four-co-productions-competing-for-palme-dor-in-cannes"
+      },
+      {
+        "id": "s4",
+        "title": "ARRI technology behind the scenes of Cannes 2022",
+        "publisher": "ARRI",
+        "url": "https://www.arri.com/news-en/arri-technology-in-cannes-2022"
+      },
+      {
+        "id": "s5",
+        "title": "Cannes Cinematography: Here Are the Cameras and Lenses Used to Shoot 49 Films",
+        "publisher": "IndieWire",
+        "url": "https://www.indiewire.com/features/general/cannes-2022-cinematography-cameras-lenses-1234725082/"
+      },
+      {
+        "id": "s6",
+        "title": "Walad min al-Janna",
+        "publisher": "Danish Film Institute",
+        "url": "https://www.dfi.dk/en/viden-om-film/filmdatabasen/film/116834"
+      }
+    ],
+    "questions": [
+      {
+        "id": "boyheaven-location",
+        "area": "research",
+        "prompt": {
+          "en": "Istanbul locations substituted for the story’s Egyptian setting. What would you test in a new production exercise?",
+          "nb": "Steder i Istanbul erstattet historiens egyptiske miljø. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Des lieux d’Istanbul ont remplacé le cadre égyptien du récit. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Locais de Istambul substituíram o ambiente egípcio da história. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare architecture and cultural details with advisers",
+              "nb": "Sammenlign arkitektur og kulturelle detaljer med rådgivere",
+              "fr": "Comparer architecture et détails culturels avec des conseillers",
+              "pt": "Comparar arquitetura e detalhes culturais com consultores"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume all religious buildings are interchangeable",
+              "nb": "Anta at alle religiøse bygg er utskiftbare",
+              "fr": "Supposer que tous les édifices religieux sont interchangeables",
+              "pt": "Supor que todos os edifícios religiosos são intercambiáveis"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Hide geographical differences without research",
+              "nb": "Skjul geografiske forskjeller uten research",
+              "fr": "Masquer les différences géographiques sans recherche",
+              "pt": "Ocultar diferenças geográficas sem pesquisa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Istanbul locations substituted for the story’s Egyptian setting. In a hypothetical exercise: Compare architecture and cultural details with advisers.",
+          "nb": "Steder i Istanbul erstattet historiens egyptiske miljø. I en tenkt øvelse: Sammenlign arkitektur og kulturelle detaljer med rådgivere.",
+          "fr": "Des lieux d’Istanbul ont remplacé le cadre égyptien du récit. Dans un exercice fictif : Comparer architecture et détails culturels avec des conseillers.",
+          "pt": "Locais de Istambul substituíram o ambiente egípcio da história. Num exercício hipotético: Comparar arquitetura e detalhes culturais com consultores."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "boyheaven-lens",
+        "area": "camera",
+        "prompt": {
+          "en": "Pierre Aïm describes a single scope lens used for documentary-like proximity. What would you test in a new production exercise?",
+          "nb": "Pierre Aïm beskriver ett scopeobjektiv for dokumentarisk nærhet. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Pierre Aïm décrit un seul objectif scope pour une proximité documentaire. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Pierre Aïm descreve uma única objetiva scope para proximidade documental. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Select a lens only by its price",
+              "nb": "Velg objektiv bare etter pris",
+              "fr": "Choisir un objectif uniquement selon son prix",
+              "pt": "Escolher uma objetiva apenas pelo preço"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test actor distance and blocking with one focal length",
+              "nb": "Prøv skuespilleravstand og plassering med én brennvidde",
+              "fr": "Tester distance et déplacements avec une seule focale",
+              "pt": "Testar distância e movimentos com uma só distância focal"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Change focal length for every emotional beat",
+              "nb": "Bytt brennvidde ved hvert følelsesmessige skifte",
+              "fr": "Changer de focale à chaque variation émotionnelle",
+              "pt": "Mudar a distância focal a cada mudança emocional"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Pierre Aïm describes a single scope lens used for documentary-like proximity. In a hypothetical exercise: Test actor distance and blocking with one focal length.",
+          "nb": "Pierre Aïm beskriver ett scopeobjektiv for dokumentarisk nærhet. I en tenkt øvelse: Prøv skuespilleravstand og plassering med én brennvidde.",
+          "fr": "Pierre Aïm décrit un seul objectif scope pour une proximité documentaire. Dans un exercice fictif : Tester distance et déplacements avec une seule focale.",
+          "pt": "Pierre Aïm descreve uma única objetiva scope para proximidade documental. Num exercício hipotético: Testar distância e movimentos com uma só distância focal."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "boyheaven-coproduction",
+        "area": "research",
+        "prompt": {
+          "en": "The production records identify a four-country co-production and multiple shooting territories. What would you test in a new production exercise?",
+          "nb": "Produksjonskildene identifiserer en samproduksjon mellom fire land og flere opptaksområder. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Les dossiers identifient une coproduction de quatre pays et plusieurs territoires de tournage. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Os registos identificam uma coprodução de quatro países e vários territórios de filmagem. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Infer equal financing from four countries",
+              "nb": "Utled lik finansiering fra fire land",
+              "fr": "Déduire un financement égal des quatre pays",
+              "pt": "Deduzir financiamento igual dos quatro países"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat shooting country as sole producer",
+              "nb": "Behandle opptakslandet som eneste produsent",
+              "fr": "Traiter le pays de tournage comme seul producteur",
+              "pt": "Tratar o país de filmagem como único produtor"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Separate partner credits, location plans and unknown financing shares",
+              "nb": "Skill partnerkreditering, stedsplaner og ukjente finansieringsandeler",
+              "fr": "Séparer crédits des partenaires, lieux et parts financières inconnues",
+              "pt": "Separar créditos dos parceiros, locais e participações financeiras desconhecidas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The production records identify a four-country co-production and multiple shooting territories. In a hypothetical exercise: Separate partner credits, location plans and unknown financing shares.",
+          "nb": "Produksjonskildene identifiserer en samproduksjon mellom fire land og flere opptaksområder. I en tenkt øvelse: Skill partnerkreditering, stedsplaner og ukjente finansieringsandeler.",
+          "fr": "Les dossiers identifient une coproduction de quatre pays et plusieurs territoires de tournage. Dans un exercice fictif : Séparer crédits des partenaires, lieux et parts financières inconnues.",
+          "pt": "Os registos identificam uma coprodução de quatro países e vários territórios de filmagem. Num exercício hipotético: Separar créditos dos parceiros, locais e participações financeiras desconhecidas."
+        },
+        "sourceIds": [
+          "s1",
+          "s3",
+          "s6"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_bombon_el_perro_2004",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Regional casting, flexible writing and animal performance",
+      "nb": "Regional casting, fleksibelt manus og dyremedvirkning",
+      "fr": "Casting régional, écriture souple et jeu animal",
+      "pt": "Casting regional, escrita flexível e atuação animal"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Bombón, el perro / Bombón, the dog",
+        "publisher": "San Sebastián International Film Festival",
+        "url": "https://www.sansebastianfestival.com/2004/sections_and_films/official_section/7/520631/in"
+      },
+      {
+        "id": "s3",
+        "title": "Carlos Sorín regresa al árido paisaje de la Patagonia con 'Bombón'",
+        "publisher": "El País",
+        "url": "https://elpais.com/diario/2004/06/04/cine/1086300010_850215.html"
+      },
+      {
+        "id": "s4",
+        "title": "Entrevista con Carlos Sorin",
+        "publisher": "Cinencuentro",
+        "url": "https://www.cinencuentro.com/entrevista-carlos-sorin/"
+      },
+      {
+        "id": "s7",
+        "title": "Bombon El Perro",
+        "publisher": "Screen International",
+        "url": "https://www.screendaily.com/bombon-el-perro/4020293.article"
+      },
+      {
+        "id": "s8",
+        "title": "Bombón: El Perro: A quiet and understated masterpiece",
+        "publisher": "SBS",
+        "url": "https://www.sbs.com.au/whats-on/article/bombon-el-perro-a-quiet-and-understated-masterpiece/c0k8q4gja"
+      },
+      {
+        "id": "s9",
+        "title": "Bombon El Perro",
+        "publisher": "LondonNet",
+        "url": "https://www.londonnet.co.uk/cinema/cinema-interviews/bombon-el-perro/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "bombon-casting",
+        "area": "research",
+        "prompt": {
+          "en": "Sorín sought nonprofessional performers close to their characters. What would you test in a new production exercise?",
+          "nb": "Sorín søkte ikke-profesjonelle utøvere nær karakterene. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Sorín recherchait des non-professionnels proches des personnages. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Sorín procurou intérpretes não profissionais próximos das personagens. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use voluntary workshops to discover natural behaviour",
+              "nb": "Bruk frivillige verksteder for å finne naturlig atferd",
+              "fr": "Organiser des ateliers volontaires pour découvrir les gestes naturels",
+              "pt": "Usar oficinas voluntárias para descobrir comportamentos naturais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose only performers with famous screen credits",
+              "nb": "Velg bare utøvere med kjente filmroller",
+              "fr": "Choisir uniquement des acteurs célèbres",
+              "pt": "Escolher apenas intérpretes com créditos famosos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Sorín sought nonprofessional performers close to their characters. In a hypothetical exercise: Use voluntary workshops to discover natural behaviour.",
+          "nb": "Sorín søkte ikke-profesjonelle utøvere nær karakterene. I en tenkt øvelse: Bruk frivillige verksteder for å finne naturlig atferd.",
+          "fr": "Sorín recherchait des non-professionnels proches des personnages. Dans un exercice fictif : Organiser des ateliers volontaires pour découvrir les gestes naturels.",
+          "pt": "Sorín procurou intérpretes não profissionais próximos das personagens. Num exercício hipotético: Usar oficinas voluntárias para descobrir comportamentos naturais."
+        },
+        "sourceIds": [
+          "s0",
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "bombon-script",
+        "area": "research",
+        "prompt": {
+          "en": "Sorín describes adapting the screenplay to discoveries during filming. What would you test in a new production exercise?",
+          "nb": "Sorín beskriver et manus tilpasset oppdagelser under opptak. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Sorín décrit un scénario adapté aux découvertes du tournage. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Sorín descreve um argumento adaptado às descobertas da filmagem. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Review discoveries in rough cuts while preserving dramatic milestones",
+              "nb": "Vurder funn i grovklipp mens dramatiske holdepunkter bevares",
+              "fr": "Examiner les découvertes au prémontage en préservant les jalons dramatiques",
+              "pt": "Rever descobertas na montagem inicial preservando marcos dramáticos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Reject all unscripted material automatically",
+              "nb": "Avvis automatisk alt materiale utenfor manus",
+              "fr": "Rejeter automatiquement tout matériau non écrit",
+              "pt": "Rejeitar automaticamente todo material não previsto"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Sorín describes adapting the screenplay to discoveries during filming. In a hypothetical exercise: Review discoveries in rough cuts while preserving dramatic milestones.",
+          "nb": "Sorín beskriver et manus tilpasset oppdagelser under opptak. I en tenkt øvelse: Vurder funn i grovklipp mens dramatiske holdepunkter bevares.",
+          "fr": "Sorín décrit un scénario adapté aux découvertes du tournage. Dans un exercice fictif : Examiner les découvertes au prémontage en préservant les jalons dramatiques.",
+          "pt": "Sorín descreve um argumento adaptado às descobertas da filmagem. Num exercício hipotético: Rever descobertas na montagem inicial preservando marcos dramáticos."
+        },
+        "sourceIds": [
+          "s4",
+          "s7"
+        ]
+      },
+      {
+        "id": "bombon-animal",
+        "area": "camera",
+        "prompt": {
+          "en": "The dog’s reserved behaviour contributes to the dramatic tone. What would you test in a new production exercise?",
+          "nb": "Hundens tilbakeholdne atferd bidrar til den dramatiske tonen. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Le comportement réservé du chien contribue au ton dramatique. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "O comportamento reservado do cão contribui para o tom dramático. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Demand a fixed emotional expression from the animal",
+              "nb": "Krev et fast følelsesuttrykk fra dyret",
+              "fr": "Exiger une expression émotionnelle fixe de l’animal",
+              "pt": "Exigir expressão emocional fixa do animal"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan patient observation with a handler and welfare breaks",
+              "nb": "Planlegg tålmodig observasjon med dyrepasser og velferdspauser",
+              "fr": "Prévoir observation patiente, soigneur et pauses de bien-être",
+              "pt": "Planear observação paciente com tratador e pausas de bem-estar"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The dog’s reserved behaviour contributes to the dramatic tone. In a hypothetical exercise: Plan patient observation with a handler and welfare breaks.",
+          "nb": "Hundens tilbakeholdne atferd bidrar til den dramatiske tonen. I en tenkt øvelse: Planlegg tålmodig observasjon med dyrepasser og velferdspauser.",
+          "fr": "Le comportement réservé du chien contribue au ton dramatique. Dans un exercice fictif : Prévoir observation patiente, soigneur et pauses de bien-être.",
+          "pt": "O comportamento reservado do cão contribui para o tom dramático. Num exercício hipotético: Planear observação paciente com tratador e pausas de bem-estar."
+        },
+        "sourceIds": [
+          "s9",
+          "s8"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_last_life_in_the_universe_2003",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Multilingual dialogue, visual contrast and elliptical structure",
+      "nb": "Flerspråklig dialog, visuell kontrast og elliptisk struktur",
+      "fr": "Dialogue multilingue, contraste visuel et structure elliptique",
+      "pt": "Diálogo multilingue, contraste visual e estrutura elíptica"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Last Life in the Universe",
+        "publisher": "International Film Festival Rotterdam",
+        "url": "https://iffr.com/en/iffr/2004/films/last-life-in-the-universe"
+      },
+      {
+        "id": "s1",
+        "title": "Last Life in the Universe",
+        "publisher": "Irish Film Institute",
+        "url": "https://ifi.ie/film/last-life-in-the-universe/"
+      },
+      {
+        "id": "s3",
+        "title": "Stop Making Sense: Pen-ek Ratanaruang's Last Life in the Universe",
+        "publisher": "MUBI Notebook",
+        "url": "https://mubi.com/nl/notebook/posts/stop-making-sense-pen-ek-ratanaruang-s-last-life-in-the-universe"
+      },
+      {
+        "id": "s4",
+        "title": "Review: Last Life in the Universe",
+        "publisher": "Slant Magazine",
+        "url": "https://www.slantmagazine.com/film/last-life-in-the-universe/"
+      },
+      {
+        "id": "s5",
+        "title": "Last Life in the Universe เรื่องรัก น้อยนิด มหาศาล (2003)",
+        "publisher": "Asian Film Archive",
+        "url": "https://asianfilmarchive.org/event-calendar/last-life-in-the-universe-2003/"
+      },
+      {
+        "id": "s6",
+        "title": "The Last Life in the Universe",
+        "publisher": "Thessaloniki Film Festival",
+        "url": "https://filmfestival.gr/en/tiff/films/the-last-life-in-the-universe/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "lastlife-language",
+        "area": "sound",
+        "prompt": {
+          "en": "The relationship unfolds through Thai, Japanese and English. What would you test in a new production exercise?",
+          "nb": "Relasjonen utvikles gjennom thai, japansk og engelsk. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "La relation se développe en thaï, japonais et anglais. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "A relação desenvolve-se em tailandês, japonês e inglês. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test intelligibility and misunderstandings with language advisers",
+              "nb": "Prøv forståelighet og misforståelser med språkrådgivere",
+              "fr": "Tester intelligibilité et malentendus avec des conseillers linguistiques",
+              "pt": "Testar inteligibilidade e mal-entendidos com consultores linguísticos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Translate every line into one spoken language",
+              "nb": "Oversett alle replikker til ett talespråk",
+              "fr": "Traduire toutes les répliques dans une seule langue parlée",
+              "pt": "Traduzir todas as falas para uma língua falada"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The relationship unfolds through Thai, Japanese and English. In a hypothetical exercise: Test intelligibility and misunderstandings with language advisers.",
+          "nb": "Relasjonen utvikles gjennom thai, japansk og engelsk. I en tenkt øvelse: Prøv forståelighet og misforståelser med språkrådgivere.",
+          "fr": "La relation se développe en thaï, japonais et anglais. Dans un exercice fictif : Tester intelligibilité et malentendus avec des conseillers linguistiques.",
+          "pt": "A relação desenvolve-se em tailandês, japonês e inglês. Num exercício hipotético: Testar inteligibilidade e mal-entendidos com consultores linguísticos."
+        },
+        "sourceIds": [
+          "s0",
+          "s5"
+        ]
+      },
+      {
+        "id": "lastlife-space",
+        "area": "camera",
+        "prompt": {
+          "en": "The contrast between order and disorder shapes the shared space. What would you test in a new production exercise?",
+          "nb": "Kontrasten mellom orden og uorden former det felles rommet. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Le contraste entre ordre et désordre façonne l’espace commun. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "O contraste entre ordem e desordem molda o espaço partilhado. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test contrasting prop arrangements in identical frames",
+              "nb": "Prøv kontrasterende rekvisittplassering i identiske utsnitt",
+              "fr": "Tester des accessoires disposés différemment dans des cadres identiques",
+              "pt": "Testar arranjos contrastantes de adereços em quadros idênticos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Give both characters identical rooms",
+              "nb": "Gi begge karakterene identiske rom",
+              "fr": "Donner aux deux personnages des pièces identiques",
+              "pt": "Dar a ambas as personagens espaços idênticos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The contrast between order and disorder shapes the shared space. In a hypothetical exercise: Test contrasting prop arrangements in identical frames.",
+          "nb": "Kontrasten mellom orden og uorden former det felles rommet. I en tenkt øvelse: Prøv kontrasterende rekvisittplassering i identiske utsnitt.",
+          "fr": "Le contraste entre ordre et désordre façonne l’espace commun. Dans un exercice fictif : Tester des accessoires disposés différemment dans des cadres identiques.",
+          "pt": "O contraste entre ordem e desordem molda o espaço partilhado. Num exercício hipotético: Testar arranjos contrastantes de adereços em quadros idênticos."
+        },
+        "sourceIds": [
+          "s1",
+          "s6"
+        ]
+      },
+      {
+        "id": "lastlife-time",
+        "area": "research",
+        "prompt": {
+          "en": "Temporal transitions resist conventional explanatory closure. What would you test in a new production exercise?",
+          "nb": "Tidsovergangene motstår konvensjonell forklarende avslutning. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Les transitions temporelles résistent à une clôture explicative classique. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "As transições temporais resistem a um fecho explicativo convencional. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Add a date caption to every shot",
+              "nb": "Legg en datotekst på hvert bilde",
+              "fr": "Ajouter une date à chaque plan",
+              "pt": "Adicionar uma data a cada plano"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare two scene orders and track viewer inference",
+              "nb": "Sammenlign to scenerekkefølger og kartlegg seerens slutninger",
+              "fr": "Comparer deux ordres de scènes et les inférences du public",
+              "pt": "Comparar duas ordens de cenas e inferências do público"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Temporal transitions resist conventional explanatory closure. In a hypothetical exercise: Compare two scene orders and track viewer inference.",
+          "nb": "Tidsovergangene motstår konvensjonell forklarende avslutning. I en tenkt øvelse: Sammenlign to scenerekkefølger og kartlegg seerens slutninger.",
+          "fr": "Les transitions temporelles résistent à une clôture explicative classique. Dans un exercice fictif : Comparer deux ordres de scènes et les inférences du public.",
+          "pt": "As transições temporais resistem a um fecho explicativo convencional. Num exercício hipotético: Comparar duas ordens de cenas e inferências do público."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_unknown_pleasures_2002",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Digital texture, compact production and exhibition transfer",
+      "nb": "Digital tekstur, konsentrert produksjon og visningsoverføring",
+      "fr": "Texture numérique, production légère et transfert de projection",
+      "pt": "Textura digital, produção compacta e transferência de exibição"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "Attack of the zeros and ones: the early years of digital cinema",
+        "publisher": "BFI Sight and Sound",
+        "url": "https://www.bfi.org.uk/sight-and-sound/features/attack-zeros-ones-early-years-digital-cinema-told-david-lynch-miranda-july-michael-mann-more"
+      },
+      {
+        "id": "s2",
+        "title": "An Interview with Jia Zhangke",
+        "publisher": "Senses of Cinema",
+        "url": "https://www.sensesofcinema.com/2004/feature-articles/jia_zhangke/"
+      },
+      {
+        "id": "s3",
+        "title": "Interview: Jia Zhang-ke on Ash Is Purest White and the Evolution of China",
+        "publisher": "Slant Magazine",
+        "url": "https://www.slantmagazine.com/film/interview-jia-zhang-ke-on-ash-is-purest-white-censorship-and-the-evolution-of-china/"
+      },
+      {
+        "id": "s4",
+        "title": "Jia Zhangke's Hometown Trilogy: Xiao Wu, Platform, Unknown Pleasures",
+        "publisher": "University of California open monograph edition",
+        "url": "https://escholarship.org/content/qt02x9977w/qt02x9977w.pdf"
+      },
+      {
+        "id": "s5",
+        "title": "Unknown Pleasures",
+        "publisher": "Eye Filmmuseum",
+        "url": "https://www.eyefilm.nl/en/whats-on/unknown-pleasures/91853"
+      }
+    ],
+    "questions": [
+      {
+        "id": "unknownpleasures-texture",
+        "area": "camera",
+        "prompt": {
+          "en": "Jia describes DV as an aesthetic choice rather than merely a cheap substitute. What would you test in a new production exercise?",
+          "nb": "Jia beskriver DV som et estetisk valg, ikke bare en billig erstatning. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Jia décrit la DV comme choix esthétique et pas seulement économique. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Jia descreve DV como escolha estética, não apenas económica. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare digital texture in different natural light conditions",
+              "nb": "Sammenlign digital tekstur under ulike naturlige lysforhold",
+              "fr": "Comparer la texture numérique sous différentes lumières naturelles",
+              "pt": "Comparar textura digital sob diferentes condições de luz natural"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Apply film grain before assessing the images",
+              "nb": "Legg på filmkorn før bildene vurderes",
+              "fr": "Appliquer du grain avant d’évaluer les images",
+              "pt": "Aplicar grão antes de avaliar as imagens"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Jia describes DV as an aesthetic choice rather than merely a cheap substitute. In a hypothetical exercise: Compare digital texture in different natural light conditions.",
+          "nb": "Jia beskriver DV som et estetisk valg, ikke bare en billig erstatning. I en tenkt øvelse: Sammenlign digital tekstur under ulike naturlige lysforhold.",
+          "fr": "Jia décrit la DV comme choix esthétique et pas seulement économique. Dans un exercice fictif : Comparer la texture numérique sous différentes lumières naturelles.",
+          "pt": "Jia descreve DV como escolha estética, não apenas económica. Num exercício hipotético: Comparar textura digital sob diferentes condições de luz natural."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "unknownpleasures-schedule",
+        "area": "research",
+        "prompt": {
+          "en": "Jia reports a nineteen-day shoot and values digital proximity to performers. What would you test in a new production exercise?",
+          "nb": "Jia beskriver nitten opptaksdager og verdsetter digital nærhet til utøverne. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Jia évoque dix-neuf jours de tournage et la proximité numérique des interprètes. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Jia refere dezanove dias de rodagem e valoriza a proximidade digital aos intérpretes. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan compact rehearsals and locations with contingency time",
+              "nb": "Planlegg konsentrerte prøver og stedsopptak med reservetid",
+              "fr": "Prévoir répétitions et lieux dans un calendrier compact avec marge",
+              "pt": "Planear ensaios e locais num calendário compacto com margem"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Replicate nineteen days regardless of script size",
+              "nb": "Kopier nitten dager uansett manusomfang",
+              "fr": "Copier dix-neuf jours quelle que soit la taille du scénario",
+              "pt": "Copiar dezanove dias independentemente do argumento"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Jia reports a nineteen-day shoot and values digital proximity to performers. In a hypothetical exercise: Plan compact rehearsals and locations with contingency time.",
+          "nb": "Jia beskriver nitten opptaksdager og verdsetter digital nærhet til utøverne. I en tenkt øvelse: Planlegg konsentrerte prøver og stedsopptak med reservetid.",
+          "fr": "Jia évoque dix-neuf jours de tournage et la proximité numérique des interprètes. Dans un exercice fictif : Prévoir répétitions et lieux dans un calendrier compact avec marge.",
+          "pt": "Jia refere dezanove dias de rodagem e valoriza a proximidade digital aos intérpretes. Num exercício hipotético: Planear ensaios e locais num calendário compacto com margem."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "unknownpleasures-transfer",
+        "area": "camera",
+        "prompt": {
+          "en": "The dossier distinguishes digital capture, colour adjustment and later film presentation. What would you test in a new production exercise?",
+          "nb": "Dokumentasjonen skiller digitalt opptak, fargejustering og senere filmvisning. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Le dossier distingue capture numérique, réglage couleur et projection sur pellicule. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "O dossiê distingue captação digital, ajuste de cor e projeção em película. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Infer the original camera from a 35 mm print",
+              "nb": "Utled originalkameraet fra en 35 mm-kopi",
+              "fr": "Déduire la caméra originale d’une copie 35 mm",
+              "pt": "Deduzir a câmara original de uma cópia de 35 mm"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Track acquisition, intermediate and exhibition formats separately",
+              "nb": "Registrer opptaks-, mellom- og visningsformater separat",
+              "fr": "Consigner séparément formats de capture, intermédiaires et de projection",
+              "pt": "Registar separadamente formatos de captação, intermédios e de exibição"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The dossier distinguishes digital capture, colour adjustment and later film presentation. In a hypothetical exercise: Track acquisition, intermediate and exhibition formats separately.",
+          "nb": "Dokumentasjonen skiller digitalt opptak, fargejustering og senere filmvisning. I en tenkt øvelse: Registrer opptaks-, mellom- og visningsformater separat.",
+          "fr": "Le dossier distingue capture numérique, réglage couleur et projection sur pellicule. Dans un exercice fictif : Consigner séparément formats de capture, intermédiaires et de projection.",
+          "pt": "O dossiê distingue captação digital, ajuste de cor e projeção em película. Num exercício hipotético: Registar separadamente formatos de captação, intermédios e de exibição."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_shiri_1999",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Budget provenance, revision and department coordination",
+      "nb": "Budsjettkilder, manusrevisjon og fagkoordinering",
+      "fr": "Provenance budgétaire, réécriture et coordination des équipes",
+      "pt": "Proveniência orçamental, revisão e coordenação de equipas"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "SHIRI (1999)",
+        "publisher": "Korean Film Council / KoBiz",
+        "url": "https://www.koreanfilm.or.kr/eng/films/index/filmsView.jsp?category=ALL&mode=INDEX_FILMS_LIST&movieCd=19990084&pageIndex=1&pageRowSize=10&s_genre=ALL&searchKeyword=SHIRI&searchType=ALL&strMenuId=010401"
+      },
+      {
+        "id": "s1",
+        "title": "Investment & Distribution Structure in Korean Film Industry",
+        "publisher": "Korean Film Council / KoBiz",
+        "url": "https://www.koreanfilm.or.kr/eng/news/ko_pick.jsp?blbdComCd=601029&mode=VIEW&pageIndex=1&pageRowSize=10&seq=98"
+      },
+      {
+        "id": "s2",
+        "title": "A Look Back at Shiri – Korea's International Breakthrough 26 Years On",
+        "publisher": "Korean Film Council / KoBiz",
+        "url": "https://www.koreanfilm.or.kr/eng/news/ko_pick.jsp?blbdComCd=601029&mode=VIEW&pageIndex=1&pageRowSize=10&seq=144"
+      },
+      {
+        "id": "s3",
+        "title": "KANG Jekyu",
+        "publisher": "Korean Film Council / KoBiz",
+        "url": "https://www.koreanfilm.or.kr/eng/films/index/peopleView.jsp?peopleCd=10000854"
+      },
+      {
+        "id": "s4",
+        "title": "A Korean Detente",
+        "publisher": "Los Angeles Times",
+        "url": "https://www.latimes.com/archives/la-xpm-2002-feb-08-et-matsumoto8-story.html"
+      },
+      {
+        "id": "s5",
+        "title": "Samsung Research Institute analyzes five reasons for Shiri's success",
+        "publisher": "Yonhap News Agency",
+        "url": "https://www.yna.co.kr/view/AKR19990309003000002"
+      },
+      {
+        "id": "s6",
+        "title": "The people who made Shiri",
+        "publisher": "Seoul Shinmun",
+        "url": "https://www.seoul.co.kr/news/seoulPrintNew.php?id=19990306013003"
+      },
+      {
+        "id": "s8",
+        "title": "Shiri (SHIRI)",
+        "publisher": "Korean Cinematheque film database",
+        "url": "https://www.cinematheque.co.kr/cinema/19990084"
+      },
+      {
+        "id": "s10",
+        "title": "The 36th Daejong Film Awards ceremony",
+        "publisher": "The Korea Economic Daily",
+        "url": "https://www.hankyung.com/article/1999040900101"
+      }
+    ],
+    "questions": [
+      {
+        "id": "shiri-budget",
+        "area": "research",
+        "prompt": {
+          "en": "Reported production costs differ across industry sources. What would you test in a new production exercise?",
+          "nb": "Rapporterte produksjonskostnader varierer mellom bransjekilder. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Les coûts rapportés diffèrent selon les sources professionnelles. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Os custos relatados divergem entre fontes profissionais. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record each estimate with currency, scope and source",
+              "nb": "Registrer hvert anslag med valuta, omfang og kilde",
+              "fr": "Consigner chaque estimation avec devise, périmètre et source",
+              "pt": "Registar cada estimativa com moeda, âmbito e fonte"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Average estimates into an audited total",
+              "nb": "Beregn gjennomsnittet som revidert totalbeløp",
+              "fr": "Moyenner les estimations en un total audité",
+              "pt": "Calcular a média como total auditado"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Reported production costs differ across industry sources. In a hypothetical exercise: Record each estimate with currency, scope and source.",
+          "nb": "Rapporterte produksjonskostnader varierer mellom bransjekilder. I en tenkt øvelse: Registrer hvert anslag med valuta, omfang og kilde.",
+          "fr": "Les coûts rapportés diffèrent selon les sources professionnelles. Dans un exercice fictif : Consigner chaque estimation avec devise, périmètre et source.",
+          "pt": "Os custos relatados divergem entre fontes profissionais. Num exercício hipotético: Registar cada estimativa com moeda, âmbito e fonte."
+        },
+        "sourceIds": [
+          "s1",
+          "s2",
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "shiri-revision",
+        "area": "research",
+        "prompt": {
+          "en": "A contemporary report describes extended screenplay revision and preparation. What would you test in a new production exercise?",
+          "nb": "En samtidig reportasje beskriver langvarig manusrevisjon og forberedelse. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Un article contemporain décrit une longue réécriture et préparation. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Uma reportagem contemporânea descreve revisão prolongada e preparação. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare dated draft changes against production requirements",
+              "nb": "Sammenlign daterte manusendringer med produksjonskrav",
+              "fr": "Comparer les versions datées aux exigences de production",
+              "pt": "Comparar versões datadas com requisitos de produção"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Lock the first outline before department input",
+              "nb": "Lås første disposisjon før fagavdelingenes innspill",
+              "fr": "Verrouiller le premier plan avant avis des équipes",
+              "pt": "Fixar o primeiro esboço antes do contributo das equipas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "A contemporary report describes extended screenplay revision and preparation. In a hypothetical exercise: Compare dated draft changes against production requirements.",
+          "nb": "En samtidig reportasje beskriver langvarig manusrevisjon og forberedelse. I en tenkt øvelse: Sammenlign daterte manusendringer med produksjonskrav.",
+          "fr": "Un article contemporain décrit une longue réécriture et préparation. Dans un exercice fictif : Comparer les versions datées aux exigences de production.",
+          "pt": "Uma reportagem contemporânea descreve revisão prolongada e preparação. Num exercício hipotético: Comparar versões datadas com requisitos de produção."
+        },
+        "sourceIds": [
+          "s5",
+          "s0"
+        ]
+      },
+      {
+        "id": "shiri-credits",
+        "area": "research",
+        "prompt": {
+          "en": "The sources distinguish practical effects, digital imagery, editing and action departments. What would you test in a new production exercise?",
+          "nb": "Kildene skiller praktiske effekter, digitale bilder, klipp og actionavdeling. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Les sources distinguent effets pratiques, images numériques, montage et action. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "As fontes distinguem efeitos práticos, imagens digitais, montagem e ação. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assign every effect credit to the director",
+              "nb": "Tildel alle effektkrediteringer til regissøren",
+              "fr": "Attribuer tous les effets au réalisateur",
+              "pt": "Atribuir todos os créditos de efeitos ao realizador"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Assign responsibilities and review handoffs in a safe mock production",
+              "nb": "Fordel ansvar og gjennomgå overleveringer i en trygg modellproduksjon",
+              "fr": "Répartir responsabilités et transmissions dans une production simulée sûre",
+              "pt": "Distribuir responsabilidades e passagens numa produção simulada segura"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The sources distinguish practical effects, digital imagery, editing and action departments. In a hypothetical exercise: Assign responsibilities and review handoffs in a safe mock production.",
+          "nb": "Kildene skiller praktiske effekter, digitale bilder, klipp og actionavdeling. I en tenkt øvelse: Fordel ansvar og gjennomgå overleveringer i en trygg modellproduksjon.",
+          "fr": "Les sources distinguent effets pratiques, images numériques, montage et action. Dans un exercice fictif : Répartir responsabilités et transmissions dans une production simulée sûre.",
+          "pt": "As fontes distinguem efeitos práticos, imagens digitais, montagem e ação. Num exercício hipotético: Distribuir responsabilidades e passagens numa produção simulada segura."
+        },
+        "sourceIds": [
+          "s6",
+          "s8",
+          "s10"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_a_hero_2021",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Character backstories, rehearsal and large-format framing",
+      "nb": "Karakterbakgrunn, prøver og storformatutsnitt",
+      "fr": "Passé des personnages, répétitions et cadre grand format",
+      "pt": "Histórias das personagens, ensaios e enquadramento de grande formato"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "GHAHREMAN (A HERO)",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/ghahreman/"
+      },
+      {
+        "id": "s1",
+        "title": "A Hero — Cannes press kit",
+        "publisher": "Memento Production / Asghar Farhadi Production",
+        "url": "https://medias.unifrance.org/medias/68/178/242244/presse/a-hero-presskit-english.pdf"
+      },
+      {
+        "id": "s2",
+        "title": "ARRI equipment behind the prized films at Cannes",
+        "publisher": "ARRI",
+        "url": "https://www.arri.com/news-en/arri-equipment-behind-the-prized-films-at-cannes-"
+      },
+      {
+        "id": "s3",
+        "title": "Director Asghar Farhadi discusses A Hero",
+        "publisher": "Directors Guild of America",
+        "url": "https://www.dga.org/events/2022/january2022/gcs_ahero_1120"
+      }
+    ],
+    "questions": [
+      {
+        "id": "ahero-backstory",
+        "area": "research",
+        "prompt": {
+          "en": "Farhadi describes constructing unseen character histories during preparation. What would you test in a new production exercise?",
+          "nb": "Farhadi beskriver utvikling av usynlige karakterhistorier under forberedelsene. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Farhadi décrit la construction de passés invisibles pendant la préparation. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Farhadi descreve a construção de passados invisíveis durante a preparação. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Build character timelines and test conflicting motivations",
+              "nb": "Bygg karaktertidslinjer og prøv motstridende motivasjoner",
+              "fr": "Construire des chronologies et tester des motivations contradictoires",
+              "pt": "Construir cronologias e testar motivações contraditórias"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Put every backstory into spoken exposition",
+              "nb": "Legg all bakgrunnshistorie inn i forklarende dialog",
+              "fr": "Mettre tout le passé dans des dialogues explicatifs",
+              "pt": "Colocar todo o passado em exposição falada"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Farhadi describes constructing unseen character histories during preparation. In a hypothetical exercise: Build character timelines and test conflicting motivations.",
+          "nb": "Farhadi beskriver utvikling av usynlige karakterhistorier under forberedelsene. I en tenkt øvelse: Bygg karaktertidslinjer og prøv motstridende motivasjoner.",
+          "fr": "Farhadi décrit la construction de passés invisibles pendant la préparation. Dans un exercice fictif : Construire des chronologies et tester des motivations contradictoires.",
+          "pt": "Farhadi descreve a construção de passados invisíveis durante a preparação. Num exercício hipotético: Construir cronologias e testar motivações contraditórias."
+        },
+        "sourceIds": [
+          "s3",
+          "s0"
+        ]
+      },
+      {
+        "id": "ahero-rehearsal",
+        "area": "research",
+        "prompt": {
+          "en": "Farhadi describes extended rehearsal and actor-specific preparation. What would you test in a new production exercise?",
+          "nb": "Farhadi beskriver langvarige prøver og individuelt tilpasset skuespillerarbeid. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Farhadi décrit des répétitions prolongées et une préparation adaptée aux acteurs. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Farhadi descreve ensaios prolongados e preparação adaptada aos atores. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Design separate rehearsal tasks before a joint scene",
+              "nb": "Lag individuelle prøveoppgaver før en felles scene",
+              "fr": "Préparer des exercices distincts avant une scène commune",
+              "pt": "Criar exercícios distintos antes de uma cena conjunta"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use only a single table read for everyone",
+              "nb": "Bruk bare én felles leseprøve",
+              "fr": "Utiliser uniquement une lecture collective",
+              "pt": "Usar apenas uma leitura coletiva"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Farhadi describes extended rehearsal and actor-specific preparation. In a hypothetical exercise: Design separate rehearsal tasks before a joint scene.",
+          "nb": "Farhadi beskriver langvarige prøver og individuelt tilpasset skuespillerarbeid. I en tenkt øvelse: Lag individuelle prøveoppgaver før en felles scene.",
+          "fr": "Farhadi décrit des répétitions prolongées et une préparation adaptée aux acteurs. Dans un exercice fictif : Préparer des exercices distincts avant une scène commune.",
+          "pt": "Farhadi descreve ensaios prolongados e preparação adaptada aos atores. Num exercício hipotético: Criar exercícios distintos antes de uma cena conjunta."
+        },
+        "sourceIds": [
+          "s3",
+          "s1"
+        ]
+      },
+      {
+        "id": "ahero-frame",
+        "area": "camera",
+        "prompt": {
+          "en": "ARRI documents large-format capture while the press kit specifies widescreen delivery. What would you test in a new production exercise?",
+          "nb": "ARRI dokumenterer storformatopptak, mens pressematerialet angir bredformatvisning. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "ARRI documente la capture grand format, le dossier précise la diffusion panoramique. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "A ARRI documenta captação de grande formato e o dossier especifica exibição panorâmica. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat sensor size as identical to delivery ratio",
+              "nb": "Behandle sensorstørrelse som identisk med visningsformat",
+              "fr": "Confondre taille du capteur et rapport de diffusion",
+              "pt": "Confundir tamanho do sensor com proporção de exibição"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test group blocking in the intended delivery aspect ratio",
+              "nb": "Prøv gruppeplassering innenfor planlagt visningsformat",
+              "fr": "Tester le placement du groupe dans le format de diffusion prévu",
+              "pt": "Testar movimentos do grupo no formato de exibição previsto"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "ARRI documents large-format capture while the press kit specifies widescreen delivery. In a hypothetical exercise: Test group blocking in the intended delivery aspect ratio.",
+          "nb": "ARRI dokumenterer storformatopptak, mens pressematerialet angir bredformatvisning. I en tenkt øvelse: Prøv gruppeplassering innenfor planlagt visningsformat.",
+          "fr": "ARRI documente la capture grand format, le dossier précise la diffusion panoramique. Dans un exercice fictif : Tester le placement du groupe dans le format de diffusion prévu.",
+          "pt": "A ARRI documenta captação de grande formato e o dossier especifica exibição panorâmica. Num exercício hipotético: Testar movimentos do grupo no formato de exibição previsto."
+        },
+        "sourceIds": [
+          "s2",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_satantango_1994",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Circular adaptation, choreography and precomposed music",
+      "nb": "Sirkulær adaptasjon, koreografi og forhåndskomponert musikk",
+      "fr": "Adaptation circulaire, chorégraphie et musique précomposée",
+      "pt": "Adaptação circular, coreografia e música pré-composta"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "Sátántangó",
+        "publisher": "National Film Institute Hungary",
+        "url": "https://nfi.hu/alapfilmek-1/alapfilmek-filmek/jatekfilm/satantango.html"
+      },
+      {
+        "id": "s2",
+        "title": "Béla Tarr on Sátántangó at 30",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/interviews/bela-tarr-satantango-werckmeister-harmonies"
+      },
+      {
+        "id": "s3",
+        "title": "Interview: Béla Tarr, the Complete Works",
+        "publisher": "Film Comment",
+        "url": "https://www.filmcomment.com/interview-bela-tarr-the-complete-works/"
+      },
+      {
+        "id": "s4",
+        "title": "Waiting for the Prince – An Interview with Béla Tarr",
+        "publisher": "Senses of Cinema",
+        "url": "https://www.sensesofcinema.com/2001/feature-articles/tarr-2/"
+      },
+      {
+        "id": "s5",
+        "title": "Béla Tarr Interview",
+        "publisher": "DocNomads",
+        "url": "https://www.docnomads.eu/academic-board/43-the-docnomads-association-dna/news/365-bela-tarr-interview"
+      }
+    ],
+    "questions": [
+      {
+        "id": "satantango-structure",
+        "area": "research",
+        "prompt": {
+          "en": "Tarr retains the novel’s six-forward and six-back tango structure. What would you test in a new production exercise?",
+          "nb": "Tarr bevarer romanens tangostruktur med seks fram og seks tilbake. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Tarr conserve la structure de tango du roman, six pas avant et six arrière. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Tarr conserva a estrutura de tango do romance, seis passos à frente e seis atrás. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Chart repeated events from distinct viewpoints",
+              "nb": "Kartlegg gjentatte hendelser fra ulike synsvinkler",
+              "fr": "Cartographier les événements répétés selon différents points de vue",
+              "pt": "Mapear acontecimentos repetidos de diferentes pontos de vista"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Flatten all events into a single linear summary",
+              "nb": "Gjør alle hendelser til ett lineært sammendrag",
+              "fr": "Réduire tous les événements à un résumé linéaire",
+              "pt": "Reduzir todos os acontecimentos a um resumo linear"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Repeat scenes without changing audience knowledge",
+              "nb": "Gjenta scener uten å endre publikums kunnskap",
+              "fr": "Répéter les scènes sans modifier le savoir du public",
+              "pt": "Repetir cenas sem alterar o conhecimento do público"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Tarr retains the novel’s six-forward and six-back tango structure. In a hypothetical exercise: Chart repeated events from distinct viewpoints.",
+          "nb": "Tarr bevarer romanens tangostruktur med seks fram og seks tilbake. I en tenkt øvelse: Kartlegg gjentatte hendelser fra ulike synsvinkler.",
+          "fr": "Tarr conserve la structure de tango du roman, six pas avant et six arrière. Dans un exercice fictif : Cartographier les événements répétés selon différents points de vue.",
+          "pt": "Tarr conserva a estrutura de tango do romance, seis passos à frente e seis atrás. Num exercício hipotético: Mapear acontecimentos repetidos de diferentes pontos de vista."
+        },
+        "sourceIds": [
+          "s1",
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "satantango-movement",
+        "area": "camera",
+        "prompt": {
+          "en": "Tarr and Hranitzky describe rhythm constructed within sustained camera movement. What would you test in a new production exercise?",
+          "nb": "Tarr og Hranitzky beskriver rytme skapt i vedvarende kamerabevegelse. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Tarr et Hranitzky décrivent un rythme construit dans le mouvement prolongé. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Tarr e Hranitzky descrevem ritmo construído no movimento prolongado. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Make the take longer without a dramatic purpose",
+              "nb": "Gjør opptaket lengre uten dramatisk hensikt",
+              "fr": "Allonger la prise sans fonction dramatique",
+              "pt": "Alongar o plano sem função dramática"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse a continuous movement with actor and camera cues",
+              "nb": "Øv en sammenhengende bevegelse med signaler til skuespiller og kamera",
+              "fr": "Répéter un mouvement continu avec repères acteurs et caméra",
+              "pt": "Ensaiar um movimento contínuo com marcas de atores e câmara"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Leave camera timing entirely to the edit",
+              "nb": "Overlat all kameratiming til klippingen",
+              "fr": "Laisser tout le rythme caméra au montage",
+              "pt": "Deixar todo o ritmo da câmara para a montagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Tarr and Hranitzky describe rhythm constructed within sustained camera movement. In a hypothetical exercise: Rehearse a continuous movement with actor and camera cues.",
+          "nb": "Tarr og Hranitzky beskriver rytme skapt i vedvarende kamerabevegelse. I en tenkt øvelse: Øv en sammenhengende bevegelse med signaler til skuespiller og kamera.",
+          "fr": "Tarr et Hranitzky décrivent un rythme construit dans le mouvement prolongé. Dans un exercice fictif : Répéter un mouvement continu avec repères acteurs et caméra.",
+          "pt": "Tarr e Hranitzky descrevem ritmo construído no movimento prolongado. Num exercício hipotético: Ensaiar um movimento contínuo com marcas de atores e câmara."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "satantango-music",
+        "area": "sound",
+        "prompt": {
+          "en": "Mihály Víg’s precomposed themes could influence timing during filming. What would you test in a new production exercise?",
+          "nb": "Mihály Vígs forhåndskomponerte temaer kunne påvirke timing under opptak. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Les thèmes précomposés de Mihály Víg pouvaient orienter le rythme du tournage. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Os temas pré-compostos de Mihály Víg podiam orientar o ritmo da filmagem. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Add music only to hide continuity mistakes",
+              "nb": "Legg på musikk bare for å skjule kontinuitetsfeil",
+              "fr": "Ajouter la musique uniquement pour cacher les faux raccords",
+              "pt": "Adicionar música apenas para ocultar falhas de continuidade"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Require every action to hit the same beat",
+              "nb": "Krev at alle handlinger treffer samme taktslag",
+              "fr": "Exiger que chaque action tombe sur le même temps",
+              "pt": "Exigir que cada ação coincida com o mesmo tempo"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse with and without an original timing cue",
+              "nb": "Øv med og uten et originalt musikalsk tidssignal",
+              "fr": "Répéter avec et sans repère musical original",
+              "pt": "Ensaiar com e sem referência musical original"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Mihály Víg’s precomposed themes could influence timing during filming. In a hypothetical exercise: Rehearse with and without an original timing cue.",
+          "nb": "Mihály Vígs forhåndskomponerte temaer kunne påvirke timing under opptak. I en tenkt øvelse: Øv med og uten et originalt musikalsk tidssignal.",
+          "fr": "Les thèmes précomposés de Mihály Víg pouvaient orienter le rythme du tournage. Dans un exercice fictif : Répéter avec et sans repère musical original.",
+          "pt": "Os temas pré-compostos de Mihály Víg podiam orientar o ritmo da filmagem. Num exercício hipotético: Ensaiar com e sem referência musical original."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_4_months_3_weeks_and_2_days_2007",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Period reconstruction, offscreen space and sound editing",
+      "nb": "Perioderekonstruksjon, rom utenfor bildet og lydklipp",
+      "fr": "Reconstitution historique, hors-champ et montage sonore",
+      "pt": "Reconstrução histórica, fora de campo e montagem sonora"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "4 Months, 3 Weeks and 2 Days – English Press Kit",
+        "publisher": "Festival de Cannes",
+        "url": "https://cdn.festival-cannes.com/media/uploads/2023/03/63808.pdf"
+      },
+      {
+        "id": "s2",
+        "title": "10 Great Romanian New Wave Films",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-romanian-new-wave-films"
+      },
+      {
+        "id": "s4",
+        "title": "Cristian Mungiu's 4 Months, 3 Weeks and 2 Days",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/archives/issues/winter2008/4months.php"
+      },
+      {
+        "id": "s5",
+        "title": "Dana Bunescu: You Make Films Out of Need",
+        "publisher": "Films in Frame",
+        "url": "https://www.filmsinframe.com/en/interviews/dana-bunescu-editor/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "fourmonths-period",
+        "area": "research",
+        "prompt": {
+          "en": "The production dossier describes testimony-based writing and reconstruction of 1987 everyday life. What would you test in a new production exercise?",
+          "nb": "Produksjonsdokumentasjonen beskriver vitnebasert manus og rekonstruksjon av hverdagslivet i 1987. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Le dossier décrit une écriture issue de témoignages et la reconstitution du quotidien de 1987. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "O dossiê descreve escrita baseada em testemunhos e reconstrução do quotidiano de 1987. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Cross-check props and locations against period evidence",
+              "nb": "Kontroller rekvisitter og steder mot samtidige kilder",
+              "fr": "Vérifier accessoires et lieux avec des sources d’époque",
+              "pt": "Confrontar adereços e locais com fontes da época"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use modern objects if their colour matches",
+              "nb": "Bruk moderne gjenstander hvis fargen passer",
+              "fr": "Utiliser des objets modernes si la couleur convient",
+              "pt": "Usar objetos modernos se a cor corresponder"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat one testimony as complete historical proof",
+              "nb": "Behandle ett vitnesbyrd som fullstendig historisk bevis",
+              "fr": "Traiter un témoignage comme preuve historique complète",
+              "pt": "Tratar um testemunho como prova histórica completa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The production dossier describes testimony-based writing and reconstruction of 1987 everyday life. In a hypothetical exercise: Cross-check props and locations against period evidence.",
+          "nb": "Produksjonsdokumentasjonen beskriver vitnebasert manus og rekonstruksjon av hverdagslivet i 1987. I en tenkt øvelse: Kontroller rekvisitter og steder mot samtidige kilder.",
+          "fr": "Le dossier décrit une écriture issue de témoignages et la reconstitution du quotidien de 1987. Dans un exercice fictif : Vérifier accessoires et lieux avec des sources d’époque.",
+          "pt": "O dossiê descreve escrita baseada em testemunhos e reconstrução do quotidiano de 1987. Num exercício hipotético: Confrontar adereços e locais com fontes da época."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "fourmonths-offscreen",
+        "area": "camera",
+        "prompt": {
+          "en": "Mungiu describes deliberate single-position staging and the importance of offscreen space. What would you test in a new production exercise?",
+          "nb": "Mungiu beskriver bevisst iscenesettelse fra én posisjon og betydningen av rom utenfor bildet. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Mungiu décrit une mise en scène à position unique et l’importance du hors-champ. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Mungiu descreve encenação a partir de uma posição e importância do fora de campo. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Explain every unseen event in narration",
+              "nb": "Forklar alle usette hendelser med fortellerstemme",
+              "fr": "Expliquer chaque événement invisible en narration",
+              "pt": "Explicar cada acontecimento invisível em narração"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse a scene where reactions imply unseen activity",
+              "nb": "Øv en scene der reaksjoner antyder usett aktivitet",
+              "fr": "Répéter une scène où les réactions suggèrent une action invisible",
+              "pt": "Ensaiar uma cena em que reações sugerem atividade invisível"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Insert a close-up for every offscreen sound",
+              "nb": "Sett inn nærbilde for hver lyd utenfor bildet",
+              "fr": "Insérer un gros plan pour chaque son hors champ",
+              "pt": "Inserir um grande plano para cada som fora de campo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Mungiu describes deliberate single-position staging and the importance of offscreen space. In a hypothetical exercise: Rehearse a scene where reactions imply unseen activity.",
+          "nb": "Mungiu beskriver bevisst iscenesettelse fra én posisjon og betydningen av rom utenfor bildet. I en tenkt øvelse: Øv en scene der reaksjoner antyder usett aktivitet.",
+          "fr": "Mungiu décrit une mise en scène à position unique et l’importance du hors-champ. Dans un exercice fictif : Répéter une scène où les réactions suggèrent une action invisible.",
+          "pt": "Mungiu descreve encenação a partir de uma posição e importância do fora de campo. Num exercício hipotético: Ensaiar uma cena em que reações sugerem atividade invisível."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
+        ]
+      },
+      {
+        "id": "fourmonths-dinner",
+        "area": "sound",
+        "prompt": {
+          "en": "Bunescu describes detailed reconstruction of the dinner scene’s dialogue and foley. What would you test in a new production exercise?",
+          "nb": "Bunescu beskriver detaljert rekonstruksjon av middagsscenens dialog og foley. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Bunescu décrit la reconstruction détaillée des dialogues et bruitages du dîner. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Bunescu descreve reconstrução detalhada do diálogo e dos ruídos do jantar. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Replace conversation with continuous music",
+              "nb": "Erstatt samtalen med sammenhengende musikk",
+              "fr": "Remplacer la conversation par une musique continue",
+              "pt": "Substituir conversa por música contínua"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume a long take needs no sound editing",
+              "nb": "Anta at lange opptak ikke trenger lydklipp",
+              "fr": "Supposer qu’un plan long ne nécessite aucun montage sonore",
+              "pt": "Supor que um plano longo dispensa montagem sonora"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Build a dialogue and ambience edit preserving performance rhythm",
+              "nb": "Bygg dialog- og miljølydklipp som bevarer spillets rytme",
+              "fr": "Monter dialogues et ambiances en préservant le rythme du jeu",
+              "pt": "Montar diálogo e ambiente preservando o ritmo da atuação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Bunescu describes detailed reconstruction of the dinner scene’s dialogue and foley. In a hypothetical exercise: Build a dialogue and ambience edit preserving performance rhythm.",
+          "nb": "Bunescu beskriver detaljert rekonstruksjon av middagsscenens dialog og foley. I en tenkt øvelse: Bygg dialog- og miljølydklipp som bevarer spillets rytme.",
+          "fr": "Bunescu décrit la reconstruction détaillée des dialogues et bruitages du dîner. Dans un exercice fictif : Monter dialogues et ambiances en préservant le rythme du jeu.",
+          "pt": "Bunescu descreve reconstrução detalhada do diálogo e dos ruídos do jantar. Num exercício hipotético: Montar diálogo e ambiente preservando o ritmo da atuação."
+        },
+        "sourceIds": [
+          "s5",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_land_of_mine_2015",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Historical research, coastal daylight and offscreen suspense",
+      "nb": "Historisk research, kystlys og spenning utenfor bildet",
+      "fr": "Recherche historique, lumière côtière et suspense hors champ",
+      "pt": "Pesquisa histórica, luz costeira e suspense fora de campo"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Land of Mine",
+        "publisher": "Sony Pictures Classics",
+        "url": "https://www.sonyclassics.com/landofmine/"
+      },
+      {
+        "id": "s2",
+        "title": "Land of Mine",
+        "publisher": "European Film Academy",
+        "url": "https://www.europeanfilmawards.eu/efa-movie/land-of-mine/"
+      },
+      {
+        "id": "s7",
+        "title": "Know Thine Enemy",
+        "publisher": "Interview Magazine",
+        "url": "https://www.interviewmagazine.com/film/land-of-mine-martin-zandvliet"
+      },
+      {
+        "id": "s8",
+        "title": "Martin Zandvliet on Making the Explosive WWII Drama Land of Mine",
+        "publisher": "The Moveable Fest",
+        "url": "https://moveablefest.com/martin-zandvliet-land-of-mine/"
+      },
+      {
+        "id": "s9",
+        "title": "Land of Mine (Denmark)",
+        "publisher": "Golden Globes",
+        "url": "https://goldenglobes.com/articles/land-of-mine-denmark/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "landmine-history",
+        "area": "research",
+        "prompt": {
+          "en": "Zandvliet describes extensive research and the transformation of history into a close moral drama. What would you test in a new production exercise?",
+          "nb": "Zandvliet beskriver omfattende research og omforming av historie til et nært moralsk drama. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Zandvliet décrit une recherche approfondie et la transformation en drame moral intime. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Zandvliet descreve pesquisa extensa e a transformação da história em drama moral íntimo. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Keep documented facts separate from fictional character decisions",
+              "nb": "Skill dokumenterte fakta fra fiktive karaktervalg",
+              "fr": "Séparer les faits documentés des choix fictionnels des personnages",
+              "pt": "Separar factos documentados de decisões ficcionais das personagens"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat fictional dialogue as archival testimony",
+              "nb": "Behandle fiktiv dialog som arkivvitnesbyrd",
+              "fr": "Traiter le dialogue fictif comme témoignage d’archive",
+              "pt": "Tratar diálogo ficcional como testemunho de arquivo"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Simplify the research to a single moral conclusion",
+              "nb": "Forenkle researchen til én moralsk konklusjon",
+              "fr": "Réduire la recherche à une conclusion morale unique",
+              "pt": "Reduzir a pesquisa a uma única conclusão moral"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Zandvliet describes extensive research and the transformation of history into a close moral drama. In a hypothetical exercise: Keep documented facts separate from fictional character decisions.",
+          "nb": "Zandvliet beskriver omfattende research og omforming av historie til et nært moralsk drama. I en tenkt øvelse: Skill dokumenterte fakta fra fiktive karaktervalg.",
+          "fr": "Zandvliet décrit une recherche approfondie et la transformation en drame moral intime. Dans un exercice fictif : Séparer les faits documentés des choix fictionnels des personnages.",
+          "pt": "Zandvliet descreve pesquisa extensa e a transformação da história em drama moral íntimo. Num exercício hipotético: Separar factos documentados de decisões ficcionais das personagens."
+        },
+        "sourceIds": [
+          "s7",
+          "s8"
+        ]
+      },
+      {
+        "id": "landmine-daylight",
+        "area": "camera",
+        "prompt": {
+          "en": "The director describes the daylight coast and an actor-following camera. What would you test in a new production exercise?",
+          "nb": "Regissøren beskriver kystens dagslys og et kamera som følger skuespillerne. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Le réalisateur décrit la côte en lumière du jour et une caméra suivant les acteurs. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "O realizador descreve a costa à luz do dia e uma câmara que segue os atores. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore weather when scheduling matching scenes",
+              "nb": "Ignorer været ved planlegging av sammenhengende scener",
+              "fr": "Ignorer la météo en planifiant les scènes raccordées",
+              "pt": "Ignorar o tempo ao planear cenas ligadas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test exposure and continuity in changing coastal light",
+              "nb": "Prøv eksponering og kontinuitet i skiftende kystlys",
+              "fr": "Tester exposition et raccords sous une lumière côtière changeante",
+              "pt": "Testar exposição e continuidade sob luz costeira variável"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume daylight remains constant all day",
+              "nb": "Anta at dagslyset er konstant hele dagen",
+              "fr": "Supposer que la lumière du jour reste constante",
+              "pt": "Supor que a luz do dia permanece constante"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The director describes the daylight coast and an actor-following camera. In a hypothetical exercise: Test exposure and continuity in changing coastal light.",
+          "nb": "Regissøren beskriver kystens dagslys og et kamera som følger skuespillerne. I en tenkt øvelse: Prøv eksponering og kontinuitet i skiftende kystlys.",
+          "fr": "Le réalisateur décrit la côte en lumière du jour et une caméra suivant les acteurs. Dans un exercice fictif : Tester exposition et raccords sous une lumière côtière changeante.",
+          "pt": "O realizador descreve a costa à luz do dia e uma câmara que segue os atores. Num exercício hipotético: Testar exposição e continuidade sob luz costeira variável."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "landmine-suspense",
+        "area": "sound",
+        "prompt": {
+          "en": "Sea, birds and breathing form a field of suspense in the film. What would you test in a new production exercise?",
+          "nb": "Hav, fugler og pust skaper et spenningsfelt i filmen. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Mer, oiseaux et respiration forment un champ de suspense. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Mar, aves e respiração formam um campo de suspense. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use continuous loud music to signal danger",
+              "nb": "Bruk sammenhengende høy musikk for å signalisere fare",
+              "fr": "Utiliser une musique forte et continue pour signaler le danger",
+              "pt": "Usar música alta contínua para sinalizar perigo"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Silence every sound between dialogue lines",
+              "nb": "Fjern all lyd mellom replikkene",
+              "fr": "Supprimer tous les sons entre les répliques",
+              "pt": "Eliminar todos os sons entre falas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Mix ordinary environmental sounds around an unseen fictional event",
+              "nb": "Miks vanlige miljølyder rundt en usett fiktiv hendelse",
+              "fr": "Mixer des sons ordinaires autour d’un événement fictif invisible",
+              "pt": "Misturar sons quotidianos em torno de um acontecimento ficcional invisível"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Sea, birds and breathing form a field of suspense in the film. In a hypothetical exercise: Mix ordinary environmental sounds around an unseen fictional event.",
+          "nb": "Hav, fugler og pust skaper et spenningsfelt i filmen. I en tenkt øvelse: Miks vanlige miljølyder rundt en usett fiktiv hendelse.",
+          "fr": "Mer, oiseaux et respiration forment un champ de suspense. Dans un exercice fictif : Mixer des sons ordinaires autour d’un événement fictif invisible.",
+          "pt": "Mar, aves e respiração formam um campo de suspense. Num exercício hipotético: Misturar sons quotidianos em torno de um acontecimento ficcional invisível."
+        },
+        "sourceIds": [
+          "s9",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_psychobitch_2019",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Youth research, tailored rehearsal and winter locations",
+      "nb": "Ungdomsresearch, tilpassede prøver og vintersteder",
+      "fr": "Recherche sur la jeunesse, répétitions adaptées et lieux hivernaux",
+      "pt": "Pesquisa sobre juventude, ensaios adaptados e locais de inverno"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Psychobitch",
+        "publisher": "Nasjonalbiblioteket – Norsk filmografi",
+        "url": "https://www.nb.no/filmografi/show?id=16801718"
+      },
+      {
+        "id": "s1",
+        "title": "Psychobitch",
+        "publisher": "Filminvest",
+        "url": "https://filminvest.no/produksjoner/psychobitch/"
+      },
+      {
+        "id": "s3",
+        "title": "Generasjon Prestasjon gjør opprør",
+        "publisher": "Filmmagasinet",
+        "url": "https://www.filmmagasinet.no/2019/01/generasjon-prestasjon/"
+      },
+      {
+        "id": "s4",
+        "title": "Flinkisen og outsideren",
+        "publisher": "CINEMA",
+        "url": "https://cine.no/2018/12/19/flinkisen-og-outsideren/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "psychobitch-research",
+        "area": "research",
+        "prompt": {
+          "en": "Lund describes research into conformity and achievement pressure among young people. What would you test in a new production exercise?",
+          "nb": "Lund beskriver research på konformitet og prestasjonspress blant ungdom. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Lund décrit ses recherches sur le conformisme et la pression de réussite des jeunes. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Lund descreve pesquisa sobre conformismo e pressão de desempenho juvenil. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test fictional scenes against voluntary anonymised research",
+              "nb": "Prøv fiktive scener mot frivillig anonymisert research",
+              "fr": "Confronter les scènes fictives à une recherche volontaire anonymisée",
+              "pt": "Confrontar cenas fictícias com pesquisa voluntária anonimizada"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use a stereotype as the entire character profile",
+              "nb": "Bruk en stereotypi som hele karakterprofilen",
+              "fr": "Utiliser un stéréotype comme profil complet",
+              "pt": "Usar um estereótipo como perfil completo"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat a single interview as representative of all teenagers",
+              "nb": "Behandle ett intervju som representativt for alle ungdommer",
+              "fr": "Prendre un entretien pour représentatif de tous les adolescents",
+              "pt": "Tratar uma entrevista como representativa de todos os adolescentes"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Lund describes research into conformity and achievement pressure among young people. In a hypothetical exercise: Test fictional scenes against voluntary anonymised research.",
+          "nb": "Lund beskriver research på konformitet og prestasjonspress blant ungdom. I en tenkt øvelse: Prøv fiktive scener mot frivillig anonymisert research.",
+          "fr": "Lund décrit ses recherches sur le conformisme et la pression de réussite des jeunes. Dans un exercice fictif : Confronter les scènes fictives à une recherche volontaire anonymisée.",
+          "pt": "Lund descreve pesquisa sobre conformismo e pressão de desempenho juvenil. Num exercício hipotético: Confrontar cenas fictícias com pesquisa voluntária anonimizada."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "psychobitch-actors",
+        "area": "research",
+        "prompt": {
+          "en": "Lund describes contrasting precise and exploratory approaches among the lead actors. What would you test in a new production exercise?",
+          "nb": "Lund beskriver kontrasterende presise og utforskende metoder hos hovedskuespillerne. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Lund décrit des méthodes précises et exploratoires chez les acteurs principaux. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Lund descreve métodos precisos e exploratórios entre os protagonistas. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Avoid agreeing on the scene objective",
+              "nb": "Unngå å bli enige om scenens mål",
+              "fr": "Éviter de convenir de l’objectif de la scène",
+              "pt": "Evitar acordar o objetivo da cena"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Offer different preparation tasks leading to the same dramatic objective",
+              "nb": "Tilby ulike forberedelser som leder mot samme dramatiske mål",
+              "fr": "Proposer des préparations différentes vers le même objectif dramatique",
+              "pt": "Propor preparações diferentes para o mesmo objetivo dramático"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Force both actors to rehearse identically",
+              "nb": "Tving begge skuespillerne til identiske prøver",
+              "fr": "Imposer aux deux acteurs des répétitions identiques",
+              "pt": "Obrigar ambos os atores a ensaiar de forma idêntica"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Lund describes contrasting precise and exploratory approaches among the lead actors. In a hypothetical exercise: Offer different preparation tasks leading to the same dramatic objective.",
+          "nb": "Lund beskriver kontrasterende presise og utforskende metoder hos hovedskuespillerne. I en tenkt øvelse: Tilby ulike forberedelser som leder mot samme dramatiske mål.",
+          "fr": "Lund décrit des méthodes précises et exploratoires chez les acteurs principaux. Dans un exercice fictif : Proposer des préparations différentes vers le même objectif dramatique.",
+          "pt": "Lund descreve métodos precisos e exploratórios entre os protagonistas. Num exercício hipotético: Propor preparações diferentes para o mesmo objetivo dramático."
+        },
+        "sourceIds": [
+          "s3",
+          "s0"
+        ]
+      },
+      {
+        "id": "psychobitch-snow",
+        "area": "camera",
+        "prompt": {
+          "en": "Heavy snowfall in Gjøvik became both a logistical challenge and part of the atmosphere. What would you test in a new production exercise?",
+          "nb": "Kraftig snøfall i Gjøvik ble både en logistisk utfordring og del av atmosfæren. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Les fortes chutes de neige à Gjøvik ont créé un défi logistique et une atmosphère. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "A neve intensa em Gjøvik tornou-se desafio logístico e parte da atmosfera. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Ignore weather changes between matching scenes",
+              "nb": "Ignorer værendringer mellom sammenhengende scener",
+              "fr": "Ignorer les changements météo entre scènes raccordées",
+              "pt": "Ignorar mudanças do tempo entre cenas ligadas"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Keep outdoor schedules fixed regardless of access",
+              "nb": "Behold utendørsplanen uansett adkomst",
+              "fr": "Maintenir le planning extérieur quel que soit l’accès",
+              "pt": "Manter o calendário exterior independentemente do acesso"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan winter continuity, safe access and alternative shooting dates",
+              "nb": "Planlegg vinterkontinuitet, trygg adkomst og alternative opptaksdatoer",
+              "fr": "Prévoir raccords hivernaux, accès sûr et dates alternatives",
+              "pt": "Planear continuidade de inverno, acesso seguro e datas alternativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Heavy snowfall in Gjøvik became both a logistical challenge and part of the atmosphere. In a hypothetical exercise: Plan winter continuity, safe access and alternative shooting dates.",
+          "nb": "Kraftig snøfall i Gjøvik ble både en logistisk utfordring og del av atmosfæren. I en tenkt øvelse: Planlegg vinterkontinuitet, trygg adkomst og alternative opptaksdatoer.",
+          "fr": "Les fortes chutes de neige à Gjøvik ont créé un défi logistique et une atmosphère. Dans un exercice fictif : Prévoir raccords hivernaux, accès sûr et dates alternatives.",
+          "pt": "A neve intensa em Gjøvik tornou-se desafio logístico e parte da atmosfera. Num exercício hipotético: Planear continuidade de inverno, acesso seguro e datas alternativas."
+        },
+        "sourceIds": [
+          "s3",
+          "s4",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_homesick_2015",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Shame-led rewriting, consent and intimate visual form",
+      "nb": "Skambasert manusrevisjon, samtykke og intim bildeform",
+      "fr": "Réécriture autour de la honte, consentement et forme intime",
+      "pt": "Reescrita centrada na vergonha, consentimento e forma íntima"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Den selvdestruktive skammen",
+        "publisher": "CINEMA",
+        "url": "https://cine.no/2015/03/29/den-selvdestruktive-skammen/"
+      },
+      {
+        "id": "s1",
+        "title": "Homesick",
+        "publisher": "Maipo Film",
+        "url": "https://www.maipo.no/en/movies/homesick"
+      },
+      {
+        "id": "s7",
+        "title": "Analysen: De nærmeste (2015)",
+        "publisher": "Montages",
+        "url": "https://montages.no/2015/04/analysen-de-naermeste-2015/"
+      },
+      {
+        "id": "s8",
+        "title": "Blått Lerret web-TV: De nærmeste, Dirk Ohm og Den tilfeldige rockestjerne",
+        "publisher": "Rushprint",
+        "url": "https://rushprint.no/2015/04/blatt-lerret-web-tv-de-naermeste-dirk-ohm-og-den-tilfeldige-rockestjerne/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "homesick-rewrite",
+        "area": "research",
+        "prompt": {
+          "en": "Sewitsky and Wilmann describe a screenplay rebuilt around shame and unwantedness. What would you test in a new production exercise?",
+          "nb": "Sewitsky og Wilmann beskriver et manus omarbeidet rundt skam og følelsen av å være uønsket. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Sewitsky et Wilmann décrivent une réécriture centrée sur la honte et le rejet. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Sewitsky e Wilmann descrevem uma reescrita centrada na vergonha e rejeição. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Track how each scene changes the character’s sense of belonging",
+              "nb": "Kartlegg hvordan hver scene endrer karakterens tilhørighet",
+              "fr": "Suivre l’évolution du sentiment d’appartenance dans chaque scène",
+              "pt": "Acompanhar como cada cena altera o sentimento de pertença"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Explain every emotion in direct dialogue",
+              "nb": "Forklar alle følelser i direkte dialog",
+              "fr": "Expliquer chaque émotion par un dialogue direct",
+              "pt": "Explicar cada emoção em diálogo direto"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Rewrite scenes without considering character development",
+              "nb": "Skriv om scener uten å vurdere karakterutvikling",
+              "fr": "Réécrire sans considérer l’évolution du personnage",
+              "pt": "Reescrever sem considerar a evolução da personagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Sewitsky and Wilmann describe a screenplay rebuilt around shame and unwantedness. In a hypothetical exercise: Track how each scene changes the character’s sense of belonging.",
+          "nb": "Sewitsky og Wilmann beskriver et manus omarbeidet rundt skam og følelsen av å være uønsket. I en tenkt øvelse: Kartlegg hvordan hver scene endrer karakterens tilhørighet.",
+          "fr": "Sewitsky et Wilmann décrivent une réécriture centrée sur la honte et le rejet. Dans un exercice fictif : Suivre l’évolution du sentiment d’appartenance dans chaque scène.",
+          "pt": "Sewitsky e Wilmann descrevem uma reescrita centrada na vergonha e rejeição. Num exercício hipotético: Acompanhar como cada cena altera o sentimento de pertença."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "homesick-consent",
+        "area": "research",
+        "prompt": {
+          "en": "The filmmakers discuss differentiating difficult intimacy scenes and casting through trust. What would you test in a new production exercise?",
+          "nb": "Filmskaperne beskriver differensierte vanskelige intimitetsscener og casting basert på tillit. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Les cinéastes évoquent des scènes intimes différenciées et un casting fondé sur la confiance. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "As cineastas descrevem cenas íntimas diferenciadas e casting baseado na confiança. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume initial consent covers every later change",
+              "nb": "Anta at første samtykke dekker alle senere endringer",
+              "fr": "Supposer que le consentement initial couvre toute modification",
+              "pt": "Supor que o consentimento inicial cobre todas as alterações"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Agree boundaries and choreograph non-explicit scenes with ongoing consent",
+              "nb": "Avtal grenser og koreografer ikke-eksplisitte scener med løpende samtykke",
+              "fr": "Convenir des limites et chorégraphier des scènes non explicites avec consentement continu",
+              "pt": "Acordar limites e coreografar cenas não explícitas com consentimento contínuo"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Surprise performers to obtain an authentic reaction",
+              "nb": "Overrask utøverne for å få en autentisk reaksjon",
+              "fr": "Surprendre les interprètes pour obtenir une réaction authentique",
+              "pt": "Surpreender intérpretes para obter reação autêntica"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The filmmakers discuss differentiating difficult intimacy scenes and casting through trust. In a hypothetical exercise: Agree boundaries and choreograph non-explicit scenes with ongoing consent.",
+          "nb": "Filmskaperne beskriver differensierte vanskelige intimitetsscener og casting basert på tillit. I en tenkt øvelse: Avtal grenser og koreografer ikke-eksplisitte scener med løpende samtykke.",
+          "fr": "Les cinéastes évoquent des scènes intimes différenciées et un casting fondé sur la confiance. Dans un exercice fictif : Convenir des limites et chorégraphier des scènes non explicites avec consentement continu.",
+          "pt": "As cineastas descrevem cenas íntimas diferenciadas e casting baseado na confiança. Num exercício hipotético: Acordar limites e coreografar cenas não explícitas com consentimento contínuo."
+        },
+        "sourceIds": [
+          "s0",
+          "s8"
+        ]
+      },
+      {
+        "id": "homesick-visual",
+        "area": "camera",
+        "prompt": {
+          "en": "The production account contrasts close handheld pursuit with planned painterly images. What would you test in a new production exercise?",
+          "nb": "Produksjonsberetningen kontrasterer tett håndholdt kamera med planlagte maleriske bilder. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Le récit de production oppose proximité caméra portée et images picturales préparées. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "O relato de produção contrapõe proximidade de câmara à mão e imagens pictóricas planeadas. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose handheld movement for every scene regardless of meaning",
+              "nb": "Velg håndholdt bevegelse i alle scener uansett mening",
+              "fr": "Choisir la caméra portée pour toutes les scènes sans égard au sens",
+              "pt": "Escolher câmara à mão em todas as cenas independentemente do sentido"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat visual composition as independent of performance",
+              "nb": "Behandle bildekomposisjon som uavhengig av skuespillerspill",
+              "fr": "Traiter la composition comme indépendante du jeu",
+              "pt": "Tratar composição visual como independente da atuação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare handheld proximity and a composed static frame for one emotional beat",
+              "nb": "Sammenlign håndholdt nærhet og komponert statisk utsnitt for ett følelsesskifte",
+              "fr": "Comparer proximité caméra portée et cadre fixe composé pour un moment émotionnel",
+              "pt": "Comparar proximidade de câmara à mão e quadro fixo composto num momento emocional"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The production account contrasts close handheld pursuit with planned painterly images. In a hypothetical exercise: Compare handheld proximity and a composed static frame for one emotional beat.",
+          "nb": "Produksjonsberetningen kontrasterer tett håndholdt kamera med planlagte maleriske bilder. I en tenkt øvelse: Sammenlign håndholdt nærhet og komponert statisk utsnitt for ett følelsesskifte.",
+          "fr": "Le récit de production oppose proximité caméra portée et images picturales préparées. Dans un exercice fictif : Comparer proximité caméra portée et cadre fixe composé pour un moment émotionnel.",
+          "pt": "O relato de produção contrapõe proximidade de câmara à mão e imagens pictóricas planeadas. Num exercício hipotético: Comparar proximidade de câmara à mão e quadro fixo composto num momento emocional."
+        },
+        "sourceIds": [
+          "s0",
+          "s7"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_broker_2022",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Road locations, parallel rewriting and weather continuity",
+      "nb": "Reisesteder, parallell manusrevisjon og værkontinuitet",
+      "fr": "Lieux itinérants, réécriture parallèle et raccords météo",
+      "pt": "Locais de viagem, reescrita paralela e continuidade meteorológica"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "BROKER",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/broker/"
+      },
+      {
+        "id": "s4",
+        "title": "KOFIC Korean Cinema Today: Broker location-production report",
+        "publisher": "Korean Film Council / KoBiz",
+        "url": "https://koreanfilm.or.kr/eng/ebook/magazine/koreanCinemaToday41/1/index-1.html"
+      },
+      {
+        "id": "s5",
+        "title": "I Wanted the Story to Start in a Downpour and End With Waves: Hirokazu Kore-eda on Broker",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/118011-interview-hirokazu-kore-eda-broker/"
+      },
+      {
+        "id": "s6",
+        "title": "Filming Spots of the Movie Broker",
+        "publisher": "Korea Tourism Organization / VisitKorea",
+        "url": "https://english.visitkorea.or.kr/svc/whereToGo/hdrdslt/hdrdsltView.do?crsSn=393082"
+      }
+    ],
+    "questions": [
+      {
+        "id": "broker-route",
+        "area": "research",
+        "prompt": {
+          "en": "The production report describes overwhelmingly location-based filming along the Korean route. Which approach would you choose for a new production exercise?",
+          "nb": "Produksjonsrapporten beskriver overveiende stedsopptak langs den koreanske ruten. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le rapport décrit un tournage essentiellement en décors naturels le long du trajet coréen. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O relatório descreve filmagem sobretudo em locais reais ao longo do percurso coreano. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Group scenes by location while tracking story order",
+              "nb": "Grupper scener etter sted og hold styr på fortellingens rekkefølge",
+              "fr": "Regrouper les scènes par lieu en suivant l’ordre narratif",
+              "pt": "Agrupar cenas por local mantendo a ordem narrativa"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Shoot every scene in script order regardless of travel",
+              "nb": "Film alle scener i manusrekkefølge uansett reisevei",
+              "fr": "Tourner dans l’ordre du scénario malgré les déplacements",
+              "pt": "Filmar na ordem do argumento apesar das deslocações"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume all locations have identical logistical needs",
+              "nb": "Anta at alle steder har identiske logistikkbehov",
+              "fr": "Supposer que tous les lieux ont les mêmes besoins logistiques",
+              "pt": "Supor que todos os locais têm necessidades logísticas idênticas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The production report describes overwhelmingly location-based filming along the Korean route. A practical exercise would be to: Group scenes by location while tracking story order.",
+          "nb": "Produksjonsrapporten beskriver overveiende stedsopptak langs den koreanske ruten. En praktisk øvelse vil være å: Grupper scener etter sted og hold styr på fortellingens rekkefølge.",
+          "fr": "Le rapport décrit un tournage essentiellement en décors naturels le long du trajet coréen. Un exercice pratique consisterait à : Regrouper les scènes par lieu en suivant l’ordre narratif.",
+          "pt": "O relatório descreve filmagem sobretudo em locais reais ao longo do percurso coreano. Um exercício prático consistiria em: Agrupar cenas por local mantendo a ordem narrativa."
+        },
+        "sourceIds": [
+          "s4",
+          "s6"
+        ]
+      },
+      {
+        "id": "broker-rewrite",
+        "area": "research",
+        "prompt": {
+          "en": "Kore-eda describes editing and rewriting alongside shooting. Which approach would you choose for a new production exercise?",
+          "nb": "Kore-eda beskriver klipping og omskriving parallelt med opptak. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Kore-eda décrit le montage et la réécriture en parallèle du tournage. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Kore-eda descreve montagem e reescrita em paralelo com a filmagem. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Discard continuity notes when rewriting an ending",
+              "nb": "Kast kontinuitetsnotater når slutten omskrives",
+              "fr": "Écarter les notes de raccord en réécrivant la fin",
+              "pt": "Descartar notas de continuidade ao reescrever o final"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Review rough scenes before revising later performances",
+              "nb": "Gjennomgå grovklipp før senere skuespillerarbeid revideres",
+              "fr": "Revoir les scènes prémontées avant de modifier le jeu ultérieur",
+              "pt": "Rever cenas preliminares antes de rever atuações posteriores"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Prevent the editor from seeing unfinished material",
+              "nb": "Hindre klipperen i å se uferdig materiale",
+              "fr": "Empêcher le monteur de voir les images inachevées",
+              "pt": "Impedir o montador de ver material inacabado"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Kore-eda describes editing and rewriting alongside shooting. A practical exercise would be to: Review rough scenes before revising later performances.",
+          "nb": "Kore-eda beskriver klipping og omskriving parallelt med opptak. En praktisk øvelse vil være å: Gjennomgå grovklipp før senere skuespillerarbeid revideres.",
+          "fr": "Kore-eda décrit le montage et la réécriture en parallèle du tournage. Un exercice pratique consisterait à : Revoir les scènes prémontées avant de modifier le jeu ultérieur.",
+          "pt": "Kore-eda descreve montagem e reescrita em paralelo com a filmagem. Um exercício prático consistiria em: Rever cenas preliminares antes de rever atuações posteriores."
+        },
+        "sourceIds": [
+          "s5",
+          "s0"
+        ]
+      },
+      {
+        "id": "broker-weather",
+        "area": "camera",
+        "prompt": {
+          "en": "The director describes water and weather as part of the visual concept. Which approach would you choose for a new production exercise?",
+          "nb": "Regissøren beskriver vann og vær som del av bildekonseptet. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le réalisateur décrit l’eau et la météo comme éléments du concept visuel. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O realizador descreve água e tempo como parte do conceito visual. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Remove all water imagery before testing",
+              "nb": "Fjern alle vannmotiver før prøver",
+              "fr": "Supprimer toutes les images d’eau avant les essais",
+              "pt": "Eliminar todas as imagens de água antes dos testes"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat weather as irrelevant to visual continuity",
+              "nb": "Behandle vær som irrelevant for visuell kontinuitet",
+              "fr": "Traiter la météo comme sans effet sur les raccords",
+              "pt": "Tratar o tempo como irrelevante para a continuidade visual"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Track weather and reflections across connected scenes",
+              "nb": "Følg vær og refleksjoner i sammenhengende scener",
+              "fr": "Suivre météo et reflets entre scènes raccordées",
+              "pt": "Acompanhar tempo e reflexos entre cenas ligadas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The director describes water and weather as part of the visual concept. A practical exercise would be to: Track weather and reflections across connected scenes.",
+          "nb": "Regissøren beskriver vann og vær som del av bildekonseptet. En praktisk øvelse vil være å: Følg vær og refleksjoner i sammenhengende scener.",
+          "fr": "Le réalisateur décrit l’eau et la météo comme éléments du concept visuel. Un exercice pratique consisterait à : Suivre météo et reflets entre scènes raccordées.",
+          "pt": "O realizador descreve água e tempo como parte do conceito visual. Um exercício prático consistiria em: Acompanhar tempo e reflexos entre cenas ligadas."
+        },
+        "sourceIds": [
+          "s5",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_compartment_no_6_2021",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Confined-space staging, film economy and train sound",
+      "nb": "Iscenesettelse i trange rom, filmøkonomi og toglyd",
+      "fr": "Mise en scène exiguë, économie de pellicule et son ferroviaire",
+      "pt": "Encenação em espaço reduzido, economia de película e som ferroviário"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "HYTTI NRO 6 (COMPARTMENT NO. 6)",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/hytti-nro-6/"
+      },
+      {
+        "id": "s1",
+        "title": "Strangers make connections on a train in Juho Kuosmanen's Cannes-contending Compartment No.6, filmed in 2-perf on Kodak 35mm",
+        "publisher": "Kodak",
+        "url": "https://www.kodak.com/en/motion/blog-post/compartment-no-6/"
+      },
+      {
+        "id": "s2",
+        "title": "Compartment No. 6 — Cannes press kit",
+        "publisher": "Aamu Film Company / Festival de Cannes",
+        "url": "https://cdn.festival-cannes.com/media/uploads/2023/03/124120.pdf"
+      }
+    ],
+    "questions": [
+      {
+        "id": "compartment-space",
+        "area": "camera",
+        "prompt": {
+          "en": "The crew worked in cramped train interiors with a small team and concealed practical lighting. Which approach would you choose for a new production exercise?",
+          "nb": "Teamet arbeidet i trange toginteriører med liten stab og skjult praktisk belysning. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "L’équipe travaillait dans des intérieurs de train exigus avec des éclairages discrets. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A equipa trabalhou em interiores ferroviários apertados com iluminação discreta. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse camera and actor paths in a compartment mock-up",
+              "nb": "Øv kamera- og skuespillerbaner i en kupémodell",
+              "fr": "Répéter les déplacements dans une maquette de compartiment",
+              "pt": "Ensaiar movimentos de câmara e atores numa maquete de compartimento"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Schedule a full-size crew inside every compartment",
+              "nb": "Planlegg full stab inne i hver kupé",
+              "fr": "Prévoir toute l’équipe dans chaque compartiment",
+              "pt": "Planear toda a equipa dentro de cada compartimento"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose angles without testing available space",
+              "nb": "Velg vinkler uten å prøve tilgjengelig plass",
+              "fr": "Choisir les angles sans tester l’espace disponible",
+              "pt": "Escolher ângulos sem testar o espaço disponível"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The crew worked in cramped train interiors with a small team and concealed practical lighting. A practical exercise would be to: Rehearse camera and actor paths in a compartment mock-up.",
+          "nb": "Teamet arbeidet i trange toginteriører med liten stab og skjult praktisk belysning. En praktisk øvelse vil være å: Øv kamera- og skuespillerbaner i en kupémodell.",
+          "fr": "L’équipe travaillait dans des intérieurs de train exigus avec des éclairages discrets. Un exercice pratique consisterait à : Répéter les déplacements dans une maquette de compartiment.",
+          "pt": "A equipa trabalhou em interiores ferroviários apertados com iluminação discreta. Um exercício prático consistiria em: Ensaiar movimentos de câmara e atores numa maquete de compartimento."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "compartment-stock",
+        "area": "camera",
+        "prompt": {
+          "en": "Passi documents a two-perforation 35 mm capture workflow. Which approach would you choose for a new production exercise?",
+          "nb": "Passi dokumenterer en 35 mm-opptaksflyt med to perforeringer. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Passi documente une chaîne de capture 35 mm à deux perforations. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Passi documenta captação em 35 mm de duas perfurações. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume all 35 mm workflows consume equal stock",
+              "nb": "Anta at alle 35 mm-arbeidsflyter bruker like mye film",
+              "fr": "Supposer que tous les procédés 35 mm consomment autant",
+              "pt": "Supor que todos os processos de 35 mm consomem o mesmo"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare stock consumption and finishing requirements before choosing format",
+              "nb": "Sammenlign filmforbruk og etterarbeidskrav før formatvalg",
+              "fr": "Comparer consommation de pellicule et finition avant le choix",
+              "pt": "Comparar consumo de película e requisitos de acabamento antes da escolha"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Infer film consumption only from the runtime",
+              "nb": "Utled filmforbruk bare fra spilletiden",
+              "fr": "Déduire la consommation seulement de la durée du film",
+              "pt": "Deduzir consumo apenas da duração do filme"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Passi documents a two-perforation 35 mm capture workflow. A practical exercise would be to: Compare stock consumption and finishing requirements before choosing format.",
+          "nb": "Passi dokumenterer en 35 mm-opptaksflyt med to perforeringer. En praktisk øvelse vil være å: Sammenlign filmforbruk og etterarbeidskrav før formatvalg.",
+          "fr": "Passi documente une chaîne de capture 35 mm à deux perforations. Un exercice pratique consisterait à : Comparer consommation de pellicule et finition avant le choix.",
+          "pt": "Passi documenta captação em 35 mm de duas perfurações. Um exercício prático consistiria em: Comparar consumo de película e requisitos de acabamento antes da escolha."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "compartment-sound",
+        "area": "sound",
+        "prompt": {
+          "en": "The press kit distinguishes the confined setting from the Dolby Atmos presentation format. Which approach would you choose for a new production exercise?",
+          "nb": "Pressematerialet skiller det trange miljøet fra Dolby Atmos-visningsformatet. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le dossier distingue le décor exigu du format de diffusion Dolby Atmos. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O dossier distingue o espaço apertado do formato de exibição Dolby Atmos. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Infer the recording microphones from the exhibition format",
+              "nb": "Utled opptaksmikrofoner fra visningsformatet",
+              "fr": "Déduire les microphones du format de diffusion",
+              "pt": "Deduzir microfones do formato de exibição"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Erase all carriage ambience to simplify the mix",
+              "nb": "Fjern all toglyd for å forenkle miksen",
+              "fr": "Effacer toute ambiance du train pour simplifier le mix",
+              "pt": "Eliminar todo ambiente ferroviário para simplificar a mistura"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test dialogue against layered carriage ambience",
+              "nb": "Prøv dialog mot lagdelt kupé- og toglyd",
+              "fr": "Tester les dialogues avec des couches d’ambiance ferroviaire",
+              "pt": "Testar diálogo com camadas de ambiente ferroviário"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The press kit distinguishes the confined setting from the Dolby Atmos presentation format. A practical exercise would be to: Test dialogue against layered carriage ambience.",
+          "nb": "Pressematerialet skiller det trange miljøet fra Dolby Atmos-visningsformatet. En praktisk øvelse vil være å: Prøv dialog mot lagdelt kupé- og toglyd.",
+          "fr": "Le dossier distingue le décor exigu du format de diffusion Dolby Atmos. Un exercice pratique consisterait à : Tester les dialogues avec des couches d’ambiance ferroviaire.",
+          "pt": "O dossier distingue o espaço apertado do formato de exibição Dolby Atmos. Um exercício prático consistiria em: Testar diálogo com camadas de ambiente ferroviário."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_eight_mountains_2022",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Mountain logistics, vertical composition and block production",
+      "nb": "Fjellogistikk, vertikal komposisjon og blokkproduksjon",
+      "fr": "Logistique de montagne, composition verticale et tournage par blocs",
+      "pt": "Logística de montanha, composição vertical e filmagem por blocos"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "LE OTTO MONTAGNE (THE EIGHT MOUNTAINS)",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/le-otto-montagne/"
+      },
+      {
+        "id": "s1",
+        "title": "MOUNTAIN MEN Ruben Impens on The Eight Mountains",
+        "publisher": "Belgian Society of Cinematographers",
+        "url": "https://www.sbcine.be/?p=12053"
+      },
+      {
+        "id": "s4",
+        "title": "Shooting at 3,300 Meters: An interview with the creators of The Eight Mountains",
+        "publisher": "Screen Slate",
+        "url": "https://www.screenslate.com/articles/shooting-3300-meters-interview-creators-eight-mountains"
+      }
+    ],
+    "questions": [
+      {
+        "id": "eightmountains-access",
+        "area": "research",
+        "prompt": {
+          "en": "The filmmakers describe demanding mountain access and extended location production. Which approach would you choose for a new production exercise?",
+          "nb": "Filmskaperne beskriver krevende fjelladkomst og omfattende stedsopptak. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les cinéastes décrivent des accès difficiles et un tournage prolongé en montagne. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os cineastas descrevem acessos difíceis e filmagem prolongada na montanha. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan safe access, weather margins and crew accommodation",
+              "nb": "Planlegg trygg adkomst, værmarginer og innkvartering",
+              "fr": "Prévoir accès sûr, marge météo et hébergement",
+              "pt": "Planear acesso seguro, margem meteorológica e alojamento"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Schedule every high-altitude scene without weather margins",
+              "nb": "Planlegg alle høyfjellsscener uten værmargin",
+              "fr": "Programmer toutes les scènes d’altitude sans marge météo",
+              "pt": "Planear todas as cenas de altitude sem margem meteorológica"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume road access for every mountain location",
+              "nb": "Anta veiadkomst til alle fjellsteder",
+              "fr": "Supposer un accès routier à chaque lieu de montagne",
+              "pt": "Supor acesso rodoviário a todos os locais de montanha"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The filmmakers describe demanding mountain access and extended location production. A practical exercise would be to: Plan safe access, weather margins and crew accommodation.",
+          "nb": "Filmskaperne beskriver krevende fjelladkomst og omfattende stedsopptak. En praktisk øvelse vil være å: Planlegg trygg adkomst, værmarginer og innkvartering.",
+          "fr": "Les cinéastes décrivent des accès difficiles et un tournage prolongé en montagne. Un exercice pratique consisterait à : Prévoir accès sûr, marge météo et hébergement.",
+          "pt": "Os cineastas descrevem acessos difíceis e filmagem prolongada na montanha. Um exercício prático consistiria em: Planear acesso seguro, margem meteorológica e alojamento."
+        },
+        "sourceIds": [
+          "s1",
+          "s4"
+        ]
+      },
+      {
+        "id": "eightmountains-ratio",
+        "area": "camera",
+        "prompt": {
+          "en": "Impens describes the film’s 4:3 spherical framing. Which approach would you choose for a new production exercise?",
+          "nb": "Impens beskriver filmens sfæriske 4:3-utsnitt. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Impens décrit le cadrage sphérique 4:3 du film. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Impens descreve o enquadramento esférico 4:3 do filme. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Crop faces arbitrarily to preserve mountain height",
+              "nb": "Beskjær ansikter vilkårlig for å bevare fjellhøyden",
+              "fr": "Rogner les visages arbitrairement pour conserver la hauteur",
+              "pt": "Cortar rostos arbitrariamente para preservar a altura"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare vertical landscape and human scale in narrow and wide frames",
+              "nb": "Sammenlign vertikalt landskap og menneskeskala i smale og brede utsnitt",
+              "fr": "Comparer paysage vertical et échelle humaine en cadres étroits et larges",
+              "pt": "Comparar paisagem vertical e escala humana em quadros estreitos e largos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose the widest frame without testing composition",
+              "nb": "Velg bredeste format uten komposisjonsprøver",
+              "fr": "Choisir le cadre le plus large sans tester la composition",
+              "pt": "Escolher o quadro mais largo sem testar composição"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Impens describes the film’s 4:3 spherical framing. A practical exercise would be to: Compare vertical landscape and human scale in narrow and wide frames.",
+          "nb": "Impens beskriver filmens sfæriske 4:3-utsnitt. En praktisk øvelse vil være å: Sammenlign vertikalt landskap og menneskeskala i smale og brede utsnitt.",
+          "fr": "Impens décrit le cadrage sphérique 4:3 du film. Un exercice pratique consisterait à : Comparer paysage vertical et échelle humaine en cadres étroits et larges.",
+          "pt": "Impens descreve o enquadramento esférico 4:3 do filme. Um exercício prático consistiria em: Comparar paisagem vertical e escala humana em quadros estreitos e largos."
+        },
+        "sourceIds": [
+          "s1",
+          "s0"
+        ]
+      },
+      {
+        "id": "eightmountains-blocks",
+        "area": "research",
+        "prompt": {
+          "en": "The co-directors describe learning across several shooting blocks. Which approach would you choose for a new production exercise?",
+          "nb": "Medregissørene beskriver læring mellom flere opptaksblokker. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les coréalisateurs décrivent un apprentissage entre plusieurs blocs de tournage. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os correalizadores descrevem aprendizagem entre vários blocos de filmagem. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Avoid reviewing any material until production wraps",
+              "nb": "Unngå gjennomgang av materiale før alle opptak er ferdige",
+              "fr": "Ne revoir aucune image avant la fin du tournage",
+              "pt": "Não rever material até ao fim da filmagem"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Reset the visual approach without documenting changes",
+              "nb": "Nullstill bildeuttrykket uten å dokumentere endringer",
+              "fr": "Réinitialiser l’approche visuelle sans documenter les changements",
+              "pt": "Reiniciar a abordagem visual sem documentar alterações"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Review previous footage and continuity before each new block",
+              "nb": "Gjennomgå tidligere opptak og kontinuitet før hver ny blokk",
+              "fr": "Revoir les images et raccords avant chaque nouveau bloc",
+              "pt": "Rever imagens e continuidade antes de cada novo bloco"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The co-directors describe learning across several shooting blocks. A practical exercise would be to: Review previous footage and continuity before each new block.",
+          "nb": "Medregissørene beskriver læring mellom flere opptaksblokker. En praktisk øvelse vil være å: Gjennomgå tidligere opptak og kontinuitet før hver ny blokk.",
+          "fr": "Les coréalisateurs décrivent un apprentissage entre plusieurs blocs de tournage. Un exercice pratique consisterait à : Revoir les images et raccords avant chaque nouveau bloc.",
+          "pt": "Os correalizadores descrevem aprendizagem entre vários blocos de filmagem. Um exercício prático consistiria em: Rever imagens e continuidade antes de cada novo bloco."
+        },
+        "sourceIds": [
+          "s4",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_tori_and_lokita_2022",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Young performers, handheld choreography and diegetic sound",
+      "nb": "Unge utøvere, håndholdt koreografi og diegetisk lyd",
+      "fr": "Jeunes interprètes, chorégraphie portée et son diégétique",
+      "pt": "Jovens intérpretes, coreografia à mão e som diegético"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "TORI ET LOKITA (TORI AND LOKITA)",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/tori-et-lokita/"
+      },
+      {
+        "id": "s1",
+        "title": "Tori et Lokita",
+        "publisher": "Les Films du Fleuve",
+        "url": "https://lesfilmsdufleuve.be/en/movies/tori-et-lokita/"
+      },
+      {
+        "id": "s2",
+        "title": "Benoit Dervaux and the approach for Tori and Lokita",
+        "publisher": "Belgian Society of Cinematographers",
+        "url": "https://www.sbcine.be/?p=13130"
+      },
+      {
+        "id": "s3",
+        "title": "A Conversation with the Dardenne Brothers (Tori and Lokita)",
+        "publisher": "Hammer to Nail",
+        "url": "https://www.hammertonail.com/interviews/dardenne-brothers/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "torilokita-casting",
+        "area": "research",
+        "prompt": {
+          "en": "The directors describe extensive casting and five weeks of rehearsals with the leads. Which approach would you choose for a new production exercise?",
+          "nb": "Regissørene beskriver omfattende casting og fem ukers prøver med hovedrollene. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les réalisateurs décrivent un casting étendu et cinq semaines de répétitions. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os realizadores descrevem casting amplo e cinco semanas de ensaios. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Provide age-appropriate rehearsals with clear support and boundaries",
+              "nb": "Gi alderstilpassede prøver med tydelig støtte og grenser",
+              "fr": "Prévoir des répétitions adaptées à l’âge avec soutien et limites",
+              "pt": "Proporcionar ensaios adequados à idade com apoio e limites"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use stressful surprises instead of preparation",
+              "nb": "Bruk stressende overraskelser i stedet for forberedelse",
+              "fr": "Utiliser des surprises stressantes au lieu de préparer",
+              "pt": "Usar surpresas stressantes em vez de preparação"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assess candidates only by previous screen credits",
+              "nb": "Vurder kandidater bare etter tidligere filmroller",
+              "fr": "Évaluer les candidats seulement par leurs rôles antérieurs",
+              "pt": "Avaliar candidatos apenas por papéis anteriores"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The directors describe extensive casting and five weeks of rehearsals with the leads. A practical exercise would be to: Provide age-appropriate rehearsals with clear support and boundaries.",
+          "nb": "Regissørene beskriver omfattende casting og fem ukers prøver med hovedrollene. En praktisk øvelse vil være å: Gi alderstilpassede prøver med tydelig støtte og grenser.",
+          "fr": "Les réalisateurs décrivent un casting étendu et cinq semaines de répétitions. Un exercice pratique consisterait à : Prévoir des répétitions adaptées à l’âge avec soutien et limites.",
+          "pt": "Os realizadores descrevem casting amplo e cinco semanas de ensaios. Um exercício prático consistiria em: Proporcionar ensaios adequados à idade com apoio e limites."
+        },
+        "sourceIds": [
+          "s3",
+          "s0"
+        ]
+      },
+      {
+        "id": "torilokita-height",
+        "area": "camera",
+        "prompt": {
+          "en": "Dervaux describes handheld operation at the actors’ height and extensive rehearsal. Which approach would you choose for a new production exercise?",
+          "nb": "Dervaux beskriver håndholdt kamera i skuespillernes høyde og omfattende prøver. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Dervaux décrit une caméra portée à hauteur des acteurs et de longues répétitions. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Dervaux descreve câmara à mão à altura dos atores e ensaios extensos. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Change camera height without considering character perspective",
+              "nb": "Endre kamerahøyde uten å vurdere karakterperspektiv",
+              "fr": "Changer la hauteur sans considérer le point de vue",
+              "pt": "Mudar altura sem considerar a perspetiva da personagem"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse actor and operator movement at matching eye height",
+              "nb": "Øv skuespillerens og fotografens bevegelser i samsvarende øyehøyde",
+              "fr": "Répéter les mouvements à hauteur de regard correspondante",
+              "pt": "Ensaiar movimentos de ator e operador à altura do olhar"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Shoot every interaction from a distant overhead position",
+              "nb": "Film alle møter fra en fjern posisjon ovenfra",
+              "fr": "Filmer toutes les interactions de loin en plongée",
+              "pt": "Filmar todas as interações de longe e de cima"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Dervaux describes handheld operation at the actors’ height and extensive rehearsal. A practical exercise would be to: Rehearse actor and operator movement at matching eye height.",
+          "nb": "Dervaux beskriver håndholdt kamera i skuespillernes høyde og omfattende prøver. En praktisk øvelse vil være å: Øv skuespillerens og fotografens bevegelser i samsvarende øyehøyde.",
+          "fr": "Dervaux décrit une caméra portée à hauteur des acteurs et de longues répétitions. Un exercice pratique consisterait à : Répéter les mouvements à hauteur de regard correspondante.",
+          "pt": "Dervaux descreve câmara à mão à altura dos atores e ensaios extensos. Um exercício prático consistiria em: Ensaiar movimentos de ator e operador à altura do olhar."
+        },
+        "sourceIds": [
+          "s2",
+          "s0"
+        ]
+      },
+      {
+        "id": "torilokita-sound",
+        "area": "sound",
+        "prompt": {
+          "en": "The directors describe a diegetic sound principle with location-derived additions. Which approach would you choose for a new production exercise?",
+          "nb": "Regissørene beskriver et diegetisk lydprinsipp med tillegg hentet fra stedet. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les réalisateurs décrivent un principe diégétique avec des ajouts issus des lieux. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os realizadores descrevem um princípio diegético com adições oriundas dos locais. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Add a dramatic score to every emotional transition",
+              "nb": "Legg dramatisk musikk på hvert følelsesskifte",
+              "fr": "Ajouter une musique dramatique à chaque transition émotionnelle",
+              "pt": "Adicionar música dramática a cada transição emocional"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Replace natural sounds with unrelated stock effects",
+              "nb": "Erstatt naturlige lyder med uvedkommende standardeffekter",
+              "fr": "Remplacer les sons naturels par des effets sans rapport",
+              "pt": "Substituir sons naturais por efeitos sem relação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record room tone and practical sounds for subtle editorial additions",
+              "nb": "Ta opp romlyd og praktiske lyder for diskrete klippetillegg",
+              "fr": "Enregistrer ambiances et sons réels pour des ajouts discrets",
+              "pt": "Gravar ambiente e sons reais para adições discretas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The directors describe a diegetic sound principle with location-derived additions. A practical exercise would be to: Record room tone and practical sounds for subtle editorial additions.",
+          "nb": "Regissørene beskriver et diegetisk lydprinsipp med tillegg hentet fra stedet. En praktisk øvelse vil være å: Ta opp romlyd og praktiske lyder for diskrete klippetillegg.",
+          "fr": "Les réalisateurs décrivent un principe diégétique avec des ajouts issus des lieux. Un exercice pratique consisterait à : Enregistrer ambiances et sons réels pour des ajouts discrets.",
+          "pt": "Os realizadores descrevem um princípio diegético com adições oriundas dos locais. Um exercício prático consistiria em: Gravar ambiente e sons reais para adições discretas."
+        },
+        "sourceIds": [
+          "s3",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_about_dry_grasses_2023",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Long screenplay, seasonal continuity and editorial reduction",
+      "nb": "Langt manus, årstidskontinuitet og redaksjonell forkorting",
+      "fr": "Scénario long, raccords saisonniers et réduction au montage",
+      "pt": "Argumento longo, continuidade sazonal e redução na montagem"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "KURU OTLAR USTUNE (ABOUT DRY GRASSES)",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/kuru-otlar-ustune/"
+      },
+      {
+        "id": "s3",
+        "title": "About Dry Grasses - Technical Info",
+        "publisher": "Nuri Bilge Ceylan",
+        "url": "https://www.nuribilgeceylan.com/movies/kuruotlar/techinfo.php?mid=4"
+      },
+      {
+        "id": "s4",
+        "title": "About Dry Grasses - Credits",
+        "publisher": "Nuri Bilge Ceylan",
+        "url": "https://www.nuribilgeceylan.com/movies/kuruotlar/credits.php?mid=3"
+      },
+      {
+        "id": "s8",
+        "title": "Nuri Bilge Ceylan - Director of About Dry Grasses",
+        "publisher": "Cineuropa",
+        "url": "https://cineuropa.org/en/interview/442832/"
+      },
+      {
+        "id": "s9",
+        "title": "Nuri Bilge Ceylan's About Dry Grasses: A dive into the hinterlands through the eyes of Samet",
+        "publisher": "Bianet",
+        "url": "https://bianet.org/yazi/nuri-bilge-ceylan-s-about-dry-grasses-a-dive-into-the-hinterlands-through-the-eyes-of-samet-288165"
+      }
+    ],
+    "questions": [
+      {
+        "id": "drygrasses-writing",
+        "area": "research",
+        "prompt": {
+          "en": "Ceylan describes a teaching diary as a story source and a long collaborative writing process. Which approach would you choose for a new production exercise?",
+          "nb": "Ceylan beskriver en lærerdagbok som fortellingskilde og en lang felles skriveprosess. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Ceylan décrit un journal d’enseignant et une longue écriture collective. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Ceylan descreve um diário de professor e uma longa escrita colaborativa. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Separate diary observations from invented character and dialogue",
+              "nb": "Skill dagbokobservasjoner fra oppdiktede karakterer og dialog",
+              "fr": "Séparer observations du journal et personnages ou dialogues inventés",
+              "pt": "Separar observações do diário de personagens e diálogos inventados"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat all diary entries as finished screenplay dialogue",
+              "nb": "Behandle alle dagboknotater som ferdig manusdialog",
+              "fr": "Traiter chaque note comme dialogue définitif",
+              "pt": "Tratar todas as notas como diálogo final"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Repeat the original method without testing its suitability",
+              "nb": "Gjenta originalmetoden uten å prøve om den passer",
+              "fr": "Répéter la méthode originale sans tester sa pertinence",
+              "pt": "Repetir o método original sem testar a sua adequação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Ceylan describes a teaching diary as a story source and a long collaborative writing process. A practical exercise would be to: Separate diary observations from invented character and dialogue.",
+          "nb": "Ceylan beskriver en lærerdagbok som fortellingskilde og en lang felles skriveprosess. En praktisk øvelse vil være å: Skill dagbokobservasjoner fra oppdiktede karakterer og dialog.",
+          "fr": "Ceylan décrit un journal d’enseignant et une longue écriture collective. Un exercice pratique consisterait à : Séparer observations du journal et personnages ou dialogues inventés.",
+          "pt": "Ceylan descreve um diário de professor e uma longa escrita colaborativa. Um exercício prático consistiria em: Separar observações do diário de personagens e diálogos inventados."
+        },
+        "sourceIds": [
+          "s8",
+          "s9"
+        ]
+      },
+      {
+        "id": "drygrasses-seasons",
+        "area": "camera",
+        "prompt": {
+          "en": "The official credits distinguish winter and summer camera and makeup teams. Which approach would you choose for a new production exercise?",
+          "nb": "De offisielle krediteringene skiller vinter- og sommerteam for kamera og sminke. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les crédits distinguent les équipes caméra et maquillage d’hiver et d’été. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os créditos distinguem equipas de câmara e maquilhagem de inverno e verão. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Repeat the original method without testing its suitability",
+              "nb": "Gjenta originalmetoden uten å prøve om den passer",
+              "fr": "Répéter la méthode originale sans tester sa pertinence",
+              "pt": "Repetir o método original sem testar a sua adequação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Prepare shared reference images and handover notes between seasonal teams",
+              "nb": "Lag felles referansebilder og overleveringsnotater mellom sesongteam",
+              "fr": "Préparer références visuelles et notes de transmission entre équipes saisonnières",
+              "pt": "Preparar referências visuais e notas de passagem entre equipas sazonais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume different seasonal teams need no shared references",
+              "nb": "Anta at ulike sesongteam ikke trenger felles referanser",
+              "fr": "Supposer que les équipes saisonnières n’ont pas besoin de références communes",
+              "pt": "Supor que equipas sazonais dispensam referências comuns"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The official credits distinguish winter and summer camera and makeup teams. A practical exercise would be to: Prepare shared reference images and handover notes between seasonal teams.",
+          "nb": "De offisielle krediteringene skiller vinter- og sommerteam for kamera og sminke. En praktisk øvelse vil være å: Lag felles referansebilder og overleveringsnotater mellom sesongteam.",
+          "fr": "Les crédits distinguent les équipes caméra et maquillage d’hiver et d’été. Un exercice pratique consisterait à : Préparer références visuelles et notes de transmission entre équipes saisonnières.",
+          "pt": "Os créditos distinguem equipas de câmara e maquilhagem de inverno e verão. Um exercício prático consistiria em: Preparar referências visuais e notas de passagem entre equipas sazonais."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "drygrasses-cut",
+        "area": "research",
+        "prompt": {
+          "en": "Ceylan describes shooting a long script and substantially reducing it in editing. Which approach would you choose for a new production exercise?",
+          "nb": "Ceylan beskriver opptak av et langt manus og betydelig forkorting i klippen. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Ceylan décrit le tournage d’un long scénario et sa réduction au montage. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Ceylan descreve filmar um argumento longo e reduzi-lo na montagem. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Delete every long scene regardless of narrative purpose",
+              "nb": "Slett alle lange scener uansett fortellerfunksjon",
+              "fr": "Supprimer toutes les longues scènes sans tenir compte de leur fonction",
+              "pt": "Eliminar todas as cenas longas independentemente da função"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Repeat the original method without testing its suitability",
+              "nb": "Gjenta originalmetoden uten å prøve om den passer",
+              "fr": "Répéter la méthode originale sans tester sa pertinence",
+              "pt": "Repetir o método original sem testar a sua adequação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare scene versions by character function rather than duration alone",
+              "nb": "Sammenlign sceneversjoner etter karakterfunksjon, ikke bare varighet",
+              "fr": "Comparer les versions selon la fonction dramatique plutôt que la seule durée",
+              "pt": "Comparar versões pela função dramática e não só pela duração"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Ceylan describes shooting a long script and substantially reducing it in editing. A practical exercise would be to: Compare scene versions by character function rather than duration alone.",
+          "nb": "Ceylan beskriver opptak av et langt manus og betydelig forkorting i klippen. En praktisk øvelse vil være å: Sammenlign sceneversjoner etter karakterfunksjon, ikke bare varighet.",
+          "fr": "Ceylan décrit le tournage d’un long scénario et sa réduction au montage. Un exercice pratique consisterait à : Comparer les versions selon la fonction dramatique plutôt que la seule durée.",
+          "pt": "Ceylan descreve filmar um argumento longo e reduzi-lo na montagem. Um exercício prático consistiria em: Comparar versões pela função dramática e não só pela duração."
+        },
+        "sourceIds": [
+          "s8",
+          "s0"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_holy_spider_2022",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Location substitution, costume and production responsibility",
+      "nb": "Stedserstatning, tidskoloritt og produksjonsansvar",
+      "fr": "Substitution de lieux, époque et responsabilité de production",
+      "pt": "Substituição de locais, época e responsabilidade de produção"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "HOLY SPIDER",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/holy-spider/"
+      },
+      {
+        "id": "s1",
+        "title": "All these prizewinning Iranian movies are complicit: an interview with Holy Spider director Ali Abbasi",
+        "publisher": "BFI Sight and Sound",
+        "url": "https://www.bfi.org.uk/sight-and-sound/interviews/all-these-prizewinning-iranian-movies-are-complicit-interview-with-holy-spider-director-ali-abbasi"
+      },
+      {
+        "id": "s4",
+        "title": "International Disruptors: Holy Spider Producer Sol Bondy On The Challenges Of Bringing Ali Abbasi's Iran-Set Oscar Contender To Light",
+        "publisher": "Deadline / Yahoo Entertainment",
+        "url": "https://www.yahoo.com/entertainment/international-disruptors-holy-spider-producer-120018878.html"
+      },
+      {
+        "id": "s5",
+        "title": "HOLY SPIDER",
+        "publisher": "Goodfellas",
+        "url": "https://goodfellas.film/movie/holy-spider/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "holyspider-location",
+        "area": "research",
+        "prompt": {
+          "en": "The Iranian setting was recreated in Jordan after another location plan failed. Which approach would you choose for a new production exercise?",
+          "nb": "Det iranske miljøet ble gjenskapt i Jordan etter at en annen stedsplan falt bort. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le cadre iranien a été recréé en Jordanie après l’échec d’un autre projet de lieu. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O ambiente iraniano foi recriado na Jordânia após falhar outro plano de localização. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Research architecture and transport with regional advisers",
+              "nb": "Undersøk arkitektur og transport med regionale rådgivere",
+              "fr": "Étudier architecture et transports avec des conseillers régionaux",
+              "pt": "Pesquisar arquitetura e transporte com consultores regionais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume any city can substitute for the setting",
+              "nb": "Anta at enhver by kan erstatte miljøet",
+              "fr": "Supposer que toute ville peut remplacer le décor",
+              "pt": "Supor que qualquer cidade pode substituir o ambiente"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose locations solely by rental price",
+              "nb": "Velg steder utelukkende etter leiepris",
+              "fr": "Choisir les lieux uniquement selon le prix",
+              "pt": "Escolher locais apenas pelo preço"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The Iranian setting was recreated in Jordan after another location plan failed. A practical exercise would be to: Research architecture and transport with regional advisers.",
+          "nb": "Det iranske miljøet ble gjenskapt i Jordan etter at en annen stedsplan falt bort. En praktisk øvelse vil være å: Undersøk arkitektur og transport med regionale rådgivere.",
+          "fr": "Le cadre iranien a été recréé en Jordanie après l’échec d’un autre projet de lieu. Un exercice pratique consisterait à : Étudier architecture et transports avec des conseillers régionaux.",
+          "pt": "O ambiente iraniano foi recriado na Jordânia após falhar outro plano de localização. Um exercício prático consistiria em: Pesquisar arquitetura e transporte com consultores regionais."
+        },
+        "sourceIds": [
+          "s1",
+          "s4"
+        ]
+      },
+      {
+        "id": "holyspider-period",
+        "area": "research",
+        "prompt": {
+          "en": "Abbasi describes sourcing period-appropriate cars as a design challenge. Which approach would you choose for a new production exercise?",
+          "nb": "Abbasi beskriver anskaffelse av tidstypiske biler som en designutfordring. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Abbasi décrit la recherche de voitures d’époque comme un défi de décoration. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Abbasi descreve encontrar carros da época como desafio de direção artística. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat one photograph as a complete period archive",
+              "nb": "Behandle ett fotografi som et komplett tidsarkiv",
+              "fr": "Traiter une photo comme une archive complète de l’époque",
+              "pt": "Tratar uma fotografia como arquivo completo da época"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Build a researched reference board for vehicles and street details",
+              "nb": "Lag en kildebasert referansetavle for biler og gatedetaljer",
+              "fr": "Créer un tableau documenté de véhicules et détails de rue",
+              "pt": "Criar um painel documentado de veículos e detalhes urbanos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use any modern car with a similar colour",
+              "nb": "Bruk en moderne bil med lignende farge",
+              "fr": "Utiliser une voiture moderne de couleur similaire",
+              "pt": "Usar qualquer carro moderno de cor semelhante"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Abbasi describes sourcing period-appropriate cars as a design challenge. A practical exercise would be to: Build a researched reference board for vehicles and street details.",
+          "nb": "Abbasi beskriver anskaffelse av tidstypiske biler som en designutfordring. En praktisk øvelse vil være å: Lag en kildebasert referansetavle for biler og gatedetaljer.",
+          "fr": "Abbasi décrit la recherche de voitures d’époque comme un défi de décoration. Un exercice pratique consisterait à : Créer un tableau documenté de véhicules et détails de rue.",
+          "pt": "Abbasi descreve encontrar carros da época como desafio de direção artística. Um exercício prático consistiria em: Criar um painel documentado de veículos e detalhes urbanos."
+        },
+        "sourceIds": [
+          "s1",
+          "s5"
+        ]
+      },
+      {
+        "id": "holyspider-responsibility",
+        "area": "research",
+        "prompt": {
+          "en": "Producer testimony identifies political disruption and performer security as production concerns. Which approach would you choose for a new production exercise?",
+          "nb": "Produsentintervjuet identifiserer politiske avbrudd og utøvernes sikkerhet som produksjonshensyn. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le témoignage du producteur identifie les perturbations politiques et la sécurité des interprètes. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O testemunho do produtor identifica perturbações políticas e segurança dos intérpretes. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Publicize participant identities without consultation",
+              "nb": "Offentliggjør deltakeridentiteter uten samråd",
+              "fr": "Publier les identités sans concertation",
+              "pt": "Publicar identidades sem consulta"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat budget approval as a substitute for a safety review",
+              "nb": "Behandle budsjettgodkjenning som erstatning for sikkerhetsgjennomgang",
+              "fr": "Remplacer l’examen de sécurité par l’approbation du budget",
+              "pt": "Substituir análise de segurança pela aprovação orçamental"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Review consent, exposure risks and contingency plans with the team",
+              "nb": "Gjennomgå samtykke, eksponeringsrisiko og reserveplaner med teamet",
+              "fr": "Examiner consentement, risques d’exposition et plans de secours avec l’équipe",
+              "pt": "Rever consentimento, riscos de exposição e planos alternativos com a equipa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Producer testimony identifies political disruption and performer security as production concerns. A practical exercise would be to: Review consent, exposure risks and contingency plans with the team.",
+          "nb": "Produsentintervjuet identifiserer politiske avbrudd og utøvernes sikkerhet som produksjonshensyn. En praktisk øvelse vil være å: Gjennomgå samtykke, eksponeringsrisiko og reserveplaner med teamet.",
+          "fr": "Le témoignage du producteur identifie les perturbations politiques et la sécurité des interprètes. Un exercice pratique consisterait à : Examiner consentement, risques d’exposition et plans de secours avec l’équipe.",
+          "pt": "O testemunho do produtor identifica perturbações políticas e segurança dos intérpretes. Um exercício prático consistiria em: Rever consentimento, riscos de exposição e planos alternativos com a equipa."
+        },
+        "sourceIds": [
+          "s4",
+          "s0"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_pot_au_feu_2023",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Kitchen choreography, sunlight and culinary sound",
+      "nb": "Kjøkkenkoreografi, sollys og matlagingslyd",
+      "fr": "Chorégraphie culinaire, soleil et sons de cuisine",
+      "pt": "Coreografia culinária, luz solar e sons de cozinha"
+    },
+    "sources": [
+      {
+        "id": "s2",
+        "title": "La Passion de Dodin Bouffant au cinéma le 8 novembre",
+        "publisher": "Bureau d'Accueil des Tournages / Région Pays de la Loire",
+        "url": "https://www.solutions-tournages-paysdelaloire.fr/actus/la-passion-de-dodin-bouffant-au-cinema-le-8-novembre/"
+      },
+      {
+        "id": "s4",
+        "title": "The Taste of Things: A Feast for the Eyes",
+        "publisher": "American Cinematographer / American Society of Cinematographers",
+        "url": "https://theasc.com/article/the-taste-of-things-cinematography/"
+      },
+      {
+        "id": "s5",
+        "title": "The Taste of Things - BFI Southbank Programme Notes",
+        "publisher": "British Film Institute",
+        "url": "https://bfidatadigipres.github.io/new%20releases/2024/02/14/taste-of-things/"
+      },
+      {
+        "id": "s7",
+        "title": "Interview: Juliette Binoche on Cooking in The Taste of Things",
+        "publisher": "Eater",
+        "url": "https://www.eater.com/24059659/the-taste-of-things-juliette-binoche-pierre-gagnaire-interview-food-styling"
+      },
+      {
+        "id": "s8",
+        "title": "Trần Anh Hùng's Delicious Culinary Movie The Taste of Things Has No Soundtrack. Here's Why",
+        "publisher": "MovieMaker Magazine",
+        "url": "https://www.moviemaker.com/the-taste-of-things-no-soundtrack-tran-anh-hung/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "potaufeu-food",
+        "area": "research",
+        "prompt": {
+          "en": "The performers describe culinary coaching and real-food performance. Which approach would you choose for a new production exercise?",
+          "nb": "Utøverne beskriver kulinarisk veiledning og arbeid med ekte mat. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les interprètes décrivent un accompagnement culinaire et de vrais aliments. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os intérpretes descrevem orientação culinária e trabalho com alimentos reais. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse a safe cooking routine with a culinary adviser",
+              "nb": "Øv en trygg matlagingsrutine med en kulinarisk rådgiver",
+              "fr": "Répéter une routine de cuisine sûre avec un conseiller culinaire",
+              "pt": "Ensaiar uma rotina culinária segura com um consultor"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use unrelated hand movements regardless of the recipe",
+              "nb": "Bruk uvedkommende håndbevegelser uansett oppskrift",
+              "fr": "Utiliser des gestes sans rapport avec la recette",
+              "pt": "Usar gestos sem relação com a receita"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore food continuity between takes",
+              "nb": "Ignorer matens kontinuitet mellom opptak",
+              "fr": "Ignorer les raccords alimentaires entre prises",
+              "pt": "Ignorar continuidade dos alimentos entre tomadas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The performers describe culinary coaching and real-food performance. A practical exercise would be to: Rehearse a safe cooking routine with a culinary adviser.",
+          "nb": "Utøverne beskriver kulinarisk veiledning og arbeid med ekte mat. En praktisk øvelse vil være å: Øv en trygg matlagingsrutine med en kulinarisk rådgiver.",
+          "fr": "Les interprètes décrivent un accompagnement culinaire et de vrais aliments. Un exercice pratique consisterait à : Répéter une routine de cuisine sûre avec un conseiller culinaire.",
+          "pt": "Os intérpretes descrevem orientação culinária e trabalho com alimentos reais. Um exercício prático consistiria em: Ensaiar uma rotina culinária segura com um consultor."
+        },
+        "sourceIds": [
+          "s7",
+          "s5"
+        ]
+      },
+      {
+        "id": "potaufeu-sun",
+        "area": "camera",
+        "prompt": {
+          "en": "The cinematography account discusses the east-facing kitchen and a sunlight-led strategy. Which approach would you choose for a new production exercise?",
+          "nb": "Fotointervjuet omtaler det østvendte kjøkkenet og en sollysbasert strategi. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le témoignage photo décrit la cuisine orientée à l’est et une stratégie fondée sur le soleil. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O relato de fotografia descreve a cozinha voltada a leste e estratégia baseada no sol. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Light every angle independently without reference images",
+              "nb": "Lyssett hver vinkel separat uten referansebilder",
+              "fr": "Éclairer chaque angle sans images de référence",
+              "pt": "Iluminar cada ângulo sem imagens de referência"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test the room at different hours and plan matching light",
+              "nb": "Prøv rommet til ulike tider og planlegg samsvarende lys",
+              "fr": "Tester la pièce à différentes heures et prévoir des raccords lumineux",
+              "pt": "Testar a sala a horas diferentes e planear continuidade de luz"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume east-facing windows give constant light",
+              "nb": "Anta at østvendte vinduer gir konstant lys",
+              "fr": "Supposer que les fenêtres à l’est donnent une lumière constante",
+              "pt": "Supor que janelas a leste dão luz constante"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The cinematography account discusses the east-facing kitchen and a sunlight-led strategy. A practical exercise would be to: Test the room at different hours and plan matching light.",
+          "nb": "Fotointervjuet omtaler det østvendte kjøkkenet og en sollysbasert strategi. En praktisk øvelse vil være å: Prøv rommet til ulike tider og planlegg samsvarende lys.",
+          "fr": "Le témoignage photo décrit la cuisine orientée à l’est et une stratégie fondée sur le soleil. Un exercice pratique consisterait à : Tester la pièce à différentes heures et prévoir des raccords lumineux.",
+          "pt": "O relato de fotografia descreve a cozinha voltada a leste e estratégia baseada no sol. Um exercício prático consistiria em: Testar a sala a horas diferentes e planear continuidade de luz."
+        },
+        "sourceIds": [
+          "s4",
+          "s2"
+        ]
+      },
+      {
+        "id": "potaufeu-sound",
+        "area": "sound",
+        "prompt": {
+          "en": "Hùng describes cooking and environmental sound taking the place of a conventional score. Which approach would you choose for a new production exercise?",
+          "nb": "Hùng beskriver matlagingslyd og miljølyd som erstatning for konvensjonell filmmusikk. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Hùng décrit les sons culinaires et ambiants à la place d’une musique conventionnelle. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Hùng descreve sons culinários e ambientais em vez de música convencional. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Add orchestral music to every cooking movement",
+              "nb": "Legg orkestermusikk på hver matlagingsbevegelse",
+              "fr": "Ajouter une musique orchestrale à chaque geste",
+              "pt": "Adicionar música orquestral a cada gesto culinário"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Remove all utensil sounds from the mix",
+              "nb": "Fjern alle redskapslyder fra miksen",
+              "fr": "Retirer tous les sons d’ustensiles du mixage",
+              "pt": "Retirar todos os sons de utensílios da mistura"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Build rhythm from recorded kitchen sounds and room ambience",
+              "nb": "Bygg rytme av opptatte kjøkkenlyder og romklang",
+              "fr": "Construire le rythme à partir des sons de cuisine et de l’ambiance",
+              "pt": "Construir ritmo com sons de cozinha gravados e ambiente"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Hùng describes cooking and environmental sound taking the place of a conventional score. A practical exercise would be to: Build rhythm from recorded kitchen sounds and room ambience.",
+          "nb": "Hùng beskriver matlagingslyd og miljølyd som erstatning for konvensjonell filmmusikk. En praktisk øvelse vil være å: Bygg rytme av opptatte kjøkkenlyder og romklang.",
+          "fr": "Hùng décrit les sons culinaires et ambiants à la place d’une musique conventionnelle. Un exercice pratique consisterait à : Construire le rythme à partir des sons de cuisine et de l’ambiance.",
+          "pt": "Hùng descreve sons culinários e ambientais em vez de música convencional. Um exercício prático consistiria em: Construir ritmo com sons de cozinha gravados e ambiente."
+        },
+        "sourceIds": [
+          "s8",
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_aheds_knee_2021",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Schedule constraints, expressive camera and format evidence",
+      "nb": "Tidsbegrensning, ekspressivt kamera og formatkilder",
+      "fr": "Contraintes de calendrier, caméra expressive et preuves de format",
+      "pt": "Restrições de calendário, câmara expressiva e provas de formato"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "HA’BERECH (AHED'S KNEE)",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/ha-berech/"
+      },
+      {
+        "id": "s1",
+        "title": "A Boxing Contest Between the Movie and the Viewer: Nadav Lapid on Ahed's Knee",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/113985-interview-nadav-lapid-aheds-knee/"
+      },
+      {
+        "id": "s2",
+        "title": "Ahed's Knee",
+        "publisher": "European Film Academy",
+        "url": "https://www.europeanfilmawards.eu/efa-movie/aheds-knee/"
+      },
+      {
+        "id": "s4",
+        "title": "Ahed's Knee",
+        "publisher": "Kino Lorber",
+        "url": "https://kinolorber.com/film/aheds-knee"
+      }
+    ],
+    "questions": [
+      {
+        "id": "ahedsknee-schedule",
+        "area": "research",
+        "prompt": {
+          "en": "Lapid describes an eighteen-day shoot as a formal constraint. Which approach would you choose for a new production exercise?",
+          "nb": "Lapid beskriver et atten dagers opptak som en formmessig begrensning. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Lapid décrit un tournage de dix-huit jours comme contrainte formelle. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Lapid descreve uma filmagem de dezoito dias como restrição formal. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Prioritise essential scenes and rehearse complex movements before shooting",
+              "nb": "Prioriter nødvendige scener og øv komplekse bevegelser før opptak",
+              "fr": "Prioriser les scènes essentielles et répéter les mouvements complexes",
+              "pt": "Priorizar cenas essenciais e ensaiar movimentos complexos antes de filmar"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Copy the schedule regardless of the new script",
+              "nb": "Kopier tidsplanen uansett nytt manus",
+              "fr": "Copier le calendrier quel que soit le nouveau scénario",
+              "pt": "Copiar o calendário independentemente do novo argumento"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Remove rehearsal time to increase shot count",
+              "nb": "Fjern prøvetid for å øke antallet opptak",
+              "fr": "Supprimer les répétitions pour augmenter le nombre de plans",
+              "pt": "Eliminar ensaios para aumentar o número de planos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Lapid describes an eighteen-day shoot as a formal constraint. A practical exercise would be to: Prioritise essential scenes and rehearse complex movements before shooting.",
+          "nb": "Lapid beskriver et atten dagers opptak som en formmessig begrensning. En praktisk øvelse vil være å: Prioriter nødvendige scener og øv komplekse bevegelser før opptak.",
+          "fr": "Lapid décrit un tournage de dix-huit jours comme contrainte formelle. Un exercice pratique consisterait à : Prioriser les scènes essentielles et répéter les mouvements complexes.",
+          "pt": "Lapid descreve uma filmagem de dezoito dias como restrição formal. Um exercício prático consistiria em: Priorizar cenas essenciais e ensaiar movimentos complexos antes de filmar."
+        },
+        "sourceIds": [
+          "s1",
+          "s0"
+        ]
+      },
+      {
+        "id": "ahedsknee-camera",
+        "area": "camera",
+        "prompt": {
+          "en": "Lapid describes the camera as an active participant in collaboration with Goldman. Which approach would you choose for a new production exercise?",
+          "nb": "Lapid beskriver kameraet som aktiv deltaker i samarbeidet med Goldman. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Lapid décrit la caméra comme participante active avec Goldman. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Lapid descreve a câmara como participante ativa na colaboração com Goldman. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use movement solely to cover editing errors",
+              "nb": "Bruk bevegelse bare for å skjule klippefeil",
+              "fr": "Utiliser le mouvement uniquement pour masquer les erreurs de montage",
+              "pt": "Usar movimento apenas para ocultar erros de montagem"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare subjective camera movement with a restrained observer frame",
+              "nb": "Sammenlign subjektiv kamerabevegelse med et tilbakeholdent observatørutsnitt",
+              "fr": "Comparer mouvement subjectif et cadre d’observation sobre",
+              "pt": "Comparar movimento subjetivo e quadro de observação contido"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Move the camera randomly during every line",
+              "nb": "Beveg kameraet tilfeldig under alle replikker",
+              "fr": "Bouger la caméra au hasard à chaque réplique",
+              "pt": "Mover a câmara ao acaso durante todas as falas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Lapid describes the camera as an active participant in collaboration with Goldman. A practical exercise would be to: Compare subjective camera movement with a restrained observer frame.",
+          "nb": "Lapid beskriver kameraet som aktiv deltaker i samarbeidet med Goldman. En praktisk øvelse vil være å: Sammenlign subjektiv kamerabevegelse med et tilbakeholdent observatørutsnitt.",
+          "fr": "Lapid décrit la caméra comme participante active avec Goldman. Un exercice pratique consisterait à : Comparer mouvement subjectif et cadre d’observation sobre.",
+          "pt": "Lapid descreve a câmara como participante ativa na colaboração com Goldman. Um exercício prático consistiria em: Comparar movimento subjetivo e quadro de observação contido."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "ahedsknee-format",
+        "area": "camera",
+        "prompt": {
+          "en": "The distributor specifies a widescreen exhibition ratio without documenting acquisition hardware. Which approach would you choose for a new production exercise?",
+          "nb": "Distributøren angir bredformatvisning uten å dokumentere opptaksutstyr. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le distributeur précise un format de projection sans documenter le matériel de capture. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O distribuidor indica formato de exibição sem documentar equipamento de captação. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Infer a specific sensor from the aspect ratio alone",
+              "nb": "Utled en bestemt sensor bare fra bildeformatet",
+              "fr": "Déduire un capteur précis du seul rapport d’image",
+              "pt": "Deduzir sensor específico apenas da proporção de imagem"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat distribution metadata as a complete camera report",
+              "nb": "Behandle distribusjonsmetadata som full kamerarapport",
+              "fr": "Traiter les métadonnées de distribution comme rapport caméra complet",
+              "pt": "Tratar metadados de distribuição como relatório de câmara completo"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Separate known delivery ratio from unknown acquisition details",
+              "nb": "Skill kjent visningsformat fra ukjente opptaksdetaljer",
+              "fr": "Séparer le format de diffusion connu des détails de capture inconnus",
+              "pt": "Separar formato de exibição conhecido de detalhes de captação desconhecidos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The distributor specifies a widescreen exhibition ratio without documenting acquisition hardware. A practical exercise would be to: Separate known delivery ratio from unknown acquisition details.",
+          "nb": "Distributøren angir bredformatvisning uten å dokumentere opptaksutstyr. En praktisk øvelse vil være å: Skill kjent visningsformat fra ukjente opptaksdetaljer.",
+          "fr": "Le distributeur précise un format de projection sans documenter le matériel de capture. Un exercice pratique consisterait à : Séparer le format de diffusion connu des détails de capture inconnus.",
+          "pt": "O distribuidor indica formato de exibição sem documentar equipamento de captação. Um exercício prático consistiria em: Separar formato de exibição conhecido de detalhes de captação desconhecidos."
+        },
+        "sourceIds": [
+          "s4",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_nitram_2021",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Production constraints, image provenance and responsible representation",
+      "nb": "Produksjonsbegrensninger, bildeproveniens og ansvarlig fremstilling",
+      "fr": "Contraintes de production, provenance des images et représentation responsable",
+      "pt": "Restrições de produção, proveniência de imagens e representação responsável"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "NITRAM",
+        "publisher": "Festival de Cannes",
+        "url": "https://cinemadedemain.festival-cannes.com/en/f/nitram/"
+      },
+      {
+        "id": "s1",
+        "title": "Nitram",
+        "publisher": "Screen Australia",
+        "url": "https://www.screenaustralia.gov.au/screen-guide/nitram-38629/"
+      },
+      {
+        "id": "s3",
+        "title": "Germain McMicking ACS on Justin Kurzel's Nitram",
+        "publisher": "Australian Cinematographer Magazine",
+        "url": "https://acmag.com.au/2021/09/01/nitram/"
+      },
+      {
+        "id": "s4",
+        "title": "NITRAM press kit",
+        "publisher": "Melbourne International Film Festival / Good Thing Productions",
+        "url": "https://miffindustry.com/wp-content/uploads/2021/08/NITRAM-press-kit-14-June-21-V2.pdf"
+      }
+    ],
+    "questions": [
+      {
+        "id": "nitram-format",
+        "area": "camera",
+        "prompt": {
+          "en": "McMicking describes a film-processing constraint and the decision to use digital capture. Which approach would you choose for a new production exercise?",
+          "nb": "McMicking beskriver en fremkallingsbegrensning og valget av digitalt opptak. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "McMicking décrit une contrainte de laboratoire et le choix de la capture numérique. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "McMicking descreve uma restrição de laboratório e a escolha de captação digital. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare feasible workflows with the desired image character",
+              "nb": "Sammenlign gjennomførbare arbeidsflyter med ønsket bildekarakter",
+              "fr": "Comparer les procédés réalisables au caractère d’image souhaité",
+              "pt": "Comparar fluxos viáveis com o carácter visual pretendido"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose a format without checking laboratory availability",
+              "nb": "Velg format uten å sjekke laboratorietilgang",
+              "fr": "Choisir un format sans vérifier les laboratoires disponibles",
+              "pt": "Escolher formato sem verificar disponibilidade de laboratório"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume image texture depends only on the capture medium",
+              "nb": "Anta at bildetekstur bare avhenger av opptaksmediet",
+              "fr": "Supposer que la texture dépend seulement du support de capture",
+              "pt": "Supor que textura depende apenas do meio de captação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "McMicking describes a film-processing constraint and the decision to use digital capture. A practical exercise would be to: Compare feasible workflows with the desired image character.",
+          "nb": "McMicking beskriver en fremkallingsbegrensning og valget av digitalt opptak. En praktisk øvelse vil være å: Sammenlign gjennomførbare arbeidsflyter med ønsket bildekarakter.",
+          "fr": "McMicking décrit une contrainte de laboratoire et le choix de la capture numérique. Un exercice pratique consisterait à : Comparer les procédés réalisables au caractère d’image souhaité.",
+          "pt": "McMicking descreve uma restrição de laboratório e a escolha de captação digital. Um exercício prático consistiria em: Comparar fluxos viáveis com o carácter visual pretendido."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "nitram-archive",
+        "area": "research",
+        "prompt": {
+          "en": "The craft dossier distinguishes video-source material from the principal digital photography. Which approach would you choose for a new production exercise?",
+          "nb": "Fagdokumentasjonen skiller videokildemateriale fra hovedopptakene i digitalt format. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le dossier distingue les sources vidéo de la photographie numérique principale. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O dossiê distingue material de vídeo da fotografia digital principal. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Discard provenance once materials enter the edit",
+              "nb": "Kast proveniens når materialet kommer inn i klippen",
+              "fr": "Abandonner la provenance dès le montage",
+              "pt": "Descartar proveniência quando o material entra na montagem"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Label archival and newly recorded material separately",
+              "nb": "Merk arkivmateriale og nyinnspilt materiale separat",
+              "fr": "Identifier séparément archives et images nouvellement tournées",
+              "pt": "Identificar separadamente arquivo e material recém-gravado"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Present recreated imagery as original archive footage",
+              "nb": "Presenter rekonstruerte bilder som originale arkivopptak",
+              "fr": "Présenter les images recréées comme archives originales",
+              "pt": "Apresentar imagens recriadas como arquivo original"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The craft dossier distinguishes video-source material from the principal digital photography. A practical exercise would be to: Label archival and newly recorded material separately.",
+          "nb": "Fagdokumentasjonen skiller videokildemateriale fra hovedopptakene i digitalt format. En praktisk øvelse vil være å: Merk arkivmateriale og nyinnspilt materiale separat.",
+          "fr": "Le dossier distingue les sources vidéo de la photographie numérique principale. Un exercice pratique consisterait à : Identifier séparément archives et images nouvellement tournées.",
+          "pt": "O dossiê distingue material de vídeo da fotografia digital principal. Um exercício prático consistiria em: Identificar separadamente arquivo e material recém-gravado."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "nitram-ethics",
+        "area": "research",
+        "prompt": {
+          "en": "The institutional records establish the film as a dramatized production rather than a historical archive. Which approach would you choose for a new production exercise?",
+          "nb": "Institusjonskildene dokumenterer filmen som en dramatisert produksjon, ikke et historisk arkiv. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les sources institutionnelles identifient une œuvre dramatisée et non une archive historique. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "As fontes institucionais identificam uma obra dramatizada e não um arquivo histórico. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat every dramatic choice as a documented historical fact",
+              "nb": "Behandle hvert dramatiske valg som dokumentert historisk faktum",
+              "fr": "Traiter chaque choix dramatique comme fait historique établi",
+              "pt": "Tratar cada escolha dramática como facto histórico documentado"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Omit the distinction between fiction and historical evidence",
+              "nb": "Utelat skillet mellom fiksjon og historiske bevis",
+              "fr": "Omettre la distinction entre fiction et preuves historiques",
+              "pt": "Omitir distinção entre ficção e provas históricas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Focus a fictional ethical review on affected communities and factual boundaries",
+              "nb": "Rett en fiktiv etikkgjennomgang mot berørte samfunn og faktagrenser",
+              "fr": "Centrer une revue éthique fictive sur les communautés touchées et les limites factuelles",
+              "pt": "Centrar revisão ética fictícia nas comunidades afetadas e limites factuais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The institutional records establish the film as a dramatized production rather than a historical archive. A practical exercise would be to: Focus a fictional ethical review on affected communities and factual boundaries.",
+          "nb": "Institusjonskildene dokumenterer filmen som en dramatisert produksjon, ikke et historisk arkiv. En praktisk øvelse vil være å: Rett en fiktiv etikkgjennomgang mot berørte samfunn og faktagrenser.",
+          "fr": "Les sources institutionnelles identifient une œuvre dramatisée et non une archive historique. Un exercice pratique consisterait à : Centrer une revue éthique fictive sur les communautés touchées et les limites factuelles.",
+          "pt": "As fontes institucionais identificam uma obra dramatizada e não um arquivo histórico. Um exercício prático consistiria em: Centrar revisão ética fictícia nas comunidades afetadas e limites factuais."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_stars_at_noon_2022",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Location identity, humid light and technical metadata",
+      "nb": "Stedsidentitet, fuktig lys og tekniske metadata",
+      "fr": "Identité des lieux, lumière humide et métadonnées techniques",
+      "pt": "Identidade dos locais, luz húmida e metadados técnicos"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "STARS AT NOON",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/stars-at-noon/"
+      },
+      {
+        "id": "s1",
+        "title": "Meeting the team of Claire Denis' Stars at Noon",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/2022/meeting-the-team-of-claire-denis-stars-at-noon/"
+      },
+      {
+        "id": "s2",
+        "title": "Stars at Noon",
+        "publisher": "Unifrance",
+        "url": "https://en.unifrance.org/movie/51655/stars-at-noon"
+      },
+      {
+        "id": "s3",
+        "title": "Stars at noon",
+        "publisher": "Ad Vitam",
+        "url": "https://www.advitamdistribution.com/films/stars-at-noon/"
+      },
+      {
+        "id": "s4",
+        "title": "ARRI technology behind the scenes of Cannes 2022",
+        "publisher": "ARRI",
+        "url": "https://www.arri.com/news-en/arri-technology-in-cannes-2022"
+      },
+      {
+        "id": "s5",
+        "title": "Eric Gautier, voyages en lumière",
+        "publisher": "CNC",
+        "url": "https://www.cnc.fr/cinema/actualites/eric-gautier-voyages-en-lumiere_1973312"
+      }
+    ],
+    "questions": [
+      {
+        "id": "starsnoon-place",
+        "area": "research",
+        "prompt": {
+          "en": "Cannes records Panama as a shooting location and Unifrance identifies the coproduction. Which approach would you choose for a new production exercise?",
+          "nb": "Cannes dokumenterer Panama som opptakssted og Unifrance identifiserer samproduksjonen. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Cannes documente le tournage au Panama et Unifrance identifie la coproduction. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Cannes documenta filmagens no Panamá e Unifrance identifica a coprodução. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record story setting, shooting country and financing credits separately",
+              "nb": "Registrer historiens miljø, opptaksland og finansieringskreditering separat",
+              "fr": "Consigner séparément cadre narratif, pays de tournage et crédits financiers",
+              "pt": "Registar separadamente ambiente narrativo, país de filmagem e créditos financeiros"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Infer the story setting from the production country alone",
+              "nb": "Utled historiens miljø bare fra produksjonslandet",
+              "fr": "Déduire le cadre narratif du seul pays de production",
+              "pt": "Deduzir ambiente narrativo apenas do país de produção"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat all locations as interchangeable backgrounds",
+              "nb": "Behandle alle steder som utskiftbare bakgrunner",
+              "fr": "Traiter tous les lieux comme fonds interchangeables",
+              "pt": "Tratar todos os locais como fundos intercambiáveis"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Cannes records Panama as a shooting location and Unifrance identifies the coproduction. A practical exercise would be to: Record story setting, shooting country and financing credits separately.",
+          "nb": "Cannes dokumenterer Panama som opptakssted og Unifrance identifiserer samproduksjonen. En praktisk øvelse vil være å: Registrer historiens miljø, opptaksland og finansieringskreditering separat.",
+          "fr": "Cannes documente le tournage au Panama et Unifrance identifie la coproduction. Un exercice pratique consisterait à : Consigner séparément cadre narratif, pays de tournage et crédits financiers.",
+          "pt": "Cannes documenta filmagens no Panamá e Unifrance identifica a coprodução. Um exercício prático consistiria em: Registar separadamente ambiente narrativo, país de filmagem e créditos financeiros."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "starsnoon-humidity",
+        "area": "camera",
+        "prompt": {
+          "en": "Gautier describes concentrating on performers’ skin and humidity. Which approach would you choose for a new production exercise?",
+          "nb": "Gautier beskriver fokus på utøvernes hud og luftfuktighet. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Gautier décrit son attention à la peau et à l’humidité. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Gautier descreve atenção à pele dos intérpretes e à humidade. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume weather has no influence on skin rendering",
+              "nb": "Anta at vær ikke påvirker hudgjengivelse",
+              "fr": "Supposer que la météo ne change pas le rendu de peau",
+              "pt": "Supor que o tempo não influencia a reprodução da pele"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test close framing and reflected light in a controlled humid look",
+              "nb": "Prøv nære utsnitt og reflektert lys i et kontrollert fuktig uttrykk",
+              "fr": "Tester plans rapprochés et lumière réfléchie dans un rendu humide contrôlé",
+              "pt": "Testar planos próximos e luz refletida num visual húmido controlado"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Correct every visible reflection before judging the look",
+              "nb": "Korriger alle synlige refleksjoner før uttrykket vurderes",
+              "fr": "Corriger chaque reflet avant d’évaluer le rendu",
+              "pt": "Corrigir todos os reflexos antes de avaliar o visual"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Gautier describes concentrating on performers’ skin and humidity. A practical exercise would be to: Test close framing and reflected light in a controlled humid look.",
+          "nb": "Gautier beskriver fokus på utøvernes hud og luftfuktighet. En praktisk øvelse vil være å: Prøv nære utsnitt og reflektert lys i et kontrollert fuktig uttrykk.",
+          "fr": "Gautier décrit son attention à la peau et à l’humidité. Un exercice pratique consisterait à : Tester plans rapprochés et lumière réfléchie dans un rendu humide contrôlé.",
+          "pt": "Gautier descreve atenção à pele dos intérpretes e à humidade. Um exercício prático consistiria em: Testar planos próximos e luz refletida num visual húmido controlado."
+        },
+        "sourceIds": [
+          "s5",
+          "s4"
+        ]
+      },
+      {
+        "id": "starsnoon-versions",
+        "area": "research",
+        "prompt": {
+          "en": "Festival, industry and distributor records give different running times. Which approach would you choose for a new production exercise?",
+          "nb": "Festival-, bransje- og distributørkilder angir ulike spilletider. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les sources de festival, professionnelles et de distribution donnent des durées différentes. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Fontes de festival, indústria e distribuição indicam durações diferentes. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Average runtimes and report the result as exact",
+              "nb": "Beregn gjennomsnittet og oppgi det som eksakt",
+              "fr": "Moyenner les durées et présenter le résultat comme exact",
+              "pt": "Calcular média das durações e apresentar como exata"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume every discrepancy proves a new director’s cut",
+              "nb": "Anta at hvert avvik beviser en ny regissørversjon",
+              "fr": "Supposer que chaque écart prouve une nouvelle version du réalisateur",
+              "pt": "Supor que cada diferença prova uma nova versão do realizador"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Preserve each runtime with its source and version context",
+              "nb": "Behold hver spilletid med kilde og versjonskontekst",
+              "fr": "Conserver chaque durée avec sa source et son contexte de version",
+              "pt": "Preservar cada duração com fonte e contexto de versão"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Festival, industry and distributor records give different running times. A practical exercise would be to: Preserve each runtime with its source and version context.",
+          "nb": "Festival-, bransje- og distributørkilder angir ulike spilletider. En praktisk øvelse vil være å: Behold hver spilletid med kilde og versjonskontekst.",
+          "fr": "Les sources de festival, professionnelles et de distribution donnent des durées différentes. Un exercice pratique consisterait à : Conserver chaque durée avec sa source et son contexte de version.",
+          "pt": "Fontes de festival, indústria e distribuição indicam durações diferentes. Um exercício prático consistiria em: Preservar cada duração com fonte e contexto de versão."
+        },
+        "sourceIds": [
+          "s0",
+          "s2",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_little_sister_2025",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Casting, adaptation and natural-light multicamera work",
+      "nb": "Casting, adaptasjon og flerkameraarbeid med naturlig lys",
+      "fr": "Casting, adaptation et multicaméra en lumière naturelle",
+      "pt": "Casting, adaptação e multicâmara com luz natural"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "LA PETITE DERNIÈRE",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/la-petite-derniere/"
+      },
+      {
+        "id": "s1",
+        "title": "The Little Sister English Press Kit",
+        "publisher": "June Films / Katuh Studio / Festival de Cannes",
+        "url": "https://cdn.festival-cannes.com/media/uploads/2025/05/189424.pdf"
+      },
+      {
+        "id": "s2",
+        "title": "Jérémie Attard voit triple avec l’ALEXA Mini pour « La Petite Dernière »",
+        "publisher": "ARRI",
+        "url": "https://www.arri.com/news-fr/jeremie-attard-en-alexa-mini-pour-la-petite-derniere"
+      },
+      {
+        "id": "s3",
+        "title": "Interview with Hafsia Herzi, director of The Little Sister",
+        "publisher": "SNCF Group",
+        "url": "https://www.groupe-sncf.com/en/group/shoots/interview-hafsia-herzi"
+      }
+    ],
+    "questions": [
+      {
+        "id": "littlesister-adapt",
+        "area": "research",
+        "prompt": {
+          "en": "The press kit documents adaptation and field research. Which approach would you choose for a new production exercise?",
+          "nb": "Pressematerialet dokumenterer adaptasjon og feltresearch. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le dossier documente adaptation et recherche de terrain. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O dossier documenta adaptação e pesquisa de campo. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Separate observations from fictional scenes",
+              "nb": "Skill observasjoner fra fiktive scener",
+              "fr": "Séparer observations et scènes fictives",
+              "pt": "Separar observações de cenas fictícias"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat the novel as a finished shooting script",
+              "nb": "Behandle romanen som ferdig opptaksmanus",
+              "fr": "Traiter le roman comme scénario de tournage définitif",
+              "pt": "Tratar o romance como argumento de rodagem definitivo"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Replace field research with generic stereotypes",
+              "nb": "Erstatt feltresearch med generelle stereotypier",
+              "fr": "Remplacer la recherche par des stéréotypes",
+              "pt": "Substituir pesquisa por estereótipos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The press kit documents adaptation and field research. A practical exercise would be to: Separate observations from fictional scenes.",
+          "nb": "Pressematerialet dokumenterer adaptasjon og feltresearch. En praktisk øvelse vil være å: Skill observasjoner fra fiktive scener.",
+          "fr": "Le dossier documente adaptation et recherche de terrain. Un exercice pratique consisterait à : Séparer observations et scènes fictives.",
+          "pt": "O dossier documenta adaptação e pesquisa de campo. Um exercício prático consistiria em: Separar observações de cenas fictícias."
+        },
+        "sourceIds": [
+          "s1",
+          "s0"
+        ]
+      },
+      {
+        "id": "littlesister-casting",
+        "area": "research",
+        "prompt": {
+          "en": "Casting callbacks included camera tests and a long search for the lead. Which approach would you choose for a new production exercise?",
+          "nb": "Castingprøvene omfattet kameratester og et langt søk etter hovedrollen. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les rappels incluaient des essais caméra et une longue recherche du premier rôle. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "As chamadas incluíram testes de câmara e uma longa procura da protagonista. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Skip testing the lead in the intended visual style",
+              "nb": "Hopp over prøver av hovedrollen i planlagt bildestil",
+              "fr": "Omettre les essais dans le style visuel prévu",
+              "pt": "Omitir testes no estilo visual previsto"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare performance and camera tests with informed consent",
+              "nb": "Sammenlign skuespiller- og kameraprøver med informert samtykke",
+              "fr": "Comparer jeu et essais caméra avec consentement éclairé",
+              "pt": "Comparar atuação e testes de câmara com consentimento informado"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Select solely by prior professional credits",
+              "nb": "Velg utelukkende etter tidligere profesjonelle roller",
+              "fr": "Choisir uniquement selon les rôles professionnels antérieurs",
+              "pt": "Escolher apenas por créditos profissionais anteriores"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Casting callbacks included camera tests and a long search for the lead. A practical exercise would be to: Compare performance and camera tests with informed consent.",
+          "nb": "Castingprøvene omfattet kameratester og et langt søk etter hovedrollen. En praktisk øvelse vil være å: Sammenlign skuespiller- og kameraprøver med informert samtykke.",
+          "fr": "Les rappels incluaient des essais caméra et une longue recherche du premier rôle. Un exercice pratique consisterait à : Comparer jeu et essais caméra avec consentement éclairé.",
+          "pt": "As chamadas incluíram testes de câmara e uma longa procura da protagonista. Um exercício prático consistiria em: Comparar atuação e testes de câmara com consentimento informado."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "littlesister-coverage",
+        "area": "camera",
+        "prompt": {
+          "en": "Attard describes long takes with three cameras and extensive prelighting. Which approach would you choose for a new production exercise?",
+          "nb": "Attard beskriver lange opptak med tre kameraer og omfattende forhåndslyssetting. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Attard décrit des plans longs à trois caméras et un prééclairage important. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Attard descreve planos longos com três câmaras e pré-iluminação extensa. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Place cameras without checking whether they see each other",
+              "nb": "Plasser kameraer uten å sjekke om de ser hverandre",
+              "fr": "Placer les caméras sans vérifier leurs champs mutuels",
+              "pt": "Colocar câmaras sem verificar se aparecem umas nas outras"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume natural light requires no preparation",
+              "nb": "Anta at naturlig lys ikke krever forberedelse",
+              "fr": "Supposer que la lumière naturelle ne demande aucune préparation",
+              "pt": "Supor que luz natural dispensa preparação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse sightlines and camera clearance before a long take",
+              "nb": "Øv blikkretninger og kameraklaring før en lang tagning",
+              "fr": "Répéter axes de regard et dégagement des caméras avant une prise longue",
+              "pt": "Ensaiar linhas de olhar e espaço das câmaras antes de um plano longo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Attard describes long takes with three cameras and extensive prelighting. A practical exercise would be to: Rehearse sightlines and camera clearance before a long take.",
+          "nb": "Attard beskriver lange opptak med tre kameraer og omfattende forhåndslyssetting. En praktisk øvelse vil være å: Øv blikkretninger og kameraklaring før en lang tagning.",
+          "fr": "Attard décrit des plans longs à trois caméras et un prééclairage important. Un exercice pratique consisterait à : Répéter axes de regard et dégagement des caméras avant une prise longue.",
+          "pt": "Attard descreve planos longos com três câmaras e pré-iluminação extensa. Um exercício prático consistiria em: Ensaiar linhas de olhar e espaço das câmaras antes de um plano longo."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_young_mothers_2025",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Ensemble research, real locations and responsive camera",
+      "nb": "Ensembleresearch, ekte steder og responsivt kamera",
+      "fr": "Recherche chorale, lieux réels et caméra réactive",
+      "pt": "Pesquisa de conjunto, locais reais e câmara responsiva"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "JEUNES MÈRES",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/jeunes-meres/"
+      },
+      {
+        "id": "s1",
+        "title": "Young Mothers English Press Kit",
+        "publisher": "Les Films du Fleuve / Archipel 35 / The Reunion / Festival de Cannes",
+        "url": "https://cdn.festival-cannes.com/media/uploads/2025/05/189306.pdf"
+      },
+      {
+        "id": "s2",
+        "title": "Benoît Dervaux on capturing Jeunes mères",
+        "publisher": "The Belgian Society of Cinematographers",
+        "url": "https://www.sbcine.be/?p=14294"
+      }
+    ],
+    "questions": [
+      {
+        "id": "youngmothers-portraits",
+        "area": "research",
+        "prompt": {
+          "en": "Research developed from one mother’s story into five portraits. Which approach would you choose for a new production exercise?",
+          "nb": "Researchen utviklet seg fra én mors historie til fem portretter. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "La recherche est passée d’une mère à cinq portraits. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A pesquisa passou da história de uma mãe a cinco retratos. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map distinct motivations without treating one story as universal",
+              "nb": "Kartlegg ulike motivasjoner uten å gjøre én historie universell",
+              "fr": "Cartographier des motivations distinctes sans universaliser un récit",
+              "pt": "Mapear motivações distintas sem universalizar uma história"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Give every character the same background and voice",
+              "nb": "Gi alle karakterene samme bakgrunn og stemme",
+              "fr": "Donner à tous les personnages le même passé et la même voix",
+              "pt": "Dar a todas as personagens o mesmo passado e voz"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use identifiable personal research without permission",
+              "nb": "Bruk identifiserbar personlig research uten tillatelse",
+              "fr": "Utiliser des recherches personnelles identifiantes sans permission",
+              "pt": "Usar pesquisa pessoal identificável sem autorização"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Research developed from one mother’s story into five portraits. A practical exercise would be to: Map distinct motivations without treating one story as universal.",
+          "nb": "Researchen utviklet seg fra én mors historie til fem portretter. En praktisk øvelse vil være å: Kartlegg ulike motivasjoner uten å gjøre én historie universell.",
+          "fr": "La recherche est passée d’une mère à cinq portraits. Un exercice pratique consisterait à : Cartographier des motivations distinctes sans universaliser un récit.",
+          "pt": "A pesquisa passou da história de uma mãe a cinco retratos. Um exercício prático consistiria em: Mapear motivações distintas sem universalizar uma história."
+        },
+        "sourceIds": [
+          "s1",
+          "s0"
+        ]
+      },
+      {
+        "id": "youngmothers-location",
+        "area": "research",
+        "prompt": {
+          "en": "The filmmakers chose a real maternal-home location. Which approach would you choose for a new production exercise?",
+          "nb": "Filmskaperne valgte et virkelig mødrehjem som opptakssted. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les cinéastes ont choisi un véritable foyer maternel. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os cineastas escolheram uma verdadeira casa de acolhimento materno. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Rebuild every room without consulting its users",
+              "nb": "Bygg om alle rom uten å rådføre deg med brukerne",
+              "fr": "Transformer chaque pièce sans consulter ses usagers",
+              "pt": "Reconstruir cada sala sem consultar os utilizadores"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Agree privacy boundaries and schedule around existing occupants",
+              "nb": "Avtal personverngrenser og planlegg rundt eksisterende beboere",
+              "fr": "Fixer les limites de confidentialité et respecter les résidents",
+              "pt": "Acordar limites de privacidade e respeitar os residentes"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume a location agreement covers every resident’s consent",
+              "nb": "Anta at stedsavtalen dekker alle beboeres samtykke",
+              "fr": "Supposer que l’accord du lieu couvre le consentement de tous",
+              "pt": "Supor que o acordo do local cobre o consentimento de todos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The filmmakers chose a real maternal-home location. A practical exercise would be to: Agree privacy boundaries and schedule around existing occupants.",
+          "nb": "Filmskaperne valgte et virkelig mødrehjem som opptakssted. En praktisk øvelse vil være å: Avtal personverngrenser og planlegg rundt eksisterende beboere.",
+          "fr": "Les cinéastes ont choisi un véritable foyer maternel. Un exercice pratique consisterait à : Fixer les limites de confidentialité et respecter les résidents.",
+          "pt": "Os cineastas escolheram uma verdadeira casa de acolhimento materno. Um exercício prático consistiria em: Acordar limites de privacidade e respeitar os residentes."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "youngmothers-movement",
+        "area": "camera",
+        "prompt": {
+          "en": "The cinematographer documents handheld long takes and a natural-light strategy. Which approach would you choose for a new production exercise?",
+          "nb": "Filmfotografen dokumenterer håndholdte lange tagninger og en naturlig lysstrategi. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le directeur photo documente les plans longs portés et la lumière naturelle. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O diretor de fotografia documenta planos longos à mão e estratégia de luz natural. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose movement without considering actor paths",
+              "nb": "Velg bevegelse uten å ta hensyn til skuespillerbaner",
+              "fr": "Choisir les mouvements sans considérer les trajets des acteurs",
+              "pt": "Escolher movimentos sem considerar trajetos dos atores"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume natural-light exposure stays constant",
+              "nb": "Anta at eksponering i naturlig lys er konstant",
+              "fr": "Supposer que l’exposition naturelle reste constante",
+              "pt": "Supor que exposição à luz natural permanece constante"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse operator movement and monitor changing exposure",
+              "nb": "Øv fotografens bevegelser og følg endringer i eksponering",
+              "fr": "Répéter les mouvements caméra et surveiller l’exposition variable",
+              "pt": "Ensaiar movimentos do operador e acompanhar exposição variável"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The cinematographer documents handheld long takes and a natural-light strategy. A practical exercise would be to: Rehearse operator movement and monitor changing exposure.",
+          "nb": "Filmfotografen dokumenterer håndholdte lange tagninger og en naturlig lysstrategi. En praktisk øvelse vil være å: Øv fotografens bevegelser og følg endringer i eksponering.",
+          "fr": "Le directeur photo documente les plans longs portés et la lumière naturelle. Un exercice pratique consisterait à : Répéter les mouvements caméra et surveiller l’exposition variable.",
+          "pt": "O diretor de fotografia documenta planos longos à mão e estratégia de luz natural. Um exercício prático consistiria em: Ensaiar movimentos do operador e acompanhar exposição variável."
+        },
+        "sourceIds": [
+          "s2",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_on_the_adamant_2023",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Observational documentary, participant agency and small crews",
+      "nb": "Observerende dokumentar, deltakermedvirkning og små team",
+      "fr": "Documentaire d’observation, autonomie et petite équipe",
+      "pt": "Documentário de observação, autonomia e equipa reduzida"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "On the Adamant — Sur l'Adamant",
+        "publisher": "Nicolas Philibert",
+        "url": "https://www.nicolasphilibert.fr/en/films/sur-ladamant/"
+      },
+      {
+        "id": "s2",
+        "title": "On the Adamant press kit",
+        "publisher": "Nicolas Philibert",
+        "url": "https://www.nicolasphilibert.fr/wp-content/uploads/2025/08/dpresse-va.pdf"
+      },
+      {
+        "id": "s3",
+        "title": "On the Adamant: Nicolas Philibert's warm-hearted portrait of a floating mental health centre",
+        "publisher": "British Film Institute / Sight and Sound",
+        "url": "https://www.bfi.org.uk/sight-and-sound/reviews/adamant-nicolas-philiberts-warm-hearted-portrait-floating-mental-health-centre"
+      }
+    ],
+    "questions": [
+      {
+        "id": "adamant-consent",
+        "area": "research",
+        "prompt": {
+          "en": "Philibert describes participant refusal as part of the working process. Which approach would you choose for a new production exercise?",
+          "nb": "Philibert beskriver deltakernes mulighet til å si nei som del av arbeidsprosessen. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Philibert décrit le refus des participants comme partie du processus. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Philibert descreve a recusa dos participantes como parte do processo. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Respect refusal and revisit consent as circumstances change",
+              "nb": "Respekter avslag og avklar samtykke på nytt ved endringer",
+              "fr": "Respecter le refus et renouveler le consentement si nécessaire",
+              "pt": "Respeitar a recusa e rever consentimento quando necessário"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat access permission as permanent individual consent",
+              "nb": "Behandle adgangstillatelse som permanent individuelt samtykke",
+              "fr": "Traiter l’accès comme consentement individuel permanent",
+              "pt": "Tratar acesso como consentimento individual permanente"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Film reluctant participants to preserve continuity",
+              "nb": "Film motvillige deltakere for å bevare kontinuitet",
+              "fr": "Filmer les participants réticents pour préserver les raccords",
+              "pt": "Filmar participantes relutantes para preservar continuidade"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Philibert describes participant refusal as part of the working process. A practical exercise would be to: Respect refusal and revisit consent as circumstances change.",
+          "nb": "Philibert beskriver deltakernes mulighet til å si nei som del av arbeidsprosessen. En praktisk øvelse vil være å: Respekter avslag og avklar samtykke på nytt ved endringer.",
+          "fr": "Philibert décrit le refus des participants comme partie du processus. Un exercice pratique consisterait à : Respecter le refus et renouveler le consentement si nécessaire.",
+          "pt": "Philibert descreve a recusa dos participantes como parte do processo. Um exercício prático consistiria em: Respeitar a recusa e rever consentimento quando necessário."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "adamant-crew",
+        "area": "camera",
+        "prompt": {
+          "en": "The filmmaker describes a small crew and occasional solo filming. Which approach would you choose for a new production exercise?",
+          "nb": "Filmskaperen beskriver et lite team og tidvis opptak alene. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le cinéaste décrit une petite équipe et des tournages parfois en solo. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O cineasta descreve equipa reduzida e filmagem ocasional a solo. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume solo filming guarantees ethical access",
+              "nb": "Anta at opptak alene garanterer etisk tilgang",
+              "fr": "Supposer que filmer seul garantit un accès éthique",
+              "pt": "Supor que filmar sozinho garante acesso ético"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare unobtrusive coverage with the needs of image and sound",
+              "nb": "Sammenlign diskret dekning med behovene for bilde og lyd",
+              "fr": "Comparer couverture discrète et besoins de l’image et du son",
+              "pt": "Comparar cobertura discreta com necessidades de imagem e som"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Add crew members without considering participant comfort",
+              "nb": "Legg til medarbeidere uten å vurdere deltakernes komfort",
+              "fr": "Ajouter des techniciens sans considérer le confort des participants",
+              "pt": "Adicionar técnicos sem considerar conforto dos participantes"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The filmmaker describes a small crew and occasional solo filming. A practical exercise would be to: Compare unobtrusive coverage with the needs of image and sound.",
+          "nb": "Filmskaperen beskriver et lite team og tidvis opptak alene. En praktisk øvelse vil være å: Sammenlign diskret dekning med behovene for bilde og lyd.",
+          "fr": "Le cinéaste décrit une petite équipe et des tournages parfois en solo. Un exercice pratique consisterait à : Comparer couverture discrète et besoins de l’image et du son.",
+          "pt": "O cineasta descreve equipa reduzida e filmagem ocasional a solo. Um exercício prático consistiria em: Comparar cobertura discreta com necessidades de imagem e som."
+        },
+        "sourceIds": [
+          "s2",
+          "s0"
+        ]
+      },
+      {
+        "id": "adamant-portrait",
+        "area": "research",
+        "prompt": {
+          "en": "The film moves between group activities and individual portraits. Which approach would you choose for a new production exercise?",
+          "nb": "Filmen veksler mellom gruppeaktiviteter og individuelle portretter. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le film alterne activités collectives et portraits individuels. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O filme alterna atividades coletivas e retratos individuais. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use isolated reactions as proof of medical diagnoses",
+              "nb": "Bruk isolerte reaksjoner som bevis på medisinske diagnoser",
+              "fr": "Utiliser des réactions isolées comme preuves de diagnostic",
+              "pt": "Usar reações isoladas como provas de diagnóstico"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Remove all collective context from individual portraits",
+              "nb": "Fjern all gruppekontekst fra individuelle portretter",
+              "fr": "Retirer tout contexte collectif des portraits individuels",
+              "pt": "Retirar todo contexto coletivo dos retratos individuais"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Review the edit for context and individual agency",
+              "nb": "Gjennomgå klippen med vekt på kontekst og individuell medvirkning",
+              "fr": "Revoir le montage selon le contexte et l’autonomie individuelle",
+              "pt": "Rever montagem segundo contexto e autonomia individual"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The film moves between group activities and individual portraits. A practical exercise would be to: Review the edit for context and individual agency.",
+          "nb": "Filmen veksler mellom gruppeaktiviteter og individuelle portretter. En praktisk øvelse vil være å: Gjennomgå klippen med vekt på kontekst og individuell medvirkning.",
+          "fr": "Le film alterne activités collectives et portraits individuels. Un exercice pratique consisterait à : Revoir le montage selon le contexte et l’autonomie individuelle.",
+          "pt": "O filme alterna atividades coletivas e retratos individuais. Um exercício prático consistiria em: Rever montagem segundo contexto e autonomia individual."
+        },
+        "sourceIds": [
+          "s3",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_father_mother_sister_brother_2025",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Triptych structure, regional crews and production continuity",
+      "nb": "Tredelt struktur, regionale team og produksjonskontinuitet",
+      "fr": "Triptyque, équipes régionales et continuité de production",
+      "pt": "Tríptico, equipas regionais e continuidade de produção"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Father Mother Sister Brother — Venezia 82 Competition",
+        "publisher": "La Biennale di Venezia",
+        "url": "https://www.labiennale.org/en/cinema/2025/venezia-82-competition/father-mother-sister-brother"
+      },
+      {
+        "id": "s3",
+        "title": "Interview: Jim Jarmusch on Father Mother Sister Brother",
+        "publisher": "Film Comment",
+        "url": "https://www.filmcomment.com/interview-jim-jarmusch-on-father-mother-sister-brother/"
+      },
+      {
+        "id": "s4",
+        "title": "Father Mother Sister Brother — A film by Jim Jarmusch",
+        "publisher": "Saint Laurent Productions",
+        "url": "https://saintlaurentproductions.ysl.com/father-mother-sister-brother"
+      },
+      {
+        "id": "s5",
+        "title": "Jim Jarmusch on Father Mother Sister Brother at Venice",
+        "publisher": "Variety",
+        "url": "https://variety.com/2025/film/global/jim-jarmusch-mubi-israel-father-mother-sister-brother-venice-film-festival-1236502496/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "fmsb-triptych",
+        "area": "research",
+        "prompt": {
+          "en": "Jarmusch describes three sections made in separate production blocks. Which approach would you choose for a new production exercise?",
+          "nb": "Jarmusch beskriver tre deler laget i separate opptaksblokker. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Jarmusch décrit trois sections réalisées en blocs distincts. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Jarmusch descreve três secções realizadas em blocos distintos. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map recurring motifs while preserving each section’s identity",
+              "nb": "Kartlegg gjentatte motiver og bevar hver dels identitet",
+              "fr": "Cartographier les motifs récurrents en préservant chaque identité",
+              "pt": "Mapear motivos recorrentes preservando identidade de cada secção"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Merge the stories into a single continuous chronology",
+              "nb": "Slå historiene sammen til én sammenhengende kronologi",
+              "fr": "Fusionner les récits en une seule chronologie continue",
+              "pt": "Fundir histórias numa cronologia contínua"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Jarmusch describes three sections made in separate production blocks. A practical exercise would be to: Map recurring motifs while preserving each section’s identity.",
+          "nb": "Jarmusch beskriver tre deler laget i separate opptaksblokker. En praktisk øvelse vil være å: Kartlegg gjentatte motiver og bevar hver dels identitet.",
+          "fr": "Jarmusch décrit trois sections réalisées en blocs distincts. Un exercice pratique consisterait à : Cartographier les motifs récurrents en préservant chaque identité.",
+          "pt": "Jarmusch descreve três secções realizadas em blocos distintos. Um exercício prático consistiria em: Mapear motivos recorrentes preservando identidade de cada secção."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "fmsb-teams",
+        "area": "camera",
+        "prompt": {
+          "en": "The production used different cinematographer and designer teams across regions. Which approach would you choose for a new production exercise?",
+          "nb": "Produksjonen brukte ulike foto- og designteam på tvers av regioner. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "La production a mobilisé différentes équipes photo et décor selon les régions. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A produção usou diferentes equipas de fotografia e cenografia por região. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Share visual principles while allowing local interpretation",
+              "nb": "Del visuelle prinsipper og gi rom for lokal fortolkning",
+              "fr": "Partager les principes visuels en permettant une interprétation locale",
+              "pt": "Partilhar princípios visuais permitindo interpretação local"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Require identical locations and lighting in every region",
+              "nb": "Krev identiske steder og lys i hver region",
+              "fr": "Exiger des lieux et éclairages identiques partout",
+              "pt": "Exigir locais e luz idênticos em cada região"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The production used different cinematographer and designer teams across regions. A practical exercise would be to: Share visual principles while allowing local interpretation.",
+          "nb": "Produksjonen brukte ulike foto- og designteam på tvers av regioner. En praktisk øvelse vil være å: Del visuelle prinsipper og gi rom for lokal fortolkning.",
+          "fr": "La production a mobilisé différentes équipes photo et décor selon les régions. Un exercice pratique consisterait à : Partager les principes visuels en permettant une interprétation locale.",
+          "pt": "A produção usou diferentes equipas de fotografia e cenografia por região. Um exercício prático consistiria em: Partilhar princípios visuais permitindo interpretação local."
+        },
+        "sourceIds": [
+          "s3",
+          "s0"
+        ]
+      },
+      {
+        "id": "fmsb-schedule",
+        "area": "research",
+        "prompt": {
+          "en": "Jarmusch describes about ten shooting days for each section and location constraints. Which approach would you choose for a new production exercise?",
+          "nb": "Jarmusch beskriver omtrent ti opptaksdager per del og stedsbegrensninger. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Jarmusch évoque environ dix jours par section et des contraintes de lieux. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Jarmusch refere cerca de dez dias por secção e restrições de locais. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume every block has the same resource demands",
+              "nb": "Anta at hver blokk har samme ressursbehov",
+              "fr": "Supposer que chaque bloc exige les mêmes ressources",
+              "pt": "Supor que cada bloco exige os mesmos recursos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan block-specific resources and a shared handover",
+              "nb": "Planlegg blokkspesifikke ressurser og felles overlevering",
+              "fr": "Prévoir ressources par bloc et transmission commune",
+              "pt": "Planear recursos por bloco e passagem comum"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Jarmusch describes about ten shooting days for each section and location constraints. A practical exercise would be to: Plan block-specific resources and a shared handover.",
+          "nb": "Jarmusch beskriver omtrent ti opptaksdager per del og stedsbegrensninger. En praktisk øvelse vil være å: Planlegg blokkspesifikke ressurser og felles overlevering.",
+          "fr": "Jarmusch évoque environ dix jours par section et des contraintes de lieux. Un exercice pratique consisterait à : Prévoir ressources par bloc et transmission commune.",
+          "pt": "Jarmusch refere cerca de dez dias por secção e restrições de locais. Um exercício prático consistiria em: Planear recursos por bloco e passagem comum."
+        },
+        "sourceIds": [
+          "s3",
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_saint_omer_2022",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Courtroom language, sustained performance and restrained sound",
+      "nb": "Rettssalspråk, vedvarende spill og tilbakeholden lyd",
+      "fr": "Langage judiciaire, jeu prolongé et son retenu",
+      "pt": "Linguagem judicial, interpretação prolongada e som contido"
+    },
+    "sources": [
+      {
+        "id": "s2",
+        "title": "Claire Mathon AFC • Saint Omer",
+        "publisher": "Cinematography World",
+        "url": "https://www.cinematography.world/claire-mathon-afc-saint-omer/"
+      },
+      {
+        "id": "s3",
+        "title": "Interview: Alice Diop on Saint Omer",
+        "publisher": "Film Comment",
+        "url": "https://www.filmcomment.com/interview-alice-diop-on-saint-omer/"
+      },
+      {
+        "id": "s4",
+        "title": "Saint Omer: How accurate is Alice Diop child-killer movie?",
+        "publisher": "Los Angeles Times",
+        "url": "https://www.latimes.com/entertainment-arts/movies/story/2023-01-12/saint-omer-alice-diop-guslangie-malanda-true-story"
+      },
+      {
+        "id": "s5",
+        "title": "Interview: Alice Diop on Upending True Crime Conventions with Saint Omer",
+        "publisher": "Slant Magazine",
+        "url": "https://www.slantmagazine.com/film/alice-diop-interview-saint-omer/"
+      },
+      {
+        "id": "s6",
+        "title": "Interview: Alice Diop on the Many Dimensions of Saint Omer",
+        "publisher": "The Moveable Fest",
+        "url": "https://moveablefest.com/alice-diop-saint-omer-interview/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "saintomer-language",
+        "area": "research",
+        "prompt": {
+          "en": "Diop describes trial research and extensive use of courtroom language. Which approach would you choose for a new production exercise?",
+          "nb": "Diop beskriver rettssaksresearch og omfattende bruk av rettssalens språk. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Diop décrit la recherche du procès et l’usage du langage judiciaire. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Diop descreve pesquisa do julgamento e uso da linguagem judicial. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Separate sourced testimony from invented character material",
+              "nb": "Skill kildebelagt vitnesbyrd fra oppdiktet karaktermateriale",
+              "fr": "Séparer témoignages sourcés et éléments fictionnels",
+              "pt": "Separar testemunho documentado de material ficcional"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Present invented dialogue as a verbatim court transcript",
+              "nb": "Presenter oppdiktet dialog som ordrett rettsreferat",
+              "fr": "Présenter les dialogues inventés comme transcription exacte",
+              "pt": "Apresentar diálogo inventado como transcrição literal"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Diop describes trial research and extensive use of courtroom language. A practical exercise would be to: Separate sourced testimony from invented character material.",
+          "nb": "Diop beskriver rettssaksresearch og omfattende bruk av rettssalens språk. En praktisk øvelse vil være å: Skill kildebelagt vitnesbyrd fra oppdiktet karaktermateriale.",
+          "fr": "Diop décrit la recherche du procès et l’usage du langage judiciaire. Un exercice pratique consisterait à : Séparer témoignages sourcés et éléments fictionnels.",
+          "pt": "Diop descreve pesquisa do julgamento e uso da linguagem judicial. Um exercício prático consistiria em: Separar testemunho documentado de material ficcional."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "saintomer-duration",
+        "area": "camera",
+        "prompt": {
+          "en": "The filmmakers describe sustained takes and chronological courtroom filming. Which approach would you choose for a new production exercise?",
+          "nb": "Filmskaperne beskriver lange tagninger og kronologiske rettssalsopptak. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les cinéastes décrivent des prises prolongées et un tournage chronologique. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os cineastas descrevem planos prolongados e filmagem cronológica. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse sustained listening and allow pauses within the scene",
+              "nb": "Øv vedvarende lytting og gi plass til pauser i scenen",
+              "fr": "Répéter l’écoute prolongée et laisser des pauses dans la scène",
+              "pt": "Ensaiar escuta prolongada e permitir pausas na cena"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Cut away every time a speaker pauses",
+              "nb": "Klipp vekk hver gang en taler tar pause",
+              "fr": "Couper chaque fois qu’un orateur marque une pause",
+              "pt": "Cortar sempre que um orador faz pausa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The filmmakers describe sustained takes and chronological courtroom filming. A practical exercise would be to: Rehearse sustained listening and allow pauses within the scene.",
+          "nb": "Filmskaperne beskriver lange tagninger og kronologiske rettssalsopptak. En praktisk øvelse vil være å: Øv vedvarende lytting og gi plass til pauser i scenen.",
+          "fr": "Les cinéastes décrivent des prises prolongées et un tournage chronologique. Un exercice pratique consisterait à : Répéter l’écoute prolongée et laisser des pauses dans la scène.",
+          "pt": "Os cineastas descrevem planos prolongados e filmagem cronológica. Um exercício prático consistiria em: Ensaiar escuta prolongada e permitir pausas na cena."
+        },
+        "sourceIds": [
+          "s2",
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "saintomer-silence",
+        "area": "sound",
+        "prompt": {
+          "en": "Diop describes emotional rhythm and a restrained relationship between sound, silence and music. Which approach would you choose for a new production exercise?",
+          "nb": "Diop beskriver følelsesrytme og et tilbakeholdent forhold mellom lyd, stillhet og musikk. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Diop décrit le rythme émotionnel et un rapport retenu entre son, silence et musique. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Diop descreve ritmo emocional e relação contida entre som, silêncio e música. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use continuous music to dictate every emotional response",
+              "nb": "Bruk kontinuerlig musikk til å diktere hver følelsesreaksjon",
+              "fr": "Utiliser une musique continue pour dicter chaque émotion",
+              "pt": "Usar música contínua para ditar cada emoção"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare a quiet dialogue edit with selective musical interventions",
+              "nb": "Sammenlign et stille dialogklipp med selektive musikalske innslag",
+              "fr": "Comparer un montage de dialogue sobre à des interventions musicales choisies",
+              "pt": "Comparar montagem de diálogo sóbria com intervenções musicais seletivas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Diop describes emotional rhythm and a restrained relationship between sound, silence and music. A practical exercise would be to: Compare a quiet dialogue edit with selective musical interventions.",
+          "nb": "Diop beskriver følelsesrytme og et tilbakeholdent forhold mellom lyd, stillhet og musikk. En praktisk øvelse vil være å: Sammenlign et stille dialogklipp med selektive musikalske innslag.",
+          "fr": "Diop décrit le rythme émotionnel et un rapport retenu entre son, silence et musique. Un exercice pratique consisterait à : Comparer un montage de dialogue sobre à des interventions musicales choisies.",
+          "pt": "Diop descreve ritmo emocional e relação contida entre som, silêncio e música. Um exercício prático consistiria em: Comparar montagem de diálogo sóbria com intervenções musicais seletivas."
+        },
+        "sourceIds": [
+          "s5",
+          "s6"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_nope_2022",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Large-format imagery, practical spaces and offscreen sound",
+      "nb": "Storformatbilder, fysiske kulisser og lyd utenfor bildet",
+      "fr": "Images grand format, décors réels et son hors champ",
+      "pt": "Imagem de grande formato, cenários físicos e som fora de campo"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Nope",
+        "publisher": "American Film Institute",
+        "url": "https://watch.afi.com/movie/nope"
+      },
+      {
+        "id": "s2",
+        "title": "How Hoyte van Hoytema FSF NSC ASC pioneered with Kodak large format film for the supernatural sensation 'Nope'",
+        "publisher": "Kodak",
+        "url": "https://www.kodak.com/en/motion/blog-post/nope/"
+      },
+      {
+        "id": "s3",
+        "title": "Nope",
+        "publisher": "MPC",
+        "url": "https://www.mpcvfx.com/en/filmography/nope/"
+      },
+      {
+        "id": "s4",
+        "title": "How 'Nope' Production Designer Ruth De Jong Built & Bloodied the Haywood Ranch",
+        "publisher": "Motion Picture Association / The Credits",
+        "url": "https://www.motionpictures.org/2022/07/how-nope-production-designer-ruth-de-jong-built-bloodied-the-haywood-ranch/"
+      },
+      {
+        "id": "s6",
+        "title": "'Nope' Sound Designer Johnnie Burn Puts the Fear in What We Hear",
+        "publisher": "Motion Picture Association / The Credits",
+        "url": "https://www.motionpictures.org/2022/08/nope-sound-designer-johnnie-burn-puts-the-fear-in-what-we-hear/"
+      },
+      {
+        "id": "s7",
+        "title": "'Nope' Composer Michael Abels on Scoring Jordan Peele's Sci-Fi Epic",
+        "publisher": "Motion Picture Association / The Credits",
+        "url": "https://www.motionpictures.org/2022/08/nope-composer-michael-abels-on-scoring-jordan-peeles-sci-fi-epic/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "nope-night",
+        "area": "camera",
+        "prompt": {
+          "en": "The production combined infrared and film imagery for its day-for-night approach. Which approach would you choose for a new production exercise?",
+          "nb": "Produksjonen kombinerte infrarøde bilder og filmopptak for dag-for-natt. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "La production a combiné images infrarouges et pellicule pour la nuit américaine. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A produção combinou imagens infravermelhas e película para noite americana. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare matched test plates before approving the composite",
+              "nb": "Sammenlign samsvarende prøveopptak før komposittbildet godkjennes",
+              "fr": "Comparer les prises tests raccordées avant de valider le composite",
+              "pt": "Comparar imagens de teste correspondentes antes de aprovar a composição"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume different capture systems align without testing",
+              "nb": "Anta at ulike opptakssystemer samsvarer uten testing",
+              "fr": "Supposer que les systèmes concordent sans essai",
+              "pt": "Supor que sistemas diferentes coincidem sem testes"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Decide the final look solely from a camera specification",
+              "nb": "Bestem sluttuttrykket bare ut fra kameraspesifikasjonen",
+              "fr": "Décider du rendu final uniquement selon les spécifications caméra",
+              "pt": "Decidir o visual final apenas pelas especificações da câmara"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The production combined infrared and film imagery for its day-for-night approach. A practical exercise would be to: Compare matched test plates before approving the composite.",
+          "nb": "Produksjonen kombinerte infrarøde bilder og filmopptak for dag-for-natt. En praktisk øvelse vil være å: Sammenlign samsvarende prøveopptak før komposittbildet godkjennes.",
+          "fr": "La production a combiné images infrarouges et pellicule pour la nuit américaine. Un exercice pratique consisterait à : Comparer les prises tests raccordées avant de valider le composite.",
+          "pt": "A produção combinou imagens infravermelhas e película para noite americana. Um exercício prático consistiria em: Comparar imagens de teste correspondentes antes de aprovar a composição."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "nope-space",
+        "area": "research",
+        "prompt": {
+          "en": "The production designer describes usable ranch buildings constructed for multiple viewing directions. Which approach would you choose for a new production exercise?",
+          "nb": "Scenografen beskriver brukbare ranchbygninger bygget for flere synsretninger. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le chef décorateur décrit des bâtiments de ranch utilisables sous plusieurs angles. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O diretor de arte descreve edifícios utilizáveis de vários ângulos. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan entrances, sightlines and camera positions together",
+              "nb": "Planlegg innganger, siktlinjer og kameraposisjoner samlet",
+              "fr": "Planifier ensemble entrées, axes de regard et positions caméra",
+              "pt": "Planear entradas, linhas de visão e posições de câmara em conjunto"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Design only the front facade regardless of blocking",
+              "nb": "Utform bare frontfasaden uavhengig av skuespillernes plassering",
+              "fr": "Concevoir seulement la façade sans tenir compte du jeu",
+              "pt": "Conceber apenas a fachada sem considerar a marcação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The production designer describes usable ranch buildings constructed for multiple viewing directions. A practical exercise would be to: Plan entrances, sightlines and camera positions together.",
+          "nb": "Scenografen beskriver brukbare ranchbygninger bygget for flere synsretninger. En praktisk øvelse vil være å: Planlegg innganger, siktlinjer og kameraposisjoner samlet.",
+          "fr": "Le chef décorateur décrit des bâtiments de ranch utilisables sous plusieurs angles. Un exercice pratique consisterait à : Planifier ensemble entrées, axes de regard et positions caméra.",
+          "pt": "O diretor de arte descreve edifícios utilizáveis de vários ângulos. Um exercício prático consistiria em: Planear entradas, linhas de visão e posições de câmara em conjunto."
+        },
+        "sourceIds": [
+          "s4",
+          "s0"
+        ]
+      },
+      {
+        "id": "nope-sound",
+        "area": "sound",
+        "prompt": {
+          "en": "The sound team describes offscreen ambiguity and deliberate negative space. Which approach would you choose for a new production exercise?",
+          "nb": "Lydteamet beskriver tvetydighet utenfor bildet og bevisst bruk av stillhet. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "L’équipe son décrit l’ambiguïté hors champ et l’usage volontaire du silence. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A equipa de som descreve ambiguidade fora de campo e uso deliberado do silêncio. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Explain every offscreen sound immediately in dialogue",
+              "nb": "Forklar all lyd utenfor bildet umiddelbart i dialog",
+              "fr": "Expliquer immédiatement chaque son hors champ par le dialogue",
+              "pt": "Explicar imediatamente cada som fora de campo no diálogo"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test ambiguous sound cues against a restrained visual scene",
+              "nb": "Prøv tvetydige lydsignaler mot en visuelt tilbakeholden scene",
+              "fr": "Tester des indices sonores ambigus dans une scène visuellement sobre",
+              "pt": "Testar sinais sonoros ambíguos numa cena visualmente contida"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The sound team describes offscreen ambiguity and deliberate negative space. A practical exercise would be to: Test ambiguous sound cues against a restrained visual scene.",
+          "nb": "Lydteamet beskriver tvetydighet utenfor bildet og bevisst bruk av stillhet. En praktisk øvelse vil være å: Prøv tvetydige lydsignaler mot en visuelt tilbakeholden scene.",
+          "fr": "L’équipe son décrit l’ambiguïté hors champ et l’usage volontaire du silence. Un exercice pratique consisterait à : Tester des indices sonores ambigus dans une scène visuellement sobre.",
+          "pt": "A equipa de som descreve ambiguidade fora de campo e uso deliberado do silêncio. Um exercício prático consistiria em: Testar sinais sonoros ambíguos numa cena visualmente contida."
+        },
+        "sourceIds": [
+          "s6",
+          "s7"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_top_gun_maverick_2022",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Multi-camera coverage, production sound and editorial organisation",
+      "nb": "Flerkameradekning, produksjonslyd og klippeorganisering",
+      "fr": "Couverture multicaméra, son direct et organisation du montage",
+      "pt": "Cobertura multicâmara, som direto e organização da montagem"
+    },
+    "sources": [
+      {
+        "id": "s2",
+        "title": "Taking Flight with Top Gun: Maverick",
+        "publisher": "American Society of Cinematographers",
+        "url": "https://theasc.com/article/top-gun-maverick/"
+      },
+      {
+        "id": "s3",
+        "title": "FRCSW Goes to the Movies: Top Gun: Maverick",
+        "publisher": "NAVAIR",
+        "url": "https://www.navair.navy.mil/news/FRCSW-Goes-Movies-Top-Gun-Maverick/Tue-05312022-0924"
+      },
+      {
+        "id": "s4",
+        "title": "How the Top Gun: Maverick Sound Team Ingeniously Captured Raw Emotion Mid-Flight",
+        "publisher": "The Credits / Motion Picture Association",
+        "url": "https://www.motionpictures.org/2022/08/how-the-top-gun-maverick-sound-team-ingeniously-captured-raw-emotion-mid-flight-2/"
+      },
+      {
+        "id": "s5",
+        "title": "Top Gun: Maverick Director Joe Kosinski — Post, VFX and More",
+        "publisher": "postPerspective",
+        "url": "https://postperspective.com/top-gun-maverick-tom-cruise-director-joe-kosinski-talks-post-and-workflow/"
+      },
+      {
+        "id": "s6",
+        "title": "Top Gun: Maverick VFX Supe Ryan Tudhope on How the U.S. Navy Ended Up Being His Team's Greatest Resource",
+        "publisher": "Below the Line",
+        "url": "https://mande.net/btl/awards/top-gun-maverick-vfx-ryan-tudhope-interview"
+      },
+      {
+        "id": "s8",
+        "title": "Top Gun: Maverick",
+        "publisher": "Company 3",
+        "url": "https://www.company3.com/videos/top-gun-maverick-3/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "topgun-coverage",
+        "area": "camera",
+        "prompt": {
+          "en": "The craft accounts describe compact multi-camera coverage under professional engineering oversight. Which approach would you choose for a new production exercise?",
+          "nb": "Fagkildene beskriver kompakt flerkameradekning under profesjonelt ingeniørtilsyn. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les sources décrivent une couverture multicaméra compacte sous contrôle technique professionnel. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "As fontes descrevem cobertura multicâmara compacta sob supervisão técnica profissional. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use a stationary mock-up to test framing and sightlines",
+              "nb": "Bruk en stillestående modell for å prøve utsnitt og siktlinjer",
+              "fr": "Utiliser une maquette fixe pour tester cadres et axes de regard",
+              "pt": "Usar uma maquete estacionária para testar enquadramentos e linhas de visão"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume all cameras provide equally useful coverage",
+              "nb": "Anta at alle kameraer gir like nyttig dekning",
+              "fr": "Supposer que toutes les caméras offrent une couverture équivalente",
+              "pt": "Supor que todas as câmaras oferecem cobertura equivalente"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The craft accounts describe compact multi-camera coverage under professional engineering oversight. A practical exercise would be to: Use a stationary mock-up to test framing and sightlines.",
+          "nb": "Fagkildene beskriver kompakt flerkameradekning under profesjonelt ingeniørtilsyn. En praktisk øvelse vil være å: Bruk en stillestående modell for å prøve utsnitt og siktlinjer.",
+          "fr": "Les sources décrivent une couverture multicaméra compacte sous contrôle technique professionnel. Un exercice pratique consisterait à : Utiliser une maquette fixe pour tester cadres et axes de regard.",
+          "pt": "As fontes descrevem cobertura multicâmara compacta sob supervisão técnica profissional. Um exercício prático consistiria em: Usar uma maquete estacionária para testar enquadramentos e linhas de visão."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "topgun-dialogue",
+        "area": "sound",
+        "prompt": {
+          "en": "The sound interview documents production dialogue and synchronization challenges. Which approach would you choose for a new production exercise?",
+          "nb": "Lydintervjuet dokumenterer opptaksdialog og synkroniseringsutfordringer. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "L’entretien son documente le dialogue direct et les difficultés de synchronisation. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A entrevista de som documenta diálogo direto e desafios de sincronização. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test synchronized dialogue and ambient tracks in a safe studio exercise",
+              "nb": "Prøv synkronisert dialog og miljølyd i en trygg studioøvelse",
+              "fr": "Tester dialogues synchronisés et ambiances dans un exercice en studio sûr",
+              "pt": "Testar diálogo sincronizado e ambientes num exercício seguro de estúdio"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Discard synchronization records after recording",
+              "nb": "Kast synkroniseringsnotater etter opptak",
+              "fr": "Éliminer les relevés de synchronisation après enregistrement",
+              "pt": "Descartar registos de sincronização após gravação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The sound interview documents production dialogue and synchronization challenges. A practical exercise would be to: Test synchronized dialogue and ambient tracks in a safe studio exercise.",
+          "nb": "Lydintervjuet dokumenterer opptaksdialog og synkroniseringsutfordringer. En praktisk øvelse vil være å: Prøv synkronisert dialog og miljølyd i en trygg studioøvelse.",
+          "fr": "L’entretien son documente le dialogue direct et les difficultés de synchronisation. Un exercice pratique consisterait à : Tester dialogues synchronisés et ambiances dans un exercice en studio sûr.",
+          "pt": "A entrevista de som documenta diálogo direto e desafios de sincronização. Um exercício prático consistiria em: Testar diálogo sincronizado e ambientes num exercício seguro de estúdio."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "topgun-edit",
+        "area": "research",
+        "prompt": {
+          "en": "The director and effects accounts describe extensive footage and editorial collaboration with VFX. Which approach would you choose for a new production exercise?",
+          "nb": "Regissør- og effektkildene beskriver store opptaksmengder og samarbeid mellom klipp og VFX. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les sources décrivent un volume important de rushes et la collaboration montage-VFX. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "As fontes descrevem grande volume de imagens e colaboração entre montagem e efeitos. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Organize all footage only by file creation date",
+              "nb": "Organiser alle opptak bare etter filenes opprettelsesdato",
+              "fr": "Organiser tous les rushes uniquement par date de création",
+              "pt": "Organizar imagens apenas pela data de criação"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Tag footage by scene, viewpoint and review status",
+              "nb": "Merk opptak etter scene, synsvinkel og gjennomgangsstatus",
+              "fr": "Étiqueter les rushes par scène, point de vue et statut de validation",
+              "pt": "Etiquetar imagens por cena, ponto de vista e estado de revisão"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The director and effects accounts describe extensive footage and editorial collaboration with VFX. A practical exercise would be to: Tag footage by scene, viewpoint and review status.",
+          "nb": "Regissør- og effektkildene beskriver store opptaksmengder og samarbeid mellom klipp og VFX. En praktisk øvelse vil være å: Merk opptak etter scene, synsvinkel og gjennomgangsstatus.",
+          "fr": "Les sources décrivent un volume important de rushes et la collaboration montage-VFX. Un exercice pratique consisterait à : Étiqueter les rushes par scène, point de vue et statut de validation.",
+          "pt": "As fontes descrevem grande volume de imagens e colaboração entre montagem e efeitos. Um exercício prático consistiria em: Etiquetar imagens por cena, ponto de vista e estado de revisão."
+        },
+        "sourceIds": [
+          "s5",
+          "s6",
+          "s8"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_f1_2025",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Live-event coverage, fictional team identity and sound balance",
+      "nb": "Direktearrangement, fiktiv lagidentitet og lydbalanse",
+      "fr": "Captation événementielle, identité d’équipe fictive et équilibre sonore",
+      "pt": "Captação de evento, identidade fictícia e equilíbrio sonoro"
+    },
+    "sources": [
+      {
+        "id": "s3",
+        "title": "On the Fast Track for F1: The Movie",
+        "publisher": "American Cinematographer / American Society of Cinematographers",
+        "url": "https://theasc.com/article/on-the-fast-track-for-f1-the-movie/"
+      },
+      {
+        "id": "s7",
+        "title": "How APXGP was brought to life",
+        "publisher": "Formula 1",
+        "url": "https://www.formula1.com/en/latest/article/how-apxgp-was-brought-to-life-inside-the-rapid-creation-of-f1-the-movies.73ZVNOiyddgPL7jtNhX6Jq.73ZVNOiyddgPL7jtNhX6Jq"
+      },
+      {
+        "id": "s9",
+        "title": "Behind the Scenes: Mixing and Editing F1 The Movie",
+        "publisher": "Avid",
+        "url": "https://connect.avid.com/f1-the-movie-lp.html"
+      },
+      {
+        "id": "s10",
+        "title": "The Sound of F1: The Movie",
+        "publisher": "Dolby Creator Lab",
+        "url": "https://www.dolby.com/creator-lab/podcast/the-sound-of-f1-the-movie/"
+      },
+      {
+        "id": "s11",
+        "title": "F1 The Movie Official Synopsis and Credits",
+        "publisher": "Apple Original Films / Warner Bros. Pictures",
+        "url": "https://www.f1themovie.com/synopsis/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "f1-event",
+        "area": "research",
+        "prompt": {
+          "en": "The production combined fictional scenes with real racing-event environments. Which approach would you choose for a new production exercise?",
+          "nb": "Produksjonen kombinerte fiktive scener med virkelige racingarrangementer. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "La production associait des scènes fictives à de véritables événements automobiles. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A produção combinou cenas fictícias com eventos automobilísticos reais. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan fictional coverage around authorised event windows and continuity",
+              "nb": "Planlegg fiktive opptak rundt godkjente tidsvinduer og kontinuitet",
+              "fr": "Planifier les scènes selon les créneaux autorisés et les raccords",
+              "pt": "Planear cenas segundo horários autorizados e continuidade"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume the event schedule can be changed for every shot",
+              "nb": "Anta at arrangementsplanen kan endres for hvert opptak",
+              "fr": "Supposer que le calendrier peut changer pour chaque plan",
+              "pt": "Supor que o calendário pode mudar para cada plano"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The production combined fictional scenes with real racing-event environments. A practical exercise would be to: Plan fictional coverage around authorised event windows and continuity.",
+          "nb": "Produksjonen kombinerte fiktive scener med virkelige racingarrangementer. En praktisk øvelse vil være å: Planlegg fiktive opptak rundt godkjente tidsvinduer og kontinuitet.",
+          "fr": "La production associait des scènes fictives à de véritables événements automobiles. Un exercice pratique consisterait à : Planifier les scènes selon les créneaux autorisés et les raccords.",
+          "pt": "A produção combinou cenas fictícias com eventos automobilísticos reais. Um exercício prático consistiria em: Planear cenas segundo horários autorizados e continuidade."
+        },
+        "sourceIds": [
+          "s3",
+          "s7"
+        ]
+      },
+      {
+        "id": "f1-identity",
+        "area": "research",
+        "prompt": {
+          "en": "The costume account describes creating a fictional team identity within the real racing environment. Which approach would you choose for a new production exercise?",
+          "nb": "Kostymekilden beskriver en fiktiv lagidentitet i det virkelige racingmiljøet. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le témoignage costume décrit une identité d’équipe fictive dans un environnement réel. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O relato de figurinos descreve identidade fictícia num ambiente real. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Create a consistent palette and wardrobe continuity board",
+              "nb": "Lag en konsekvent palett og kontinuitetstavle for kostymer",
+              "fr": "Créer une palette cohérente et un tableau de raccords costumes",
+              "pt": "Criar paleta coerente e painel de continuidade de figurinos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Change team colours arbitrarily between connected scenes",
+              "nb": "Bytt lagfarger vilkårlig mellom sammenhengende scener",
+              "fr": "Changer arbitrairement les couleurs entre scènes raccordées",
+              "pt": "Mudar cores da equipa arbitrariamente entre cenas ligadas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The costume account describes creating a fictional team identity within the real racing environment. A practical exercise would be to: Create a consistent palette and wardrobe continuity board.",
+          "nb": "Kostymekilden beskriver en fiktiv lagidentitet i det virkelige racingmiljøet. En praktisk øvelse vil være å: Lag en konsekvent palett og kontinuitetstavle for kostymer.",
+          "fr": "Le témoignage costume décrit une identité d’équipe fictive dans un environnement réel. Un exercice pratique consisterait à : Créer une palette cohérente et un tableau de raccords costumes.",
+          "pt": "O relato de figurinos descreve identidade fictícia num ambiente real. Um exercício prático consistiria em: Criar paleta coerente e painel de continuidade de figurinos."
+        },
+        "sourceIds": [
+          "s7",
+          "s11"
+        ]
+      },
+      {
+        "id": "f1-mix",
+        "area": "sound",
+        "prompt": {
+          "en": "The editorial and sound accounts describe balancing racing sound, dialogue and music. Which approach would you choose for a new production exercise?",
+          "nb": "Klippe- og lydkildene beskriver balansen mellom racinglyd, dialog og musikk. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les témoignages décrivent l’équilibre entre sons de course, dialogue et musique. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os relatos descrevem equilíbrio entre som de corrida, diálogo e música. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Raise all sound layers equally at dramatic moments",
+              "nb": "Øk alle lydlag like mye i dramatiske øyeblikk",
+              "fr": "Augmenter également toutes les couches aux moments dramatiques",
+              "pt": "Aumentar todas as camadas igualmente nos momentos dramáticos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare mixes for dialogue intelligibility and dramatic rhythm",
+              "nb": "Sammenlign mikser for dialogforståelse og dramatisk rytme",
+              "fr": "Comparer les mixages selon intelligibilité et rythme dramatique",
+              "pt": "Comparar misturas por inteligibilidade e ritmo dramático"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The editorial and sound accounts describe balancing racing sound, dialogue and music. A practical exercise would be to: Compare mixes for dialogue intelligibility and dramatic rhythm.",
+          "nb": "Klippe- og lydkildene beskriver balansen mellom racinglyd, dialog og musikk. En praktisk øvelse vil være å: Sammenlign mikser for dialogforståelse og dramatisk rytme.",
+          "fr": "Les témoignages décrivent l’équilibre entre sons de course, dialogue et musique. Un exercice pratique consisterait à : Comparer les mixages selon intelligibilité et rythme dramatique.",
+          "pt": "Os relatos descrevem equilíbrio entre som de corrida, diálogo e música. Um exercício prático consistiria em: Comparar misturas por inteligibilidade e ritmo dramático."
+        },
+        "sourceIds": [
+          "s9",
+          "s10"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_mitchells_vs_the_machines_2021",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Painterly CG, character viewpoints and animated performance",
+      "nb": "Malerisk CG, karakterperspektiv og animert spill",
+      "fr": "CG picturale, points de vue et jeu animé",
+      "pt": "CG pictórico, pontos de vista e atuação animada"
+    },
+    "sources": [
+      {
+        "id": "s4",
+        "title": "Sony Pictures Imageworks Joins Forces with The Mitchells vs. the Machines",
+        "publisher": "VFX Voice",
+        "url": "https://vfxvoice.com/sony-pictures-imageworks-joins-forces-with-the-mitchells-vs-the-machines/"
+      },
+      {
+        "id": "s5",
+        "title": "The Mitchells vs. The Machines: A Scrapbook of Art, Nostalgia, and Killer Robots",
+        "publisher": "Animation World Network",
+        "url": "https://www.awn.com/animationworld/mitchells-vs-machines-scrapbook-art-nostalgia-and-killer-robots"
+      },
+      {
+        "id": "s6",
+        "title": "Mike Rianda Talks The Mitchells vs. The Machines",
+        "publisher": "Animation World Network",
+        "url": "https://www.awn.com/animationworld/mike-rianda-talks-mitchells-vs-machines"
+      },
+      {
+        "id": "s7",
+        "title": "The beginning of an explosion: The Mitchells Vs The Machines team on advances in animation",
+        "publisher": "Screen International",
+        "url": "https://www.screendaily.com/features/the-beginning-of-an-explosion-the-mitchells-vs-the-machines-team-on-advances-in-animation/5166448.article"
+      }
+    ],
+    "questions": [
+      {
+        "id": "mitchells-texture",
+        "area": "camera",
+        "prompt": {
+          "en": "The artists describe paint-stroke inputs and intentionally imperfect visual surfaces. Which approach would you choose for a new production exercise?",
+          "nb": "Kunstnerne beskriver penselstrøk og bevisst uperfekte bildeflater. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les artistes décrivent des coups de pinceau et des surfaces volontairement imparfaites. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os artistas descrevem pinceladas e superfícies deliberadamente imperfeitas. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare painterly and polished rendering on the same original scene",
+              "nb": "Sammenlign malerisk og polert rendering av samme originale scene",
+              "fr": "Comparer rendu pictural et lisse sur la même scène originale",
+              "pt": "Comparar renderização pictórica e polida na mesma cena original"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Remove every irregularity before reviewing the design",
+              "nb": "Fjern alle uregelmessigheter før designet vurderes",
+              "fr": "Retirer toutes les irrégularités avant examen",
+              "pt": "Retirar todas as irregularidades antes da revisão"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The artists describe paint-stroke inputs and intentionally imperfect visual surfaces. A practical exercise would be to: Compare painterly and polished rendering on the same original scene.",
+          "nb": "Kunstnerne beskriver penselstrøk og bevisst uperfekte bildeflater. En praktisk øvelse vil være å: Sammenlign malerisk og polert rendering av samme originale scene.",
+          "fr": "Les artistes décrivent des coups de pinceau et des surfaces volontairement imparfaites. Un exercice pratique consisterait à : Comparer rendu pictural et lisse sur la même scène originale.",
+          "pt": "Os artistas descrevem pinceladas e superfícies deliberadamente imperfeitas. Um exercício prático consistiria em: Comparar renderização pictórica e polida na mesma cena original."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "mitchells-viewpoint",
+        "area": "research",
+        "prompt": {
+          "en": "The design accounts distinguish Katie’s subjective visual layer from the surrounding world. Which approach would you choose for a new production exercise?",
+          "nb": "Designkildene skiller Katies subjektive bildelag fra verden rundt henne. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les sources distinguent la couche visuelle subjective de Katie du monde environnant. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "As fontes distinguem a camada visual subjetiva de Katie do mundo envolvente. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Define when a character-specific graphic layer enters the scene",
+              "nb": "Definer når et karakterspesifikt grafisk lag kommer inn i scenen",
+              "fr": "Définir quand une couche graphique subjective entre dans la scène",
+              "pt": "Definir quando uma camada gráfica subjetiva entra na cena"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Apply identical subjective graphics to every character",
+              "nb": "Bruk identisk subjektiv grafikk for alle karakterer",
+              "fr": "Appliquer des graphismes subjectifs identiques à tous les personnages",
+              "pt": "Aplicar grafismos subjetivos idênticos a todas as personagens"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The design accounts distinguish Katie’s subjective visual layer from the surrounding world. A practical exercise would be to: Define when a character-specific graphic layer enters the scene.",
+          "nb": "Designkildene skiller Katies subjektive bildelag fra verden rundt henne. En praktisk øvelse vil være å: Definer når et karakterspesifikt grafisk lag kommer inn i scenen.",
+          "fr": "Les sources distinguent la couche visuelle subjective de Katie du monde environnant. Un exercice pratique consisterait à : Définir quand une couche graphique subjective entre dans la scène.",
+          "pt": "As fontes distinguem a camada visual subjetiva de Katie do mundo envolvente. Um exercício prático consistiria em: Definir quando uma camada gráfica subjetiva entra na cena."
+        },
+        "sourceIds": [
+          "s4",
+          "s7"
+        ]
+      },
+      {
+        "id": "mitchells-performance",
+        "area": "research",
+        "prompt": {
+          "en": "The director describes giving animators room to invent performance and staging. Which approach would you choose for a new production exercise?",
+          "nb": "Regissøren beskriver hvordan animatørene fikk rom til å utvikle spill og iscenesettelse. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le réalisateur décrit la liberté donnée aux animateurs d’inventer jeu et mise en scène. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O realizador descreve liberdade dos animadores para inventar atuação e encenação. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Require animators to copy every storyboard gesture literally",
+              "nb": "Krev at animatørene kopierer hver storyboardbevegelse ordrett",
+              "fr": "Exiger une copie littérale de chaque geste du storyboard",
+              "pt": "Exigir cópia literal de cada gesto do storyboard"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Review alternate acting beats against the scene intention",
+              "nb": "Gjennomgå alternative spillnyanser mot scenens hensikt",
+              "fr": "Examiner des variantes de jeu selon l’intention de la scène",
+              "pt": "Rever variantes de atuação segundo a intenção da cena"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The director describes giving animators room to invent performance and staging. A practical exercise would be to: Review alternate acting beats against the scene intention.",
+          "nb": "Regissøren beskriver hvordan animatørene fikk rom til å utvikle spill og iscenesettelse. En praktisk øvelse vil være å: Gjennomgå alternative spillnyanser mot scenens hensikt.",
+          "fr": "Le réalisateur décrit la liberté donnée aux animateurs d’inventer jeu et mise en scène. Un exercice pratique consisterait à : Examiner des variantes de jeu selon l’intention de la scène.",
+          "pt": "O realizador descreve liberdade dos animadores para inventar atuação e encenação. Um exercício prático consistiria em: Rever variantes de atuação segundo a intenção da cena."
+        },
+        "sourceIds": [
+          "s5",
+          "s6"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_guillermo_del_toros_pinocchio_2022",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Puppet continuity, stop-motion lighting and material sound",
+      "nb": "Dukkekontinuitet, stop-motion-lys og materiallyd",
+      "fr": "Raccords de marionnettes, lumière stop motion et sons de matière",
+      "pt": "Continuidade de marionetas, luz stop motion e som material"
+    },
+    "sources": [
+      {
+        "id": "s2",
+        "title": "Inside the Stop-Motion Magic of Guillermo del Toro's Pinocchio",
+        "publisher": "Netflix Tudum",
+        "url": "https://www.netflix.com/tudum/articles/pinocchio-stop-motion-behind-the-scenes"
+      },
+      {
+        "id": "s4",
+        "title": "Best of 2022: Guillermo del Toro's Pinocchio Animation Supervisor Brian Leif Hansen Packs Puppets With Emotion",
+        "publisher": "Motion Picture Association / The Credits",
+        "url": "https://www.motionpictures.org/2022/12/guillermo-del-toros-pinocchio-animation-supervisor-brian-leif-hansen-packs-puppets-with-emotion-2/"
+      },
+      {
+        "id": "s5",
+        "title": "Guillermo del Toro's Pinocchio crew members. 2022",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/audio/playlist/327/4316"
+      },
+      {
+        "id": "s7",
+        "title": "Frank Passingham / Guillermo del Toro's Pinocchio",
+        "publisher": "British Cinematographer",
+        "url": "https://britishcinematographer.co.uk/frank-passingham-guillermo-del-toros-pinocchio/"
+      },
+      {
+        "id": "s8",
+        "title": "Guillermo del Toro's Pinocchio",
+        "publisher": "Boris FX / Art of the Cut",
+        "url": "https://borisfx.com/blog/aotc/holly-klein-discuss-editing-the-stop-motion-animated-guillermo-del-toros-pinocchio/"
+      },
+      {
+        "id": "s9",
+        "title": "Perfecting Pinocchio's Distinct Sound for Director Del Toro – with Scott Gershin",
+        "publisher": "A Sound Effect",
+        "url": "https://www.asoundeffect.com/pinocchio-del-toro-film-sound/"
+      },
+      {
+        "id": "s10",
+        "title": "Alexandre Desplat. Score for Guillermo del Toro's Pinocchio. 2022",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/audio/playlist/327/4320"
+      }
+    ],
+    "questions": [
+      {
+        "id": "pinocchio-puppets",
+        "area": "research",
+        "prompt": {
+          "en": "Production accounts describe duplicate puppets and geographically separated fabrication teams. Which approach would you choose for a new production exercise?",
+          "nb": "Produksjonskildene beskriver duplikatdukker og geografisk adskilte fabrikasjonsteam. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les sources décrivent des marionnettes dupliquées et des équipes de fabrication éloignées. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "As fontes descrevem marionetas duplicadas e equipas de fabrico geograficamente separadas. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Maintain reference sheets and revision records for duplicate puppets",
+              "nb": "Vedlikehold referanseark og revisjonslogger for duplikatdukker",
+              "fr": "Tenir des fiches de référence et des historiques de révision",
+              "pt": "Manter fichas de referência e registos de revisão"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Approve the result before comparing any alternatives",
+              "nb": "Godkjenn resultatet før noen alternativer sammenlignes",
+              "fr": "Valider le résultat avant de comparer les variantes",
+              "pt": "Aprovar o resultado antes de comparar alternativas"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Production accounts describe duplicate puppets and geographically separated fabrication teams. A practical exercise would be to: Maintain reference sheets and revision records for duplicate puppets.",
+          "nb": "Produksjonskildene beskriver duplikatdukker og geografisk adskilte fabrikasjonsteam. En praktisk øvelse vil være å: Vedlikehold referanseark og revisjonslogger for duplikatdukker.",
+          "fr": "Les sources décrivent des marionnettes dupliquées et des équipes de fabrication éloignées. Un exercice pratique consisterait à : Tenir des fiches de référence et des historiques de révision.",
+          "pt": "As fontes descrevem marionetas duplicadas e equipas de fabrico geograficamente separadas. Um exercício prático consistiria em: Manter fichas de referência e registos de revisão."
+        },
+        "sourceIds": [
+          "s2",
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "pinocchio-lighting",
+        "area": "camera",
+        "prompt": {
+          "en": "The cinematographer describes layered lighting and multi-pass integration. Which approach would you choose for a new production exercise?",
+          "nb": "Filmfotografen beskriver lagdelt lyssetting og integrering av flere opptakspass. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le directeur photo décrit un éclairage en couches et une intégration multipasse. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O diretor de fotografia descreve iluminação em camadas e integração de várias passagens. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record lighting references and lock approved settings for each setup",
+              "nb": "Registrer lysreferanser og lås godkjente innstillinger for hvert oppsett",
+              "fr": "Consigner les références et verrouiller les réglages validés",
+              "pt": "Registar referências e fixar configurações aprovadas por montagem"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Adjust lighting randomly between consecutive animation frames",
+              "nb": "Endre lys tilfeldig mellom påfølgende animasjonsbilder",
+              "fr": "Modifier la lumière au hasard entre images successives",
+              "pt": "Alterar iluminação ao acaso entre fotogramas consecutivos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The cinematographer describes layered lighting and multi-pass integration. A practical exercise would be to: Record lighting references and lock approved settings for each setup.",
+          "nb": "Filmfotografen beskriver lagdelt lyssetting og integrering av flere opptakspass. En praktisk øvelse vil være å: Registrer lysreferanser og lås godkjente innstillinger for hvert oppsett.",
+          "fr": "Le directeur photo décrit un éclairage en couches et une intégration multipasse. Un exercice pratique consisterait à : Consigner les références et verrouiller les réglages validés.",
+          "pt": "O diretor de fotografia descreve iluminação em camadas e integração de várias passagens. Um exercício prático consistiria em: Registar referências e fixar configurações aprovadas por montagem."
+        },
+        "sourceIds": [
+          "s7",
+          "s8"
+        ]
+      },
+      {
+        "id": "pinocchio-material",
+        "area": "sound",
+        "prompt": {
+          "en": "The sound supervisor and composer describe material identity in sound and music. Which approach would you choose for a new production exercise?",
+          "nb": "Lydansvarlig og komponist beskriver materialidentitet i lyd og musikk. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le superviseur son et le compositeur décrivent l’identité matérielle du son et de la musique. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O supervisor de som e o compositor descrevem identidade material no som e na música. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use identical movement sounds for all materials",
+              "nb": "Bruk identiske bevegelseslyder for alle materialer",
+              "fr": "Utiliser les mêmes sons de mouvement pour toutes les matières",
+              "pt": "Usar os mesmos sons de movimento para todos os materiais"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record original wood and fabric textures for a character sound study",
+              "nb": "Ta opp originale tre- og stofflyder til en karakterlydstudie",
+              "fr": "Enregistrer des textures de bois et tissu pour une étude sonore",
+              "pt": "Gravar texturas de madeira e tecido para um estudo sonoro"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The sound supervisor and composer describe material identity in sound and music. A practical exercise would be to: Record original wood and fabric textures for a character sound study.",
+          "nb": "Lydansvarlig og komponist beskriver materialidentitet i lyd og musikk. En praktisk øvelse vil være å: Ta opp originale tre- og stofflyder til en karakterlydstudie.",
+          "fr": "Le superviseur son et le compositeur décrivent l’identité matérielle du son et de la musique. Un exercice pratique consisterait à : Enregistrer des textures de bois et tissu pour une étude sonore.",
+          "pt": "O supervisor de som e o compositor descrevem identidade material no som e na música. Um exercício prático consistiria em: Gravar texturas de madeira e tecido para um estudo sonoro."
+        },
+        "sourceIds": [
+          "s9",
+          "s10"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_kpop_demon_hunters_2025",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Stylised animation, song dramaturgy and music-led editing",
+      "nb": "Stilisert animasjon, sangdramaturgi og musikkstyrt klipp",
+      "fr": "Animation stylisée, dramaturgie des chansons et montage musical",
+      "pt": "Animação estilizada, dramaturgia das canções e montagem musical"
+    },
+    "sources": [
+      {
+        "id": "s2",
+        "title": "From Spider-Man: Into the Spider-Verse to KPop Demon Hunters: Spotlighting the Evolution of SPA × Imageworks Collaborations",
+        "publisher": "Sony Group",
+        "url": "https://www.sony.com/en/SonyInfo/technology/stories/entries/kpop_demon_hunters/"
+      },
+      {
+        "id": "s3",
+        "title": "How Colors Tell the Story of KPop Demon Hunters",
+        "publisher": "Netflix Tudum",
+        "url": "https://www.netflix.com/tudum/features/kpop-demon-hunters-animators"
+      },
+      {
+        "id": "s4",
+        "title": "K-Pop Hitmaker Danny Chung on Crafting the Sound of KPop Demon Hunters",
+        "publisher": "Netflix Tudum",
+        "url": "https://www.netflix.com/tudum/articles/kpop-demon-hunters-danny-chung"
+      },
+      {
+        "id": "s5",
+        "title": "How Golden, the Musical Heart of KPop Demon Hunters, Is Living Up to Its Name",
+        "publisher": "Netflix Tudum",
+        "url": "https://www.netflix.com/tudum/features/kpop-demon-hunters-golden-oral-history"
+      },
+      {
+        "id": "s6",
+        "title": "KPop Demon Hunters Edited on Avid - Interview with Editor Nathan Schauf",
+        "publisher": "PRONEWS",
+        "url": "https://en.pronews.com/special/20251205120013340.html"
+      },
+      {
+        "id": "s9",
+        "title": "Art of the Cut: KPop Demon Hunters",
+        "publisher": "Boris FX",
+        "url": "https://borisfx.com/blog/aotc/art-of-the-cut-kpop-demon-hunters/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "kpop-style",
+        "area": "camera",
+        "prompt": {
+          "en": "Hand-keyed animation and expressive motion graphics shape the image. Which approach would you choose in a new production exercise?",
+          "nb": "Håndanimert bevegelse og ekspressiv bevegelsesgrafikk former bildet. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "L’animation manuelle et les graphismes expressifs façonnent l’image. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A animação manual e os grafismos expressivos moldam a imagem. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare stylised motion tests with realistic timing",
+              "nb": "Sammenlign stiliserte bevegelsesprøver med realistisk timing",
+              "fr": "Comparer des essais stylisés à un rythme réaliste",
+              "pt": "Comparar testes estilizados com ritmo realista"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use identical realistic movement for every character",
+              "nb": "Bruk identisk realistisk bevegelse for alle karakterer",
+              "fr": "Utiliser le même mouvement réaliste pour chaque personnage",
+              "pt": "Usar movimento realista idêntico para cada personagem"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume motion capture alone defines the visual style",
+              "nb": "Anta at bevegelsesopptak alene definerer bildestilen",
+              "fr": "Supposer que la capture de mouvement définit seule le style",
+              "pt": "Supor que captura de movimento define sozinha o estilo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Hand-keyed animation and expressive motion graphics shape the image. In a new exercise, test this approach: Compare stylised motion tests with realistic timing.",
+          "nb": "Håndanimert bevegelse og ekspressiv bevegelsesgrafikk former bildet. Prøv denne tilnærmingen i en ny øvelse: Sammenlign stiliserte bevegelsesprøver med realistisk timing.",
+          "fr": "L’animation manuelle et les graphismes expressifs façonnent l’image. Dans un nouvel exercice, tester cette approche : Comparer des essais stylisés à un rythme réaliste.",
+          "pt": "A animação manual e os grafismos expressivos moldam a imagem. Num novo exercício, testar esta abordagem: Comparar testes estilizados com ritmo realista."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "kpop-songs",
+        "area": "research",
+        "prompt": {
+          "en": "The music team mapped songs to narrative beats before final production. Which approach would you choose in a new production exercise?",
+          "nb": "Musikkteamet knyttet sangene til fortellingspunkter før sluttproduksjon. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "L’équipe musicale a lié les chansons aux étapes du récit avant la production finale. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A equipa musical ligou canções a momentos narrativos antes da produção final. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Separate lyrics from all character development",
+              "nb": "Løsne sangtekstene fra all karakterutvikling",
+              "fr": "Séparer les paroles de toute évolution des personnages",
+              "pt": "Separar letras de toda evolução das personagens"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Write an original song brief with a dramatic turning point",
+              "nb": "Skriv en original sangbrief med et dramatisk vendepunkt",
+              "fr": "Rédiger un brief de chanson originale avec un tournant dramatique",
+              "pt": "Criar um briefing de canção original com uma viragem dramática"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose songs solely by chart potential",
+              "nb": "Velg sanger utelukkende etter hitpotensial",
+              "fr": "Choisir les chansons uniquement pour leur potentiel commercial",
+              "pt": "Escolher canções apenas pelo potencial comercial"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The music team mapped songs to narrative beats before final production. In a new exercise, test this approach: Write an original song brief with a dramatic turning point.",
+          "nb": "Musikkteamet knyttet sangene til fortellingspunkter før sluttproduksjon. Prøv denne tilnærmingen i en ny øvelse: Skriv en original sangbrief med et dramatisk vendepunkt.",
+          "fr": "L’équipe musicale a lié les chansons aux étapes du récit avant la production finale. Dans un nouvel exercice, tester cette approche : Rédiger un brief de chanson originale avec un tournant dramatique.",
+          "pt": "A equipa musical ligou canções a momentos narrativos antes da produção final. Num novo exercício, testar esta abordagem: Criar um briefing de canção original com uma viragem dramática."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "kpop-edit",
+        "area": "sound",
+        "prompt": {
+          "en": "Editorial work evolved as storyboards became finished animation, with music synchronization. Which approach would you choose in a new production exercise?",
+          "nb": "Klippen utviklet seg fra storyboard til ferdig animasjon med musikksynkronisering. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le montage évoluait du storyboard à l’animation finale avec synchronisation musicale. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A montagem evoluiu do storyboard à animação final com sincronização musical. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Discard timing references after storyboard approval",
+              "nb": "Kast tidsreferansene etter storyboardgodkjenning",
+              "fr": "Éliminer les repères temporels après validation du storyboard",
+              "pt": "Eliminar referências temporais após aprovação do storyboard"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Wait until final rendering to consider music synchronization",
+              "nb": "Vent til ferdig rendering med å vurdere musikksynkronisering",
+              "fr": "Attendre le rendu final pour considérer la synchronisation",
+              "pt": "Esperar pela renderização final para considerar sincronização"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Keep approved music cues aligned across replacement stages",
+              "nb": "Hold godkjente musikksignaler synkronisert gjennom utskifting av opptak",
+              "fr": "Garder les repères musicaux synchronisés lors des remplacements",
+              "pt": "Manter marcas musicais sincronizadas durante substituições"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Editorial work evolved as storyboards became finished animation, with music synchronization. In a new exercise, test this approach: Keep approved music cues aligned across replacement stages.",
+          "nb": "Klippen utviklet seg fra storyboard til ferdig animasjon med musikksynkronisering. Prøv denne tilnærmingen i en ny øvelse: Hold godkjente musikksignaler synkronisert gjennom utskifting av opptak.",
+          "fr": "Le montage évoluait du storyboard à l’animation finale avec synchronisation musicale. Dans un nouvel exercice, tester cette approche : Garder les repères musicaux synchronisés lors des remplacements.",
+          "pt": "A montagem evoluiu do storyboard à animação final com sincronização musical. Num novo exercício, testar esta abordagem: Manter marcas musicais sincronizadas durante substituições."
+        },
+        "sourceIds": [
+          "s6",
+          "s9"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_new_world_2005",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Historical environment, natural light and version provenance",
+      "nb": "Historisk miljø, naturlig lys og versjonsproveniens",
+      "fr": "Décors historiques, lumière naturelle et provenance des versions",
+      "pt": "Ambiente histórico, luz natural e proveniência das versões"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The New World",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/28713-the-new-world"
+      },
+      {
+        "id": "s2",
+        "title": "Film of the Month: The New World",
+        "publisher": "BFI Sight and Sound",
+        "url": "https://old.bfi.org.uk/sightandsound/review/3131"
+      },
+      {
+        "id": "s3",
+        "title": "American Cinematographer, January 2006: The New World / Uncharted Emotions",
+        "publisher": "American Society of Cinematographers",
+        "url": "https://theasc.com/magazine/jan06.htm"
+      },
+      {
+        "id": "s4",
+        "title": "The New World",
+        "publisher": "American Film Institute",
+        "url": "https://watch.afi.com/movie/the-new-world"
+      },
+      {
+        "id": "s5",
+        "title": "Dreaming of a New World",
+        "publisher": "Cincinnati CityBeat",
+        "url": "https://www.citybeat.com/arts/film-dreaming-of-a-new-world-12176425/"
+      },
+      {
+        "id": "s6",
+        "title": "Inside the enduring movie homes of Jack Fisk, production design legend",
+        "publisher": "Associated Press",
+        "url": "https://apnews.com/article/90c5b0a569ae9653985252176d7ead7a"
+      }
+    ],
+    "questions": [
+      {
+        "id": "newworld-design",
+        "area": "research",
+        "prompt": {
+          "en": "Fisk describes researched physical environments built to accommodate fluid camera movement. Which approach would you choose in a new production exercise?",
+          "nb": "Fisk beskriver kildebaserte fysiske miljøer bygget for flytende kamerabevegelse. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Fisk décrit des décors physiques documentés permettant une caméra fluide. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Fisk descreve ambientes físicos pesquisados para movimento fluido de câmara. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Review period details with historians and test camera access",
+              "nb": "Gjennomgå periodedetaljer med historikere og prøv kameratilgang",
+              "fr": "Vérifier les détails avec des historiens et tester l’accès caméra",
+              "pt": "Rever detalhes históricos e testar acesso da câmara"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Build only a facade without considering camera movement",
+              "nb": "Bygg bare en fasade uten å vurdere kamerabevegelse",
+              "fr": "Construire seulement une façade sans considérer la caméra",
+              "pt": "Construir apenas fachada sem considerar movimento de câmara"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat reconstructed spaces as surviving historical buildings",
+              "nb": "Behandle rekonstruerte rom som bevarte historiske bygninger",
+              "fr": "Traiter les décors reconstruits comme bâtiments historiques subsistants",
+              "pt": "Tratar espaços reconstruídos como edifícios históricos sobreviventes"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Fisk describes researched physical environments built to accommodate fluid camera movement. In a new exercise, test this approach: Review period details with historians and test camera access.",
+          "nb": "Fisk beskriver kildebaserte fysiske miljøer bygget for flytende kamerabevegelse. Prøv denne tilnærmingen i en ny øvelse: Gjennomgå periodedetaljer med historikere og prøv kameratilgang.",
+          "fr": "Fisk décrit des décors physiques documentés permettant une caméra fluide. Dans un nouvel exercice, tester cette approche : Vérifier les détails avec des historiens et tester l’accès caméra.",
+          "pt": "Fisk descreve ambientes físicos pesquisados para movimento fluido de câmara. Num novo exercício, testar esta abordagem: Rever detalhes históricos e testar acesso da câmara."
+        },
+        "sourceIds": [
+          "s5",
+          "s6"
+        ]
+      },
+      {
+        "id": "newworld-light",
+        "area": "camera",
+        "prompt": {
+          "en": "Craft records describe natural-light photography and moving camera work. Which approach would you choose in a new production exercise?",
+          "nb": "Fagkildene beskriver fotografering med naturlig lys og bevegelig kamera. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les sources décrivent la lumière naturelle et une caméra mobile. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "As fontes descrevem luz natural e câmara móvel. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the method without checking the requirements",
+              "nb": "Godkjenn metoden uten å undersøke kravene",
+              "fr": "Valider la méthode sans vérifier les exigences",
+              "pt": "Aprovar o método sem verificar os requisitos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Scout light at different hours and rehearse camera paths",
+              "nb": "Befar lys til ulike tider og øv kamerabaner",
+              "fr": "Repérer la lumière à diverses heures et répéter les trajets caméra",
+              "pt": "Observar luz a várias horas e ensaiar trajetos de câmara"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume daylight has the same quality throughout the day",
+              "nb": "Anta at dagslyset har samme kvalitet hele dagen",
+              "fr": "Supposer que la lumière du jour reste identique",
+              "pt": "Supor que luz natural mantém a mesma qualidade"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Craft records describe natural-light photography and moving camera work. In a new exercise, test this approach: Scout light at different hours and rehearse camera paths.",
+          "nb": "Fagkildene beskriver fotografering med naturlig lys og bevegelig kamera. Prøv denne tilnærmingen i en ny øvelse: Befar lys til ulike tider og øv kamerabaner.",
+          "fr": "Les sources décrivent la lumière naturelle et une caméra mobile. Dans un nouvel exercice, tester cette approche : Repérer la lumière à diverses heures et répéter les trajets caméra.",
+          "pt": "As fontes descrevem luz natural e câmara móvel. Num novo exercício, testar esta abordagem: Observar luz a várias horas e ensaiar trajetos de câmara."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "newworld-versions",
+        "area": "research",
+        "prompt": {
+          "en": "Criterion documents three director-approved versions and a later restoration. Which approach would you choose in a new production exercise?",
+          "nb": "Criterion dokumenterer tre regissørgodkjente versjoner og en senere restaurering. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Criterion documente trois versions approuvées et une restauration ultérieure. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Criterion documenta três versões aprovadas e restauro posterior. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Combine every version into one undocumented master",
+              "nb": "Slå sammen alle versjoner til én udokumentert master",
+              "fr": "Fusionner toutes les versions en un master non documenté",
+              "pt": "Fundir todas as versões num master não documentado"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the method without checking the requirements",
+              "nb": "Godkjenn metoden uten å undersøke kravene",
+              "fr": "Valider la méthode sans vérifier les exigences",
+              "pt": "Aprovar o método sem verificar os requisitos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Catalogue versions separately from restoration and original production",
+              "nb": "Registrer versjoner separat fra restaurering og originalproduksjon",
+              "fr": "Cataloguer les versions séparément de la restauration et de la production",
+              "pt": "Catalogar versões separadamente de restauro e produção original"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion documents three director-approved versions and a later restoration. In a new exercise, test this approach: Catalogue versions separately from restoration and original production.",
+          "nb": "Criterion dokumenterer tre regissørgodkjente versjoner og en senere restaurering. Prøv denne tilnærmingen i en ny øvelse: Registrer versjoner separat fra restaurering og originalproduksjon.",
+          "fr": "Criterion documente trois versions approuvées et une restauration ultérieure. Dans un nouvel exercice, tester cette approche : Cataloguer les versions séparément de la restauration et de la production.",
+          "pt": "Criterion documenta três versões aprovadas e restauro posterior. Num novo exercício, testar esta abordagem: Catalogar versões separadamente de restauro e produção original."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_anomalisa_2015",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Sound-play adaptation, miniature continuity and subjective performance",
+      "nb": "Lydbasert adaptasjon, miniatyrkontinuitet og subjektivt spill",
+      "fr": "Adaptation sonore, raccords miniatures et jeu subjectif",
+      "pt": "Adaptação sonora, continuidade de miniaturas e atuação subjetiva"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The AFI FEST Interview: ANOMALISA Directors Charlie Kaufman and Duke Johnson",
+        "publisher": "American Film Institute",
+        "url": "https://www.afi.com/news/charlie-kaufman-anomalisa-duke-johnson-interview-afi-fest-2015/"
+      },
+      {
+        "id": "s2",
+        "title": "Puppets and Pantyhose: DP Joe Passarelli on Anomalisa",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/97174-puppets-and-pantyhose-dp-joe-passarelli-on-anomalisa/"
+      },
+      {
+        "id": "s5",
+        "title": "Anomalisa",
+        "publisher": "Carter Burwell",
+        "url": "https://www.carterburwell.com/projects/Anomalisa.shtml"
+      },
+      {
+        "id": "s6",
+        "title": "Directors Close-Up Recap: Anomalisa's Charlie Kaufman and Duke Johnson Explore Heartbreak in Miniature",
+        "publisher": "Film Independent",
+        "url": "https://www.filmindependent.org/blog/directors-close-up-recap-anomalisas-charlie-kaufman-and-duke-johnson-explore-heartbreak-in-miniature/"
+      },
+      {
+        "id": "s7",
+        "title": "Film of the week: Anomalisa",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/sight-and-sound/reviews/film-week-anomalisa"
+      },
+      {
+        "id": "s8",
+        "title": "Interview: John Joyce (Anomalisa)",
+        "publisher": "Interiors",
+        "url": "https://www.intjournal.com/interview/john-joyce"
+      }
+    ],
+    "questions": [
+      {
+        "id": "anomalisa-adapt",
+        "area": "sound",
+        "prompt": {
+          "en": "The feature originated as a sound play with three performers. Which approach would you choose in a new production exercise?",
+          "nb": "Spillefilmen hadde opphav i et lydspill med tre utøvere. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le long métrage est issu d’une pièce sonore à trois interprètes. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A longa-metragem nasceu de uma peça sonora com três intérpretes. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Storyboard an original audio scene while preserving meaningful offscreen sound",
+              "nb": "Lag storyboard til en original lydscene og bevar meningsfull lyd utenfor bildet",
+              "fr": "Créer un storyboard sonore original en préservant le hors-champ sonore",
+              "pt": "Criar storyboard de cena sonora original preservando som fora de campo"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Illustrate every sound literally on screen",
+              "nb": "Illustrer hver lyd bokstavelig på skjermen",
+              "fr": "Illustrer littéralement chaque son à l’écran",
+              "pt": "Ilustrar literalmente cada som no ecrã"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Replace the audio structure before studying its rhythm",
+              "nb": "Erstatt lydstrukturen før rytmen undersøkes",
+              "fr": "Remplacer la structure sonore avant d’étudier son rythme",
+              "pt": "Substituir estrutura sonora antes de estudar o ritmo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The feature originated as a sound play with three performers. In a new exercise, test this approach: Storyboard an original audio scene while preserving meaningful offscreen sound.",
+          "nb": "Spillefilmen hadde opphav i et lydspill med tre utøvere. Prøv denne tilnærmingen i en ny øvelse: Lag storyboard til en original lydscene og bevar meningsfull lyd utenfor bildet.",
+          "fr": "Le long métrage est issu d’une pièce sonore à trois interprètes. Dans un nouvel exercice, tester cette approche : Créer un storyboard sonore original en préservant le hors-champ sonore.",
+          "pt": "A longa-metragem nasceu de uma peça sonora com três intérpretes. Num novo exercício, testar esta abordagem: Criar storyboard de cena sonora original preservando som fora de campo."
+        },
+        "sourceIds": [
+          "s0",
+          "s5"
+        ]
+      },
+      {
+        "id": "anomalisa-miniatures",
+        "area": "camera",
+        "prompt": {
+          "en": "The cinematography account describes continuity challenges across eighteen miniature stages. Which approach would you choose in a new production exercise?",
+          "nb": "Fotokilden beskriver kontinuitetsutfordringer på atten miniatyrscener. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le témoignage photo décrit des défis de raccord sur dix-huit plateaux miniatures. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O relato de fotografia descreve desafios de continuidade em dezoito palcos miniatura. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore small lighting changes because the sets are miniature",
+              "nb": "Ignorer små lysendringer fordi kulissene er miniatyrer",
+              "fr": "Ignorer les variations de lumière car les décors sont miniatures",
+              "pt": "Ignorar variações de luz porque cenários são miniaturas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Log miniature props, light and camera references between animation sessions",
+              "nb": "Loggfør miniatyrrekvisitter, lys og kamerareferanser mellom animasjonsøkter",
+              "fr": "Consigner accessoires, lumière et références caméra entre sessions",
+              "pt": "Registar adereços, luz e referências de câmara entre sessões"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Move miniature furniture freely between consecutive frames",
+              "nb": "Flytt miniatyrmøbler fritt mellom påfølgende bilder",
+              "fr": "Déplacer librement les meubles entre images successives",
+              "pt": "Mover móveis miniatura livremente entre fotogramas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The cinematography account describes continuity challenges across eighteen miniature stages. In a new exercise, test this approach: Log miniature props, light and camera references between animation sessions.",
+          "nb": "Fotokilden beskriver kontinuitetsutfordringer på atten miniatyrscener. Prøv denne tilnærmingen i en ny øvelse: Loggfør miniatyrrekvisitter, lys og kamerareferanser mellom animasjonsøkter.",
+          "fr": "Le témoignage photo décrit des défis de raccord sur dix-huit plateaux miniatures. Dans un nouvel exercice, tester cette approche : Consigner accessoires, lumière et références caméra entre sessions.",
+          "pt": "O relato de fotografia descreve desafios de continuidade em dezoito palcos miniatura. Num novo exercício, testar esta abordagem: Registar adereços, luz e referências de câmara entre sessões."
+        },
+        "sourceIds": [
+          "s2",
+          "s8"
+        ]
+      },
+      {
+        "id": "anomalisa-subjectivity",
+        "area": "research",
+        "prompt": {
+          "en": "The recurring faces and voices express a restricted character viewpoint. Which approach would you choose in a new production exercise?",
+          "nb": "Gjentatte ansikter og stemmer uttrykker et begrenset karakterperspektiv. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les visages et voix récurrents expriment un point de vue limité. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Rostos e vozes recorrentes exprimem um ponto de vista limitado. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use the same motif regardless of whose viewpoint governs the scene",
+              "nb": "Bruk samme motiv uansett hvem som styrer scenens perspektiv",
+              "fr": "Utiliser le même motif quel que soit le point de vue",
+              "pt": "Usar o mesmo motivo independentemente do ponto de vista"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Explain every visual motif in a spoken narration",
+              "nb": "Forklar hvert bildemotiv med fortellerstemme",
+              "fr": "Expliquer chaque motif visuel par une narration",
+              "pt": "Explicar cada motivo visual por narração"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Design original visual and vocal motifs tied to one character’s perception",
+              "nb": "Utform originale bilde- og stemmemotiver knyttet til én karakters opplevelse",
+              "fr": "Créer des motifs visuels et vocaux originaux liés à une perception",
+              "pt": "Criar motivos visuais e vocais originais ligados a uma perceção"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The recurring faces and voices express a restricted character viewpoint. In a new exercise, test this approach: Design original visual and vocal motifs tied to one character’s perception.",
+          "nb": "Gjentatte ansikter og stemmer uttrykker et begrenset karakterperspektiv. Prøv denne tilnærmingen i en ny øvelse: Utform originale bilde- og stemmemotiver knyttet til én karakters opplevelse.",
+          "fr": "Les visages et voix récurrents expriment un point de vue limité. Dans un nouvel exercice, tester cette approche : Créer des motifs visuels et vocaux originaux liés à une perception.",
+          "pt": "Rostos e vozes recorrentes exprimem um ponto de vista limitado. Num novo exercício, testar esta abordagem: Criar motivos visuais e vocais originais ligados a uma perceção."
+        },
+        "sourceIds": [
+          "s6",
+          "s7"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_amy_2015",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Archive provenance, witness voices and documentary music",
+      "nb": "Arkivproveniens, vitnestemmer og dokumentarmusikk",
+      "fr": "Provenance des archives, voix témoins et musique documentaire",
+      "pt": "Proveniência de arquivo, vozes testemunhais e música documental"
+    },
+    "sources": [
+      {
+        "id": "s2",
+        "title": "Making Amy: how we created our Winehouse documentary",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/interviews/making-amy-how-we-created-our-winehouse-documentary"
+      },
+      {
+        "id": "s4",
+        "title": "WATCH: Asif Kapadia on Oscar-Nominated Amy",
+        "publisher": "International Documentary Association",
+        "url": "https://documentary.org/blog/watch-asif-kapadia-oscar-nominated-amy"
+      },
+      {
+        "id": "s5",
+        "title": "Asif Kapadia on Amy: The drinking, the bulimia, the drugs – nobody stopped it",
+        "publisher": "The Guardian",
+        "url": "https://www.theguardian.com/film/2015/jun/27/asif-kapadia-amy-winehouse-doc"
+      },
+      {
+        "id": "s6",
+        "title": "Amy from the archives",
+        "publisher": "Televisual",
+        "url": "https://www.televisual.com/news/amy-from-the-archives_bid-791/"
+      },
+      {
+        "id": "s7",
+        "title": "Chatting With Director Asif Kapadia About his Oscar-Nominated Doc Amy",
+        "publisher": "Motion Picture Association",
+        "url": "https://www.motionpictures.org/2016/02/chatting-director-asif-kapadia-about-his-oscar-nominated-doc-amy/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "amy-archive",
+        "area": "research",
+        "prompt": {
+          "en": "The documentary draws on professional and private archival material. Which approach would you choose in a new production exercise?",
+          "nb": "Dokumentaren bygger på profesjonelt og privat arkivmateriale. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le documentaire utilise des archives professionnelles et privées. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O documentário utiliza arquivos profissionais e privados. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Log provenance, rights and context before selecting footage",
+              "nb": "Loggfør proveniens, rettigheter og kontekst før materialet velges",
+              "fr": "Consigner provenance, droits et contexte avant sélection",
+              "pt": "Registar proveniência, direitos e contexto antes da seleção"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat publicly posted footage as automatically cleared",
+              "nb": "Behandle offentlig publiserte opptak som automatisk klarert",
+              "fr": "Traiter les vidéos publiques comme automatiquement autorisées",
+              "pt": "Tratar vídeos públicos como automaticamente autorizados"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the method without checking the requirements",
+              "nb": "Godkjenn metoden uten å undersøke kravene",
+              "fr": "Valider la méthode sans vérifier les exigences",
+              "pt": "Aprovar o método sem verificar os requisitos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The documentary draws on professional and private archival material. In a new exercise, test this approach: Log provenance, rights and context before selecting footage.",
+          "nb": "Dokumentaren bygger på profesjonelt og privat arkivmateriale. Prøv denne tilnærmingen i en ny øvelse: Loggfør proveniens, rettigheter og kontekst før materialet velges.",
+          "fr": "Le documentaire utilise des archives professionnelles et privées. Dans un nouvel exercice, tester cette approche : Consigner provenance, droits et contexte avant sélection.",
+          "pt": "O documentário utiliza arquivos profissionais e privados. Num novo exercício, testar esta abordagem: Registar proveniência, direitos e contexto antes da seleção."
+        },
+        "sourceIds": [
+          "s2",
+          "s4",
+          "s7"
+        ]
+      },
+      {
+        "id": "amy-voices",
+        "area": "sound",
+        "prompt": {
+          "en": "Recorded testimony replaces visible talking heads in the documentary. Which approach would you choose in a new production exercise?",
+          "nb": "Opptatte vitnestemmer erstatter synlige intervjupersoner i dokumentaren. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les témoignages enregistrés remplacent les intervenants visibles. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Testemunhos gravados substituem entrevistados visíveis. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the method without checking the requirements",
+              "nb": "Godkjenn metoden uten å undersøke kravene",
+              "fr": "Valider la méthode sans vérifier les exigences",
+              "pt": "Aprovar o método sem verificar os requisitos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Check whether archival images accurately contextualise the testimony",
+              "nb": "Sjekk om arkivbildene gir vitnesbyrdet korrekt kontekst",
+              "fr": "Vérifier que les images contextualisent fidèlement le témoignage",
+              "pt": "Verificar se imagens contextualizam corretamente o testemunho"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use unrelated images as proof of a witness claim",
+              "nb": "Bruk uvedkommende bilder som bevis for et vitneutsagn",
+              "fr": "Utiliser des images sans rapport comme preuve",
+              "pt": "Usar imagens sem relação como prova"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Recorded testimony replaces visible talking heads in the documentary. In a new exercise, test this approach: Check whether archival images accurately contextualise the testimony.",
+          "nb": "Opptatte vitnestemmer erstatter synlige intervjupersoner i dokumentaren. Prøv denne tilnærmingen i en ny øvelse: Sjekk om arkivbildene gir vitnesbyrdet korrekt kontekst.",
+          "fr": "Les témoignages enregistrés remplacent les intervenants visibles. Dans un nouvel exercice, tester cette approche : Vérifier que les images contextualisent fidèlement le témoignage.",
+          "pt": "Testemunhos gravados substituem entrevistados visíveis. Num novo exercício, testar esta abordagem: Verificar se imagens contextualizam corretamente o testemunho."
+        },
+        "sourceIds": [
+          "s4",
+          "s5",
+          "s6"
+        ]
+      },
+      {
+        "id": "amy-music",
+        "area": "sound",
+        "prompt": {
+          "en": "The editorial team combined songs, archive audio and witness interviews. Which approach would you choose in a new production exercise?",
+          "nb": "Klippeteamet kombinerte sanger, arkivlyd og vitneintervjuer. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "L’équipe de montage combinait chansons, sons d’archives et entretiens. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A equipa de montagem combinou canções, áudio de arquivo e entrevistas. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use lyrics as independent evidence of disputed facts",
+              "nb": "Bruk sangtekster som uavhengig bevis for omstridte fakta",
+              "fr": "Utiliser les paroles comme preuve indépendante de faits contestés",
+              "pt": "Usar letras como prova independente de factos contestados"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the method without checking the requirements",
+              "nb": "Godkjenn metoden uten å undersøke kravene",
+              "fr": "Valider la méthode sans vérifier les exigences",
+              "pt": "Aprovar o método sem verificar os requisitos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare cleared music excerpts with testimony without masking speech",
+              "nb": "Sammenlign klarerte musikkutdrag med vitnesbyrd uten å maskere tale",
+              "fr": "Comparer extraits musicaux autorisés et témoignages sans masquer la parole",
+              "pt": "Comparar excertos musicais autorizados e testemunhos sem ocultar fala"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The editorial team combined songs, archive audio and witness interviews. In a new exercise, test this approach: Compare cleared music excerpts with testimony without masking speech.",
+          "nb": "Klippeteamet kombinerte sanger, arkivlyd og vitneintervjuer. Prøv denne tilnærmingen i en ny øvelse: Sammenlign klarerte musikkutdrag med vitnesbyrd uten å maskere tale.",
+          "fr": "L’équipe de montage combinait chansons, sons d’archives et entretiens. Dans un nouvel exercice, tester cette approche : Comparer extraits musicaux autorisés et témoignages sans masquer la parole.",
+          "pt": "A equipa de montagem combinou canções, áudio de arquivo e entrevistas. Num novo exercício, testar esta abordagem: Comparar excertos musicais autorizados e testemunhos sem ocultar fala."
+        },
+        "sourceIds": [
+          "s6",
+          "s7"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_filmworker_2017",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Invisible labour, interview follow-up and restoration records",
+      "nb": "Usynlig arbeid, oppfølgingsintervjuer og restaureringsdokumentasjon",
+      "fr": "Travail invisible, relances d’entretien et dossiers de restauration",
+      "pt": "Trabalho invisível, seguimento de entrevistas e registos de restauro"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "Filmworker (2017)",
+        "publisher": "IDFA",
+        "url": "https://www.idfa.nl/en/film/f0d57b00-e9a3-415d-8be2-b7be72944923/filmworker/"
+      },
+      {
+        "id": "s4",
+        "title": "Doc Star of the Month: Leon Vitali, Tony Zierra's Filmworker",
+        "publisher": "International Documentary Association",
+        "url": "https://www.documentary.org/column/doc-star-month-leon-vitali-tony-zierrasfilmworker"
+      },
+      {
+        "id": "s5",
+        "title": "Cannes 2017: Tony Zierra’s Filmworker",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/current/posts/4562-cannes-2017-tony-zierra-s-filmworker"
+      },
+      {
+        "id": "s6",
+        "title": "It’s Kind of Heartbreaking Sometimes to See Actors Try So Hard: Leon Vitali on the Acting Profession, Working with Stanley Kubrick, and Tony Zierra’s Doc, Filmworker",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/105323-its-kind-of-heartbreaking-sometimes-to-see-actors-try-so-hard-leon-vitali-on-the-acting-profession-and-his-stanley-kubrick-doc-filmworker/"
+      },
+      {
+        "id": "s7",
+        "title": "Cannes Film Festival: A Six-Letter Word",
+        "publisher": "Film Comment",
+        "url": "https://www.filmcomment.com/article/cannes-2017-lover-for-a-day-the-florida-project/"
+      },
+      {
+        "id": "s8",
+        "title": "Cannes 2017: Stanley Kubrick's mysterious right-hand man steps out of the shadows",
+        "publisher": "Los Angeles Times",
+        "url": "https://www.latimes.com/entertainment/movies/la-et-mn-kubrick-leon-vitali-20170518-story.html"
+      },
+      {
+        "id": "s10",
+        "title": "Cannes 2017: Claire's Camera, Filmworker, Unforgiven",
+        "publisher": "RogerEbert.com",
+        "url": "https://www.rogerebert.com/festivals/cannes-2017-claires-camerafilmworker-unforgiven"
+      }
+    ],
+    "questions": [
+      {
+        "id": "filmworker-credits",
+        "area": "research",
+        "prompt": {
+          "en": "Vitali describes work spanning casting, performance coaching and post-production. Which approach would you choose in a new production exercise?",
+          "nb": "Vitali beskriver arbeid fra casting og skuespillerveiledning til etterarbeid. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Vitali décrit un travail du casting à la postproduction. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Vitali descreve trabalho do casting à pós-produção. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Create a role ledger distinguishing credited and documented contributions",
+              "nb": "Lag en rollelogg som skiller krediterte og dokumenterte bidrag",
+              "fr": "Créer un registre distinguant contributions créditées et documentées",
+              "pt": "Criar registo distinguindo contribuições creditadas e documentadas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Attribute every contribution to the director",
+              "nb": "Tilskriv alle bidrag til regissøren",
+              "fr": "Attribuer chaque contribution au réalisateur",
+              "pt": "Atribuir todas as contribuições ao realizador"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the method without checking the requirements",
+              "nb": "Godkjenn metoden uten å undersøke kravene",
+              "fr": "Valider la méthode sans vérifier les exigences",
+              "pt": "Aprovar o método sem verificar os requisitos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Vitali describes work spanning casting, performance coaching and post-production. In a new exercise, test this approach: Create a role ledger distinguishing credited and documented contributions.",
+          "nb": "Vitali beskriver arbeid fra casting og skuespillerveiledning til etterarbeid. Prøv denne tilnærmingen i en ny øvelse: Lag en rollelogg som skiller krediterte og dokumenterte bidrag.",
+          "fr": "Vitali décrit un travail du casting à la postproduction. Dans un nouvel exercice, tester cette approche : Créer un registre distinguant contributions créditées et documentées.",
+          "pt": "Vitali descreve trabalho do casting à pós-produção. Num novo exercício, testar esta abordagem: Criar registo distinguindo contribuições creditadas e documentadas."
+        },
+        "sourceIds": [
+          "s4",
+          "s6"
+        ]
+      },
+      {
+        "id": "filmworker-interviews",
+        "area": "research",
+        "prompt": {
+          "en": "The documentary uses multiple witnesses and follow-up questions. Which approach would you choose in a new production exercise?",
+          "nb": "Dokumentaren bruker flere vitner og oppfølgingsspørsmål. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le documentaire utilise plusieurs témoins et des questions de relance. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O documentário usa múltiplas testemunhas e perguntas de seguimento. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the method without checking the requirements",
+              "nb": "Godkjenn metoden uten å undersøke kravene",
+              "fr": "Valider la méthode sans vérifier les exigences",
+              "pt": "Aprovar o método sem verificar os requisitos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare overlapping accounts and retain disagreements",
+              "nb": "Sammenlign overlappende beretninger og behold uenigheter",
+              "fr": "Comparer récits convergents et conserver les désaccords",
+              "pt": "Comparar relatos convergentes e preservar divergências"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Remove all testimony contradicting the first interview",
+              "nb": "Fjern alle vitneutsagn som motsier første intervju",
+              "fr": "Supprimer les témoignages contredisant le premier entretien",
+              "pt": "Eliminar testemunhos que contradizem a primeira entrevista"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The documentary uses multiple witnesses and follow-up questions. In a new exercise, test this approach: Compare overlapping accounts and retain disagreements.",
+          "nb": "Dokumentaren bruker flere vitner og oppfølgingsspørsmål. Prøv denne tilnærmingen i en ny øvelse: Sammenlign overlappende beretninger og behold uenigheter.",
+          "fr": "Le documentaire utilise plusieurs témoins et des questions de relance. Dans un nouvel exercice, tester cette approche : Comparer récits convergents et conserver les désaccords.",
+          "pt": "O documentário usa múltiplas testemunhas e perguntas de seguimento. Num novo exercício, testar esta abordagem: Comparar relatos convergentes e preservar divergências."
+        },
+        "sourceIds": [
+          "s1",
+          "s5",
+          "s10"
+        ]
+      },
+      {
+        "id": "filmworker-restoration",
+        "area": "camera",
+        "prompt": {
+          "en": "Interviews document print checks, transfer review and colour timing. Which approach would you choose in a new production exercise?",
+          "nb": "Intervjuer dokumenterer kopikontroll, gjennomgang av overføringer og fargetiming. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les entretiens documentent contrôle de copies, transferts et étalonnage. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Entrevistas documentam controlo de cópias, transferências e correção de cor. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat a later restoration as identical to original release material",
+              "nb": "Behandle en senere restaurering som identisk med originalt visningsmateriale",
+              "fr": "Traiter une restauration comme identique à la copie originale",
+              "pt": "Tratar restauro como idêntico ao material original"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the method without checking the requirements",
+              "nb": "Godkjenn metoden uten å undersøke kravene",
+              "fr": "Valider la méthode sans vérifier les exigences",
+              "pt": "Aprovar o método sem verificar os requisitos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record source elements and approval history for a restoration exercise",
+              "nb": "Registrer kildemateriale og godkjenningshistorikk for en restaureringsøvelse",
+              "fr": "Consigner éléments sources et historique de validation pour un exercice",
+              "pt": "Registar elementos fonte e histórico de aprovação para um exercício"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Interviews document print checks, transfer review and colour timing. In a new exercise, test this approach: Record source elements and approval history for a restoration exercise.",
+          "nb": "Intervjuer dokumenterer kopikontroll, gjennomgang av overføringer og fargetiming. Prøv denne tilnærmingen i en ny øvelse: Registrer kildemateriale og godkjenningshistorikk for en restaureringsøvelse.",
+          "fr": "Les entretiens documentent contrôle de copies, transferts et étalonnage. Dans un nouvel exercice, tester cette approche : Consigner éléments sources et historique de validation pour un exercice.",
+          "pt": "Entrevistas documentam controlo de cópias, transferências e correção de cor. Num novo exercício, testar esta abordagem: Registar elementos fonte e histórico de aprovação para um exercício."
+        },
+        "sourceIds": [
+          "s6",
+          "s7",
+          "s8"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_leviathan_2014",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Northern landscape, constructed spaces and literary adaptation",
+      "nb": "Nordlig landskap, konstruerte miljøer og litterær adaptasjon",
+      "fr": "Paysage nordique, décors construits et adaptation littéraire",
+      "pt": "Paisagem nórdica, cenários construídos e adaptação literária"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Leviathan",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/leviathan/"
+      },
+      {
+        "id": "s1",
+        "title": "A Little Person Against the Government Machine: Andrey Zvyagintsev on Leviathan",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/88764-a-little-person-against-the-government-machine-andrey-zvyagintsev-on-leviathan/"
+      },
+      {
+        "id": "s2",
+        "title": "Interview with Russian Production Designer Andrey Ponkratov",
+        "publisher": "Australian Production Design Guild",
+        "url": "https://apdg.org.au/2018/07/interview-with-russian-production-designer-andrey-ponkratov"
+      },
+      {
+        "id": "s4",
+        "title": "Leviathan review: Andrey Zvyagintsev gives us a worm's-eye view of Russian monsters",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/sight-and-sound/reviews/leviathan-review-andrey-zvyagintsev-gives-us-worms-eye-view-russian-monsters"
+      },
+      {
+        "id": "s5",
+        "title": "Leviathan Director on His Dark Look at Russia",
+        "publisher": "TheWrap",
+        "url": "https://www.thewrap.com/leviathan-director-on-his-dark-look-at-russia-were-not-moving-forward-were-walking-in-circles/"
+      },
+      {
+        "id": "s7",
+        "title": "Andrey Zvyagintsev: Leviathan grew on the shore of the Barents Sea",
+        "publisher": "Rossiyskaya Gazeta",
+        "url": "https://rg.ru/2014/07/10/dz-site.html"
+      }
+    ],
+    "questions": [
+      {
+        "id": "leviathan-landscape",
+        "area": "camera",
+        "prompt": {
+          "en": "The film’s visual preparation and northern landscape connect domestic space to institutional power. Which approach would you choose in a new production exercise?",
+          "nb": "Filmens visuelle forberedelser og nordlige landskap knytter hjemmet til institusjonell makt. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "La préparation visuelle et le paysage nordique relient le foyer au pouvoir institutionnel. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A preparação visual e a paisagem nórdica ligam o lar ao poder institucional. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare landscape framing with intimate domestic compositions",
+              "nb": "Sammenlign landskapsutsnitt med intime hjemmekomposisjoner",
+              "fr": "Comparer cadres paysagers et compositions domestiques intimes",
+              "pt": "Comparar enquadramentos de paisagem e composições domésticas íntimas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use the same shot scale for every dramatic situation",
+              "nb": "Bruk samme bildestørrelse i enhver dramatisk situasjon",
+              "fr": "Utiliser la même échelle pour chaque situation dramatique",
+              "pt": "Usar a mesma escala em todas as situações dramáticas"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Select landscapes without considering the narrative",
+              "nb": "Velg landskap uten å vurdere fortellingen",
+              "fr": "Choisir les paysages sans considérer le récit",
+              "pt": "Escolher paisagens sem considerar a narrativa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The film’s visual preparation and northern landscape connect domestic space to institutional power. In a new exercise, test this approach: Compare landscape framing with intimate domestic compositions.",
+          "nb": "Filmens visuelle forberedelser og nordlige landskap knytter hjemmet til institusjonell makt. Prøv denne tilnærmingen i en ny øvelse: Sammenlign landskapsutsnitt med intime hjemmekomposisjoner.",
+          "fr": "La préparation visuelle et le paysage nordique relient le foyer au pouvoir institutionnel. Dans un nouvel exercice, tester cette approche : Comparer cadres paysagers et compositions domestiques intimes.",
+          "pt": "A preparação visual e a paisagem nórdica ligam o lar ao poder institucional. Num novo exercício, testar esta abordagem: Comparar enquadramentos de paisagem e composições domésticas íntimas."
+        },
+        "sourceIds": [
+          "s1",
+          "s4"
+        ]
+      },
+      {
+        "id": "leviathan-design",
+        "area": "research",
+        "prompt": {
+          "en": "Ponkratov describes a constructed family home and fabricated landscape elements. Which approach would you choose in a new production exercise?",
+          "nb": "Ponkratov beskriver et bygget familiehjem og fremstilte landskapselementer. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Ponkratov décrit une maison familiale construite et des éléments paysagers fabriqués. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Ponkratov descreve uma casa familiar construída e elementos paisagísticos fabricados. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Design each element without considering the surrounding terrain",
+              "nb": "Utform hvert element uten å vurdere terrenget rundt",
+              "fr": "Concevoir chaque élément sans considérer le terrain",
+              "pt": "Conceber cada elemento sem considerar o terreno"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Develop scale models and assess sightlines before building",
+              "nb": "Utvikle skalamodeller og vurder siktlinjer før bygging",
+              "fr": "Développer des maquettes et vérifier les axes avant construction",
+              "pt": "Desenvolver maquetes e avaliar linhas de visão antes da construção"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume constructed scenery is authentic historical evidence",
+              "nb": "Anta at bygde kulisser er autentiske historiske bevis",
+              "fr": "Supposer que les décors construits sont des preuves historiques",
+              "pt": "Supor que cenários construídos são provas históricas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Ponkratov describes a constructed family home and fabricated landscape elements. In a new exercise, test this approach: Develop scale models and assess sightlines before building.",
+          "nb": "Ponkratov beskriver et bygget familiehjem og fremstilte landskapselementer. Prøv denne tilnærmingen i en ny øvelse: Utvikle skalamodeller og vurder siktlinjer før bygging.",
+          "fr": "Ponkratov décrit une maison familiale construite et des éléments paysagers fabriqués. Dans un nouvel exercice, tester cette approche : Développer des maquettes et vérifier les axes avant construction.",
+          "pt": "Ponkratov descreve uma casa familiar construída e elementos paisagísticos fabricados. Num novo exercício, testar esta abordagem: Desenvolver maquetes e avaliar linhas de visão antes da construção."
+        },
+        "sourceIds": [
+          "s2",
+          "s7"
+        ]
+      },
+      {
+        "id": "leviathan-adapt",
+        "area": "research",
+        "prompt": {
+          "en": "The screenplay combines several literary and contemporary sources into a local fictional drama. Which approach would you choose in a new production exercise?",
+          "nb": "Manuset kombinerer flere litterære og samtidige kilder til et lokalt fiktivt drama. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le scénario combine plusieurs sources littéraires et contemporaines dans un drame local fictif. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O argumento combina fontes literárias e contemporâneas num drama local ficcional. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Present the fictional screenplay as a single factual account",
+              "nb": "Presenter det fiktive manuset som én faktisk beretning",
+              "fr": "Présenter le scénario fictif comme un seul récit factuel",
+              "pt": "Apresentar o argumento ficcional como um único relato factual"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy every source plot without adapting the setting",
+              "nb": "Kopier alle kildehandlingene uten å tilpasse miljøet",
+              "fr": "Copier chaque intrigue sans adapter le cadre",
+              "pt": "Copiar cada enredo sem adaptar o ambiente"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map which themes and conflicts each source contributes",
+              "nb": "Kartlegg hvilke temaer og konflikter hver kilde bidrar med",
+              "fr": "Cartographier les thèmes et conflits apportés par chaque source",
+              "pt": "Mapear temas e conflitos que cada fonte acrescenta"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The screenplay combines several literary and contemporary sources into a local fictional drama. In a new exercise, test this approach: Map which themes and conflicts each source contributes.",
+          "nb": "Manuset kombinerer flere litterære og samtidige kilder til et lokalt fiktivt drama. Prøv denne tilnærmingen i en ny øvelse: Kartlegg hvilke temaer og konflikter hver kilde bidrar med.",
+          "fr": "Le scénario combine plusieurs sources littéraires et contemporaines dans un drame local fictif. Dans un nouvel exercice, tester cette approche : Cartographier les thèmes et conflits apportés par chaque source.",
+          "pt": "O argumento combina fontes literárias e contemporâneas num drama local ficcional. Num novo exercício, testar esta abordagem: Mapear temas e conflitos que cada fonte acrescenta."
+        },
+        "sourceIds": [
+          "s5",
+          "s0"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_a_pigeon_sat_on_a_branch_reflecting_on_existence_2014",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Deep-focus tableaux, handmade perspective and recurring motifs",
+      "nb": "Dypfokustabåer, håndlaget perspektiv og gjentatte motiver",
+      "fr": "Tableaux en profondeur, perspective artisanale et motifs récurrents",
+      "pt": "Tableaux em profundidade, perspetiva artesanal e motivos recorrentes"
+    },
+    "sources": [
+      {
+        "id": "s4",
+        "title": "Nordisk Film & TV Fond Backs Palme, Putin, Purge, Pigeon And Egyptian Revolution",
+        "publisher": "Nordisk Film & TV Fond",
+        "url": "https://nordiskfilmogtvfond.com/news/stories/nordisk-film-and-tv-fond-backs-palme-putin-purge-pigeon-and-egyptian-revolution"
+      },
+      {
+        "id": "s5",
+        "title": "Roy Andersson: Films that are universal and timeless",
+        "publisher": "Cineuropa",
+        "url": "https://cineuropa.org/en/interview/262571/"
+      },
+      {
+        "id": "s6",
+        "title": "Film of the week: A Pigeon Sat on a Branch Reflecting on Existence",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/sight-and-sound/reviews/film-week-pigeon-sat-branch-reflecting-existence"
+      },
+      {
+        "id": "s7",
+        "title": "Roy Andersson: I'm trying to show what it's like to be human",
+        "publisher": "The Guardian",
+        "url": "https://www.theguardian.com/film/2014/aug/28/roy-andersson-pigeon-sat-branch-reflecting-existence"
+      },
+      {
+        "id": "s8",
+        "title": "A Pigeon Sat on a Branch Reflecting on Existence – An Interview with Cinematographer István Borbás",
+        "publisher": "4:3",
+        "url": "https://fourthreefilm.com/2015/06/a-pigeon-sat-on-a-branch-reflecting-on-existence-an-interview-with-cinematographer-istvan-borbas/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "pigeon-tableau",
+        "area": "camera",
+        "prompt": {
+          "en": "The Studio 24 method uses deep focus, fixed framing and carefully coordinated set design. Which approach would you choose in a new production exercise?",
+          "nb": "Studio 24-metoden bruker dypfokus, fast utsnitt og nøye samordnet scenografi. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "La méthode Studio 24 utilise profondeur de champ, cadre fixe et décor coordonné. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O método Studio 24 usa profundidade de campo, quadro fixo e cenografia coordenada. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Stage foreground and background actions in one sustained frame",
+              "nb": "Iscenesett forgrunns- og bakgrunnshandling i ett vedvarende utsnitt",
+              "fr": "Mettre en scène avant-plan et arrière-plan dans un cadre prolongé",
+              "pt": "Encenar ações de primeiro plano e fundo num quadro prolongado"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Cut to a close-up for each minor movement",
+              "nb": "Klipp til nærbilde ved hver liten bevegelse",
+              "fr": "Couper vers un gros plan à chaque petit mouvement",
+              "pt": "Cortar para grande plano a cada pequeno movimento"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Blur all background action before evaluating the scene",
+              "nb": "Gjør all bakgrunnshandling uskarp før scenen vurderes",
+              "fr": "Flouter toute action en arrière-plan avant évaluation",
+              "pt": "Desfocar toda ação de fundo antes da avaliação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The Studio 24 method uses deep focus, fixed framing and carefully coordinated set design. In a new exercise, test this approach: Stage foreground and background actions in one sustained frame.",
+          "nb": "Studio 24-metoden bruker dypfokus, fast utsnitt og nøye samordnet scenografi. Prøv denne tilnærmingen i en ny øvelse: Iscenesett forgrunns- og bakgrunnshandling i ett vedvarende utsnitt.",
+          "fr": "La méthode Studio 24 utilise profondeur de champ, cadre fixe et décor coordonné. Dans un nouvel exercice, tester cette approche : Mettre en scène avant-plan et arrière-plan dans un cadre prolongé.",
+          "pt": "O método Studio 24 usa profundidade de campo, quadro fixo e cenografia coordenada. Num novo exercício, testar esta abordagem: Encenar ações de primeiro plano e fundo num quadro prolongado."
+        },
+        "sourceIds": [
+          "s5",
+          "s8"
+        ]
+      },
+      {
+        "id": "pigeon-perspective",
+        "area": "research",
+        "prompt": {
+          "en": "The studio accounts describe handmade trompe-l’oeil environments coordinated with the lens. Which approach would you choose in a new production exercise?",
+          "nb": "Studiokildene beskriver håndlagde illusjonsmiljøer samordnet med objektivet. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les sources décrivent des trompe-l’œil artisanaux coordonnés avec l’objectif. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "As fontes descrevem ambientes de ilusão artesanais coordenados com a objetiva. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Design perspective without testing the intended lens",
+              "nb": "Utform perspektivet uten å prøve planlagt objektiv",
+              "fr": "Concevoir la perspective sans tester l’objectif prévu",
+              "pt": "Conceber perspetiva sem testar a objetiva prevista"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test a painted miniature extension from a fixed viewing position",
+              "nb": "Prøv en malt miniatyrutvidelse fra en fast synsposisjon",
+              "fr": "Tester une extension miniature peinte depuis un point fixe",
+              "pt": "Testar extensão miniatura pintada a partir de um ponto fixo"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume the illusion works from every camera position",
+              "nb": "Anta at illusjonen virker fra alle kameraposisjoner",
+              "fr": "Supposer que l’illusion fonctionne depuis chaque position",
+              "pt": "Supor que a ilusão funciona de todas as posições"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The studio accounts describe handmade trompe-l’oeil environments coordinated with the lens. In a new exercise, test this approach: Test a painted miniature extension from a fixed viewing position.",
+          "nb": "Studiokildene beskriver håndlagde illusjonsmiljøer samordnet med objektivet. Prøv denne tilnærmingen i en ny øvelse: Prøv en malt miniatyrutvidelse fra en fast synsposisjon.",
+          "fr": "Les sources décrivent des trompe-l’œil artisanaux coordonnés avec l’objectif. Dans un nouvel exercice, tester cette approche : Tester une extension miniature peinte depuis un point fixe.",
+          "pt": "As fontes descrevem ambientes de ilusão artesanais coordenados com a objetiva. Num novo exercício, testar esta abordagem: Testar extensão miniatura pintada a partir de um ponto fixo."
+        },
+        "sourceIds": [
+          "s7",
+          "s8"
+        ]
+      },
+      {
+        "id": "pigeon-motifs",
+        "area": "sound",
+        "prompt": {
+          "en": "Recurring phrases and tunes connect the film’s discrete vignettes. Which approach would you choose in a new production exercise?",
+          "nb": "Gjentatte fraser og melodier forbinder filmens adskilte vignetter. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Des phrases et mélodies récurrentes relient les vignettes distinctes. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Frases e melodias recorrentes ligam as vinhetas distintas. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use a different unrelated theme for every recurrence",
+              "nb": "Bruk et nytt uvedkommende tema ved hver gjentakelse",
+              "fr": "Utiliser un thème sans rapport à chaque reprise",
+              "pt": "Usar tema sem relação em cada repetição"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Explain every repeated motif explicitly in dialogue",
+              "nb": "Forklar hvert gjentatte motiv eksplisitt i dialog",
+              "fr": "Expliquer explicitement chaque motif répété dans le dialogue",
+              "pt": "Explicar explicitamente cada motivo repetido no diálogo"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Track a recurring original sound motif across contrasting scenes",
+              "nb": "Følg et gjentatt originalt lydmotiv gjennom kontrasterende scener",
+              "fr": "Suivre un motif sonore original récurrent dans des scènes contrastées",
+              "pt": "Acompanhar motivo sonoro original recorrente em cenas contrastantes"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Recurring phrases and tunes connect the film’s discrete vignettes. In a new exercise, test this approach: Track a recurring original sound motif across contrasting scenes.",
+          "nb": "Gjentatte fraser og melodier forbinder filmens adskilte vignetter. Prøv denne tilnærmingen i en ny øvelse: Følg et gjentatt originalt lydmotiv gjennom kontrasterende scener.",
+          "fr": "Des phrases et mélodies récurrentes relient les vignettes distinctes. Dans un nouvel exercice, tester cette approche : Suivre un motif sonore original récurrent dans des scènes contrastées.",
+          "pt": "Frases e melodias recorrentes ligam as vinhetas distintas. Num novo exercício, testar esta abordagem: Acompanhar motivo sonoro original recorrente em cenas contrastantes."
+        },
+        "sourceIds": [
+          "s6",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_guilty_2018",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Confined drama, live voice performance and unseen sound space",
+      "nb": "Avgrenset drama, direkte stemmespill og usynlig lydrom",
+      "fr": "Drame confiné, voix en direct et espace sonore invisible",
+      "pt": "Drama confinado, voz em direto e espaço sonoro invisível"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Playing with Audiences' imagination",
+        "publisher": "Danish Film Institute",
+        "url": "https://www.dfi.dk/en/english/news/playing-audiences-imagination"
+      },
+      {
+        "id": "s1",
+        "title": "Lighting for Three Different Angles at the Same Time: DP Jasper J. Spanning on The Guilty",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/104746-lighting-for-three-different-angles-at-the-same-time-dp-jasper-j-spanning-on-the-guilty/"
+      },
+      {
+        "id": "s2",
+        "title": "Gustav Möller: D'habitude, le son ajoute au film, dans The Guilty, le son peint le film",
+        "publisher": "AlloCiné",
+        "url": "https://www.allocine.fr/article/fichearticle_gen_carticle=18673980.html"
+      },
+      {
+        "id": "s3",
+        "title": "Gustav Möller • Director of The Guilty",
+        "publisher": "Cineuropa",
+        "url": "https://cineuropa.org/en/interview/355506/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "theguilty-realtime",
+        "area": "research",
+        "prompt": {
+          "en": "The production used a single location, chronological filming and extended takes. Which approach would you choose in a new production exercise?",
+          "nb": "Produksjonen brukte ett sted, kronologisk filming og lange tagninger. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "La production utilisait un lieu unique, un tournage chronologique et des prises longues. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A produção usou um local, filmagem cronológica e planos longos. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse a real-time scene with continuous emotional development",
+              "nb": "Øv en sanntidsscene med sammenhengende følelsesutvikling",
+              "fr": "Répéter une scène en temps réel avec évolution émotionnelle continue",
+              "pt": "Ensaiar cena em tempo real com evolução emocional contínua"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Break every line into isolated takes without rehearsing transitions",
+              "nb": "Del hver replikk i isolerte opptak uten å øve overgangene",
+              "fr": "Diviser chaque réplique en prises isolées sans répéter les transitions",
+              "pt": "Dividir cada fala em tomadas isoladas sem ensaiar transições"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume one location removes all scheduling constraints",
+              "nb": "Anta at ett sted fjerner alle tidsplanbegrensninger",
+              "fr": "Supposer qu’un seul lieu supprime toutes les contraintes",
+              "pt": "Supor que um local elimina todas as restrições"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The production used a single location, chronological filming and extended takes. In a new exercise, test this approach: Rehearse a real-time scene with continuous emotional development.",
+          "nb": "Produksjonen brukte ett sted, kronologisk filming og lange tagninger. Prøv denne tilnærmingen i en ny øvelse: Øv en sanntidsscene med sammenhengende følelsesutvikling.",
+          "fr": "La production utilisait un lieu unique, un tournage chronologique et des prises longues. Dans un nouvel exercice, tester cette approche : Répéter une scène en temps réel avec évolution émotionnelle continue.",
+          "pt": "A produção usou um local, filmagem cronológica e planos longos. Num novo exercício, testar esta abordagem: Ensaiar cena em tempo real com evolução emocional contínua."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "theguilty-voice",
+        "area": "sound",
+        "prompt": {
+          "en": "Live telephone performers supported the lead’s reactions to unseen events. Which approach would you choose in a new production exercise?",
+          "nb": "Direkte telefonspill støttet hovedrollens reaksjoner på usette hendelser. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les voix téléphoniques en direct soutenaient les réactions du protagoniste. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Vozes telefónicas em direto apoiavam reações do protagonista. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse a fictional call with responsive offscreen performers",
+              "nb": "Øv en fiktiv samtale med responsive utøvere utenfor bildet",
+              "fr": "Répéter un appel fictif avec des interprètes réactifs hors champ",
+              "pt": "Ensaiar chamada fictícia com intérpretes responsivos fora de campo"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Play identical prerecorded pauses regardless of the lead’s timing",
+              "nb": "Spill identiske forhåndsinnspilte pauser uansett hovedrollens timing",
+              "fr": "Diffuser des pauses identiques quel que soit le rythme du protagoniste",
+              "pt": "Reproduzir pausas idênticas independentemente do ritmo do protagonista"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Live telephone performers supported the lead’s reactions to unseen events. In a new exercise, test this approach: Rehearse a fictional call with responsive offscreen performers.",
+          "nb": "Direkte telefonspill støttet hovedrollens reaksjoner på usette hendelser. Prøv denne tilnærmingen i en ny øvelse: Øv en fiktiv samtale med responsive utøvere utenfor bildet.",
+          "fr": "Les voix téléphoniques en direct soutenaient les réactions du protagoniste. Dans un nouvel exercice, tester cette approche : Répéter un appel fictif avec des interprètes réactifs hors champ.",
+          "pt": "Vozes telefónicas em direto apoiavam reações do protagonista. Num novo exercício, testar esta abordagem: Ensaiar chamada fictícia com intérpretes responsivos fora de campo."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "theguilty-space",
+        "area": "sound",
+        "prompt": {
+          "en": "The filmmakers describe environmental sound constructing an unseen dramatic world. Which approach would you choose in a new production exercise?",
+          "nb": "Filmskaperne beskriver miljølyd som bygger en usett dramatisk verden. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les cinéastes décrivent un univers dramatique invisible construit par le son. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os cineastas descrevem um mundo dramático invisível construído pelo som. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use identical room ambience for every fictional location",
+              "nb": "Bruk identisk romlyd for alle fiktive steder",
+              "fr": "Utiliser la même ambiance pour chaque lieu fictif",
+              "pt": "Usar ambiente idêntico para todos os locais fictícios"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Build distinct fictional environments through perspective and ambience",
+              "nb": "Bygg ulike fiktive miljøer gjennom lydperspektiv og atmosfære",
+              "fr": "Construire des environnements fictifs par perspective et ambiance",
+              "pt": "Construir ambientes fictícios através de perspetiva e ambiência"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The filmmakers describe environmental sound constructing an unseen dramatic world. In a new exercise, test this approach: Build distinct fictional environments through perspective and ambience.",
+          "nb": "Filmskaperne beskriver miljølyd som bygger en usett dramatisk verden. Prøv denne tilnærmingen i en ny øvelse: Bygg ulike fiktive miljøer gjennom lydperspektiv og atmosfære.",
+          "fr": "Les cinéastes décrivent un univers dramatique invisible construit par le son. Dans un nouvel exercice, tester cette approche : Construire des environnements fictifs par perspective et ambiance.",
+          "pt": "Os cineastas descrevem um mundo dramático invisível construído pelo som. Num novo exercício, testar esta abordagem: Construir ambientes fictícios através de perspetiva e ambiência."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_rams_2015",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Rural research, animal welfare and landscape rhythm",
+      "nb": "Bygderesearch, dyrevelferd og landskapsrytme",
+      "fr": "Recherche rurale, bien-être animal et rythme paysager",
+      "pt": "Pesquisa rural, bem-estar animal e ritmo da paisagem"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "UN CERTAIN REGARD – Hrútar (Rams), interview with Grímur Hákonarson",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/2015/un-certain-regard-hrutar-rams-interview-with-grimur-hakonarson/"
+      },
+      {
+        "id": "s5",
+        "title": "Beards, sheep and brotherly hate: All in a day's work for 'Rams' pair",
+        "publisher": "Los Angeles Times",
+        "url": "https://www.latimes.com/entertainment/movies/la-et-mn-rams-actors-20160205-story.html"
+      },
+      {
+        "id": "s6",
+        "title": "Interview: Grímur Hákonarson on Leading the Pack with Rams",
+        "publisher": "The Moveable Fest",
+        "url": "https://moveablefest.com/grimur-hakonarson-rams/"
+      },
+      {
+        "id": "s7",
+        "title": "TheWrap Screening Series: Rams Director Grímur Hákonarson Talks Decision to Focus on the Sheep",
+        "publisher": "TheWrap",
+        "url": "https://www.thewrap.com/thewrap-screening-series-rams-director-grimur-hakonarson-talks-decision-to-focus-on-the-sheep/"
+      },
+      {
+        "id": "s9",
+        "title": "Sturla Brandth Grøvlen – Cinematographer",
+        "publisher": "Team Deakins",
+        "url": "https://teamdeakins.libsyn.com/sturla-brandth-grvlen-cinematographer"
+      }
+    ],
+    "questions": [
+      {
+        "id": "rams-research",
+        "area": "research",
+        "prompt": {
+          "en": "Hákonarson describes farmer interviews and practical preparation for the actors. Which approach would you choose in a new production exercise?",
+          "nb": "Hákonarson beskriver bondeintervjuer og praktiske forberedelser for skuespillerne. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Hákonarson décrit des entretiens agricoles et une préparation pratique des acteurs. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Hákonarson descreve entrevistas a agricultores e preparação prática dos atores. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Consult experienced farmers and rehearse ordinary work routines",
+              "nb": "Rådfør deg med erfarne bønder og øv vanlige arbeidsrutiner",
+              "fr": "Consulter des agriculteurs expérimentés et répéter les gestes quotidiens",
+              "pt": "Consultar agricultores experientes e ensaiar rotinas de trabalho"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Invent agricultural routines without checking local knowledge",
+              "nb": "Finn på landbruksrutiner uten å sjekke lokal kunnskap",
+              "fr": "Inventer les gestes agricoles sans vérifier les savoirs locaux",
+              "pt": "Inventar rotinas agrícolas sem verificar saberes locais"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Hákonarson describes farmer interviews and practical preparation for the actors. In a new exercise, test this approach: Consult experienced farmers and rehearse ordinary work routines.",
+          "nb": "Hákonarson beskriver bondeintervjuer og praktiske forberedelser for skuespillerne. Prøv denne tilnærmingen i en ny øvelse: Rådfør deg med erfarne bønder og øv vanlige arbeidsrutiner.",
+          "fr": "Hákonarson décrit des entretiens agricoles et une préparation pratique des acteurs. Dans un nouvel exercice, tester cette approche : Consulter des agriculteurs expérimentés et répéter les gestes quotidiens.",
+          "pt": "Hákonarson descreve entrevistas a agricultores e preparação prática dos atores. Num novo exercício, testar esta abordagem: Consultar agricultores experientes e ensaiar rotinas de trabalho."
+        },
+        "sourceIds": [
+          "s0",
+          "s5"
+        ]
+      },
+      {
+        "id": "rams-animals",
+        "area": "research",
+        "prompt": {
+          "en": "The director describes sheep rehearsals and the animals’ narrative importance. Which approach would you choose in a new production exercise?",
+          "nb": "Regissøren beskriver prøver med sauer og dyrenes fortellingsmessige betydning. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le réalisateur décrit les répétitions avec les moutons et leur importance narrative. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O realizador descreve ensaios com ovelhas e a sua importância narrativa. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan low-stress animal scenes with qualified handlers and breaks",
+              "nb": "Planlegg dyrescener med lav belastning, kvalifiserte dyrepassere og pauser",
+              "fr": "Prévoir des scènes peu stressantes avec soigneurs qualifiés et pauses",
+              "pt": "Planear cenas de baixo stress com tratadores qualificados e pausas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Require animals to repeat movements until every take is identical",
+              "nb": "Krev at dyr gjentar bevegelser til alle opptak er identiske",
+              "fr": "Exiger des mouvements répétés jusqu’à des prises identiques",
+              "pt": "Exigir movimentos repetidos até tomadas idênticas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The director describes sheep rehearsals and the animals’ narrative importance. In a new exercise, test this approach: Plan low-stress animal scenes with qualified handlers and breaks.",
+          "nb": "Regissøren beskriver prøver med sauer og dyrenes fortellingsmessige betydning. Prøv denne tilnærmingen i en ny øvelse: Planlegg dyrescener med lav belastning, kvalifiserte dyrepassere og pauser.",
+          "fr": "Le réalisateur décrit les répétitions avec les moutons et leur importance narrative. Dans un nouvel exercice, tester cette approche : Prévoir des scènes peu stressantes avec soigneurs qualifiés et pauses.",
+          "pt": "O realizador descreve ensaios com ovelhas e a sua importância narrativa. Num novo exercício, testar esta abordagem: Planear cenas de baixo stress com tratadores qualificados e pausas."
+        },
+        "sourceIds": [
+          "s0",
+          "s5",
+          "s7"
+        ]
+      },
+      {
+        "id": "rams-rhythm",
+        "area": "camera",
+        "prompt": {
+          "en": "The film’s wide compositions and patient rhythm reflect rural work and weather. Which approach would you choose in a new production exercise?",
+          "nb": "Filmens brede komposisjoner og tålmodige rytme gjenspeiler gårdsarbeid og vær. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les plans larges et le rythme patient reflètent travail rural et météo. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Planos amplos e ritmo paciente refletem trabalho rural e clima. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Accelerate every routine regardless of dramatic purpose",
+              "nb": "Øk tempoet i alle rutiner uansett dramatisk hensikt",
+              "fr": "Accélérer chaque routine sans considérer sa fonction",
+              "pt": "Acelerar todas as rotinas sem considerar a função"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare sustained observation with rapid coverage of the same routine",
+              "nb": "Sammenlign vedvarende observasjon med rask dekning av samme rutine",
+              "fr": "Comparer observation prolongée et couverture rapide d’une même routine",
+              "pt": "Comparar observação prolongada e cobertura rápida da mesma rotina"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The film’s wide compositions and patient rhythm reflect rural work and weather. In a new exercise, test this approach: Compare sustained observation with rapid coverage of the same routine.",
+          "nb": "Filmens brede komposisjoner og tålmodige rytme gjenspeiler gårdsarbeid og vær. Prøv denne tilnærmingen i en ny øvelse: Sammenlign vedvarende observasjon med rask dekning av samme rutine.",
+          "fr": "Les plans larges et le rythme patient reflètent travail rural et météo. Dans un nouvel exercice, tester cette approche : Comparer observation prolongée et couverture rapide d’une même routine.",
+          "pt": "Planos amplos e ritmo paciente refletem trabalho rural e clima. Num novo exercício, testar esta abordagem: Comparar observação prolongada e cobertura rápida da mesma rotina."
+        },
+        "sourceIds": [
+          "s6",
+          "s9"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_on_body_and_soul_2017",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Dream structure, restrained performance and transparent sound",
+      "nb": "Drømmestruktur, tilbakeholdent spill og transparent lyd",
+      "fr": "Structure onirique, jeu retenu et son transparent",
+      "pt": "Estrutura onírica, atuação contida e som transparente"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "We All Carry Wounds",
+        "publisher": "National Film Institute Hungary",
+        "url": "https://nfi.hu/en/national-film-institute/news/we-all-carry-wounds.html"
+      },
+      {
+        "id": "s1",
+        "title": "Ildikó Enyedi is back with On Body and Soul",
+        "publisher": "Cineuropa",
+        "url": "https://cineuropa.org/en/newsdetail/294490/"
+      },
+      {
+        "id": "s2",
+        "title": "Interview: Ildiko Enyedi",
+        "publisher": "Film Comment",
+        "url": "https://www.filmcomment.com/interview-ildiko-enyedi/"
+      },
+      {
+        "id": "s4",
+        "title": "Foreign Contenders: Ildikó Enyedi Aligns Framing and Sound for the Dreamy Romance in Hungary's On Body and Soul",
+        "publisher": "MovieMaker Magazine",
+        "url": "https://www.moviemaker.com/foreign-contender-ildiko-enyedi-aligns-framing-sound-dreamy-romance-hungarys-body-soul/"
+      },
+      {
+        "id": "s5",
+        "title": "Oscar-nominated 'On Body and Soul' wonders if love in a dream can survive the real world",
+        "publisher": "Los Angeles Times",
+        "url": "https://www.latimes.com/entertainment/movies/la-ca-ildiko-enyedi-film-20180208-story.html"
+      },
+      {
+        "id": "s6",
+        "title": "ON BODY AND SOUL",
+        "publisher": "European Film Academy",
+        "url": "https://www.europeanfilmawards.eu/efa-movie/on-body-and-soul/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "bodyandsoul-dream",
+        "area": "research",
+        "prompt": {
+          "en": "Enyedi describes the shared dream as a reversal of waking isolation. Which approach would you choose in a new production exercise?",
+          "nb": "Enyedi beskriver den felles drømmen som en omvending av våken isolasjon. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Enyedi décrit le rêve partagé comme inversion de l’isolement éveillé. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Enyedi descreve sonho partilhado como inversão do isolamento desperto. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map contrasts and recurring motifs across waking and dream scenes",
+              "nb": "Kartlegg kontraster og gjentatte motiver mellom våkne scener og drømmer",
+              "fr": "Cartographier contrastes et motifs entre éveil et rêve",
+              "pt": "Mapear contrastes e motivos entre vigília e sonho"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Explain each dream through an immediate voice-over",
+              "nb": "Forklar hver drøm med umiddelbar fortellerstemme",
+              "fr": "Expliquer chaque rêve par une voix hors champ immédiate",
+              "pt": "Explicar cada sonho através de narração imediata"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Enyedi describes the shared dream as a reversal of waking isolation. In a new exercise, test this approach: Map contrasts and recurring motifs across waking and dream scenes.",
+          "nb": "Enyedi beskriver den felles drømmen som en omvending av våken isolasjon. Prøv denne tilnærmingen i en ny øvelse: Kartlegg kontraster og gjentatte motiver mellom våkne scener og drømmer.",
+          "fr": "Enyedi décrit le rêve partagé comme inversion de l’isolement éveillé. Dans un nouvel exercice, tester cette approche : Cartographier contrastes et motifs entre éveil et rêve.",
+          "pt": "Enyedi descreve sonho partilhado como inversão do isolamento desperto. Num novo exercício, testar esta abordagem: Mapear contrastes e motivos entre vigília e sonho."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "bodyandsoul-performance",
+        "area": "camera",
+        "prompt": {
+          "en": "The filmmakers describe patient attention to small physical moments and character behaviour. Which approach would you choose in a new production exercise?",
+          "nb": "Filmskaperne beskriver tålmodig oppmerksomhet på små fysiske øyeblikk og karakteratferd. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les cinéastes décrivent une attention patiente aux petits gestes et comportements. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os cineastas descrevem atenção paciente a pequenos gestos e comportamentos. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse a silent exchange and compare subtle framing changes",
+              "nb": "Øv en stille utveksling og sammenlign diskrete utsnittsendringer",
+              "fr": "Répéter un échange silencieux et comparer des variations de cadre",
+              "pt": "Ensaiar troca silenciosa e comparar variações subtis de enquadramento"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Require exaggerated gestures to communicate every feeling",
+              "nb": "Krev overdrevne gester for å formidle alle følelser",
+              "fr": "Exiger des gestes exagérés pour chaque émotion",
+              "pt": "Exigir gestos exagerados para cada emoção"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The filmmakers describe patient attention to small physical moments and character behaviour. In a new exercise, test this approach: Rehearse a silent exchange and compare subtle framing changes.",
+          "nb": "Filmskaperne beskriver tålmodig oppmerksomhet på små fysiske øyeblikk og karakteratferd. Prøv denne tilnærmingen i en ny øvelse: Øv en stille utveksling og sammenlign diskrete utsnittsendringer.",
+          "fr": "Les cinéastes décrivent une attention patiente aux petits gestes et comportements. Dans un nouvel exercice, tester cette approche : Répéter un échange silencieux et comparer des variations de cadre.",
+          "pt": "Os cineastas descrevem atenção paciente a pequenos gestos e comportamentos. Num novo exercício, testar esta abordagem: Ensaiar troca silenciosa e comparar variações subtis de enquadramento."
+        },
+        "sourceIds": [
+          "s2",
+          "s5"
+        ]
+      },
+      {
+        "id": "bodyandsoul-sound",
+        "area": "sound",
+        "prompt": {
+          "en": "Enyedi describes realistic wind, birds and distant city sound with dramatic functions. Which approach would you choose in a new production exercise?",
+          "nb": "Enyedi beskriver realistisk vind, fugler og fjern bylyd med dramatiske funksjoner. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Enyedi décrit vent, oiseaux et ville lointaine à fonction dramatique. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Enyedi descreve vento, aves e cidade distante com funções dramáticas. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Fill every quiet moment with unrelated music",
+              "nb": "Fyll alle stille øyeblikk med uvedkommende musikk",
+              "fr": "Remplir chaque silence de musique sans rapport",
+              "pt": "Preencher cada silêncio com música sem relação"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Build a restrained soundscape from specific environmental details",
+              "nb": "Bygg et tilbakeholdent lydbilde av bestemte miljødetaljer",
+              "fr": "Construire un paysage sonore retenu à partir de détails précis",
+              "pt": "Construir paisagem sonora contida a partir de detalhes específicos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Enyedi describes realistic wind, birds and distant city sound with dramatic functions. In a new exercise, test this approach: Build a restrained soundscape from specific environmental details.",
+          "nb": "Enyedi beskriver realistisk vind, fugler og fjern bylyd med dramatiske funksjoner. Prøv denne tilnærmingen i en ny øvelse: Bygg et tilbakeholdent lydbilde av bestemte miljødetaljer.",
+          "fr": "Enyedi décrit vent, oiseaux et ville lointaine à fonction dramatique. Dans un nouvel exercice, tester cette approche : Construire un paysage sonore retenu à partir de détails précis.",
+          "pt": "Enyedi descreve vento, aves e cidade distante com funções dramáticas. Num novo exercício, testar esta abordagem: Construir paisagem sonora contida a partir de detalhes específicos."
+        },
+        "sourceIds": [
+          "s4",
+          "s6"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_loveless_2017",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Built interiors, actor trajectories and winter sound",
+      "nb": "Bygde interiører, skuespillerbaner og vinterlyd",
+      "fr": "Décors construits, trajectoires et sons hivernaux",
+      "pt": "Cenários construídos, trajetos e sons de inverno"
+    },
+    "sources": [
+      {
+        "id": "s2",
+        "title": "Interview with Russian production designer Andrey Ponkratov, of the Andrey Zvyagintsev films",
+        "publisher": "Australian Production Design Guild",
+        "url": "https://apdg.org.au/2018/07/interview-with-russian-production-designer-andrey-ponkratov"
+      },
+      {
+        "id": "s3",
+        "title": "Anamorphic/i S35",
+        "publisher": "Cooke Optics",
+        "url": "https://cookeoptics.com/lens/anamorphic-i-s35/"
+      },
+      {
+        "id": "s4",
+        "title": "Loveless review: Andrey Zvyagintsev finds resonances in a Russian family falling apart",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/sight-and-sound/reviews/loveless-review-andrey-zvyagintsev-finds-resonances-russian-family-falling-apart"
+      },
+      {
+        "id": "s7",
+        "title": "30th European Film Awards",
+        "publisher": "European Film Academy",
+        "url": "https://vod.europeanfilmacademy.org/2017-films"
+      },
+      {
+        "id": "s9",
+        "title": "Interview: Andrey Zvyagintsev - Loveless",
+        "publisher": "IONCINEMA",
+        "url": "https://www.ioncinema.com/interviews/interview-andrei-zvyagintsev-loveless"
+      }
+    ],
+    "questions": [
+      {
+        "id": "loveless-apartment",
+        "area": "camera",
+        "prompt": {
+          "en": "The apartment was built on a soundstage with planned interior axes. Which approach would you choose in a new production exercise?",
+          "nb": "Leiligheten ble bygget i studio med planlagte siktlinjer. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "L’appartement fut construit en studio avec des axes intérieurs prévus. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O apartamento foi construído em estúdio com eixos interiores planeados. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test sightlines through a scale floor plan",
+              "nb": "Prøv siktlinjer i en plantegning i målestokk",
+              "fr": "Tester les axes sur un plan à l’échelle",
+              "pt": "Testar linhas de visão numa planta à escala"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose wall positions after blocking is locked",
+              "nb": "Velg veggplassering etter at skuespillerbanene er låst",
+              "fr": "Choisir les murs après avoir fixé les déplacements",
+              "pt": "Escolher paredes após fixar os movimentos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat the built apartment as an existing location",
+              "nb": "Behandle den bygde leiligheten som et eksisterende sted",
+              "fr": "Traiter le décor construit comme un lieu existant",
+              "pt": "Tratar o cenário construído como local existente"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The apartment was built on a soundstage with planned interior axes. In a new exercise, test this approach: Test sightlines through a scale floor plan.",
+          "nb": "Leiligheten ble bygget i studio med planlagte siktlinjer. Prøv denne tilnærmingen i en ny øvelse: Prøv siktlinjer i en plantegning i målestokk.",
+          "fr": "L’appartement fut construit en studio avec des axes intérieurs prévus. Dans un nouvel exercice, tester cette approche : Tester les axes sur un plan à l’échelle.",
+          "pt": "O apartamento foi construído em estúdio com eixos interiores planeados. Num novo exercício, testar esta abordagem: Testar linhas de visão numa planta à escala."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "loveless-blocking",
+        "area": "research",
+        "prompt": {
+          "en": "The director and designer describe predetermined actor trajectories and precise preparation. Which approach would you choose in a new production exercise?",
+          "nb": "Regissøren og scenografen beskriver planlagte skuespillerbaner og presise forberedelser. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le réalisateur et le décorateur décrivent des trajectoires prévues et une préparation précise. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O realizador e o cenógrafo descrevem trajetos previstos e preparação precisa. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Select camera angles before considering movement",
+              "nb": "Velg kameravinkler før bevegelse vurderes",
+              "fr": "Choisir les angles avant de considérer les mouvements",
+              "pt": "Escolher ângulos antes de considerar movimentos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse intersecting paths and emotional distance",
+              "nb": "Øv kryssende bevegelser og følelsesmessig avstand",
+              "fr": "Répéter les trajectoires croisées et la distance émotionnelle",
+              "pt": "Ensaiar trajetos cruzados e distância emocional"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Place all actors together regardless of conflict",
+              "nb": "Plasser alle skuespillere sammen uansett konflikt",
+              "fr": "Placer tous les acteurs ensemble malgré le conflit",
+              "pt": "Colocar todos os atores juntos independentemente do conflito"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The director and designer describe predetermined actor trajectories and precise preparation. In a new exercise, test this approach: Rehearse intersecting paths and emotional distance.",
+          "nb": "Regissøren og scenografen beskriver planlagte skuespillerbaner og presise forberedelser. Prøv denne tilnærmingen i en ny øvelse: Øv kryssende bevegelser og følelsesmessig avstand.",
+          "fr": "Le réalisateur et le décorateur décrivent des trajectoires prévues et une préparation précise. Dans un nouvel exercice, tester cette approche : Répéter les trajectoires croisées et la distance émotionnelle.",
+          "pt": "O realizador e o cenógrafo descrevem trajetos previstos e preparação precisa. Num novo exercício, testar esta abordagem: Ensaiar trajetos cruzados e distância emocional."
+        },
+        "sourceIds": [
+          "s2",
+          "s9"
+        ]
+      },
+      {
+        "id": "loveless-winter",
+        "area": "sound",
+        "prompt": {
+          "en": "Critical analysis identifies suggestive environmental sound alongside precise winter imagery. Which approach would you choose in a new production exercise?",
+          "nb": "Kritisk analyse identifiserer antydende miljølyd sammen med presise vinterbilder. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "L’analyse relève des sons ambiants suggestifs avec des images hivernales précises. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A análise identifica som ambiente sugestivo junto de imagens de inverno precisas. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use identical room tone indoors and outdoors",
+              "nb": "Bruk identisk romlyd inne og ute",
+              "fr": "Utiliser la même ambiance dedans et dehors",
+              "pt": "Usar ambiente idêntico dentro e fora"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Cover all environmental sounds with continuous music",
+              "nb": "Dekk all miljølyd med kontinuerlig musikk",
+              "fr": "Couvrir tous les sons ambiants de musique continue",
+              "pt": "Cobrir todos os sons ambientes com música contínua"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare quiet exterior ambience with interior room tone",
+              "nb": "Sammenlign stille utendørslyd med innendørs romlyd",
+              "fr": "Comparer ambiance extérieure calme et ambiance intérieure",
+              "pt": "Comparar ambiente exterior calmo e som ambiente interior"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Critical analysis identifies suggestive environmental sound alongside precise winter imagery. In a new exercise, test this approach: Compare quiet exterior ambience with interior room tone.",
+          "nb": "Kritisk analyse identifiserer antydende miljølyd sammen med presise vinterbilder. Prøv denne tilnærmingen i en ny øvelse: Sammenlign stille utendørslyd med innendørs romlyd.",
+          "fr": "L’analyse relève des sons ambiants suggestifs avec des images hivernales précises. Dans un nouvel exercice, tester cette approche : Comparer ambiance extérieure calme et ambiance intérieure.",
+          "pt": "A análise identifica som ambiente sugestivo junto de imagens de inverno precisas. Num novo exercício, testar esta abordagem: Comparar ambiente exterior calmo e som ambiente interior."
+        },
+        "sourceIds": [
+          "s4",
+          "s7"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_happy_as_lazzaro_2018",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Super 16 texture, nonprofessional casting and fable structure",
+      "nb": "Super 16-tekstur, ikke-profesjonell casting og fabelstruktur",
+      "fr": "Texture Super 16, casting amateur et structure de fable",
+      "pt": "Textura Super 16, casting não profissional e estrutura de fábula"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Lenses of emotion",
+        "publisher": "Cinematography World",
+        "url": "https://www.cinematography.world/lenses-of-emotion/"
+      },
+      {
+        "id": "s1",
+        "title": "Alice Rohrwacher • Director",
+        "publisher": "Cineuropa",
+        "url": "https://cineuropa.org/en/interview/354534/"
+      },
+      {
+        "id": "s3",
+        "title": "Magical realism in Alice Rohrwacher’s Happy as Lazzaro",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/happy-lazzaro-alice-rohrwacher-magical-realism"
+      },
+      {
+        "id": "s4",
+        "title": "A Second Look at Happy as Lazzaro",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/current/posts/6024-a-second-look-at-happy-as-lazzaro"
+      },
+      {
+        "id": "s5",
+        "title": "Happy as Lazzaro",
+        "publisher": "Film at Lincoln Center",
+        "url": "https://www.filmlinc.org/nyff2018/films/happy-as-lazzaro/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "lazzaro-texture",
+        "area": "camera",
+        "prompt": {
+          "en": "Louvart documents Super 16 capture and a warm-grained visual approach. Which approach would you choose in a new production exercise?",
+          "nb": "Louvart dokumenterer Super 16-opptak og et varmt, kornet bildeuttrykk. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Louvart documente la capture Super 16 et un rendu chaud et granuleux. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Louvart documenta captação Super 16 e visual quente e granulado. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare grain and exposure in contrasting seasonal light",
+              "nb": "Sammenlign korn og eksponering i kontrasterende årstidslys",
+              "fr": "Comparer grain et exposition sous des lumières saisonnières",
+              "pt": "Comparar grão e exposição sob luz sazonal contrastante"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose texture solely by the camera brand",
+              "nb": "Velg tekstur utelukkende etter kameramerket",
+              "fr": "Choisir la texture uniquement selon la marque caméra",
+              "pt": "Escolher textura apenas pela marca da câmara"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Louvart documents Super 16 capture and a warm-grained visual approach. In a new exercise, test this approach: Compare grain and exposure in contrasting seasonal light.",
+          "nb": "Louvart dokumenterer Super 16-opptak og et varmt, kornet bildeuttrykk. Prøv denne tilnærmingen i en ny øvelse: Sammenlign korn og eksponering i kontrasterende årstidslys.",
+          "fr": "Louvart documente la capture Super 16 et un rendu chaud et granuleux. Dans un nouvel exercice, tester cette approche : Comparer grain et exposition sous des lumières saisonnières.",
+          "pt": "Louvart documenta captação Super 16 e visual quente e granulado. Num novo exercício, testar esta abordagem: Comparar grão e exposição sob luz sazonal contrastante."
+        },
+        "sourceIds": [
+          "s0",
+          "s5"
+        ]
+      },
+      {
+        "id": "lazzaro-casting",
+        "area": "research",
+        "prompt": {
+          "en": "The production combined amateur performers and researched rural life. Which approach would you choose in a new production exercise?",
+          "nb": "Produksjonen kombinerte amatørutøvere og research på bygdeliv. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "La production associait amateurs et recherche sur la vie rurale. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A produção combinou amadores e pesquisa da vida rural. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use voluntary rehearsals that respect performers’ real experience",
+              "nb": "Bruk frivillige prøver som respekterer utøvernes faktiske erfaring",
+              "fr": "Utiliser des répétitions volontaires respectant l’expérience des interprètes",
+              "pt": "Usar ensaios voluntários que respeitem a experiência dos intérpretes"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat all rural performers as interchangeable",
+              "nb": "Behandle alle utøvere fra bygda som utskiftbare",
+              "fr": "Traiter les interprètes ruraux comme interchangeables",
+              "pt": "Tratar intérpretes rurais como intercambiáveis"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The production combined amateur performers and researched rural life. In a new exercise, test this approach: Use voluntary rehearsals that respect performers’ real experience.",
+          "nb": "Produksjonen kombinerte amatørutøvere og research på bygdeliv. Prøv denne tilnærmingen i en ny øvelse: Bruk frivillige prøver som respekterer utøvernes faktiske erfaring.",
+          "fr": "La production associait amateurs et recherche sur la vie rurale. Dans un nouvel exercice, tester cette approche : Utiliser des répétitions volontaires respectant l’expérience des interprètes.",
+          "pt": "A produção combinou amadores e pesquisa da vida rural. Num novo exercício, testar esta abordagem: Usar ensaios voluntários que respeitem a experiência dos intérpretes."
+        },
+        "sourceIds": [
+          "s1",
+          "s4"
+        ]
+      },
+      {
+        "id": "lazzaro-fable",
+        "area": "research",
+        "prompt": {
+          "en": "The film combines a structural rupture with myth and everyday realism. Which approach would you choose in a new production exercise?",
+          "nb": "Filmen kombinerer et strukturelt brudd med myte og hverdagsrealisme. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le film combine rupture structurelle, mythe et réalisme quotidien. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O filme combina rutura estrutural, mito e realismo quotidiano. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Explain the time shift with a lengthy technical exposition",
+              "nb": "Forklar tidsskiftet med en lang teknisk utredning",
+              "fr": "Expliquer la rupture par un long exposé technique",
+              "pt": "Explicar a mudança com longa exposição técnica"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map recurring motifs on both sides of a fictional time shift",
+              "nb": "Kartlegg gjentatte motiver på begge sider av et fiktivt tidsskifte",
+              "fr": "Cartographier les motifs de part et d’autre d’une rupture temporelle fictive",
+              "pt": "Mapear motivos dos dois lados de uma mudança temporal fictícia"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The film combines a structural rupture with myth and everyday realism. In a new exercise, test this approach: Map recurring motifs on both sides of a fictional time shift.",
+          "nb": "Filmen kombinerer et strukturelt brudd med myte og hverdagsrealisme. Prøv denne tilnærmingen i en ny øvelse: Kartlegg gjentatte motiver på begge sider av et fiktivt tidsskifte.",
+          "fr": "Le film combine rupture structurelle, mythe et réalisme quotidien. Dans un nouvel exercice, tester cette approche : Cartographier les motifs de part et d’autre d’une rupture temporelle fictive.",
+          "pt": "O filme combina rutura estrutural, mito e realismo quotidiano. Num novo exercício, testar esta abordagem: Mapear motivos dos dois lados de uma mudança temporal fictícia."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_terrified_2017",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Connected locations, depth of field and offscreen suspense",
+      "nb": "Sammenhengende steder, dybdeskarphet og spenning utenfor bildet",
+      "fr": "Lieux reliés, profondeur de champ et suspense hors champ",
+      "pt": "Locais ligados, profundidade de campo e suspense fora de campo"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Aterrados: la luz al servicio del horror",
+        "publisher": "ADF – Autores de Fotografía Cinematográfica Argentina",
+        "url": "https://adfcine.org/aterrados-la-luz-al-servicio-del-horror/"
+      },
+      {
+        "id": "s1",
+        "title": "Entrevista a Demián Rugna",
+        "publisher": "CineFreaks",
+        "url": "https://cinefreaks.net/2018/05/07/entrevista-a-demian-rugna-mi-camino-hacia-la-comedia-fantastica-fue-consecuencia-de-que-no-pasaba-nada-con-mis-proyectos-de-terror/"
+      },
+      {
+        "id": "s2",
+        "title": "Entrevista a Demian Rugna, director de Aterrados",
+        "publisher": "Perro Blanco",
+        "url": "https://www.perroblanco.net/entrevista-a-demian-rugna-director-de-aterrados/"
+      },
+      {
+        "id": "s3",
+        "title": "Especial Argentina Comic Con: entrevista a Demián Rugna, director de Aterrados",
+        "publisher": "NegroWhite",
+        "url": "https://negrowhite.net/especial-argentina-comic-con-entrevista-a-demian-rugna-director-de-aterrados/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "terrified-street",
+        "area": "research",
+        "prompt": {
+          "en": "The crew describes the challenge of finding connected houses for the fictional neighbourhood. Which approach would you choose in a new production exercise?",
+          "nb": "Teamet beskriver utfordringen med å finne sammenhengende hus til det fiktive nabolaget. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "L’équipe décrit la difficulté de trouver des maisons reliées pour le quartier fictif. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A equipa descreve a dificuldade de encontrar casas ligadas para o bairro fictício. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Draw a location map and check continuity of sightlines",
+              "nb": "Tegn et stedskart og sjekk kontinuitet i siktlinjene",
+              "fr": "Dessiner un plan des lieux et vérifier les axes de regard",
+              "pt": "Desenhar um mapa dos locais e verificar linhas de visão"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Select each house independently without checking geography",
+              "nb": "Velg hvert hus separat uten å sjekke geografien",
+              "fr": "Choisir chaque maison sans vérifier la géographie",
+              "pt": "Escolher cada casa sem verificar geografia"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The crew describes the challenge of finding connected houses for the fictional neighbourhood. In a new exercise, test this approach: Draw a location map and check continuity of sightlines.",
+          "nb": "Teamet beskriver utfordringen med å finne sammenhengende hus til det fiktive nabolaget. Prøv denne tilnærmingen i en ny øvelse: Tegn et stedskart og sjekk kontinuitet i siktlinjene.",
+          "fr": "L’équipe décrit la difficulté de trouver des maisons reliées pour le quartier fictif. Dans un nouvel exercice, tester cette approche : Dessiner un plan des lieux et vérifier les axes de regard.",
+          "pt": "A equipa descreve a dificuldade de encontrar casas ligadas para o bairro fictício. Num novo exercício, testar esta abordagem: Desenhar um mapa dos locais e verificar linhas de visão."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "terrified-focus",
+        "area": "camera",
+        "prompt": {
+          "en": "The director discusses depth of field and defocus as expressive tools. Which approach would you choose in a new production exercise?",
+          "nb": "Regissøren omtaler dybdeskarphet og uskarphet som uttrykksmidler. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le réalisateur évoque profondeur de champ et flou comme outils expressifs. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O realizador descreve profundidade de campo e desfocagem como ferramentas expressivas. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test an innocuous background object at different focus distances",
+              "nb": "Prøv en ufarlig bakgrunnsgjenstand med ulike fokusavstander",
+              "fr": "Tester un objet banal en arrière-plan à différentes distances de mise au point",
+              "pt": "Testar um objeto inofensivo no fundo a diferentes distâncias de foco"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Make every background detail equally sharp regardless of intention",
+              "nb": "Gjør alle bakgrunnsdetaljer like skarpe uansett hensikt",
+              "fr": "Rendre tous les détails également nets quelle que soit l’intention",
+              "pt": "Tornar todos os detalhes igualmente nítidos independentemente da intenção"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The director discusses depth of field and defocus as expressive tools. In a new exercise, test this approach: Test an innocuous background object at different focus distances.",
+          "nb": "Regissøren omtaler dybdeskarphet og uskarphet som uttrykksmidler. Prøv denne tilnærmingen i en ny øvelse: Prøv en ufarlig bakgrunnsgjenstand med ulike fokusavstander.",
+          "fr": "Le réalisateur évoque profondeur de champ et flou comme outils expressifs. Dans un nouvel exercice, tester cette approche : Tester un objet banal en arrière-plan à différentes distances de mise au point.",
+          "pt": "O realizador descreve profundidade de campo e desfocagem como ferramentas expressivas. Num novo exercício, testar esta abordagem: Testar um objeto inofensivo no fundo a diferentes distâncias de foco."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "terrified-sound",
+        "area": "sound",
+        "prompt": {
+          "en": "The director describes tension and offscreen ambient sound rather than exhaustive explanation. Which approach would you choose in a new production exercise?",
+          "nb": "Regissøren beskriver spenning og miljølyd utenfor bildet fremfor uttømmende forklaring. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le réalisateur décrit tension et ambiance hors champ plutôt qu’une explication exhaustive. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O realizador descreve tensão e ambiente fora de campo em vez de explicação exaustiva. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Explain every unseen event with dialogue immediately",
+              "nb": "Forklar hver usett hendelse med dialog umiddelbart",
+              "fr": "Expliquer immédiatement chaque événement invisible par dialogue",
+              "pt": "Explicar imediatamente cada evento invisível por diálogo"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare ordinary domestic sounds with silence and uncertain timing",
+              "nb": "Sammenlign vanlige hjemmelyder med stillhet og uforutsigbar timing",
+              "fr": "Comparer sons domestiques ordinaires, silence et rythme incertain",
+              "pt": "Comparar sons domésticos comuns, silêncio e ritmo incerto"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The director describes tension and offscreen ambient sound rather than exhaustive explanation. In a new exercise, test this approach: Compare ordinary domestic sounds with silence and uncertain timing.",
+          "nb": "Regissøren beskriver spenning og miljølyd utenfor bildet fremfor uttømmende forklaring. Prøv denne tilnærmingen i en ny øvelse: Sammenlign vanlige hjemmelyder med stillhet og uforutsigbar timing.",
+          "fr": "Le réalisateur décrit tension et ambiance hors champ plutôt qu’une explication exhaustive. Dans un nouvel exercice, tester cette approche : Comparer sons domestiques ordinaires, silence et rythme incertain.",
+          "pt": "O realizador descreve tensão e ambiente fora de campo em vez de explicação exaustiva. Num novo exercício, testar esta abordagem: Comparar sons domésticos comuns, silêncio e ritmo incerto."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_tangerines_2013",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Chamber drama, location substitution and restrained musical cues",
+      "nb": "Kammerdrama, stedserstatning og tilbakeholdne musikkinnslag",
+      "fr": "Drame de chambre, substitution de lieux et musique retenue",
+      "pt": "Drama de câmara, substituição de locais e música contida"
+    },
+    "sources": [
+      {
+        "id": "s4",
+        "title": "Tangerines Producer Ivo Felt on the Film's Anti-War Message",
+        "publisher": "TheWrap",
+        "url": "https://www.thewrap.com/thewrap-screening-series-tangerines-producer-ivo-felt-on-the-films-anti-war-message/"
+      },
+      {
+        "id": "s6",
+        "title": "Tangerines: Review",
+        "publisher": "Screen International",
+        "url": "https://www.screendaily.com/reviews/tangerines-review/5085829.article"
+      },
+      {
+        "id": "s7",
+        "title": "Georgian on My Mind: Tangerines",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/93834-georgian-on-my-mind-tangerines/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "tangerines-chamber",
+        "area": "research",
+        "prompt": {
+          "en": "The screenplay concentrates the antiwar drama around a shared house. Which approach would you choose in a new production exercise?",
+          "nb": "Manuset konsentrerer antikrigsdramaet rundt et felles hus. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le scénario concentre le drame pacifiste autour d’une maison partagée. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O argumento concentra o drama pacifista numa casa partilhada. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map changes in relationships through shared spaces and routines",
+              "nb": "Kartlegg endringer i relasjoner gjennom felles rom og rutiner",
+              "fr": "Cartographier les relations à travers espaces et routines partagés",
+              "pt": "Mapear mudanças nas relações por espaços e rotinas partilhados"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Expand every conflict into a large exterior spectacle",
+              "nb": "Utvid hver konflikt til et stort utendørsspektakel",
+              "fr": "Transformer chaque conflit en grand spectacle extérieur",
+              "pt": "Transformar cada conflito em grande espetáculo exterior"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The screenplay concentrates the antiwar drama around a shared house. In a new exercise, test this approach: Map changes in relationships through shared spaces and routines.",
+          "nb": "Manuset konsentrerer antikrigsdramaet rundt et felles hus. Prøv denne tilnærmingen i en ny øvelse: Kartlegg endringer i relasjoner gjennom felles rom og rutiner.",
+          "fr": "Le scénario concentre le drame pacifiste autour d’une maison partagée. Dans un nouvel exercice, tester cette approche : Cartographier les relations à travers espaces et routines partagés.",
+          "pt": "O argumento concentra o drama pacifista numa casa partilhada. Num novo exercício, testar esta abordagem: Mapear mudanças nas relações por espaços e rotinas partilhados."
+        },
+        "sourceIds": [
+          "s4",
+          "s6"
+        ]
+      },
+      {
+        "id": "tangerines-location",
+        "area": "camera",
+        "prompt": {
+          "en": "The production used Guria as a substitute for the story’s setting. Which approach would you choose in a new production exercise?",
+          "nb": "Produksjonen brukte Guria som erstatning for historiens miljø. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "La production a utilisé la Gourie pour remplacer le cadre narratif. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A produção usou Guria como substituto do ambiente narrativo. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare regional architecture, vegetation and light before choosing a substitute",
+              "nb": "Sammenlign regional arkitektur, vegetasjon og lys før stedserstatning velges",
+              "fr": "Comparer architecture, végétation et lumière avant de choisir un lieu de substitution",
+              "pt": "Comparar arquitetura, vegetação e luz antes de escolher um substituto"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume all rural locations are culturally equivalent",
+              "nb": "Anta at alle landlige steder er kulturelt likeverdige",
+              "fr": "Supposer que tous les lieux ruraux sont culturellement équivalents",
+              "pt": "Supor que todos os locais rurais são culturalmente equivalentes"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The production used Guria as a substitute for the story’s setting. In a new exercise, test this approach: Compare regional architecture, vegetation and light before choosing a substitute.",
+          "nb": "Produksjonen brukte Guria som erstatning for historiens miljø. Prøv denne tilnærmingen i en ny øvelse: Sammenlign regional arkitektur, vegetasjon og lys før stedserstatning velges.",
+          "fr": "La production a utilisé la Gourie pour remplacer le cadre narratif. Dans un nouvel exercice, tester cette approche : Comparer architecture, végétation et lumière avant de choisir un lieu de substitution.",
+          "pt": "A produção usou Guria como substituto do ambiente narrativo. Num novo exercício, testar esta abordagem: Comparar arquitetura, vegetação e luz antes de escolher um substituto."
+        },
+        "sourceIds": [
+          "s4",
+          "s7"
+        ]
+      },
+      {
+        "id": "tangerines-music",
+        "area": "sound",
+        "prompt": {
+          "en": "Craft analysis identifies restrained recurring strings within the chamber structure. Which approach would you choose in a new production exercise?",
+          "nb": "Faganalysen identifiserer tilbakeholdne gjentatte strykere i kammerstrukturen. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "L’analyse relève des cordes récurrentes et retenues dans la structure de chambre. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A análise identifica cordas recorrentes e contidas na estrutura de câmara. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Add music to force a single emotional interpretation",
+              "nb": "Legg til musikk for å tvinge frem én følelsestolkning",
+              "fr": "Ajouter une musique pour imposer une seule interprétation",
+              "pt": "Adicionar música para impor uma única interpretação"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare sparse original musical cues with unscored dialogue",
+              "nb": "Sammenlign sparsomme originale musikkinnslag med dialog uten musikk",
+              "fr": "Comparer de rares motifs originaux à des dialogues sans musique",
+              "pt": "Comparar motivos originais esparsos com diálogo sem música"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Craft analysis identifies restrained recurring strings within the chamber structure. In a new exercise, test this approach: Compare sparse original musical cues with unscored dialogue.",
+          "nb": "Faganalysen identifiserer tilbakeholdne gjentatte strykere i kammerstrukturen. Prøv denne tilnærmingen i en ny øvelse: Sammenlign sparsomme originale musikkinnslag med dialog uten musikk.",
+          "fr": "L’analyse relève des cordes récurrentes et retenues dans la structure de chambre. Dans un nouvel exercice, tester cette approche : Comparer de rares motifs originaux à des dialogues sans musique.",
+          "pt": "A análise identifica cordas recorrentes e contidas na estrutura de câmara. Num novo exercício, testar esta abordagem: Comparar motivos originais esparsos com diálogo sem música."
+        },
+        "sourceIds": [
+          "s7",
+          "s6"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_paterson_2016",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Everyday repetition, poetry montage and transit locations",
+      "nb": "Hverdagsgjentakelse, poesimontasje og kollektivsteder",
+      "fr": "Répétition quotidienne, montage poétique et lieux de transport",
+      "pt": "Repetição quotidiana, montagem poética e locais de transporte"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "Amazon Studios Announces Jim Jarmusch's Paterson to be Next Amazon Original Movie",
+        "publisher": "Amazon Studios",
+        "url": "https://press.aboutamazon.com/2016/1/amazon-studios-announces-jim-jarmuschs-paterson-to-be-next-amazon-original-movie"
+      },
+      {
+        "id": "s2",
+        "title": "Jim Jarmusch on Paterson and Gimme Danger",
+        "publisher": "Film Comment",
+        "url": "https://www.filmcomment.com/article/jim-jarmusch-paterson-gimme-danger-interview/"
+      },
+      {
+        "id": "s3",
+        "title": "Poetry in motion: Fred Elmes ASC / Paterson",
+        "publisher": "British Cinematographer",
+        "url": "https://britishcinematographer.co.uk/fred-elmes-asc-paterson/"
+      },
+      {
+        "id": "s5",
+        "title": "Paterson – first look",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/sight-and-sound/reviews/paterson-first-look"
+      },
+      {
+        "id": "s7",
+        "title": "The Hardest Parts About Producing Jim Jarmusch's Paterson? The Bus and That Very Special Dog",
+        "publisher": "No Film School",
+        "url": "https://nofilmschool.com/2016/05/paterson-producers-jim-jarmusch-nellie-palm-dog-award-cannes-2016"
+      }
+    ],
+    "questions": [
+      {
+        "id": "paterson-routine",
+        "area": "camera",
+        "prompt": {
+          "en": "Repeated shots vary subtly within the daily routine. Which approach would you choose in a new production exercise?",
+          "nb": "Gjentatte bilder varierer subtilt innenfor hverdagsrutinen. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les plans répétés varient subtilement dans la routine quotidienne. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Planos repetidos variam subtilmente na rotina quotidiana. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Film the same routine twice with a meaningful change in composition",
+              "nb": "Film samme rutine to ganger med en meningsfull komposisjonsendring",
+              "fr": "Filmer la même routine deux fois avec une variation significative du cadre",
+              "pt": "Filmar a mesma rotina duas vezes com mudança significativa de composição"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Repeat identical footage without regard to dramatic changes",
+              "nb": "Gjenta identiske opptak uten hensyn til dramatiske endringer",
+              "fr": "Répéter les mêmes images sans considérer les changements dramatiques",
+              "pt": "Repetir imagens idênticas sem considerar mudanças dramáticas"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Repeated shots vary subtly within the daily routine. In a new exercise, test this approach: Film the same routine twice with a meaningful change in composition.",
+          "nb": "Gjentatte bilder varierer subtilt innenfor hverdagsrutinen. Prøv denne tilnærmingen i en ny øvelse: Film samme rutine to ganger med en meningsfull komposisjonsendring.",
+          "fr": "Les plans répétés varient subtilement dans la routine quotidienne. Dans un nouvel exercice, tester cette approche : Filmer la même routine deux fois avec une variation significative du cadre.",
+          "pt": "Planos repetidos variam subtilmente na rotina quotidiana. Num novo exercício, testar esta abordagem: Filmar a mesma rotina duas vezes com mudança significativa de composição."
+        },
+        "sourceIds": [
+          "s3",
+          "s5"
+        ]
+      },
+      {
+        "id": "paterson-poetry",
+        "area": "research",
+        "prompt": {
+          "en": "The filmmaker and cinematographer describe poetry and montage as part of the structure. Which approach would you choose in a new production exercise?",
+          "nb": "Filmskaperen og fotografen beskriver poesi og montasje som del av strukturen. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le cinéaste et le directeur photo décrivent poésie et montage comme éléments structurels. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O cineasta e o diretor de fotografia descrevem poesia e montagem como parte da estrutura. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Develop an original poem and compare its placement against everyday images",
+              "nb": "Utvikle et originalt dikt og sammenlign plassering mot hverdagsbilder",
+              "fr": "Développer un poème original et comparer sa place face aux images quotidiennes",
+              "pt": "Criar poema original e comparar colocação perante imagens quotidianas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Illustrate every line literally without testing rhythm",
+              "nb": "Illustrer hver linje bokstavelig uten å prøve rytmen",
+              "fr": "Illustrer chaque vers littéralement sans tester le rythme",
+              "pt": "Ilustrar cada verso literalmente sem testar ritmo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The filmmaker and cinematographer describe poetry and montage as part of the structure. In a new exercise, test this approach: Develop an original poem and compare its placement against everyday images.",
+          "nb": "Filmskaperen og fotografen beskriver poesi og montasje som del av strukturen. Prøv denne tilnærmingen i en ny øvelse: Utvikle et originalt dikt og sammenlign plassering mot hverdagsbilder.",
+          "fr": "Le cinéaste et le directeur photo décrivent poésie et montage comme éléments structurels. Dans un nouvel exercice, tester cette approche : Développer un poème original et comparer sa place face aux images quotidiennes.",
+          "pt": "O cineasta e o diretor de fotografia descrevem poesia e montagem como parte da estrutura. Num novo exercício, testar esta abordagem: Criar poema original e comparar colocação perante imagens quotidianas."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "paterson-transit",
+        "area": "research",
+        "prompt": {
+          "en": "The producers describe transit negotiations and practical location constraints. Which approach would you choose in a new production exercise?",
+          "nb": "Produsentene beskriver forhandlinger med kollektivtransport og praktiske stedsbegrensninger. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les producteurs décrivent négociations avec les transports et contraintes pratiques. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os produtores descrevem negociações com transportes e restrições práticas. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume public services can be interrupted for any shot",
+              "nb": "Anta at offentlig transport kan avbrytes for ethvert opptak",
+              "fr": "Supposer que le service public peut être interrompu pour chaque plan",
+              "pt": "Supor que serviços públicos podem ser interrompidos para qualquer plano"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan authorised access and continuity around service schedules",
+              "nb": "Planlegg godkjent tilgang og kontinuitet rundt rutetider",
+              "fr": "Prévoir accès autorisé et raccords selon les horaires de service",
+              "pt": "Planear acesso autorizado e continuidade segundo horários de serviço"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The producers describe transit negotiations and practical location constraints. In a new exercise, test this approach: Plan authorised access and continuity around service schedules.",
+          "nb": "Produsentene beskriver forhandlinger med kollektivtransport og praktiske stedsbegrensninger. Prøv denne tilnærmingen i en ny øvelse: Planlegg godkjent tilgang og kontinuitet rundt rutetider.",
+          "fr": "Les producteurs décrivent négociations avec les transports et contraintes pratiques. Dans un nouvel exercice, tester cette approche : Prévoir accès autorisé et raccords selon les horaires de service.",
+          "pt": "Os produtores descrevem negociações com transportes e restrições práticas. Num novo exercício, testar esta abordagem: Planear acesso autorizado e continuidade segundo horários de serviço."
+        },
+        "sourceIds": [
+          "s7",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_before_sunrise_1995",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Collaborative dialogue, walking locations and rehearsal",
+      "nb": "Samarbeid om dialog, vandresteder og prøver",
+      "fr": "Dialogue collaboratif, lieux de promenade et répétitions",
+      "pt": "Diálogo colaborativo, locais de passeio e ensaios"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "The first kiss takes so long: Richard Linklater on Before Sunrise",
+        "publisher": "BFI Sight and Sound",
+        "url": "https://www.bfi.org.uk/sight-and-sound/features/first-kiss-takes-so-long-richard-linklater-before-sunrise"
+      },
+      {
+        "id": "s2",
+        "title": "Julie Delpy and Ethan Hawke: how we made the Before Sunrise trilogy",
+        "publisher": "The Guardian",
+        "url": "https://www.theguardian.com/film/2019/nov/04/julie-delpy-ethan-hawke-how-we-made-before-sunrise-trilogy-sunset-midnight"
+      },
+      {
+        "id": "s3",
+        "title": "Romancing a Trilogy: Sandra Adair Edits Before Midnight",
+        "publisher": "CineMontage",
+        "url": "https://cinemontage.org/sandra-adair-before-midnight/"
+      },
+      {
+        "id": "s5",
+        "title": "30 years of Before Sunrise: retracing Celine and Jesse's footsteps in Vienna",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/before-sunrise-richard-linklater-vienna-locations"
+      },
+      {
+        "id": "s7",
+        "title": "Richard Linklater, Julie Delpy and Ethan Hawke on Their Before Trilogy",
+        "publisher": "Motion Picture Association",
+        "url": "https://www.motionpictures.org/2014/01/richard-linklater-julie-delpy-ethan-hawke-on-their-before-trilogy/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "sunrise-writing",
+        "area": "research",
+        "prompt": {
+          "en": "The actors describe collaborative rewriting from the audition process onward. Which approach would you choose in a new production exercise?",
+          "nb": "Skuespillerne beskriver felles manusrevisjon fra castingprosessen av. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les acteurs décrivent une réécriture collective dès les auditions. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os atores descrevem reescrita colaborativa desde o casting. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Workshop a conversation and preserve both characters’ viewpoints",
+              "nb": "Utvikle en samtale i fellesskap og bevar begge karakterenes perspektiver",
+              "fr": "Travailler une conversation en préservant les deux points de vue",
+              "pt": "Trabalhar uma conversa preservando ambos os pontos de vista"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Give all narrative initiative to one character",
+              "nb": "Gi alt fortellermessig initiativ til én karakter",
+              "fr": "Donner toute l’initiative narrative à un seul personnage",
+              "pt": "Dar toda a iniciativa narrativa a uma personagem"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat rehearsed dialogue as necessarily spontaneous improvisation",
+              "nb": "Behandle innøvd dialog som nødvendigvis spontan improvisasjon",
+              "fr": "Traiter le dialogue répété comme improvisation nécessairement spontanée",
+              "pt": "Tratar diálogo ensaiado como improvisação necessariamente espontânea"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The actors describe collaborative rewriting from the audition process onward. In a new exercise, test this approach: Workshop a conversation and preserve both characters’ viewpoints.",
+          "nb": "Skuespillerne beskriver felles manusrevisjon fra castingprosessen av. Prøv denne tilnærmingen i en ny øvelse: Utvikle en samtale i fellesskap og bevar begge karakterenes perspektiver.",
+          "fr": "Les acteurs décrivent une réécriture collective dès les auditions. Dans un nouvel exercice, tester cette approche : Travailler une conversation en préservant les deux points de vue.",
+          "pt": "Os atores descrevem reescrita colaborativa desde o casting. Num novo exercício, testar esta abordagem: Trabalhar uma conversa preservando ambos os pontos de vista."
+        },
+        "sourceIds": [
+          "s2",
+          "s7"
+        ]
+      },
+      {
+        "id": "sunrise-city",
+        "area": "camera",
+        "prompt": {
+          "en": "Vienna’s real streets and meeting places support walking and conversation. Which approach would you choose in a new production exercise?",
+          "nb": "Wiens virkelige gater og møtesteder støtter vandring og samtale. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les rues et lieux réels de Vienne soutiennent la marche et la conversation. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "As ruas e locais reais de Viena sustentam caminhada e conversa. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Scout a walkable route with varied backgrounds and sound conditions",
+              "nb": "Befar en gangrute med varierte bakgrunner og lydforhold",
+              "fr": "Repérer un itinéraire piéton aux fonds et conditions sonores variés",
+              "pt": "Reconhecer um percurso pedonal com fundos e condições sonoras variados"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose every location solely for scenic beauty",
+              "nb": "Velg alle steder utelukkende etter visuell skjønnhet",
+              "fr": "Choisir chaque lieu uniquement pour sa beauté",
+              "pt": "Escolher cada local apenas pela beleza"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Vienna’s real streets and meeting places support walking and conversation. In a new exercise, test this approach: Scout a walkable route with varied backgrounds and sound conditions.",
+          "nb": "Wiens virkelige gater og møtesteder støtter vandring og samtale. Prøv denne tilnærmingen i en ny øvelse: Befar en gangrute med varierte bakgrunner og lydforhold.",
+          "fr": "Les rues et lieux réels de Vienne soutiennent la marche et la conversation. Dans un nouvel exercice, tester cette approche : Repérer un itinéraire piéton aux fonds et conditions sonores variés.",
+          "pt": "As ruas e locais reais de Viena sustentam caminhada e conversa. Num novo exercício, testar esta abordagem: Reconhecer um percurso pedonal com fundos e condições sonoras variados."
+        },
+        "sourceIds": [
+          "s5",
+          "s1"
+        ]
+      },
+      {
+        "id": "sunrise-rhythm",
+        "area": "research",
+        "prompt": {
+          "en": "Adair describes shaping dense dialogue through rehearsal and editorial timing. Which approach would you choose in a new production exercise?",
+          "nb": "Adair beskriver utforming av tett dialog gjennom prøver og klippetiming. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Adair décrit le façonnage du dialogue dense par répétitions et montage. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Adair descreve construção de diálogo denso por ensaios e montagem. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Remove every pause irrespective of emotional meaning",
+              "nb": "Fjern alle pauser uansett følelsesmessig betydning",
+              "fr": "Supprimer chaque pause quelle que soit sa signification",
+              "pt": "Eliminar todas as pausas independentemente do significado"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare pauses and reaction shots while retaining conversational flow",
+              "nb": "Sammenlign pauser og reaksjonsbilder mens samtaleflyten bevares",
+              "fr": "Comparer pauses et réactions en préservant le flux de conversation",
+              "pt": "Comparar pausas e reações preservando fluxo da conversa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Adair describes shaping dense dialogue through rehearsal and editorial timing. In a new exercise, test this approach: Compare pauses and reaction shots while retaining conversational flow.",
+          "nb": "Adair beskriver utforming av tett dialog gjennom prøver og klippetiming. Prøv denne tilnærmingen i en ny øvelse: Sammenlign pauser og reaksjonsbilder mens samtaleflyten bevares.",
+          "fr": "Adair décrit le façonnage du dialogue dense par répétitions et montage. Dans un nouvel exercice, tester cette approche : Comparer pauses et réactions en préservant le flux de conversation.",
+          "pt": "Adair descreve construção de diálogo denso por ensaios e montagem. Num novo exercício, testar esta abordagem: Comparar pausas e reações preservando fluxo da conversa."
+        },
+        "sourceIds": [
+          "s3",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_before_sunset_2004",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Real-time structure, moving camera and continuity",
+      "nb": "Sanntidsstruktur, bevegelig kamera og kontinuitet",
+      "fr": "Structure en temps réel, caméra mobile et raccords",
+      "pt": "Estrutura em tempo real, câmara móvel e continuidade"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Richard Linklater's Before Sunset",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/archives/issues/spring2004/features/paris_day.php"
+      },
+      {
+        "id": "s1",
+        "title": "Love has to be about more than commitment",
+        "publisher": "Salon",
+        "url": "https://www.salon.com/2004/07/02/linklater_2/"
+      },
+      {
+        "id": "s3",
+        "title": "Richard Linklater on His Before Trilogy",
+        "publisher": "Directors Guild of America",
+        "url": "https://www.dga.org/craft/dgaq/issues/1501-winter-2015/before-trilogy"
+      },
+      {
+        "id": "s7",
+        "title": "Gee, long time no see",
+        "publisher": "Los Angeles Times",
+        "url": "https://www.latimes.com/archives/la-xpm-2004-jun-20-ca-verini20-story.html"
+      },
+      {
+        "id": "s9",
+        "title": "Film Independent: Richard Linklater",
+        "publisher": "RogerEbert.com",
+        "url": "https://www.rogerebert.com/far-flung-correspondents/film-independent-richard-linklater"
+      }
+    ],
+    "questions": [
+      {
+        "id": "sunset-clock",
+        "area": "research",
+        "prompt": {
+          "en": "Linklater describes fully scripted dialogue shaped to an eighty-minute real-time structure. Which approach would you choose in a new production exercise?",
+          "nb": "Linklater beskriver ferdigskrevet dialog formet til en åtti minutters sanntidsstruktur. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Linklater décrit un dialogue écrit selon une structure de quatre-vingts minutes en temps réel. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Linklater descreve diálogo escrito numa estrutura de oitenta minutos em tempo real. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Time a fictional conversation and its transitions during rehearsal",
+              "nb": "Mål varigheten av en fiktiv samtale og overgangene under prøver",
+              "fr": "Chronométrer une conversation fictive et ses transitions en répétition",
+              "pt": "Cronometrar uma conversa fictícia e transições durante ensaios"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume real-time drama requires unscripted dialogue",
+              "nb": "Anta at sanntidsdrama krever dialog uten manus",
+              "fr": "Supposer que le temps réel exige un dialogue improvisé",
+              "pt": "Supor que drama em tempo real exige diálogo improvisado"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Linklater describes fully scripted dialogue shaped to an eighty-minute real-time structure. In a new exercise, test this approach: Time a fictional conversation and its transitions during rehearsal.",
+          "nb": "Linklater beskriver ferdigskrevet dialog formet til en åtti minutters sanntidsstruktur. Prøv denne tilnærmingen i en ny øvelse: Mål varigheten av en fiktiv samtale og overgangene under prøver.",
+          "fr": "Linklater décrit un dialogue écrit selon une structure de quatre-vingts minutes en temps réel. Dans un nouvel exercice, tester cette approche : Chronométrer une conversation fictive et ses transitions en répétition.",
+          "pt": "Linklater descreve diálogo escrito numa estrutura de oitenta minutos em tempo real. Num novo exercício, testar esta abordagem: Cronometrar uma conversa fictícia e transições durante ensaios."
+        },
+        "sourceIds": [
+          "s1",
+          "s7"
+        ]
+      },
+      {
+        "id": "sunset-movement",
+        "area": "camera",
+        "prompt": {
+          "en": "The director describes long moving shots and tightly coordinated choreography. Which approach would you choose in a new production exercise?",
+          "nb": "Regissøren beskriver lange bevegelige opptak og tett koordinert koreografi. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le réalisateur décrit des plans mobiles longs et une chorégraphie coordonnée. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O realizador descreve planos móveis longos e coreografia coordenada. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse walking pace, camera path and stopping points together",
+              "nb": "Øv gangtempo, kamerabane og stoppunkter samlet",
+              "fr": "Répéter ensemble allure, trajet caméra et points d’arrêt",
+              "pt": "Ensaiar juntos ritmo de marcha, trajeto de câmara e paragens"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Let the camera operator discover every obstacle during recording",
+              "nb": "La fotografen oppdage alle hindringer under opptak",
+              "fr": "Laisser le cadreur découvrir tous les obstacles pendant la prise",
+              "pt": "Deixar operador descobrir todos os obstáculos durante gravação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The director describes long moving shots and tightly coordinated choreography. In a new exercise, test this approach: Rehearse walking pace, camera path and stopping points together.",
+          "nb": "Regissøren beskriver lange bevegelige opptak og tett koordinert koreografi. Prøv denne tilnærmingen i en ny øvelse: Øv gangtempo, kamerabane og stoppunkter samlet.",
+          "fr": "Le réalisateur décrit des plans mobiles longs et une chorégraphie coordonnée. Dans un nouvel exercice, tester cette approche : Répéter ensemble allure, trajet caméra et points d’arrêt.",
+          "pt": "O realizador descreve planos móveis longos e coreografia coordenada. Num novo exercício, testar esta abordagem: Ensaiar juntos ritmo de marcha, trajeto de câmara e paragens."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "sunset-continuity",
+        "area": "camera",
+        "prompt": {
+          "en": "The taxi scene required matching changing traffic and natural light across takes. Which approach would you choose in a new production exercise?",
+          "nb": "Drosjescenen krevde samsvar mellom skiftende trafikk og naturlig lys på tvers av opptak. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "La scène du taxi exigeait des raccords de circulation et de lumière changeantes. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A cena do táxi exigiu continuidade de trânsito e luz variável entre tomadas. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Join takes solely according to dialogue wording",
+              "nb": "Sett sammen opptak utelukkende etter replikkordlyd",
+              "fr": "Assembler les prises uniquement selon les paroles",
+              "pt": "Juntar tomadas apenas pela formulação do diálogo"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare takes for light and reaction continuity in a stationary mock-up",
+              "nb": "Sammenlign opptak for lys- og reaksjonskontinuitet i en stillestående modell",
+              "fr": "Comparer prises pour raccords lumineux et réactions dans une maquette fixe",
+              "pt": "Comparar tomadas por continuidade de luz e reação numa maquete fixa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The taxi scene required matching changing traffic and natural light across takes. In a new exercise, test this approach: Compare takes for light and reaction continuity in a stationary mock-up.",
+          "nb": "Drosjescenen krevde samsvar mellom skiftende trafikk og naturlig lys på tvers av opptak. Prøv denne tilnærmingen i en ny øvelse: Sammenlign opptak for lys- og reaksjonskontinuitet i en stillestående modell.",
+          "fr": "La scène du taxi exigeait des raccords de circulation et de lumière changeantes. Dans un nouvel exercice, tester cette approche : Comparer prises pour raccords lumineux et réactions dans une maquette fixe.",
+          "pt": "A cena do táxi exigiu continuidade de trânsito e luz variável entre tomadas. Num novo exercício, testar esta abordagem: Comparar tomadas por continuidade de luz e reação numa maquete fixa."
+        },
+        "sourceIds": [
+          "s9",
+          "s0"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_clerks_1994",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Microbudget planning, monochrome photography and location writing",
+      "nb": "Mikrobudsjett, svart-hvitt-fotografi og stedsbasert manus",
+      "fr": "Microbudget, photographie monochrome et écriture de lieu",
+      "pt": "Micro-orçamento, fotografia monocromática e escrita de local"
+    },
+    "sources": [
+      {
+        "id": "s3",
+        "title": "As Clerks Turns 30, Look Back at Kevin Smith's Iconic Fest Appearances",
+        "publisher": "Sundance Institute",
+        "url": "https://www.sundance.org/blogs/as-clerks-turns-30-look-back-at-kevin-smiths-iconic-fest-appearances/"
+      },
+      {
+        "id": "s4",
+        "title": "How Kevin Smith Made and Distributed Red State His Own Way",
+        "publisher": "Sundance Institute",
+        "url": "https://www.sundance.org/blogs/how-kevin-smith-made-and-distributed-red-state-his-own-way-3/"
+      },
+      {
+        "id": "s5",
+        "title": "Women Rule 2019 National Film Registry",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/item/prn-19-116/women-rule-2019-national-film-registry/2019-12-11/"
+      },
+      {
+        "id": "s6",
+        "title": "Kevin and David Make a Porno",
+        "publisher": "MovieMaker Magazine",
+        "url": "https://www.moviemaker.com/kevin-smith-david-klein-zack-and-miri-make-a-porno-20081014/"
+      },
+      {
+        "id": "s7",
+        "title": "Kevin Smith Breaks Down His Most Iconic Films",
+        "publisher": "GQ",
+        "url": "https://www.gq.com/video/watch/iconic-characters-kevin-smith-breaks-down-his-most-iconic-films"
+      }
+    ],
+    "questions": [
+      {
+        "id": "clerks-budget",
+        "area": "research",
+        "prompt": {
+          "en": "Smith reports a microbudget for the store-based independent production. Which approach would you choose in a new production exercise?",
+          "nb": "Smith oppgir et mikrobudsjett for den uavhengige butikkproduksjonen. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Smith rapporte un microbudget pour la production indépendante en magasin. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Smith refere um micro-orçamento para a produção independente numa loja. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Separate production costs, later distribution and revenues in a sample ledger",
+              "nb": "Skill produksjonskostnader, senere distribusjon og inntekter i et eksempelregnskap",
+              "fr": "Séparer coûts, distribution ultérieure et recettes dans un exemple",
+              "pt": "Separar custos, distribuição posterior e receitas num exemplo contabilístico"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat theatrical gross as the filmmaker’s net profit",
+              "nb": "Behandle kinoinntektene som filmskaperens nettofortjeneste",
+              "fr": "Traiter les recettes brutes comme bénéfice net du cinéaste",
+              "pt": "Tratar receita bruta como lucro líquido do cineasta"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Smith reports a microbudget for the store-based independent production. In a new exercise, test this approach: Separate production costs, later distribution and revenues in a sample ledger.",
+          "nb": "Smith oppgir et mikrobudsjett for den uavhengige butikkproduksjonen. Prøv denne tilnærmingen i en ny øvelse: Skill produksjonskostnader, senere distribusjon og inntekter i et eksempelregnskap.",
+          "fr": "Smith rapporte un microbudget pour la production indépendante en magasin. Dans un nouvel exercice, tester cette approche : Séparer coûts, distribution ultérieure et recettes dans un exemple.",
+          "pt": "Smith refere um micro-orçamento para a produção independente numa loja. Num novo exercício, testar esta abordagem: Separar custos, distribuição posterior e receitas num exemplo contabilístico."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "clerks-monochrome",
+        "area": "camera",
+        "prompt": {
+          "en": "Smith describes fluorescent store lighting and limited resources informing monochrome capture. Which approach would you choose in a new production exercise?",
+          "nb": "Smith beskriver butikkens lysrør og begrensede ressurser som grunnlag for svart-hvitt-opptak. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Smith décrit les fluorescents et ressources limitées motivant la capture monochrome. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Smith descreve fluorescentes e recursos limitados motivando captação monocromática. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare monochrome and colour tests under existing practical lights",
+              "nb": "Sammenlign svart-hvitt- og fargeprøver under eksisterende praktisk lys",
+              "fr": "Comparer essais monochromes et couleur sous l’éclairage existant",
+              "pt": "Comparar testes monocromáticos e a cores sob luz existente"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume monochrome eliminates all lighting decisions",
+              "nb": "Anta at svart-hvitt fjerner alle lysvalg",
+              "fr": "Supposer que le monochrome supprime toute décision d’éclairage",
+              "pt": "Supor que monocromia elimina todas as decisões de luz"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Smith describes fluorescent store lighting and limited resources informing monochrome capture. In a new exercise, test this approach: Compare monochrome and colour tests under existing practical lights.",
+          "nb": "Smith beskriver butikkens lysrør og begrensede ressurser som grunnlag for svart-hvitt-opptak. Prøv denne tilnærmingen i en ny øvelse: Sammenlign svart-hvitt- og fargeprøver under eksisterende praktisk lys.",
+          "fr": "Smith décrit les fluorescents et ressources limitées motivant la capture monochrome. Dans un nouvel exercice, tester cette approche : Comparer essais monochromes et couleur sous l’éclairage existant.",
+          "pt": "Smith descreve fluorescentes e recursos limitados motivando captação monocromática. Num novo exercício, testar esta abordagem: Comparar testes monocromáticos e a cores sob luz existente."
+        },
+        "sourceIds": [
+          "s6",
+          "s7"
+        ]
+      },
+      {
+        "id": "clerks-store",
+        "area": "research",
+        "prompt": {
+          "en": "Smith wrote from experience working in a convenience store. Which approach would you choose in a new production exercise?",
+          "nb": "Smith skrev med utgangspunkt i erfaring fra butikkarbeid. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Smith écrivait à partir de son expérience en supérette. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Smith escreveu a partir da experiência numa loja de conveniência. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Copy identifiable customer conversations without consent",
+              "nb": "Kopier identifiserbare kundesamtaler uten samtykke",
+              "fr": "Copier des conversations identifiables sans consentement",
+              "pt": "Copiar conversas identificáveis sem consentimento"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Develop fictional dialogue around observed work routines",
+              "nb": "Utvikle fiktiv dialog rundt observerte arbeidsrutiner",
+              "fr": "Développer des dialogues fictifs autour de routines observées",
+              "pt": "Desenvolver diálogo ficcional em torno de rotinas observadas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Smith wrote from experience working in a convenience store. In a new exercise, test this approach: Develop fictional dialogue around observed work routines.",
+          "nb": "Smith skrev med utgangspunkt i erfaring fra butikkarbeid. Prøv denne tilnærmingen i en ny øvelse: Utvikle fiktiv dialog rundt observerte arbeidsrutiner.",
+          "fr": "Smith écrivait à partir de son expérience en supérette. Dans un nouvel exercice, tester cette approche : Développer des dialogues fictifs autour de routines observées.",
+          "pt": "Smith escreveu a partir da experiência numa loja de conveniência. Num novo exercício, testar esta abordagem: Desenvolver diálogo ficcional em torno de rotinas observadas."
+        },
+        "sourceIds": [
+          "s6",
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_fargo_1996",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Snow compositions, regional performance and fictional provenance",
+      "nb": "Snøkomposisjoner, regionalt skuespillerarbeid og fiktiv proveniens",
+      "fr": "Compositions enneigées, jeu régional et provenance fictionnelle",
+      "pt": "Composições nevadas, atuação regional e proveniência ficcional"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Fargo: Cold-Blooded Scheming",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/articles/fargo-cold-blooded-scheming"
+      },
+      {
+        "id": "s1",
+        "title": "Hell freezes over: the Coen brothers on Fargo",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/sight-and-sound/features/joel-ethan-coen-brothers-fargo-1996"
+      },
+      {
+        "id": "s2",
+        "title": "Fargo",
+        "publisher": "American Film Institute",
+        "url": "https://catalog.afi.com/Film/60219-FARGO"
+      },
+      {
+        "id": "s4",
+        "title": "Closer to the Life Than the Conventions of Cinema: Interview with the Coen Brothers",
+        "publisher": "Cambridge University Press",
+        "url": "https://www.cambridge.org/core/books/abs/coen-brothers-fargo/closer-to-the-life-than-the-conventions-of-cinema-interview-with-the-coen-brothers-conducted-in-cannes-on-may-16-1996/0ED806DBF86325321DD9F95D58B88AB5"
+      },
+      {
+        "id": "s6",
+        "title": "Fargo",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/fargo/"
+      },
+      {
+        "id": "s9",
+        "title": "Interview: Roger and James Deakins on Cinematography and Navigating a Changing Film World",
+        "publisher": "The Reveal",
+        "url": "https://thereveal.film/interview-roger-and-james-deakins-on-cinematography-and-navigating-a-changing-film-world/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "fargo-snow",
+        "area": "camera",
+        "prompt": {
+          "en": "Deakins describes revising a planned composition in response to the actual snowy location. Which approach would you choose in a new production exercise?",
+          "nb": "Deakins beskriver revisjon av en planlagt komposisjon i møte med det faktiske snølandskapet. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Deakins décrit une composition modifiée selon le lieu enneigé réel. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Deakins descreve composição revista segundo o local nevado real. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare storyboard intent with a location framing test",
+              "nb": "Sammenlign storyboardets hensikt med en utsnittsprøve på stedet",
+              "fr": "Comparer intention du storyboard et essai de cadre sur place",
+              "pt": "Comparar intenção do storyboard e teste de enquadramento no local"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Follow the storyboard regardless of what the location offers",
+              "nb": "Følg storyboardet uansett hva stedet tilbyr",
+              "fr": "Suivre le storyboard indépendamment des possibilités du lieu",
+              "pt": "Seguir storyboard independentemente do que o local oferece"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Deakins describes revising a planned composition in response to the actual snowy location. In a new exercise, test this approach: Compare storyboard intent with a location framing test.",
+          "nb": "Deakins beskriver revisjon av en planlagt komposisjon i møte med det faktiske snølandskapet. Prøv denne tilnærmingen i en ny øvelse: Sammenlign storyboardets hensikt med en utsnittsprøve på stedet.",
+          "fr": "Deakins décrit une composition modifiée selon le lieu enneigé réel. Dans un nouvel exercice, tester cette approche : Comparer intention du storyboard et essai de cadre sur place.",
+          "pt": "Deakins descreve composição revista segundo o local nevado real. Num novo exercício, testar esta abordagem: Comparar intenção do storyboard e teste de enquadramento no local."
+        },
+        "sourceIds": [
+          "s0",
+          "s9"
+        ]
+      },
+      {
+        "id": "fargo-regional",
+        "area": "research",
+        "prompt": {
+          "en": "The filmmakers discuss regional speech, casting and everyday detail. Which approach would you choose in a new production exercise?",
+          "nb": "Filmskaperne omtaler regional tale, casting og hverdagsdetaljer. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les cinéastes évoquent parole régionale, casting et détails quotidiens. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os cineastas discutem fala regional, casting e detalhes quotidianos. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Work with regional advisers to test dialogue without caricature",
+              "nb": "Arbeid med regionale rådgivere for å prøve dialog uten karikatur",
+              "fr": "Travailler avec des conseillers régionaux pour tester le dialogue sans caricature",
+              "pt": "Trabalhar com consultores regionais para testar diálogo sem caricatura"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Exaggerate every accent independently of character",
+              "nb": "Overdriv alle aksenter uavhengig av karakter",
+              "fr": "Exagérer chaque accent indépendamment du personnage",
+              "pt": "Exagerar cada sotaque independentemente da personagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The filmmakers discuss regional speech, casting and everyday detail. In a new exercise, test this approach: Work with regional advisers to test dialogue without caricature.",
+          "nb": "Filmskaperne omtaler regional tale, casting og hverdagsdetaljer. Prøv denne tilnærmingen i en ny øvelse: Arbeid med regionale rådgivere for å prøve dialog uten karikatur.",
+          "fr": "Les cinéastes évoquent parole régionale, casting et détails quotidiens. Dans un nouvel exercice, tester cette approche : Travailler avec des conseillers régionaux pour tester le dialogue sans caricature.",
+          "pt": "Os cineastas discutem fala regional, casting e detalhes quotidianos. Num novo exercício, testar esta abordagem: Trabalhar com consultores regionais para testar diálogo sem caricatura."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "fargo-fiction",
+        "area": "research",
+        "prompt": {
+          "en": "The filmmakers distinguish invented characters from the claim of factual inspiration. Which approach would you choose in a new production exercise?",
+          "nb": "Filmskaperne skiller oppdiktede karakterer fra påstanden om faktisk inspirasjon. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les cinéastes distinguent personnages inventés et affirmation d’inspiration factuelle. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os cineastas distinguem personagens inventadas da alegação de inspiração factual. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat a film’s opening claim as sufficient historical evidence",
+              "nb": "Behandle filmens åpningspåstand som tilstrekkelig historisk bevis",
+              "fr": "Traiter l’affirmation initiale comme preuve historique suffisante",
+              "pt": "Tratar afirmação inicial como prova histórica suficiente"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Clearly label fictional material in research and teaching notes",
+              "nb": "Merk fiktivt materiale tydelig i research- og undervisningsnotater",
+              "fr": "Identifier clairement la fiction dans les notes de recherche et pédagogie",
+              "pt": "Identificar claramente ficção nas notas de pesquisa e ensino"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The filmmakers distinguish invented characters from the claim of factual inspiration. In a new exercise, test this approach: Clearly label fictional material in research and teaching notes.",
+          "nb": "Filmskaperne skiller oppdiktede karakterer fra påstanden om faktisk inspirasjon. Prøv denne tilnærmingen i en ny øvelse: Merk fiktivt materiale tydelig i research- og undervisningsnotater.",
+          "fr": "Les cinéastes distinguent personnages inventés et affirmation d’inspiration factuelle. Dans un nouvel exercice, tester cette approche : Identifier clairement la fiction dans les notes de recherche et pédagogie.",
+          "pt": "Os cineastas distinguem personagens inventadas da alegação de inspiração factual. Num novo exercício, testar esta abordagem: Identificar claramente ficção nas notas de pesquisa e ensino."
+        },
+        "sourceIds": [
+          "s4",
+          "s6"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_big_lebowski_1998",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Dream transitions, costume performance and source music",
+      "nb": "Drømmeoverganger, kostymespill og kildemusikk",
+      "fr": "Transitions oniriques, jeu costumé et musique de source",
+      "pt": "Transições oníricas, figurino e música de fonte"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "Sleeping and Severed Toes: Ethan Coen & Joel Coen on the Art of Screenwriting",
+        "publisher": "Focus Features",
+        "url": "https://www.focusfeatures.com/article/sleeping_and_severed_toes__ethan_coen___joel_coen_on_the_art_o"
+      },
+      {
+        "id": "s5",
+        "title": "Mary Zophres — Costume Designer",
+        "publisher": "Team Deakins",
+        "url": "https://teamdeakins.libsyn.com/mary-zophres-costume-designer"
+      },
+      {
+        "id": "s6",
+        "title": "The Big Lebowski",
+        "publisher": "Carter Burwell",
+        "url": "https://www.carterburwell.com/projects/Big_Lebowski.shtml"
+      },
+      {
+        "id": "s7",
+        "title": "The Perfect Match — Hollywood Costume Collaborations",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/events/perfect-match-hollywood-costume-collaborations"
+      },
+      {
+        "id": "s8",
+        "title": "Michael Barry on His Career in Film Sound",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/35311-michael-barry-talks-about-sound-in-film/"
+      },
+      {
+        "id": "s9",
+        "title": "Jeff Bridges: The Wanderer",
+        "publisher": "Film Comment",
+        "url": "https://www.filmcomment.com/jeff-bridges-the-wanderer/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "lebowski-dream",
+        "area": "research",
+        "prompt": {
+          "en": "The writers describe elaborate dream sequences as expressions of character viewpoint. Which approach would you choose in a new production exercise?",
+          "nb": "Manusforfatterne beskriver omfattende drømmesekvenser som uttrykk for karakterperspektiv. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les auteurs décrivent des séquences oniriques exprimant le point de vue. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os autores descrevem sequências oníricas como expressão do ponto de vista. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Develop an original dream sequence from established character motifs",
+              "nb": "Utvikle en original drømmesekvens fra etablerte karaktermotiver",
+              "fr": "Développer un rêve original à partir de motifs du personnage",
+              "pt": "Desenvolver sonho original a partir de motivos da personagem"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Add spectacle unrelated to the character’s experience",
+              "nb": "Legg til spektakel uten sammenheng med karakterens opplevelse",
+              "fr": "Ajouter un spectacle sans rapport avec l’expérience du personnage",
+              "pt": "Adicionar espetáculo sem relação com experiência da personagem"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The writers describe elaborate dream sequences as expressions of character viewpoint. In a new exercise, test this approach: Develop an original dream sequence from established character motifs.",
+          "nb": "Manusforfatterne beskriver omfattende drømmesekvenser som uttrykk for karakterperspektiv. Prøv denne tilnærmingen i en ny øvelse: Utvikle en original drømmesekvens fra etablerte karaktermotiver.",
+          "fr": "Les auteurs décrivent des séquences oniriques exprimant le point de vue. Dans un nouvel exercice, tester cette approche : Développer un rêve original à partir de motifs du personnage.",
+          "pt": "Os autores descrevem sequências oníricas como expressão do ponto de vista. Num novo exercício, testar esta abordagem: Desenvolver sonho original a partir de motivos da personagem."
+        },
+        "sourceIds": [
+          "s1",
+          "s7"
+        ]
+      },
+      {
+        "id": "lebowski-costume",
+        "area": "research",
+        "prompt": {
+          "en": "Zophres describes fittings and costume’s influence on posture and performance. Which approach would you choose in a new production exercise?",
+          "nb": "Zophres beskriver kostymeprøver og kostymets innflytelse på kroppsholdning og spill. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Zophres décrit les essayages et l’influence du costume sur posture et jeu. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Zophres descreve provas e influência do figurino na postura e atuação. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare movement and silhouette in actor-led costume tests",
+              "nb": "Sammenlign bevegelse og silhuett i skuespillerstyrte kostymeprøver",
+              "fr": "Comparer mouvement et silhouette lors d’essais avec les acteurs",
+              "pt": "Comparar movimento e silhueta em testes de figurino com atores"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Approve costume from a hanger without testing movement",
+              "nb": "Godkjenn kostyme på kleshenger uten å prøve bevegelse",
+              "fr": "Valider le costume sur cintre sans tester les mouvements",
+              "pt": "Aprovar figurino no cabide sem testar movimento"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Zophres describes fittings and costume’s influence on posture and performance. In a new exercise, test this approach: Compare movement and silhouette in actor-led costume tests.",
+          "nb": "Zophres beskriver kostymeprøver og kostymets innflytelse på kroppsholdning og spill. Prøv denne tilnærmingen i en ny øvelse: Sammenlign bevegelse og silhuett i skuespillerstyrte kostymeprøver.",
+          "fr": "Zophres décrit les essayages et l’influence du costume sur posture et jeu. Dans un nouvel exercice, tester cette approche : Comparer mouvement et silhouette lors d’essais avec les acteurs.",
+          "pt": "Zophres descreve provas e influência do figurino na postura e atuação. Num novo exercício, testar esta abordagem: Comparar movimento e silhueta em testes de figurino com atores."
+        },
+        "sourceIds": [
+          "s5",
+          "s9"
+        ]
+      },
+      {
+        "id": "lebowski-music",
+        "area": "sound",
+        "prompt": {
+          "en": "Burwell describes transitions between score and music heard within the story world. Which approach would you choose in a new production exercise?",
+          "nb": "Burwell beskriver overganger mellom filmmusikk og musikk hørt i fortellingens verden. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Burwell décrit les transitions entre musique de fosse et musique diégétique. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Burwell descreve transições entre música de acompanhamento e música diegética. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Mix source music and score identically regardless of perspective",
+              "nb": "Miks kildemusikk og filmmusikk identisk uansett perspektiv",
+              "fr": "Mixer source et musique de fosse sans distinction de perspective",
+              "pt": "Misturar fonte e música de acompanhamento sem distinguir perspetiva"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test an original cue moving between radio source and score",
+              "nb": "Prøv et originalt musikkinnslag som går mellom radiokilde og filmmusikk",
+              "fr": "Tester un motif original passant de la radio à la musique de fosse",
+              "pt": "Testar motivo original passando de fonte rádio à música de acompanhamento"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Burwell describes transitions between score and music heard within the story world. In a new exercise, test this approach: Test an original cue moving between radio source and score.",
+          "nb": "Burwell beskriver overganger mellom filmmusikk og musikk hørt i fortellingens verden. Prøv denne tilnærmingen i en ny øvelse: Prøv et originalt musikkinnslag som går mellom radiokilde og filmmusikk.",
+          "fr": "Burwell décrit les transitions entre musique de fosse et musique diégétique. Dans un nouvel exercice, tester cette approche : Tester un motif original passant de la radio à la musique de fosse.",
+          "pt": "Burwell descreve transições entre música de acompanhamento e música diegética. Num novo exercício, testar esta abordagem: Testar motivo original passando de fonte rádio à música de acompanhamento."
+        },
+        "sourceIds": [
+          "s6",
+          "s8"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_trainspotting_1996",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Adaptation, subjective imagery and archival versions",
+      "nb": "Adaptasjon, subjektivt bildespråk og arkivversjoner",
+      "fr": "Adaptation, images subjectives et versions archivées",
+      "pt": "Adaptação, imagens subjetivas e versões de arquivo"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "The Trainspotting phenomenon... 20 years on",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/trainspotting-phenomenon-20-years"
+      },
+      {
+        "id": "s2",
+        "title": "Trainspotting",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/29627-trainspotting"
+      },
+      {
+        "id": "s3",
+        "title": "Trainspotting: behind the scenes by Danny Boyle, Ewan McGregor, Irvine Welsh and more",
+        "publisher": "The Guardian",
+        "url": "https://www.theguardian.com/film/gallery/2021/oct/25/trainspotting-behind-the-scenes-danny-boyle-ewan-mcgregor-irvine-welsh-harvey-weinstein"
+      },
+      {
+        "id": "s4",
+        "title": "Well spotted",
+        "publisher": "The Irish Times",
+        "url": "https://www.irishtimes.com/news/well-spotted-1.30690"
+      },
+      {
+        "id": "s5",
+        "title": "Typescript screenplay of Trainspotting by John Hodge",
+        "publisher": "University of Edinburgh",
+        "url": "https://archives.collections.ed.ac.uk/repositories/2/resources/85641"
+      },
+      {
+        "id": "s9",
+        "title": "Trainspotting",
+        "publisher": "British Board of Film Classification",
+        "url": "https://www.bbfc.co.uk/release/trainspotting-q29sbgvjdglvbjpwwc0zndmxmdu"
+      }
+    ],
+    "questions": [
+      {
+        "id": "trainspotting-voice",
+        "area": "research",
+        "prompt": {
+          "en": "Hodge describes reorganising linked stories around Renton’s voice. Which approach would you choose in a new production exercise?",
+          "nb": "Hodge beskriver omorganisering av sammenknyttede historier rundt Rentons stemme. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Hodge décrit la réorganisation de récits liés autour de la voix de Renton. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Hodge descreve reorganização de histórias ligadas em torno da voz de Renton. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map an original ensemble story through one selected narrative voice",
+              "nb": "Kartlegg en original ensemblefortelling gjennom én valgt fortellerstemme",
+              "fr": "Cartographier un récit choral original autour d’une voix choisie",
+              "pt": "Mapear narrativa coral original através de uma voz escolhida"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Copy the literary structure without testing cinematic clarity",
+              "nb": "Kopier litterær struktur uten å prøve filmatisk klarhet",
+              "fr": "Copier la structure littéraire sans tester sa clarté filmique",
+              "pt": "Copiar estrutura literária sem testar clareza cinematográfica"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Give every character identical narration",
+              "nb": "Gi alle karakterer identisk fortellerstemme",
+              "fr": "Donner à chaque personnage une narration identique",
+              "pt": "Dar narração idêntica a cada personagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Hodge describes reorganising linked stories around Renton’s voice. In a new exercise, test this approach: Map an original ensemble story through one selected narrative voice.",
+          "nb": "Hodge beskriver omorganisering av sammenknyttede historier rundt Rentons stemme. Prøv denne tilnærmingen i en ny øvelse: Kartlegg en original ensemblefortelling gjennom én valgt fortellerstemme.",
+          "fr": "Hodge décrit la réorganisation de récits liés autour de la voix de Renton. Dans un nouvel exercice, tester cette approche : Cartographier un récit choral original autour d’une voix choisie.",
+          "pt": "Hodge descreve reorganização de histórias ligadas em torno da voz de Renton. Num novo exercício, testar esta abordagem: Mapear narrativa coral original através de uma voz escolhida."
+        },
+        "sourceIds": [
+          "s3",
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "trainspotting-subjective",
+        "area": "camera",
+        "prompt": {
+          "en": "Production materials document practical construction of subjective sequences. Which approach would you choose in a new production exercise?",
+          "nb": "Produksjonsmaterialet dokumenterer fysisk konstruksjon av subjektive sekvenser. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les archives documentent la construction pratique de séquences subjectives. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os arquivos documentam construção prática de sequências subjetivas. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume spectacle alone communicates inner experience",
+              "nb": "Anta at spektakel alene formidler indre opplevelse",
+              "fr": "Supposer que le spectacle seul communique l’expérience intérieure",
+              "pt": "Supor que espetáculo por si comunica experiência interior"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test a safe miniature and storyboard for an original subjective scene",
+              "nb": "Prøv en trygg miniatyr og storyboard til en original subjektiv scene",
+              "fr": "Tester une maquette sûre et un storyboard pour une scène subjective originale",
+              "pt": "Testar maquete segura e storyboard para cena subjetiva original"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose effects without considering character perspective",
+              "nb": "Velg effekter uten å vurdere karakterperspektiv",
+              "fr": "Choisir les effets sans considérer le point de vue",
+              "pt": "Escolher efeitos sem considerar perspetiva"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Production materials document practical construction of subjective sequences. In a new exercise, test this approach: Test a safe miniature and storyboard for an original subjective scene.",
+          "nb": "Produksjonsmaterialet dokumenterer fysisk konstruksjon av subjektive sekvenser. Prøv denne tilnærmingen i en ny øvelse: Prøv en trygg miniatyr og storyboard til en original subjektiv scene.",
+          "fr": "Les archives documentent la construction pratique de séquences subjectives. Dans un nouvel exercice, tester cette approche : Tester une maquette sûre et un storyboard pour une scène subjective originale.",
+          "pt": "Os arquivos documentam construção prática de sequências subjetivas. Num novo exercício, testar esta abordagem: Testar maquete segura e storyboard para cena subjetiva original."
+        },
+        "sourceIds": [
+          "s1",
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "trainspotting-versions",
+        "area": "research",
+        "prompt": {
+          "en": "The sources distinguish classified releases and a later uncut restoration. Which approach would you choose in a new production exercise?",
+          "nb": "Kildene skiller klassifiserte utgivelser og en senere uklippet restaurering. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les sources distinguent sorties classifiées et restauration intégrale ultérieure. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "As fontes distinguem versões classificadas e restauro integral posterior. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat every release as an identical master",
+              "nb": "Behandle alle utgivelser som identisk master",
+              "fr": "Traiter chaque sortie comme master identique",
+              "pt": "Tratar cada lançamento como master idêntico"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Infer deleted material solely from runtime differences",
+              "nb": "Utled slettet materiale bare fra forskjeller i spilletid",
+              "fr": "Déduire les suppressions de la seule durée",
+              "pt": "Deduzir cortes apenas por diferenças de duração"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record each version’s source and documented differences",
+              "nb": "Registrer hver versjons kilde og dokumenterte forskjeller",
+              "fr": "Consigner la source et les différences documentées de chaque version",
+              "pt": "Registar fonte e diferenças documentadas de cada versão"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The sources distinguish classified releases and a later uncut restoration. In a new exercise, test this approach: Record each version’s source and documented differences.",
+          "nb": "Kildene skiller klassifiserte utgivelser og en senere uklippet restaurering. Prøv denne tilnærmingen i en ny øvelse: Registrer hver versjons kilde og dokumenterte forskjeller.",
+          "fr": "Les sources distinguent sorties classifiées et restauration intégrale ultérieure. Dans un nouvel exercice, tester cette approche : Consigner la source et les différences documentées de chaque version.",
+          "pt": "As fontes distinguem versões classificadas e restauro integral posterior. Num novo exercício, testar esta abordagem: Registar fonte e diferenças documentadas de cada versão."
+        },
+        "sourceIds": [
+          "s2",
+          "s9"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_being_john_malkovich_1999",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Script development, practical puppetry and emotional music",
+      "nb": "Manusutvikling, praktisk dukkespill og emosjonell musikk",
+      "fr": "Développement du scénario, marionnettes et musique émotionnelle",
+      "pt": "Desenvolvimento do argumento, marionetas e música emocional"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Being John Malkovich",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/60900-BEING-JOHN-MALKOVICH"
+      },
+      {
+        "id": "s1",
+        "title": "Being John Malkovich",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/28055-being-john-malkovich"
+      },
+      {
+        "id": "s5",
+        "title": "Charlie Kaufman: how to write",
+        "publisher": "The Guardian",
+        "url": "https://www.theguardian.com/film/2011/oct/03/charlie-kaufman-how-to-write"
+      },
+      {
+        "id": "s6",
+        "title": "The Rough Draft: Charlie Kaufman",
+        "publisher": "WIRED",
+        "url": "https://www.wired.com/2008/09/the-rough-draft"
+      },
+      {
+        "id": "s8",
+        "title": "Being John Malkovich — Puppetry Journal interview",
+        "publisher": "Puppetry Journal",
+        "url": "https://www.hubermarionettes.com/bjm/bjminterview.html"
+      },
+      {
+        "id": "s9",
+        "title": "Being John Malkovich",
+        "publisher": "Carter Burwell",
+        "url": "https://www.carterburwell.com/projects/Being_John_Malkovich.shtml"
+      }
+    ],
+    "questions": [
+      {
+        "id": "malkovich-rewrite",
+        "area": "research",
+        "prompt": {
+          "en": "Jonze and Kaufman revised the script to prioritise emotional consequences over a larger confrontation. Which approach would you choose in a new production exercise?",
+          "nb": "Jonze og Kaufman reviderte manuset for å prioritere emosjonelle konsekvenser fremfor en større konfrontasjon. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Jonze et Kaufman ont privilégié les conséquences émotionnelles à une confrontation plus vaste. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Jonze e Kaufman privilegiaram consequências emocionais sobre confronto maior. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare endings by their effect on character relationships",
+              "nb": "Sammenlign avslutninger etter virkningen på karakterrelasjonene",
+              "fr": "Comparer les fins selon leur effet sur les relations",
+              "pt": "Comparar finais pelo efeito nas relações"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose the largest ending solely by spectacle",
+              "nb": "Velg største avslutning bare etter spektakel",
+              "fr": "Choisir la fin la plus spectaculaire uniquement",
+              "pt": "Escolher final maior apenas pelo espetáculo"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Retain every early draft scene regardless of purpose",
+              "nb": "Behold alle scener fra tidlige utkast uansett funksjon",
+              "fr": "Conserver chaque scène des premiers jets sans considérer sa fonction",
+              "pt": "Manter todas as cenas iniciais independentemente da função"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Jonze and Kaufman revised the script to prioritise emotional consequences over a larger confrontation. In a new exercise, test this approach: Compare endings by their effect on character relationships.",
+          "nb": "Jonze og Kaufman reviderte manuset for å prioritere emosjonelle konsekvenser fremfor en større konfrontasjon. Prøv denne tilnærmingen i en ny øvelse: Sammenlign avslutninger etter virkningen på karakterrelasjonene.",
+          "fr": "Jonze et Kaufman ont privilégié les conséquences émotionnelles à une confrontation plus vaste. Dans un nouvel exercice, tester cette approche : Comparer les fins selon leur effet sur les relations.",
+          "pt": "Jonze e Kaufman privilegiaram consequências emocionais sobre confronto maior. Num novo exercício, testar esta abordagem: Comparar finais pelo efeito nas relações."
+        },
+        "sourceIds": [
+          "s5",
+          "s6"
+        ]
+      },
+      {
+        "id": "malkovich-puppet",
+        "area": "camera",
+        "prompt": {
+          "en": "The puppetry account describes camera-specific choreography and adjustments to the marionettes. Which approach would you choose in a new production exercise?",
+          "nb": "Dukkespillkilden beskriver kameratilpasset koreografi og justeringer av marionettene. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le témoignage décrit chorégraphie adaptée à la caméra et ajustements des marionnettes. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O relato descreve coreografia adaptada à câmara e ajustes das marionetas. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume stage puppetry and screen framing have identical requirements",
+              "nb": "Anta at scenedukkespill og filmutsnitt har identiske krav",
+              "fr": "Supposer que scène et cadrage ont les mêmes exigences",
+              "pt": "Supor que palco e enquadramento têm requisitos idênticos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse an original puppet gesture at the intended camera angle",
+              "nb": "Øv en original dukkebevegelse fra planlagt kameravinkel",
+              "fr": "Répéter un geste original de marionnette selon l’angle prévu",
+              "pt": "Ensaiar gesto original de marioneta no ângulo previsto"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Approve all gestures without viewing them through the camera",
+              "nb": "Godkjenn alle gester uten å se dem gjennom kameraet",
+              "fr": "Valider tous les gestes sans les voir à la caméra",
+              "pt": "Aprovar gestos sem os ver pela câmara"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The puppetry account describes camera-specific choreography and adjustments to the marionettes. In a new exercise, test this approach: Rehearse an original puppet gesture at the intended camera angle.",
+          "nb": "Dukkespillkilden beskriver kameratilpasset koreografi og justeringer av marionettene. Prøv denne tilnærmingen i en ny øvelse: Øv en original dukkebevegelse fra planlagt kameravinkel.",
+          "fr": "Le témoignage décrit chorégraphie adaptée à la caméra et ajustements des marionnettes. Dans un nouvel exercice, tester cette approche : Répéter un geste original de marionnette selon l’angle prévu.",
+          "pt": "O relato descreve coreografia adaptada à câmara e ajustes das marionetas. Num novo exercício, testar esta abordagem: Ensaiar gesto original de marioneta no ângulo previsto."
+        },
+        "sourceIds": [
+          "s8",
+          "s1"
+        ]
+      },
+      {
+        "id": "malkovich-score",
+        "area": "sound",
+        "prompt": {
+          "en": "Burwell describes a warm circular score intended to ground the unusual story emotionally. Which approach would you choose in a new production exercise?",
+          "nb": "Burwell beskriver en varm sirkulær filmmusikk som skulle forankre den uvanlige historien emosjonelt. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Burwell décrit une musique chaleureuse et circulaire qui ancre émotionnellement le récit étrange. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Burwell descreve música calorosa e circular para ancorar emocionalmente a história invulgar. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use music only to signal that an event is strange",
+              "nb": "Bruk musikk bare for å signalisere at en hendelse er merkelig",
+              "fr": "Utiliser la musique uniquement pour signaler l’étrangeté",
+              "pt": "Usar música apenas para sinalizar estranheza"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a cue without considering the character’s emotion",
+              "nb": "Velg musikkinnslag uten å vurdere karakterens følelser",
+              "fr": "Choisir un motif sans considérer l’émotion du personnage",
+              "pt": "Escolher motivo sem considerar emoção da personagem"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare a warm original motif with an explicitly comic musical treatment",
+              "nb": "Sammenlign et varmt originalmotiv med en tydelig komisk musikkbehandling",
+              "fr": "Comparer un motif original chaleureux à un traitement ouvertement comique",
+              "pt": "Comparar motivo original caloroso com tratamento musical explicitamente cómico"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Burwell describes a warm circular score intended to ground the unusual story emotionally. In a new exercise, test this approach: Compare a warm original motif with an explicitly comic musical treatment.",
+          "nb": "Burwell beskriver en varm sirkulær filmmusikk som skulle forankre den uvanlige historien emosjonelt. Prøv denne tilnærmingen i en ny øvelse: Sammenlign et varmt originalmotiv med en tydelig komisk musikkbehandling.",
+          "fr": "Burwell décrit une musique chaleureuse et circulaire qui ancre émotionnellement le récit étrange. Dans un nouvel exercice, tester cette approche : Comparer un motif original chaleureux à un traitement ouvertement comique.",
+          "pt": "Burwell descreve música calorosa e circular para ancorar emocionalmente a história invulgar. Num novo exercício, testar esta abordagem: Comparar motivo original caloroso com tratamento musical explicitamente cómico."
+        },
+        "sourceIds": [
+          "s9",
+          "s0"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_requiem_for_a_dream_2000",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Rhythmic montage, colour dramaturgy and early sound design",
+      "nb": "Rytmisk montasje, fargedramaturgi og tidlig lyddesign",
+      "fr": "Montage rythmique, dramaturgie chromatique et conception sonore précoce",
+      "pt": "Montagem rítmica, dramaturgia da cor e desenho sonoro inicial"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "Requiem for a Dream: Downward Spiral",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/article/requiem-for-a-dream-downward-spiral/"
+      },
+      {
+        "id": "s2",
+        "title": "Coney Island baby",
+        "publisher": "The Guardian",
+        "url": "https://www.theguardian.com/culture/2000/oct/30/artsfeatures"
+      },
+      {
+        "id": "s3",
+        "title": "We'll Fix It in Post",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/archives/issues/winter2003/line_items/fix_it.php"
+      },
+      {
+        "id": "s4",
+        "title": "Requiem for a Dream",
+        "publisher": "James Chinlund",
+        "url": "https://www.jameschinlund.com/features/requiem-for-a-dream"
+      },
+      {
+        "id": "s5",
+        "title": "The Sound of Requiem for a Dream",
+        "publisher": "The Awl",
+        "url": "https://www.theawl.com/2012/07/the-sound-of-requiem-for-a-dream/"
+      },
+      {
+        "id": "s6",
+        "title": "Film: Addicted to Noise",
+        "publisher": "Live Design",
+        "url": "https://www.livedesignonline.com/film-0"
+      },
+      {
+        "id": "s7",
+        "title": "Method Man: Jay Rabinowitz Finds that the Film Tells Him How to Edit It",
+        "publisher": "CineMontage",
+        "url": "https://cinemontage.org/method-man-jay-rabinowitz/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "requiem-montage",
+        "area": "research",
+        "prompt": {
+          "en": "The director and editor describe rhythmic contrast and performance shaping within heightened montage. Which approach would you choose in a new production exercise?",
+          "nb": "Regissøren og klipperen beskriver rytmisk kontrast og utforming av spill i intensiv montasje. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le réalisateur et le monteur décrivent contraste rythmique et travail du jeu dans un montage intense. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O realizador e o montador descrevem contraste rítmico e atuação em montagem intensa. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare rapid and restrained cuts of an ordinary daily routine",
+              "nb": "Sammenlign rask og tilbakeholden klipp av en vanlig hverdagsrutine",
+              "fr": "Comparer montages rapide et retenu d’une routine quotidienne",
+              "pt": "Comparar cortes rápidos e contidos de uma rotina quotidiana"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use the fastest possible cut for every emotion",
+              "nb": "Bruk raskest mulig klipp for alle følelser",
+              "fr": "Utiliser le montage le plus rapide pour chaque émotion",
+              "pt": "Usar o corte mais rápido para cada emoção"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose rhythm without reviewing the actor’s reactions",
+              "nb": "Velg rytme uten å gjennomgå skuespillerens reaksjoner",
+              "fr": "Choisir le rythme sans examiner les réactions",
+              "pt": "Escolher ritmo sem rever reações do ator"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The director and editor describe rhythmic contrast and performance shaping within heightened montage. In a new exercise, test this approach: Compare rapid and restrained cuts of an ordinary daily routine.",
+          "nb": "Regissøren og klipperen beskriver rytmisk kontrast og utforming av spill i intensiv montasje. Prøv denne tilnærmingen i en ny øvelse: Sammenlign rask og tilbakeholden klipp av en vanlig hverdagsrutine.",
+          "fr": "Le réalisateur et le monteur décrivent contraste rythmique et travail du jeu dans un montage intense. Dans un nouvel exercice, tester cette approche : Comparer montages rapide et retenu d’une routine quotidienne.",
+          "pt": "O realizador e o montador descrevem contraste rítmico e atuação em montagem intensa. Num novo exercício, testar esta abordagem: Comparar cortes rápidos e contidos de uma rotina quotidiana."
+        },
+        "sourceIds": [
+          "s2",
+          "s3",
+          "s7"
+        ]
+      },
+      {
+        "id": "requiem-palette",
+        "area": "camera",
+        "prompt": {
+          "en": "Chinlund describes reserving red as a specific dramatic marker. Which approach would you choose in a new production exercise?",
+          "nb": "Chinlund beskriver å reservere rødt som en bestemt dramatisk markør. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Chinlund décrit le rouge réservé comme marqueur dramatique précis. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Chinlund descreve vermelho reservado como marcador dramático específico. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat production design and photography as unrelated palettes",
+              "nb": "Behandle scenografi og foto som uavhengige paletter",
+              "fr": "Traiter décor et photographie comme palettes indépendantes",
+              "pt": "Tratar cenografia e fotografia como paletas independentes"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Create a colour progression tied to a fictional character arc",
+              "nb": "Lag en fargeprogresjon knyttet til et fiktivt karakterforløp",
+              "fr": "Créer une progression chromatique liée à un arc fictionnel",
+              "pt": "Criar progressão cromática ligada a arco ficcional"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use the reserved colour in every scene from the start",
+              "nb": "Bruk den reserverte fargen i alle scener fra starten",
+              "fr": "Utiliser la couleur réservée dès le début dans chaque scène",
+              "pt": "Usar cor reservada em todas as cenas desde o início"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Chinlund describes reserving red as a specific dramatic marker. In a new exercise, test this approach: Create a colour progression tied to a fictional character arc.",
+          "nb": "Chinlund beskriver å reservere rødt som en bestemt dramatisk markør. Prøv denne tilnærmingen i en ny øvelse: Lag en fargeprogresjon knyttet til et fiktivt karakterforløp.",
+          "fr": "Chinlund décrit le rouge réservé comme marqueur dramatique précis. Dans un nouvel exercice, tester cette approche : Créer une progression chromatique liée à un arc fictionnel.",
+          "pt": "Chinlund descreve vermelho reservado como marcador dramático específico. Num novo exercício, testar esta abordagem: Criar progressão cromática ligada a arco ficcional."
+        },
+        "sourceIds": [
+          "s1",
+          "s4"
+        ]
+      },
+      {
+        "id": "requiem-sound",
+        "area": "sound",
+        "prompt": {
+          "en": "Emrich developed recurring montage sounds during production and picture editing. Which approach would you choose in a new production exercise?",
+          "nb": "Emrich utviklet gjentatte montasjelyder under produksjon og bildeklipp. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Emrich a développé des sons récurrents pendant tournage et montage image. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Emrich desenvolveu sons recorrentes durante produção e montagem de imagem. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Wait until picture lock to consider every rhythmic sound cue",
+              "nb": "Vent til bildeklippen er låst før alle rytmiske lydsignaler vurderes",
+              "fr": "Attendre le montage verrouillé pour considérer tout repère rythmique",
+              "pt": "Esperar montagem fechada para considerar todos os sinais rítmicos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use identical sound dynamics regardless of changes in pacing",
+              "nb": "Bruk identisk lyddynamikk uansett tempoendringer",
+              "fr": "Utiliser la même dynamique malgré les variations de rythme",
+              "pt": "Usar dinâmica idêntica apesar de mudanças de ritmo"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Build temporary sounds for a harmless repetitive activity and refine them with the edit",
+              "nb": "Bygg midlertidige lyder til en ufarlig gjentatt aktivitet og finjuster dem med klippen",
+              "fr": "Créer des sons provisoires pour une activité anodine et les affiner au montage",
+              "pt": "Criar sons provisórios para atividade inofensiva e refiná-los na montagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Emrich developed recurring montage sounds during production and picture editing. In a new exercise, test this approach: Build temporary sounds for a harmless repetitive activity and refine them with the edit.",
+          "nb": "Emrich utviklet gjentatte montasjelyder under produksjon og bildeklipp. Prøv denne tilnærmingen i en ny øvelse: Bygg midlertidige lyder til en ufarlig gjentatt aktivitet og finjuster dem med klippen.",
+          "fr": "Emrich a développé des sons récurrents pendant tournage et montage image. Dans un nouvel exercice, tester cette approche : Créer des sons provisoires pour une activité anodine et les affiner au montage.",
+          "pt": "Emrich desenvolveu sons recorrentes durante produção e montagem de imagem. Num novo exercício, testar esta abordagem: Criar sons provisórios para atividade inofensiva e refiná-los na montagem."
+        },
+        "sourceIds": [
+          "s5",
+          "s6"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_buffalo_66_1998",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Reversal film, controlled performance and regional location",
+      "nb": "Reverseringsfilm, kontrollert spill og regionale steder",
+      "fr": "Pellicule inversible, jeu contrôlé et lieux régionaux",
+      "pt": "Película reversível, atuação controlada e locais regionais"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Buffalo '66",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/60657-BUFFALO-%2766"
+      },
+      {
+        "id": "s1",
+        "title": "Behind the Mask: Cinematography in Buffalo 66",
+        "publisher": "BAFTA",
+        "url": "https://www.bafta.org/stories/behind-mask-cinematography-buffalo-66/"
+      },
+      {
+        "id": "s6",
+        "title": "From the Vaults: Vincent Gallo on Buffalo and Buffalo 66",
+        "publisher": "The Public",
+        "url": "https://www.dailypublic.com/articles/03302015/vaults-vincent-gallo-buffalo-and-buffalo-66"
+      },
+      {
+        "id": "s7",
+        "title": "Things you didn't know about Vincent Gallo's Buffalo '66",
+        "publisher": "i-D",
+        "url": "https://i-d.co/article/vincent-gallo-buffalo-66/"
+      },
+      {
+        "id": "s9",
+        "title": "Buffalo '66",
+        "publisher": "MUBI",
+        "url": "https://mubi.com/en/do/films/buffalo-66"
+      }
+    ],
+    "questions": [
+      {
+        "id": "buffalo66-reversal",
+        "area": "camera",
+        "prompt": {
+          "en": "The production used reversal stock with particular exposure and colour demands. Which approach would you choose in a new production exercise?",
+          "nb": "Produksjonen brukte reverseringsfilm med særskilte krav til eksponering og farge. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "La production utilisait une pellicule inversible aux exigences particulières de couleur et exposition. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A produção usou película reversível com exigências específicas de cor e exposição. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test exposure and costume colours before choosing a final capture approach",
+              "nb": "Prøv eksponering og kostymefarger før endelig opptaksmetode velges",
+              "fr": "Tester exposition et couleurs des costumes avant le choix de capture",
+              "pt": "Testar exposição e cores dos figurinos antes de escolher captação"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume all film stocks respond identically to exposure",
+              "nb": "Anta at alle filmtyper reagerer identisk på eksponering",
+              "fr": "Supposer que toutes les pellicules réagissent pareil à l’exposition",
+              "pt": "Supor que todas as películas reagem igualmente à exposição"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose colours without reviewing how the medium renders them",
+              "nb": "Velg farger uten å se hvordan mediet gjengir dem",
+              "fr": "Choisir les couleurs sans vérifier leur rendu",
+              "pt": "Escolher cores sem rever como o suporte as reproduz"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The production used reversal stock with particular exposure and colour demands. In a new exercise, test this approach: Test exposure and costume colours before choosing a final capture approach.",
+          "nb": "Produksjonen brukte reverseringsfilm med særskilte krav til eksponering og farge. Prøv denne tilnærmingen i en ny øvelse: Prøv eksponering og kostymefarger før endelig opptaksmetode velges.",
+          "fr": "La production utilisait une pellicule inversible aux exigences particulières de couleur et exposition. Dans un nouvel exercice, tester cette approche : Tester exposition et couleurs des costumes avant le choix de capture.",
+          "pt": "A produção usou película reversível com exigências específicas de cor e exposição. Num novo exercício, testar esta abordagem: Testar exposição e cores dos figurinos antes de escolher captação."
+        },
+        "sourceIds": [
+          "s1",
+          "s6",
+          "s7"
+        ]
+      },
+      {
+        "id": "buffalo66-performance",
+        "area": "research",
+        "prompt": {
+          "en": "The production interview distinguishes carefully controlled performances from improvisation. Which approach would you choose in a new production exercise?",
+          "nb": "Produksjonsintervjuet skiller nøye kontrollert spill fra improvisasjon. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "L’entretien distingue jeu précisément contrôlé et improvisation. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A entrevista distingue atuação cuidadosamente controlada de improvisação. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat rehearsal as incompatible with emotional accuracy",
+              "nb": "Behandle prøver som uforenlige med emosjonell presisjon",
+              "fr": "Traiter les répétitions comme incompatibles avec la justesse émotionnelle",
+              "pt": "Tratar ensaios como incompatíveis com precisão emocional"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare tightly rehearsed and exploratory takes of the same fictional scene",
+              "nb": "Sammenlign nøye innøvde og utforskende opptak av samme fiktive scene",
+              "fr": "Comparer prises répétées et exploratoires d’une même scène fictive",
+              "pt": "Comparar tomadas ensaiadas e exploratórias da mesma cena ficcional"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume naturalistic dialogue must be improvised",
+              "nb": "Anta at naturalistisk dialog må improviseres",
+              "fr": "Supposer que le dialogue naturaliste doit être improvisé",
+              "pt": "Supor que diálogo naturalista tem de ser improvisado"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The production interview distinguishes carefully controlled performances from improvisation. In a new exercise, test this approach: Compare tightly rehearsed and exploratory takes of the same fictional scene.",
+          "nb": "Produksjonsintervjuet skiller nøye kontrollert spill fra improvisasjon. Prøv denne tilnærmingen i en ny øvelse: Sammenlign nøye innøvde og utforskende opptak av samme fiktive scene.",
+          "fr": "L’entretien distingue jeu précisément contrôlé et improvisation. Dans un nouvel exercice, tester cette approche : Comparer prises répétées et exploratoires d’une même scène fictive.",
+          "pt": "A entrevista distingue atuação cuidadosamente controlada de improvisação. Num novo exercício, testar esta abordagem: Comparar tomadas ensaiadas e exploratórias da mesma cena ficcional."
+        },
+        "sourceIds": [
+          "s6",
+          "s0"
+        ]
+      },
+      {
+        "id": "buffalo66-place",
+        "area": "research",
+        "prompt": {
+          "en": "The film uses local Buffalo environments and a distinctive regional visual identity. Which approach would you choose in a new production exercise?",
+          "nb": "Filmen bruker lokale Buffalo-miljøer og en egen regional visuell identitet. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le film utilise des lieux de Buffalo et une identité visuelle régionale singulière. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O filme usa locais de Buffalo e identidade visual regional distinta. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Replace every ordinary location with generic luxury scenery",
+              "nb": "Erstatt alle vanlige steder med generiske luksuskulisser",
+              "fr": "Remplacer chaque lieu ordinaire par un décor luxueux générique",
+              "pt": "Substituir todos os locais comuns por cenários luxuosos genéricos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore local details that support character and mood",
+              "nb": "Ignorer lokale detaljer som støtter karakter og stemning",
+              "fr": "Ignorer les détails locaux qui soutiennent personnage et ambiance",
+              "pt": "Ignorar detalhes locais que apoiam personagem e ambiente"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Scout ordinary local interiors and document their visual character",
+              "nb": "Befar vanlige lokale interiører og dokumenter deres visuelle særpreg",
+              "fr": "Repérer des intérieurs ordinaires et documenter leur caractère visuel",
+              "pt": "Reconhecer interiores comuns locais e documentar caráter visual"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The film uses local Buffalo environments and a distinctive regional visual identity. In a new exercise, test this approach: Scout ordinary local interiors and document their visual character.",
+          "nb": "Filmen bruker lokale Buffalo-miljøer og en egen regional visuell identitet. Prøv denne tilnærmingen i en ny øvelse: Befar vanlige lokale interiører og dokumenter deres visuelle særpreg.",
+          "fr": "Le film utilise des lieux de Buffalo et une identité visuelle régionale singulière. Dans un nouvel exercice, tester cette approche : Repérer des intérieurs ordinaires et documenter leur caractère visuel.",
+          "pt": "O filme usa locais de Buffalo e identidade visual regional distinta. Num novo exercício, testar esta abordagem: Reconhecer interiores comuns locais e documentar caráter visual."
+        },
+        "sourceIds": [
+          "s6",
+          "s9"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_down_by_law_1986",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Monochrome locations, narrative ellipsis and musical identity",
+      "nb": "Svart-hvitt-steder, narrativ ellipse og musikalsk identitet",
+      "fr": "Lieux monochromes, ellipse narrative et identité musicale",
+      "pt": "Locais monocromáticos, elipse narrativa e identidade musical"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Down by Law",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/719-down-by-law"
+      },
+      {
+        "id": "s1",
+        "title": "Jim Jarmusch: Down By Law",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/events/jim-jarmusch-down-law"
+      },
+      {
+        "id": "s2",
+        "title": "Remembering Robby Müller",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/articles/remembering-robby-m%C3%BCller"
+      },
+      {
+        "id": "s3",
+        "title": "AFI Catalog: Down by Law",
+        "publisher": "American Film Institute",
+        "url": "https://catalog.afi.com/Film/57310-DOWN-BY-LAW"
+      },
+      {
+        "id": "s4",
+        "title": "Jim Jarmusch Is the God of Small Things",
+        "publisher": "GQ",
+        "url": "https://www.gq.com/story/jim-jarmusch-is-the-god-of-small-things"
+      }
+    ],
+    "questions": [
+      {
+        "id": "downbylaw-monochrome",
+        "area": "camera",
+        "prompt": {
+          "en": "Müller’s monochrome photography responds to the Louisiana environments and unhurried rhythm. Which approach would you choose in a new production exercise?",
+          "nb": "Müllers svart-hvitt-fotografi svarer på Louisiana-miljøene og den rolige rytmen. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "La photographie monochrome de Müller répond aux lieux de Louisiane et au rythme paisible. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A fotografia monocromática de Müller responde aos locais da Louisiana e ritmo tranquilo. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare tonal separation and texture in sustained location shots",
+              "nb": "Sammenlign toneseparasjon og tekstur i vedvarende stedsopptak",
+              "fr": "Comparer séparation tonale et texture dans des plans de lieu prolongés",
+              "pt": "Comparar separação tonal e textura em planos prolongados de locais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume all colour scenes translate equally into monochrome",
+              "nb": "Anta at alle fargescener fungerer likt i svart-hvitt",
+              "fr": "Supposer que chaque scène couleur se transpose pareil en monochrome",
+              "pt": "Supor que todas as cenas a cores passam igualmente a monocromia"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use high contrast indiscriminately in every location",
+              "nb": "Bruk høy kontrast ukritisk på alle steder",
+              "fr": "Utiliser un fort contraste indistinctement partout",
+              "pt": "Usar alto contraste indiscriminadamente em todos os locais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Müller’s monochrome photography responds to the Louisiana environments and unhurried rhythm. In a new exercise, test this approach: Compare tonal separation and texture in sustained location shots.",
+          "nb": "Müllers svart-hvitt-fotografi svarer på Louisiana-miljøene og den rolige rytmen. Prøv denne tilnærmingen i en ny øvelse: Sammenlign toneseparasjon og tekstur i vedvarende stedsopptak.",
+          "fr": "La photographie monochrome de Müller répond aux lieux de Louisiane et au rythme paisible. Dans un nouvel exercice, tester cette approche : Comparer séparation tonale et texture dans des plans de lieu prolongés.",
+          "pt": "A fotografia monocromática de Müller responde aos locais da Louisiana e ritmo tranquilo. Num novo exercício, testar esta abordagem: Comparar separação tonal e textura em planos prolongados de locais."
+        },
+        "sourceIds": [
+          "s1",
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "downbylaw-ellipsis",
+        "area": "research",
+        "prompt": {
+          "en": "Jarmusch describes deliberately omitting expected dramatic peaks. Which approach would you choose in a new production exercise?",
+          "nb": "Jarmusch beskriver bevisst utelatelse av forventede dramatiske høydepunkter. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Jarmusch décrit l’omission volontaire de sommets dramatiques attendus. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Jarmusch descreve omissão deliberada de picos dramáticos esperados. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Omit scenes randomly without checking viewer understanding",
+              "nb": "Utelat scener tilfeldig uten å sjekke seerens forståelse",
+              "fr": "Omettre les scènes au hasard sans vérifier la compréhension",
+              "pt": "Omitir cenas ao acaso sem verificar compreensão"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare a fictional transition shown directly and conveyed through aftermath",
+              "nb": "Sammenlign en fiktiv overgang vist direkte og formidlet gjennom ettervirkninger",
+              "fr": "Comparer une transition fictive montrée directement ou par ses conséquences",
+              "pt": "Comparar transição fictícia mostrada diretamente ou pelas consequências"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Explain every omitted event in a long exposition",
+              "nb": "Forklar alle utelatte hendelser i en lang utredning",
+              "fr": "Expliquer chaque événement omis dans un long exposé",
+              "pt": "Explicar todos os eventos omitidos em longa exposição"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Jarmusch describes deliberately omitting expected dramatic peaks. In a new exercise, test this approach: Compare a fictional transition shown directly and conveyed through aftermath.",
+          "nb": "Jarmusch beskriver bevisst utelatelse av forventede dramatiske høydepunkter. Prøv denne tilnærmingen i en ny øvelse: Sammenlign en fiktiv overgang vist direkte og formidlet gjennom ettervirkninger.",
+          "fr": "Jarmusch décrit l’omission volontaire de sommets dramatiques attendus. Dans un nouvel exercice, tester cette approche : Comparer une transition fictive montrée directement ou par ses conséquences.",
+          "pt": "Jarmusch descreve omissão deliberada de picos dramáticos esperados. Num novo exercício, testar esta abordagem: Comparar transição fictícia mostrada diretamente ou pelas consequências."
+        },
+        "sourceIds": [
+          "s4",
+          "s0"
+        ]
+      },
+      {
+        "id": "downbylaw-music",
+        "area": "sound",
+        "prompt": {
+          "en": "The sources identify music and songs as part of the film’s independent identity. Which approach would you choose in a new production exercise?",
+          "nb": "Kildene identifiserer musikk og sanger som del av filmens uavhengige identitet. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les sources identifient musique et chansons comme éléments de l’identité indépendante du film. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "As fontes identificam música e canções como parte da identidade independente do filme. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Select a song solely because it is commercially familiar",
+              "nb": "Velg en sang bare fordi den er kommersielt kjent",
+              "fr": "Choisir une chanson uniquement parce qu’elle est connue",
+              "pt": "Escolher canção apenas por ser comercialmente conhecida"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore the contrast between music and silence",
+              "nb": "Ignorer kontrasten mellom musikk og stillhet",
+              "fr": "Ignorer le contraste entre musique et silence",
+              "pt": "Ignorar contraste entre música e silêncio"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test a cleared or original musical cue against a quiet landscape sequence",
+              "nb": "Prøv et klarert eller originalt musikkinnslag mot en stille landskapssekvens",
+              "fr": "Tester un motif autorisé ou original sur une séquence paysagère calme",
+              "pt": "Testar motivo autorizado ou original numa sequência calma de paisagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The sources identify music and songs as part of the film’s independent identity. In a new exercise, test this approach: Test a cleared or original musical cue against a quiet landscape sequence.",
+          "nb": "Kildene identifiserer musikk og sanger som del av filmens uavhengige identitet. Prøv denne tilnærmingen i en ny øvelse: Prøv et klarert eller originalt musikkinnslag mot en stille landskapssekvens.",
+          "fr": "Les sources identifient musique et chansons comme éléments de l’identité indépendante du film. Dans un nouvel exercice, tester cette approche : Tester un motif autorisé ou original sur une séquence paysagère calme.",
+          "pt": "As fontes identificam música e canções como parte da identidade independente do filme. Num novo exercício, testar esta abordagem: Testar motivo autorizado ou original numa sequência calma de paisagem."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_adam_s_apples_2005",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Ensemble rehearsal and ironic dialogue in widescreen",
+      "nb": "Ensembleprøver og ironisk dialog i bredformat",
+      "fr": "Répétitions collectives et dialogue ironique en format large",
+      "pt": "Ensaios coletivos e diálogo irónico em formato panorâmico"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Adam's Apples",
+        "publisher": "Danish Film Institute",
+        "url": "https://www.dfi.dk/en/viden-om-film/filmdatabasen/film/adams-aebler"
+      },
+      {
+        "id": "s1",
+        "title": "Adams Äpfel",
+        "publisher": "filmportal.de",
+        "url": "https://www.filmportal.de/en/movie/adams-apfel_e9ee9dcec2144aadac2f1d5c830fef84"
+      },
+      {
+        "id": "s3",
+        "title": "Anders Thomas Jensen - Director: Fun with cruelty",
+        "publisher": "Cineuropa",
+        "url": "https://cineuropa.org/en/interview/64596/"
+      },
+      {
+        "id": "s4",
+        "title": "Succes for Adams æbler",
+        "publisher": "Filmmagasinet Ekko",
+        "url": "https://www.ekkofilm.dk/artikler/succes-for-adams-aebler/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "adams-rehearsal",
+        "area": "research",
+        "prompt": {
+          "en": "Jensen wrote for his intended actors and rehearsed repeatedly. Which approach would you test in a new production exercise?",
+          "nb": "Jensen skrev for de tiltenkte skuespillerne og gjennomførte gjentatte prøver. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Jensen écrivait pour ses acteurs et répétait plusieurs fois. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Jensen escreveu para os atores escolhidos e ensaiou repetidamente. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse precise dramatic beats before testing controlled improvisation",
+              "nb": "Øv på presise dramatiske vendepunkter før kontrollert improvisasjon",
+              "fr": "Répéter les moments dramatiques avant une improvisation contrôlée",
+              "pt": "Ensaiar momentos dramáticos antes de testar improvisação controlada"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Adopt a familiar convention without researching this specific context",
+              "nb": "Bruk en kjent konvensjon uten å undersøke denne konkrete konteksten",
+              "fr": "Adopter une convention familière sans étudier ce contexte précis",
+              "pt": "Adotar uma convenção familiar sem investigar este contexto específico"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Fix the creative decision before testing it with the team",
+              "nb": "Lås det kreative valget før det testes med teamet",
+              "fr": "Fixer la décision créative avant de la tester avec l'équipe",
+              "pt": "Fixar a decisão criativa antes de a testar com a equipa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Jensen wrote for his intended actors and rehearsed repeatedly. In a new exercise, test this approach: Rehearse precise dramatic beats before testing controlled improvisation.",
+          "nb": "Jensen skrev for de tiltenkte skuespillerne og gjennomførte gjentatte prøver. Prøv denne tilnærmingen i en ny øvelse: Øv på presise dramatiske vendepunkter før kontrollert improvisasjon.",
+          "fr": "Jensen écrivait pour ses acteurs et répétait plusieurs fois. Dans un nouvel exercice, tester cette approche : Répéter les moments dramatiques avant une improvisation contrôlée.",
+          "pt": "Jensen escreveu para os atores escolhidos e ensaiou repetidamente. Num novo exercício, testar esta abordagem: Ensaiar momentos dramáticos antes de testar improvisação controlada."
+        },
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      {
+        "id": "adams-irony",
+        "area": "editing",
+        "prompt": {
+          "en": "Jensen removed ironic lines that undermined emotional truth. Which approach would you test in a new production exercise?",
+          "nb": "Jensen fjernet ironiske replikker som undergravde emosjonell troverdighet. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Jensen supprimait les répliques ironiques nuisibles à la vérité émotionnelle. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Jensen retirava falas irónicas que prejudicavam a verdade emocional. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose the first assembly without testing narrative meaning",
+              "nb": "Velg første sammenklipp uten å teste fortellermessig mening",
+              "fr": "Choisir le premier assemblage sans tester le sens narratif",
+              "pt": "Escolher a primeira montagem sem testar o sentido narrativo"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare cuts with and without a joke that breaks the scene's tone",
+              "nb": "Sammenlign klipp med og uten en vits som bryter scenens tone",
+              "fr": "Comparer des montages avec et sans une plaisanterie qui brise le ton",
+              "pt": "Comparar montagens com e sem uma piada que quebra o tom"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Cut solely according to a fixed shot duration",
+              "nb": "Klipp utelukkende etter en fast innstillingslengde",
+              "fr": "Monter uniquement selon une durée fixe des plans",
+              "pt": "Montar apenas segundo uma duração fixa dos planos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Jensen removed ironic lines that undermined emotional truth. In a new exercise, test this approach: Compare cuts with and without a joke that breaks the scene's tone.",
+          "nb": "Jensen fjernet ironiske replikker som undergravde emosjonell troverdighet. Prøv denne tilnærmingen i en ny øvelse: Sammenlign klipp med og uten en vits som bryter scenens tone.",
+          "fr": "Jensen supprimait les répliques ironiques nuisibles à la vérité émotionnelle. Dans un nouvel exercice, tester cette approche : Comparer des montages avec et sans une plaisanterie qui brise le ton.",
+          "pt": "Jensen retirava falas irónicas que prejudicavam a verdade emocional. Num novo exercício, testar esta abordagem: Comparar montagens com e sem uma piada que quebra o tom."
+        },
+        "sourceIds": [
+          "s4"
+        ]
+      },
+      {
+        "id": "adams-scope",
+        "area": "camera",
+        "prompt": {
+          "en": "The Danish and German records identify a 35 mm CinemaScope format. Which approach would you test in a new production exercise?",
+          "nb": "Danske og tyske filmregistre oppgir 35 mm CinemaScope-format. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Les archives danoises et allemandes indiquent le format CinemaScope 35 mm. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Os arquivos dinamarquês e alemão registam CinemaScope em 35 mm. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose the look without comparing test footage",
+              "nb": "Velg det visuelle uttrykket uten å sammenligne testopptak",
+              "fr": "Choisir le rendu sans comparer les essais filmés",
+              "pt": "Escolher o visual sem comparar imagens de teste"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Change the framing or exposure arbitrarily between takes",
+              "nb": "Endre utsnitt eller eksponering vilkårlig mellom tagninger",
+              "fr": "Modifier arbitrairement le cadrage ou l'exposition entre les prises",
+              "pt": "Alterar arbitrariamente o enquadramento ou a exposição entre tomadas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Storyboard ensemble blocking across a wide frame",
+              "nb": "Lag storyboard for ensembleplassering i et bredt bilde",
+              "fr": "Dessiner le placement collectif dans un cadre large",
+              "pt": "Criar storyboard da disposição coletiva num quadro largo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The Danish and German records identify a 35 mm CinemaScope format. In a new exercise, test this approach: Storyboard ensemble blocking across a wide frame.",
+          "nb": "Danske og tyske filmregistre oppgir 35 mm CinemaScope-format. Prøv denne tilnærmingen i en ny øvelse: Lag storyboard for ensembleplassering i et bredt bilde.",
+          "fr": "Les archives danoises et allemandes indiquent le format CinemaScope 35 mm. Dans un nouvel exercice, tester cette approche : Dessiner le placement collectif dans un cadre large.",
+          "pt": "Os arquivos dinamarquês e alemão registam CinemaScope em 35 mm. Num novo exercício, testar esta abordagem: Criar storyboard da disposição coletiva num quadro largo."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_antonia_s_line_1995",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Cyclical time, ageing and rural ensemble geography",
+      "nb": "Syklisk tid, aldring og landsbyens geografi",
+      "fr": "Temps cyclique, vieillissement et géographie rurale",
+      "pt": "Tempo cíclico, envelhecimento e geografia rural"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Marleen Gorris over Antonia",
+        "publisher": "Filmkrant",
+        "url": "https://filmkrant.nl/interview/marleen-gorris-over-antonia/"
+      },
+      {
+        "id": "s1",
+        "title": "Antonia",
+        "publisher": "Nederlands Film Festival",
+        "url": "https://www.filmfestival.nl/en/film/antonia-2"
+      },
+      {
+        "id": "s2",
+        "title": "Antonia's Line",
+        "publisher": "Flanders Image",
+        "url": "https://www.flandersimage.com/titles/antonias-line"
+      },
+      {
+        "id": "s5",
+        "title": "Antonia's Line",
+        "publisher": "Turner Classic Movies",
+        "url": "https://www.tcm.com/articles/1379685/antonias-line"
+      }
+    ],
+    "questions": [
+      {
+        "id": "antonia-cycle",
+        "area": "editing",
+        "prompt": {
+          "en": "Gorris describes cyclical time in a multigenerational chronicle. Which approach would you test in a new production exercise?",
+          "nb": "Gorris beskriver syklisk tid i en flergenerasjonskrønike. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Gorris décrit un temps cyclique dans une chronique familiale. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Gorris descreve tempo cíclico numa crónica familiar. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Repeat a visual motif with changed meaning across generations",
+              "nb": "Gjenta et visuelt motiv med endret mening mellom generasjoner",
+              "fr": "Répéter un motif visuel dont le sens change entre générations",
+              "pt": "Repetir um motivo visual cujo sentido muda entre gerações"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Cut solely according to a fixed shot duration",
+              "nb": "Klipp utelukkende etter en fast innstillingslengde",
+              "fr": "Monter uniquement selon une durée fixe des plans",
+              "pt": "Montar apenas segundo uma duração fixa dos planos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose the first assembly without testing narrative meaning",
+              "nb": "Velg første sammenklipp uten å teste fortellermessig mening",
+              "fr": "Choisir le premier assemblage sans tester le sens narratif",
+              "pt": "Escolher a primeira montagem sem testar o sentido narrativo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Gorris describes cyclical time in a multigenerational chronicle. In a new exercise, test this approach: Repeat a visual motif with changed meaning across generations.",
+          "nb": "Gorris beskriver syklisk tid i en flergenerasjonskrønike. Prøv denne tilnærmingen i en ny øvelse: Gjenta et visuelt motiv med endret mening mellom generasjoner.",
+          "fr": "Gorris décrit un temps cyclique dans une chronique familiale. Dans un nouvel exercice, tester cette approche : Répéter un motif visuel dont le sens change entre générations.",
+          "pt": "Gorris descreve tempo cíclico numa crónica familiar. Num novo exercício, testar esta abordagem: Repetir um motivo visual cujo sentido muda entre gerações."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "antonia-ageing",
+        "area": "research",
+        "prompt": {
+          "en": "The director discusses restrained makeup and performance-led ageing. Which approach would you test in a new production exercise?",
+          "nb": "Regissøren beskriver diskret sminke og aldring gjennom skuespill. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "La réalisatrice décrit le maquillage discret et le vieillissement par le jeu. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "A realizadora descreve maquilhagem discreta e envelhecimento pela atuação. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Fix the creative decision before testing it with the team",
+              "nb": "Lås det kreative valget før det testes med teamet",
+              "fr": "Fixer la décision créative avant de la tester avec l'équipe",
+              "pt": "Fixar a decisão criativa antes de a testar com a equipa"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test changes in posture, tempo and subtle makeup together",
+              "nb": "Prøv endringer i holdning, tempo og diskret sminke sammen",
+              "fr": "Tester ensemble posture, rythme et maquillage discret",
+              "pt": "Testar postura, ritmo e maquilhagem discreta em conjunto"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Adopt a familiar convention without researching this specific context",
+              "nb": "Bruk en kjent konvensjon uten å undersøke denne konkrete konteksten",
+              "fr": "Adopter une convention familière sans étudier ce contexte précis",
+              "pt": "Adotar uma convenção familiar sem investigar este contexto específico"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The director discusses restrained makeup and performance-led ageing. In a new exercise, test this approach: Test changes in posture, tempo and subtle makeup together.",
+          "nb": "Regissøren beskriver diskret sminke og aldring gjennom skuespill. Prøv denne tilnærmingen i en ny øvelse: Prøv endringer i holdning, tempo og diskret sminke sammen.",
+          "fr": "La réalisatrice décrit le maquillage discret et le vieillissement par le jeu. Dans un nouvel exercice, tester cette approche : Tester ensemble posture, rythme et maquillage discret.",
+          "pt": "A realizadora descreve maquilhagem discreta e envelhecimento pela atuação. Num novo exercício, testar esta abordagem: Testar postura, ritmo e maquilhagem discreta em conjunto."
+        },
+        "sourceIds": [
+          "s0",
+          "s5"
+        ]
+      },
+      {
+        "id": "antonia-village",
+        "area": "camera",
+        "prompt": {
+          "en": "The film uses rural village settings and widescreen photography. Which approach would you test in a new production exercise?",
+          "nb": "Filmen bruker landsbymiljø og bredformatfoto. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Le film utilise un village rural et un cadre large. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "O filme utiliza uma aldeia rural e fotografia panorâmica. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose the look without comparing test footage",
+              "nb": "Velg det visuelle uttrykket uten å sammenligne testopptak",
+              "fr": "Choisir le rendu sans comparer les essais filmés",
+              "pt": "Escolher o visual sem comparar imagens de teste"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Change the framing or exposure arbitrarily between takes",
+              "nb": "Endre utsnitt eller eksponering vilkårlig mellom tagninger",
+              "fr": "Modifier arbitrairement le cadrage ou l'exposition entre les prises",
+              "pt": "Alterar arbitrariamente o enquadramento ou a exposição entre tomadas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map recurring village spaces and vary ensemble arrangements over time",
+              "nb": "Kartlegg gjentakende landsbyrom og varier ensembleplasseringen over tid",
+              "fr": "Cartographier les lieux récurrents et varier les placements au fil du temps",
+              "pt": "Mapear espaços recorrentes e variar a disposição coletiva ao longo do tempo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The film uses rural village settings and widescreen photography. In a new exercise, test this approach: Map recurring village spaces and vary ensemble arrangements over time.",
+          "nb": "Filmen bruker landsbymiljø og bredformatfoto. Prøv denne tilnærmingen i en ny øvelse: Kartlegg gjentakende landsbyrom og varier ensembleplasseringen over tid.",
+          "fr": "Le film utilise un village rural et un cadre large. Dans un nouvel exercice, tester cette approche : Cartographier les lieux récurrents et varier les placements au fil du temps.",
+          "pt": "O filme utiliza uma aldeia rural e fotografia panorâmica. Num novo exercício, testar esta abordagem: Mapear espaços recorrentes e variar a disposição coletiva ao longo do tempo."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_blue_jasmine_2013",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Associative flashbacks, wardrobe continuity and jazz",
+      "nb": "Assosiative tilbakeblikk, kostymekontinuitet og jazz",
+      "fr": "Flashbacks associatifs, continuité des costumes et jazz",
+      "pt": "Flashbacks associativos, continuidade dos figurinos e jazz"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Blue Jasmine press kit",
+        "publisher": "Sony Pictures Classics",
+        "url": "https://www.sonyclassics.com/bluejasmine/bluejasmine_presskit.pdf"
+      },
+      {
+        "id": "s2",
+        "title": "Film of the week: Blue Jasmine",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/sight-and-sound/reviews/film-week-blue-jasmine"
+      },
+      {
+        "id": "s3",
+        "title": "Interview: Woody Allen on Blue Jasmine",
+        "publisher": "Time Out",
+        "url": "https://www.timeout.com/film/interview-woody-allen-on-blue-jasmine"
+      },
+      {
+        "id": "s5",
+        "title": "Cate Blanchett's Blue Jasmine wardrobe",
+        "publisher": "British Vogue",
+        "url": "https://www.vogue.co.uk/article/cate-blanchett-blue-jasmine-karl-lagerfeld-costumes"
+      },
+      {
+        "id": "s6",
+        "title": "Blue Jasmine costume designer interview",
+        "publisher": "Town & Country",
+        "url": "https://www.townandcountrymag.com/style/fashion-trends/g578/blue-jasmine-cate-blanchett-costume-designer-interview/"
+      },
+      {
+        "id": "s7",
+        "title": "The story behind Cate Blanchett's Blue Jasmine costumes",
+        "publisher": "Allure",
+        "url": "https://www.allure.com/story/cate-blanchett-blue-jasmine-costume-designer"
+      }
+    ],
+    "questions": [
+      {
+        "id": "jasmine-memory",
+        "area": "editing",
+        "prompt": {
+          "en": "Production notes describe an associative New York past and San Francisco present. Which approach would you test in a new production exercise?",
+          "nb": "Produksjonsnotatene beskriver en assosiativ fortid i New York og nåtid i San Francisco. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Les notes décrivent un passé new-yorkais et un présent à San Francisco liés par association. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "As notas descrevem um passado em Nova Iorque e um presente em São Francisco ligados por associação. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Cut from a present stimulus to a related memory and test clarity",
+              "nb": "Klipp fra en impuls i nåtiden til et tilknyttet minne og test tydeligheten",
+              "fr": "Monter un stimulus présent vers un souvenir associé et tester la clarté",
+              "pt": "Montar de um estímulo presente para uma memória associada e testar a clareza"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Cut solely according to a fixed shot duration",
+              "nb": "Klipp utelukkende etter en fast innstillingslengde",
+              "fr": "Monter uniquement selon une durée fixe des plans",
+              "pt": "Montar apenas segundo uma duração fixa dos planos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose the first assembly without testing narrative meaning",
+              "nb": "Velg første sammenklipp uten å teste fortellermessig mening",
+              "fr": "Choisir le premier assemblage sans tester le sens narratif",
+              "pt": "Escolher a primeira montagem sem testar o sentido narrativo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Production notes describe an associative New York past and San Francisco present. In a new exercise, test this approach: Cut from a present stimulus to a related memory and test clarity.",
+          "nb": "Produksjonsnotatene beskriver en assosiativ fortid i New York og nåtid i San Francisco. Prøv denne tilnærmingen i en ny øvelse: Klipp fra en impuls i nåtiden til et tilknyttet minne og test tydeligheten.",
+          "fr": "Les notes décrivent un passé new-yorkais et un présent à San Francisco liés par association. Dans un nouvel exercice, tester cette approche : Monter un stimulus présent vers un souvenir associé et tester la clarté.",
+          "pt": "As notas descrevem um passado em Nova Iorque e um presente em São Francisco ligados por associação. Num novo exercício, testar esta abordagem: Montar de um estímulo presente para uma memória associada e testar a clareza."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "jasmine-wardrobe",
+        "area": "research",
+        "prompt": {
+          "en": "The costume designer describes repeated luxury remnants and their changing condition. Which approach would you test in a new production exercise?",
+          "nb": "Kostymedesigneren beskriver gjentatte luksusplagg og endringer i tilstanden deres. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "La costumière décrit des pièces de luxe récurrentes dont l'état évolue. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "A figurinista descreve peças de luxo recorrentes e a evolução do seu estado. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Fix the creative decision before testing it with the team",
+              "nb": "Lås det kreative valget før det testes med teamet",
+              "fr": "Fixer la décision créative avant de la tester avec l'équipe",
+              "pt": "Fixar a decisão criativa antes de a testar com a equipa"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Build a wardrobe continuity chart tracking wear and social meaning",
+              "nb": "Lag et kostymeskjema som følger slitasje og sosial betydning",
+              "fr": "Créer un tableau de continuité suivant l'usure et le sens social",
+              "pt": "Criar um mapa de continuidade de desgaste e significado social"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Adopt a familiar convention without researching this specific context",
+              "nb": "Bruk en kjent konvensjon uten å undersøke denne konkrete konteksten",
+              "fr": "Adopter une convention familière sans étudier ce contexte précis",
+              "pt": "Adotar uma convenção familiar sem investigar este contexto específico"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The costume designer describes repeated luxury remnants and their changing condition. In a new exercise, test this approach: Build a wardrobe continuity chart tracking wear and social meaning.",
+          "nb": "Kostymedesigneren beskriver gjentatte luksusplagg og endringer i tilstanden deres. Prøv denne tilnærmingen i en ny øvelse: Lag et kostymeskjema som følger slitasje og sosial betydning.",
+          "fr": "La costumière décrit des pièces de luxe récurrentes dont l'état évolue. Dans un nouvel exercice, tester cette approche : Créer un tableau de continuité suivant l'usure et le sens social.",
+          "pt": "A figurinista descreve peças de luxo recorrentes e a evolução do seu estado. Num novo exercício, testar esta abordagem: Criar um mapa de continuidade de desgaste e significado social."
+        },
+        "sourceIds": [
+          "s5",
+          "s6",
+          "s7"
+        ]
+      },
+      {
+        "id": "jasmine-jazz",
+        "area": "sound",
+        "prompt": {
+          "en": "The director discusses jazz records and production notes identify title music. Which approach would you test in a new production exercise?",
+          "nb": "Regissøren omtaler jazzplater og produksjonsnotatene identifiserer tittelmusikken. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Le réalisateur évoque les disques de jazz et les notes identifient la musique du titre. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "O realizador aborda discos de jazz e as notas identificam a música do título. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose music solely by tempo without considering character",
+              "nb": "Velg musikk bare etter tempo uten å vurdere karakteren",
+              "fr": "Choisir la musique uniquement selon le tempo sans considérer le personnage",
+              "pt": "Escolher música só pelo tempo sem considerar a personagem"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Fill every quiet passage with continuous background music",
+              "nb": "Fyll alle stille partier med kontinuerlig bakgrunnsmusikk",
+              "fr": "Remplir tous les silences avec une musique de fond continue",
+              "pt": "Preencher todos os silêncios com música de fundo contínua"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test an original or cleared musical cue as an associative character motif",
+              "nb": "Test et originalt eller klarert musikkmotiv knyttet til karakterens assosiasjoner",
+              "fr": "Tester un motif musical original ou autorisé associé au personnage",
+              "pt": "Testar um motivo musical original ou licenciado associado à personagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The director discusses jazz records and production notes identify title music. In a new exercise, test this approach: Test an original or cleared musical cue as an associative character motif.",
+          "nb": "Regissøren omtaler jazzplater og produksjonsnotatene identifiserer tittelmusikken. Prøv denne tilnærmingen i en ny øvelse: Test et originalt eller klarert musikkmotiv knyttet til karakterens assosiasjoner.",
+          "fr": "Le réalisateur évoque les disques de jazz et les notes identifient la musique du titre. Dans un nouvel exercice, tester cette approche : Tester un motif musical original ou autorisé associé au personnage.",
+          "pt": "O realizador aborda discos de jazz e as notas identificam a música do título. Num novo exercício, testar esta abordagem: Testar um motivo musical original ou licenciado associado à personagem."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_call_me_by_your_name_2017",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Single-stock photography, period costumes and musical performance",
+      "nb": "Én filmtype, periodekostymer og musikalsk fremføring",
+      "fr": "Pellicule unique, costumes d'époque et interprétation musicale",
+      "pt": "Película única, figurinos de época e interpretação musical"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "Call Me by Your Name – a sun-drenched masterpiece made with one filmstock and one lens in heavy rain",
+        "publisher": "Kodak",
+        "url": "https://www.kodak.com/en/motion/blog-post/call-me-by-your-name/"
+      },
+      {
+        "id": "s3",
+        "title": "Vogue Meets Costume Designer Giulia Piersanti",
+        "publisher": "British Vogue",
+        "url": "https://www.vogue.co.uk/article/call-me-by-your-name-costume-designer-giulia-piersanti-interview"
+      },
+      {
+        "id": "s4",
+        "title": "Luca Guadagnino on the Music of His Movies, and Why He Had to Have Sufjan Stevens for Call Me by Your Name",
+        "publisher": "Pitchfork",
+        "url": "https://pitchfork.com/thepitch/luca-guadagnino-interview-call-me-by-your-name-sufjan-stevens-music-of-his-movies/"
+      },
+      {
+        "id": "s5",
+        "title": "AFI Movie Club: Call Me by Your Name",
+        "publisher": "American Film Institute",
+        "url": "https://www.afi.com/news/afi-movie-club-call-me-by-your-name/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "cmbyn-stock",
+        "area": "camera",
+        "prompt": {
+          "en": "Kodak documents a single 35 mm stock and a single lens. Which approach would you test in a new production exercise?",
+          "nb": "Kodak dokumenterer én 35 mm-filmtype og ett objektiv. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Kodak documente une seule pellicule 35 mm et un seul objectif. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "A Kodak documenta uma única película de 35 mm e uma única objetiva. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test one stock and lens across varied natural lighting conditions",
+              "nb": "Test én filmtype og ett objektiv under varierte naturlige lysforhold",
+              "fr": "Tester une pellicule et un objectif sous diverses lumières naturelles",
+              "pt": "Testar uma película e uma objetiva em condições variadas de luz natural"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose the look without comparing test footage",
+              "nb": "Velg det visuelle uttrykket uten å sammenligne testopptak",
+              "fr": "Choisir le rendu sans comparer les essais filmés",
+              "pt": "Escolher o visual sem comparar imagens de teste"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Change the framing or exposure arbitrarily between takes",
+              "nb": "Endre utsnitt eller eksponering vilkårlig mellom tagninger",
+              "fr": "Modifier arbitrairement le cadrage ou l'exposition entre les prises",
+              "pt": "Alterar arbitrariamente o enquadramento ou a exposição entre tomadas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Kodak documents a single 35 mm stock and a single lens. In a new exercise, test this approach: Test one stock and lens across varied natural lighting conditions.",
+          "nb": "Kodak dokumenterer én 35 mm-filmtype og ett objektiv. Prøv denne tilnærmingen i en ny øvelse: Test én filmtype og ett objektiv under varierte naturlige lysforhold.",
+          "fr": "Kodak documente une seule pellicule 35 mm et un seul objectif. Dans un nouvel exercice, tester cette approche : Tester une pellicule et un objectif sous diverses lumières naturelles.",
+          "pt": "A Kodak documenta uma única película de 35 mm e uma única objetiva. Num novo exercício, testar esta abordagem: Testar uma película e uma objetiva em condições variadas de luz natural."
+        },
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "id": "cmbyn-costume",
+        "area": "research",
+        "prompt": {
+          "en": "Piersanti describes understated period clothing informed by family photographs. Which approach would you test in a new production exercise?",
+          "nb": "Piersanti beskriver nedtonede periodeklær basert på familiefotografier. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Piersanti décrit des vêtements d'époque discrets inspirés de photos familiales. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Piersanti descreve roupa de época discreta inspirada em fotografias familiares. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Fix the creative decision before testing it with the team",
+              "nb": "Lås det kreative valget før det testes med teamet",
+              "fr": "Fixer la décision créative avant de la tester avec l'équipe",
+              "pt": "Fixar a decisão criativa antes de a testar com a equipa"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Build character wardrobe boards from local period archives",
+              "nb": "Lag karakterspesifikke kostymetavler fra lokale periodearkiver",
+              "fr": "Créer des planches de costumes à partir d'archives locales d'époque",
+              "pt": "Criar painéis de figurinos a partir de arquivos locais da época"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Adopt a familiar convention without researching this specific context",
+              "nb": "Bruk en kjent konvensjon uten å undersøke denne konkrete konteksten",
+              "fr": "Adopter une convention familière sans étudier ce contexte précis",
+              "pt": "Adotar uma convenção familiar sem investigar este contexto específico"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Piersanti describes understated period clothing informed by family photographs. In a new exercise, test this approach: Build character wardrobe boards from local period archives.",
+          "nb": "Piersanti beskriver nedtonede periodeklær basert på familiefotografier. Prøv denne tilnærmingen i en ny øvelse: Lag karakterspesifikke kostymetavler fra lokale periodearkiver.",
+          "fr": "Piersanti décrit des vêtements d'époque discrets inspirés de photos familiales. Dans un nouvel exercice, tester cette approche : Créer des planches de costumes à partir d'archives locales d'époque.",
+          "pt": "Piersanti descreve roupa de época discreta inspirada em fotografias familiares. Num novo exercício, testar esta abordagem: Criar painéis de figurinos a partir de arquivos locais da época."
+        },
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      {
+        "id": "cmbyn-music",
+        "area": "sound",
+        "prompt": {
+          "en": "Guadagnino describes piano as part of Elio's inner and outer dialogue. Which approach would you test in a new production exercise?",
+          "nb": "Guadagnino beskriver pianoet som del av Elios indre og ytre dialog. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Guadagnino décrit le piano comme partie du dialogue intérieur et extérieur d'Elio. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Guadagnino descreve o piano como parte do diálogo interior e exterior de Elio. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose music solely by tempo without considering character",
+              "nb": "Velg musikk bare etter tempo uten å vurdere karakteren",
+              "fr": "Choisir la musique uniquement selon le tempo sans considérer le personnage",
+              "pt": "Escolher música só pelo tempo sem considerar a personagem"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Fill every quiet passage with continuous background music",
+              "nb": "Fyll alle stille partier med kontinuerlig bakgrunnsmusikk",
+              "fr": "Remplir tous les silences avec une musique de fond continue",
+              "pt": "Preencher todos os silêncios com música de fundo contínua"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse a playable original musical phrase as character expression",
+              "nb": "Øv inn en spillbar original musikalsk frase som karakteruttrykk",
+              "fr": "Répéter une phrase musicale originale jouable comme expression du personnage",
+              "pt": "Ensaiar uma frase musical original executável como expressão da personagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Guadagnino describes piano as part of Elio's inner and outer dialogue. In a new exercise, test this approach: Rehearse a playable original musical phrase as character expression.",
+          "nb": "Guadagnino beskriver pianoet som del av Elios indre og ytre dialog. Prøv denne tilnærmingen i en ny øvelse: Øv inn en spillbar original musikalsk frase som karakteruttrykk.",
+          "fr": "Guadagnino décrit le piano comme partie du dialogue intérieur et extérieur d'Elio. Dans un nouvel exercice, tester cette approche : Répéter une phrase musicale originale jouable comme expression du personnage.",
+          "pt": "Guadagnino descreve o piano como parte do diálogo interior e exterior de Elio. Num novo exercício, testar esta abordagem: Ensaiar uma frase musical original executável como expressão da personagem."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_clockers_1995",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Adaptation focus, location research and photographic stock tests",
+      "nb": "Adaptasjonsfokus, stedsresearch og fotografiske filmtester",
+      "fr": "Focalisation de l'adaptation, repérages et essais de pellicule",
+      "pt": "Foco da adaptação, pesquisa de locais e testes de película"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Clockers: Between ‘Rock’ and a Hard Place",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/article/clockers-lee-sayeed/"
+      },
+      {
+        "id": "s1",
+        "title": "Clockers — BFI Southbank Programme Notes",
+        "publisher": "British Film Institute",
+        "url": "https://bfidatadigipres.github.io/moviedrome%3Cbr%3Ebringing%20the%20cult%20tv%20series%20to%20the%20big%20screen/2025/07/26/clockers/"
+      },
+      {
+        "id": "s2",
+        "title": "Clockers",
+        "publisher": "Danish Film Institute",
+        "url": "https://www.dfi.dk/en/viden-om-film/filmdatabasen/film/clockers"
+      },
+      {
+        "id": "s9",
+        "title": "Richard Price's Street Life",
+        "publisher": "The New Yorker",
+        "url": "https://www.newyorker.com/culture/persons-of-interest/richard-prices-street-life"
+      }
+    ],
+    "questions": [
+      {
+        "id": "clockers-adaptation",
+        "area": "research",
+        "prompt": {
+          "en": "Lee and Price reworked the novel and narrowed its narrative focus. Which approach would you test in a new production exercise?",
+          "nb": "Lee og Price omarbeidet romanen og snevret inn perspektivet. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Lee et Price ont réécrit le roman et recentré le récit. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Lee e Price reescreveram o romance e concentraram o foco narrativo. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map an original ensemble narrative through a selected viewpoint and test omissions",
+              "nb": "Kartlegg en ensemblefortelling gjennom ett valgt perspektiv og test utelatelser",
+              "fr": "Cartographier un récit choral selon un point de vue et tester les omissions",
+              "pt": "Mapear uma narrativa coral por um ponto de vista e testar omissões"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Adopt a familiar convention without researching this specific context",
+              "nb": "Bruk en kjent konvensjon uten å undersøke denne konkrete konteksten",
+              "fr": "Adopter une convention familière sans étudier ce contexte précis",
+              "pt": "Adotar uma convenção familiar sem investigar este contexto específico"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Fix the creative decision before testing it with the team",
+              "nb": "Lås det kreative valget før det testes med teamet",
+              "fr": "Fixer la décision créative avant de la tester avec l'équipe",
+              "pt": "Fixar a decisão criativa antes de a testar com a equipa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Lee and Price reworked the novel and narrowed its narrative focus. In a new exercise, test this approach: Map an original ensemble narrative through a selected viewpoint and test omissions.",
+          "nb": "Lee og Price omarbeidet romanen og snevret inn perspektivet. Prøv denne tilnærmingen i en ny øvelse: Kartlegg en ensemblefortelling gjennom ett valgt perspektiv og test utelatelser.",
+          "fr": "Lee et Price ont réécrit le roman et recentré le récit. Dans un nouvel exercice, tester cette approche : Cartographier un récit choral selon un point de vue et tester les omissions.",
+          "pt": "Lee e Price reescreveram o romance e concentraram o foco narrativo. Num novo exercício, testar esta abordagem: Mapear uma narrativa coral por um ponto de vista e testar omissões."
+        },
+        "sourceIds": [
+          "s0",
+          "s9"
+        ]
+      },
+      {
+        "id": "clockers-location",
+        "area": "research",
+        "prompt": {
+          "en": "Contemporary cinematography reporting documents location research in Brooklyn. Which approach would you test in a new production exercise?",
+          "nb": "Samtidig filmfotografisk dokumentasjon beskriver stedsresearch i Brooklyn. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Un reportage contemporain documente les repérages à Brooklyn. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Uma reportagem contemporânea documenta a pesquisa de locais em Brooklyn. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Fix the creative decision before testing it with the team",
+              "nb": "Lås det kreative valget før det testes med teamet",
+              "fr": "Fixer la décision créative avant de la tester avec l'équipe",
+              "pt": "Fixar a decisão criativa antes de a testar com a equipa"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Scout with permission and map everyday movement through the location",
+              "nb": "Befar med tillatelse og kartlegg daglig bevegelse gjennom stedet",
+              "fr": "Repérer avec autorisation et cartographier les déplacements quotidiens",
+              "pt": "Visitar com autorização e mapear deslocações quotidianas no local"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Adopt a familiar convention without researching this specific context",
+              "nb": "Bruk en kjent konvensjon uten å undersøke denne konkrete konteksten",
+              "fr": "Adopter une convention familière sans étudier ce contexte précis",
+              "pt": "Adotar uma convenção familiar sem investigar este contexto específico"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Contemporary cinematography reporting documents location research in Brooklyn. In a new exercise, test this approach: Scout with permission and map everyday movement through the location.",
+          "nb": "Samtidig filmfotografisk dokumentasjon beskriver stedsresearch i Brooklyn. Prøv denne tilnærmingen i en ny øvelse: Befar med tillatelse og kartlegg daglig bevegelse gjennom stedet.",
+          "fr": "Un reportage contemporain documente les repérages à Brooklyn. Dans un nouvel exercice, tester cette approche : Repérer avec autorisation et cartographier les déplacements quotidiens.",
+          "pt": "Uma reportagem contemporânea documenta a pesquisa de locais em Brooklyn. Num novo exercício, testar esta abordagem: Visitar com autorização e mapear deslocações quotidianas no local."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "clockers-stock",
+        "area": "camera",
+        "prompt": {
+          "en": "American Cinematographer documents extensive stock tests and cross-processing. Which approach would you test in a new production exercise?",
+          "nb": "American Cinematographer dokumenterer omfattende filmtester og kryssprosessering. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "American Cinematographer documente de nombreux essais et le traitement croisé. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "American Cinematographer documenta testes extensos e processamento cruzado. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose the look without comparing test footage",
+              "nb": "Velg det visuelle uttrykket uten å sammenligne testopptak",
+              "fr": "Choisir le rendu sans comparer les essais filmés",
+              "pt": "Escolher o visual sem comparar imagens de teste"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Change the framing or exposure arbitrarily between takes",
+              "nb": "Endre utsnitt eller eksponering vilkårlig mellom tagninger",
+              "fr": "Modifier arbitrairement le cadrage ou l'exposition entre les prises",
+              "pt": "Alterar arbitrariamente o enquadramento ou a exposição entre tomadas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare normal and experimental processing using controlled test footage",
+              "nb": "Sammenlign normal og eksperimentell fremkalling med kontrollerte testopptak",
+              "fr": "Comparer traitement normal et expérimental avec des prises contrôlées",
+              "pt": "Comparar processamento normal e experimental com imagens de teste controladas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "American Cinematographer documents extensive stock tests and cross-processing. In a new exercise, test this approach: Compare normal and experimental processing using controlled test footage.",
+          "nb": "American Cinematographer dokumenterer omfattende filmtester og kryssprosessering. Prøv denne tilnærmingen i en ny øvelse: Sammenlign normal og eksperimentell fremkalling med kontrollerte testopptak.",
+          "fr": "American Cinematographer documente de nombreux essais et le traitement croisé. Dans un nouvel exercice, tester cette approche : Comparer traitement normal et expérimental avec des prises contrôlées.",
+          "pt": "American Cinematographer documenta testes extensos e processamento cruzado. Num novo exercício, testar esta abordagem: Comparar processamento normal e experimental com imagens de teste controladas."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_blindness_2008",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Sensory imagery, international locations and grading",
+      "nb": "Sanselig bildebruk, internasjonale opptakssteder og gradering",
+      "fr": "Images sensorielles, lieux internationaux et étalonnage",
+      "pt": "Imagens sensoriais, locais internacionais e gradação"
+    },
+    "sources": [
+      {
+        "id": "s2",
+        "title": "Second sight",
+        "publisher": "The Guardian",
+        "url": "https://www.theguardian.com/film/2008/nov/14/fernando-meirelles-interview"
+      },
+      {
+        "id": "s3",
+        "title": "Scene Stealer: Blindness",
+        "publisher": "Los Angeles Times",
+        "url": "https://www.latimes.com/archives/la-xpm-2008-oct-09-et-scene9-story.html"
+      },
+      {
+        "id": "s4",
+        "title": "Canada - Blindness In sight",
+        "publisher": "Screen Daily",
+        "url": "https://www.screendaily.com/canada-blindness-in-sight/4034595.article"
+      }
+    ],
+    "questions": [
+      {
+        "id": "blindness-city",
+        "area": "research",
+        "prompt": {
+          "en": "Meirelles describes building a nameless city from international locations. Which approach would you test in a new production exercise?",
+          "nb": "Meirelles beskriver en navnløs by bygget av internasjonale opptakssteder. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Meirelles décrit une ville sans nom construite à partir de lieux internationaux. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Meirelles descreve uma cidade sem nome construída a partir de locais internacionais. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Create a location bible matching architecture and signs across units",
+              "nb": "Lag en stedsbibel som samordner arkitektur og skilt mellom opptaksenhetene",
+              "fr": "Créer un dossier harmonisant architecture et signalétique entre équipes",
+              "pt": "Criar um dossiê que harmonize arquitetura e sinalização entre equipas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Leave recognizable city names in every establishing shot",
+              "nb": "Behold gjenkjennelige bynavn i alle etableringsbilder",
+              "fr": "Conserver les noms de villes dans chaque plan d'ensemble",
+              "pt": "Manter nomes de cidades em cada plano geral"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose the first available solution without comparing evidence",
+              "nb": "Velg første tilgjengelige løsning uten å sammenligne dokumentasjonen",
+              "fr": "Choisir la première solution disponible sans comparer les preuves",
+              "pt": "Escolher a primeira solução disponível sem comparar evidências"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Meirelles describes building a nameless city from international locations. Test this approach in a new exercise: Create a location bible matching architecture and signs across units.",
+          "nb": "Meirelles beskriver en navnløs by bygget av internasjonale opptakssteder. Prøv denne tilnærmingen i en ny øvelse: Lag en stedsbibel som samordner arkitektur og skilt mellom opptaksenhetene.",
+          "fr": "Meirelles décrit une ville sans nom construite à partir de lieux internationaux. Tester cette approche dans un nouvel exercice : Créer un dossier harmonisant architecture et signalétique entre équipes.",
+          "pt": "Meirelles descreve uma cidade sem nome construída a partir de locais internacionais. Testar esta abordagem num novo exercício: Criar um dossiê que harmonize arquitetura e sinalização entre equipas."
+        },
+        "sourceIds": [
+          "s2",
+          "s4"
+        ]
+      },
+      {
+        "id": "blindness-white",
+        "area": "camera",
+        "prompt": {
+          "en": "Charlone tested milk, paint and water to develop the washed-out image. Which approach would you test in a new production exercise?",
+          "nb": "Charlone testet melk, maling og vann for å utvikle det utvaskede bildet. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Charlone a testé lait, peinture et eau pour développer l'image délavée. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Charlone testou leite, tinta e água para desenvolver a imagem deslavada. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Leave visual consistency tests until after principal photography",
+              "nb": "Vent med visuelle kontinuitetstester til etter hovedopptaket",
+              "fr": "Attendre la fin du tournage principal pour tester la cohérence visuelle",
+              "pt": "Adiar testes de coerência visual até depois da rodagem principal"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare controlled diffusion tests for visibility and expression",
+              "nb": "Sammenlign kontrollerte diffusjonstester for synlighet og uttrykk",
+              "fr": "Comparer des essais de diffusion pour la visibilité et l'expression",
+              "pt": "Comparar testes de difusão para visibilidade e expressão"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Apply maximum overexposure without testing legibility",
+              "nb": "Bruk maksimal overeksponering uten å teste lesbarheten",
+              "fr": "Surexposer au maximum sans vérifier la lisibilité",
+              "pt": "Aplicar sobre-exposição máxima sem testar legibilidade"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Charlone tested milk, paint and water to develop the washed-out image. Test this approach in a new exercise: Compare controlled diffusion tests for visibility and expression.",
+          "nb": "Charlone testet melk, maling og vann for å utvikle det utvaskede bildet. Prøv denne tilnærmingen i en ny øvelse: Sammenlign kontrollerte diffusjonstester for synlighet og uttrykk.",
+          "fr": "Charlone a testé lait, peinture et eau pour développer l'image délavée. Tester cette approche dans un nouvel exercice : Comparer des essais de diffusion pour la visibilité et l'expression.",
+          "pt": "Charlone testou leite, tinta e água para desenvolver a imagem deslavada. Testar esta abordagem num novo exercício: Comparar testes de difusão para visibilidade e expressão."
+        },
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      {
+        "id": "blindness-grade",
+        "area": "editing",
+        "prompt": {
+          "en": "The craft report describes a grading adjustment after Cannes. Which approach would you test in a new production exercise?",
+          "nb": "Fagartikkelen beskriver en justering av fargegraderingen etter Cannes. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "L'article technique décrit un ajustement de l'étalonnage après Cannes. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "O artigo técnico descreve um ajuste da gradação após Cannes. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Judge the grade only from isolated bright frames",
+              "nb": "Vurder graderingen bare fra isolerte lyse bilder",
+              "fr": "Juger l'étalonnage uniquement sur des images lumineuses isolées",
+              "pt": "Avaliar a gradação apenas por fotogramas claros isolados"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Lock the first assembly before screening the whole sequence",
+              "nb": "Lås første sammenklipp før hele sekvensen vises",
+              "fr": "Verrouiller le premier assemblage avant de projeter toute la séquence",
+              "pt": "Bloquear a primeira montagem antes de exibir toda a sequência"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Screen two graded versions and compare emotional readability",
+              "nb": "Vis to graderte versjoner og sammenlign emosjonell lesbarhet",
+              "fr": "Projeter deux versions étalonnées et comparer la lisibilité émotionnelle",
+              "pt": "Exibir duas versões graduadas e comparar a legibilidade emocional"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The craft report describes a grading adjustment after Cannes. Test this approach in a new exercise: Screen two graded versions and compare emotional readability.",
+          "nb": "Fagartikkelen beskriver en justering av fargegraderingen etter Cannes. Prøv denne tilnærmingen i en ny øvelse: Vis to graderte versjoner og sammenlign emosjonell lesbarhet.",
+          "fr": "L'article technique décrit un ajustement de l'étalonnage après Cannes. Tester cette approche dans un nouvel exercice : Projeter deux versions étalonnées et comparer la lisibilité émotionnelle.",
+          "pt": "O artigo técnico descreve um ajuste da gradação após Cannes. Testar esta abordagem num novo exercício: Exibir duas versões graduadas e comparar a legibilidade emocional."
+        },
+        "sourceIds": [
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_dheepan_2015",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Multilingual dialogue, handheld photography and genre transitions",
+      "nb": "Flerspråklig dialog, håndholdt foto og sjangeroverganger",
+      "fr": "Dialogue multilingue, caméra portée et transitions de genre",
+      "pt": "Diálogo multilingue, câmara à mão e transições de género"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "Dheepan, shot on Sony CineAlta F55 camera, wins the Palme d'Or",
+        "publisher": "Sony",
+        "url": "https://www.sony.eu/presscentre/1237493701239"
+      },
+      {
+        "id": "s3",
+        "title": "Jacques Audiard • Director",
+        "publisher": "Cineuropa",
+        "url": "https://cineuropa.org/en/interview/293140/"
+      },
+      {
+        "id": "s6",
+        "title": "Film of the Week: Dheepan",
+        "publisher": "Film Comment",
+        "url": "https://www.filmcomment.com/film-week-dheepan/"
+      },
+      {
+        "id": "s7",
+        "title": "TIFF 2015 Interview: Antonythasan Jesuthasan",
+        "publisher": "NOW Magazine",
+        "url": "https://nowtoronto.com/movies/dheepan_1/"
+      },
+      {
+        "id": "s8",
+        "title": "Jacques Audiard: I wanted to give migrants a name, a shape, a violence of their own",
+        "publisher": "The Guardian",
+        "url": "https://www.theguardian.com/film/2016/apr/03/jacques-audiard-interview-dheepan-prophet-rust-done-director"
+      },
+      {
+        "id": "s9",
+        "title": "Dheepan Cannes Palme d'Or",
+        "publisher": "Film and Digital Times",
+        "url": "https://www.fdtimes.com/2015/05/25/dheepan-cannes-palme-dor/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "dheepan-dialogue",
+        "area": "research",
+        "prompt": {
+          "en": "Jesuthasan describes refining dialogue to fit Tamil speech and experience. Which approach would you test in a new production exercise?",
+          "nb": "Jesuthasan beskriver bearbeiding av dialog til tamilsk språkbruk og erfaring. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Jesuthasan décrit l'adaptation des dialogues au parler tamoul et à l'expérience vécue. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Jesuthasan descreve a adaptação dos diálogos à fala tâmil e à experiência vivida. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Invite language collaborators to revise dialogue and verify meaning",
+              "nb": "Inviter språkmedarbeidere til å bearbeide dialog og kontrollere mening",
+              "fr": "Inviter des collaborateurs linguistiques à réviser les dialogues et vérifier le sens",
+              "pt": "Convidar colaboradores linguísticos a rever diálogos e verificar o sentido"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Translate dialogue literally without checking idiom",
+              "nb": "Oversett dialogen bokstavelig uten å sjekke idiomer",
+              "fr": "Traduire littéralement sans vérifier les idiomes",
+              "pt": "Traduzir literalmente sem verificar expressões idiomáticas"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose the first available solution without comparing evidence",
+              "nb": "Velg første tilgjengelige løsning uten å sammenligne dokumentasjonen",
+              "fr": "Choisir la première solution disponible sans comparer les preuves",
+              "pt": "Escolher a primeira solução disponível sem comparar evidências"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Jesuthasan describes refining dialogue to fit Tamil speech and experience. Test this approach in a new exercise: Invite language collaborators to revise dialogue and verify meaning.",
+          "nb": "Jesuthasan beskriver bearbeiding av dialog til tamilsk språkbruk og erfaring. Prøv denne tilnærmingen i en ny øvelse: Inviter språkmedarbeidere til å bearbeide dialog og kontrollere mening.",
+          "fr": "Jesuthasan décrit l'adaptation des dialogues au parler tamoul et à l'expérience vécue. Tester cette approche dans un nouvel exercice : Inviter des collaborateurs linguistiques à réviser les dialogues et vérifier le sens.",
+          "pt": "Jesuthasan descreve a adaptação dos diálogos à fala tâmil e à experiência vivida. Testar esta abordagem num novo exercício: Convidar colaboradores linguísticos a rever diálogos e verificar o sentido."
+        },
+        "sourceIds": [
+          "s7",
+          "s8"
+        ]
+      },
+      {
+        "id": "dheepan-camera",
+        "area": "camera",
+        "prompt": {
+          "en": "The sources describe a compact handheld camera and lighting outside the set. Which approach would you test in a new production exercise?",
+          "nb": "Kildene beskriver et kompakt håndholdt kamera og lys utenfor settet. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Les sources décrivent une caméra portée compacte et un éclairage hors plateau. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "As fontes descrevem uma câmara compacta à mão e iluminação fora do cenário. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Leave visual consistency tests until after principal photography",
+              "nb": "Vent med visuelle kontinuitetstester til etter hovedopptaket",
+              "fr": "Attendre la fin du tournage principal pour tester la cohérence visuelle",
+              "pt": "Adiar testes de coerência visual até depois da rodagem principal"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test unobstructed actor movement with a lightweight camera",
+              "nb": "Test uhindret skuespillerbevegelse med lett kamera",
+              "fr": "Tester les déplacements libres avec une caméra légère",
+              "pt": "Testar movimentos livres com câmara leve"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Place lighting stands inside every planned movement path",
+              "nb": "Plasser lysstativer i alle planlagte bevegelsesbaner",
+              "fr": "Placer des pieds d'éclairage dans chaque trajectoire prévue",
+              "pt": "Colocar tripés de luz em todos os percursos previstos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The sources describe a compact handheld camera and lighting outside the set. Test this approach in a new exercise: Test unobstructed actor movement with a lightweight camera.",
+          "nb": "Kildene beskriver et kompakt håndholdt kamera og lys utenfor settet. Prøv denne tilnærmingen i en ny øvelse: Test uhindret skuespillerbevegelse med lett kamera.",
+          "fr": "Les sources décrivent une caméra portée compacte et un éclairage hors plateau. Tester cette approche dans un nouvel exercice : Tester les déplacements libres avec une caméra légère.",
+          "pt": "As fontes descrevem uma câmara compacta à mão e iluminação fora do cenário. Testar esta abordagem num novo exercício: Testar movimentos livres com câmara leve."
+        },
+        "sourceIds": [
+          "s1",
+          "s9"
+        ]
+      },
+      {
+        "id": "dheepan-genre",
+        "area": "editing",
+        "prompt": {
+          "en": "The director and critics discuss a shift from social realism toward thriller and western conventions. Which approach would you test in a new production exercise?",
+          "nb": "Regissøren og kritikere beskriver et skifte fra sosialrealisme mot thriller- og westernkonvensjoner. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Le réalisateur et les critiques décrivent un passage du réalisme social au thriller et au western. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "O realizador e a crítica descrevem a passagem do realismo social ao thriller e western. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Switch genres without connecting earlier character choices",
+              "nb": "Bytt sjanger uten forbindelse til tidligere karaktervalg",
+              "fr": "Changer de genre sans lien avec les choix antérieurs du personnage",
+              "pt": "Mudar de género sem ligação às escolhas anteriores da personagem"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Lock the first assembly before screening the whole sequence",
+              "nb": "Lås første sammenklipp før hele sekvensen vises",
+              "fr": "Verrouiller le premier assemblage avant de projeter toute la séquence",
+              "pt": "Bloquear a primeira montagem antes de exibir toda a sequência"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Build the transition through character stakes and evolving rhythm",
+              "nb": "Bygg overgangen gjennom karakterens innsats og gradvis endret rytme",
+              "fr": "Construire la transition par les enjeux du personnage et un rythme évolutif",
+              "pt": "Construir a transição pelos riscos da personagem e um ritmo evolutivo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The director and critics discuss a shift from social realism toward thriller and western conventions. Test this approach in a new exercise: Build the transition through character stakes and evolving rhythm.",
+          "nb": "Regissøren og kritikere beskriver et skifte fra sosialrealisme mot thriller- og westernkonvensjoner. Prøv denne tilnærmingen i en ny øvelse: Bygg overgangen gjennom karakterens innsats og gradvis endret rytme.",
+          "fr": "Le réalisateur et les critiques décrivent un passage du réalisme social au thriller et au western. Tester cette approche dans un nouvel exercice : Construire la transition par les enjeux du personnage et un rythme évolutif.",
+          "pt": "O realizador e a crítica descrevem a passagem do realismo social ao thriller e western. Testar esta abordagem num novo exercício: Construir a transição pelos riscos da personagem e um ritmo evolutivo."
+        },
+        "sourceIds": [
+          "s3",
+          "s6"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_45_years_2015",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Subjective adaptation, extended takes and recurring sound",
+      "nb": "Subjektiv adaptasjon, lange tagninger og gjentakende lyd",
+      "fr": "Adaptation subjective, plans longs et sons récurrents",
+      "pt": "Adaptação subjetiva, planos longos e sons recorrentes"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "45 Years: ‘The UK has a blind spot for dramas about middle-class emotions’",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/interviews/45-years-we-have-blind-spot-uk-dramas-about-middle-class-emotions"
+      },
+      {
+        "id": "s2",
+        "title": "The AFI FEST Interview: 45 YEARS Director Andrew Haigh",
+        "publisher": "American Film Institute",
+        "url": "https://www.afi.com/news/the-afi-fest-interview-45-years-director-andrew-haigh/"
+      },
+      {
+        "id": "s3",
+        "title": "Andrew Haigh interview on 45 Years",
+        "publisher": "Seventh Row",
+        "url": "https://seventh-row.com/2016/01/21/andrew-haigh-45-years/"
+      },
+      {
+        "id": "s4",
+        "title": "Natural Revelations: Andrew Haigh & Tom Courtenay on 45 Years",
+        "publisher": "RogerEbert.com",
+        "url": "https://www.rogerebert.com/interviews/natural-revelations-andrew-haigh-and-tom-courtenay-on-45-years"
+      }
+    ],
+    "questions": [
+      {
+        "id": "45years-viewpoint",
+        "area": "research",
+        "prompt": {
+          "en": "Haigh describes expanding the short story and shifting viewpoint to Kate. Which approach would you test in a new production exercise?",
+          "nb": "Haigh beskriver utvidelsen av novellen og skiftet til Kates perspektiv. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Haigh décrit l'expansion de la nouvelle et le déplacement du point de vue vers Kate. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Haigh descreve a expansão do conto e a mudança do ponto de vista para Kate. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map information revealed through one character before expanding the source",
+              "nb": "Kartlegg informasjon gjennom én karakter før kildeteksten utvides",
+              "fr": "Cartographier les informations révélées par un personnage avant d'élargir la source",
+              "pt": "Mapear informação revelada por uma personagem antes de ampliar a fonte"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Reveal every character's private knowledge in each scene",
+              "nb": "Avslør alle karakterenes private kunnskap i hver scene",
+              "fr": "Révéler les connaissances privées de tous dans chaque scène",
+              "pt": "Revelar o conhecimento privado de todos em cada cena"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose the first available solution without comparing evidence",
+              "nb": "Velg første tilgjengelige løsning uten å sammenligne dokumentasjonen",
+              "fr": "Choisir la première solution disponible sans comparer les preuves",
+              "pt": "Escolher a primeira solução disponível sem comparar evidências"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Haigh describes expanding the short story and shifting viewpoint to Kate. Test this approach in a new exercise: Map information revealed through one character before expanding the source.",
+          "nb": "Haigh beskriver utvidelsen av novellen og skiftet til Kates perspektiv. Prøv denne tilnærmingen i en ny øvelse: Kartlegg informasjon gjennom én karakter før kildeteksten utvides.",
+          "fr": "Haigh décrit l'expansion de la nouvelle et le déplacement du point de vue vers Kate. Tester cette approche dans un nouvel exercice : Cartographier les informations révélées par un personnage avant d'élargir la source.",
+          "pt": "Haigh descreve a expansão do conto e a mudança do ponto de vista para Kate. Testar esta abordagem num novo exercício: Mapear informação revelada por uma personagem antes de ampliar a fonte."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "45years-longtake",
+        "area": "camera",
+        "prompt": {
+          "en": "Haigh explains the planned extended party take and precise blocking. Which approach would you test in a new production exercise?",
+          "nb": "Haigh forklarer den planlagte lange festtagningen og presis skuespillerplassering. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Haigh explique le long plan de fête et le placement précis des acteurs. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Haigh explica o plano longo da festa e o posicionamento preciso dos atores. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Leave visual consistency tests until after principal photography",
+              "nb": "Vent med visuelle kontinuitetstester til etter hovedopptaket",
+              "fr": "Attendre la fin du tournage principal pour tester la cohérence visuelle",
+              "pt": "Adiar testes de coerência visual até depois da rodagem principal"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse camera and actor paths against emotional beats",
+              "nb": "Prøv kameraets og skuespillernes baner mot emosjonelle vendepunkter",
+              "fr": "Répéter les trajectoires selon les moments émotionnels",
+              "pt": "Ensaiar trajetórias segundo momentos emocionais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use an extended take solely to avoid editing work",
+              "nb": "Bruk en lang tagning bare for å unngå klippearbeid",
+              "fr": "Utiliser un plan long uniquement pour éviter le montage",
+              "pt": "Usar um plano longo apenas para evitar montagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Haigh explains the planned extended party take and precise blocking. Test this approach in a new exercise: Rehearse camera and actor paths against emotional beats.",
+          "nb": "Haigh forklarer den planlagte lange festtagningen og presis skuespillerplassering. Prøv denne tilnærmingen i en ny øvelse: Prøv kameraets og skuespillernes baner mot emosjonelle vendepunkter.",
+          "fr": "Haigh explique le long plan de fête et le placement précis des acteurs. Tester cette approche dans un nouvel exercice : Répéter les trajectoires selon les moments émotionnels.",
+          "pt": "Haigh explica o plano longo da festa e o posicionamento preciso dos atores. Testar esta abordagem num novo exercício: Ensaiar trajetórias segundo momentos emocionais."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "45years-carousel",
+        "area": "sound",
+        "prompt": {
+          "en": "The editor discovered the slide-carousel sound as a recurring motif. Which approach would you test in a new production exercise?",
+          "nb": "Klipperen oppdaget lyden fra lysbildekarusellen som et gjentakende motiv. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Le monteur a découvert le son du carrousel de diapositives comme motif récurrent. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "O montador descobriu o som do carrossel de diapositivos como motivo recorrente. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Repeat the sound at uniform intervals regardless of meaning",
+              "nb": "Gjenta lyden med jevne intervaller uansett mening",
+              "fr": "Répéter le son à intervalles réguliers quel que soit son sens",
+              "pt": "Repetir o som em intervalos regulares independentemente do sentido"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Finalize the scene before testing how sound relates to the image",
+              "nb": "Ferdigstill scenen før du tester lydens samspill med bildet",
+              "fr": "Finaliser la scène avant de tester le rapport entre son et image",
+              "pt": "Finalizar a cena antes de testar a relação entre som e imagem"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test a recurring object sound at distinct turning points",
+              "nb": "Test en gjentakende gjenstandslyd ved forskjellige vendepunkter",
+              "fr": "Tester un son d'objet récurrent à différents moments charnières",
+              "pt": "Testar um som recorrente de objeto em momentos decisivos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The editor discovered the slide-carousel sound as a recurring motif. Test this approach in a new exercise: Test a recurring object sound at distinct turning points.",
+          "nb": "Klipperen oppdaget lyden fra lysbildekarusellen som et gjentakende motiv. Prøv denne tilnærmingen i en ny øvelse: Test en gjentakende gjenstandslyd ved forskjellige vendepunkter.",
+          "fr": "Le monteur a découvert le son du carrousel de diapositives comme motif récurrent. Tester cette approche dans un nouvel exercice : Tester un son d'objet récurrent à différents moments charnières.",
+          "pt": "O montador descobriu o som do carrossel de diapositivos como motivo recorrente. Testar esta abordagem num novo exercício: Testar um som recorrente de objeto em momentos decisivos."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_crash_2004",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Interlocking stories, independent financing and restrained scoring",
+      "nb": "Sammenvevde fortellinger, uavhengig finansiering og tilbakeholden musikk",
+      "fr": "Récits entrecroisés, financement indépendant et musique retenue",
+      "pt": "Narrativas entrelaçadas, financiamento independente e música contida"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Crash",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/54472-CRASH"
+      },
+      {
+        "id": "s2",
+        "title": "Credits on a collision course",
+        "publisher": "Los Angeles Times",
+        "url": "https://www.latimes.com/archives/la-xpm-2006-mar-04-et-crash4-story.html"
+      },
+      {
+        "id": "s3",
+        "title": "10% Help",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/archives/issues/spring2006/line_items/10_percent.php"
+      },
+      {
+        "id": "s6",
+        "title": "Angry People",
+        "publisher": "The New Yorker",
+        "url": "https://www.newyorker.com/magazine/2005/05/02/angry-people"
+      },
+      {
+        "id": "s8",
+        "title": "Mark Isham interview",
+        "publisher": "FilmMusic.com",
+        "url": "https://filmmusic.com/content/article/?id=153"
+      }
+    ],
+    "questions": [
+      {
+        "id": "crash-interlock",
+        "area": "editing",
+        "prompt": {
+          "en": "AFI and contemporary criticism describe interlocking episodes and parallel events. Which approach would you test in a new production exercise?",
+          "nb": "AFI og samtidige kritikere beskriver sammenvevde episoder og parallelle hendelser. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "L'AFI et la critique décrivent des épisodes entrecroisés et des événements parallèles. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "O AFI e a crítica descrevem episódios entrelaçados e eventos paralelos. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Diagram intersecting events and test when each causal link becomes clear",
+              "nb": "Tegn opp kryssende hendelser og test når hver årsakssammenheng blir tydelig",
+              "fr": "Cartographier les événements croisés et tester la clarté des liens causaux",
+              "pt": "Mapear eventos cruzados e testar a clareza das ligações causais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Cut between stories only at equal time intervals",
+              "nb": "Klipp mellom fortellinger bare med like tidsintervaller",
+              "fr": "Alterner les récits uniquement à intervalles égaux",
+              "pt": "Alternar narrativas apenas em intervalos iguais"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Lock the first assembly before screening the whole sequence",
+              "nb": "Lås første sammenklipp før hele sekvensen vises",
+              "fr": "Verrouiller le premier assemblage avant de projeter toute la séquence",
+              "pt": "Bloquear a primeira montagem antes de exibir toda a sequência"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI and contemporary criticism describe interlocking episodes and parallel events. Test this approach in a new exercise: Diagram intersecting events and test when each causal link becomes clear.",
+          "nb": "AFI og samtidige kritikere beskriver sammenvevde episoder og parallelle hendelser. Prøv denne tilnærmingen i en ny øvelse: Tegn opp kryssende hendelser og test når hver årsakssammenheng blir tydelig.",
+          "fr": "L'AFI et la critique décrivent des épisodes entrecroisés et des événements parallèles. Tester cette approche dans un nouvel exercice : Cartographier les événements croisés et tester la clarté des liens causaux.",
+          "pt": "O AFI e a crítica descrevem episódios entrelaçados e eventos paralelos. Testar esta abordagem num novo exercício: Mapear eventos cruzados e testar a clareza das ligações causais."
+        },
+        "sourceIds": [
+          "s0",
+          "s6"
+        ]
+      },
+      {
+        "id": "crash-budget",
+        "area": "research",
+        "prompt": {
+          "en": "Production records describe a reduced budget and financing difficulties. Which approach would you test in a new production exercise?",
+          "nb": "Produksjonsdokumentasjonen beskriver redusert budsjett og finansieringsproblemer. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Les archives décrivent un budget réduit et des difficultés de financement. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Os registos descrevem orçamento reduzido e dificuldades de financiamento. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose the first available solution without comparing evidence",
+              "nb": "Velg første tilgjengelige løsning uten å sammenligne dokumentasjonen",
+              "fr": "Choisir la première solution disponible sans comparer les preuves",
+              "pt": "Escolher a primeira solução disponível sem comparar evidências"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Prepare contingency financing and prioritize essential locations and scenes",
+              "nb": "Forbered reservefinansiering og prioriter nødvendige opptakssteder og scener",
+              "fr": "Préparer un financement de secours et prioriser lieux et scènes essentiels",
+              "pt": "Preparar financiamento de contingência e priorizar locais e cenas essenciais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Commit all funds before establishing a contingency reserve",
+              "nb": "Bind alle midler før en reserve er etablert",
+              "fr": "Engager tous les fonds avant de constituer une réserve",
+              "pt": "Comprometer todos os fundos antes de estabelecer uma reserva"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Production records describe a reduced budget and financing difficulties. Test this approach in a new exercise: Prepare contingency financing and prioritize essential locations and scenes.",
+          "nb": "Produksjonsdokumentasjonen beskriver redusert budsjett og finansieringsproblemer. Prøv denne tilnærmingen i en ny øvelse: Forbered reservefinansiering og prioriter nødvendige opptakssteder og scener.",
+          "fr": "Les archives décrivent un budget réduit et des difficultés de financement. Tester cette approche dans un nouvel exercice : Préparer un financement de secours et prioriser lieux et scènes essentiels.",
+          "pt": "Os registos descrevem orçamento reduzido e dificuldades de financiamento. Testar esta abordagem num novo exercício: Preparar financiamento de contingência e priorizar locais e cenas essenciais."
+        },
+        "sourceIds": [
+          "s0",
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "crash-score",
+        "area": "sound",
+        "prompt": {
+          "en": "The sources describe Isham's restrained score linking reflective moments. Which approach would you test in a new production exercise?",
+          "nb": "Kildene beskriver Ishams tilbakeholdne musikk som knytter sammen refleksive øyeblikk. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Les sources décrivent la musique retenue d'Isham reliant des moments réflexifs. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "As fontes descrevem a música contida de Isham ligando momentos reflexivos. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assign a loud cue to every narrative intersection",
+              "nb": "Legg kraftig musikk på hvert krysningspunkt i fortellingen",
+              "fr": "Placer une musique forte à chaque croisement narratif",
+              "pt": "Colocar música intensa em cada cruzamento narrativo"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Finalize the scene before testing how sound relates to the image",
+              "nb": "Ferdigstill scenen før du tester lydens samspill med bildet",
+              "fr": "Finaliser la scène avant de tester le rapport entre son et image",
+              "pt": "Finalizar a cena antes de testar a relação entre som e imagem"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare sparse original cues at emotional transitions across storylines",
+              "nb": "Sammenlign sparsomme originalkomposisjoner ved emosjonelle overganger mellom fortellingene",
+              "fr": "Comparer des motifs originaux discrets aux transitions émotionnelles entre récits",
+              "pt": "Comparar motivos originais discretos nas transições emocionais entre narrativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The sources describe Isham's restrained score linking reflective moments. Test this approach in a new exercise: Compare sparse original cues at emotional transitions across storylines.",
+          "nb": "Kildene beskriver Ishams tilbakeholdne musikk som knytter sammen refleksive øyeblikk. Prøv denne tilnærmingen i en ny øvelse: Sammenlign sparsomme originalkomposisjoner ved emosjonelle overganger mellom fortellingene.",
+          "fr": "Les sources décrivent la musique retenue d'Isham reliant des moments réflexifs. Tester cette approche dans un nouvel exercice : Comparer des motifs originaux discrets aux transitions émotionnelles entre récits.",
+          "pt": "As fontes descrevem a música contida de Isham ligando momentos reflexivos. Testar esta abordagem num novo exercício: Comparar motivos originais discretos nas transições emocionais entre narrativas."
+        },
+        "sourceIds": [
+          "s6",
+          "s8"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_cafe_society_2016",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Digital color workflow, period design and jazz performance",
+      "nb": "Digital fargeflyt, periodescenografi og jazzfremføring",
+      "fr": "Flux numérique des couleurs, décors d'époque et interprétation jazz",
+      "pt": "Fluxo digital de cor, cenografia de época e interpretação de jazz"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "Digital Cinematography on Café Society by Vittorio Storaro",
+        "publisher": "Film and Digital Times",
+        "url": "https://www.fdtimes.com/2016/12/30/vittorio-storaro/"
+      },
+      {
+        "id": "s2",
+        "title": "How the 1930s Came to Life in Woody Allen's Café Society",
+        "publisher": "Town & Country",
+        "url": "https://www.townandcountrymag.com/leisure/arts-and-culture/a7133/cafe-society-set-design/"
+      },
+      {
+        "id": "s3",
+        "title": "Behind the Design of Woody Allen's Café Society",
+        "publisher": "Architectural Digest",
+        "url": "https://www.architecturaldigest.com/gallery/woody-allen-cafe-society-behind-the-design"
+      },
+      {
+        "id": "s5",
+        "title": "Café Society",
+        "publisher": "American Film Institute",
+        "url": "https://watch.afi.com/movie/cafe-society"
+      },
+      {
+        "id": "s6",
+        "title": "Storaro Discusses His First Digital Shoot",
+        "publisher": "Digital Cinema Report",
+        "url": "https://www.digitalcinemareport.com/storaro-discusses-his-first-digital-shoot/"
+      },
+      {
+        "id": "s7",
+        "title": "Stemningsrapport fra Camerimage",
+        "publisher": "Foreningen Norske Filmfotografer",
+        "url": "https://filmfotografer.no/2016/11/stemmningsrapport-fra-camerimage/"
+      },
+      {
+        "id": "s8",
+        "title": "Café Society Original Soundtrack",
+        "publisher": "DownBeat",
+        "url": "https://downbeat.com/reviews/detail/cafe-society-original-soundtrack"
+      }
+    ],
+    "questions": [
+      {
+        "id": "cafe-digital",
+        "area": "camera",
+        "prompt": {
+          "en": "Storaro describes digital acquisition and a linked color-finishing workflow. Which approach would you test in a new production exercise?",
+          "nb": "Storaro beskriver digitalt opptak og sammenhengende fargeetterarbeid. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Storaro décrit la captation numérique et un flux cohérent de finition couleur. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Storaro descreve captação digital e um fluxo integrado de finalização de cor. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test a shared color pipeline from camera through dailies to final grade",
+              "nb": "Test en felles fargeflyt fra kamera via dagsmateriale til sluttgradering",
+              "fr": "Tester un flux couleur commun de la caméra aux rushes et à l'étalonnage final",
+              "pt": "Testar um fluxo de cor comum da câmara à gradação final"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose unrelated color settings at each production stage",
+              "nb": "Velg urelaterte fargeinnstillinger ved hvert produksjonsledd",
+              "fr": "Choisir des réglages couleur sans rapport à chaque étape",
+              "pt": "Escolher definições de cor sem relação em cada etapa"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Leave visual consistency tests until after principal photography",
+              "nb": "Vent med visuelle kontinuitetstester til etter hovedopptaket",
+              "fr": "Attendre la fin du tournage principal pour tester la cohérence visuelle",
+              "pt": "Adiar testes de coerência visual até depois da rodagem principal"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Storaro describes digital acquisition and a linked color-finishing workflow. Test this approach in a new exercise: Test a shared color pipeline from camera through dailies to final grade.",
+          "nb": "Storaro beskriver digitalt opptak og sammenhengende fargeetterarbeid. Prøv denne tilnærmingen i en ny øvelse: Test en felles fargeflyt fra kamera via dagsmateriale til sluttgradering.",
+          "fr": "Storaro décrit la captation numérique et un flux cohérent de finition couleur. Tester cette approche dans un nouvel exercice : Tester un flux couleur commun de la caméra aux rushes et à l'étalonnage final.",
+          "pt": "Storaro descreve captação digital e um fluxo integrado de finalização de cor. Testar esta abordagem num novo exercício: Testar um fluxo de cor comum da câmara à gradação final."
+        },
+        "sourceIds": [
+          "s1",
+          "s6",
+          "s7"
+        ]
+      },
+      {
+        "id": "cafe-design",
+        "area": "research",
+        "prompt": {
+          "en": "Loquasto describes period architecture and contrasting Hollywood and New York interiors. Which approach would you test in a new production exercise?",
+          "nb": "Loquasto beskriver periodearkitektur og kontrasten mellom Hollywood- og New York-interiører. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Loquasto décrit l'architecture d'époque et le contraste des intérieurs hollywoodiens et new-yorkais. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Loquasto descreve arquitetura de época e contraste entre interiores de Hollywood e Nova Iorque. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose the first available solution without comparing evidence",
+              "nb": "Velg første tilgjengelige løsning uten å sammenligne dokumentasjonen",
+              "fr": "Choisir la première solution disponible sans comparer les preuves",
+              "pt": "Escolher a primeira solução disponível sem comparar evidências"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Build distinct location palettes using period photographs and surviving architecture",
+              "nb": "Bygg egne stedspaletter fra periodefotografier og bevart arkitektur",
+              "fr": "Construire des palettes distinctes à partir de photos d'époque et d'architecture préservée",
+              "pt": "Construir paletas distintas com fotografias de época e arquitetura preservada"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use identical interiors for both cities without testing contrast",
+              "nb": "Bruk identiske interiører for begge byer uten å teste kontrasten",
+              "fr": "Utiliser des intérieurs identiques pour les deux villes sans tester le contraste",
+              "pt": "Usar interiores idênticos nas duas cidades sem testar contraste"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Loquasto describes period architecture and contrasting Hollywood and New York interiors. Test this approach in a new exercise: Build distinct location palettes using period photographs and surviving architecture.",
+          "nb": "Loquasto beskriver periodearkitektur og kontrasten mellom Hollywood- og New York-interiører. Prøv denne tilnærmingen i en ny øvelse: Bygg egne stedspaletter fra periodefotografier og bevart arkitektur.",
+          "fr": "Loquasto décrit l'architecture d'époque et le contraste des intérieurs hollywoodiens et new-yorkais. Tester cette approche dans un nouvel exercice : Construire des palettes distinctes à partir de photos d'époque et d'architecture préservée.",
+          "pt": "Loquasto descreve arquitetura de época e contraste entre interiores de Hollywood e Nova Iorque. Testar esta abordagem num novo exercício: Construir paletas distintas com fotografias de época e arquitetura preservada."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "cafe-jazz",
+        "area": "sound",
+        "prompt": {
+          "en": "The soundtrack combines period recordings and newly performed historical jazz repertoire. Which approach would you test in a new production exercise?",
+          "nb": "Lydsporet kombinerer periodeopptak og nyinnspillinger av historisk jazzrepertoar. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "La bande sonore associe enregistrements d'époque et nouvelles interprétations de jazz historique. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "A banda sonora combina gravações de época e novas interpretações de jazz histórico. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose music without considering the depicted period",
+              "nb": "Velg musikk uten å vurdere den avbildede perioden",
+              "fr": "Choisir la musique sans considérer l'époque représentée",
+              "pt": "Escolher música sem considerar a época retratada"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Finalize the scene before testing how sound relates to the image",
+              "nb": "Ferdigstill scenen før du tester lydens samspill med bildet",
+              "fr": "Finaliser la scène avant de tester le rapport entre son et image",
+              "pt": "Finalizar a cena antes de testar a relação entre som e imagem"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan cleared or original period-informed music and synchronize visible performance",
+              "nb": "Planlegg klarert eller original periodeinspirert musikk og synkroniser synlig fremføring",
+              "fr": "Prévoir une musique autorisée ou originale inspirée de l'époque et synchroniser le jeu visible",
+              "pt": "Planear música licenciada ou original inspirada na época e sincronizar a atuação visível"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The soundtrack combines period recordings and newly performed historical jazz repertoire. Test this approach in a new exercise: Plan cleared or original period-informed music and synchronize visible performance.",
+          "nb": "Lydsporet kombinerer periodeopptak og nyinnspillinger av historisk jazzrepertoar. Prøv denne tilnærmingen i en ny øvelse: Planlegg klarert eller original periodeinspirert musikk og synkroniser synlig fremføring.",
+          "fr": "La bande sonore associe enregistrements d'époque et nouvelles interprétations de jazz historique. Tester cette approche dans un nouvel exercice : Prévoir une musique autorisée ou originale inspirée de l'époque et synchroniser le jeu visible.",
+          "pt": "A banda sonora combina gravações de época e novas interpretações de jazz histórico. Testar esta abordagem num novo exercício: Planear música licenciada ou original inspirada na época e sincronizar a atuação visível."
+        },
+        "sourceIds": [
+          "s5",
+          "s8"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_her_2013",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Emotional production design, wardrobe and voice editing",
+      "nb": "Emosjonell scenografi, kostymer og stemmeklipp",
+      "fr": "Décors émotionnels, costumes et montage de la voix",
+      "pt": "Cenografia emocional, figurinos e montagem da voz"
+    },
+    "sources": [
+      {
+        "id": "s3",
+        "title": "Production Designer K.K. Barrett on Creating Her's Beautiful Future",
+        "publisher": "Motion Picture Association",
+        "url": "https://www.motionpictures.org/2013/12/production-designer-k-k-barrett-on-creating-hers-beautiful-future/"
+      },
+      {
+        "id": "s4",
+        "title": "Five Days of Her: How to Shoot the Future",
+        "publisher": "Los Angeles Times",
+        "url": "https://www.latimes.com/entertainment/movies/moviesnow/la-et-mn-her-spike-jonze-cinematography-20131226-story.html"
+      },
+      {
+        "id": "s5",
+        "title": "Five Days of Her: How Spike Jonze Created the Future",
+        "publisher": "Los Angeles Times",
+        "url": "https://www.latimes.com/entertainment/movies/moviesnow/la-et-mn-her-spike-jonze-future-costumes-20131223-story.html"
+      },
+      {
+        "id": "s6",
+        "title": "Five Days of Her: Editing Samantha In and Out",
+        "publisher": "Los Angeles Times",
+        "url": "https://www.latimes.com/entertainment/movies/moviesnow/la-et-mn-spike-jonze-her-movie-samantha-editor-20131230-story.html"
+      },
+      {
+        "id": "s7",
+        "title": "Spike Jonze: I Try to Make Everything I Make Personal",
+        "publisher": "Little White Lies",
+        "url": "https://lwlies.com/interviews/spike-jonze-her"
+      },
+      {
+        "id": "s8",
+        "title": "Spike Jonze on Jackass, Scarlett Johansson's Voice and Techno Love",
+        "publisher": "The Guardian",
+        "url": "https://www.theguardian.com/film/2013/nov/28/spike-jonze-her-interview-scarlett-johansson-joaquin-phoenix-jackass"
+      },
+      {
+        "id": "s9",
+        "title": "K.K. Barrett: A Vision for Her",
+        "publisher": "KCRW",
+        "url": "https://www.kcrw.com/shows/design-and-architecture/stories/k-k-barrett-a-vision-for-her"
+      }
+    ],
+    "questions": [
+      {
+        "id": "her-design",
+        "area": "research",
+        "prompt": {
+          "en": "Barrett describes prioritizing human experience over gadget spectacle. Which approach would you test in a new production exercise?",
+          "nb": "Barrett beskriver prioritering av menneskelig erfaring fremfor teknologisk spektakel. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Barrett décrit la priorité donnée à l'expérience humaine plutôt qu'au spectacle technologique. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Barrett descreve a prioridade dada à experiência humana em vez do espetáculo tecnológico. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Design everyday spaces and understated interfaces around character needs",
+              "nb": "Utform hverdagsrom og nedtonede grensesnitt rundt karakterens behov",
+              "fr": "Concevoir des espaces quotidiens et des interfaces discrètes selon les besoins du personnage",
+              "pt": "Conceber espaços quotidianos e interfaces discretas segundo necessidades da personagem"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Fill each frame with conspicuous futuristic devices",
+              "nb": "Fyll hvert bilde med iøynefallende futuristiske apparater",
+              "fr": "Remplir chaque cadre d'appareils futuristes voyants",
+              "pt": "Preencher cada quadro com aparelhos futuristas vistosos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Commit to the first idea before comparing it with evidence and rehearsals",
+              "nb": "Lås første idé før den sammenlignes med dokumentasjon og prøver",
+              "fr": "Retenir la première idée avant de la comparer aux sources et répétitions",
+              "pt": "Fixar a primeira ideia antes de comparar com fontes e ensaios"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Barrett describes prioritizing human experience over gadget spectacle. Test this approach in a new exercise: Design everyday spaces and understated interfaces around character needs.",
+          "nb": "Barrett beskriver prioritering av menneskelig erfaring fremfor teknologisk spektakel. Prøv denne tilnærmingen i en ny øvelse: Utform hverdagsrom og nedtonede grensesnitt rundt karakterens behov.",
+          "fr": "Barrett décrit la priorité donnée à l'expérience humaine plutôt qu'au spectacle technologique. Tester cette approche dans un nouvel exercice : Concevoir des espaces quotidiens et des interfaces discrètes selon les besoins du personnage.",
+          "pt": "Barrett descreve a prioridade dada à experiência humana em vez do espetáculo tecnológico. Testar esta abordagem num novo exercício: Conceber espaços quotidianos e interfaces discretas segundo necessidades da personagem."
+        },
+        "sourceIds": [
+          "s3",
+          "s9"
+        ]
+      },
+      {
+        "id": "her-costume",
+        "area": "research",
+        "prompt": {
+          "en": "Storm describes historical tailoring and a shared warm color palette. Which approach would you test in a new production exercise?",
+          "nb": "Storm beskriver historisk inspirert skreddersøm og en felles varm fargepalett. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Storm décrit des coupes historiques et une palette chaude commune. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Storm descreve alfaiataria histórica e uma paleta quente partilhada. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Commit to the first idea before comparing it with evidence and rehearsals",
+              "nb": "Lås første idé før den sammenlignes med dokumentasjon og prøver",
+              "fr": "Retenir la première idée avant de la comparer aux sources et répétitions",
+              "pt": "Fixar a primeira ideia antes de comparar com fontes e ensaios"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Coordinate wardrobe samples with set and camera color tests",
+              "nb": "Samordne kostymeprøver med fargetester for scenografi og kamera",
+              "fr": "Coordonner les échantillons de costumes avec les essais couleur des décors et de la caméra",
+              "pt": "Coordenar amostras de figurinos com testes de cor dos cenários e da câmara"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose futuristic uniforms before developing character identities",
+              "nb": "Velg futuristiske uniformer før karakteridentitetene utvikles",
+              "fr": "Choisir des uniformes futuristes avant de définir les personnages",
+              "pt": "Escolher uniformes futuristas antes de desenvolver as personagens"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Storm describes historical tailoring and a shared warm color palette. Test this approach in a new exercise: Coordinate wardrobe samples with set and camera color tests.",
+          "nb": "Storm beskriver historisk inspirert skreddersøm og en felles varm fargepalett. Prøv denne tilnærmingen i en ny øvelse: Samordne kostymeprøver med fargetester for scenografi og kamera.",
+          "fr": "Storm décrit des coupes historiques et une palette chaude commune. Tester cette approche dans un nouvel exercice : Coordonner les échantillons de costumes avec les essais couleur des décors et de la caméra.",
+          "pt": "Storm descreve alfaiataria histórica e uma paleta quente partilhada. Testar esta abordagem num novo exercício: Coordenar amostras de figurinos com testes de cor dos cenários e da câmara."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "her-voice",
+        "area": "editing",
+        "prompt": {
+          "en": "The sources document rewriting and recording Samantha's voice during postproduction. Which approach would you test in a new production exercise?",
+          "nb": "Kildene dokumenterer omskriving og innspilling av Samanthas stemme under etterarbeidet. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Les sources documentent la réécriture et l'enregistrement de la voix de Samantha en postproduction. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "As fontes documentam a reescrita e gravação da voz de Samantha na pós-produção. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Lock the voice track without revisiting picture rhythm",
+              "nb": "Lås stemmesporet uten å revurdere bilderytmen",
+              "fr": "Verrouiller la voix sans revoir le rythme des images",
+              "pt": "Bloquear a voz sem rever o ritmo das imagens"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Lock the first assembly before screening the entire sequence",
+              "nb": "Lås første sammenklipp før hele sekvensen vises",
+              "fr": "Verrouiller le premier assemblage avant de projeter toute la séquence",
+              "pt": "Bloquear a primeira montagem antes de exibir toda a sequência"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test revised original voice performances against reaction shots and pauses",
+              "nb": "Test reviderte originale stemmeprestasjoner mot reaksjonsbilder og pauser",
+              "fr": "Tester des voix originales révisées avec les plans de réaction et les silences",
+              "pt": "Testar vozes originais revistas com planos de reação e pausas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The sources document rewriting and recording Samantha's voice during postproduction. Test this approach in a new exercise: Test revised original voice performances against reaction shots and pauses.",
+          "nb": "Kildene dokumenterer omskriving og innspilling av Samanthas stemme under etterarbeidet. Prøv denne tilnærmingen i en ny øvelse: Test reviderte originale stemmeprestasjoner mot reaksjonsbilder og pauser.",
+          "fr": "Les sources documentent la réécriture et l'enregistrement de la voix de Samantha en postproduction. Tester cette approche dans un nouvel exercice : Tester des voix originales révisées avec les plans de réaction et les silences.",
+          "pt": "As fontes documentam a reescrita e gravação da voz de Samantha na pós-produção. Testar esta abordagem num novo exercício: Testar vozes originais revistas com planos de reação e pausas."
+        },
+        "sourceIds": [
+          "s6",
+          "s7",
+          "s8"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_lobster_2015",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "European coproduction, natural lighting and ensemble discipline",
+      "nb": "Europeisk samproduksjon, naturlig lys og ensembledisiplin",
+      "fr": "Coproduction européenne, lumière naturelle et discipline collective",
+      "pt": "Coprodução europeia, luz natural e disciplina coletiva"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Yorgos Lanthimos: I just think it's interesting to start a dialogue",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/interviews/yorgos-lanthimos-i-just-think-interesting-to-start-dialogue"
+      },
+      {
+        "id": "s1",
+        "title": "Thimios Bakatakis / The Lobster",
+        "publisher": "British Cinematographer",
+        "url": "https://britishcinematographer.co.uk/thimios-bakatakis-the-lobster/"
+      },
+      {
+        "id": "s2",
+        "title": "Major Irish Film Board Supported Production Activity Taking Place Across Ireland",
+        "publisher": "Screen Ireland",
+        "url": "https://www.screenireland.ie/news-archive/view/2428"
+      },
+      {
+        "id": "s5",
+        "title": "The Lobster",
+        "publisher": "Lemming Film",
+        "url": "https://lemmingfilm.com/productions/the-lobster"
+      },
+      {
+        "id": "s8",
+        "title": "Interview: Yorgos Lanthimos and Ariane Labed discuss The Lobster",
+        "publisher": "Seventh Row",
+        "url": "https://seventh-row.com/2016/05/19/yorgos-lanthimos-ariane-labed/"
+      },
+      {
+        "id": "s9",
+        "title": "The Lobster",
+        "publisher": "European Film Academy",
+        "url": "https://www.europeanfilmawards.eu/efa-movie/the-lobster/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "lobster-coproduction",
+        "area": "research",
+        "prompt": {
+          "en": "The sources document financing and production work across several European countries. Which approach would you test in a new production exercise?",
+          "nb": "Kildene dokumenterer finansiering og produksjonsarbeid på tvers av flere europeiske land. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Les sources documentent le financement et le travail dans plusieurs pays européens. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "As fontes documentam financiamento e produção em vários países europeus. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map partner responsibilities and budget for cross-border handoffs",
+              "nb": "Kartlegg partneransvar og budsjetter for overleveringer mellom land",
+              "fr": "Cartographier les responsabilités et budgéter les transferts transfrontaliers",
+              "pt": "Mapear responsabilidades e orçamentar transferências entre países"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume each partner can use incompatible delivery specifications",
+              "nb": "Anta at hver partner kan bruke uforenlige leveringsspesifikasjoner",
+              "fr": "Supposer que chaque partenaire peut utiliser des spécifications incompatibles",
+              "pt": "Supor que cada parceiro pode usar especificações incompatíveis"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Commit to the first idea before comparing it with evidence and rehearsals",
+              "nb": "Lås første idé før den sammenlignes med dokumentasjon og prøver",
+              "fr": "Retenir la première idée avant de la comparer aux sources et répétitions",
+              "pt": "Fixar a primeira ideia antes de comparar com fontes e ensaios"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The sources document financing and production work across several European countries. Test this approach in a new exercise: Map partner responsibilities and budget for cross-border handoffs.",
+          "nb": "Kildene dokumenterer finansiering og produksjonsarbeid på tvers av flere europeiske land. Prøv denne tilnærmingen i en ny øvelse: Kartlegg partneransvar og budsjetter for overleveringer mellom land.",
+          "fr": "Les sources documentent le financement et le travail dans plusieurs pays européens. Tester cette approche dans un nouvel exercice : Cartographier les responsabilités et budgéter les transferts transfrontaliers.",
+          "pt": "As fontes documentam financiamento e produção em vários países europeus. Testar esta abordagem num novo exercício: Mapear responsabilidades e orçamentar transferências entre países."
+        },
+        "sourceIds": [
+          "s0",
+          "s2",
+          "s5"
+        ]
+      },
+      {
+        "id": "lobster-light",
+        "area": "camera",
+        "prompt": {
+          "en": "Bakatakis describes digital capture, location shooting and mostly natural light. Which approach would you test in a new production exercise?",
+          "nb": "Bakatakis beskriver digitalt opptak, stedsopptak og hovedsakelig naturlig lys. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Bakatakis décrit la captation numérique, les lieux réels et une lumière surtout naturelle. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Bakatakis descreve captação digital, locais reais e luz sobretudo natural. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Finalize the visual system without reviewing test footage",
+              "nb": "Ferdigstill bildesystemet uten å gjennomgå testopptak",
+              "fr": "Finaliser le système visuel sans visionner les essais filmés",
+              "pt": "Finalizar o sistema visual sem rever imagens de teste"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Scout light at different hours and test exposure and grading together",
+              "nb": "Undersøk lyset til ulike tider og test eksponering og gradering sammen",
+              "fr": "Repérer la lumière à différentes heures et tester exposition et étalonnage ensemble",
+              "pt": "Observar a luz em horas diferentes e testar exposição e gradação em conjunto"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Depend on daylight without checking changing weather or continuity",
+              "nb": "Stol på dagslys uten å sjekke værendringer eller kontinuitet",
+              "fr": "Compter sur le jour sans vérifier la météo ni la continuité",
+              "pt": "Depender da luz do dia sem verificar clima nem continuidade"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Bakatakis describes digital capture, location shooting and mostly natural light. Test this approach in a new exercise: Scout light at different hours and test exposure and grading together.",
+          "nb": "Bakatakis beskriver digitalt opptak, stedsopptak og hovedsakelig naturlig lys. Prøv denne tilnærmingen i en ny øvelse: Undersøk lyset til ulike tider og test eksponering og gradering sammen.",
+          "fr": "Bakatakis décrit la captation numérique, les lieux réels et une lumière surtout naturelle. Tester cette approche dans un nouvel exercice : Repérer la lumière à différentes heures et tester exposition et étalonnage ensemble.",
+          "pt": "Bakatakis descreve captação digital, locais reais e luz sobretudo natural. Testar esta abordagem num novo exercício: Observar a luz em horas diferentes e testar exposição e gradação em conjunto."
+        },
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "id": "lobster-ensemble",
+        "area": "research",
+        "prompt": {
+          "en": "The sources describe controlled group behavior and physical preparation. Which approach would you test in a new production exercise?",
+          "nb": "Kildene beskriver kontrollert gruppeatferd og fysisk forberedelse. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Les sources décrivent un comportement collectif contrôlé et une préparation physique. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "As fontes descrevem comportamento coletivo controlado e preparação física. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Ask every performer to invent unrelated movement rules",
+              "nb": "Be hver skuespiller finne på urelaterte bevegelsesregler",
+              "fr": "Demander à chaque acteur d'inventer des règles de mouvement sans rapport",
+              "pt": "Pedir a cada ator que invente regras de movimento sem relação"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Commit to the first idea before comparing it with evidence and rehearsals",
+              "nb": "Lås første idé før den sammenlignes med dokumentasjon og prøver",
+              "fr": "Retenir la première idée avant de la comparer aux sources et répétitions",
+              "pt": "Fixar a primeira ideia antes de comparar com fontes e ensaios"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse an original social ritual using repeatable gestures and spacing",
+              "nb": "Prøv et originalt sosialt ritual med gjentakbare bevegelser og avstander",
+              "fr": "Répéter un rituel social original avec gestes et distances reproductibles",
+              "pt": "Ensaiar um ritual social original com gestos e distâncias repetíveis"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The sources describe controlled group behavior and physical preparation. Test this approach in a new exercise: Rehearse an original social ritual using repeatable gestures and spacing.",
+          "nb": "Kildene beskriver kontrollert gruppeatferd og fysisk forberedelse. Prøv denne tilnærmingen i en ny øvelse: Prøv et originalt sosialt ritual med gjentakbare bevegelser og avstander.",
+          "fr": "Les sources décrivent un comportement collectif contrôlé et une préparation physique. Tester cette approche dans un nouvel exercice : Répéter un rituel social original avec gestes et distances reproductibles.",
+          "pt": "As fontes descrevem comportamento coletivo controlado e preparação física. Testar esta abordagem num novo exercício: Ensaiar um ritual social original com gestos e distâncias repetíveis."
+        },
+        "sourceIds": [
+          "s8",
+          "s9"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_room_2015",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Child viewpoint, confined set design and spatial sound",
+      "nb": "Barnets perspektiv, avgrenset scenografi og romlig lyd",
+      "fr": "Point de vue enfantin, décor confiné et son spatial",
+      "pt": "Ponto de vista infantil, cenário confinado e som espacial"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Shooting Begins on Lenny Abrahamson's Room Starring Brie Larson, Joan Allen and William H. Macy",
+        "publisher": "Screen Ireland",
+        "url": "https://www.screenireland.ie/news-archive/view/2597"
+      },
+      {
+        "id": "s1",
+        "title": "Room: if these walls could talk",
+        "publisher": "Screen Daily",
+        "url": "https://www.screendaily.com/awards/room-if-these-walls-could-talk/5097954.article"
+      },
+      {
+        "id": "s2",
+        "title": "Cinematographer Danny Cohen on Room & The Danish Girl",
+        "publisher": "Motion Picture Association",
+        "url": "https://www.motionpictures.org/2015/12/cinematographer-danny-cohen-room-danish-girl/"
+      },
+      {
+        "id": "s3",
+        "title": "INTerview: Ethan Tobman (Room)",
+        "publisher": "Interiors",
+        "url": "https://www.intjournal.com/interview/ethan-tobman"
+      },
+      {
+        "id": "s4",
+        "title": "Q&A: Emma Donoghue on writing the film adaptation for Room",
+        "publisher": "Quill & Quire",
+        "url": "https://quillandquire.com/book-culture/2015/09/15/qa-emma-donoghue-on-writing-the-film-adaptation-for-room/"
+      },
+      {
+        "id": "s5",
+        "title": "Lenny Abrahamson: It's a way of talking about childhood and parenting",
+        "publisher": "The Guardian",
+        "url": "https://www.theguardian.com/film/2016/jan/10/lenny-abrahamson-director-interview-room-brie-larson"
+      },
+      {
+        "id": "s6",
+        "title": "The Magic of the Space: An interview with Niall Brady and Steve Fanagan about Room (2015)",
+        "publisher": "Edge Hill University",
+        "url": "https://research.edgehill.ac.uk/en/publications/the-magic-of-the-space-an-interview-with-niall-brady-and-steve-fa-2/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "room-viewpoint",
+        "area": "research",
+        "prompt": {
+          "en": "Donoghue and Abrahamson describe translating Jack's viewpoint into cinema. Which approach would you test in a new production exercise?",
+          "nb": "Donoghue og Abrahamson beskriver overføringen av Jacks perspektiv til film. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Donoghue et Abrahamson décrivent la traduction du point de vue de Jack au cinéma. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Donoghue e Abrahamson descrevem a transposição do ponto de vista de Jack para cinema. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Storyboard an original scene around what a child notices and understands",
+              "nb": "Lag storyboard for en original scene rundt det et barn legger merke til og forstår",
+              "fr": "Dessiner une scène originale selon ce qu'un enfant remarque et comprend",
+              "pt": "Criar storyboard de cena original segundo o que uma criança nota e entende"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Explain every adult motivation from an omniscient viewpoint",
+              "nb": "Forklar alle voksnes motiver fra et allvitende perspektiv",
+              "fr": "Expliquer chaque motivation adulte depuis un point de vue omniscient",
+              "pt": "Explicar cada motivação adulta de um ponto de vista omnisciente"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Commit to the first idea before comparing it with evidence and rehearsals",
+              "nb": "Lås første idé før den sammenlignes med dokumentasjon og prøver",
+              "fr": "Retenir la première idée avant de la comparer aux sources et répétitions",
+              "pt": "Fixar a primeira ideia antes de comparar com fontes e ensaios"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Donoghue and Abrahamson describe translating Jack's viewpoint into cinema. Test this approach in a new exercise: Storyboard an original scene around what a child notices and understands.",
+          "nb": "Donoghue og Abrahamson beskriver overføringen av Jacks perspektiv til film. Prøv denne tilnærmingen i en ny øvelse: Lag storyboard for en original scene rundt det et barn legger merke til og forstår.",
+          "fr": "Donoghue et Abrahamson décrivent la traduction du point de vue de Jack au cinéma. Tester cette approche dans un nouvel exercice : Dessiner une scène originale selon ce qu'un enfant remarque et comprend.",
+          "pt": "Donoghue e Abrahamson descrevem a transposição do ponto de vista de Jack para cinema. Testar esta abordagem num novo exercício: Criar storyboard de cena original segundo o que uma criança nota e entende."
+        },
+        "sourceIds": [
+          "s0",
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "room-set",
+        "area": "camera",
+        "prompt": {
+          "en": "Tobman and Cohen describe a real-sized modular set and an interior lens rule. Which approach would you test in a new production exercise?",
+          "nb": "Tobman og Cohen beskriver et modulært sett i faktisk størrelse og en regel om objektiv innenfor rommet. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Tobman et Cohen décrivent un décor modulaire grandeur réelle et une règle d'objectif intérieur. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Tobman e Cohen descrevem cenário modular em tamanho real e regra de objetiva interior. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Finalize the visual system without reviewing test footage",
+              "nb": "Ferdigstill bildesystemet uten å gjennomgå testopptak",
+              "fr": "Finaliser le système visuel sans visionner les essais filmés",
+              "pt": "Finalizar o sistema visual sem rever imagens de teste"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Build a scale plan and test camera positions within the spatial constraint",
+              "nb": "Lag en målestokksplan og test kameraposisjoner innenfor rombegrensningen",
+              "fr": "Créer un plan à l'échelle et tester les positions caméra dans la contrainte spatiale",
+              "pt": "Criar planta à escala e testar posições da câmara dentro da restrição espacial"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Remove every wall to maximize camera distance without testing intimacy",
+              "nb": "Fjern alle vegger for maksimal kameraavstand uten å teste nærhet",
+              "fr": "Retirer tous les murs pour maximiser le recul sans tester l'intimité",
+              "pt": "Retirar todas as paredes para maximizar distância sem testar intimidade"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Tobman and Cohen describe a real-sized modular set and an interior lens rule. Test this approach in a new exercise: Build a scale plan and test camera positions within the spatial constraint.",
+          "nb": "Tobman og Cohen beskriver et modulært sett i faktisk størrelse og en regel om objektiv innenfor rommet. Prøv denne tilnærmingen i en ny øvelse: Lag en målestokksplan og test kameraposisjoner innenfor rombegrensningen.",
+          "fr": "Tobman et Cohen décrivent un décor modulaire grandeur réelle et une règle d'objectif intérieur. Tester cette approche dans un nouvel exercice : Créer un plan à l'échelle et tester les positions caméra dans la contrainte spatiale.",
+          "pt": "Tobman e Cohen descrevem cenário modular em tamanho real e regra de objetiva interior. Testar esta abordagem num novo exercício: Criar planta à escala e testar posições da câmara dentro da restrição espacial."
+        },
+        "sourceIds": [
+          "s1",
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "room-sound",
+        "area": "sound",
+        "prompt": {
+          "en": "The sound interview documents building a credible world in a confined soundproofed space. Which approach would you test in a new production exercise?",
+          "nb": "Lydintervjuet dokumenterer byggingen av en troverdig verden i et avgrenset lydisolert rom. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "L'entretien sonore documente la construction d'un monde crédible dans un espace insonorisé confiné. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "A entrevista de som documenta a construção de um mundo credível num espaço confinado e insonorizado. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Add expansive exterior ambience to every interior moment",
+              "nb": "Legg omfattende utendørslyd på alle innendørsøyeblikk",
+              "fr": "Ajouter une ambiance extérieure étendue à chaque moment intérieur",
+              "pt": "Adicionar ambiente exterior amplo a todos os momentos interiores"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Finish the picture without testing the relationship between sound and image",
+              "nb": "Ferdigstill bildet uten å teste samspillet mellom lyd og bilde",
+              "fr": "Finaliser l'image sans tester le rapport entre son et image",
+              "pt": "Finalizar a imagem sem testar a relação entre som e imagem"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Design a limited sound vocabulary and test plausible interior reflections",
+              "nb": "Utform et avgrenset lydvokabular og test troverdige innvendige refleksjoner",
+              "fr": "Concevoir un vocabulaire sonore limité et tester les réflexions intérieures plausibles",
+              "pt": "Conceber vocabulário sonoro limitado e testar reflexões interiores plausíveis"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The sound interview documents building a credible world in a confined soundproofed space. Test this approach in a new exercise: Design a limited sound vocabulary and test plausible interior reflections.",
+          "nb": "Lydintervjuet dokumenterer byggingen av en troverdig verden i et avgrenset lydisolert rom. Prøv denne tilnærmingen i en ny øvelse: Utform et avgrenset lydvokabular og test troverdige innvendige refleksjoner.",
+          "fr": "L'entretien sonore documente la construction d'un monde crédible dans un espace insonorisé confiné. Tester cette approche dans un nouvel exercice : Concevoir un vocabulaire sonore limité et tester les réflexions intérieures plausibles.",
+          "pt": "A entrevista de som documenta a construção de um mundo credível num espaço confinado e insonorizado. Testar esta abordagem num novo exercício: Conceber vocabulário sonoro limitado e testar reflexões interiores plausíveis."
+        },
+        "sourceIds": [
+          "s6"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_mommy_2014",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Square portrait framing, screenplay rhythm and diegetic songs",
+      "nb": "Kvadratisk portrettformat, manusrytme og musikk i fortellingen",
+      "fr": "Portrait carré, rythme scénaristique et chansons diégétiques",
+      "pt": "Retrato quadrado, ritmo do argumento e canções diegéticas"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "Mommy",
+        "publisher": "Metafilms",
+        "url": "https://www.metafilms.ca/en/film/mommy/"
+      },
+      {
+        "id": "s2",
+        "title": "Xavier Dolan grows up with Mommy",
+        "publisher": "Los Angeles Times",
+        "url": "https://www.latimes.com/entertainment/movies/la-et-mn-ca-xavier-dolan-20150118-story.html"
+      },
+      {
+        "id": "s3",
+        "title": "Xavier Dolan talks about his Oedipal drama Mommy",
+        "publisher": "LAist",
+        "url": "https://laist.com/shows/the-frame/xavier-dolan-talks-about-his-oedipal-drama-mommy"
+      },
+      {
+        "id": "s4",
+        "title": "Interview: Xavier Dolan for Mommy",
+        "publisher": "Movies.ie",
+        "url": "https://www.movies.ie/interview-xavier-dolan-for-mommy/"
+      },
+      {
+        "id": "s5",
+        "title": "Interview: writer-director Xavier Dolan and producer Nancy Grant on Mommy",
+        "publisher": "Scannain",
+        "url": "https://www.scannain.com/interview/interview-writerdirector-xavier-dolan-producer-nancy-grant-on-mommy/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "mommy-square",
+        "area": "camera",
+        "prompt": {
+          "en": "Dolan describes the square format as portraiture and an intimacy tool. Which approach would you test in a new production exercise?",
+          "nb": "Dolan beskriver kvadratformatet som portrettfotografi og et nærhetsverktøy. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Dolan décrit le format carré comme un portrait et un outil d'intimité. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Dolan descreve o formato quadrado como retrato e ferramenta de intimidade. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare square and wide portraits using eye contact and negative space",
+              "nb": "Sammenlign kvadratiske og brede portretter med blikkontakt og negativt rom",
+              "fr": "Comparer portraits carrés et larges selon le regard et l'espace négatif",
+              "pt": "Comparar retratos quadrados e largos segundo olhar e espaço negativo"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose the square format solely to imitate social media",
+              "nb": "Velg kvadratformat bare for å etterligne sosiale medier",
+              "fr": "Choisir le carré uniquement pour imiter les réseaux sociaux",
+              "pt": "Escolher o quadrado apenas para imitar redes sociais"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Finalize the visual system without reviewing test footage",
+              "nb": "Ferdigstill bildesystemet uten å gjennomgå testopptak",
+              "fr": "Finaliser le système visuel sans visionner les essais filmés",
+              "pt": "Finalizar o sistema visual sem rever imagens de teste"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Dolan describes the square format as portraiture and an intimacy tool. Test this approach in a new exercise: Compare square and wide portraits using eye contact and negative space.",
+          "nb": "Dolan beskriver kvadratformatet som portrettfotografi og et nærhetsverktøy. Prøv denne tilnærmingen i en ny øvelse: Sammenlign kvadratiske og brede portretter med blikkontakt og negativt rom.",
+          "fr": "Dolan décrit le format carré comme un portrait et un outil d'intimité. Tester cette approche dans un nouvel exercice : Comparer portraits carrés et larges selon le regard et l'espace négatif.",
+          "pt": "Dolan descreve o formato quadrado como retrato e ferramenta de intimidade. Testar esta abordagem num novo exercício: Comparar retratos quadrados e largos segundo olhar e espaço negativo."
+        },
+        "sourceIds": [
+          "s1",
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "mommy-script",
+        "area": "editing",
+        "prompt": {
+          "en": "Dolan describes imagining the completed scene, music and edit while writing. Which approach would you test in a new production exercise?",
+          "nb": "Dolan beskriver hvordan han forestiller seg ferdig scene, musikk og klipp under skrivingen. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Dolan décrit comment il imagine la scène terminée, la musique et le montage en écrivant. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Dolan descreve imaginar a cena final, música e montagem durante a escrita. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Lock the first assembly before screening the entire sequence",
+              "nb": "Lås første sammenklipp før hele sekvensen vises",
+              "fr": "Verrouiller le premier assemblage avant de projeter toute la séquence",
+              "pt": "Bloquear a primeira montagem antes de exibir toda a sequência"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Draft a scene with timing notes and test it in a rough animatic",
+              "nb": "Skriv en scene med rytmenotater og test den i en enkel animatic",
+              "fr": "Écrire une scène avec notes de rythme et la tester dans un animatique",
+              "pt": "Escrever cena com notas de ritmo e testar num animatic simples"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Decide all shot duration before reading the dialogue aloud",
+              "nb": "Bestem alle bildelengder før dialogen leses høyt",
+              "fr": "Décider toutes les durées avant de lire les dialogues à voix haute",
+              "pt": "Decidir todas as durações antes de ler o diálogo em voz alta"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Dolan describes imagining the completed scene, music and edit while writing. Test this approach in a new exercise: Draft a scene with timing notes and test it in a rough animatic.",
+          "nb": "Dolan beskriver hvordan han forestiller seg ferdig scene, musikk og klipp under skrivingen. Prøv denne tilnærmingen i en ny øvelse: Skriv en scene med rytmenotater og test den i en enkel animatic.",
+          "fr": "Dolan décrit comment il imagine la scène terminée, la musique et le montage en écrivant. Tester cette approche dans un nouvel exercice : Écrire une scène avec notes de rythme et la tester dans un animatique.",
+          "pt": "Dolan descreve imaginar a cena final, música e montagem durante a escrita. Testar esta abordagem num novo exercício: Escrever cena com notas de ritmo e testar num animatic simples."
+        },
+        "sourceIds": [
+          "s3",
+          "s5"
+        ]
+      },
+      {
+        "id": "mommy-song",
+        "area": "sound",
+        "prompt": {
+          "en": "Dolan distinguishes songs within the characters' world from conventional score. Which approach would you test in a new production exercise?",
+          "nb": "Dolan skiller sanger i karakterenes verden fra konvensjonell filmmusikk. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Dolan distingue les chansons dans le monde des personnages de la musique conventionnelle. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Dolan distingue canções no mundo das personagens da música convencional. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use music without deciding whether characters can hear it",
+              "nb": "Bruk musikk uten å avgjøre om karakterene kan høre den",
+              "fr": "Utiliser la musique sans décider si les personnages l'entendent",
+              "pt": "Usar música sem decidir se as personagens a ouvem"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Finish the picture without testing the relationship between sound and image",
+              "nb": "Ferdigstill bildet uten å teste samspillet mellom lyd og bilde",
+              "fr": "Finaliser l'image sans tester le rapport entre son et image",
+              "pt": "Finalizar a imagem sem testar a relação entre som e imagem"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Stage an original or cleared song as an action the characters can hear",
+              "nb": "Iscenesett en original eller klarert sang som en handling karakterene kan høre",
+              "fr": "Mettre en scène une chanson originale ou autorisée que les personnages entendent",
+              "pt": "Encenar uma canção original ou licenciada que as personagens ouvem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Dolan distinguishes songs within the characters' world from conventional score. Test this approach in a new exercise: Stage an original or cleared song as an action the characters can hear.",
+          "nb": "Dolan skiller sanger i karakterenes verden fra konvensjonell filmmusikk. Prøv denne tilnærmingen i en ny øvelse: Iscenesett en original eller klarert sang som en handling karakterene kan høre.",
+          "fr": "Dolan distingue les chansons dans le monde des personnages de la musique conventionnelle. Tester cette approche dans un nouvel exercice : Mettre en scène une chanson originale ou autorisée que les personnages entendent.",
+          "pt": "Dolan distingue canções no mundo das personagens da música convencional. Testar esta abordagem num novo exercício: Encenar uma canção original ou licenciada que as personagens ouvem."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_inside_out_2015",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Emotion research, virtual cinematography and differentiated sound worlds",
+      "nb": "Emosjonsresearch, virtuell filmfotografering og forskjellige lydverdener",
+      "fr": "Recherche sur les émotions, caméra virtuelle et univers sonores distincts",
+      "pt": "Pesquisa sobre emoções, câmara virtual e mundos sonoros distintos"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Inside Out",
+        "publisher": "Pixar Animation Studios",
+        "url": "https://www.pixar.com/inside-out"
+      },
+      {
+        "id": "s3",
+        "title": "The Science of Why Inside Out Is Just as Good as Pixar's Best Work",
+        "publisher": "WIRED",
+        "url": "https://www.wired.com/2015/06/pixar-inside-out/"
+      },
+      {
+        "id": "s4",
+        "title": "Inside Out Rendering",
+        "publisher": "fxguide",
+        "url": "https://www.fxguide.com/fxfeatured/inside-out-rendering/"
+      },
+      {
+        "id": "s5",
+        "title": "Animation: Pixar's Inside Out",
+        "publisher": "Post Magazine",
+        "url": "https://www.postmagazine.com/Publications/Post-Magazine/2015/June-1-2015/Animation-Pixars-Inside-Out.aspx"
+      },
+      {
+        "id": "s6",
+        "title": "Introduction to virtual cameras",
+        "publisher": "Khan Academy",
+        "url": "https://www.khanacademy.org/computing/pixar/virtual-cameras/virtual-cameras-1/v/virtual-cameras"
+      },
+      {
+        "id": "s8",
+        "title": "Behind the creative, clever sound of Pixar's Inside Out",
+        "publisher": "A Sound Effect",
+        "url": "https://www.asoundeffect.com/inside-out-sound/"
+      },
+      {
+        "id": "s9",
+        "title": "Walt Disney Records Set To Release Inside Out Original Motion Picture Soundtrack",
+        "publisher": "Walt Disney Records",
+        "url": "https://www.prnewswire.com/news-releases/walt-disney-records-set-to-release-inside-out-original-motion-picture-soundtrack-with-score-composed-by-michael-giacchino-300094334.html"
+      }
+    ],
+    "questions": [
+      {
+        "id": "insideout-emotions",
+        "area": "research",
+        "prompt": {
+          "en": "The production consulted emotion researchers and narrowed its cast of emotions. Which approach would you test in a new production exercise?",
+          "nb": "Produksjonen rådførte seg med emosjonsforskere og begrenset antallet følelseskarakterer. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "La production a consulté des chercheurs et réduit le nombre de personnages émotionnels. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "A produção consultou investigadores e reduziu o número de personagens emocionais. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Prototype a small set of fictional emotion roles and test dramatic clarity",
+              "nb": "Lag prototyper av et lite sett fiktive følelsesroller og test dramatisk tydelighet",
+              "fr": "Prototyper quelques rôles émotionnels fictifs et tester la clarté dramatique",
+              "pt": "Prototipar poucos papéis emocionais fictícios e testar clareza dramática"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Present the fictional characters as a complete scientific model of emotions",
+              "nb": "Presenter de fiktive karakterene som en fullstendig vitenskapelig følelsesmodell",
+              "fr": "Présenter les personnages fictifs comme un modèle scientifique complet des émotions",
+              "pt": "Apresentar personagens fictícias como modelo científico completo das emoções"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Commit to the first idea before comparing it with evidence and rehearsals",
+              "nb": "Lås første idé før den sammenlignes med dokumentasjon og prøver",
+              "fr": "Retenir la première idée avant de la comparer aux sources et répétitions",
+              "pt": "Fixar a primeira ideia antes de comparar com fontes e ensaios"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The production consulted emotion researchers and narrowed its cast of emotions. Test this approach in a new exercise: Prototype a small set of fictional emotion roles and test dramatic clarity.",
+          "nb": "Produksjonen rådførte seg med emosjonsforskere og begrenset antallet følelseskarakterer. Prøv denne tilnærmingen i en ny øvelse: Lag prototyper av et lite sett fiktive følelsesroller og test dramatisk tydelighet.",
+          "fr": "La production a consulté des chercheurs et réduit le nombre de personnages émotionnels. Tester cette approche dans un nouvel exercice : Prototyper quelques rôles émotionnels fictifs et tester la clarté dramatique.",
+          "pt": "A produção consultou investigadores e reduziu o número de personagens emocionais. Testar esta abordagem num novo exercício: Prototipar poucos papéis emocionais fictícios e testar clareza dramática."
+        },
+        "sourceIds": [
+          "s0",
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "insideout-camera",
+        "area": "camera",
+        "prompt": {
+          "en": "Pixar's camera team describes lens and framing choices serving emotional purpose. Which approach would you test in a new production exercise?",
+          "nb": "Pixars kamerateam beskriver objektiv- og utsnittsvalg som tjener emosjonelle formål. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "L'équipe caméra de Pixar décrit des choix de focale et de cadre au service de l'émotion. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "A equipa de câmara da Pixar descreve escolhas de distância focal e enquadramento ao serviço da emoção. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Finalize the visual system without reviewing test footage",
+              "nb": "Ferdigstill bildesystemet uten å gjennomgå testopptak",
+              "fr": "Finaliser le système visuel sans visionner les essais filmés",
+              "pt": "Finalizar o sistema visual sem rever imagens de teste"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test virtual focal lengths and staging against the same emotional beat",
+              "nb": "Test virtuelle brennvidder og iscenesettelse mot samme emosjonelle vendepunkt",
+              "fr": "Tester des focales virtuelles et la mise en scène pour un même moment émotionnel",
+              "pt": "Testar distâncias focais virtuais e encenação no mesmo momento emocional"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose a virtual lens solely for its technical novelty",
+              "nb": "Velg et virtuelt objektiv bare for dets tekniske nyhetsverdi",
+              "fr": "Choisir une focale virtuelle uniquement pour sa nouveauté technique",
+              "pt": "Escolher uma objetiva virtual apenas pela novidade técnica"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Pixar's camera team describes lens and framing choices serving emotional purpose. Test this approach in a new exercise: Test virtual focal lengths and staging against the same emotional beat.",
+          "nb": "Pixars kamerateam beskriver objektiv- og utsnittsvalg som tjener emosjonelle formål. Prøv denne tilnærmingen i en ny øvelse: Test virtuelle brennvidder og iscenesettelse mot samme emosjonelle vendepunkt.",
+          "fr": "L'équipe caméra de Pixar décrit des choix de focale et de cadre au service de l'émotion. Tester cette approche dans un nouvel exercice : Tester des focales virtuelles et la mise en scène pour un même moment émotionnel.",
+          "pt": "A equipa de câmara da Pixar descreve escolhas de distância focal e enquadramento ao serviço da emoção. Testar esta abordagem num novo exercício: Testar distâncias focais virtuais e encenação no mesmo momento emocional."
+        },
+        "sourceIds": [
+          "s5",
+          "s6"
+        ]
+      },
+      {
+        "id": "insideout-sound",
+        "area": "sound",
+        "prompt": {
+          "en": "The sound team describes distinct sonic treatments for physical and mental worlds. Which approach would you test in a new production exercise?",
+          "nb": "Lydteamet beskriver ulike lyduttrykk for den fysiske og mentale verdenen. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "L'équipe son décrit des traitements distincts des mondes physique et mental. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "A equipa de som descreve tratamentos distintos dos mundos físico e mental. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use identical ambience in both worlds without evaluating contrast",
+              "nb": "Bruk identisk atmosfærelyd i begge verdener uten å vurdere kontrasten",
+              "fr": "Utiliser la même ambiance dans les deux mondes sans évaluer le contraste",
+              "pt": "Usar ambiente idêntico nos dois mundos sem avaliar contraste"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Finish the picture without testing the relationship between sound and image",
+              "nb": "Ferdigstill bildet uten å teste samspillet mellom lyd og bilde",
+              "fr": "Finaliser l'image sans tester le rapport entre son et image",
+              "pt": "Finalizar a imagem sem testar a relação entre som e imagem"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Build two original sound palettes and test transitions between them",
+              "nb": "Bygg to originale lydpaletter og test overgangene mellom dem",
+              "fr": "Créer deux palettes sonores originales et tester leurs transitions",
+              "pt": "Criar duas paletas sonoras originais e testar transições entre elas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The sound team describes distinct sonic treatments for physical and mental worlds. Test this approach in a new exercise: Build two original sound palettes and test transitions between them.",
+          "nb": "Lydteamet beskriver ulike lyduttrykk for den fysiske og mentale verdenen. Prøv denne tilnærmingen i en ny øvelse: Bygg to originale lydpaletter og test overgangene mellom dem.",
+          "fr": "L'équipe son décrit des traitements distincts des mondes physique et mental. Tester cette approche dans un nouvel exercice : Créer deux palettes sonores originales et tester leurs transitions.",
+          "pt": "A equipa de som descreve tratamentos distintos dos mundos físico e mental. Testar esta abordagem num novo exercício: Criar duas paletas sonoras originais e testar transições entre elas."
+        },
+        "sourceIds": [
+          "s8",
+          "s9"
+        ]
+      }
+    ]
+  }
+] as const satisfies readonly SourceBackedCaseWorkshop[];
