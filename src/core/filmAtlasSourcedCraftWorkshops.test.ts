@@ -277,15 +277,24 @@ const ids = [
   "scenario_coda_2021",
   "scenario_memoria_2021",
   "scenario_annette_2021",
+  "scenario_aftersun_2022",
+  "scenario_everything_everywhere_all_at_once_2022",
+  "scenario_the_banshees_of_inisherin_2022",
+  "scenario_triangle_of_sadness_2022",
+  "scenario_decision_to_leave_2022",
+  "scenario_all_quiet_on_the_western_front_2022",
+  "scenario_avatar_the_way_of_water_2022",
+  "scenario_oppenheimer_2023",
+  "scenario_barbie_2023",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly two hundred and sixty-eight existing cases have eight hundred and four original, source-backed decisions", () => {
+test("Exactly two hundred and seventy-seven existing cases have eight hundred and thirty-one original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 268);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 804);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 277);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 831);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -678,6 +687,13 @@ test("Exactly two hundred and sixty-eight existing cases have eight hundred and 
       const [path, definition] = configs[workshop.scenarioId]!;
       if (definition === "seed") assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
       else assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
+      assert.ok(verification.includes('scenarioId: "' + workshop.scenarioId + '"'));
+      for (const source of workshop.sources) assert.ok(verification.includes(source.url));
+    } else if (["scenario_aftersun_2022","scenario_everything_everywhere_all_at_once_2022","scenario_the_banshees_of_inisherin_2022","scenario_triangle_of_sadness_2022","scenario_decision_to_leave_2022","scenario_all_quiet_on_the_western_front_2022","scenario_avatar_the_way_of_water_2022","scenario_oppenheimer_2023","scenario_barbie_2023"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_aftersun_2022":["src/ui/data/scenarioProductionVerificationContemporaryEuropeanSocialCareSystemsBatch.ts","scandinavianEuropeanExpansion"],"scenario_everything_everywhere_all_at_once_2022":["src/ui/data/scenarioProductionVerificationEverythingEverywhereAllAtOnce.ts","chapterNineteenEverythingEverywhereAllAtOnceExpansion"],"scenario_the_banshees_of_inisherin_2022":["src/ui/data/scenarioProductionVerificationBritishIrishPlaceBodySystemsBatch.ts","easternIberianBritishExpansion"],"scenario_triangle_of_sadness_2022":["src/ui/data/scenarioProductionVerificationContemporaryEuropeanSocialCareSystemsBatch.ts","festivalWinners2010To2024Expansion"],"scenario_decision_to_leave_2022":["src/ui/data/scenarioProductionVerificationDecisionToLeave.ts","chapterNineteenDecisionToLeaveExpansion"],"scenario_all_quiet_on_the_western_front_2022":["src/ui/data/scenarioProductionVerificationAllQuietOnTheWesternFront.ts","chapterNineteenAllQuietOnTheWesternFrontExpansion"],"scenario_avatar_the_way_of_water_2022":["src/ui/data/scenarioProductionVerificationAvatarWayOfWater.ts","chapterNineteenAvatarWayOfWaterExpansion"],"scenario_oppenheimer_2023":["src/ui/data/scenarioProductionVerificationOppenheimer.ts","chapterNineteenOppenheimerExpansion"],"scenario_barbie_2023":["src/ui/data/scenarioProductionVerificationBarbie.ts","chapterNineteenBarbieExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
       const verification = readFileSync(path, "utf8");
       assert.ok(verification.includes('scenarioId: "' + workshop.scenarioId + '"'));
       for (const source of workshop.sources) assert.ok(verification.includes(source.url));
@@ -1438,4 +1454,17 @@ test("2020–2021 workshops retain film-specific production decisions", () => {
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_coda_2021")?.questions.map(q => q.id), ["coda-sign","coda-editorial","coda-sound"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_memoria_2021")?.questions.map(q => q.id), ["memoria-duration","memoria-listen","memoria-signature"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_annette_2021")?.questions.map(q => q.id), ["annette-singing","annette-puppet","annette-locations"]);
+});
+
+
+test("2022–2023 workshops retain film-specific production decisions", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_aftersun_2022")?.questions.map(q => q.id), ["aftersun-archive","aftersun-rehearsal","aftersun-memory"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_everything_everywhere_all_at_once_2022")?.questions.map(q => q.id), ["everything-grammar","everything-effects","everything-transition"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_banshees_of_inisherin_2022")?.questions.map(q => q.id), ["banshees-costume","banshees-landscape","banshees-tone"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_triangle_of_sadness_2022")?.questions.map(q => q.id), ["triangle-prep","triangle-composite","triangle-satire"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_decision_to_leave_2022")?.questions.map(q => q.id), ["decision-view","decision-geography","decision-invisible"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_all_quiet_on_the_western_front_2022")?.questions.map(q => q.id), ["allquiet2022-continuity","allquiet2022-frame","allquiet2022-sound"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_avatar_the_way_of_water_2022")?.questions.map(q => q.id), ["avatarwater-capture","avatarwater-geometry","avatarwater-handoff"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_oppenheimer_2023")?.questions.map(q => q.id), ["oppenheimer-format","oppenheimer-workprint","oppenheimer-motif"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_barbie_2023")?.questions.map(q => q.id), ["barbie-scale","barbie-palette","barbie-music"]);
 });

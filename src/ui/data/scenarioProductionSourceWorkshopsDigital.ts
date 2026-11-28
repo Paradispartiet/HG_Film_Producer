@@ -10549,5 +10549,1765 @@ export const digitalSourceWorkshops = [
         ]
       }
     ]
+  },
+  {
+    "scenarioId": "scenario_aftersun_2022",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Childhood images, rehearsed intimacy and memory montage",
+      "nb": "Barndomsbilder, innøvd nærhet og minnemontasje",
+      "fr": "Images d’enfance, intimité répétée et montage de mémoire",
+      "pt": "Imagens de infância, intimidade ensaiada e montagem de memória"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Aftersun",
+        "publisher": "La Semaine de la Critique",
+        "url": "https://www.semainedelacritique.com/en/edition/2022/movie/aftersun"
+      },
+      {
+        "id": "s1",
+        "title": "DP Gregory Oke captured the color of memory on 35mm for Aftersun",
+        "publisher": "Kodak",
+        "url": "https://www.kodak.com/en/motion/blog-post/aftersun/"
+      },
+      {
+        "id": "s2",
+        "title": "Postcard from the edge: Charlotte Wells on Aftersun",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/sight-and-sound/features/postcard-from-edge-charlotte-wells-aftersun"
+      },
+      {
+        "id": "s3",
+        "title": "A Note from Charlotte Wells",
+        "publisher": "A24",
+        "url": "https://a24films.com/notes/2022/10/a-note-from-charlotte-wells"
+      }
+    ],
+    "questions": [
+      {
+        "id": "aftersun-archive",
+        "area": "research",
+        "prompt": {
+          "en": "How can personal archives inspire fictional memories?",
+          "nb": "Hvordan kan personlige arkiver inspirere fiktive minner?",
+          "fr": "Comment les archives personnelles inspirent-elles des souvenirs fictifs ?",
+          "pt": "Como podem arquivos pessoais inspirar memórias fictícias?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Separate remembered details, permissions and invented scenes",
+              "nb": "Skill erindrede detaljer, tillatelser og oppdiktede scener",
+              "fr": "Distinguer souvenirs, autorisations et scènes inventées",
+              "pt": "Distinguir memórias, autorizações e cenas inventadas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat every invented scene as a verified autobiography",
+              "nb": "Behandle alle oppdiktede scener som verifisert selvbiografi",
+              "fr": "Traiter chaque invention comme autobiographie vérifiée",
+              "pt": "Tratar cada invenção como autobiografia verificada"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Reuse private family recordings without consent",
+              "nb": "Gjenbruk private familieopptak uten samtykke",
+              "fr": "Réutiliser des vidéos familiales sans consentement",
+              "pt": "Reutilizar vídeos familiares sem consentimento"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Wells describes family photos and video as starting material for fiction. Make a fictional memory board that distinguishes personal references from invented events.",
+          "nb": "Wells beskriver familiefoto og video som utgangspunkt for fiksjon. Lag et fiktivt minnekart som skiller personlige referanser fra oppdiktede hendelser.",
+          "fr": "Wells décrit les photos et vidéos familiales comme point de départ. Créez une planche fictive distinguant références et événements inventés.",
+          "pt": "Wells descreve fotos e vídeos familiares como ponto de partida. Crie painel fictício distinguindo referências e acontecimentos inventados."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "aftersun-rehearsal",
+        "area": "camera",
+        "prompt": {
+          "en": "How can photography support a rehearsed parent-child relationship?",
+          "nb": "Hvordan kan foto støtte en innøvd forelder-barn-relasjon?",
+          "fr": "Comment la photographie soutient-elle une relation parent-enfant répétée ?",
+          "pt": "Como pode fotografia apoiar uma relação parental ensaiada?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Require children to disclose private distress for authenticity",
+              "nb": "Krev at barn avslører privat uro for autentisitet",
+              "fr": "Exiger des confidences douloureuses pour l’authenticité",
+              "pt": "Exigir revelação de sofrimento privado para autenticidade"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose lensing without reviewing actor movement",
+              "nb": "Velg optikk uten å vurdere skuespillerbevegelse",
+              "fr": "Choisir les optiques sans examiner les mouvements",
+              "pt": "Escolher óticas sem rever movimentos dos atores"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test framing with age-appropriate supported rehearsals",
+              "nb": "Prøv utsnitt med alderstilpassede tilrettelagte prøver",
+              "fr": "Tester les cadres avec des répétitions adaptées à l’âge",
+              "pt": "Testar enquadramentos com ensaios adaptados à idade"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Oke describes six weeks of preparation and two weeks of rehearsals. Test framing and performance together in a neutral, safeguarded fictional exercise.",
+          "nb": "Oke beskriver seks ukers forberedelse og to ukers prøver. Prøv utsnitt og spill sammen i en nøytral fiktiv øvelse med trygghetstiltak.",
+          "fr": "Oke décrit six semaines de préparation et deux de répétitions. Testez ensemble cadre et jeu dans un exercice fictif protégé.",
+          "pt": "Oke descreve seis semanas de preparação e duas de ensaios. Teste enquadramento e interpretação num exercício fictício protegido."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "aftersun-memory",
+        "area": "sound",
+        "prompt": {
+          "en": "How can contrasting image textures and music suggest remembered time?",
+          "nb": "Hvordan kan kontrasterende bildeteksturer og musikk antyde erindret tid?",
+          "fr": "Comment textures et musique suggèrent-elles le temps remémoré ?",
+          "pt": "Como podem texturas e música sugerir tempo recordado?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume a period song proves the exact date of a scene",
+              "nb": "Anta at en tidsriktig sang beviser scenens eksakte dato",
+              "fr": "Supposer qu’une chanson d’époque prouve la date exacte",
+              "pt": "Supor que canção de época prova data exata"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare fictional camcorder fragments with original sound cues",
+              "nb": "Sammenlign fiktive videokamerafragmenter med egne lydinnslag",
+              "fr": "Comparer des fragments de caméscope fictifs et des sons originaux",
+              "pt": "Comparar fragmentos fictícios de vídeo com sons originais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Explain every remembered detail through continuous narration",
+              "nb": "Forklar alle minner gjennom kontinuerlig fortellerstemme",
+              "fr": "Expliquer chaque souvenir par une narration continue",
+              "pt": "Explicar cada memória com narração contínua"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Wells discusses the camcorder viewpoint, editorial discoveries and period songs. Compare original fragments and sound transitions without copying the film's music.",
+          "nb": "Wells omtaler videokameraperspektiv, klippeoppdagelser og tidsriktige sanger. Sammenlign egne fragmenter og lydoverganger uten å kopiere filmens musikk.",
+          "fr": "Wells évoque le caméscope, les découvertes de montage et les chansons d’époque. Comparez des fragments et transitions originaux sans copier la musique.",
+          "pt": "Wells aborda vídeo, descobertas de montagem e canções de época. Compare fragmentos e transições originais sem copiar música."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_everything_everywhere_all_at_once_2022",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Distinct universe grammar, compact effects teams and sonic transitions",
+      "nb": "Ulike universgrammatikker, små effektteam og lydoverganger",
+      "fr": "Grammaires d’univers, petites équipes d’effets et transitions sonores",
+      "pt": "Gramáticas de universos, equipas pequenas de efeitos e transições sonoras"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "Everything Everywhere All at Once Producer Jonathan Wang on Making an Oscar Juggernaut",
+        "publisher": "The Credits / Motion Picture Association",
+        "url": "https://www.motionpictures.org/2023/01/everything-everywhere-all-at-once-producer-jonathan-wang-on-making-an-oscar-juggernaut/"
+      },
+      {
+        "id": "s2",
+        "title": "The Silliest Use of IMAX in the History of IMAX: DP Larkin Seiple on Everything Everywhere All at Once",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/114590-interview-cinematographer-larkin-seiple-everything-everywhere-all-at-once/"
+      },
+      {
+        "id": "s3",
+        "title": "All These Different Michelles Are the Stars of Their Different Stories: The Daniels on Everything Everywhere All At Once",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/113871-everything-everywhere-all-at-once/"
+      },
+      {
+        "id": "s4",
+        "title": "The 2023 Oscar for Best Picture goes to Everything Everywhere All at Once",
+        "publisher": "ARRI",
+        "url": "https://www.arri.com/news-en/arri-cameras-lenses-and-lighting-shine-behind-2023-oscar-winners/the-2023-oscar-for-best-picture-goes-to-everything-everywhere-al-312720"
+      },
+      {
+        "id": "s5",
+        "title": "The invisible VFX of Everything Everywhere All at Once",
+        "publisher": "befores & afters",
+        "url": "https://beforesandafters.com/2022/08/03/magazine-preview-the-invisible-vfx-of-everything-everywhere-all-at-once/"
+      },
+      {
+        "id": "s6",
+        "title": "Everything Everywhere All at Once - Editing a Movie Made of Movies",
+        "publisher": "Frame.io",
+        "url": "https://blog.frame.io/2022/04/13/art-of-the-cut-everything-everywhere-all-at-once/"
+      },
+      {
+        "id": "s7",
+        "title": "Inside The Sound of Everything Everywhere All At Once",
+        "publisher": "Mix",
+        "url": "https://www.mixonline.com/news/everything-everywhere-all-at-once"
+      },
+      {
+        "id": "s8",
+        "title": "Adobe Video and 3D Technologies take center stage at the 2023 Oscars",
+        "publisher": "Adobe",
+        "url": "https://blog.adobe.com/en/publish/2023/03/13/adobe-video-3d-tech-center-stage-2023-oscars"
+      }
+    ],
+    "questions": [
+      {
+        "id": "everything-grammar",
+        "area": "camera",
+        "prompt": {
+          "en": "How can fictional universes remain visually distinguishable?",
+          "nb": "Hvordan kan fiktive universer forbli visuelt adskilte?",
+          "fr": "Comment distinguer visuellement des univers fictifs ?",
+          "pt": "Como distinguir visualmente universos fictícios?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Assign each universe tested framing, optics and color rules",
+              "nb": "Gi hvert univers testede regler for utsnitt, optikk og farge",
+              "fr": "Attribuer à chaque univers des règles testées de cadre, optique et couleur",
+              "pt": "Atribuir a cada universo regras testadas de quadro, ótica e cor"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Change every visual rule randomly in each shot",
+              "nb": "Endre alle bilderegler tilfeldig i hvert bilde",
+              "fr": "Changer toutes les règles au hasard à chaque plan",
+              "pt": "Mudar regras ao acaso em cada plano"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use identical image treatment without narrative motivation",
+              "nb": "Bruk identisk bildebehandling uten dramatisk begrunnelse",
+              "fr": "Employer le même traitement sans motivation narrative",
+              "pt": "Usar tratamento igual sem motivação narrativa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Seiple and the Daniels describe distinct lens, aspect-ratio and color languages. Design original style tests and verify that viewers recognize each invented universe.",
+          "nb": "Seiple og Daniels beskriver ulike objektiv-, format- og fargespråk. Lag egne stilprøver og sjekk at seere gjenkjenner hvert oppdiktet univers.",
+          "fr": "Seiple et les Daniels décrivent des langages optiques et chromatiques distincts. Créez des essais originaux et vérifiez la reconnaissance des univers.",
+          "pt": "Seiple e Daniels descrevem linguagens óticas e cromáticas distintas. Crie testes originais e verifique reconhecimento dos universos."
+        },
+        "sourceIds": [
+          "s2",
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "everything-effects",
+        "area": "animation",
+        "prompt": {
+          "en": "How can a compact effects team prioritize a complex film?",
+          "nb": "Hvordan kan et lite effektteam prioritere en kompleks film?",
+          "fr": "Comment une petite équipe d’effets priorise-t-elle un film complexe ?",
+          "pt": "Como pode equipa pequena de efeitos priorizar um filme complexo?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Build every effect from scratch regardless of useful footage",
+              "nb": "Bygg alle effekter fra bunnen uansett nyttige opptak",
+              "fr": "Créer chaque effet de zéro malgré les prises utiles",
+              "pt": "Criar cada efeito do zero apesar de imagens úteis"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume a small team means no review process",
+              "nb": "Anta at et lite team ikke trenger gjennomgang",
+              "fr": "Supposer qu’une petite équipe dispense de vérification",
+              "pt": "Supor que equipa pequena dispensa revisão"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan practical source elements and track composite revisions",
+              "nb": "Planlegg praktiske bildeelementer og følg komposittrevisjoner",
+              "fr": "Prévoir éléments pratiques et suivre les révisions de composites",
+              "pt": "Planear elementos práticos e acompanhar revisões de composições"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Stoltz describes a five-person core effects team and practical-base compositing. Plan a small original effects sequence with clear ownership and versioning.",
+          "nb": "Stoltz beskriver et effektkjerneteam på fem og kompositering med praktiske elementer. Planlegg en liten original effektsekvens med tydelig ansvar og versjonering.",
+          "fr": "Stoltz décrit cinq personnes au cœur des effets et des composites pratiques. Préparez une séquence originale avec responsabilités et versions.",
+          "pt": "Stoltz descreve núcleo de cinco pessoas e composição com base prática. Planeie sequência original com responsabilidades e versões."
+        },
+        "sourceIds": [
+          "s1",
+          "s5",
+          "s8"
+        ]
+      },
+      {
+        "id": "everything-transition",
+        "area": "sound",
+        "prompt": {
+          "en": "How can recurring sound help viewers follow rapid universe transitions?",
+          "nb": "Hvordan kan tilbakevendende lyd hjelpe seerne å følge raske universoverganger?",
+          "fr": "Comment le son récurrent aide-t-il à suivre les changements d’univers ?",
+          "pt": "Como pode som recorrente ajudar a seguir transições de universos?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Wait for picture lock before testing all sonic continuity",
+              "nb": "Vent til bildelås før all lydkontinuitet prøves",
+              "fr": "Attendre le verrouillage image pour tester la continuité sonore",
+              "pt": "Esperar bloqueio de imagem para testar continuidade sonora"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test original transition cues during rough-cut review",
+              "nb": "Prøv originale overgangslyder under grovklippgjennomgang",
+              "fr": "Tester des sons de transition originaux au prémontage",
+              "pt": "Testar sons de transição originais na montagem provisória"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Introduce unrelated sounds at every transition",
+              "nb": "Introduser urelaterte lyder ved hver overgang",
+              "fr": "Introduire des sons sans rapport à chaque transition",
+              "pt": "Introduzir sons sem relação em cada transição"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Rogers describes temporary editorial sound and the sound team documents a recurring transition language. Compare original cues against a short montage before locking it.",
+          "nb": "Rogers beskriver midlertidig klippelyd og lydteamet dokumenterer et tilbakevendende overgangsspråk. Sammenlign egne innslag mot en kort montasje før bildelås.",
+          "fr": "Rogers décrit le son provisoire et l’équipe un langage récurrent de transition. Comparez des sons originaux avant verrouillage du montage.",
+          "pt": "Rogers descreve som temporário e a equipa uma linguagem recorrente. Compare sons originais antes de bloquear montagem."
+        },
+        "sourceIds": [
+          "s6",
+          "s7"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_banshees_of_inisherin_2022",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Period costume, landscape relationships and tonal editing",
+      "nb": "Historiske kostymer, landskapsrelasjoner og toneklipping",
+      "fr": "Costumes d’époque, paysage et montage tonal",
+      "pt": "Figurinos de época, paisagem e montagem tonal"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The Banshees of Inisherin",
+        "publisher": "La Biennale di Venezia",
+        "url": "https://www.labiennale.org/en/cinema/2022/venezia-79-competition/banshees-inisherin"
+      },
+      {
+        "id": "s1",
+        "title": "The Banshees of Inisherin",
+        "publisher": "Searchlight Pictures",
+        "url": "https://www.searchlightpictures.com/the-banshees-of-inisherin"
+      },
+      {
+        "id": "s2",
+        "title": "A Wardrobe of Coats: Costume Designer Eimer Ní Mhaoldomhnaigh on The Banshees of Inisherin",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/117783-interview-costume-designer-eimer-ni-mhaoldomhnaigh-the-banshees-of-inisherin/"
+      },
+      {
+        "id": "s3",
+        "title": "Banshees of Inisherin editor says key was testing options",
+        "publisher": "TheWrap",
+        "url": "https://www.thewrap.com/banshees-of-inisherin-editing-mikkel-eg-nielsen-interview/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "banshees-costume",
+        "area": "research",
+        "prompt": {
+          "en": "How can period clothing express character and environment?",
+          "nb": "Hvordan kan historiske klær uttrykke karakter og miljø?",
+          "fr": "Comment les vêtements d’époque expriment-ils personnage et milieu ?",
+          "pt": "Como podem roupas de época exprimir personagem e ambiente?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Research practical clothing and test color against locations",
+              "nb": "Undersøk praktiske klær og prøv farger mot opptakssteder",
+              "fr": "Documenter les vêtements pratiques et tester les couleurs en décor",
+              "pt": "Pesquisar vestuário prático e testar cores nos locais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose costumes only for decorative beauty",
+              "nb": "Velg kostymer bare for dekorativ skjønnhet",
+              "fr": "Choisir les costumes pour leur seule beauté",
+              "pt": "Escolher figurinos apenas pela beleza"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore historical material and character occupation",
+              "nb": "Ignorer historiske materialer og karakterens yrke",
+              "fr": "Ignorer matières historiques et métier du personnage",
+              "pt": "Ignorar materiais históricos e profissão da personagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Ní Mhaoldomhnaigh describes period research and island clothing choices. Design a fictional costume board linking practical materials, character and landscape.",
+          "nb": "Ní Mhaoldomhnaigh beskriver historisk research og klær for øymiljøet. Lag et fiktivt kostymekart som knytter materialer, karakter og landskap sammen.",
+          "fr": "Ní Mhaoldomhnaigh décrit recherche historique et vêtements insulaires. Créez une planche reliant matières, personnage et paysage.",
+          "pt": "Ní Mhaoldomhnaigh descreve pesquisa histórica e vestuário insular. Crie painel ligando materiais, personagem e paisagem."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "banshees-landscape",
+        "area": "camera",
+        "prompt": {
+          "en": "How can landscape and costume work together in a composition?",
+          "nb": "Hvordan kan landskap og kostymer samspille i et utsnitt?",
+          "fr": "Comment paysage et costumes dialoguent-ils dans un cadre ?",
+          "pt": "Como podem paisagem e figurinos dialogar no enquadramento?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose camera angles without examining costume contrast",
+              "nb": "Velg kameravinkler uten å undersøke kostymekontrast",
+              "fr": "Choisir les angles sans examiner le contraste des costumes",
+              "pt": "Escolher ângulos sem examinar contraste dos figurinos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume period costumes require one fixed lens",
+              "nb": "Anta at historiske kostymer krever ett fast objektiv",
+              "fr": "Supposer que les costumes imposent une optique fixe",
+              "pt": "Supor que figurinos exigem uma objetiva fixa"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare silhouette and palette in contrasting outdoor frames",
+              "nb": "Sammenlign silhuett og palett i kontrasterende utendørsutsnitt",
+              "fr": "Comparer silhouettes et palettes dans différents cadres extérieurs",
+              "pt": "Comparar silhuetas e paletas em quadros exteriores distintos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The costume interview describes collaboration with landscape and character design. Test original outdoor compositions without inventing exact camera settings.",
+          "nb": "Kostymeintervjuet beskriver samarbeid med landskap og karakterdesign. Prøv egne utendørsutsnitt uten å finne på eksakte kamerainnstillinger.",
+          "fr": "L’entretien décrit la collaboration avec paysage et personnages. Testez des cadres extérieurs sans inventer de réglages caméra.",
+          "pt": "A entrevista descreve colaboração com paisagem e personagens. Teste quadros exteriores sem inventar parâmetros de câmara."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "banshees-tone",
+        "area": "sound",
+        "prompt": {
+          "en": "How can dialogue pauses shift a scene between comedy and drama?",
+          "nb": "Hvordan kan dialogpauser flytte en scene mellom komedie og drama?",
+          "fr": "Comment les pauses font-elles passer une scène de la comédie au drame ?",
+          "pt": "Como podem pausas deslocar cena entre comédia e drama?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Explain every tonal change with emphatic music",
+              "nb": "Forklar alle toneskifter med påtrengende musikk",
+              "fr": "Expliquer chaque changement par une musique insistante",
+              "pt": "Explicar cada mudança com música insistente"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare alternate reaction holds and restrained sound cues",
+              "nb": "Sammenlign alternative reaksjonsbilder og dempede lydinnslag",
+              "fr": "Comparer réactions prolongées et sons retenus",
+              "pt": "Comparar reações prolongadas e sons contidos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Cut every exchange at an identical pace",
+              "nb": "Klipp alle samtaler i identisk tempo",
+              "fr": "Monter chaque échange au même rythme",
+              "pt": "Montar cada troca ao mesmo ritmo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Nielsen describes testing editorial options for comedy, drama, performance and sound. Compare alternate versions of a new neutral conversation.",
+          "nb": "Nielsen beskriver prøving av klippevalg for komedie, drama, spill og lyd. Sammenlign alternative versjoner av en ny nøytral samtale.",
+          "fr": "Nielsen décrit des variantes de montage pour comédie, drame, jeu et son. Comparez des versions d’une conversation neutre originale.",
+          "pt": "Nielsen descreve variantes de montagem para comédia, drama, interpretação e som. Compare versões de conversa neutra original."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_triangle_of_sadness_2022",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Textual storyboards, composite framing and ensemble satire",
+      "nb": "Tekstbasert storyboard, sammensatte bilder og ensemblesatire",
+      "fr": "Découpage textuel, cadres composites et satire collective",
+      "pt": "Storyboard textual, quadros compostos e sátira coletiva"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Triangle of Sadness",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/triangle-of-sadness/"
+      },
+      {
+        "id": "s1",
+        "title": "ARRI technology behind the scenes of Cannes 2022",
+        "publisher": "ARRI",
+        "url": "https://www.arri.com/news-en/arri-technology-in-cannes-2022"
+      },
+      {
+        "id": "s2",
+        "title": "Fredrik Wenzel FSF: Triangle of Sadness",
+        "publisher": "Cinematography World",
+        "url": "https://www.cinematography.world/ship-of-fools-fredrik-wenzel-fsf-triangle-of-sadness/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "triangle-prep",
+        "area": "research",
+        "prompt": {
+          "en": "How can a prose-like script become a shared shooting plan?",
+          "nb": "Hvordan kan et prosalignende manus bli en felles opptaksplan?",
+          "fr": "Comment un scénario en prose devient-il un plan de tournage commun ?",
+          "pt": "Como pode argumento em prosa tornar-se plano de rodagem comum?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Translate scene descriptions into blocking and textual shot plans",
+              "nb": "Oversett scenebeskrivelser til blokkering og tekstbaserte bildeplaner",
+              "fr": "Traduire descriptions en placements et découpage textuel",
+              "pt": "Traduzir descrições em marcações e planos textuais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Skip scene breakdown because the script is already written",
+              "nb": "Hopp over scenenedbrytning fordi manuset er skrevet",
+              "fr": "Omettre le découpage puisque le scénario est écrit",
+              "pt": "Omitir decupagem porque argumento já está escrito"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Let departments interpret spatial relations independently",
+              "nb": "La avdelingene tolke romforhold uavhengig",
+              "fr": "Laisser les équipes interpréter l’espace indépendamment",
+              "pt": "Deixar equipas interpretar espaço independentemente"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Wenzel describes thirty-five days of scene breakdown and textual storyboarding. Prepare a shared plan for an original ensemble scene.",
+          "nb": "Wenzel beskriver 35 dager med scenenedbrytning og tekstbasert storyboard. Forbered en felles plan for en original ensemblescene.",
+          "fr": "Wenzel décrit trente-cinq jours de découpage textuel. Préparez un plan commun pour une scène collective originale.",
+          "pt": "Wenzel descreve trinta e cinco dias de decupagem textual. Prepare plano comum para cena coletiva original."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "triangle-composite",
+        "area": "animation",
+        "prompt": {
+          "en": "How can selected details from different takes form a coherent frame?",
+          "nb": "Hvordan kan utvalgte detaljer fra ulike tagninger danne ett sammenhengende bilde?",
+          "fr": "Comment des détails de prises distinctes forment-ils un cadre cohérent ?",
+          "pt": "Como podem detalhes de tomadas distintas formar quadro coerente?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume a finished image always represents one intact take",
+              "nb": "Anta at et ferdig bilde alltid representerer én intakt tagning",
+              "fr": "Supposer que chaque image finale vient d’une prise intacte",
+              "pt": "Supor que cada imagem final vem de uma tomada intacta"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Join elements without checking perspective or timing",
+              "nb": "Slå sammen elementer uten å sjekke perspektiv eller timing",
+              "fr": "Assembler sans vérifier perspective ni rythme",
+              "pt": "Juntar elementos sem verificar perspetiva ou ritmo"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Track source takes and verify visual and performance continuity",
+              "nb": "Spor kildetagninger og verifiser visuell kontinuitet og spill",
+              "fr": "Suivre les prises sources et vérifier continuité visuelle et jeu",
+              "pt": "Rastrear tomadas de origem e verificar continuidade visual e interpretação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Wenzel describes stitching takes, inserts and frame extensions. Create a neutral composite test with explicit source tracking rather than attributing exact methods to particular shots.",
+          "nb": "Wenzel beskriver sammensying av tagninger, innskudd og bildeutvidelser. Lag en nøytral komposittprøve med tydelig kildesporing uten å tilskrive bestemte bilder eksakte metoder.",
+          "fr": "Wenzel décrit assemblages, inserts et extensions. Créez un composite neutre avec traçabilité sans attribuer de méthode exacte à un plan.",
+          "pt": "Wenzel descreve junções, inserções e extensões. Crie composição neutra rastreável sem atribuir método exato a um plano."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "triangle-satire",
+        "area": "camera",
+        "prompt": {
+          "en": "How can ensemble staging communicate unequal social relationships?",
+          "nb": "Hvordan kan ensembleiscenesettelse formidle ulike sosiale maktforhold?",
+          "fr": "Comment le placement collectif communique-t-il des rapports sociaux inégaux ?",
+          "pt": "Como pode encenação coletiva comunicar relações sociais desiguais?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat social position as proof of individual character traits",
+              "nb": "Behandle sosial posisjon som bevis på individuelle karaktertrekk",
+              "fr": "Traiter la position sociale comme preuve du caractère",
+              "pt": "Tratar posição social como prova de traços individuais"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare sightlines and reaction timing in a fictional group scene",
+              "nb": "Sammenlign siktlinjer og reaksjonstiming i en fiktiv gruppescene",
+              "fr": "Comparer axes et rythme des réactions dans une scène fictive",
+              "pt": "Comparar linhas de visão e ritmo de reações em cena fictícia"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Place every participant identically without dramatic purpose",
+              "nb": "Plasser alle deltakere identisk uten dramatisk formål",
+              "fr": "Placer tous les participants pareillement sans raison dramatique",
+              "pt": "Colocar todos os participantes igualmente sem motivo dramático"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The director-DP preparation account documents detailed blocking and the fashion-world starting point. Test an original satirical group scene as a formal exercise, not a reconstruction.",
+          "nb": "Regissør-fotografkilden dokumenterer detaljert blokkering og moteverdenen som utgangspunkt. Prøv en original satirisk gruppescene som formøvelse, ikke rekonstruksjon.",
+          "fr": "La source décrit placements détaillés et point de départ dans la mode. Testez une satire collective originale, non une reconstitution.",
+          "pt": "A fonte descreve marcações detalhadas e origem no mundo da moda. Teste sátira coletiva original, não reconstrução."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_decision_to_leave_2022",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Restricted camera grammar, composite locations and invisible effects",
+      "nb": "Avgrenset kameragrammatikk, sammensatte steder og usynlige effekter",
+      "fr": "Grammaire caméra restreinte, lieux composites et effets invisibles",
+      "pt": "Gramática de câmara restrita, locais compostos e efeitos invisíveis"
+    },
+    "sources": [
+      {
+        "id": "s2",
+        "title": "Kim Ji-yong / Heojil Kyolshim • Decision To Leave",
+        "publisher": "Cinematography World",
+        "url": "https://www.cinematography.world/come-what-may-kim-ji-yong-heojil-kyolshim-decision-to-leave/"
+      },
+      {
+        "id": "s3",
+        "title": "Kim Ji-yong / Decision to Leave",
+        "publisher": "British Cinematographer",
+        "url": "https://britishcinematographer.co.uk/kim-ji-yong-decision-to-leave/"
+      },
+      {
+        "id": "s4",
+        "title": "DECISION TO LEAVE LEAVES THE VISUAL EFFECTS DECISIONS TO LEE JOEN-HYOUNG",
+        "publisher": "VFX Voice",
+        "url": "https://vfxvoice.com/decision-to-leave-leaves-the-visual-effects-decisions-to-lee-joen-hyoung/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "decision-view",
+        "area": "camera",
+        "prompt": {
+          "en": "How can camera rules shape restricted narrative knowledge?",
+          "nb": "Hvordan kan kameraregler forme avgrenset fortellerkunnskap?",
+          "fr": "Comment des règles caméra façonnent-elles un savoir narratif restreint ?",
+          "pt": "Como podem regras de câmara moldar conhecimento narrativo restrito?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Storyboard viewpoint limits and motivated exceptions",
+              "nb": "Lag storyboard for perspektivgrenser og begrunnede unntak",
+              "fr": "Prévoir limites du point de vue et exceptions motivées",
+              "pt": "Planear limites de perspetiva e exceções motivadas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Reveal every character's private knowledge from the start",
+              "nb": "Avslør alle karakterers private kunnskap fra starten",
+              "fr": "Révéler tous les savoirs privés dès le départ",
+              "pt": "Revelar todo conhecimento privado desde o início"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Change camera rules at random between connected shots",
+              "nb": "Endre kameraregler tilfeldig mellom sammenhengende bilder",
+              "fr": "Changer les règles caméra au hasard entre plans liés",
+              "pt": "Mudar regras de câmara ao acaso entre planos ligados"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Park and Kim describe shot-by-shot planning and restricted camera rules. Create a neutral scene with explicit viewpoint constraints and test what viewers can infer.",
+          "nb": "Park og Kim beskriver detaljert bildeplanlegging og avgrensede kameraregler. Lag en nøytral scene med tydelige perspektivgrenser og prøv hva seerne kan utlede.",
+          "fr": "Park et Kim décrivent découpage détaillé et règles restreintes. Créez une scène neutre aux limites explicites et testez les inférences.",
+          "pt": "Park e Kim descrevem planeamento detalhado e regras restritas. Crie cena neutra com limites explícitos e teste inferências."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "decision-geography",
+        "area": "research",
+        "prompt": {
+          "en": "How can different locations be combined into one fictional landscape?",
+          "nb": "Hvordan kan ulike steder kombineres til ett fiktivt landskap?",
+          "fr": "Comment réunir plusieurs lieux en un paysage fictif ?",
+          "pt": "Como reunir vários locais numa paisagem fictícia?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume all parts of a location sequence share one real site",
+              "nb": "Anta at alle deler av en stedssekvens deler ett virkelig sted",
+              "fr": "Supposer que toute séquence se déroule sur un seul lieu réel",
+              "pt": "Supor que toda sequência decorre num único local real"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore weather and light differences between source images",
+              "nb": "Ignorer vær- og lysforskjeller mellom kildebilder",
+              "fr": "Ignorer les différences de météo et lumière entre sources",
+              "pt": "Ignorar diferenças de clima e luz entre imagens de origem"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Match horizon, light and spatial references in advance",
+              "nb": "Samordne horisont, lys og romreferanser på forhånd",
+              "fr": "Harmoniser horizon, lumière et références spatiales",
+              "pt": "Harmonizar horizonte, luz e referências espaciais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The cinematography interviews document a finale constructed from three beaches. Plan a safe original landscape study using still photographs and a provenance map.",
+          "nb": "Fotointervjuene dokumenterer en finale bygget av tre strender. Planlegg en trygg original landskapsstudie med stillbilder og kildeopphavskart.",
+          "fr": "Les entretiens documentent un final construit à partir de trois plages. Préparez une étude sûre avec photos fixes et carte de provenance.",
+          "pt": "As entrevistas documentam final construído a partir de três praias. Planeie estudo seguro com fotografias e mapa de proveniência."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "decision-invisible",
+        "area": "animation",
+        "prompt": {
+          "en": "How can invisible effects support a carefully designed frame?",
+          "nb": "Hvordan kan usynlige effekter støtte et nøye utformet bilde?",
+          "fr": "Comment les effets invisibles servent-ils un cadre soigneusement conçu ?",
+          "pt": "Como podem efeitos invisíveis apoiar quadro cuidadosamente concebido?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat every invisible effect as a replacement for cinematography",
+              "nb": "Behandle alle usynlige effekter som erstatning for foto",
+              "fr": "Traiter tout effet invisible comme substitut à la photographie",
+              "pt": "Tratar efeito invisível como substituto da fotografia"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Review subtle composite revisions against the photographed plate",
+              "nb": "Vurder diskrete komposittrevisjoner mot realopptaket",
+              "fr": "Revoir les retouches discrètes face à la prise originale",
+              "pt": "Rever retoques discretos perante a imagem original"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use the effects count to infer the exact method of every shot",
+              "nb": "Bruk effektantallet til å utlede eksakt metode for hvert bilde",
+              "fr": "Déduire la méthode de chaque plan du nombre d’effets",
+              "pt": "Deduzir método de cada plano pelo número de efeitos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The VFX interview reports extensive invisible digital mise-en-scène; Park and Kim describe planned integration. Test a neutral subtle composite without inventing shot-specific claims.",
+          "nb": "Effektintervjuet omtaler omfattende usynlig digital iscenesettelse; Park og Kim beskriver planlagt integrasjon. Prøv en nøytral diskret kompositt uten å finne på bildespesifikke påstander.",
+          "fr": "L’entretien VFX décrit une mise en scène numérique invisible et les cinéastes son intégration. Testez un composite discret sans inventer de détails par plan.",
+          "pt": "A entrevista VFX descreve encenação digital invisível e os cineastas integração planeada. Teste composição discreta sem inventar detalhes por plano."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_all_quiet_on_the_western_front_2022",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Material continuity, confined composition and subjective sound",
+      "nb": "Materialkontinuitet, avgrenset bildekomposisjon og subjektiv lyd",
+      "fr": "Continuité matérielle, cadre restreint et son subjectif",
+      "pt": "Continuidade material, quadro restrito e som subjetivo"
+    },
+    "sources": [
+      {
+        "id": "s2",
+        "title": "Shot on ARRI equipment and serviced by ARRI Rental, All Quiet on the Western Front wins the Oscar for Cinematography",
+        "publisher": "ARRI",
+        "url": "https://www.arri.com/news-en/arri-cameras-lenses-and-lighting-shine-behind-2023-oscar-winners/shot-on-arri-equipment-and-serviced-by-arri-rental-all-quiet-on-312722"
+      },
+      {
+        "id": "s3",
+        "title": "How was All Quiet on The Western Front Made?",
+        "publisher": "Netflix Tudum",
+        "url": "https://www.netflix.com/tudum/articles/making-of-all-quiet-on-the-western-front-bts"
+      },
+      {
+        "id": "s4",
+        "title": "Oscar-Nominated Sound Designer Frank Kruse Makes Some Noise on All Quiet on the Western Front",
+        "publisher": "The Credits / Motion Picture Association",
+        "url": "https://www.motionpictures.org/2023/03/oscar-nominated-sound-designer-frank-kruse-makes-some-noise-on-all-quiet-on-the-western-front/"
+      },
+      {
+        "id": "s5",
+        "title": "Filmmaking: Netflix's All Quiet on the Western Front",
+        "publisher": "Post Magazine",
+        "url": "https://www.postmagazine.com/Publications/Post-Magazine/2023/January-February-2023/Filmmaking-Netflixs-I-All-Quiet-on-the-Western-F.aspx"
+      },
+      {
+        "id": "s7",
+        "title": "All Quiet on the Western Front Editor Sven Budelmann on Cutting the Authentically German Take on World War I",
+        "publisher": "Awards Daily",
+        "url": "https://www.awardsdaily.com/2022/12/14/all-quiet-on-the-western-front-editor-sven-budelmann-on-cutting-the-authentically-german-take-on-world-war-i/"
+      },
+      {
+        "id": "s8",
+        "title": "Oscar-Nominated Makeup & Hair Designer Heike Merker Paints With Mud & Blood in All Quiet on the Western Front",
+        "publisher": "The Credits / Motion Picture Association",
+        "url": "https://www.motionpictures.org/2023/03/oscar-nominated-makeup-hair-designer-heike-merker-paints-with-mud-blood-in-all-quiet-on-the-western-front/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "allquiet2022-continuity",
+        "area": "research",
+        "prompt": {
+          "en": "How can weathering continuity be tracked across nonchronological shooting?",
+          "nb": "Hvordan kan slitasjekontinuitet følges ved ikke-kronologisk opptak?",
+          "fr": "Comment suivre le vieillissement des matières en tournage non chronologique ?",
+          "pt": "Como acompanhar desgaste material em rodagem não cronológica?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Create scene-indexed reference photos and material-state records",
+              "nb": "Lag scenebaserte referansebilder og logger for materialtilstand",
+              "fr": "Créer photos de référence et états des matières par scène",
+              "pt": "Criar fotografias de referência e estados materiais por cena"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Apply identical wear to every stage of the story",
+              "nb": "Bruk identisk slitasje i alle fortellingens faser",
+              "fr": "Appliquer la même usure à chaque étape du récit",
+              "pt": "Aplicar desgaste idêntico em todas as etapas"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Rely on memory instead of documenting changing material states",
+              "nb": "Stol på hukommelsen fremfor å dokumentere skiftende materialtilstander",
+              "fr": "Se fier à la mémoire sans documenter les états",
+              "pt": "Confiar na memória sem documentar estados materiais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Production and makeup accounts describe mud and material continuity. Practice with harmless fabric samples and scene records, not a recreation of historical suffering.",
+          "nb": "Produksjons- og sminkekildene beskriver gjørme og materialkontinuitet. Øv med ufarlige stoffprøver og scenelogger, ikke gjenskaping av historisk lidelse.",
+          "fr": "Les sources décrivent boue et continuité matérielle. Exercez-vous avec des tissus et fiches de scène sans rejouer la souffrance historique.",
+          "pt": "As fontes descrevem lama e continuidade material. Pratique com tecidos e fichas de cena sem reencenar sofrimento histórico."
+        },
+        "sourceIds": [
+          "s3",
+          "s8"
+        ]
+      },
+      {
+        "id": "allquiet2022-frame",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a confined set accommodate large-format framing?",
+          "nb": "Hvordan kan en avgrenset kulisse tilpasses storformatutsnitt?",
+          "fr": "Comment un décor exigu accueille-t-il un cadrage grand format ?",
+          "pt": "Como pode cenário restrito acomodar enquadramento de grande formato?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume a larger sensor eliminates spatial constraints",
+              "nb": "Anta at større sensor fjerner rombegrensninger",
+              "fr": "Supposer qu’un grand capteur supprime les contraintes spatiales",
+              "pt": "Supor que sensor maior elimina restrições espaciais"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Build a set without discussing camera access",
+              "nb": "Bygg kulisse uten å diskutere kameratilgang",
+              "fr": "Construire le décor sans discuter l’accès caméra",
+              "pt": "Construir cenário sem discutir acesso da câmara"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test safe camera clearance and perspective in a neutral mock-up",
+              "nb": "Prøv trygg kameraplass og perspektiv i en nøytral modell",
+              "fr": "Tester dégagement caméra et perspective dans une maquette neutre",
+              "pt": "Testar espaço de câmara e perspetiva numa maquete neutra"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Friend discusses large-format equipment in constrained sets; the making-of describes extensive layout preparation. Test a safe neutral interior without reenacting combat.",
+          "nb": "Friend omtaler storformatutstyr i trange kulisser; produksjonskilden beskriver omfattende planlegging. Prøv et trygt nøytralt interiør uten å gjenskape kamp.",
+          "fr": "Friend évoque le grand format en espace restreint et le making-of la préparation. Testez un intérieur neutre sans rejouer de combat.",
+          "pt": "Friend aborda grande formato em espaços restritos e a fonte preparação. Teste interior neutro sem recriar combate."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "allquiet2022-sound",
+        "area": "sound",
+        "prompt": {
+          "en": "How can a subjective sound perspective be built from recorded material?",
+          "nb": "Hvordan kan subjektivt lydperspektiv bygges fra innspilt materiale?",
+          "fr": "Comment construire un point d’écoute subjectif à partir de prises sonores ?",
+          "pt": "Como construir perspetiva sonora subjetiva a partir de gravações?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat designed sounds as actual historical recordings",
+              "nb": "Behandle designede lyder som ekte historiske opptak",
+              "fr": "Traiter les sons conçus comme archives historiques",
+              "pt": "Tratar sons concebidos como arquivos históricos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record safe ambient layers and compare selective listening in context",
+              "nb": "Ta opp trygge miljølydlag og sammenlign selektiv lytting i kontekst",
+              "fr": "Enregistrer des ambiances sûres et comparer l’écoute sélective",
+              "pt": "Gravar ambientes seguros e comparar escuta seletiva"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Make every layer equally prominent throughout",
+              "nb": "Gjør alle lag like fremtredende hele tiden",
+              "fr": "Donner la même présence à toutes les couches",
+              "pt": "Dar presença igual a todas as camadas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Kruse describes wild-track planning and subjective design, while Budelmann discusses pacing. Test an unrelated neutral soundscape and distinguish recording from design.",
+          "nb": "Kruse beskriver planlegging av separate stedslyder og subjektiv design, mens Budelmann omtaler tempo. Prøv et urelatert nøytralt lydlandskap og skill opptak fra design.",
+          "fr": "Kruse décrit ambiances et conception subjective, Budelmann le rythme. Testez un paysage sonore neutre en distinguant prise et conception.",
+          "pt": "Kruse descreve ambientes e design subjetivo, Budelmann ritmo. Teste paisagem sonora neutra distinguindo gravação e design."
+        },
+        "sourceIds": [
+          "s4",
+          "s5",
+          "s7"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_avatar_the_way_of_water_2022",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Performance reference, virtual geometry and iterative visual effects",
+      "nb": "Spillreferanse, virtuell geometri og iterative visuelle effekter",
+      "fr": "Référence de jeu, géométrie virtuelle et effets itératifs",
+      "pt": "Referência de interpretação, geometria virtual e efeitos iterativos"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "Total Immersion for Avatar: The Way of Water",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/articles/avatar-the-way-of-water"
+      },
+      {
+        "id": "s2",
+        "title": "Our Work on Avatar: The Way of Water",
+        "publisher": "Weta FX",
+        "url": "https://www-ext.wetafx.co.nz/articles/our-work-on-avatar-the-way-of-water"
+      },
+      {
+        "id": "s3",
+        "title": "Avatar: The Way of Water",
+        "publisher": "THE THIRD FLOOR",
+        "url": "https://thethirdfloorinc.com/5836/avatar-the-way-of-water/"
+      },
+      {
+        "id": "s4",
+        "title": "Avatar: The Way of Water",
+        "publisher": "Sony Cine",
+        "url": "https://sony-cinematography.com/shot-on-sony/avatar-the-way-of-water/"
+      },
+      {
+        "id": "s5",
+        "title": "Behind the Scenes Workflows of Every 2023 Oscars Best Picture Nominee",
+        "publisher": "Frame.io",
+        "url": "https://blog.frame.io/2023/03/12/2023-oscar-best-picture-workflow-breakdown-every-nominee/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "avatarwater-capture",
+        "area": "animation",
+        "prompt": {
+          "en": "How can reference footage preserve performance during digital character creation?",
+          "nb": "Hvordan kan referanseopptak bevare skuespill ved digital karakterutvikling?",
+          "fr": "Comment les prises de référence préservent-elles le jeu numérique ?",
+          "pt": "Como podem imagens de referência preservar interpretação digital?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare consented performance references with animation revisions",
+              "nb": "Sammenlign samtykkebaserte spillreferanser med animasjonsrevisjoner",
+              "fr": "Comparer références consenties et révisions d’animation",
+              "pt": "Comparar referências consentidas e revisões de animação"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Replace every facial gesture with one generic template",
+              "nb": "Erstatt alle ansiktsgester med én generisk mal",
+              "fr": "Remplacer chaque geste facial par un modèle générique",
+              "pt": "Substituir gestos faciais por modelo genérico"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat capture data as a finished character render",
+              "nb": "Behandle opptaksdata som ferdig karakterrendering",
+              "fr": "Traiter les données de capture comme rendu final",
+              "pt": "Tratar dados de captura como renderização final"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "ASC and Weta describe multi-angle reference and facial performance development. Test a consented dry-land gesture study, without replicating underwater capture conditions.",
+          "nb": "ASC og Weta beskriver flervinkelreferanse og ansiktsspillutvikling. Prøv en samtykkebasert geststudie på land uten å gjenskape undervannsopptak.",
+          "fr": "ASC et Weta décrivent références multiangles et jeu facial. Testez un geste consenti à sec sans reproduire la capture sous-marine.",
+          "pt": "ASC e Weta descrevem referências multiângulo e interpretação facial. Teste gesto consentido em terra sem recriar captura subaquática."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "avatarwater-geometry",
+        "area": "camera",
+        "prompt": {
+          "en": "How can virtual and physical sets share a spatial reference?",
+          "nb": "Hvordan kan virtuelle og fysiske kulisser dele en romreferanse?",
+          "fr": "Comment décors virtuels et physiques partagent-ils une référence spatiale ?",
+          "pt": "Como podem cenários virtuais e físicos partilhar referência espacial?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume a virtual preview is the final rendered image",
+              "nb": "Anta at virtuell forhåndsvisning er ferdig rendering",
+              "fr": "Supposer que l’aperçu virtuel est le rendu final",
+              "pt": "Supor que prévia virtual é renderização final"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore discrepancies between real and virtual geometry",
+              "nb": "Ignorer avvik mellom virkelig og virtuell geometri",
+              "fr": "Ignorer les écarts entre géométries réelle et virtuelle",
+              "pt": "Ignorar diferenças entre geometrias real e virtual"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use scaled geometry and verify alignment in preview",
+              "nb": "Bruk målsatt geometri og verifiser samsvar i forhåndsvisning",
+              "fr": "Utiliser géométrie à l’échelle et vérifier l’alignement en aperçu",
+              "pt": "Usar geometria à escala e verificar alinhamento na prévia"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "THE THIRD FLOOR documents techvis from physical scans and Simulcam supervision. Test alignment between a tabletop model and a simple virtual scene.",
+          "nb": "THE THIRD FLOOR dokumenterer techvis fra fysiske skann og Simulcam-oppfølging. Prøv samsvar mellom en bordmodell og en enkel virtuell scene.",
+          "fr": "THE THIRD FLOOR documente techvis depuis scans physiques et Simulcam. Testez l’alignement d’une maquette et d’une scène virtuelle.",
+          "pt": "THE THIRD FLOOR documenta techvis de digitalizações físicas e Simulcam. Teste alinhamento entre maquete e cena virtual."
+        },
+        "sourceIds": [
+          "s1",
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "avatarwater-handoff",
+        "area": "research",
+        "prompt": {
+          "en": "How can editorial choices remain traceable through virtual production?",
+          "nb": "Hvordan kan klippevalg forbli sporbare gjennom virtuell produksjon?",
+          "fr": "Comment garder les choix de montage traçables en production virtuelle ?",
+          "pt": "Como manter escolhas de montagem rastreáveis em produção virtual?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat performance selection and final compositing as one step",
+              "nb": "Behandle spillvalg og sluttkompositering som ett trinn",
+              "fr": "Traiter sélection du jeu et compositing final comme une étape",
+              "pt": "Tratar seleção de interpretação e composição final como uma etapa"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Version performance selections, virtual cameras and effects handoffs",
+              "nb": "Versjoner spillvalg, virtuelle kameraer og effektoverleveringer",
+              "fr": "Versionner choix de jeu, caméras virtuelles et livraisons d’effets",
+              "pt": "Versionar escolhas de interpretação, câmaras virtuais e entregas de efeitos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Overwrite previous selections without retaining references",
+              "nb": "Overskriv tidligere valg uten å beholde referanser",
+              "fr": "Écraser les choix antérieurs sans garder de références",
+              "pt": "Sobrescrever escolhas anteriores sem guardar referências"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Rivkin describes performance selection, virtual-camera construction and delivery versioning. Design a small original handoff ledger that preserves the source of each decision.",
+          "nb": "Rivkin beskriver spillvalg, virtuell kamerabygging og leveranseversjonering. Lag en liten egen overleveringslogg som bevarer opphavet til hvert valg.",
+          "fr": "Rivkin décrit sélection du jeu, caméra virtuelle et versions de livraison. Créez un registre préservant la provenance des choix.",
+          "pt": "Rivkin descreve seleção de interpretação, câmara virtual e versões de entrega. Crie registo preservando origem de cada decisão."
+        },
+        "sourceIds": [
+          "s2",
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_oppenheimer_2023",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Large-format provenance, parallel workprints and original sound motifs",
+      "nb": "Storformatopphav, parallelle arbeidskopier og originale lydmotiver",
+      "fr": "Provenance grand format, copies de travail parallèles et motifs sonores",
+      "pt": "Proveniência de grande formato, cópias de trabalho paralelas e motivos sonoros"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "Cinematographer Hoyte van Hoytema gets up-close & personal using Kodak 65MM large-format film on Christopher Nolan's Oppenheimer",
+        "publisher": "Kodak",
+        "url": "https://www.kodak.com/en/motion/blog-post/oppenheimer/"
+      },
+      {
+        "id": "s2",
+        "title": "DP Van Hoytema and FotoKem talk 65mm and Oppenheimer",
+        "publisher": "FotoKem",
+        "url": "https://fotokem.com/oppenheimer-hoytema-fotokem/"
+      },
+      {
+        "id": "s3",
+        "title": "Clubhouse Conversations — Oppenheimer",
+        "publisher": "American Society of Cinematographers",
+        "url": "https://theasc.com/videos/clubhouse-conversations-oppenheimer"
+      },
+      {
+        "id": "s6",
+        "title": "The Oscar-Nominated Sound Team Behind Oppenheimer",
+        "publisher": "Dolby Creator Talks",
+        "url": "https://podcasts.apple.com/us/podcast/180-the-oscar-nominated-sound-team-behind-oppenheimer/id1549901182?i=1000645197114"
+      },
+      {
+        "id": "s7",
+        "title": "Double Oscar Nominee Richard King Unveils the Aural Secrets of Oppenheimer and Maestro",
+        "publisher": "Motion Picture Association — The Credits",
+        "url": "https://www.motionpictures.org/2024/03/double-oscar-nominee-richard-king-unveils-the-aural-secrets-of-oppenheimer-and-maestro/"
+      },
+      {
+        "id": "s8",
+        "title": "Oppenheimer editor Jennifer Lame feels the pressure",
+        "publisher": "Los Angeles Times",
+        "url": "https://www.latimes.com/entertainment-arts/awards/story/2023-11-28/oppenheimer-editor-jennifer-lame-christopher-nolan"
+      },
+      {
+        "id": "s9",
+        "title": "Oppenheimer Composer Ludwig Göransson Creates a New Kind of Atomic Scale",
+        "publisher": "Motion Picture Association — The Credits",
+        "url": "https://www.motionpictures.org/2023/07/oppenheimer-composer-ludwig-goransson-creates-a-new-kind-of-atomic-scale/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "oppenheimer-format",
+        "area": "camera",
+        "prompt": {
+          "en": "How should different large-format negative stocks be documented?",
+          "nb": "Hvordan bør ulike storformatnegativer dokumenteres?",
+          "fr": "Comment documenter différentes pellicules négatives grand format ?",
+          "pt": "Como documentar diferentes películas negativas de grande formato?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Separate stock, camera format, lab process and release records",
+              "nb": "Skill filmtype, kameraformat, laboratorieprosess og visningslogger",
+              "fr": "Distinguer pellicule, format caméra, laboratoire et diffusion",
+              "pt": "Distinguir película, formato de câmara, laboratório e exibição"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Infer original stock solely from the final image",
+              "nb": "Utled original filmtype bare fra sluttbildet",
+              "fr": "Déduire la pellicule originale du seul résultat",
+              "pt": "Deduzir película original apenas da imagem final"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume monochrome and color negatives use identical lab chemistry",
+              "nb": "Anta at monokrome og fargenegativer bruker identisk laboratoriekjemi",
+              "fr": "Supposer une chimie identique pour couleur et monochrome",
+              "pt": "Supor química idêntica para cor e monocromático"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Kodak and FotoKem document special 65mm monochrome development and distinct lab processes. Draw a provenance diagram without inventing processing specifications.",
+          "nb": "Kodak og FotoKem dokumenterer særskilt monokrom 65 mm-utvikling og ulike laboratorieprosesser. Tegn et kildeopphavsdiagram uten å finne på prosesspesifikasjoner.",
+          "fr": "Kodak et FotoKem documentent le 65 mm monochrome et des procédés distincts. Dessinez un schéma sans inventer de spécifications.",
+          "pt": "Kodak e FotoKem documentam 65 mm monocromático e processos distintos. Desenhe diagrama sem inventar especificações."
+        },
+        "sourceIds": [
+          "s1",
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "oppenheimer-workprint",
+        "area": "research",
+        "prompt": {
+          "en": "How can a digital edit and physical workprint stay synchronized?",
+          "nb": "Hvordan kan digital klipping og fysisk arbeidskopi holdes synkronisert?",
+          "fr": "Comment synchroniser montage numérique et copie de travail physique ?",
+          "pt": "Como sincronizar montagem digital e cópia de trabalho física?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Discard source identifiers once the first edit is assembled",
+              "nb": "Forkast kildeidentifikatorer når første klipp er satt sammen",
+              "fr": "Écarter les identifiants après le premier montage",
+              "pt": "Descartar identificadores após primeira montagem"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume a digital export automatically conforms the physical print",
+              "nb": "Anta at digital eksport automatisk konformerer fysisk kopi",
+              "fr": "Supposer qu’un export numérique conforme automatiquement la copie",
+              "pt": "Supor que exportação digital conforma automaticamente a cópia"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Track source identifiers and compare corresponding edit versions",
+              "nb": "Spor kildeidentifikatorer og sammenlign tilsvarende klippeversjoner",
+              "fr": "Suivre les identifiants sources et comparer les versions correspondantes",
+              "pt": "Rastrear identificadores de origem e comparar versões correspondentes"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "FotoKem describes keycode and workprint integration; Lame describes parallel digital and physical review. Test a small mock conform log with matched identifiers.",
+          "nb": "FotoKem beskriver keycode og arbeidskopiintegrasjon; Lame omtaler parallell digital og fysisk gjennomgang. Prøv en liten simulert konformlogg med samsvarende identifikatorer.",
+          "fr": "FotoKem décrit intégration keycode et copie de travail ; Lame la revue parallèle. Testez un registre fictif de conformage avec identifiants correspondants.",
+          "pt": "FotoKem descreve integração keycode e cópia de trabalho; Lame revisão paralela. Teste registo simulado com identificadores correspondentes."
+        },
+        "sourceIds": [
+          "s2",
+          "s8"
+        ]
+      },
+      {
+        "id": "oppenheimer-motif",
+        "area": "sound",
+        "prompt": {
+          "en": "How can recurring sound connect subjective memory and editorial rhythm?",
+          "nb": "Hvordan kan tilbakevendende lyd knytte subjektivt minne og klipperytme sammen?",
+          "fr": "Comment un son récurrent relie-t-il mémoire subjective et rythme du montage ?",
+          "pt": "Como pode som recorrente ligar memória subjetiva e ritmo de montagem?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume every sonic transition requires maximum volume",
+              "nb": "Anta at hver lydovergang krever maksimalt volum",
+              "fr": "Supposer que toute transition exige le volume maximal",
+              "pt": "Supor que toda transição exige volume máximo"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Develop original restrained motifs and compare their placement in the cut",
+              "nb": "Utvikle originale dempede motiver og sammenlign plassering i klippen",
+              "fr": "Développer des motifs originaux retenus et comparer leur placement",
+              "pt": "Desenvolver motivos originais contidos e comparar colocação na montagem"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Copy the film's exact music as a permanent temporary track",
+              "nb": "Kopier filmens eksakte musikk som permanent midlertidig spor",
+              "fr": "Copier la musique exacte comme piste provisoire permanente",
+              "pt": "Copiar música exata como pista provisória permanente"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "King discusses subjective sound and recurring motifs; Göransson describes original music used during rough cuts. Create an unrelated safe sound study using original material.",
+          "nb": "King omtaler subjektiv lyd og tilbakevendende motiver; Göransson beskriver original musikk i grovklipp. Lag en urelatert trygg lydstudie med eget materiale.",
+          "fr": "King évoque son subjectif et motifs récurrents ; Göransson musique originale au prémontage. Créez une étude sonore indépendante et sûre.",
+          "pt": "King aborda som subjetivo e motivos recorrentes; Göransson música original na montagem provisória. Crie estudo sonoro independente e seguro."
+        },
+        "sourceIds": [
+          "s6",
+          "s7",
+          "s9"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_barbie_2023",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Scaled scenic construction, coordinated color and musical editing",
+      "nb": "Skalert kulissebygging, samordnet farge og musikalsk klipping",
+      "fr": "Décors à échelle réduite, couleur coordonnée et montage musical",
+      "pt": "Cenários em escala reduzida, cor coordenada e montagem musical"
+    },
+    "sources": [
+      {
+        "id": "s2",
+        "title": "Rodrigo Prieto ASC AMC: The cinematography of Barbie",
+        "publisher": "Panavision",
+        "url": "https://www.panavision.com/highlights/highlights-detail/collector%27s-edition"
+      },
+      {
+        "id": "s4",
+        "title": "Pretty in Pink With Barbie Production Designer Sarah Greenwood & Set Decorator Katie Spencer",
+        "publisher": "Motion Picture Association - The Credits",
+        "url": "https://www.motionpictures.org/2023/07/barbie-production-designer-sarah-greenwood-set-dec-katie-spencer/"
+      },
+      {
+        "id": "s5",
+        "title": "What's Inside Ken's Fur Coat, and More Secrets from Barbie's Costume Designer",
+        "publisher": "Vanity Fair",
+        "url": "https://www.vanityfair.com/hollywood/2023/07/barbie-costume-designer-interview"
+      },
+      {
+        "id": "s6",
+        "title": "Barbie Editor Nick Houy Talks Workflow and VFX",
+        "publisher": "postPerspective",
+        "url": "https://postperspective.com/barbie-editor-nick-houy-talks-workflow-and-vfx/"
+      },
+      {
+        "id": "s7",
+        "title": "Barbie Editor Nick Houy on Leaving Only the A-Plus Jokes",
+        "publisher": "Motion Picture Association - The Credits",
+        "url": "https://www.motionpictures.org/2023/08/barbie-editor-nick-houy-on-leaving-only-the-a-plus-jokes/"
+      },
+      {
+        "id": "s8",
+        "title": "Hit Makers Mark Ronson and Andrew Wyatt on Adding a Pop Punch to Barbie Soundtrack",
+        "publisher": "Motion Picture Association - The Credits",
+        "url": "https://www.motionpictures.org/2024/01/hit-makers-mark-ronson-and-andrew-wyatt-on-adding-a-pop-punch-to-barbie-soundtrack-2/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "barbie-scale",
+        "area": "research",
+        "prompt": {
+          "en": "How can reduced scenic scale support a deliberately artificial world?",
+          "nb": "Hvordan kan redusert kulisseskala støtte en bevisst kunstig verden?",
+          "fr": "Comment une échelle réduite sert-elle un univers volontairement artificiel ?",
+          "pt": "Como pode escala reduzida apoiar universo deliberadamente artificial?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test model proportions, performer sightlines and camera perspective",
+              "nb": "Prøv modellproporsjoner, siktlinjer og kameraperspektiv",
+              "fr": "Tester proportions, axes des acteurs et perspective caméra",
+              "pt": "Testar proporções, linhas de visão e perspetiva da câmara"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Build every prop at real-world scale without testing the effect",
+              "nb": "Bygg alle rekvisitter i virkelig størrelse uten å prøve uttrykket",
+              "fr": "Construire chaque accessoire à taille réelle sans essai",
+              "pt": "Construir adereços em tamanho real sem teste"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume physical sets exclude every digital correction",
+              "nb": "Anta at fysiske kulisser utelukker alle digitale rettelser",
+              "fr": "Supposer que les décors physiques excluent toute retouche",
+              "pt": "Supor que cenários físicos excluem retoques digitais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Design testimony describes a roughly 23 percent reduction and open-front houses; the camera account discusses scenic gags. Test an original tabletop scale model rather than copying the set.",
+          "nb": "Designkilden beskriver cirka 23 prosent reduksjon og åpne husfronter; fotokilden omtaler kulisseeffekter. Prøv en egen bordmodell fremfor å kopiere kulissen.",
+          "fr": "La source décor décrit une réduction d’environ 23 % et des maisons ouvertes ; la source photo des gags scéniques. Testez une maquette originale.",
+          "pt": "A fonte de cenografia descreve redução de cerca de 23% e casas abertas; a fonte de fotografia truques cénicos. Teste maquete original."
+        },
+        "sourceIds": [
+          "s2",
+          "s4"
+        ]
+      },
+      {
+        "id": "barbie-palette",
+        "area": "camera",
+        "prompt": {
+          "en": "How can costume and set colors be coordinated before filming?",
+          "nb": "Hvordan kan kostyme- og kulissefarger samordnes før opptak?",
+          "fr": "Comment coordonner les couleurs des costumes et décors avant tournage ?",
+          "pt": "Como coordenar cores de figurinos e cenários antes da rodagem?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose costume colors independently from set design",
+              "nb": "Velg kostymefarger uavhengig av scenografi",
+              "fr": "Choisir les costumes indépendamment du décor",
+              "pt": "Escolher cores de figurinos independentemente da cenografia"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume one color swatch predicts every photographed surface",
+              "nb": "Anta at én fargeprøve forutsier alle fotograferte flater",
+              "fr": "Supposer qu’un échantillon prédit toutes les surfaces filmées",
+              "pt": "Supor que uma amostra prevê todas as superfícies filmadas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Review shared swatches under intended lighting and camera tests",
+              "nb": "Gjennomgå felles fargeprøver under planlagt lys og kameraprøver",
+              "fr": "Examiner les échantillons communs sous la lumière et la caméra prévues",
+              "pt": "Rever amostras comuns sob luz e câmara previstas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Durran describes costume and set color integration; the design and camera interviews document a controlled visual grammar. Test an original shared palette with different materials.",
+          "nb": "Durran beskriver integrasjon av kostyme- og kulissefarger; design- og fotokildene dokumenterer kontrollert bildegrammatikk. Prøv en egen felles palett med ulike materialer.",
+          "fr": "Durran décrit l’intégration des couleurs costumes et décors ; les sources documentent une grammaire visuelle contrôlée. Testez une palette originale sur diverses matières.",
+          "pt": "Durran descreve integração das cores de figurinos e cenários; fontes documentam gramática visual controlada. Teste paleta original em materiais diversos."
+        },
+        "sourceIds": [
+          "s2",
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "barbie-music",
+        "area": "sound",
+        "prompt": {
+          "en": "How can a musical sequence be revised without losing comic timing?",
+          "nb": "Hvordan kan en musikalsk sekvens revideres uten å miste komisk timing?",
+          "fr": "Comment réviser une séquence musicale sans perdre le rythme comique ?",
+          "pt": "Como rever sequência musical sem perder ritmo cómico?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat songs and underscore as interchangeable layers",
+              "nb": "Behandle sanger og underleggingsmusikk som utskiftbare lag",
+              "fr": "Traiter chansons et musique de fond comme interchangeables",
+              "pt": "Tratar canções e música de fundo como intercambiáveis"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare original musical edits and preserve distinct song and score roles",
+              "nb": "Sammenlign egne musikalske klipp og bevar ulike roller for sang og filmmusikk",
+              "fr": "Comparer montages musicaux originaux et distinguer chanson et musique de film",
+              "pt": "Comparar montagens musicais originais e distinguir canção e música de filme"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Lock all musical timing before reviewing performances",
+              "nb": "Lås all musikalsk timing før gjennomgang av spill",
+              "fr": "Verrouiller le rythme musical avant de revoir le jeu",
+              "pt": "Bloquear ritmo musical antes de rever interpretação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The editor discusses musical recutting and comedy selection; music testimony describes separate song and score development. Test original music and reaction timing together.",
+          "nb": "Klipperen omtaler musikalsk omklipping og komedievalg; musikkilden beskriver separat sang- og scoreutvikling. Prøv egen musikk og reaksjonstiming sammen.",
+          "fr": "Le monteur évoque remontage musical et comédie ; la source musique distingue chansons et partition. Testez musique originale et réactions ensemble.",
+          "pt": "O montador aborda remontagem musical e comédia; a fonte musical distingue canções e partitura. Teste música original e reações em conjunto."
+        },
+        "sourceIds": [
+          "s6",
+          "s7",
+          "s8"
+        ]
+      }
+    ]
   }
 ] as const satisfies readonly SourceBackedCaseWorkshop[];
