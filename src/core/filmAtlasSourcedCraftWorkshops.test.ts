@@ -286,15 +286,28 @@ const ids = [
   "scenario_avatar_the_way_of_water_2022",
   "scenario_oppenheimer_2023",
   "scenario_barbie_2023",
+  "scenario_anatomy_of_a_fall_2023",
+  "scenario_the_zone_of_interest_2023",
+  "scenario_poor_things_2023",
+  "scenario_killers_of_the_flower_moon_2023",
+  "scenario_perfect_days_2023",
+  "scenario_fallen_leaves_2023",
+  "scenario_the_boy_and_the_heron_2023",
+  "scenario_godzilla_minus_one_2023",
+  "scenario_spider_man_across_the_spider_verse_2023",
+  "scenario_dune_part_two_2024",
+  "scenario_flow_2024",
+  "scenario_the_substance_2024",
+  "scenario_anora_2024",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly two hundred and seventy-seven existing cases have eight hundred and thirty-one original, source-backed decisions", () => {
+test("Exactly two hundred and ninety existing cases have eight hundred and seventy original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 277);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 831);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 290);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 870);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -692,6 +705,13 @@ test("Exactly two hundred and seventy-seven existing cases have eight hundred an
       for (const source of workshop.sources) assert.ok(verification.includes(source.url));
     } else if (["scenario_aftersun_2022","scenario_everything_everywhere_all_at_once_2022","scenario_the_banshees_of_inisherin_2022","scenario_triangle_of_sadness_2022","scenario_decision_to_leave_2022","scenario_all_quiet_on_the_western_front_2022","scenario_avatar_the_way_of_water_2022","scenario_oppenheimer_2023","scenario_barbie_2023"].includes(workshop.scenarioId)) {
       const configs: Record<string, [string, string]> = {"scenario_aftersun_2022":["src/ui/data/scenarioProductionVerificationContemporaryEuropeanSocialCareSystemsBatch.ts","scandinavianEuropeanExpansion"],"scenario_everything_everywhere_all_at_once_2022":["src/ui/data/scenarioProductionVerificationEverythingEverywhereAllAtOnce.ts","chapterNineteenEverythingEverywhereAllAtOnceExpansion"],"scenario_the_banshees_of_inisherin_2022":["src/ui/data/scenarioProductionVerificationBritishIrishPlaceBodySystemsBatch.ts","easternIberianBritishExpansion"],"scenario_triangle_of_sadness_2022":["src/ui/data/scenarioProductionVerificationContemporaryEuropeanSocialCareSystemsBatch.ts","festivalWinners2010To2024Expansion"],"scenario_decision_to_leave_2022":["src/ui/data/scenarioProductionVerificationDecisionToLeave.ts","chapterNineteenDecisionToLeaveExpansion"],"scenario_all_quiet_on_the_western_front_2022":["src/ui/data/scenarioProductionVerificationAllQuietOnTheWesternFront.ts","chapterNineteenAllQuietOnTheWesternFrontExpansion"],"scenario_avatar_the_way_of_water_2022":["src/ui/data/scenarioProductionVerificationAvatarWayOfWater.ts","chapterNineteenAvatarWayOfWaterExpansion"],"scenario_oppenheimer_2023":["src/ui/data/scenarioProductionVerificationOppenheimer.ts","chapterNineteenOppenheimerExpansion"],"scenario_barbie_2023":["src/ui/data/scenarioProductionVerificationBarbie.ts","chapterNineteenBarbieExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
+      assert.ok(verification.includes('scenarioId: "' + workshop.scenarioId + '"'));
+      for (const source of workshop.sources) assert.ok(verification.includes(source.url));
+    } else if (["scenario_anatomy_of_a_fall_2023","scenario_the_zone_of_interest_2023","scenario_poor_things_2023","scenario_killers_of_the_flower_moon_2023","scenario_perfect_days_2023","scenario_fallen_leaves_2023","scenario_the_boy_and_the_heron_2023","scenario_godzilla_minus_one_2023","scenario_spider_man_across_the_spider_verse_2023","scenario_dune_part_two_2024","scenario_flow_2024","scenario_the_substance_2024","scenario_anora_2024"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_anatomy_of_a_fall_2023":["src/ui/data/scenarioProductionVerificationAnatomyOfAFall.ts","chapterNineteenAnatomyOfAFallExpansion"],"scenario_the_zone_of_interest_2023":["src/ui/data/scenarioProductionVerificationTheZoneOfInterest.ts","chapterNineteenTheZoneOfInterestExpansion"],"scenario_poor_things_2023":["src/ui/data/scenarioProductionVerificationPoorThings.ts","chapterNineteenPoorThingsExpansion"],"scenario_killers_of_the_flower_moon_2023":["src/ui/data/scenarioProductionVerificationKillersOfTheFlowerMoon.ts","chapterNineteenKillersOfTheFlowerMoonExpansion"],"scenario_perfect_days_2023":["src/ui/data/scenarioProductionVerificationPerfectDays.ts","chapterNineteenPerfectDaysExpansion"],"scenario_fallen_leaves_2023":["src/ui/data/scenarioProductionVerificationFallenLeaves.ts","chapterNineteenFallenLeavesExpansion"],"scenario_the_boy_and_the_heron_2023":["src/ui/data/scenarioProductionVerificationTheBoyAndTheHeron.ts","chapterNineteenTheBoyAndTheHeronExpansion"],"scenario_godzilla_minus_one_2023":["src/ui/data/scenarioProductionVerificationGodzillaMinusOne.ts","chapterNineteenGodzillaMinusOneExpansion"],"scenario_spider_man_across_the_spider_verse_2023":["src/ui/data/scenarioProductionVerificationAcrossTheSpiderVerse.ts","chapterNineteenAcrossTheSpiderVerseExpansion"],"scenario_dune_part_two_2024":["src/ui/data/scenarioProductionVerificationDunePartTwo.ts","chapterNineteenDunePartTwoExpansion"],"scenario_flow_2024":["src/ui/data/scenarioProductionVerificationFlow.ts","chapterNineteenFlowExpansion"],"scenario_the_substance_2024":["src/ui/data/scenarioProductionVerificationTheSubstance.ts","chapterNineteenTheSubstanceExpansion"],"scenario_anora_2024":["src/ui/data/scenarioProductionVerificationAnora.ts","chapterNineteenAnoraExpansion"]};
       const [path, definition] = configs[workshop.scenarioId]!;
       assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
       const verification = readFileSync(path, "utf8");
@@ -1467,4 +1487,21 @@ test("2022–2023 workshops retain film-specific production decisions", () => {
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_avatar_the_way_of_water_2022")?.questions.map(q => q.id), ["avatarwater-capture","avatarwater-geometry","avatarwater-handoff"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_oppenheimer_2023")?.questions.map(q => q.id), ["oppenheimer-format","oppenheimer-workprint","oppenheimer-motif"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_barbie_2023")?.questions.map(q => q.id), ["barbie-scale","barbie-palette","barbie-music"]);
+});
+
+
+test("2023–2024 workshops retain film-specific production decisions", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_anatomy_of_a_fall_2023")?.questions.map(q => q.id), ["anatomy-coverage","anatomy-archive","anatomy-memory"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_zone_of_interest_2023")?.questions.map(q => q.id), ["zoneinterest-research","zoneinterest-observation","zoneinterest-offscreen"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_poor_things_2023")?.questions.map(q => q.id), ["poorthings-world","poorthings-optics","poorthings-score"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_killers_of_the_flower_moon_2023")?.questions.map(q => q.id), ["killersflower-consultation","killersflower-look","killersflower-structure"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_perfect_days_2023")?.questions.map(q => q.id), ["perfectdays-routine","perfectdays-light","perfectdays-records"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_fallen_leaves_2023")?.questions.map(q => q.id), ["fallenleaves-take","fallenleaves-rhythm","fallenleaves-format"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_boy_and_the_heron_2023")?.questions.map(q => q.id), ["boyheron-story","boyheron-motion","boyheron-layers"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_godzilla_minus_one_2023")?.questions.map(q => q.id), ["godzillaminus-workflow","godzillaminus-water","godzillaminus-mix"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_spider_man_across_the_spider_verse_2023")?.questions.map(q => q.id), ["acrossverse-brush","acrossverse-collage","acrossverse-animatic"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_dune_part_two_2024")?.questions.map(q => q.id), ["dunetwo-material","dunetwo-finish","dunetwo-sand"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_flow_2024")?.questions.map(q => q.id), ["flow-previz","flow-animals","flow-render"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_substance_2024")?.questions.map(q => q.id), ["substance-design","substance-effects","substance-sound"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_anora_2024")?.questions.map(q => q.id), ["anora-location","anora-languages","anora-dialogue"]);
 });
