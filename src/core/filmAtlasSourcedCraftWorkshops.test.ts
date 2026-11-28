@@ -364,15 +364,20 @@ const ids = [
   "scenario_anomalisa_2015",
   "scenario_amy_2015",
   "scenario_filmworker_2017",
+  "scenario_leviathan_2014",
+  "scenario_a_pigeon_sat_on_a_branch_reflecting_on_existence_2014",
+  "scenario_the_guilty_2018",
+  "scenario_rams_2015",
+  "scenario_on_body_and_soul_2017",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly three hundred and fifty-five existing cases have one thousand and sixty-five original, source-backed decisions", () => {
+test("Exactly three hundred and sixty existing cases have one thousand and eighty original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 355);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 1065);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 360);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 1080);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -847,6 +852,12 @@ test("Exactly three hundred and fifty-five existing cases have one thousand and 
       if (definition === "seed") assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
       else assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
       const verification = readFileSync(path, "utf8");
+      assert.ok(verification.includes('scenarioId: "' + workshop.scenarioId + '"'));
+      for (const source of workshop.sources) assert.ok(verification.includes(source.url));
+    } else if (["scenario_leviathan_2014","scenario_a_pigeon_sat_on_a_branch_reflecting_on_existence_2014","scenario_the_guilty_2018","scenario_rams_2015","scenario_on_body_and_soul_2017"].includes(workshop.scenarioId)) {
+      const configs: Record<string, string> = {"scenario_leviathan_2014":"src/ui/data/scenarioProductionVerificationLeviathan.ts","scenario_a_pigeon_sat_on_a_branch_reflecting_on_existence_2014":"src/ui/data/scenarioProductionVerificationPigeon.ts","scenario_the_guilty_2018":"src/ui/data/scenarioProductionVerificationTheGuilty.ts","scenario_rams_2015":"src/ui/data/scenarioProductionVerificationRams.ts","scenario_on_body_and_soul_2017":"src/ui/data/scenarioProductionVerificationOnBodyAndSoul.ts"};
+      assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
+      const verification = readFileSync(configs[workshop.scenarioId]!, "utf8");
       assert.ok(verification.includes('scenarioId: "' + workshop.scenarioId + '"'));
       for (const source of workshop.sources) assert.ok(verification.includes(source.url));
     } else if (["scenario_living_in_bondage_1992","scenario_birds_of_passage_2018","scenario_the_motorcycle_diaries_2004","scenario_the_lunchbox_2013","scenario_capernaum_2018","scenario_where_is_the_friend_s_house_1987","scenario_kitchen_stories_2003","scenario_brothers_2015","scenario_drommer_2024","scenario_four_daughters_2023"].includes(workshop.scenarioId)) {
@@ -1749,4 +1760,13 @@ test("Ninth world cinema round preserves film-specific decisions", () => {
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_anomalisa_2015")?.questions.map(q => q.id), ["anomalisa-adapt","anomalisa-miniatures","anomalisa-subjectivity"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_amy_2015")?.questions.map(q => q.id), ["amy-archive","amy-voices","amy-music"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_filmworker_2017")?.questions.map(q => q.id), ["filmworker-credits","filmworker-interviews","filmworker-restoration"]);
+});
+
+
+test("Tenth world cinema round preserves film-specific decisions", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_leviathan_2014")?.questions.map(q => q.id), ["leviathan-landscape","leviathan-design","leviathan-adapt"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_a_pigeon_sat_on_a_branch_reflecting_on_existence_2014")?.questions.map(q => q.id), ["pigeon-tableau","pigeon-perspective","pigeon-motifs"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_guilty_2018")?.questions.map(q => q.id), ["theguilty-realtime","theguilty-voice","theguilty-space"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_rams_2015")?.questions.map(q => q.id), ["rams-research","rams-animals","rams-rhythm"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_on_body_and_soul_2017")?.questions.map(q => q.id), ["bodyandsoul-dream","bodyandsoul-performance","bodyandsoul-sound"]);
 });
