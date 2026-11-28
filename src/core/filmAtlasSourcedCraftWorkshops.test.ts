@@ -389,15 +389,20 @@ const ids = [
   "scenario_blue_jasmine_2013",
   "scenario_call_me_by_your_name_2017",
   "scenario_clockers_1995",
+  "scenario_blindness_2008",
+  "scenario_dheepan_2015",
+  "scenario_45_years_2015",
+  "scenario_crash_2004",
+  "scenario_cafe_society_2016",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly three hundred and eighty existing cases have one thousand one hundred and forty original, source-backed decisions", () => {
+test("Exactly three hundred and eighty-five existing cases have one thousand one hundred and fifty-five original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 380);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 1140);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 385);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 1155);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -888,6 +893,12 @@ test("Exactly three hundred and eighty existing cases have one thousand one hund
       for (const source of workshop.sources) assert.ok(verification.includes(source.url));
     } else if (["scenario_before_sunrise_1995","scenario_before_sunset_2004","scenario_clerks_1994","scenario_fargo_1996","scenario_the_big_lebowski_1998"].includes(workshop.scenarioId)) {
       const configs: Record<string, string> = {"scenario_before_sunrise_1995":"src/ui/data/scenarioProductionVerificationBeforeSunrise.ts","scenario_before_sunset_2004":"src/ui/data/scenarioProductionVerificationBeforeSunset.ts","scenario_clerks_1994":"src/ui/data/scenarioProductionVerificationClerks.ts","scenario_fargo_1996":"src/ui/data/scenarioProductionVerificationFargo.ts","scenario_the_big_lebowski_1998":"src/ui/data/scenarioProductionVerificationBigLebowski.ts"};
+      assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
+      const verification = readFileSync(configs[workshop.scenarioId]!, "utf8");
+      assert.ok(verification.includes('scenarioId: "' + workshop.scenarioId + '"'));
+      for (const source of workshop.sources) assert.ok(verification.includes(source.url));
+    } else if (["scenario_blindness_2008","scenario_dheepan_2015","scenario_45_years_2015","scenario_crash_2004","scenario_cafe_society_2016"].includes(workshop.scenarioId)) {
+      const configs: Record<string, string> = {"scenario_blindness_2008":"src/ui/data/scenarioProductionVerificationBlindness.ts","scenario_dheepan_2015":"src/ui/data/scenarioProductionVerificationDheepan.ts","scenario_45_years_2015":"src/ui/data/scenarioProductionVerification45Years.ts","scenario_crash_2004":"src/ui/data/scenarioProductionVerificationCrash.ts","scenario_cafe_society_2016":"src/ui/data/scenarioProductionVerificationCafeSociety.ts"};
       assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
       const verification = readFileSync(configs[workshop.scenarioId]!, "utf8");
       assert.ok(verification.includes('scenarioId: "' + workshop.scenarioId + '"'));
@@ -1849,4 +1860,13 @@ test("Fourteenth world cinema round preserves film-specific decisions", () => {
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_blue_jasmine_2013")?.questions.map(q => q.id), ["jasmine-memory","jasmine-wardrobe","jasmine-jazz"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_call_me_by_your_name_2017")?.questions.map(q => q.id), ["cmbyn-stock","cmbyn-costume","cmbyn-music"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_clockers_1995")?.questions.map(q => q.id), ["clockers-adaptation","clockers-location","clockers-stock"]);
+});
+
+
+test("Fifteenth world cinema round preserves film-specific decisions", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_blindness_2008")?.questions.map(q => q.id), ["blindness-city","blindness-white","blindness-grade"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_dheepan_2015")?.questions.map(q => q.id), ["dheepan-dialogue","dheepan-camera","dheepan-genre"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_45_years_2015")?.questions.map(q => q.id), ["45years-viewpoint","45years-longtake","45years-carousel"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_crash_2004")?.questions.map(q => q.id), ["crash-interlock","crash-budget","crash-score"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_cafe_society_2016")?.questions.map(q => q.id), ["cafe-digital","cafe-design","cafe-jazz"]);
 });
