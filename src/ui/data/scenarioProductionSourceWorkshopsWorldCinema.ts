@@ -7727,5 +7727,995 @@ export const worldCinemaSourceWorkshops = [
         ]
       }
     ]
+  },
+  {
+    "scenarioId": "scenario_nope_2022",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Large-format imagery, practical spaces and offscreen sound",
+      "nb": "Storformatbilder, fysiske kulisser og lyd utenfor bildet",
+      "fr": "Images grand format, décors réels et son hors champ",
+      "pt": "Imagem de grande formato, cenários físicos e som fora de campo"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Nope",
+        "publisher": "American Film Institute",
+        "url": "https://watch.afi.com/movie/nope"
+      },
+      {
+        "id": "s2",
+        "title": "How Hoyte van Hoytema FSF NSC ASC pioneered with Kodak large format film for the supernatural sensation 'Nope'",
+        "publisher": "Kodak",
+        "url": "https://www.kodak.com/en/motion/blog-post/nope/"
+      },
+      {
+        "id": "s3",
+        "title": "Nope",
+        "publisher": "MPC",
+        "url": "https://www.mpcvfx.com/en/filmography/nope/"
+      },
+      {
+        "id": "s4",
+        "title": "How 'Nope' Production Designer Ruth De Jong Built & Bloodied the Haywood Ranch",
+        "publisher": "Motion Picture Association / The Credits",
+        "url": "https://www.motionpictures.org/2022/07/how-nope-production-designer-ruth-de-jong-built-bloodied-the-haywood-ranch/"
+      },
+      {
+        "id": "s6",
+        "title": "'Nope' Sound Designer Johnnie Burn Puts the Fear in What We Hear",
+        "publisher": "Motion Picture Association / The Credits",
+        "url": "https://www.motionpictures.org/2022/08/nope-sound-designer-johnnie-burn-puts-the-fear-in-what-we-hear/"
+      },
+      {
+        "id": "s7",
+        "title": "'Nope' Composer Michael Abels on Scoring Jordan Peele's Sci-Fi Epic",
+        "publisher": "Motion Picture Association / The Credits",
+        "url": "https://www.motionpictures.org/2022/08/nope-composer-michael-abels-on-scoring-jordan-peeles-sci-fi-epic/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "nope-night",
+        "area": "camera",
+        "prompt": {
+          "en": "The production combined infrared and film imagery for its day-for-night approach. Which approach would you choose for a new production exercise?",
+          "nb": "Produksjonen kombinerte infrarøde bilder og filmopptak for dag-for-natt. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "La production a combiné images infrarouges et pellicule pour la nuit américaine. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A produção combinou imagens infravermelhas e película para noite americana. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare matched test plates before approving the composite",
+              "nb": "Sammenlign samsvarende prøveopptak før komposittbildet godkjennes",
+              "fr": "Comparer les prises tests raccordées avant de valider le composite",
+              "pt": "Comparar imagens de teste correspondentes antes de aprovar a composição"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume different capture systems align without testing",
+              "nb": "Anta at ulike opptakssystemer samsvarer uten testing",
+              "fr": "Supposer que les systèmes concordent sans essai",
+              "pt": "Supor que sistemas diferentes coincidem sem testes"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Decide the final look solely from a camera specification",
+              "nb": "Bestem sluttuttrykket bare ut fra kameraspesifikasjonen",
+              "fr": "Décider du rendu final uniquement selon les spécifications caméra",
+              "pt": "Decidir o visual final apenas pelas especificações da câmara"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The production combined infrared and film imagery for its day-for-night approach. A practical exercise would be to: Compare matched test plates before approving the composite.",
+          "nb": "Produksjonen kombinerte infrarøde bilder og filmopptak for dag-for-natt. En praktisk øvelse vil være å: Sammenlign samsvarende prøveopptak før komposittbildet godkjennes.",
+          "fr": "La production a combiné images infrarouges et pellicule pour la nuit américaine. Un exercice pratique consisterait à : Comparer les prises tests raccordées avant de valider le composite.",
+          "pt": "A produção combinou imagens infravermelhas e película para noite americana. Um exercício prático consistiria em: Comparar imagens de teste correspondentes antes de aprovar a composição."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "nope-space",
+        "area": "research",
+        "prompt": {
+          "en": "The production designer describes usable ranch buildings constructed for multiple viewing directions. Which approach would you choose for a new production exercise?",
+          "nb": "Scenografen beskriver brukbare ranchbygninger bygget for flere synsretninger. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le chef décorateur décrit des bâtiments de ranch utilisables sous plusieurs angles. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O diretor de arte descreve edifícios utilizáveis de vários ângulos. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan entrances, sightlines and camera positions together",
+              "nb": "Planlegg innganger, siktlinjer og kameraposisjoner samlet",
+              "fr": "Planifier ensemble entrées, axes de regard et positions caméra",
+              "pt": "Planear entradas, linhas de visão e posições de câmara em conjunto"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Design only the front facade regardless of blocking",
+              "nb": "Utform bare frontfasaden uavhengig av skuespillernes plassering",
+              "fr": "Concevoir seulement la façade sans tenir compte du jeu",
+              "pt": "Conceber apenas a fachada sem considerar a marcação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The production designer describes usable ranch buildings constructed for multiple viewing directions. A practical exercise would be to: Plan entrances, sightlines and camera positions together.",
+          "nb": "Scenografen beskriver brukbare ranchbygninger bygget for flere synsretninger. En praktisk øvelse vil være å: Planlegg innganger, siktlinjer og kameraposisjoner samlet.",
+          "fr": "Le chef décorateur décrit des bâtiments de ranch utilisables sous plusieurs angles. Un exercice pratique consisterait à : Planifier ensemble entrées, axes de regard et positions caméra.",
+          "pt": "O diretor de arte descreve edifícios utilizáveis de vários ângulos. Um exercício prático consistiria em: Planear entradas, linhas de visão e posições de câmara em conjunto."
+        },
+        "sourceIds": [
+          "s4",
+          "s0"
+        ]
+      },
+      {
+        "id": "nope-sound",
+        "area": "sound",
+        "prompt": {
+          "en": "The sound team describes offscreen ambiguity and deliberate negative space. Which approach would you choose for a new production exercise?",
+          "nb": "Lydteamet beskriver tvetydighet utenfor bildet og bevisst bruk av stillhet. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "L’équipe son décrit l’ambiguïté hors champ et l’usage volontaire du silence. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A equipa de som descreve ambiguidade fora de campo e uso deliberado do silêncio. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Explain every offscreen sound immediately in dialogue",
+              "nb": "Forklar all lyd utenfor bildet umiddelbart i dialog",
+              "fr": "Expliquer immédiatement chaque son hors champ par le dialogue",
+              "pt": "Explicar imediatamente cada som fora de campo no diálogo"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test ambiguous sound cues against a restrained visual scene",
+              "nb": "Prøv tvetydige lydsignaler mot en visuelt tilbakeholden scene",
+              "fr": "Tester des indices sonores ambigus dans une scène visuellement sobre",
+              "pt": "Testar sinais sonoros ambíguos numa cena visualmente contida"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The sound team describes offscreen ambiguity and deliberate negative space. A practical exercise would be to: Test ambiguous sound cues against a restrained visual scene.",
+          "nb": "Lydteamet beskriver tvetydighet utenfor bildet og bevisst bruk av stillhet. En praktisk øvelse vil være å: Prøv tvetydige lydsignaler mot en visuelt tilbakeholden scene.",
+          "fr": "L’équipe son décrit l’ambiguïté hors champ et l’usage volontaire du silence. Un exercice pratique consisterait à : Tester des indices sonores ambigus dans une scène visuellement sobre.",
+          "pt": "A equipa de som descreve ambiguidade fora de campo e uso deliberado do silêncio. Um exercício prático consistiria em: Testar sinais sonoros ambíguos numa cena visualmente contida."
+        },
+        "sourceIds": [
+          "s6",
+          "s7"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_top_gun_maverick_2022",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Multi-camera coverage, production sound and editorial organisation",
+      "nb": "Flerkameradekning, produksjonslyd og klippeorganisering",
+      "fr": "Couverture multicaméra, son direct et organisation du montage",
+      "pt": "Cobertura multicâmara, som direto e organização da montagem"
+    },
+    "sources": [
+      {
+        "id": "s2",
+        "title": "Taking Flight with Top Gun: Maverick",
+        "publisher": "American Society of Cinematographers",
+        "url": "https://theasc.com/article/top-gun-maverick/"
+      },
+      {
+        "id": "s3",
+        "title": "FRCSW Goes to the Movies: Top Gun: Maverick",
+        "publisher": "NAVAIR",
+        "url": "https://www.navair.navy.mil/news/FRCSW-Goes-Movies-Top-Gun-Maverick/Tue-05312022-0924"
+      },
+      {
+        "id": "s4",
+        "title": "How the Top Gun: Maverick Sound Team Ingeniously Captured Raw Emotion Mid-Flight",
+        "publisher": "The Credits / Motion Picture Association",
+        "url": "https://www.motionpictures.org/2022/08/how-the-top-gun-maverick-sound-team-ingeniously-captured-raw-emotion-mid-flight-2/"
+      },
+      {
+        "id": "s5",
+        "title": "Top Gun: Maverick Director Joe Kosinski — Post, VFX and More",
+        "publisher": "postPerspective",
+        "url": "https://postperspective.com/top-gun-maverick-tom-cruise-director-joe-kosinski-talks-post-and-workflow/"
+      },
+      {
+        "id": "s6",
+        "title": "Top Gun: Maverick VFX Supe Ryan Tudhope on How the U.S. Navy Ended Up Being His Team's Greatest Resource",
+        "publisher": "Below the Line",
+        "url": "https://mande.net/btl/awards/top-gun-maverick-vfx-ryan-tudhope-interview"
+      },
+      {
+        "id": "s8",
+        "title": "Top Gun: Maverick",
+        "publisher": "Company 3",
+        "url": "https://www.company3.com/videos/top-gun-maverick-3/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "topgun-coverage",
+        "area": "camera",
+        "prompt": {
+          "en": "The craft accounts describe compact multi-camera coverage under professional engineering oversight. Which approach would you choose for a new production exercise?",
+          "nb": "Fagkildene beskriver kompakt flerkameradekning under profesjonelt ingeniørtilsyn. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les sources décrivent une couverture multicaméra compacte sous contrôle technique professionnel. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "As fontes descrevem cobertura multicâmara compacta sob supervisão técnica profissional. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use a stationary mock-up to test framing and sightlines",
+              "nb": "Bruk en stillestående modell for å prøve utsnitt og siktlinjer",
+              "fr": "Utiliser une maquette fixe pour tester cadres et axes de regard",
+              "pt": "Usar uma maquete estacionária para testar enquadramentos e linhas de visão"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume all cameras provide equally useful coverage",
+              "nb": "Anta at alle kameraer gir like nyttig dekning",
+              "fr": "Supposer que toutes les caméras offrent une couverture équivalente",
+              "pt": "Supor que todas as câmaras oferecem cobertura equivalente"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The craft accounts describe compact multi-camera coverage under professional engineering oversight. A practical exercise would be to: Use a stationary mock-up to test framing and sightlines.",
+          "nb": "Fagkildene beskriver kompakt flerkameradekning under profesjonelt ingeniørtilsyn. En praktisk øvelse vil være å: Bruk en stillestående modell for å prøve utsnitt og siktlinjer.",
+          "fr": "Les sources décrivent une couverture multicaméra compacte sous contrôle technique professionnel. Un exercice pratique consisterait à : Utiliser une maquette fixe pour tester cadres et axes de regard.",
+          "pt": "As fontes descrevem cobertura multicâmara compacta sob supervisão técnica profissional. Um exercício prático consistiria em: Usar uma maquete estacionária para testar enquadramentos e linhas de visão."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "topgun-dialogue",
+        "area": "sound",
+        "prompt": {
+          "en": "The sound interview documents production dialogue and synchronization challenges. Which approach would you choose for a new production exercise?",
+          "nb": "Lydintervjuet dokumenterer opptaksdialog og synkroniseringsutfordringer. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "L’entretien son documente le dialogue direct et les difficultés de synchronisation. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A entrevista de som documenta diálogo direto e desafios de sincronização. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test synchronized dialogue and ambient tracks in a safe studio exercise",
+              "nb": "Prøv synkronisert dialog og miljølyd i en trygg studioøvelse",
+              "fr": "Tester dialogues synchronisés et ambiances dans un exercice en studio sûr",
+              "pt": "Testar diálogo sincronizado e ambientes num exercício seguro de estúdio"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Discard synchronization records after recording",
+              "nb": "Kast synkroniseringsnotater etter opptak",
+              "fr": "Éliminer les relevés de synchronisation après enregistrement",
+              "pt": "Descartar registos de sincronização após gravação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The sound interview documents production dialogue and synchronization challenges. A practical exercise would be to: Test synchronized dialogue and ambient tracks in a safe studio exercise.",
+          "nb": "Lydintervjuet dokumenterer opptaksdialog og synkroniseringsutfordringer. En praktisk øvelse vil være å: Prøv synkronisert dialog og miljølyd i en trygg studioøvelse.",
+          "fr": "L’entretien son documente le dialogue direct et les difficultés de synchronisation. Un exercice pratique consisterait à : Tester dialogues synchronisés et ambiances dans un exercice en studio sûr.",
+          "pt": "A entrevista de som documenta diálogo direto e desafios de sincronização. Um exercício prático consistiria em: Testar diálogo sincronizado e ambientes num exercício seguro de estúdio."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "topgun-edit",
+        "area": "research",
+        "prompt": {
+          "en": "The director and effects accounts describe extensive footage and editorial collaboration with VFX. Which approach would you choose for a new production exercise?",
+          "nb": "Regissør- og effektkildene beskriver store opptaksmengder og samarbeid mellom klipp og VFX. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les sources décrivent un volume important de rushes et la collaboration montage-VFX. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "As fontes descrevem grande volume de imagens e colaboração entre montagem e efeitos. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Organize all footage only by file creation date",
+              "nb": "Organiser alle opptak bare etter filenes opprettelsesdato",
+              "fr": "Organiser tous les rushes uniquement par date de création",
+              "pt": "Organizar imagens apenas pela data de criação"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Tag footage by scene, viewpoint and review status",
+              "nb": "Merk opptak etter scene, synsvinkel og gjennomgangsstatus",
+              "fr": "Étiqueter les rushes par scène, point de vue et statut de validation",
+              "pt": "Etiquetar imagens por cena, ponto de vista e estado de revisão"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The director and effects accounts describe extensive footage and editorial collaboration with VFX. A practical exercise would be to: Tag footage by scene, viewpoint and review status.",
+          "nb": "Regissør- og effektkildene beskriver store opptaksmengder og samarbeid mellom klipp og VFX. En praktisk øvelse vil være å: Merk opptak etter scene, synsvinkel og gjennomgangsstatus.",
+          "fr": "Les sources décrivent un volume important de rushes et la collaboration montage-VFX. Un exercice pratique consisterait à : Étiqueter les rushes par scène, point de vue et statut de validation.",
+          "pt": "As fontes descrevem grande volume de imagens e colaboração entre montagem e efeitos. Um exercício prático consistiria em: Etiquetar imagens por cena, ponto de vista e estado de revisão."
+        },
+        "sourceIds": [
+          "s5",
+          "s6",
+          "s8"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_f1_2025",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Live-event coverage, fictional team identity and sound balance",
+      "nb": "Direktearrangement, fiktiv lagidentitet og lydbalanse",
+      "fr": "Captation événementielle, identité d’équipe fictive et équilibre sonore",
+      "pt": "Captação de evento, identidade fictícia e equilíbrio sonoro"
+    },
+    "sources": [
+      {
+        "id": "s3",
+        "title": "On the Fast Track for F1: The Movie",
+        "publisher": "American Cinematographer / American Society of Cinematographers",
+        "url": "https://theasc.com/article/on-the-fast-track-for-f1-the-movie/"
+      },
+      {
+        "id": "s7",
+        "title": "How APXGP was brought to life",
+        "publisher": "Formula 1",
+        "url": "https://www.formula1.com/en/latest/article/how-apxgp-was-brought-to-life-inside-the-rapid-creation-of-f1-the-movies.73ZVNOiyddgPL7jtNhX6Jq.73ZVNOiyddgPL7jtNhX6Jq"
+      },
+      {
+        "id": "s9",
+        "title": "Behind the Scenes: Mixing and Editing F1 The Movie",
+        "publisher": "Avid",
+        "url": "https://connect.avid.com/f1-the-movie-lp.html"
+      },
+      {
+        "id": "s10",
+        "title": "The Sound of F1: The Movie",
+        "publisher": "Dolby Creator Lab",
+        "url": "https://www.dolby.com/creator-lab/podcast/the-sound-of-f1-the-movie/"
+      },
+      {
+        "id": "s11",
+        "title": "F1 The Movie Official Synopsis and Credits",
+        "publisher": "Apple Original Films / Warner Bros. Pictures",
+        "url": "https://www.f1themovie.com/synopsis/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "f1-event",
+        "area": "research",
+        "prompt": {
+          "en": "The production combined fictional scenes with real racing-event environments. Which approach would you choose for a new production exercise?",
+          "nb": "Produksjonen kombinerte fiktive scener med virkelige racingarrangementer. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "La production associait des scènes fictives à de véritables événements automobiles. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A produção combinou cenas fictícias com eventos automobilísticos reais. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan fictional coverage around authorised event windows and continuity",
+              "nb": "Planlegg fiktive opptak rundt godkjente tidsvinduer og kontinuitet",
+              "fr": "Planifier les scènes selon les créneaux autorisés et les raccords",
+              "pt": "Planear cenas segundo horários autorizados e continuidade"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume the event schedule can be changed for every shot",
+              "nb": "Anta at arrangementsplanen kan endres for hvert opptak",
+              "fr": "Supposer que le calendrier peut changer pour chaque plan",
+              "pt": "Supor que o calendário pode mudar para cada plano"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The production combined fictional scenes with real racing-event environments. A practical exercise would be to: Plan fictional coverage around authorised event windows and continuity.",
+          "nb": "Produksjonen kombinerte fiktive scener med virkelige racingarrangementer. En praktisk øvelse vil være å: Planlegg fiktive opptak rundt godkjente tidsvinduer og kontinuitet.",
+          "fr": "La production associait des scènes fictives à de véritables événements automobiles. Un exercice pratique consisterait à : Planifier les scènes selon les créneaux autorisés et les raccords.",
+          "pt": "A produção combinou cenas fictícias com eventos automobilísticos reais. Um exercício prático consistiria em: Planear cenas segundo horários autorizados e continuidade."
+        },
+        "sourceIds": [
+          "s3",
+          "s7"
+        ]
+      },
+      {
+        "id": "f1-identity",
+        "area": "research",
+        "prompt": {
+          "en": "The costume account describes creating a fictional team identity within the real racing environment. Which approach would you choose for a new production exercise?",
+          "nb": "Kostymekilden beskriver en fiktiv lagidentitet i det virkelige racingmiljøet. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le témoignage costume décrit une identité d’équipe fictive dans un environnement réel. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O relato de figurinos descreve identidade fictícia num ambiente real. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Create a consistent palette and wardrobe continuity board",
+              "nb": "Lag en konsekvent palett og kontinuitetstavle for kostymer",
+              "fr": "Créer une palette cohérente et un tableau de raccords costumes",
+              "pt": "Criar paleta coerente e painel de continuidade de figurinos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Change team colours arbitrarily between connected scenes",
+              "nb": "Bytt lagfarger vilkårlig mellom sammenhengende scener",
+              "fr": "Changer arbitrairement les couleurs entre scènes raccordées",
+              "pt": "Mudar cores da equipa arbitrariamente entre cenas ligadas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The costume account describes creating a fictional team identity within the real racing environment. A practical exercise would be to: Create a consistent palette and wardrobe continuity board.",
+          "nb": "Kostymekilden beskriver en fiktiv lagidentitet i det virkelige racingmiljøet. En praktisk øvelse vil være å: Lag en konsekvent palett og kontinuitetstavle for kostymer.",
+          "fr": "Le témoignage costume décrit une identité d’équipe fictive dans un environnement réel. Un exercice pratique consisterait à : Créer une palette cohérente et un tableau de raccords costumes.",
+          "pt": "O relato de figurinos descreve identidade fictícia num ambiente real. Um exercício prático consistiria em: Criar paleta coerente e painel de continuidade de figurinos."
+        },
+        "sourceIds": [
+          "s7",
+          "s11"
+        ]
+      },
+      {
+        "id": "f1-mix",
+        "area": "sound",
+        "prompt": {
+          "en": "The editorial and sound accounts describe balancing racing sound, dialogue and music. Which approach would you choose for a new production exercise?",
+          "nb": "Klippe- og lydkildene beskriver balansen mellom racinglyd, dialog og musikk. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les témoignages décrivent l’équilibre entre sons de course, dialogue et musique. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os relatos descrevem equilíbrio entre som de corrida, diálogo e música. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Raise all sound layers equally at dramatic moments",
+              "nb": "Øk alle lydlag like mye i dramatiske øyeblikk",
+              "fr": "Augmenter également toutes les couches aux moments dramatiques",
+              "pt": "Aumentar todas as camadas igualmente nos momentos dramáticos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare mixes for dialogue intelligibility and dramatic rhythm",
+              "nb": "Sammenlign mikser for dialogforståelse og dramatisk rytme",
+              "fr": "Comparer les mixages selon intelligibilité et rythme dramatique",
+              "pt": "Comparar misturas por inteligibilidade e ritmo dramático"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The editorial and sound accounts describe balancing racing sound, dialogue and music. A practical exercise would be to: Compare mixes for dialogue intelligibility and dramatic rhythm.",
+          "nb": "Klippe- og lydkildene beskriver balansen mellom racinglyd, dialog og musikk. En praktisk øvelse vil være å: Sammenlign mikser for dialogforståelse og dramatisk rytme.",
+          "fr": "Les témoignages décrivent l’équilibre entre sons de course, dialogue et musique. Un exercice pratique consisterait à : Comparer les mixages selon intelligibilité et rythme dramatique.",
+          "pt": "Os relatos descrevem equilíbrio entre som de corrida, diálogo e música. Um exercício prático consistiria em: Comparar misturas por inteligibilidade e ritmo dramático."
+        },
+        "sourceIds": [
+          "s9",
+          "s10"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_mitchells_vs_the_machines_2021",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Painterly CG, character viewpoints and animated performance",
+      "nb": "Malerisk CG, karakterperspektiv og animert spill",
+      "fr": "CG picturale, points de vue et jeu animé",
+      "pt": "CG pictórico, pontos de vista e atuação animada"
+    },
+    "sources": [
+      {
+        "id": "s4",
+        "title": "Sony Pictures Imageworks Joins Forces with The Mitchells vs. the Machines",
+        "publisher": "VFX Voice",
+        "url": "https://vfxvoice.com/sony-pictures-imageworks-joins-forces-with-the-mitchells-vs-the-machines/"
+      },
+      {
+        "id": "s5",
+        "title": "The Mitchells vs. The Machines: A Scrapbook of Art, Nostalgia, and Killer Robots",
+        "publisher": "Animation World Network",
+        "url": "https://www.awn.com/animationworld/mitchells-vs-machines-scrapbook-art-nostalgia-and-killer-robots"
+      },
+      {
+        "id": "s6",
+        "title": "Mike Rianda Talks The Mitchells vs. The Machines",
+        "publisher": "Animation World Network",
+        "url": "https://www.awn.com/animationworld/mike-rianda-talks-mitchells-vs-machines"
+      },
+      {
+        "id": "s7",
+        "title": "The beginning of an explosion: The Mitchells Vs The Machines team on advances in animation",
+        "publisher": "Screen International",
+        "url": "https://www.screendaily.com/features/the-beginning-of-an-explosion-the-mitchells-vs-the-machines-team-on-advances-in-animation/5166448.article"
+      }
+    ],
+    "questions": [
+      {
+        "id": "mitchells-texture",
+        "area": "camera",
+        "prompt": {
+          "en": "The artists describe paint-stroke inputs and intentionally imperfect visual surfaces. Which approach would you choose for a new production exercise?",
+          "nb": "Kunstnerne beskriver penselstrøk og bevisst uperfekte bildeflater. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les artistes décrivent des coups de pinceau et des surfaces volontairement imparfaites. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os artistas descrevem pinceladas e superfícies deliberadamente imperfeitas. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare painterly and polished rendering on the same original scene",
+              "nb": "Sammenlign malerisk og polert rendering av samme originale scene",
+              "fr": "Comparer rendu pictural et lisse sur la même scène originale",
+              "pt": "Comparar renderização pictórica e polida na mesma cena original"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Remove every irregularity before reviewing the design",
+              "nb": "Fjern alle uregelmessigheter før designet vurderes",
+              "fr": "Retirer toutes les irrégularités avant examen",
+              "pt": "Retirar todas as irregularidades antes da revisão"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The artists describe paint-stroke inputs and intentionally imperfect visual surfaces. A practical exercise would be to: Compare painterly and polished rendering on the same original scene.",
+          "nb": "Kunstnerne beskriver penselstrøk og bevisst uperfekte bildeflater. En praktisk øvelse vil være å: Sammenlign malerisk og polert rendering av samme originale scene.",
+          "fr": "Les artistes décrivent des coups de pinceau et des surfaces volontairement imparfaites. Un exercice pratique consisterait à : Comparer rendu pictural et lisse sur la même scène originale.",
+          "pt": "Os artistas descrevem pinceladas e superfícies deliberadamente imperfeitas. Um exercício prático consistiria em: Comparar renderização pictórica e polida na mesma cena original."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "mitchells-viewpoint",
+        "area": "research",
+        "prompt": {
+          "en": "The design accounts distinguish Katie’s subjective visual layer from the surrounding world. Which approach would you choose for a new production exercise?",
+          "nb": "Designkildene skiller Katies subjektive bildelag fra verden rundt henne. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les sources distinguent la couche visuelle subjective de Katie du monde environnant. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "As fontes distinguem a camada visual subjetiva de Katie do mundo envolvente. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Define when a character-specific graphic layer enters the scene",
+              "nb": "Definer når et karakterspesifikt grafisk lag kommer inn i scenen",
+              "fr": "Définir quand une couche graphique subjective entre dans la scène",
+              "pt": "Definir quando uma camada gráfica subjetiva entra na cena"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Apply identical subjective graphics to every character",
+              "nb": "Bruk identisk subjektiv grafikk for alle karakterer",
+              "fr": "Appliquer des graphismes subjectifs identiques à tous les personnages",
+              "pt": "Aplicar grafismos subjetivos idênticos a todas as personagens"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The design accounts distinguish Katie’s subjective visual layer from the surrounding world. A practical exercise would be to: Define when a character-specific graphic layer enters the scene.",
+          "nb": "Designkildene skiller Katies subjektive bildelag fra verden rundt henne. En praktisk øvelse vil være å: Definer når et karakterspesifikt grafisk lag kommer inn i scenen.",
+          "fr": "Les sources distinguent la couche visuelle subjective de Katie du monde environnant. Un exercice pratique consisterait à : Définir quand une couche graphique subjective entre dans la scène.",
+          "pt": "As fontes distinguem a camada visual subjetiva de Katie do mundo envolvente. Um exercício prático consistiria em: Definir quando uma camada gráfica subjetiva entra na cena."
+        },
+        "sourceIds": [
+          "s4",
+          "s7"
+        ]
+      },
+      {
+        "id": "mitchells-performance",
+        "area": "research",
+        "prompt": {
+          "en": "The director describes giving animators room to invent performance and staging. Which approach would you choose for a new production exercise?",
+          "nb": "Regissøren beskriver hvordan animatørene fikk rom til å utvikle spill og iscenesettelse. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le réalisateur décrit la liberté donnée aux animateurs d’inventer jeu et mise en scène. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O realizador descreve liberdade dos animadores para inventar atuação e encenação. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Require animators to copy every storyboard gesture literally",
+              "nb": "Krev at animatørene kopierer hver storyboardbevegelse ordrett",
+              "fr": "Exiger une copie littérale de chaque geste du storyboard",
+              "pt": "Exigir cópia literal de cada gesto do storyboard"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Review alternate acting beats against the scene intention",
+              "nb": "Gjennomgå alternative spillnyanser mot scenens hensikt",
+              "fr": "Examiner des variantes de jeu selon l’intention de la scène",
+              "pt": "Rever variantes de atuação segundo a intenção da cena"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The director describes giving animators room to invent performance and staging. A practical exercise would be to: Review alternate acting beats against the scene intention.",
+          "nb": "Regissøren beskriver hvordan animatørene fikk rom til å utvikle spill og iscenesettelse. En praktisk øvelse vil være å: Gjennomgå alternative spillnyanser mot scenens hensikt.",
+          "fr": "Le réalisateur décrit la liberté donnée aux animateurs d’inventer jeu et mise en scène. Un exercice pratique consisterait à : Examiner des variantes de jeu selon l’intention de la scène.",
+          "pt": "O realizador descreve liberdade dos animadores para inventar atuação e encenação. Um exercício prático consistiria em: Rever variantes de atuação segundo a intenção da cena."
+        },
+        "sourceIds": [
+          "s5",
+          "s6"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_guillermo_del_toros_pinocchio_2022",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Puppet continuity, stop-motion lighting and material sound",
+      "nb": "Dukkekontinuitet, stop-motion-lys og materiallyd",
+      "fr": "Raccords de marionnettes, lumière stop motion et sons de matière",
+      "pt": "Continuidade de marionetas, luz stop motion e som material"
+    },
+    "sources": [
+      {
+        "id": "s2",
+        "title": "Inside the Stop-Motion Magic of Guillermo del Toro's Pinocchio",
+        "publisher": "Netflix Tudum",
+        "url": "https://www.netflix.com/tudum/articles/pinocchio-stop-motion-behind-the-scenes"
+      },
+      {
+        "id": "s4",
+        "title": "Best of 2022: Guillermo del Toro's Pinocchio Animation Supervisor Brian Leif Hansen Packs Puppets With Emotion",
+        "publisher": "Motion Picture Association / The Credits",
+        "url": "https://www.motionpictures.org/2022/12/guillermo-del-toros-pinocchio-animation-supervisor-brian-leif-hansen-packs-puppets-with-emotion-2/"
+      },
+      {
+        "id": "s5",
+        "title": "Guillermo del Toro's Pinocchio crew members. 2022",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/audio/playlist/327/4316"
+      },
+      {
+        "id": "s7",
+        "title": "Frank Passingham / Guillermo del Toro's Pinocchio",
+        "publisher": "British Cinematographer",
+        "url": "https://britishcinematographer.co.uk/frank-passingham-guillermo-del-toros-pinocchio/"
+      },
+      {
+        "id": "s8",
+        "title": "Guillermo del Toro's Pinocchio",
+        "publisher": "Boris FX / Art of the Cut",
+        "url": "https://borisfx.com/blog/aotc/holly-klein-discuss-editing-the-stop-motion-animated-guillermo-del-toros-pinocchio/"
+      },
+      {
+        "id": "s9",
+        "title": "Perfecting Pinocchio's Distinct Sound for Director Del Toro – with Scott Gershin",
+        "publisher": "A Sound Effect",
+        "url": "https://www.asoundeffect.com/pinocchio-del-toro-film-sound/"
+      },
+      {
+        "id": "s10",
+        "title": "Alexandre Desplat. Score for Guillermo del Toro's Pinocchio. 2022",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/audio/playlist/327/4320"
+      }
+    ],
+    "questions": [
+      {
+        "id": "pinocchio-puppets",
+        "area": "research",
+        "prompt": {
+          "en": "Production accounts describe duplicate puppets and geographically separated fabrication teams. Which approach would you choose for a new production exercise?",
+          "nb": "Produksjonskildene beskriver duplikatdukker og geografisk adskilte fabrikasjonsteam. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les sources décrivent des marionnettes dupliquées et des équipes de fabrication éloignées. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "As fontes descrevem marionetas duplicadas e equipas de fabrico geograficamente separadas. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Maintain reference sheets and revision records for duplicate puppets",
+              "nb": "Vedlikehold referanseark og revisjonslogger for duplikatdukker",
+              "fr": "Tenir des fiches de référence et des historiques de révision",
+              "pt": "Manter fichas de referência e registos de revisão"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Approve the result before comparing any alternatives",
+              "nb": "Godkjenn resultatet før noen alternativer sammenlignes",
+              "fr": "Valider le résultat avant de comparer les variantes",
+              "pt": "Aprovar o resultado antes de comparar alternativas"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Production accounts describe duplicate puppets and geographically separated fabrication teams. A practical exercise would be to: Maintain reference sheets and revision records for duplicate puppets.",
+          "nb": "Produksjonskildene beskriver duplikatdukker og geografisk adskilte fabrikasjonsteam. En praktisk øvelse vil være å: Vedlikehold referanseark og revisjonslogger for duplikatdukker.",
+          "fr": "Les sources décrivent des marionnettes dupliquées et des équipes de fabrication éloignées. Un exercice pratique consisterait à : Tenir des fiches de référence et des historiques de révision.",
+          "pt": "As fontes descrevem marionetas duplicadas e equipas de fabrico geograficamente separadas. Um exercício prático consistiria em: Manter fichas de referência e registos de revisão."
+        },
+        "sourceIds": [
+          "s2",
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "pinocchio-lighting",
+        "area": "camera",
+        "prompt": {
+          "en": "The cinematographer describes layered lighting and multi-pass integration. Which approach would you choose for a new production exercise?",
+          "nb": "Filmfotografen beskriver lagdelt lyssetting og integrering av flere opptakspass. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le directeur photo décrit un éclairage en couches et une intégration multipasse. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O diretor de fotografia descreve iluminação em camadas e integração de várias passagens. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record lighting references and lock approved settings for each setup",
+              "nb": "Registrer lysreferanser og lås godkjente innstillinger for hvert oppsett",
+              "fr": "Consigner les références et verrouiller les réglages validés",
+              "pt": "Registar referências e fixar configurações aprovadas por montagem"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Adjust lighting randomly between consecutive animation frames",
+              "nb": "Endre lys tilfeldig mellom påfølgende animasjonsbilder",
+              "fr": "Modifier la lumière au hasard entre images successives",
+              "pt": "Alterar iluminação ao acaso entre fotogramas consecutivos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The cinematographer describes layered lighting and multi-pass integration. A practical exercise would be to: Record lighting references and lock approved settings for each setup.",
+          "nb": "Filmfotografen beskriver lagdelt lyssetting og integrering av flere opptakspass. En praktisk øvelse vil være å: Registrer lysreferanser og lås godkjente innstillinger for hvert oppsett.",
+          "fr": "Le directeur photo décrit un éclairage en couches et une intégration multipasse. Un exercice pratique consisterait à : Consigner les références et verrouiller les réglages validés.",
+          "pt": "O diretor de fotografia descreve iluminação em camadas e integração de várias passagens. Um exercício prático consistiria em: Registar referências e fixar configurações aprovadas por montagem."
+        },
+        "sourceIds": [
+          "s7",
+          "s8"
+        ]
+      },
+      {
+        "id": "pinocchio-material",
+        "area": "sound",
+        "prompt": {
+          "en": "The sound supervisor and composer describe material identity in sound and music. Which approach would you choose for a new production exercise?",
+          "nb": "Lydansvarlig og komponist beskriver materialidentitet i lyd og musikk. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le superviseur son et le compositeur décrivent l’identité matérielle du son et de la musique. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O supervisor de som e o compositor descrevem identidade material no som e na música. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use identical movement sounds for all materials",
+              "nb": "Bruk identiske bevegelseslyder for alle materialer",
+              "fr": "Utiliser les mêmes sons de mouvement pour toutes les matières",
+              "pt": "Usar os mesmos sons de movimento para todos os materiais"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the original method without testing the new situation",
+              "nb": "Kopier originalmetoden uten å prøve den nye situasjonen",
+              "fr": "Copier la méthode originale sans tester la nouvelle situation",
+              "pt": "Copiar o método original sem testar a nova situação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record original wood and fabric textures for a character sound study",
+              "nb": "Ta opp originale tre- og stofflyder til en karakterlydstudie",
+              "fr": "Enregistrer des textures de bois et tissu pour une étude sonore",
+              "pt": "Gravar texturas de madeira e tecido para um estudo sonoro"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The sound supervisor and composer describe material identity in sound and music. A practical exercise would be to: Record original wood and fabric textures for a character sound study.",
+          "nb": "Lydansvarlig og komponist beskriver materialidentitet i lyd og musikk. En praktisk øvelse vil være å: Ta opp originale tre- og stofflyder til en karakterlydstudie.",
+          "fr": "Le superviseur son et le compositeur décrivent l’identité matérielle du son et de la musique. Un exercice pratique consisterait à : Enregistrer des textures de bois et tissu pour une étude sonore.",
+          "pt": "O supervisor de som e o compositor descrevem identidade material no som e na música. Um exercício prático consistiria em: Gravar texturas de madeira e tecido para um estudo sonoro."
+        },
+        "sourceIds": [
+          "s9",
+          "s10"
+        ]
+      }
+    ]
   }
 ] as const satisfies readonly SourceBackedCaseWorkshop[];

@@ -354,15 +354,20 @@ const ids = [
   "scenario_on_the_adamant_2023",
   "scenario_father_mother_sister_brother_2025",
   "scenario_saint_omer_2022",
+  "scenario_nope_2022",
+  "scenario_top_gun_maverick_2022",
+  "scenario_f1_2025",
+  "scenario_the_mitchells_vs_the_machines_2021",
+  "scenario_guillermo_del_toros_pinocchio_2022",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly three hundred and forty-five existing cases have one thousand and thirty-five original, source-backed decisions", () => {
+test("Exactly three hundred and fifty existing cases have one thousand and fifty original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 345);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 1035);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 350);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 1050);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -819,6 +824,13 @@ test("Exactly three hundred and forty-five existing cases have one thousand and 
       for (const source of workshop.sources) assert.ok(verification.includes(source.url));
     } else if (["scenario_the_little_sister_2025","scenario_young_mothers_2025","scenario_on_the_adamant_2023","scenario_father_mother_sister_brother_2025","scenario_saint_omer_2022"].includes(workshop.scenarioId)) {
       const configs: Record<string, [string, string]> = {"scenario_the_little_sister_2025":["src/ui/data/scenarioProductionVerificationTheLittleSister.ts","chapterNineteenTheLittleSisterExpansion"],"scenario_young_mothers_2025":["src/ui/data/scenarioProductionVerificationYoungMothers.ts","chapterNineteenYoungMothersExpansion"],"scenario_on_the_adamant_2023":["src/ui/data/scenarioProductionVerificationOnTheAdamant.ts","chapterNineteenOnTheAdamantExpansion"],"scenario_father_mother_sister_brother_2025":["src/ui/data/scenarioProductionVerificationFatherMotherSisterBrother.ts","chapterNineteenFatherMotherSisterBrotherExpansion"],"scenario_saint_omer_2022":["src/ui/data/scenarioProductionVerificationSaintOmer.ts","chapterNineteenSaintOmerExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
+      assert.ok(verification.includes('scenarioId: "' + workshop.scenarioId + '"'));
+      for (const source of workshop.sources) assert.ok(verification.includes(source.url));
+    } else if (["scenario_nope_2022","scenario_top_gun_maverick_2022","scenario_f1_2025","scenario_the_mitchells_vs_the_machines_2021","scenario_guillermo_del_toros_pinocchio_2022"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_nope_2022":["src/ui/data/scenarioProductionVerificationNope.ts","chapterNineteenNopeExpansion"],"scenario_top_gun_maverick_2022":["src/ui/data/scenarioProductionVerificationTopGunMaverick.ts","chapterNineteenTopGunMaverickExpansion"],"scenario_f1_2025":["src/ui/data/scenarioProductionVerificationF1.ts","chapterNineteenF1Expansion"],"scenario_the_mitchells_vs_the_machines_2021":["src/ui/data/scenarioProductionVerificationMitchellsVsTheMachines.ts","chapterNineteenMitchellsVsTheMachinesExpansion"],"scenario_guillermo_del_toros_pinocchio_2022":["src/ui/data/scenarioProductionVerificationGuillermoDelTorosPinocchio.ts","chapterNineteenGuillermoDelTorosPinocchioExpansion"]};
       const [path, definition] = configs[workshop.scenarioId]!;
       assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
       const verification = readFileSync(path, "utf8");
@@ -1706,4 +1718,13 @@ test("Seventh world cinema round preserves film-specific decisions", () => {
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_on_the_adamant_2023")?.questions.map(q => q.id), ["adamant-consent","adamant-crew","adamant-portrait"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_father_mother_sister_brother_2025")?.questions.map(q => q.id), ["fmsb-triptych","fmsb-teams","fmsb-schedule"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_saint_omer_2022")?.questions.map(q => q.id), ["saintomer-language","saintomer-duration","saintomer-silence"]);
+});
+
+
+test("Eighth world cinema round preserves film-specific decisions", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_nope_2022")?.questions.map(q => q.id), ["nope-night","nope-space","nope-sound"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_top_gun_maverick_2022")?.questions.map(q => q.id), ["topgun-coverage","topgun-dialogue","topgun-edit"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_f1_2025")?.questions.map(q => q.id), ["f1-event","f1-identity","f1-mix"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_mitchells_vs_the_machines_2021")?.questions.map(q => q.id), ["mitchells-texture","mitchells-viewpoint","mitchells-performance"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_guillermo_del_toros_pinocchio_2022")?.questions.map(q => q.id), ["pinocchio-puppets","pinocchio-lighting","pinocchio-material"]);
 });
