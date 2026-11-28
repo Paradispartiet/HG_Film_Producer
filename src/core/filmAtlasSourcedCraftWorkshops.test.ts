@@ -238,15 +238,23 @@ const ids = [
   "scenario_holy_motors_2012",
   "scenario_gravity_2013",
   "scenario_ida_2013",
+  "scenario_boyhood_2014",
+  "scenario_birdman_or_the_unexpected_virtue_of_ignorance_2014",
+  "scenario_ex_machina_2014",
+  "scenario_mad_max_fury_road_2015",
+  "scenario_son_of_saul_2015",
+  "scenario_victoria_2015",
+  "scenario_the_revenant_2015",
+  "scenario_moonlight_2016",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly two hundred and twenty-nine existing cases have six hundred and eighty-seven original, source-backed decisions", () => {
+test("Exactly two hundred and thirty-seven existing cases have seven hundred and eleven original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 229);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 687);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 237);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 711);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -607,6 +615,14 @@ test("Exactly two hundred and twenty-nine existing cases have six hundred and ei
       const configs: Record<string, [string, string]> = {"scenario_tree_of_life_2011":["src/ui/data/scenarioProductionVerificationTreeOfLife.ts","chapterEighteenTreeOfLifeExpansion"],"scenario_a_separation_2011":["src/ui/data/scenarioProductionVerificationASeparation.ts","chapterEighteenASeparationExpansion"],"scenario_pina_2011":["src/ui/data/scenarioProductionVerificationPina.ts","chapterEighteenPinaExpansion"],"scenario_amour_2012":["src/ui/data/scenarioProductionVerificationAmour.ts","chapterEighteenAmourExpansion"],"scenario_holy_motors_2012":["src/ui/data/scenarioProductionVerificationHolyMotors.ts","chapterEighteenHolyMotorsExpansion"],"scenario_gravity_2013":["src/ui/data/scenarioProductionVerificationGravity.ts","chapterEighteenGravityExpansion"],"scenario_ida_2013":["src/ui/data/scenarioProductionVerificationIda.ts","chapterEighteenIdaExpansion"]};
       const [path, definition] = configs[workshop.scenarioId]!;
       assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
+      assert.ok(verification.includes('scenarioId: "' + workshop.scenarioId + '"'));
+      for (const source of workshop.sources) assert.ok(verification.includes(source.url));
+    } else if (["scenario_boyhood_2014","scenario_birdman_or_the_unexpected_virtue_of_ignorance_2014","scenario_ex_machina_2014","scenario_mad_max_fury_road_2015","scenario_son_of_saul_2015","scenario_victoria_2015","scenario_the_revenant_2015","scenario_moonlight_2016"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_boyhood_2014":["src/ui/data/scenarioProductionVerificationModernBatch.ts","seed"],"scenario_birdman_or_the_unexpected_virtue_of_ignorance_2014":["src/ui/data/scenarioProductionVerificationModernBatch.ts","seed"],"scenario_ex_machina_2014":["src/ui/data/scenarioProductionVerificationModernBatch.ts","seed"],"scenario_mad_max_fury_road_2015":["src/ui/data/scenarioProductionVerificationMethodBatch.ts","seed"],"scenario_son_of_saul_2015":["src/ui/data/scenarioProductionVerificationSonOfSaul.ts","chapterEighteenSonOfSaulExpansion"],"scenario_victoria_2015":["src/ui/data/scenarioProductionVerificationCrossEraBatch.ts","seed"],"scenario_the_revenant_2015":["src/ui/data/scenarioProductionVerificationTheRevenant.ts","chapterEighteenTheRevenantExpansion"],"scenario_moonlight_2016":["src/ui/data/scenarioProductionVerificationMoonlight.ts","chapterEighteenMoonlightExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      if (definition === "seed") assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
+      else assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
       const verification = readFileSync(path, "utf8");
       assert.ok(verification.includes('scenarioId: "' + workshop.scenarioId + '"'));
       for (const source of workshop.sources) assert.ok(verification.includes(source.url));
@@ -1312,4 +1328,16 @@ test("2011–2013 workshops retain film-specific production decisions", () => {
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_holy_motors_2012")?.questions.map(q => q.id), ["holymotors-constraints","holymotors-transformation","holymotors-digital"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_gravity_2013")?.questions.map(q => q.id), ["gravity-previs","gravity-lightbox","gravity-soundfield"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_ida_2013")?.questions.map(q => q.id), ["ida-monochrome","ida-framing","ida-credits"]);
+});
+
+
+test("2014–2016 workshops retain film-specific production decisions", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_boyhood_2014")?.questions.map(q => q.id), ["boyhood-calendar","boyhood-script","boyhood-archive"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_birdman_or_the_unexpected_virtue_of_ignorance_2014")?.questions.map(q => q.id), ["birdman-blocking","birdman-joins","birdman-drums"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_ex_machina_2014")?.questions.map(q => q.id), ["exmachina-architecture","exmachina-glass","exmachina-ava"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_mad_max_fury_road_2015")?.questions.map(q => q.id), ["furyroad-center","furyroad-storyboard","furyroad-engines"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_son_of_saul_2015")?.questions.map(q => q.id), ["sonofsaul-representation","sonofsaul-focus","sonofsaul-offscreen"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_victoria_2015")?.questions.map(q => q.id), ["victoria-route","victoria-improv","victoria-duration"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_revenant_2015")?.questions.map(q => q.id), ["revenant-daylight","revenant-composite","revenant-editorial"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_moonlight_2016")?.questions.map(q => q.id), ["moonlight-camera","moonlight-triptych","moonlight-music"]);
 });

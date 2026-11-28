@@ -2888,5 +2888,1551 @@ export const digitalSourceWorkshops = [
         ]
       }
     ]
+  },
+  {
+    "scenarioId": "scenario_boyhood_2014",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Long-term production, evolving script and editorial continuity",
+      "nb": "Langtidsproduksjon, manusutvikling og klippekontinuitet",
+      "fr": "Production longue, scénario évolutif et continuité du montage",
+      "pt": "Produção prolongada, argumento evolutivo e continuidade da montagem"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Richard Linklater and Ellar Coltrane: Making Boyhood was a dear process",
+        "publisher": "The Guardian",
+        "url": "https://www.theguardian.com/film/2014/jul/06/richard-linklater-ellar-coltrane-boyhood-interview-dear-process"
+      },
+      {
+        "id": "s1",
+        "title": "The Making of a Boy: Richard Linklater on his 12-Year Labor of Love, Boyhood",
+        "publisher": "MovieMaker Magazine",
+        "url": "https://www.moviemaker.com/richard-linklater-making-boyhood/"
+      },
+      {
+        "id": "s2",
+        "title": "Interview: Sandra Adair",
+        "publisher": "Film Comment",
+        "url": "https://www.filmcomment.com/interview-sandra-adair-boyhood/"
+      },
+      {
+        "id": "s3",
+        "title": "Editing Boyhood: Dealing with Changing Technology",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/88632-editing-boyhood-dealing-with-changing-technology/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "boyhood-calendar",
+        "area": "research",
+        "prompt": {
+          "en": "How should a project filmed over many years be organized?",
+          "nb": "Hvordan bør et prosjekt filmet over mange år organiseres?",
+          "fr": "Comment organiser un projet filmé sur plusieurs années ?",
+          "pt": "Como organizar um projeto filmado ao longo de vários anos?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan recurring sessions and maintain a continuity journal",
+              "nb": "Planlegg tilbakevendende opptak og før en kontinuitetslogg",
+              "fr": "Prévoir des sessions régulières et tenir un journal de continuité",
+              "pt": "Planear sessões regulares e manter um diário de continuidade"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat each session as an unrelated short film",
+              "nb": "Behandle hvert opptak som en urelatert kortfilm",
+              "fr": "Traiter chaque session comme un court métrage indépendant",
+              "pt": "Tratar cada sessão como curta-metragem independente"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Freeze every detail before the first session",
+              "nb": "Fastlås alle detaljer før første opptak",
+              "fr": "Figer chaque détail avant la première session",
+              "pt": "Fixar todos os detalhes antes da primeira sessão"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Linklater describes annual filming and repeated revision. Plan a fictional long-term project with consent, recurring sessions and documented continuity.",
+          "nb": "Linklater beskriver årlige opptak og gjentatt revisjon. Planlegg et fiktivt langtidsprosjekt med samtykke, tilbakevendende opptak og dokumentert kontinuitet.",
+          "fr": "Linklater décrit des tournages annuels et des révisions répétées. Prévoyez un projet fictif consenti avec sessions régulières et continuité documentée.",
+          "pt": "Linklater descreve filmagens anuais e revisões sucessivas. Planeie um projeto fictício consentido com sessões regulares e continuidade documentada."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "boyhood-script",
+        "area": "research",
+        "prompt": {
+          "en": "How can changing observations inform a developing screenplay?",
+          "nb": "Hvordan kan skiftende observasjoner informere et manus i utvikling?",
+          "fr": "Comment des observations nouvelles nourrissent-elles un scénario évolutif ?",
+          "pt": "Como podem novas observações alimentar um argumento evolutivo?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume natural dialogue must be completely unscripted",
+              "nb": "Anta at naturlig dialog må være helt uskrevet",
+              "fr": "Supposer qu’un dialogue naturel doit être totalement improvisé",
+              "pt": "Supor que diálogo natural tem de ser totalmente improvisado"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Discard earlier character choices after each session",
+              "nb": "Forkast tidligere karaktervalg etter hvert opptak",
+              "fr": "Abandonner les choix antérieurs après chaque session",
+              "pt": "Abandonar escolhas anteriores após cada sessão"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Revise scripted scenes while preserving character development",
+              "nb": "Revider manusfestede scener og bevar karakterutviklingen",
+              "fr": "Réviser les scènes écrites en préservant l’évolution des personnages",
+              "pt": "Rever cenas escritas preservando a evolução das personagens"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The Guardian interview describes scripted dialogue shaped by observations; Adair discusses rhythm and body language. Try revising a scene without assuming that naturalism means improvisation.",
+          "nb": "Guardian-intervjuet beskriver manusdialog formet av observasjoner; Adair omtaler rytme og kroppsspråk. Prøv en revisjon uten å anta at naturalisme betyr improvisasjon.",
+          "fr": "Le Guardian décrit des dialogues écrits nourris d’observations ; Adair parle du rythme et des gestes. Révisez une scène sans assimiler naturalisme et improvisation.",
+          "pt": "O Guardian descreve diálogo escrito informado por observações; Adair aborda ritmo e gestos. Reveja uma cena sem equiparar naturalismo a improvisação."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "boyhood-archive",
+        "area": "research",
+        "prompt": {
+          "en": "How should editorial work survive changing technology?",
+          "nb": "Hvordan bør klippearbeid overleve skiftende teknologi?",
+          "fr": "Comment préserver le montage malgré l’évolution technologique ?",
+          "pt": "Como preservar a montagem apesar das mudanças tecnológicas?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Depend on one proprietary project file indefinitely",
+              "nb": "Stol på én proprietær prosjektfil på ubestemt tid",
+              "fr": "Dépendre indéfiniment d’un seul fichier propriétaire",
+              "pt": "Depender indefinidamente de um único ficheiro proprietário"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Preserve originals, version histories and tested migrations",
+              "nb": "Bevar originaler, versjonshistorikk og testede migreringer",
+              "fr": "Préserver originaux, historique des versions et migrations testées",
+              "pt": "Preservar originais, histórico de versões e migrações testadas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Delete earlier cuts whenever a new version is made",
+              "nb": "Slett tidligere klipp hver gang en ny versjon lages",
+              "fr": "Effacer les montages antérieurs à chaque nouvelle version",
+              "pt": "Apagar montagens anteriores a cada nova versão"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The editors describe repeated recutting and changing systems across twelve years. Design a versioned archive that preserves access to earlier decisions and original material.",
+          "nb": "Klipperne beskriver gjentatt omklipping og skiftende systemer gjennom tolv år. Lag et versjonert arkiv som bevarer tilgang til tidligere valg og originalmateriale.",
+          "fr": "Les monteurs décrivent remontages et changements de systèmes sur douze ans. Concevez une archive versionnée préservant décisions et originaux.",
+          "pt": "Os montadores descrevem remontagens e mudanças de sistemas ao longo de doze anos. Crie arquivo versionado preservando decisões e originais."
+        },
+        "sourceIds": [
+          "s1",
+          "s2",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_birdman_or_the_unexpected_virtue_of_ignorance_2014",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Apparent continuity, coordinated blocking and percussion",
+      "nb": "Tilsynelatende kontinuitet, samordnet blokkering og perkusjon",
+      "fr": "Continuité apparente, déplacements coordonnés et percussion",
+      "pt": "Continuidade aparente, marcações coordenadas e percussão"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Cinematographer Emmanuel Lubezki aimed high on Birdman",
+        "publisher": "Los Angeles Times",
+        "url": "https://www.latimes.com/entertainment/envelope/la-et-mn-en-emmanuel-lubezki-20150122-story.html"
+      },
+      {
+        "id": "s1",
+        "title": "Invisibly Invaluable: Birdman Editors Douglas Crise & Stephen Mirrione – Part I",
+        "publisher": "Motion Picture Association",
+        "url": "https://www.motionpictures.org/2015/01/invisibly-invaluable-birdman-editors-douglas-crise-stephen-mirrione-part-i/"
+      },
+      {
+        "id": "s2",
+        "title": "Invisibly Invaluable: Birdman Editors Douglas Crise & Stephen Mirrione – Part II",
+        "publisher": "Motion Picture Association",
+        "url": "https://www.motionpictures.org/2015/01/invisibly-invaluable-birdman-editors-douglas-crise-stephen-mirrione-part-ii/"
+      },
+      {
+        "id": "s3",
+        "title": "How Birdman Composer Improvised the Year's Most Audacious Film Score",
+        "publisher": "TheWrap",
+        "url": "https://www.thewrap.com/how-birdman-composer-improvised-the-years-most-audacious-film-score/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "birdman-blocking",
+        "area": "camera",
+        "prompt": {
+          "en": "How can actors and camera share a continuous backstage path?",
+          "nb": "Hvordan kan skuespillere og kamera dele en sammenhengende bane bak scenen?",
+          "fr": "Comment acteurs et caméra partagent-ils un trajet continu en coulisses ?",
+          "pt": "Como podem atores e câmara partilhar um percurso contínuo nos bastidores?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse coordinated movement, cues and camera clearance",
+              "nb": "Øv på samordnet bevegelse, signaler og fri kamerabane",
+              "fr": "Répéter mouvements coordonnés, signaux et passage caméra",
+              "pt": "Ensaiar movimentos coordenados, sinais e passagem da câmara"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Plan camera movement without consulting the performers",
+              "nb": "Planlegg kamerabevegelse uten å rådføre deg med utøverne",
+              "fr": "Planifier la caméra sans consulter les interprètes",
+              "pt": "Planear a câmara sem consultar os intérpretes"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume long takes remove the need for rehearsals",
+              "nb": "Anta at lange tagninger fjerner behovet for prøver",
+              "fr": "Supposer que les plans longs dispensent de répétitions",
+              "pt": "Supor que planos longos dispensam ensaios"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Lubezki and the editors describe intensive coordination and rehearsal. Test a safe, short backstage movement with agreed cues rather than reproducing the film's exact staging.",
+          "nb": "Lubezki og klipperne beskriver intensiv samordning og prøver. Prøv en kort, trygg bevegelse med avtalte signaler fremfor å gjenskape filmens eksakte iscenesettelse.",
+          "fr": "Lubezki et les monteurs décrivent coordination et répétitions intensives. Testez un trajet court et sûr avec signaux convenus.",
+          "pt": "Lubezki e os montadores descrevem coordenação e ensaios intensivos. Teste percurso curto e seguro com sinais acordados."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "birdman-joins",
+        "area": "camera",
+        "prompt": {
+          "en": "How should apparent single-take continuity be constructed?",
+          "nb": "Hvordan bør tilsynelatende kontinuitet i én tagning konstrueres?",
+          "fr": "Comment construire la continuité apparente d’un plan unique ?",
+          "pt": "Como construir continuidade aparente de um plano único?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Claim every continuous-looking image was filmed without cuts",
+              "nb": "Påstå at alle sammenhengende bilder ble filmet uten klipp",
+              "fr": "Affirmer que toute image continue a été tournée sans coupe",
+              "pt": "Afirmar que toda imagem contínua foi filmada sem cortes"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore changes in lighting and performance across joins",
+              "nb": "Ignorer lys- og spilleendringer ved skjøtene",
+              "fr": "Ignorer les variations de lumière et de jeu aux raccords",
+              "pt": "Ignorar mudanças de luz e interpretação nas junções"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan transitions and test visual and rhythmic continuity",
+              "nb": "Planlegg overganger og prøv visuell og rytmisk kontinuitet",
+              "fr": "Prévoir les raccords et tester la continuité visuelle et rythmique",
+              "pt": "Planear transições e testar continuidade visual e rítmica"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The editors describe carefully prepared invisible transitions and unusual postproduction. Compare perceived continuity with the documented construction of your own short sequence.",
+          "nb": "Klipperne beskriver nøye forberedte usynlige overganger og uvanlig etterarbeid. Sammenlign opplevd kontinuitet med dokumentert konstruksjon av egen kortsekvens.",
+          "fr": "Les monteurs décrivent des raccords invisibles préparés et une postproduction inhabituelle. Comparez continuité perçue et construction documentée de votre séquence.",
+          "pt": "Os montadores descrevem junções invisíveis preparadas e pós-produção invulgar. Compare continuidade percebida e construção documentada da sua sequência."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "birdman-drums",
+        "area": "sound",
+        "prompt": {
+          "en": "How can percussion shape the rhythm of a continuous scene?",
+          "nb": "Hvordan kan perkusjon forme rytmen i en sammenhengende scene?",
+          "fr": "Comment la percussion façonne-t-elle le rythme d’une scène continue ?",
+          "pt": "Como pode a percussão moldar o ritmo de uma cena contínua?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume the score can replace all performance rhythm",
+              "nb": "Anta at musikken kan erstatte all spillerytme",
+              "fr": "Supposer que la musique remplace tout rythme du jeu",
+              "pt": "Supor que música substitui todo ritmo da interpretação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test original rhythmic patterns against movement and pauses",
+              "nb": "Prøv originale rytmemønstre mot bevegelse og pauser",
+              "fr": "Tester des motifs rythmiques originaux face aux mouvements et pauses",
+              "pt": "Testar padrões rítmicos originais perante movimento e pausas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use the same beat regardless of dramatic changes",
+              "nb": "Bruk samme puls uavhengig av dramatiske endringer",
+              "fr": "Garder le même rythme malgré les changements dramatiques",
+              "pt": "Manter a mesma pulsação apesar das mudanças dramáticas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Sánchez and Iñárritu describe improvised percussion as an internal pulse. Create an original rhythm study and compare how sound interacts with actor and camera movement.",
+          "nb": "Sánchez og Iñárritu beskriver improvisert perkusjon som indre puls. Lag en original rytmestudie og sammenlign hvordan lyd samspiller med skuespiller og kamera.",
+          "fr": "Sánchez et Iñárritu décrivent la percussion improvisée comme pulsation interne. Créez une étude rythmique originale et comparez son interaction avec le jeu et la caméra.",
+          "pt": "Sánchez e Iñárritu descrevem percussão improvisada como pulsação interna. Crie estudo rítmico original e compare interação com atores e câmara."
+        },
+        "sourceIds": [
+          "s3",
+          "s0"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_ex_machina_2014",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Architectural isolation, practical light and performance-led effects",
+      "nb": "Arkitektonisk isolasjon, praktisk lys og spillstyrte effekter",
+      "fr": "Isolement architectural, éclairage pratique et effets guidés par le jeu",
+      "pt": "Isolamento arquitetónico, luz prática e efeitos guiados pela interpretação"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Rob Hardy BSC / Ex Machina",
+        "publisher": "British Cinematographer",
+        "url": "https://britishcinematographer.co.uk/rob-hardy-bsc-ex-machina/"
+      },
+      {
+        "id": "s1",
+        "title": "Ex Machina: the making of Ava",
+        "publisher": "fxguide",
+        "url": "https://www.fxguide.com/fxfeatured/ex-machina-the-making-of-ava/"
+      },
+      {
+        "id": "s2",
+        "title": "Ex Machina",
+        "publisher": "Norwegian Film Commission",
+        "url": "https://www.norwegianfilm.com/filmography/ex-machina"
+      },
+      {
+        "id": "s3",
+        "title": "Ex Machina's Stunning Mansion is Mostly Real",
+        "publisher": "Vanity Fair",
+        "url": "https://www.vanityfair.com/hollywood/2015/04/ex-machina-location"
+      }
+    ],
+    "questions": [
+      {
+        "id": "exmachina-architecture",
+        "area": "research",
+        "prompt": {
+          "en": "How can real architecture and constructed sets form one fictional space?",
+          "nb": "Hvordan kan ekte arkitektur og bygde kulisser danne ett fiktivt rom?",
+          "fr": "Comment architecture réelle et décors construits forment-ils un espace fictif ?",
+          "pt": "Como podem arquitetura real e cenários construídos formar um espaço fictício?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map spatial relationships and match design features across locations",
+              "nb": "Kartlegg romforbindelser og samordne design på tvers av steder",
+              "fr": "Cartographier les relations spatiales et harmoniser les décors",
+              "pt": "Mapear relações espaciais e harmonizar elementos entre locais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume all interiors were filmed at the same real location",
+              "nb": "Anta at alle interiører ble filmet på samme virkelige sted",
+              "fr": "Supposer que tous les intérieurs ont été filmés au même lieu réel",
+              "pt": "Supor que todos os interiores foram filmados no mesmo local real"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose visually unrelated rooms without considering transitions",
+              "nb": "Velg visuelt urelaterte rom uten å vurdere overgangene",
+              "fr": "Choisir des pièces sans rapport ni réflexion sur les transitions",
+              "pt": "Escolher divisões sem relação nem considerar transições"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The Norwegian Film Commission and Digby describe Juvet and constructed underground sets. Design an original spatial map distinguishing real locations from built elements.",
+          "nb": "Norwegian Film Commission og Digby beskriver Juvet og bygde underjordiske kulisser. Lag et originalt romkart som skiller ekte steder fra bygde elementer.",
+          "fr": "La Norwegian Film Commission et Digby décrivent Juvet et les décors souterrains construits. Créez un plan distinguant lieux réels et éléments construits.",
+          "pt": "A Norwegian Film Commission e Digby descrevem Juvet e cenários subterrâneos construídos. Crie planta distinguindo locais reais e elementos construídos."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "exmachina-glass",
+        "area": "camera",
+        "prompt": {
+          "en": "How can lighting and glass partitions support a dialogue scene?",
+          "nb": "Hvordan kan lys og glassvegger støtte en dialogscene?",
+          "fr": "Comment lumière et cloisons vitrées servent-elles une scène dialoguée ?",
+          "pt": "Como podem luz e divisórias de vidro apoiar uma cena de diálogo?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Ignore reflections until the final rendering stage",
+              "nb": "Ignorer refleksjoner frem til endelig rendering",
+              "fr": "Ignorer les reflets jusqu’au rendu final",
+              "pt": "Ignorar reflexos até à renderização final"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Light every surface equally without testing the glass",
+              "nb": "Belys alle flater likt uten å prøve glasset",
+              "fr": "Éclairer toutes les surfaces également sans tester le verre",
+              "pt": "Iluminar todas as superfícies igualmente sem testar o vidro"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test reflections and practical lighting with actor positions",
+              "nb": "Prøv refleksjoner og praktiske lyskilder sammen med skuespillerplassering",
+              "fr": "Tester reflets et éclairage pratique avec les positions des acteurs",
+              "pt": "Testar reflexos e luz prática com posições dos atores"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Hardy describes embedded practicals, reflections and geometric barriers. Compare lighting tests on a small transparent partition to see how separation changes the scene.",
+          "nb": "Hardy beskriver integrerte lyskilder, refleksjoner og geometriske barrierer. Sammenlign lysprøver på en liten gjennomsiktig skillevegg for å se hvordan avstand endrer scenen.",
+          "fr": "Hardy décrit sources intégrées, reflets et barrières géométriques. Comparez des essais sur une cloison transparente pour étudier la séparation.",
+          "pt": "Hardy descreve fontes integradas, reflexos e barreiras geométricas. Compare testes numa divisória transparente para estudar a separação."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "exmachina-ava",
+        "area": "animation",
+        "prompt": {
+          "en": "How can digital body elements preserve a photographed performance?",
+          "nb": "Hvordan kan digitale kroppselementer bevare fotografert skuespill?",
+          "fr": "Comment des éléments corporels numériques préservent-ils le jeu filmé ?",
+          "pt": "Como podem elementos corporais digitais preservar interpretação filmada?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat long takes as eliminating the need for compositing",
+              "nb": "Anta at lange tagninger fjerner behovet for kompositering",
+              "fr": "Supposer que les plans longs dispensent de compositing",
+              "pt": "Supor que planos longos dispensam composição"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Track movement and preserve the performer’s timing and presence",
+              "nb": "Spor bevegelse og bevar utøverens timing og nærvær",
+              "fr": "Suivre le mouvement et préserver rythme et présence de l’interprète",
+              "pt": "Rastrear movimento e preservar ritmo e presença do intérprete"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Replace performance timing without consulting the actor footage",
+              "nb": "Erstatt spillerytmen uten å se skuespilleropptaket",
+              "fr": "Remplacer le rythme du jeu sans consulter les prises",
+              "pt": "Substituir ritmo da interpretação sem consultar as imagens"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Whitehurst describes early design collaboration, tracking and preservation of live performance through body replacement. Try a consent-based composite and compare it with the original movement.",
+          "nb": "Whitehurst beskriver designsamarbeid, sporing og bevaring av realspill gjennom kroppserstatning. Prøv en samtykkebasert kompositt og sammenlign med originalbevegelsen.",
+          "fr": "Whitehurst décrit collaboration, suivi et préservation du jeu lors du remplacement corporel. Testez un composite consenti et comparez au mouvement original.",
+          "pt": "Whitehurst descreve colaboração, rastreio e preservação da interpretação na substituição corporal. Teste composição consentida e compare com movimento original."
+        },
+        "sourceIds": [
+          "s1",
+          "s0"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_mad_max_fury_road_2015",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Action readability, storyboard coordination and vehicle sound",
+      "nb": "Handlingslesbarhet, storyboardsamarbeid og kjøretøylyd",
+      "fr": "Lisibilité de l’action, coordination du découpage et son des véhicules",
+      "pt": "Legibilidade da ação, coordenação de storyboard e som dos veículos"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "John Seale ACS ASC / Mad Max: Fury Road",
+        "publisher": "British Cinematographer",
+        "url": "https://britishcinematographer.co.uk/john-seale-acs-asc-mad-max-fury-road/"
+      },
+      {
+        "id": "s1",
+        "title": "ASC Breakfast Club 2015: John Seale",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/articles/asc-breakfast-club-2015-video-collection"
+      },
+      {
+        "id": "s2",
+        "title": "Mad Max: Fury Road – The Story Behind Its Most Insane Stunts",
+        "publisher": "Rolling Stone Australia",
+        "url": "https://au.rollingstone.com/movies/movie-reviews/mad-max-fury-road-the-story-behind-its-most-insane-stunts-679/"
+      },
+      {
+        "id": "s3",
+        "title": "Miking the Madness: Sound for Mad Max Fury Road",
+        "publisher": "AudioTechnology",
+        "url": "https://www.audiotechnology.com/features/milking-the-madness-sound-for-mad-max-fury-poad"
+      }
+    ],
+    "questions": [
+      {
+        "id": "furyroad-center",
+        "area": "camera",
+        "prompt": {
+          "en": "How can rapid cutting remain spatially readable?",
+          "nb": "Hvordan kan rask klipping forbli romlig forståelig?",
+          "fr": "Comment un montage rapide reste-t-il spatialement lisible ?",
+          "pt": "Como pode montagem rápida permanecer espacialmente legível?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test consistent points of visual attention across cuts",
+              "nb": "Prøv konsekvente visuelle oppmerksomhetspunkter på tvers av klipp",
+              "fr": "Tester des points d’attention cohérents entre les coupes",
+              "pt": "Testar pontos de atenção visual coerentes entre cortes"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Scatter key subjects randomly across every frame",
+              "nb": "Spre viktige motiver tilfeldig over hvert utsnitt",
+              "fr": "Disperser les sujets essentiels au hasard dans chaque cadre",
+              "pt": "Dispersar motivos principais ao acaso em cada quadro"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume speed alone makes editing understandable",
+              "nb": "Anta at hastighet alene gjør klippen forståelig",
+              "fr": "Supposer que la vitesse seule rend le montage lisible",
+              "pt": "Supor que velocidade por si só torna a montagem legível"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Seale describes center-framing to support fast editing. Test the technique with harmless object movement and compare how viewers follow points of attention.",
+          "nb": "Seale beskriver sentrert komposisjon for rask klipp. Prøv teknikken med ufarlig objektbevegelse og sammenlign hvordan publikum følger oppmerksomhetspunktene.",
+          "fr": "Seale décrit le cadrage centré pour le montage rapide. Testez avec des objets en mouvement sans danger et comparez le suivi du regard.",
+          "pt": "Seale descreve enquadramento centrado para montagem rápida. Teste com objetos em movimento sem perigo e compare o seguimento do olhar."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "furyroad-storyboard",
+        "area": "research",
+        "prompt": {
+          "en": "How should a complex practical sequence be coordinated across departments?",
+          "nb": "Hvordan bør en kompleks praktisk sekvens samordnes mellom avdelinger?",
+          "fr": "Comment coordonner une séquence pratique complexe entre départements ?",
+          "pt": "Como coordenar uma sequência prática complexa entre departamentos?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Let each department devise unrelated action independently",
+              "nb": "La hver avdeling utforme urelatert handling på egen hånd",
+              "fr": "Laisser chaque département concevoir une action indépendante",
+              "pt": "Deixar cada departamento conceber ação independente"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Replace rehearsal and safety checks with spontaneous filming",
+              "nb": "Erstatt prøver og sikkerhetskontroller med spontane opptak",
+              "fr": "Remplacer répétitions et contrôles par un tournage spontané",
+              "pt": "Substituir ensaios e verificações por filmagem espontânea"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use shared storyboards, qualified specialists and safety approvals",
+              "nb": "Bruk felles storyboard, kvalifiserte fagpersoner og sikkerhetsgodkjenning",
+              "fr": "Utiliser découpage partagé, spécialistes qualifiés et validation de sécurité",
+              "pt": "Usar storyboard partilhado, especialistas qualificados e aprovação de segurança"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The craft accounts describe storyboard-led production and coordinated practical work. Use a tabletop storyboard exercise, not a recreation of dangerous vehicle stunts.",
+          "nb": "Fagkildene beskriver storyboardstyrt produksjon og samordnet praktisk arbeid. Bruk en bordmodelløvelse, ikke en gjenskaping av farlige kjøretøystunt.",
+          "fr": "Les sources décrivent découpage et travail pratique coordonnés. Utilisez une maquette de table, sans reproduire de cascades dangereuses.",
+          "pt": "As fontes descrevem storyboard e trabalho prático coordenado. Use uma maquete de mesa, sem reproduzir acrobacias perigosas."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "furyroad-engines",
+        "area": "sound",
+        "prompt": {
+          "en": "How can vehicle sound give fictional machines distinct identities?",
+          "nb": "Hvordan kan kjøretøylyd gi fiktive maskiner egne identiteter?",
+          "fr": "Comment le son donne-t-il aux véhicules fictifs des identités distinctes ?",
+          "pt": "Como pode o som dar identidades distintas a veículos fictícios?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume picture editing determines the entire sound identity",
+              "nb": "Anta at bildeklipp bestemmer hele lydidentiteten",
+              "fr": "Supposer que le montage image détermine toute identité sonore",
+              "pt": "Supor que montagem de imagem determina toda identidade sonora"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Combine safe recorded sound layers into distinct sonic profiles",
+              "nb": "Kombiner trygt innspilte lydlag til egne lydprofiler",
+              "fr": "Combiner des couches sonores enregistrées en sécurité",
+              "pt": "Combinar camadas sonoras gravadas em segurança"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use an identical engine recording for every machine",
+              "nb": "Bruk samme motoropptak for alle maskiner",
+              "fr": "Employer le même enregistrement moteur pour chaque machine",
+              "pt": "Usar a mesma gravação de motor para todas as máquinas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Osmo describes dedicated vehicle recordings and layered sonic identities. Create original sound profiles from safe recordings and compare their narrative function.",
+          "nb": "Osmo beskriver egne kjøretøyopptak og lagdelte lydidentiteter. Lag originale lydprofiler fra trygge opptak og sammenlign fortellerfunksjonen.",
+          "fr": "Osmo décrit des prises dédiées et des identités sonores stratifiées. Créez des profils originaux à partir de sons sûrs et comparez leur fonction.",
+          "pt": "Osmo descreve gravações dedicadas e identidades sonoras em camadas. Crie perfis originais com sons seguros e compare a função narrativa."
+        },
+        "sourceIds": [
+          "s3",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_son_of_saul_2015",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Restricted viewpoint, testimony and offscreen sound",
+      "nb": "Avgrenset perspektiv, vitnesbyrd og lyd utenfor bildet",
+      "fr": "Point de vue restreint, témoignage et son hors champ",
+      "pt": "Perspetiva restrita, testemunho e som fora de campo"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Son of Saul",
+        "publisher": "Sony Pictures Classics",
+        "url": "https://www.sonyclassics.com/sonofsaul/"
+      },
+      {
+        "id": "s2",
+        "title": "Hell on Earth: László Nemes on Son of Saul",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/96169-hell-on-earth/"
+      },
+      {
+        "id": "s3",
+        "title": "2015 in Review: 6 Cinematography Trends",
+        "publisher": "American Society of Cinematographers",
+        "url": "https://theasc.com/post/the-film-book/2015-in-review-6-trends/"
+      },
+      {
+        "id": "s4",
+        "title": "László Rajk • Production designer",
+        "publisher": "Cineuropa",
+        "url": "https://cineuropa.org/en/interview/307299/"
+      },
+      {
+        "id": "s6",
+        "title": "Anatomy of a Contender: Son of Saul",
+        "publisher": "The Hollywood Reporter / Sony Pictures Classics",
+        "url": "https://www.sonyclassics.com/sonofsaul/hollywoodreporter-sonofsaul.pdf"
+      }
+    ],
+    "questions": [
+      {
+        "id": "sonofsaul-representation",
+        "area": "research",
+        "prompt": {
+          "en": "How should historical testimony guide a restricted representation?",
+          "nb": "Hvordan bør historiske vitnesbyrd veilede en avgrenset fremstilling?",
+          "fr": "Comment le témoignage historique guide-t-il une représentation restreinte ?",
+          "pt": "Como deve testemunho histórico orientar uma representação restrita?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Consult testimony and historians while setting explicit limits on depiction",
+              "nb": "Rådfør deg med vitnesbyrd og historikere og sett tydelige fremstillingsgrenser",
+              "fr": "Consulter témoignages et historiens en fixant des limites explicites",
+              "pt": "Consultar testemunhos e historiadores definindo limites explícitos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat emotional intensity as proof of historical accuracy",
+              "nb": "Behandle følelsesintensitet som bevis på historisk nøyaktighet",
+              "fr": "Traiter l’intensité émotionnelle comme preuve historique",
+              "pt": "Tratar intensidade emocional como prova histórica"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume a constructed set proves the exact historical geography",
+              "nb": "Anta at en kulisse beviser den eksakte historiske geografien",
+              "fr": "Supposer qu’un décor construit prouve la géographie historique exacte",
+              "pt": "Supor que cenário construído prova geografia histórica exata"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Nemes describes testimony research and limits on depiction; Rajk describes functional rather than literal reconstruction. Document sources and ethical boundaries before designing any fictional study.",
+          "nb": "Nemes beskriver vitnesbyrd og fremstillingsgrenser; Rajk beskriver funksjonell fremfor bokstavelig rekonstruksjon. Dokumenter kilder og etiske grenser før en fiktiv studie utformes.",
+          "fr": "Nemes décrit les témoignages et les limites de représentation ; Rajk une reconstruction fonctionnelle. Documentez sources et limites éthiques avant toute étude fictive.",
+          "pt": "Nemes descreve testemunhos e limites de representação; Rajk reconstrução funcional. Documente fontes e limites éticos antes de qualquer estudo fictício."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
+        ]
+      },
+      {
+        "id": "sonofsaul-focus",
+        "area": "camera",
+        "prompt": {
+          "en": "How can restricted framing limit what a viewer knows?",
+          "nb": "Hvordan kan avgrenset bildekomposisjon begrense hva publikum vet?",
+          "fr": "Comment un cadrage restreint limite-t-il le savoir du spectateur ?",
+          "pt": "Como pode enquadramento restrito limitar o conhecimento do público?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Reveal every offscreen event through explanatory wide shots",
+              "nb": "Avslør alle hendelser utenfor bildet med forklarende totalbilder",
+              "fr": "Révéler chaque événement hors champ par des plans larges explicatifs",
+              "pt": "Revelar cada acontecimento fora de campo por planos gerais explicativos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume narrow framing makes a fictional account historically complete",
+              "nb": "Anta at smalt utsnitt gjør en fiktiv beretning historisk fullstendig",
+              "fr": "Supposer qu’un cadrage étroit rend un récit historiquement complet",
+              "pt": "Supor que enquadramento estreito torna relato historicamente completo"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test a companion viewpoint with controlled depth of field",
+              "nb": "Prøv et ledsagerperspektiv med kontrollert dybdeskarphet",
+              "fr": "Tester un point de vue compagnon avec profondeur de champ contrôlée",
+              "pt": "Testar perspetiva de acompanhante com profundidade de campo controlada"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The sources describe camera-as-companion, shallow focus and restricted framing. Test the formal principle in an unrelated neutral scene without reenacting historical suffering.",
+          "nb": "Kildene beskriver kamera som ledsager, liten dybdeskarphet og avgrenset utsnitt. Prøv formprinsippet i en urelatert nøytral scene uten å gjenskape historisk lidelse.",
+          "fr": "Les sources décrivent caméra compagne, faible profondeur et cadrage restreint. Testez le principe dans une scène neutre sans rejouer la souffrance historique.",
+          "pt": "As fontes descrevem câmara acompanhante, pouca profundidade e quadro restrito. Teste o princípio numa cena neutra sem reencenar sofrimento histórico."
+        },
+        "sourceIds": [
+          "s0",
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "sonofsaul-offscreen",
+        "area": "sound",
+        "prompt": {
+          "en": "How can offscreen sound convey space without visual exposition?",
+          "nb": "Hvordan kan lyd utenfor bildet formidle rom uten visuell forklaring?",
+          "fr": "Comment le son hors champ transmet-il l’espace sans exposition visuelle ?",
+          "pt": "Como pode som fora de campo transmitir espaço sem exposição visual?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat designed sound as an authentic historical recording",
+              "nb": "Behandle designet lyd som et autentisk historisk opptak",
+              "fr": "Traiter le son conçu comme un enregistrement historique authentique",
+              "pt": "Tratar som concebido como gravação histórica autêntica"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Build layered sound and distinguish audible from visible information",
+              "nb": "Bygg lagdelt lyd og skill hørbar fra synlig informasjon",
+              "fr": "Construire des couches sonores et distinguer audible et visible",
+              "pt": "Construir camadas sonoras e distinguir informação audível e visível"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Illustrate every sound with an explanatory close-up",
+              "nb": "Illustrer hver lyd med et forklarende nærbilde",
+              "fr": "Illustrer chaque son par un gros plan explicatif",
+              "pt": "Ilustrar cada som com um grande plano explicativo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The production accounts describe layered multilingual sound supplying withheld information. Test offscreen space using ordinary neutral sounds and distinguish construction from historical evidence.",
+          "nb": "Produksjonskildene beskriver lagdelt flerspråklig lyd som formidler tilbakeholdt informasjon. Prøv lydrom med vanlige nøytrale lyder og skill konstruksjon fra historiske bevis.",
+          "fr": "Les sources décrivent un son multilingue stratifié transmettant des informations retenues. Testez le hors-champ avec des sons neutres et distinguez construction et preuve.",
+          "pt": "As fontes descrevem som multilingue em camadas transmitindo informação retida. Teste fora de campo com sons neutros e distinga construção de prova."
+        },
+        "sourceIds": [
+          "s0",
+          "s2",
+          "s6"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_victoria_2015",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Continuous performance, rehearsed movement and real-time structure",
+      "nb": "Sammenhengende spill, innøvd bevegelse og sanntidsstruktur",
+      "fr": "Jeu continu, déplacements répétés et structure en temps réel",
+      "pt": "Interpretação contínua, movimentos ensaiados e estrutura em tempo real"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Victoria: director describes a madcap heist film that's a one-take wonder",
+        "publisher": "The Guardian",
+        "url": "https://www.theguardian.com/film/2015/oct/07/victoria-director-sebastian-schipper-one-take-heist-film"
+      },
+      {
+        "id": "s1",
+        "title": "What It's Like to Shoot an Entire Feature-Length Film in One Take",
+        "publisher": "VICE",
+        "url": "https://www.vice.com/en/article/sebastian-schipper-victoria-interview/"
+      },
+      {
+        "id": "s2",
+        "title": "We Watch Films with Our Nervous Systems: Sebastian Schipper on Victoria",
+        "publisher": "RogerEbert.com",
+        "url": "https://www.rogerebert.com/interviews/we-watch-films-with-our-nervous-systems-sebastian-schipper-on-victoria"
+      },
+      {
+        "id": "s3",
+        "title": "This Director of This Movie Shot in a Single Take Doesn't Resent Birdman, Actually",
+        "publisher": "Vanity Fair",
+        "url": "https://www.vanityfair.com/hollywood/2015/10/victoria-director-interview"
+      }
+    ],
+    "questions": [
+      {
+        "id": "victoria-route",
+        "area": "camera",
+        "prompt": {
+          "en": "How should an uninterrupted location sequence be rehearsed?",
+          "nb": "Hvordan bør en uavbrutt stedssekvens øves inn?",
+          "fr": "Comment répéter une séquence continue en décors réels ?",
+          "pt": "Como ensaiar uma sequência contínua em locais reais?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse a short safe path with coordinated cues and permissions",
+              "nb": "Øv på en kort trygg rute med samordnede signaler og tillatelser",
+              "fr": "Répéter un trajet court et sûr avec signaux et autorisations",
+              "pt": "Ensaiar um percurso curto e seguro com sinais e autorizações"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume a continuous take requires no location preparation",
+              "nb": "Anta at en sammenhengende tagning ikke krever stedsforberedelse",
+              "fr": "Supposer qu’un plan continu ne demande aucun repérage",
+              "pt": "Supor que plano contínuo dispensa preparação de locais"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Depend on hidden cuts to repair every movement",
+              "nb": "Stol på skjulte klipp for å reparere alle bevegelser",
+              "fr": "Compter sur les coupes cachées pour réparer chaque mouvement",
+              "pt": "Depender de cortes ocultos para reparar cada movimento"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Schipper describes extensive rehearsal and continuous movement across locations. Design a short neutral route with permission and safe rehearsal rather than reproducing the original story action.",
+          "nb": "Schipper beskriver omfattende prøver og sammenhengende bevegelse mellom steder. Lag en kort nøytral rute med tillatelse og trygg øving fremfor å gjenskape originalhandlingen.",
+          "fr": "Schipper décrit des répétitions et déplacements continus. Concevez un trajet neutre et court, autorisé et répété en sécurité, sans reproduire l’action originale.",
+          "pt": "Schipper descreve ensaios e movimentos contínuos. Crie percurso neutro curto, autorizado e ensaiado em segurança, sem reproduzir a ação original."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "victoria-improv",
+        "area": "research",
+        "prompt": {
+          "en": "How can improvised dialogue fit a structured continuous performance?",
+          "nb": "Hvordan kan improvisert dialog passe inn i strukturert sammenhengende spill?",
+          "fr": "Comment un dialogue improvisé s’inscrit-il dans un jeu continu structuré ?",
+          "pt": "Como pode diálogo improvisado integrar interpretação contínua estruturada?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Remove all shared objectives before the performance",
+              "nb": "Fjern alle felles mål før spillet",
+              "fr": "Supprimer tous les objectifs communs avant le jeu",
+              "pt": "Eliminar objetivos comuns antes da interpretação"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Require every improvisation to follow identical wording",
+              "nb": "Krev at all improvisasjon følger identisk ordlyd",
+              "fr": "Exiger des formulations identiques pour toute improvisation",
+              "pt": "Exigir formulações idênticas em toda improvisação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Agree on scene objectives and allow responsive dialogue",
+              "nb": "Avtal scenemål og tillat responsiv dialog",
+              "fr": "Convenir des objectifs et permettre un dialogue réactif",
+              "pt": "Acordar objetivos e permitir diálogo responsivo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Schipper describes a scenario without fixed dialogue and emphasizes actor connection. Test a fictional conversation with agreed objectives and freely responsive wording.",
+          "nb": "Schipper beskriver et scenario uten fast dialog og vektlegger skuespillerkontakt. Prøv en fiktiv samtale med avtalte mål og fritt responsiv ordlyd.",
+          "fr": "Schipper décrit un scénario sans dialogue fixé et souligne la relation entre acteurs. Testez une conversation fictive avec objectifs convenus et paroles libres.",
+          "pt": "Schipper descreve cenário sem diálogo fixo e ligação entre atores. Teste conversa fictícia com objetivos acordados e palavras livres."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "victoria-duration",
+        "area": "research",
+        "prompt": {
+          "en": "How can real-time storytelling sustain attention without editorial ellipses?",
+          "nb": "Hvordan kan sanntidsfortelling holde oppmerksomheten uten klippeellipser?",
+          "fr": "Comment le temps réel maintient-il l’attention sans ellipses de montage ?",
+          "pt": "Como pode narrativa em tempo real manter atenção sem elipses de montagem?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume continuous duration automatically creates engagement",
+              "nb": "Anta at sammenhengende varighet automatisk skaper engasjement",
+              "fr": "Supposer que la durée continue crée automatiquement l’intérêt",
+              "pt": "Supor que duração contínua gera automaticamente interesse"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare complete takes and assess changes in pace within each",
+              "nb": "Sammenlign hele tagninger og vurder temposkifter innenfor hver",
+              "fr": "Comparer des prises complètes et leurs variations de rythme",
+              "pt": "Comparar tomadas completas e suas variações de ritmo"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Evaluate only isolated dramatic highlights from each take",
+              "nb": "Vurder bare isolerte dramatiske høydepunkter fra hver tagning",
+              "fr": "Évaluer seulement les moments forts isolés de chaque prise",
+              "pt": "Avaliar apenas momentos fortes isolados de cada tomada"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Schipper describes choosing a complete attempt and the embodied experience of unbroken duration. Compare short complete fictional takes and assess internal rhythm, not just the length.",
+          "nb": "Schipper beskriver valg av en hel tagning og kroppslig opplevelse av uavbrutt varighet. Sammenlign korte komplette fiktive tagninger og vurder indre rytme, ikke bare lengde.",
+          "fr": "Schipper décrit le choix d’une prise complète et l’expérience de durée continue. Comparez des prises fictives courtes et leur rythme interne.",
+          "pt": "Schipper descreve escolha de tomada completa e experiência de duração contínua. Compare tomadas fictícias curtas e ritmo interno, não apenas duração."
+        },
+        "sourceIds": [
+          "s0",
+          "s2",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_revenant_2015",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Seasonal light, location continuity and invisible effects",
+      "nb": "Sesonglys, stedskontinuitet og usynlige effekter",
+      "fr": "Lumière saisonnière, continuité des lieux et effets invisibles",
+      "pt": "Luz sazonal, continuidade de locais e efeitos invisíveis"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "ALEXA XT and ALEXA 65 on The Revenant",
+        "publisher": "ARRI",
+        "url": "https://www.arri.com/news-en/alexa-xt-and-alexa-65-on-the-revenant-"
+      },
+      {
+        "id": "s2",
+        "title": "Wrap Shot: The Revenant",
+        "publisher": "American Society of Cinematographers",
+        "url": "https://theasc.com/articles/wrap-shot-the-revenant"
+      },
+      {
+        "id": "s3",
+        "title": "Emmanuel Lubezki AMC ASC / The Revenant",
+        "publisher": "British Cinematographer",
+        "url": "https://britishcinematographer.co.uk/emmanuel-lubezki-amc-asc-the-revenant/"
+      },
+      {
+        "id": "s5",
+        "title": "The Revenant",
+        "publisher": "Industrial Light & Magic",
+        "url": "https://www.ilm.com/vfx/the-revenant/"
+      },
+      {
+        "id": "s6",
+        "title": "The Revenant",
+        "publisher": "MPC",
+        "url": "https://www.mpcvfx.com/en/filmography/revenant/"
+      },
+      {
+        "id": "s7",
+        "title": "Editing: The Revenant",
+        "publisher": "Post Magazine",
+        "url": "https://www.postmagazine.com/Publications/Post-Magazine/2016/January-1-2016/Editing-The-Revenant.aspx"
+      },
+      {
+        "id": "s8",
+        "title": "Designing for the Screen: An Interview with Jack Fisk",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/current/posts/3923-designing-for-the-screen-an-interview-with-jack-fisk"
+      }
+    ],
+    "questions": [
+      {
+        "id": "revenant-daylight",
+        "area": "camera",
+        "prompt": {
+          "en": "How should a remote production plan for changing daylight and weather?",
+          "nb": "Hvordan bør en avsides produksjon planlegge for skiftende dagslys og vær?",
+          "fr": "Comment préparer un tournage isolé aux variations de lumière et météo ?",
+          "pt": "Como preparar rodagem remota para variações de luz e clima?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan daylight windows, safe alternatives and continuity references",
+              "nb": "Planlegg dagslysvinduer, trygge alternativer og kontinuitetsreferanser",
+              "fr": "Prévoir créneaux de lumière, alternatives sûres et références de continuité",
+              "pt": "Planear janelas de luz, alternativas seguras e referências de continuidade"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Keep the same schedule regardless of weather and season",
+              "nb": "Behold samme plan uavhengig av vær og sesong",
+              "fr": "Garder le même planning malgré météo et saisons",
+              "pt": "Manter calendário idêntico apesar de clima e estação"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume natural light eliminates every need for planning",
+              "nb": "Anta at naturlig lys fjerner ethvert planleggingsbehov",
+              "fr": "Supposer que la lumière naturelle dispense de toute préparation",
+              "pt": "Supor que luz natural dispensa qualquer preparação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "ASC describes short winter daylight and a move for snow continuity; Lubezki describes bounded lighting exceptions. Plan a safe local test with weather alternatives rather than copying harsh working conditions.",
+          "nb": "ASC beskriver korte vinterdager og flytting for snøkontinuitet; Lubezki beskriver avgrensede lysunntak. Planlegg en trygg lokal prøve med væralternativer fremfor å kopiere krevende arbeidsforhold.",
+          "fr": "L’ASC décrit les jours courts et un déplacement pour la neige ; Lubezki précise des exceptions lumineuses. Prévoyez un essai local sûr avec alternatives météo.",
+          "pt": "A ASC descreve dias curtos e deslocação para continuidade da neve; Lubezki refere exceções de iluminação. Planeie teste local seguro com alternativas climáticas."
+        },
+        "sourceIds": [
+          "s1",
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "revenant-composite",
+        "area": "animation",
+        "prompt": {
+          "en": "How should continuous-looking composite footage be documented?",
+          "nb": "Hvordan bør sammenhengende komposittopptak dokumenteres?",
+          "fr": "Comment documenter des images composites à continuité apparente ?",
+          "pt": "Como documentar imagens compostas de continuidade aparente?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume a seamless image proves one uninterrupted original take",
+              "nb": "Anta at et sømløst bilde beviser én uavbrutt originaltagning",
+              "fr": "Supposer qu’une image continue prouve une prise originale ininterrompue",
+              "pt": "Supor que imagem contínua prova uma tomada original ininterrupta"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Erase practical contributions from the effects record",
+              "nb": "Fjern praktiske bidrag fra effektloggen",
+              "fr": "Effacer les apports pratiques du dossier d’effets",
+              "pt": "Apagar contributos práticos do registo de efeitos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Track photographed elements, joins and digital contributions separately",
+              "nb": "Registrer fotograferte elementer, skjøter og digitale bidrag separat",
+              "fr": "Documenter séparément éléments filmés, raccords et apports numériques",
+              "pt": "Registar separadamente elementos filmados, junções e contributos digitais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "ILM and MPC describe multiple photographed elements integrated into continuous-seeming sequences. Make a neutral composite study and preserve the provenance of each element.",
+          "nb": "ILM og MPC beskriver flere fotograferte elementer integrert i tilsynelatende sammenhengende sekvenser. Lag en nøytral komposittstudie og bevar hvert elements kildeopphav.",
+          "fr": "ILM et MPC décrivent plusieurs éléments filmés intégrés à des séquences continues en apparence. Créez une étude composite neutre et conservez la provenance de chaque élément.",
+          "pt": "ILM e MPC descrevem vários elementos filmados integrados em sequências aparentemente contínuas. Crie estudo composto neutro e preserve proveniência de cada elemento."
+        },
+        "sourceIds": [
+          "s5",
+          "s6"
+        ]
+      },
+      {
+        "id": "revenant-editorial",
+        "area": "research",
+        "prompt": {
+          "en": "How can editorial planning support a location-based production?",
+          "nb": "Hvordan kan klippeplanlegging støtte en stedbasert produksjon?",
+          "fr": "Comment le montage préparatoire aide-t-il un tournage en décors réels ?",
+          "pt": "Como pode preparação de montagem apoiar produção em locais reais?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat design and editorial plans as unrelated documents",
+              "nb": "Behandle design- og klippeplaner som urelaterte dokumenter",
+              "fr": "Traiter les plans de décor et montage comme indépendants",
+              "pt": "Tratar planos de design e montagem como independentes"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Review rehearsal footage and coordinate early departmental handoffs",
+              "nb": "Gjennomgå prøveopptak og samordne tidlige overleveringer mellom avdelinger",
+              "fr": "Examiner les répétitions filmées et coordonner les transmissions précoces",
+              "pt": "Rever ensaios filmados e coordenar transições antecipadas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Wait until every shoot is finished before reviewing rhythm",
+              "nb": "Vent til alle opptak er ferdige før rytmen vurderes",
+              "fr": "Attendre la fin de tout tournage pour examiner le rythme",
+              "pt": "Esperar pelo fim de toda rodagem para rever ritmo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Mirrione describes editorial involvement before and during filming; Fisk describes location-led design. Build a small rehearsal review and shared handoff log without inventing original shot allocations.",
+          "nb": "Mirrione beskriver klippeinvolvering før og under opptak; Fisk beskriver stedbasert design. Lag en liten gjennomgang av prøveopptak og felles overleveringslogg uten å finne på originalens bildeansvar.",
+          "fr": "Mirrione décrit le montage avant et pendant le tournage ; Fisk le décor lié aux lieux. Créez une revue de répétition et un journal partagé sans inventer les attributions originales.",
+          "pt": "Mirrione descreve montagem antes e durante rodagem; Fisk design ligado aos locais. Crie revisão de ensaio e registo partilhado sem inventar atribuições originais."
+        },
+        "sourceIds": [
+          "s7",
+          "s8"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_moonlight_2016",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Single-camera intimacy, triptych continuity and musical transformation",
+      "nb": "Ettkameranærhet, tredelt kontinuitet og musikalsk transformasjon",
+      "fr": "Intimité à une caméra, continuité du triptyque et transformation musicale",
+      "pt": "Intimidade com uma câmara, continuidade do tríptico e transformação musical"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "A One-Camera Show: DP James Laxton on Moonlight",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/100603-a-one-camera-show-dp-james-laxton-on-moonlight/"
+      },
+      {
+        "id": "s1",
+        "title": "Moonlight: DP James Laxton creates poetic look on ALEXA",
+        "publisher": "ARRI",
+        "url": "https://www.arri.com/news-en/-moonlight-dp-james-laxton-creates-poetic-look-on-alexa"
+      },
+      {
+        "id": "s2",
+        "title": "The A-List: Moonlight director Barry Jenkins",
+        "publisher": "postPerspective",
+        "url": "https://postperspective.com/the-a-list-moonlight-director-barry-jenkins/"
+      },
+      {
+        "id": "s3",
+        "title": "Inside Looking Out: Barry Jenkins on Moonlight",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/100314-inside-looking-out/"
+      },
+      {
+        "id": "s4",
+        "title": "All The Way Home with Barry Jenkins & Greta Gerwig",
+        "publisher": "A24",
+        "url": "https://a24films.com/notes/2018/02/episode-01-all-the-way-home-with-barry-jenkins-greta-gerwig"
+      },
+      {
+        "id": "s5",
+        "title": "Director Barry Jenkins on the Music That Made Moonlight",
+        "publisher": "Pitchfork",
+        "url": "https://pitchfork.com/thepitch/1377-director-barry-jenkins-on-the-music-that-made-moonlight/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "moonlight-camera",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a single-camera approach protect performance momentum?",
+          "nb": "Hvordan kan ettkameraopptak bevare skuespillets flyt?",
+          "fr": "Comment une approche à une caméra préserve-t-elle l’élan du jeu ?",
+          "pt": "Como pode abordagem de uma câmara preservar a dinâmica da interpretação?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan motivated coverage and test proximity with the performers",
+              "nb": "Planlegg begrunnet dekning og prøv nærhet med utøverne",
+              "fr": "Prévoir des prises motivées et tester la proximité avec les acteurs",
+              "pt": "Planear cobertura motivada e testar proximidade com intérpretes"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume multiple cameras were used because coverage looks extensive",
+              "nb": "Anta at flere kameraer ble brukt fordi dekningen virker omfattende",
+              "fr": "Supposer plusieurs caméras parce que la couverture paraît étendue",
+              "pt": "Supor várias câmaras porque cobertura parece extensa"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose every angle without considering performance rhythm",
+              "nb": "Velg alle vinkler uten hensyn til spillerytmen",
+              "fr": "Choisir les angles sans considérer le rythme du jeu",
+              "pt": "Escolher ângulos sem considerar ritmo da interpretação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Laxton documents a one-camera production and performance-centered decisions. Test proximity and coverage in a short consent-based dialogue scene without claiming exact original setups.",
+          "nb": "Laxton dokumenterer ettkameraproduksjon og valg sentrert om skuespillet. Prøv nærhet og dekning i en kort samtykkebasert dialogscene uten å påstå eksakte originaloppsett.",
+          "fr": "Laxton documente une caméra unique et des choix centrés sur le jeu. Testez proximité et couverture dans une scène consentie sans inventer les dispositifs originaux.",
+          "pt": "Laxton documenta uma câmara e escolhas centradas na interpretação. Teste proximidade e cobertura numa cena consentida sem inventar dispositivos originais."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "moonlight-triptych",
+        "area": "research",
+        "prompt": {
+          "en": "How can three performers convey continuity across life stages?",
+          "nb": "Hvordan kan tre utøvere formidle kontinuitet gjennom livsfaser?",
+          "fr": "Comment trois interprètes transmettent-ils une continuité entre âges de la vie ?",
+          "pt": "Como podem três intérpretes transmitir continuidade entre fases da vida?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Demand identical physical gestures at every life stage",
+              "nb": "Krev identiske fysiske gester i alle livsfaser",
+              "fr": "Exiger des gestes physiques identiques à chaque âge",
+              "pt": "Exigir gestos físicos idênticos em todas as fases"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Apply arbitrary color divisions without considering character",
+              "nb": "Bruk vilkårlige fargeinndelinger uten hensyn til karakteren",
+              "fr": "Appliquer des divisions chromatiques arbitraires sans considérer le personnage",
+              "pt": "Aplicar divisões cromáticas arbitrárias sem considerar personagem"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare emotional motifs, gestures and character-led color choices",
+              "nb": "Sammenlign emosjonelle motiver, gester og karakterstyrte fargevalg",
+              "fr": "Comparer motifs émotionnels, gestes et couleurs guidées par le personnage",
+              "pt": "Comparar motivos emocionais, gestos e cores guiadas pela personagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Jenkins describes emotional continuity across three actors and character-led color collaboration. Create an original triptych study using related emotional motifs rather than identical performances.",
+          "nb": "Jenkins beskriver emosjonell kontinuitet mellom tre skuespillere og karakterstyrt fargesamarbeid. Lag en original tredelt studie med beslektede følelsesmotiver fremfor identisk spill.",
+          "fr": "Jenkins décrit la continuité émotionnelle entre trois acteurs et la couleur guidée par le personnage. Créez un triptyque original avec motifs apparentés plutôt que jeux identiques.",
+          "pt": "Jenkins descreve continuidade emocional entre três atores e cor guiada pela personagem. Crie tríptico original com motivos relacionados em vez de interpretações idênticas."
+        },
+        "sourceIds": [
+          "s2",
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "moonlight-music",
+        "area": "sound",
+        "prompt": {
+          "en": "How can a musical theme transform across narrative chapters?",
+          "nb": "Hvordan kan et musikalsk tema transformeres gjennom fortellingens kapitler?",
+          "fr": "Comment un thème musical se transforme-t-il entre chapitres narratifs ?",
+          "pt": "Como pode um tema musical transformar-se entre capítulos narrativos?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use unrelated themes without considering narrative development",
+              "nb": "Bruk urelaterte temaer uten hensyn til fortellingens utvikling",
+              "fr": "Employer des thèmes sans rapport avec l’évolution du récit",
+              "pt": "Usar temas sem relação com evolução narrativa"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Develop original related motifs and study their cultural context",
+              "nb": "Utvikle originale beslektede motiver og undersøk kulturkonteksten",
+              "fr": "Développer des motifs originaux apparentés et étudier leur contexte culturel",
+              "pt": "Desenvolver motivos originais relacionados e estudar contexto cultural"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat slowing any piece of music as culturally equivalent",
+              "nb": "Behandle nedbremsing av vilkårlig musikk som kulturelt identisk",
+              "fr": "Traiter tout ralentissement musical comme culturellement équivalent",
+              "pt": "Tratar abrandamento de qualquer música como culturalmente equivalente"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Jenkins describes Britell's script-derived themes and chopped-and-screwed influences rooted in Southern hip-hop. Create original motifs and document the specific cultural reference rather than generalizing the technique.",
+          "nb": "Jenkins beskriver Britells manusbaserte temaer og chopped-and-screwed-inspirasjon fra sørstatshiphop. Lag originale motiver og dokumenter den konkrete kulturreferansen fremfor å generalisere teknikken.",
+          "fr": "Jenkins décrit les thèmes de Britell et l’influence chopped-and-screwed du hip-hop du Sud. Créez des motifs originaux et documentez la référence culturelle précise.",
+          "pt": "Jenkins descreve temas de Britell e influência chopped-and-screwed do hip-hop do Sul. Crie motivos originais e documente a referência cultural específica."
+        },
+        "sourceIds": [
+          "s5",
+          "s3"
+        ]
+      }
+    ]
   }
 ] as const satisfies readonly SourceBackedCaseWorkshop[];
