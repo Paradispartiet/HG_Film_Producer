@@ -8717,5 +8717,1009 @@ export const worldCinemaSourceWorkshops = [
         ]
       }
     ]
+  },
+  {
+    "scenarioId": "scenario_kpop_demon_hunters_2025",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Stylised animation, song dramaturgy and music-led editing",
+      "nb": "Stilisert animasjon, sangdramaturgi og musikkstyrt klipp",
+      "fr": "Animation stylisée, dramaturgie des chansons et montage musical",
+      "pt": "Animação estilizada, dramaturgia das canções e montagem musical"
+    },
+    "sources": [
+      {
+        "id": "s2",
+        "title": "From Spider-Man: Into the Spider-Verse to KPop Demon Hunters: Spotlighting the Evolution of SPA × Imageworks Collaborations",
+        "publisher": "Sony Group",
+        "url": "https://www.sony.com/en/SonyInfo/technology/stories/entries/kpop_demon_hunters/"
+      },
+      {
+        "id": "s3",
+        "title": "How Colors Tell the Story of KPop Demon Hunters",
+        "publisher": "Netflix Tudum",
+        "url": "https://www.netflix.com/tudum/features/kpop-demon-hunters-animators"
+      },
+      {
+        "id": "s4",
+        "title": "K-Pop Hitmaker Danny Chung on Crafting the Sound of KPop Demon Hunters",
+        "publisher": "Netflix Tudum",
+        "url": "https://www.netflix.com/tudum/articles/kpop-demon-hunters-danny-chung"
+      },
+      {
+        "id": "s5",
+        "title": "How Golden, the Musical Heart of KPop Demon Hunters, Is Living Up to Its Name",
+        "publisher": "Netflix Tudum",
+        "url": "https://www.netflix.com/tudum/features/kpop-demon-hunters-golden-oral-history"
+      },
+      {
+        "id": "s6",
+        "title": "KPop Demon Hunters Edited on Avid - Interview with Editor Nathan Schauf",
+        "publisher": "PRONEWS",
+        "url": "https://en.pronews.com/special/20251205120013340.html"
+      },
+      {
+        "id": "s9",
+        "title": "Art of the Cut: KPop Demon Hunters",
+        "publisher": "Boris FX",
+        "url": "https://borisfx.com/blog/aotc/art-of-the-cut-kpop-demon-hunters/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "kpop-style",
+        "area": "camera",
+        "prompt": {
+          "en": "Hand-keyed animation and expressive motion graphics shape the image. Which approach would you choose in a new production exercise?",
+          "nb": "Håndanimert bevegelse og ekspressiv bevegelsesgrafikk former bildet. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "L’animation manuelle et les graphismes expressifs façonnent l’image. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A animação manual e os grafismos expressivos moldam a imagem. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare stylised motion tests with realistic timing",
+              "nb": "Sammenlign stiliserte bevegelsesprøver med realistisk timing",
+              "fr": "Comparer des essais stylisés à un rythme réaliste",
+              "pt": "Comparar testes estilizados com ritmo realista"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use identical realistic movement for every character",
+              "nb": "Bruk identisk realistisk bevegelse for alle karakterer",
+              "fr": "Utiliser le même mouvement réaliste pour chaque personnage",
+              "pt": "Usar movimento realista idêntico para cada personagem"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume motion capture alone defines the visual style",
+              "nb": "Anta at bevegelsesopptak alene definerer bildestilen",
+              "fr": "Supposer que la capture de mouvement définit seule le style",
+              "pt": "Supor que captura de movimento define sozinha o estilo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Hand-keyed animation and expressive motion graphics shape the image. In a new exercise, test this approach: Compare stylised motion tests with realistic timing.",
+          "nb": "Håndanimert bevegelse og ekspressiv bevegelsesgrafikk former bildet. Prøv denne tilnærmingen i en ny øvelse: Sammenlign stiliserte bevegelsesprøver med realistisk timing.",
+          "fr": "L’animation manuelle et les graphismes expressifs façonnent l’image. Dans un nouvel exercice, tester cette approche : Comparer des essais stylisés à un rythme réaliste.",
+          "pt": "A animação manual e os grafismos expressivos moldam a imagem. Num novo exercício, testar esta abordagem: Comparar testes estilizados com ritmo realista."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "kpop-songs",
+        "area": "research",
+        "prompt": {
+          "en": "The music team mapped songs to narrative beats before final production. Which approach would you choose in a new production exercise?",
+          "nb": "Musikkteamet knyttet sangene til fortellingspunkter før sluttproduksjon. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "L’équipe musicale a lié les chansons aux étapes du récit avant la production finale. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A equipa musical ligou canções a momentos narrativos antes da produção final. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Separate lyrics from all character development",
+              "nb": "Løsne sangtekstene fra all karakterutvikling",
+              "fr": "Séparer les paroles de toute évolution des personnages",
+              "pt": "Separar letras de toda evolução das personagens"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Write an original song brief with a dramatic turning point",
+              "nb": "Skriv en original sangbrief med et dramatisk vendepunkt",
+              "fr": "Rédiger un brief de chanson originale avec un tournant dramatique",
+              "pt": "Criar um briefing de canção original com uma viragem dramática"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose songs solely by chart potential",
+              "nb": "Velg sanger utelukkende etter hitpotensial",
+              "fr": "Choisir les chansons uniquement pour leur potentiel commercial",
+              "pt": "Escolher canções apenas pelo potencial comercial"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The music team mapped songs to narrative beats before final production. In a new exercise, test this approach: Write an original song brief with a dramatic turning point.",
+          "nb": "Musikkteamet knyttet sangene til fortellingspunkter før sluttproduksjon. Prøv denne tilnærmingen i en ny øvelse: Skriv en original sangbrief med et dramatisk vendepunkt.",
+          "fr": "L’équipe musicale a lié les chansons aux étapes du récit avant la production finale. Dans un nouvel exercice, tester cette approche : Rédiger un brief de chanson originale avec un tournant dramatique.",
+          "pt": "A equipa musical ligou canções a momentos narrativos antes da produção final. Num novo exercício, testar esta abordagem: Criar um briefing de canção original com uma viragem dramática."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "kpop-edit",
+        "area": "sound",
+        "prompt": {
+          "en": "Editorial work evolved as storyboards became finished animation, with music synchronization. Which approach would you choose in a new production exercise?",
+          "nb": "Klippen utviklet seg fra storyboard til ferdig animasjon med musikksynkronisering. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le montage évoluait du storyboard à l’animation finale avec synchronisation musicale. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A montagem evoluiu do storyboard à animação final com sincronização musical. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Discard timing references after storyboard approval",
+              "nb": "Kast tidsreferansene etter storyboardgodkjenning",
+              "fr": "Éliminer les repères temporels après validation du storyboard",
+              "pt": "Eliminar referências temporais após aprovação do storyboard"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Wait until final rendering to consider music synchronization",
+              "nb": "Vent til ferdig rendering med å vurdere musikksynkronisering",
+              "fr": "Attendre le rendu final pour considérer la synchronisation",
+              "pt": "Esperar pela renderização final para considerar sincronização"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Keep approved music cues aligned across replacement stages",
+              "nb": "Hold godkjente musikksignaler synkronisert gjennom utskifting av opptak",
+              "fr": "Garder les repères musicaux synchronisés lors des remplacements",
+              "pt": "Manter marcas musicais sincronizadas durante substituições"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Editorial work evolved as storyboards became finished animation, with music synchronization. In a new exercise, test this approach: Keep approved music cues aligned across replacement stages.",
+          "nb": "Klippen utviklet seg fra storyboard til ferdig animasjon med musikksynkronisering. Prøv denne tilnærmingen i en ny øvelse: Hold godkjente musikksignaler synkronisert gjennom utskifting av opptak.",
+          "fr": "Le montage évoluait du storyboard à l’animation finale avec synchronisation musicale. Dans un nouvel exercice, tester cette approche : Garder les repères musicaux synchronisés lors des remplacements.",
+          "pt": "A montagem evoluiu do storyboard à animação final com sincronização musical. Num novo exercício, testar esta abordagem: Manter marcas musicais sincronizadas durante substituições."
+        },
+        "sourceIds": [
+          "s6",
+          "s9"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_new_world_2005",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Historical environment, natural light and version provenance",
+      "nb": "Historisk miljø, naturlig lys og versjonsproveniens",
+      "fr": "Décors historiques, lumière naturelle et provenance des versions",
+      "pt": "Ambiente histórico, luz natural e proveniência das versões"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The New World",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/28713-the-new-world"
+      },
+      {
+        "id": "s2",
+        "title": "Film of the Month: The New World",
+        "publisher": "BFI Sight and Sound",
+        "url": "https://old.bfi.org.uk/sightandsound/review/3131"
+      },
+      {
+        "id": "s3",
+        "title": "American Cinematographer, January 2006: The New World / Uncharted Emotions",
+        "publisher": "American Society of Cinematographers",
+        "url": "https://theasc.com/magazine/jan06.htm"
+      },
+      {
+        "id": "s4",
+        "title": "The New World",
+        "publisher": "American Film Institute",
+        "url": "https://watch.afi.com/movie/the-new-world"
+      },
+      {
+        "id": "s5",
+        "title": "Dreaming of a New World",
+        "publisher": "Cincinnati CityBeat",
+        "url": "https://www.citybeat.com/arts/film-dreaming-of-a-new-world-12176425/"
+      },
+      {
+        "id": "s6",
+        "title": "Inside the enduring movie homes of Jack Fisk, production design legend",
+        "publisher": "Associated Press",
+        "url": "https://apnews.com/article/90c5b0a569ae9653985252176d7ead7a"
+      }
+    ],
+    "questions": [
+      {
+        "id": "newworld-design",
+        "area": "research",
+        "prompt": {
+          "en": "Fisk describes researched physical environments built to accommodate fluid camera movement. Which approach would you choose in a new production exercise?",
+          "nb": "Fisk beskriver kildebaserte fysiske miljøer bygget for flytende kamerabevegelse. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Fisk décrit des décors physiques documentés permettant une caméra fluide. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Fisk descreve ambientes físicos pesquisados para movimento fluido de câmara. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Review period details with historians and test camera access",
+              "nb": "Gjennomgå periodedetaljer med historikere og prøv kameratilgang",
+              "fr": "Vérifier les détails avec des historiens et tester l’accès caméra",
+              "pt": "Rever detalhes históricos e testar acesso da câmara"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Build only a facade without considering camera movement",
+              "nb": "Bygg bare en fasade uten å vurdere kamerabevegelse",
+              "fr": "Construire seulement une façade sans considérer la caméra",
+              "pt": "Construir apenas fachada sem considerar movimento de câmara"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat reconstructed spaces as surviving historical buildings",
+              "nb": "Behandle rekonstruerte rom som bevarte historiske bygninger",
+              "fr": "Traiter les décors reconstruits comme bâtiments historiques subsistants",
+              "pt": "Tratar espaços reconstruídos como edifícios históricos sobreviventes"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Fisk describes researched physical environments built to accommodate fluid camera movement. In a new exercise, test this approach: Review period details with historians and test camera access.",
+          "nb": "Fisk beskriver kildebaserte fysiske miljøer bygget for flytende kamerabevegelse. Prøv denne tilnærmingen i en ny øvelse: Gjennomgå periodedetaljer med historikere og prøv kameratilgang.",
+          "fr": "Fisk décrit des décors physiques documentés permettant une caméra fluide. Dans un nouvel exercice, tester cette approche : Vérifier les détails avec des historiens et tester l’accès caméra.",
+          "pt": "Fisk descreve ambientes físicos pesquisados para movimento fluido de câmara. Num novo exercício, testar esta abordagem: Rever detalhes históricos e testar acesso da câmara."
+        },
+        "sourceIds": [
+          "s5",
+          "s6"
+        ]
+      },
+      {
+        "id": "newworld-light",
+        "area": "camera",
+        "prompt": {
+          "en": "Craft records describe natural-light photography and moving camera work. Which approach would you choose in a new production exercise?",
+          "nb": "Fagkildene beskriver fotografering med naturlig lys og bevegelig kamera. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les sources décrivent la lumière naturelle et une caméra mobile. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "As fontes descrevem luz natural e câmara móvel. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the method without checking the requirements",
+              "nb": "Godkjenn metoden uten å undersøke kravene",
+              "fr": "Valider la méthode sans vérifier les exigences",
+              "pt": "Aprovar o método sem verificar os requisitos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Scout light at different hours and rehearse camera paths",
+              "nb": "Befar lys til ulike tider og øv kamerabaner",
+              "fr": "Repérer la lumière à diverses heures et répéter les trajets caméra",
+              "pt": "Observar luz a várias horas e ensaiar trajetos de câmara"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume daylight has the same quality throughout the day",
+              "nb": "Anta at dagslyset har samme kvalitet hele dagen",
+              "fr": "Supposer que la lumière du jour reste identique",
+              "pt": "Supor que luz natural mantém a mesma qualidade"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Craft records describe natural-light photography and moving camera work. In a new exercise, test this approach: Scout light at different hours and rehearse camera paths.",
+          "nb": "Fagkildene beskriver fotografering med naturlig lys og bevegelig kamera. Prøv denne tilnærmingen i en ny øvelse: Befar lys til ulike tider og øv kamerabaner.",
+          "fr": "Les sources décrivent la lumière naturelle et une caméra mobile. Dans un nouvel exercice, tester cette approche : Repérer la lumière à diverses heures et répéter les trajets caméra.",
+          "pt": "As fontes descrevem luz natural e câmara móvel. Num novo exercício, testar esta abordagem: Observar luz a várias horas e ensaiar trajetos de câmara."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "newworld-versions",
+        "area": "research",
+        "prompt": {
+          "en": "Criterion documents three director-approved versions and a later restoration. Which approach would you choose in a new production exercise?",
+          "nb": "Criterion dokumenterer tre regissørgodkjente versjoner og en senere restaurering. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Criterion documente trois versions approuvées et une restauration ultérieure. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Criterion documenta três versões aprovadas e restauro posterior. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Combine every version into one undocumented master",
+              "nb": "Slå sammen alle versjoner til én udokumentert master",
+              "fr": "Fusionner toutes les versions en un master non documenté",
+              "pt": "Fundir todas as versões num master não documentado"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the method without checking the requirements",
+              "nb": "Godkjenn metoden uten å undersøke kravene",
+              "fr": "Valider la méthode sans vérifier les exigences",
+              "pt": "Aprovar o método sem verificar os requisitos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Catalogue versions separately from restoration and original production",
+              "nb": "Registrer versjoner separat fra restaurering og originalproduksjon",
+              "fr": "Cataloguer les versions séparément de la restauration et de la production",
+              "pt": "Catalogar versões separadamente de restauro e produção original"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion documents three director-approved versions and a later restoration. In a new exercise, test this approach: Catalogue versions separately from restoration and original production.",
+          "nb": "Criterion dokumenterer tre regissørgodkjente versjoner og en senere restaurering. Prøv denne tilnærmingen i en ny øvelse: Registrer versjoner separat fra restaurering og originalproduksjon.",
+          "fr": "Criterion documente trois versions approuvées et une restauration ultérieure. Dans un nouvel exercice, tester cette approche : Cataloguer les versions séparément de la restauration et de la production.",
+          "pt": "Criterion documenta três versões aprovadas e restauro posterior. Num novo exercício, testar esta abordagem: Catalogar versões separadamente de restauro e produção original."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_anomalisa_2015",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Sound-play adaptation, miniature continuity and subjective performance",
+      "nb": "Lydbasert adaptasjon, miniatyrkontinuitet og subjektivt spill",
+      "fr": "Adaptation sonore, raccords miniatures et jeu subjectif",
+      "pt": "Adaptação sonora, continuidade de miniaturas e atuação subjetiva"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The AFI FEST Interview: ANOMALISA Directors Charlie Kaufman and Duke Johnson",
+        "publisher": "American Film Institute",
+        "url": "https://www.afi.com/news/charlie-kaufman-anomalisa-duke-johnson-interview-afi-fest-2015/"
+      },
+      {
+        "id": "s2",
+        "title": "Puppets and Pantyhose: DP Joe Passarelli on Anomalisa",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/97174-puppets-and-pantyhose-dp-joe-passarelli-on-anomalisa/"
+      },
+      {
+        "id": "s5",
+        "title": "Anomalisa",
+        "publisher": "Carter Burwell",
+        "url": "https://www.carterburwell.com/projects/Anomalisa.shtml"
+      },
+      {
+        "id": "s6",
+        "title": "Directors Close-Up Recap: Anomalisa's Charlie Kaufman and Duke Johnson Explore Heartbreak in Miniature",
+        "publisher": "Film Independent",
+        "url": "https://www.filmindependent.org/blog/directors-close-up-recap-anomalisas-charlie-kaufman-and-duke-johnson-explore-heartbreak-in-miniature/"
+      },
+      {
+        "id": "s7",
+        "title": "Film of the week: Anomalisa",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/sight-and-sound/reviews/film-week-anomalisa"
+      },
+      {
+        "id": "s8",
+        "title": "Interview: John Joyce (Anomalisa)",
+        "publisher": "Interiors",
+        "url": "https://www.intjournal.com/interview/john-joyce"
+      }
+    ],
+    "questions": [
+      {
+        "id": "anomalisa-adapt",
+        "area": "sound",
+        "prompt": {
+          "en": "The feature originated as a sound play with three performers. Which approach would you choose in a new production exercise?",
+          "nb": "Spillefilmen hadde opphav i et lydspill med tre utøvere. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le long métrage est issu d’une pièce sonore à trois interprètes. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A longa-metragem nasceu de uma peça sonora com três intérpretes. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Storyboard an original audio scene while preserving meaningful offscreen sound",
+              "nb": "Lag storyboard til en original lydscene og bevar meningsfull lyd utenfor bildet",
+              "fr": "Créer un storyboard sonore original en préservant le hors-champ sonore",
+              "pt": "Criar storyboard de cena sonora original preservando som fora de campo"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Illustrate every sound literally on screen",
+              "nb": "Illustrer hver lyd bokstavelig på skjermen",
+              "fr": "Illustrer littéralement chaque son à l’écran",
+              "pt": "Ilustrar literalmente cada som no ecrã"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Replace the audio structure before studying its rhythm",
+              "nb": "Erstatt lydstrukturen før rytmen undersøkes",
+              "fr": "Remplacer la structure sonore avant d’étudier son rythme",
+              "pt": "Substituir estrutura sonora antes de estudar o ritmo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The feature originated as a sound play with three performers. In a new exercise, test this approach: Storyboard an original audio scene while preserving meaningful offscreen sound.",
+          "nb": "Spillefilmen hadde opphav i et lydspill med tre utøvere. Prøv denne tilnærmingen i en ny øvelse: Lag storyboard til en original lydscene og bevar meningsfull lyd utenfor bildet.",
+          "fr": "Le long métrage est issu d’une pièce sonore à trois interprètes. Dans un nouvel exercice, tester cette approche : Créer un storyboard sonore original en préservant le hors-champ sonore.",
+          "pt": "A longa-metragem nasceu de uma peça sonora com três intérpretes. Num novo exercício, testar esta abordagem: Criar storyboard de cena sonora original preservando som fora de campo."
+        },
+        "sourceIds": [
+          "s0",
+          "s5"
+        ]
+      },
+      {
+        "id": "anomalisa-miniatures",
+        "area": "camera",
+        "prompt": {
+          "en": "The cinematography account describes continuity challenges across eighteen miniature stages. Which approach would you choose in a new production exercise?",
+          "nb": "Fotokilden beskriver kontinuitetsutfordringer på atten miniatyrscener. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le témoignage photo décrit des défis de raccord sur dix-huit plateaux miniatures. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O relato de fotografia descreve desafios de continuidade em dezoito palcos miniatura. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore small lighting changes because the sets are miniature",
+              "nb": "Ignorer små lysendringer fordi kulissene er miniatyrer",
+              "fr": "Ignorer les variations de lumière car les décors sont miniatures",
+              "pt": "Ignorar variações de luz porque cenários são miniaturas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Log miniature props, light and camera references between animation sessions",
+              "nb": "Loggfør miniatyrrekvisitter, lys og kamerareferanser mellom animasjonsøkter",
+              "fr": "Consigner accessoires, lumière et références caméra entre sessions",
+              "pt": "Registar adereços, luz e referências de câmara entre sessões"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Move miniature furniture freely between consecutive frames",
+              "nb": "Flytt miniatyrmøbler fritt mellom påfølgende bilder",
+              "fr": "Déplacer librement les meubles entre images successives",
+              "pt": "Mover móveis miniatura livremente entre fotogramas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The cinematography account describes continuity challenges across eighteen miniature stages. In a new exercise, test this approach: Log miniature props, light and camera references between animation sessions.",
+          "nb": "Fotokilden beskriver kontinuitetsutfordringer på atten miniatyrscener. Prøv denne tilnærmingen i en ny øvelse: Loggfør miniatyrrekvisitter, lys og kamerareferanser mellom animasjonsøkter.",
+          "fr": "Le témoignage photo décrit des défis de raccord sur dix-huit plateaux miniatures. Dans un nouvel exercice, tester cette approche : Consigner accessoires, lumière et références caméra entre sessions.",
+          "pt": "O relato de fotografia descreve desafios de continuidade em dezoito palcos miniatura. Num novo exercício, testar esta abordagem: Registar adereços, luz e referências de câmara entre sessões."
+        },
+        "sourceIds": [
+          "s2",
+          "s8"
+        ]
+      },
+      {
+        "id": "anomalisa-subjectivity",
+        "area": "research",
+        "prompt": {
+          "en": "The recurring faces and voices express a restricted character viewpoint. Which approach would you choose in a new production exercise?",
+          "nb": "Gjentatte ansikter og stemmer uttrykker et begrenset karakterperspektiv. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les visages et voix récurrents expriment un point de vue limité. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Rostos e vozes recorrentes exprimem um ponto de vista limitado. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use the same motif regardless of whose viewpoint governs the scene",
+              "nb": "Bruk samme motiv uansett hvem som styrer scenens perspektiv",
+              "fr": "Utiliser le même motif quel que soit le point de vue",
+              "pt": "Usar o mesmo motivo independentemente do ponto de vista"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Explain every visual motif in a spoken narration",
+              "nb": "Forklar hvert bildemotiv med fortellerstemme",
+              "fr": "Expliquer chaque motif visuel par une narration",
+              "pt": "Explicar cada motivo visual por narração"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Design original visual and vocal motifs tied to one character’s perception",
+              "nb": "Utform originale bilde- og stemmemotiver knyttet til én karakters opplevelse",
+              "fr": "Créer des motifs visuels et vocaux originaux liés à une perception",
+              "pt": "Criar motivos visuais e vocais originais ligados a uma perceção"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The recurring faces and voices express a restricted character viewpoint. In a new exercise, test this approach: Design original visual and vocal motifs tied to one character’s perception.",
+          "nb": "Gjentatte ansikter og stemmer uttrykker et begrenset karakterperspektiv. Prøv denne tilnærmingen i en ny øvelse: Utform originale bilde- og stemmemotiver knyttet til én karakters opplevelse.",
+          "fr": "Les visages et voix récurrents expriment un point de vue limité. Dans un nouvel exercice, tester cette approche : Créer des motifs visuels et vocaux originaux liés à une perception.",
+          "pt": "Rostos e vozes recorrentes exprimem um ponto de vista limitado. Num novo exercício, testar esta abordagem: Criar motivos visuais e vocais originais ligados a uma perceção."
+        },
+        "sourceIds": [
+          "s6",
+          "s7"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_amy_2015",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Archive provenance, witness voices and documentary music",
+      "nb": "Arkivproveniens, vitnestemmer og dokumentarmusikk",
+      "fr": "Provenance des archives, voix témoins et musique documentaire",
+      "pt": "Proveniência de arquivo, vozes testemunhais e música documental"
+    },
+    "sources": [
+      {
+        "id": "s2",
+        "title": "Making Amy: how we created our Winehouse documentary",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/interviews/making-amy-how-we-created-our-winehouse-documentary"
+      },
+      {
+        "id": "s4",
+        "title": "WATCH: Asif Kapadia on Oscar-Nominated Amy",
+        "publisher": "International Documentary Association",
+        "url": "https://documentary.org/blog/watch-asif-kapadia-oscar-nominated-amy"
+      },
+      {
+        "id": "s5",
+        "title": "Asif Kapadia on Amy: The drinking, the bulimia, the drugs – nobody stopped it",
+        "publisher": "The Guardian",
+        "url": "https://www.theguardian.com/film/2015/jun/27/asif-kapadia-amy-winehouse-doc"
+      },
+      {
+        "id": "s6",
+        "title": "Amy from the archives",
+        "publisher": "Televisual",
+        "url": "https://www.televisual.com/news/amy-from-the-archives_bid-791/"
+      },
+      {
+        "id": "s7",
+        "title": "Chatting With Director Asif Kapadia About his Oscar-Nominated Doc Amy",
+        "publisher": "Motion Picture Association",
+        "url": "https://www.motionpictures.org/2016/02/chatting-director-asif-kapadia-about-his-oscar-nominated-doc-amy/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "amy-archive",
+        "area": "research",
+        "prompt": {
+          "en": "The documentary draws on professional and private archival material. Which approach would you choose in a new production exercise?",
+          "nb": "Dokumentaren bygger på profesjonelt og privat arkivmateriale. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le documentaire utilise des archives professionnelles et privées. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O documentário utiliza arquivos profissionais e privados. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Log provenance, rights and context before selecting footage",
+              "nb": "Loggfør proveniens, rettigheter og kontekst før materialet velges",
+              "fr": "Consigner provenance, droits et contexte avant sélection",
+              "pt": "Registar proveniência, direitos e contexto antes da seleção"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat publicly posted footage as automatically cleared",
+              "nb": "Behandle offentlig publiserte opptak som automatisk klarert",
+              "fr": "Traiter les vidéos publiques comme automatiquement autorisées",
+              "pt": "Tratar vídeos públicos como automaticamente autorizados"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the method without checking the requirements",
+              "nb": "Godkjenn metoden uten å undersøke kravene",
+              "fr": "Valider la méthode sans vérifier les exigences",
+              "pt": "Aprovar o método sem verificar os requisitos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The documentary draws on professional and private archival material. In a new exercise, test this approach: Log provenance, rights and context before selecting footage.",
+          "nb": "Dokumentaren bygger på profesjonelt og privat arkivmateriale. Prøv denne tilnærmingen i en ny øvelse: Loggfør proveniens, rettigheter og kontekst før materialet velges.",
+          "fr": "Le documentaire utilise des archives professionnelles et privées. Dans un nouvel exercice, tester cette approche : Consigner provenance, droits et contexte avant sélection.",
+          "pt": "O documentário utiliza arquivos profissionais e privados. Num novo exercício, testar esta abordagem: Registar proveniência, direitos e contexto antes da seleção."
+        },
+        "sourceIds": [
+          "s2",
+          "s4",
+          "s7"
+        ]
+      },
+      {
+        "id": "amy-voices",
+        "area": "sound",
+        "prompt": {
+          "en": "Recorded testimony replaces visible talking heads in the documentary. Which approach would you choose in a new production exercise?",
+          "nb": "Opptatte vitnestemmer erstatter synlige intervjupersoner i dokumentaren. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les témoignages enregistrés remplacent les intervenants visibles. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Testemunhos gravados substituem entrevistados visíveis. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the method without checking the requirements",
+              "nb": "Godkjenn metoden uten å undersøke kravene",
+              "fr": "Valider la méthode sans vérifier les exigences",
+              "pt": "Aprovar o método sem verificar os requisitos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Check whether archival images accurately contextualise the testimony",
+              "nb": "Sjekk om arkivbildene gir vitnesbyrdet korrekt kontekst",
+              "fr": "Vérifier que les images contextualisent fidèlement le témoignage",
+              "pt": "Verificar se imagens contextualizam corretamente o testemunho"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use unrelated images as proof of a witness claim",
+              "nb": "Bruk uvedkommende bilder som bevis for et vitneutsagn",
+              "fr": "Utiliser des images sans rapport comme preuve",
+              "pt": "Usar imagens sem relação como prova"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Recorded testimony replaces visible talking heads in the documentary. In a new exercise, test this approach: Check whether archival images accurately contextualise the testimony.",
+          "nb": "Opptatte vitnestemmer erstatter synlige intervjupersoner i dokumentaren. Prøv denne tilnærmingen i en ny øvelse: Sjekk om arkivbildene gir vitnesbyrdet korrekt kontekst.",
+          "fr": "Les témoignages enregistrés remplacent les intervenants visibles. Dans un nouvel exercice, tester cette approche : Vérifier que les images contextualisent fidèlement le témoignage.",
+          "pt": "Testemunhos gravados substituem entrevistados visíveis. Num novo exercício, testar esta abordagem: Verificar se imagens contextualizam corretamente o testemunho."
+        },
+        "sourceIds": [
+          "s4",
+          "s5",
+          "s6"
+        ]
+      },
+      {
+        "id": "amy-music",
+        "area": "sound",
+        "prompt": {
+          "en": "The editorial team combined songs, archive audio and witness interviews. Which approach would you choose in a new production exercise?",
+          "nb": "Klippeteamet kombinerte sanger, arkivlyd og vitneintervjuer. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "L’équipe de montage combinait chansons, sons d’archives et entretiens. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A equipa de montagem combinou canções, áudio de arquivo e entrevistas. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use lyrics as independent evidence of disputed facts",
+              "nb": "Bruk sangtekster som uavhengig bevis for omstridte fakta",
+              "fr": "Utiliser les paroles comme preuve indépendante de faits contestés",
+              "pt": "Usar letras como prova independente de factos contestados"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the method without checking the requirements",
+              "nb": "Godkjenn metoden uten å undersøke kravene",
+              "fr": "Valider la méthode sans vérifier les exigences",
+              "pt": "Aprovar o método sem verificar os requisitos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare cleared music excerpts with testimony without masking speech",
+              "nb": "Sammenlign klarerte musikkutdrag med vitnesbyrd uten å maskere tale",
+              "fr": "Comparer extraits musicaux autorisés et témoignages sans masquer la parole",
+              "pt": "Comparar excertos musicais autorizados e testemunhos sem ocultar fala"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The editorial team combined songs, archive audio and witness interviews. In a new exercise, test this approach: Compare cleared music excerpts with testimony without masking speech.",
+          "nb": "Klippeteamet kombinerte sanger, arkivlyd og vitneintervjuer. Prøv denne tilnærmingen i en ny øvelse: Sammenlign klarerte musikkutdrag med vitnesbyrd uten å maskere tale.",
+          "fr": "L’équipe de montage combinait chansons, sons d’archives et entretiens. Dans un nouvel exercice, tester cette approche : Comparer extraits musicaux autorisés et témoignages sans masquer la parole.",
+          "pt": "A equipa de montagem combinou canções, áudio de arquivo e entrevistas. Num novo exercício, testar esta abordagem: Comparar excertos musicais autorizados e testemunhos sem ocultar fala."
+        },
+        "sourceIds": [
+          "s6",
+          "s7"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_filmworker_2017",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Invisible labour, interview follow-up and restoration records",
+      "nb": "Usynlig arbeid, oppfølgingsintervjuer og restaureringsdokumentasjon",
+      "fr": "Travail invisible, relances d’entretien et dossiers de restauration",
+      "pt": "Trabalho invisível, seguimento de entrevistas e registos de restauro"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "Filmworker (2017)",
+        "publisher": "IDFA",
+        "url": "https://www.idfa.nl/en/film/f0d57b00-e9a3-415d-8be2-b7be72944923/filmworker/"
+      },
+      {
+        "id": "s4",
+        "title": "Doc Star of the Month: Leon Vitali, Tony Zierra's Filmworker",
+        "publisher": "International Documentary Association",
+        "url": "https://www.documentary.org/column/doc-star-month-leon-vitali-tony-zierrasfilmworker"
+      },
+      {
+        "id": "s5",
+        "title": "Cannes 2017: Tony Zierra’s Filmworker",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/current/posts/4562-cannes-2017-tony-zierra-s-filmworker"
+      },
+      {
+        "id": "s6",
+        "title": "It’s Kind of Heartbreaking Sometimes to See Actors Try So Hard: Leon Vitali on the Acting Profession, Working with Stanley Kubrick, and Tony Zierra’s Doc, Filmworker",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/105323-its-kind-of-heartbreaking-sometimes-to-see-actors-try-so-hard-leon-vitali-on-the-acting-profession-and-his-stanley-kubrick-doc-filmworker/"
+      },
+      {
+        "id": "s7",
+        "title": "Cannes Film Festival: A Six-Letter Word",
+        "publisher": "Film Comment",
+        "url": "https://www.filmcomment.com/article/cannes-2017-lover-for-a-day-the-florida-project/"
+      },
+      {
+        "id": "s8",
+        "title": "Cannes 2017: Stanley Kubrick's mysterious right-hand man steps out of the shadows",
+        "publisher": "Los Angeles Times",
+        "url": "https://www.latimes.com/entertainment/movies/la-et-mn-kubrick-leon-vitali-20170518-story.html"
+      },
+      {
+        "id": "s10",
+        "title": "Cannes 2017: Claire's Camera, Filmworker, Unforgiven",
+        "publisher": "RogerEbert.com",
+        "url": "https://www.rogerebert.com/festivals/cannes-2017-claires-camerafilmworker-unforgiven"
+      }
+    ],
+    "questions": [
+      {
+        "id": "filmworker-credits",
+        "area": "research",
+        "prompt": {
+          "en": "Vitali describes work spanning casting, performance coaching and post-production. Which approach would you choose in a new production exercise?",
+          "nb": "Vitali beskriver arbeid fra casting og skuespillerveiledning til etterarbeid. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Vitali décrit un travail du casting à la postproduction. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Vitali descreve trabalho do casting à pós-produção. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Create a role ledger distinguishing credited and documented contributions",
+              "nb": "Lag en rollelogg som skiller krediterte og dokumenterte bidrag",
+              "fr": "Créer un registre distinguant contributions créditées et documentées",
+              "pt": "Criar registo distinguindo contribuições creditadas e documentadas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Attribute every contribution to the director",
+              "nb": "Tilskriv alle bidrag til regissøren",
+              "fr": "Attribuer chaque contribution au réalisateur",
+              "pt": "Atribuir todas as contribuições ao realizador"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the method without checking the requirements",
+              "nb": "Godkjenn metoden uten å undersøke kravene",
+              "fr": "Valider la méthode sans vérifier les exigences",
+              "pt": "Aprovar o método sem verificar os requisitos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Vitali describes work spanning casting, performance coaching and post-production. In a new exercise, test this approach: Create a role ledger distinguishing credited and documented contributions.",
+          "nb": "Vitali beskriver arbeid fra casting og skuespillerveiledning til etterarbeid. Prøv denne tilnærmingen i en ny øvelse: Lag en rollelogg som skiller krediterte og dokumenterte bidrag.",
+          "fr": "Vitali décrit un travail du casting à la postproduction. Dans un nouvel exercice, tester cette approche : Créer un registre distinguant contributions créditées et documentées.",
+          "pt": "Vitali descreve trabalho do casting à pós-produção. Num novo exercício, testar esta abordagem: Criar registo distinguindo contribuições creditadas e documentadas."
+        },
+        "sourceIds": [
+          "s4",
+          "s6"
+        ]
+      },
+      {
+        "id": "filmworker-interviews",
+        "area": "research",
+        "prompt": {
+          "en": "The documentary uses multiple witnesses and follow-up questions. Which approach would you choose in a new production exercise?",
+          "nb": "Dokumentaren bruker flere vitner og oppfølgingsspørsmål. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le documentaire utilise plusieurs témoins et des questions de relance. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O documentário usa múltiplas testemunhas e perguntas de seguimento. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the method without checking the requirements",
+              "nb": "Godkjenn metoden uten å undersøke kravene",
+              "fr": "Valider la méthode sans vérifier les exigences",
+              "pt": "Aprovar o método sem verificar os requisitos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare overlapping accounts and retain disagreements",
+              "nb": "Sammenlign overlappende beretninger og behold uenigheter",
+              "fr": "Comparer récits convergents et conserver les désaccords",
+              "pt": "Comparar relatos convergentes e preservar divergências"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Remove all testimony contradicting the first interview",
+              "nb": "Fjern alle vitneutsagn som motsier første intervju",
+              "fr": "Supprimer les témoignages contredisant le premier entretien",
+              "pt": "Eliminar testemunhos que contradizem a primeira entrevista"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The documentary uses multiple witnesses and follow-up questions. In a new exercise, test this approach: Compare overlapping accounts and retain disagreements.",
+          "nb": "Dokumentaren bruker flere vitner og oppfølgingsspørsmål. Prøv denne tilnærmingen i en ny øvelse: Sammenlign overlappende beretninger og behold uenigheter.",
+          "fr": "Le documentaire utilise plusieurs témoins et des questions de relance. Dans un nouvel exercice, tester cette approche : Comparer récits convergents et conserver les désaccords.",
+          "pt": "O documentário usa múltiplas testemunhas e perguntas de seguimento. Num novo exercício, testar esta abordagem: Comparar relatos convergentes e preservar divergências."
+        },
+        "sourceIds": [
+          "s1",
+          "s5",
+          "s10"
+        ]
+      },
+      {
+        "id": "filmworker-restoration",
+        "area": "camera",
+        "prompt": {
+          "en": "Interviews document print checks, transfer review and colour timing. Which approach would you choose in a new production exercise?",
+          "nb": "Intervjuer dokumenterer kopikontroll, gjennomgang av overføringer og fargetiming. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les entretiens documentent contrôle de copies, transferts et étalonnage. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Entrevistas documentam controlo de cópias, transferências e correção de cor. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat a later restoration as identical to original release material",
+              "nb": "Behandle en senere restaurering som identisk med originalt visningsmateriale",
+              "fr": "Traiter une restauration comme identique à la copie originale",
+              "pt": "Tratar restauro como idêntico ao material original"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the method without checking the requirements",
+              "nb": "Godkjenn metoden uten å undersøke kravene",
+              "fr": "Valider la méthode sans vérifier les exigences",
+              "pt": "Aprovar o método sem verificar os requisitos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record source elements and approval history for a restoration exercise",
+              "nb": "Registrer kildemateriale og godkjenningshistorikk for en restaureringsøvelse",
+              "fr": "Consigner éléments sources et historique de validation pour un exercice",
+              "pt": "Registar elementos fonte e histórico de aprovação para um exercício"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Interviews document print checks, transfer review and colour timing. In a new exercise, test this approach: Record source elements and approval history for a restoration exercise.",
+          "nb": "Intervjuer dokumenterer kopikontroll, gjennomgang av overføringer og fargetiming. Prøv denne tilnærmingen i en ny øvelse: Registrer kildemateriale og godkjenningshistorikk for en restaureringsøvelse.",
+          "fr": "Les entretiens documentent contrôle de copies, transferts et étalonnage. Dans un nouvel exercice, tester cette approche : Consigner éléments sources et historique de validation pour un exercice.",
+          "pt": "Entrevistas documentam controlo de cópias, transferências e correção de cor. Num novo exercício, testar esta abordagem: Registar elementos fonte e histórico de aprovação para um exercício."
+        },
+        "sourceIds": [
+          "s6",
+          "s7",
+          "s8"
+        ]
+      }
+    ]
   }
 ] as const satisfies readonly SourceBackedCaseWorkshop[];
