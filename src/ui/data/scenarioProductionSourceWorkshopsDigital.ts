@@ -1518,5 +1518,1375 @@ export const digitalSourceWorkshops = [
         ]
       }
     ]
+  },
+  {
+    "scenarioId": "scenario_tree_of_life_2011",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Available light, hybrid effects and editorial collaboration",
+      "nb": "Tilgjengelig lys, hybride effekter og klippesamarbeid",
+      "fr": "Lumière disponible, effets hybrides et montage collectif",
+      "pt": "Luz disponível, efeitos híbridos e montagem coletiva"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The Tree of Life",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/the-tree-of-life/"
+      },
+      {
+        "id": "s1",
+        "title": "Emmanuel Lubezki AMC, ASC / The Tree of Life",
+        "publisher": "British Cinematographer",
+        "url": "https://britishcinematographer.co.uk/emmanuel-lubezki-amc-asc-the-tree-of-life/"
+      },
+      {
+        "id": "s2",
+        "title": "The Tree of Life (2011)",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/68352-THE-TREE-OF-LIFE"
+      },
+      {
+        "id": "s3",
+        "title": "VFX supe Dan Glass on The Tree of Life",
+        "publisher": "fxguide",
+        "url": "https://www.fxguide.com/fxfeatured/vfx-supe-dan-glass-on-the-tree-of-life/"
+      },
+      {
+        "id": "s4",
+        "title": "Mark Yoshikawa Talks of Editing Terrence Malick, Christopher Guest, and the new Reminiscence",
+        "publisher": "CineMontage / Motion Picture Editors Guild",
+        "url": "https://cinemontage.org/mark-yoshikawa-talks-of-editing-terrence-malick-christopher-guest-and-the-new-reminiscence/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "treeoflife-light",
+        "area": "camera",
+        "prompt": {
+          "en": "How can production design support available-light photography?",
+          "nb": "Hvordan kan scenografi støtte fotografering med tilgjengelig lys?",
+          "fr": "Comment le décor peut-il servir la lumière disponible ?",
+          "pt": "Como pode a cenografia apoiar a fotografia com luz disponível?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test window orientation and schedule around changing light",
+              "nb": "Prøv vindusretning og planlegg etter skiftende lys",
+              "fr": "Tester l’orientation des fenêtres et planifier selon la lumière",
+              "pt": "Testar orientação das janelas e planear segundo a luz"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose interiors without considering daylight access",
+              "nb": "Velg interiører uten å vurdere tilgang på dagslys",
+              "fr": "Choisir les intérieurs sans considérer la lumière du jour",
+              "pt": "Escolher interiores sem considerar a luz do dia"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume available light excludes all design intervention",
+              "nb": "Anta at tilgjengelig lys utelukker alle scenografiske inngrep",
+              "fr": "Supposer que la lumière disponible exclut toute intervention de décor",
+              "pt": "Supor que luz disponível exclui intervenção cenográfica"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Lubezki describes Fisk's window alterations, and AFI documents three matched houses used to follow light. Test your own location without generalizing the original lighting exceptions.",
+          "nb": "Lubezki beskriver Fisks vindusendringer, og AFI dokumenterer tre tilpassede hus for å følge lyset. Prøv egne steder uten å generalisere originalens lysunntak.",
+          "fr": "Lubezki décrit les fenêtres modifiées par Fisk et l’AFI trois maisons adaptées à la lumière. Testez vos lieux sans généraliser les exceptions originales.",
+          "pt": "Lubezki descreve alterações nas janelas por Fisk e o AFI três casas adaptadas à luz. Teste locais próprios sem generalizar exceções originais."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "treeoflife-creation",
+        "area": "animation",
+        "prompt": {
+          "en": "How can practical imagery and simulation support a creation sequence?",
+          "nb": "Hvordan kan praktiske bilder og simulering støtte en skapelsessekvens?",
+          "fr": "Comment images pratiques et simulation servent-elles une séquence de création ?",
+          "pt": "Como podem imagens práticas e simulação apoiar uma sequência de criação?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Insist that every image must be purely practical",
+              "nb": "Insister på at alle bilder må være rent praktiske",
+              "fr": "Exiger que chaque image soit entièrement pratique",
+              "pt": "Exigir que todas as imagens sejam inteiramente práticas"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat artistic simulations as proof of scientific accuracy",
+              "nb": "Behandle kunstneriske simuleringer som bevis på vitenskapelig nøyaktighet",
+              "fr": "Traiter les simulations artistiques comme preuve scientifique",
+              "pt": "Tratar simulações artísticas como prova científica"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Develop practical plates and simulation-informed composites",
+              "nb": "Utvikle praktiske bildeelementer og simuleringsbaserte kompositter",
+              "fr": "Développer des éléments filmés et composites informés par simulation",
+              "pt": "Desenvolver elementos filmados e composições informadas por simulação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Dan Glass describes photographed phenomena, scientific simulation and digital compositing. Build an original abstract effects test and distinguish scientific references from artistic interpretation.",
+          "nb": "Dan Glass beskriver fotograferte fenomener, vitenskapelig simulering og digital kompositering. Lag en original abstrakt effektprøve og skill faglige referanser fra kunstnerisk tolkning.",
+          "fr": "Dan Glass décrit phénomènes filmés, simulation scientifique et compositing numérique. Créez un essai abstrait original en distinguant références et interprétation artistique.",
+          "pt": "Dan Glass descreve fenómenos filmados, simulação científica e composição digital. Crie um teste abstrato original distinguindo referências e interpretação artística."
+        },
+        "sourceIds": [
+          "s3",
+          "s0"
+        ]
+      },
+      {
+        "id": "treeoflife-editors",
+        "area": "research",
+        "prompt": {
+          "en": "How should a multi-editor project track its shared assembly?",
+          "nb": "Hvordan bør et prosjekt med flere klippere følge den felles sammenstillingen?",
+          "fr": "Comment suivre un montage partagé entre plusieurs monteurs ?",
+          "pt": "Como acompanhar uma montagem partilhada entre vários montadores?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Merge every edit without retaining version history",
+              "nb": "Slå sammen alle klipp uten å bevare versjonshistorikken",
+              "fr": "Fusionner tous les montages sans conserver les versions",
+              "pt": "Fundir todas as montagens sem preservar versões"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use shared version records and preserve collaborative credits",
+              "nb": "Bruk felles versjonslogger og bevar samarbeidets krediteringer",
+              "fr": "Utiliser des versions partagées et préserver les crédits collectifs",
+              "pt": "Usar registos de versões partilhados e preservar créditos coletivos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assign every sequence to one editor without evidence",
+              "nb": "Tildel hver sekvens én klipper uten dokumentasjon",
+              "fr": "Attribuer chaque séquence à un monteur sans preuve",
+              "pt": "Atribuir cada sequência a um montador sem provas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Cannes lists five editors and Yoshikawa confirms his continuing assembly role. Create a collaborative edit log without inventing historical sequence ownership.",
+          "nb": "Cannes oppgir fem klippere, og Yoshikawa bekrefter sin gjennomgående sammenstillingsrolle. Lag en felles klippelogg uten å finne på historisk sekvenseierskap.",
+          "fr": "Cannes crédite cinq monteurs et Yoshikawa confirme son rôle continu. Créez un journal collectif sans inventer les attributions historiques.",
+          "pt": "Cannes credita cinco montadores e Yoshikawa confirma o seu papel contínuo. Crie um registo coletivo sem inventar atribuições históricas."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_a_separation_2011",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Rehearsed naturalism, camera viewpoint and information control",
+      "nb": "Innøvd naturalisme, kameraperspektiv og informasjonsstyring",
+      "fr": "Naturalisme répété, point de vue caméra et contrôle de l’information",
+      "pt": "Naturalismo ensaiado, perspetiva da câmara e controlo da informação"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "A Separation press kit",
+        "publisher": "Sony Pictures Classics",
+        "url": "https://www.sonyclassics.com/aseparation/aseparation_presskit.pdf"
+      },
+      {
+        "id": "s1",
+        "title": "The Past press kit - interview with cinematographer Mahmoud Kalari",
+        "publisher": "Sony Pictures Classics",
+        "url": "https://www.sonyclassics.com/thepast/thepast_presskit.pdf"
+      },
+      {
+        "id": "s2",
+        "title": "Jodaeiye Nader az Simin",
+        "publisher": "Viennale",
+        "url": "https://www.viennale.at/en/films/jodaeiye-nader-az-simin"
+      },
+      {
+        "id": "s6",
+        "title": "Asghar Farhadi: A Separation",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/36713-asghar-farhadi-a-separation/"
+      },
+      {
+        "id": "s8",
+        "title": "Interview with Iranian film editor Haideh Safiyari",
+        "publisher": "Film International",
+        "url": "https://filmint.nu/interview-with-iranian-film-editor-haideh-safiyari-ali-moosavi/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "aseparation-rehearsal",
+        "area": "research",
+        "prompt": {
+          "en": "How can carefully rehearsed performance still feel natural?",
+          "nb": "Hvordan kan nøye innøvd skuespill fortsatt føles naturlig?",
+          "fr": "Comment un jeu soigneusement répété peut-il rester naturel ?",
+          "pt": "Como pode uma interpretação ensaiada continuar natural?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse the script precisely while allowing motivated refinements",
+              "nb": "Øv inn manuset presist og tillat begrunnede justeringer",
+              "fr": "Répéter précisément le scénario tout en permettant des ajustements",
+              "pt": "Ensaiar o argumento com precisão permitindo ajustes motivados"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Replace the screenplay with unrestricted improvisation",
+              "nb": "Erstatt manuset med ubegrenset improvisasjon",
+              "fr": "Remplacer le scénario par une improvisation illimitée",
+              "pt": "Substituir o argumento por improvisação ilimitada"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Forbid every adjustment even if a scene requires it",
+              "nb": "Forby alle justeringer selv når scenen krever det",
+              "fr": "Interdire tout ajustement même si la scène l’exige",
+              "pt": "Proibir qualquer ajuste mesmo quando a cena o exige"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Farhadi describes detailed preparation and Kalari recalls occasional last-minute changes. Treat naturalism as planned craft with room for specific adjustments, not an absence of scripting.",
+          "nb": "Farhadi beskriver detaljert forberedelse, og Kalari husker enkelte sene endringer. Behandle naturalisme som planlagt håndverk med rom for justeringer, ikke fravær av manus.",
+          "fr": "Farhadi décrit une préparation détaillée et Kalari des ajustements tardifs. Traitez le naturalisme comme un travail préparé et ajustable, non comme une absence de scénario.",
+          "pt": "Farhadi descreve preparação detalhada e Kalari ajustes tardios. Trate naturalismo como trabalho planeado e ajustável, não como ausência de argumento."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "aseparation-viewpoint",
+        "area": "camera",
+        "prompt": {
+          "en": "How can handheld framing act as an observing viewpoint?",
+          "nb": "Hvordan kan håndholdt utsnitt fungere som et observerende perspektiv?",
+          "fr": "Comment un cadrage à main levée devient-il un regard observateur ?",
+          "pt": "Como pode enquadramento à mão funcionar como perspetiva observadora?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Move continuously regardless of dramatic attention",
+              "nb": "Beveg kameraet kontinuerlig uavhengig av dramatisk oppmerksomhet",
+              "fr": "Bouger sans cesse indépendamment de l’attention dramatique",
+              "pt": "Mover continuamente sem atender à atenção dramática"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Claim handheld filming makes a scene documentary evidence",
+              "nb": "Påstå at håndholdt filming gjør scenen til dokumentarbevis",
+              "fr": "Affirmer que la caméra portée rend une scène documentaire",
+              "pt": "Afirmar que câmara à mão torna a cena prova documental"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Follow motivated shifts of attention between characters",
+              "nb": "Følg begrunnede oppmerksomhetsskifter mellom karakterer",
+              "fr": "Suivre les déplacements motivés de l’attention entre personnages",
+              "pt": "Seguir mudanças motivadas de atenção entre personagens"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Kalari calls the camera a third eye and describes predominantly handheld photography. Compare motivated camera attention in a fictional scene without equating technique with factual recording.",
+          "nb": "Kalari kaller kameraet et tredje øye og beskriver hovedsakelig håndholdt foto. Sammenlign begrunnet kameraoppmerksomhet i en fiktiv scene uten å likestille teknikk med dokumentasjon.",
+          "fr": "Kalari décrit une caméra troisième œil, surtout portée. Comparez l’attention motivée dans une scène fictive sans assimiler technique et preuve documentaire.",
+          "pt": "Kalari descreve a câmara como terceiro olho, sobretudo à mão. Compare atenção motivada numa cena fictícia sem equiparar técnica a prova documental."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "aseparation-information",
+        "area": "sound",
+        "prompt": {
+          "en": "How can editing and restrained music preserve moral uncertainty?",
+          "nb": "Hvordan kan klipp og tilbakeholden musikk bevare moralsk usikkerhet?",
+          "fr": "Comment montage et musique retenue préservent-ils l’incertitude morale ?",
+          "pt": "Como podem montagem e música contida preservar incerteza moral?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume naturalism requires no editorial construction",
+              "nb": "Anta at naturalisme ikke krever klippekonstruksjon",
+              "fr": "Supposer que le naturalisme exclut la construction au montage",
+              "pt": "Supor que naturalismo exclui construção na montagem"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test when information arrives without imposing a musical verdict",
+              "nb": "Prøv når informasjon kommer uten å påtvinge en musikalsk dom",
+              "fr": "Tester l’arrivée des informations sans imposer un verdict musical",
+              "pt": "Testar chegada de informação sem impor um veredicto musical"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Reveal every fact immediately and underscore every judgment",
+              "nb": "Avslør alle fakta straks og understrek hver dom musikalsk",
+              "fr": "Révéler tous les faits immédiatement et souligner chaque jugement",
+              "pt": "Revelar todos os factos de imediato e sublinhar cada juízo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Farhadi explains controlling information through editing and withholding score until the credits; Safiyari recalls editing during shooting. Compare alternative information orders without prescribing a verdict.",
+          "nb": "Farhadi forklarer informasjonsstyring gjennom klipp og fravær av musikk før rulleteksten; Safiyari husker klipping under opptak. Sammenlign informasjonsrekkefølger uten å foreskrive en dom.",
+          "fr": "Farhadi explique le contrôle de l’information et l’absence de musique avant le générique ; Safiyari évoque le montage pendant le tournage. Comparez des ordres sans imposer de verdict.",
+          "pt": "Farhadi explica controlo da informação e ausência de música até aos créditos; Safiyari recorda montagem durante rodagem. Compare ordens sem impor veredicto."
+        },
+        "sourceIds": [
+          "s6",
+          "s8"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_pina_2011",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Stereoscopic choreography, live performance and stereo post",
+      "nb": "Stereoskopisk koreografi, liveopptak og stereoetterarbeid",
+      "fr": "Chorégraphie stéréoscopique, spectacle vivant et postproduction stéréo",
+      "pt": "Coreografia estereoscópica, espetáculo ao vivo e pós-produção estéreo"
+    },
+    "sources": [
+      {
+        "id": "s2",
+        "title": "Pina: Infos zur Produktion",
+        "publisher": "film-tv-video.de",
+        "url": "https://www.film-tv-video.de/productions/2011/02/25/pina-infos-zur-produktion/"
+      },
+      {
+        "id": "s3",
+        "title": "Interview: Wim Wenders about PINA & 3D",
+        "publisher": "thefilmbook / American Cinematographer interview material",
+        "url": "https://thefilmbook.net/2013/08/wim-wenders-about-pina-3d/"
+      },
+      {
+        "id": "s4",
+        "title": "Das Werk completes 3D Pina",
+        "publisher": "TVBEurope",
+        "url": "https://www.tvbeurope.com/production-post/das-werk-completes-3d-pina"
+      },
+      {
+        "id": "s5",
+        "title": "Pina",
+        "publisher": "filmportal.de",
+        "url": "https://www.filmportal.de/en/movie/pina_780cc75bfb1ce05ae040007f01001bcf"
+      }
+    ],
+    "questions": [
+      {
+        "id": "pina-depth",
+        "area": "camera",
+        "prompt": {
+          "en": "How should stereoscopic framing respond to dance movement?",
+          "nb": "Hvordan bør stereoskopisk bildekomposisjon følge dansebevegelse?",
+          "fr": "Comment le cadrage stéréoscopique répond-il au mouvement dansé ?",
+          "pt": "Como deve enquadramento estereoscópico responder ao movimento da dança?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse spatial composition and review depth with choreography",
+              "nb": "Øv på romlig komposisjon og vurder dybde sammen med koreografien",
+              "fr": "Répéter la composition spatiale et revoir la profondeur avec la chorégraphie",
+              "pt": "Ensaiar composição espacial e rever profundidade com a coreografia"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose depth independently of the dancers’ positions",
+              "nb": "Velg dybde uavhengig av dansernes posisjoner",
+              "fr": "Choisir la profondeur indépendamment des positions des danseurs",
+              "pt": "Escolher profundidade independentemente das posições dos bailarinos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume stereo depth can be judged from one flat image",
+              "nb": "Anta at stereodybde kan vurderes fra ett flatt bilde",
+              "fr": "Supposer que la profondeur stéréo se juge sur une image plate",
+              "pt": "Supor que profundidade estéreo se avalia numa imagem plana"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Schmidt describes extensive stereo tests and stage planning; Wenders discusses bodily presence in 3D. Plan a safe original dance study and compare depth with movement.",
+          "nb": "Schmidt beskriver omfattende stereoprøver og sceneplanlegging; Wenders omtaler kroppslig nærvær i 3D. Planlegg en trygg original dansestudie og sammenlign dybde med bevegelse.",
+          "fr": "Schmidt décrit essais stéréo et préparation du plateau ; Wenders évoque la présence corporelle en 3D. Concevez une étude dansée sûre et comparez profondeur et mouvement.",
+          "pt": "Schmidt descreve testes estéreo e planeamento do palco; Wenders aborda presença corporal em 3D. Planeie estudo de dança seguro e compare profundidade e movimento."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "pina-live",
+        "area": "research",
+        "prompt": {
+          "en": "How should a camera team prepare for a live performance?",
+          "nb": "Hvordan bør kamerateamet forberede et liveopptak?",
+          "fr": "Comment une équipe caméra prépare-t-elle un spectacle vivant ?",
+          "pt": "Como deve a equipa de câmara preparar um espetáculo ao vivo?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume the performance can be stopped for every camera change",
+              "nb": "Anta at forestillingen kan stoppes ved hvert kameraskifte",
+              "fr": "Supposer que le spectacle peut s’arrêter à chaque changement caméra",
+              "pt": "Supor que o espetáculo pode parar a cada mudança de câmara"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore rehearsal and camera positions until the audience arrives",
+              "nb": "Ignorer prøver og kameraposisjoner til publikum ankommer",
+              "fr": "Ignorer répétitions et positions jusqu’à l’arrivée du public",
+              "pt": "Ignorar ensaios e posições até à chegada do público"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan coverage and calibration before the uninterrupted performance",
+              "nb": "Planlegg dekning og kalibrering før den uavbrutte forestillingen",
+              "fr": "Prévoir prises et calibration avant la représentation continue",
+              "pt": "Planear cobertura e calibração antes do espetáculo contínuo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Schmidt and TVBEurope document long stereo takes during live performances. Rehearse a continuous event plan without assuming repeated takes will be available.",
+          "nb": "Schmidt og TVBEurope dokumenterer lange stereotagninger under liveforestillinger. Øv på en sammenhengende arrangementsplan uten å anta at nye tagninger er tilgjengelige.",
+          "fr": "Schmidt et TVBEurope documentent de longues prises stéréo en spectacle. Répétez un plan continu sans supposer que les prises pourront être répétées.",
+          "pt": "Schmidt e TVBEurope documentam tomadas estéreo longas ao vivo. Ensaie um plano contínuo sem supor que as tomadas podem repetir-se."
+        },
+        "sourceIds": [
+          "s2",
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "pina-stereo",
+        "area": "camera",
+        "prompt": {
+          "en": "How should tested lenses and stereo post records be distinguished?",
+          "nb": "Hvordan bør testede objektiver og stereoetterarbeid dokumenteres adskilt?",
+          "fr": "Comment distinguer objectifs testés et dossiers de postproduction stéréo ?",
+          "pt": "Como distinguir objetivas testadas e registos de pós-produção estéreo?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Discard stereo pairing information during the conform",
+              "nb": "Forkast informasjon om stereopar under konformeringen",
+              "fr": "Écarter les informations de paires stéréo au conformage",
+              "pt": "Descartar informações dos pares estéreo durante conformação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record tested equipment separately from confirmed final-shot usage",
+              "nb": "Registrer testet utstyr separat fra bekreftet bruk i sluttbilder",
+              "fr": "Documenter le matériel testé séparément de son usage confirmé",
+              "pt": "Registar equipamento testado separadamente do uso confirmado"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Claim every tested focal length appears in the finished film",
+              "nb": "Påstå at alle testede brennvidder finnes i den ferdige filmen",
+              "fr": "Affirmer que chaque focale testée apparaît dans le film final",
+              "pt": "Afirmar que todas as focais testadas aparecem no filme final"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Schmidt lists tested focal lengths while Wenders describes mostly 10mm use; TVBEurope records stereo conform. Preserve the differences and verify paired media in a small exercise.",
+          "nb": "Schmidt oppgir testede brennvidder mens Wenders beskriver hovedsakelig 10 mm; TVBEurope dokumenterer stereokonformering. Bevar forskjellene og verifiser mediepar i en øvelse.",
+          "fr": "Schmidt liste les focales testées, Wenders décrit surtout le 10 mm et TVBEurope le conformage stéréo. Préservez ces distinctions et vérifiez les paires.",
+          "pt": "Schmidt lista focais testadas, Wenders descreve sobretudo 10 mm e TVBEurope conformação estéreo. Preserve diferenças e verifique pares de meios."
+        },
+        "sourceIds": [
+          "s2",
+          "s3",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_amour_2012",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Studio apartment, continuity and performer care",
+      "nb": "Studioleilighet, kontinuitet og omsorg for skuespillere",
+      "fr": "Appartement de studio, continuité et soin des interprètes",
+      "pt": "Apartamento de estúdio, continuidade e cuidado dos intérpretes"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Amour",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/f/amour/"
+      },
+      {
+        "id": "s1",
+        "title": "Amour bilingual press kit",
+        "publisher": "Festival de Cannes / Les Films du Losange",
+        "url": "https://cdn.festival-cannes.com/media/uploads/2023/03/76898.pdf"
+      },
+      {
+        "id": "s3",
+        "title": "Michael Haneke talks about AMOUR",
+        "publisher": "Austrian Films",
+        "url": "https://www.austrianfilms.com/news/en/michael_haneke_talks_about_amour"
+      },
+      {
+        "id": "s4",
+        "title": "Darius Khondji AFC / Amour",
+        "publisher": "British Cinematographer",
+        "url": "https://britishcinematographer.co.uk/darius-khondji-afc-amour/"
+      },
+      {
+        "id": "s5",
+        "title": "Michael Haneke investigates ages-old issues in Amour",
+        "publisher": "Los Angeles Times",
+        "url": "https://www.latimes.com/entertainment/envelope/la-xpm-2012-dec-13-la-en-michael-haneke-amour-20121213-story.html"
+      }
+    ],
+    "questions": [
+      {
+        "id": "amour-apartment",
+        "area": "research",
+        "prompt": {
+          "en": "How can a studio apartment feel lived in while supporting camera movement?",
+          "nb": "Hvordan kan en studioleilighet føles bebodd og samtidig støtte kamerabevegelse?",
+          "fr": "Comment un appartement de studio paraît-il habité tout en permettant les mouvements caméra ?",
+          "pt": "Como pode um apartamento de estúdio parecer habitado e permitir movimento da câmara?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Design a coherent floor plan and test movement surfaces",
+              "nb": "Utform en sammenhengende planløsning og prøv bevegelsesflater",
+              "fr": "Concevoir un plan cohérent et tester les surfaces de déplacement",
+              "pt": "Conceber planta coerente e testar superfícies de movimento"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose decorative rooms without testing their connections",
+              "nb": "Velg dekorative rom uten å teste forbindelsene",
+              "fr": "Choisir des pièces décoratives sans tester leurs connexions",
+              "pt": "Escolher divisões decorativas sem testar ligações"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume the apartment was an unaltered documentary location",
+              "nb": "Anta at leiligheten var et uendret dokumentarisk opptakssted",
+              "fr": "Supposer que l’appartement était un lieu documentaire intact",
+              "pt": "Supor que apartamento era local documental intacto"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Haneke describes a reconstructed family floor plan; Khondji describes previs and dolly-floor preparation. Design your own functional apartment rather than claiming its exact dimensions.",
+          "nb": "Haneke beskriver en rekonstruert familieplan; Khondji omtaler previs og gulvforberedelse. Utform en egen funksjonell leilighet uten å påstå eksakte originalmål.",
+          "fr": "Haneke décrit un plan familial reconstruit ; Khondji évoque prévisualisation et préparation du sol. Concevez un appartement fonctionnel sans inventer les dimensions.",
+          "pt": "Haneke descreve planta familiar reconstruída; Khondji aborda pré-visualização e piso. Conceba apartamento funcional sem inventar dimensões."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "amour-continuity",
+        "area": "camera",
+        "prompt": {
+          "en": "How can lighting and performance continuity be coordinated over a long shoot?",
+          "nb": "Hvordan kan lys- og spillekontinuitet samordnes gjennom et langt opptak?",
+          "fr": "Comment coordonner la continuité de lumière et de jeu sur un long tournage ?",
+          "pt": "Como coordenar continuidade de luz e interpretação numa rodagem longa?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Change lighting arbitrarily between connected scenes",
+              "nb": "Endre lyset vilkårlig mellom sammenhengende scener",
+              "fr": "Modifier arbitrairement la lumière entre scènes liées",
+              "pt": "Alterar luz arbitrariamente entre cenas ligadas"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume near-chronological shooting guarantees continuity",
+              "nb": "Anta at nesten kronologisk opptak garanterer kontinuitet",
+              "fr": "Supposer que le tournage presque chronologique garantit la continuité",
+              "pt": "Supor que rodagem quase cronológica garante continuidade"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Track scene progression and document repeatable lighting choices",
+              "nb": "Følg sceneutviklingen og dokumenter gjentakbare lysvalg",
+              "fr": "Suivre la progression et documenter des choix lumineux reproductibles",
+              "pt": "Acompanhar progressão e documentar escolhas luminosas repetíveis"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Khondji describes controlled studio lighting and almost chronological shooting. Create a continuity record that links the dramatic progression to the planned light changes.",
+          "nb": "Khondji beskriver kontrollert studiobelysning og nesten kronologisk opptak. Lag en kontinuitetslogg som knytter dramatisk utvikling til planlagte lysendringer.",
+          "fr": "Khondji décrit lumière contrôlée et tournage presque chronologique. Créez un suivi reliant progression dramatique et changements lumineux.",
+          "pt": "Khondji descreve luz controlada e rodagem quase cronológica. Crie registo ligando progressão dramática e mudanças de luz."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
+        ]
+      },
+      {
+        "id": "amour-care",
+        "area": "research",
+        "prompt": {
+          "en": "How should physically demanding performance be prepared responsibly?",
+          "nb": "Hvordan bør fysisk krevende skuespill forberedes ansvarlig?",
+          "fr": "Comment préparer de manière responsable un jeu physiquement exigeant ?",
+          "pt": "Como preparar interpretação fisicamente exigente de forma responsável?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore consent and specialist advice during rehearsal",
+              "nb": "Ignorer samtykke og fagråd under prøvene",
+              "fr": "Ignorer consentement et avis spécialisés en répétition",
+              "pt": "Ignorar consentimento e parecer especializado no ensaio"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Consult specialists and test safe accommodations with performers",
+              "nb": "Rådfør deg med fagpersoner og prøv trygge tilpasninger med utøverne",
+              "fr": "Consulter des spécialistes et tester des adaptations sûres avec les acteurs",
+              "pt": "Consultar especialistas e testar adaptações seguras com intérpretes"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Demand physical discomfort to guarantee authenticity",
+              "nb": "Krev fysisk ubehag for å garantere autentisitet",
+              "fr": "Exiger un inconfort physique pour garantir l’authenticité",
+              "pt": "Exigir desconforto físico para garantir autenticidade"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The press kit credits care consultants, and Haneke describes adjustments for a demanding scene. Design a consent-based rehearsal with safe alternatives and qualified advice.",
+          "nb": "Pressepakken krediterer omsorgsfaglige rådgivere, og Haneke beskriver tilpasninger for en krevende scene. Lag en samtykkebasert prøve med trygge alternativer og kvalifiserte råd.",
+          "fr": "Le dossier crédite des consultants en soins et Haneke décrit des adaptations. Concevez une répétition consentie avec alternatives sûres et conseils qualifiés.",
+          "pt": "O dossier credita consultores de cuidados e Haneke descreve adaptações. Crie ensaio consentido com alternativas seguras e orientação qualificada."
+        },
+        "sourceIds": [
+          "s1",
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_holy_motors_2012",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Constraint-led production, transformations and digital image processes",
+      "nb": "Begrensningsstyrt produksjon, forvandlinger og digitale bildeprosesser",
+      "fr": "Production sous contraintes, transformations et procédés numériques",
+      "pt": "Produção sob restrições, transformações e processos digitais"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Holy Motors",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/holy-motors/"
+      },
+      {
+        "id": "s1",
+        "title": "Holy Motors English press kit",
+        "publisher": "Festival de Cannes / Pierre Grise Production",
+        "url": "https://cdn.festival-cannes.com/media/uploads/2023/03/76897.pdf"
+      },
+      {
+        "id": "s2",
+        "title": "Holy Motors",
+        "publisher": "La Cinémathèque française",
+        "url": "https://www.cinematheque.fr/film/116263.html"
+      },
+      {
+        "id": "s3",
+        "title": "I Need to Feel When I Make a Film That I'm Not the Same Person Who Made the One Before: Director Leos Carax on Holy Motors",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/54957-leos-carax-holy-motors/"
+      },
+      {
+        "id": "s4",
+        "title": "Holy Motors",
+        "publisher": "Harvard Film Archive",
+        "url": "https://harvardfilmarchive.org/calendar/holy-motors-2013-02/1"
+      }
+    ],
+    "questions": [
+      {
+        "id": "holymotors-constraints",
+        "area": "research",
+        "prompt": {
+          "en": "How can production limitations shape a modular story?",
+          "nb": "Hvordan kan produksjonsbegrensninger forme en modulær fortelling?",
+          "fr": "Comment les contraintes façonnent-elles un récit modulaire ?",
+          "pt": "Como podem restrições moldar uma narrativa modular?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Design linked episodes around available actors and locations",
+              "nb": "Utform sammenknyttede episoder rundt tilgjengelige utøvere og steder",
+              "fr": "Concevoir des épisodes liés autour des acteurs et lieux disponibles",
+              "pt": "Conceber episódios ligados em torno de atores e locais disponíveis"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Keep an unaffordable location plan without revision",
+              "nb": "Behold en ubetalelig stedsplan uten revisjon",
+              "fr": "Conserver un plan de lieux inabordable sans révision",
+              "pt": "Manter um plano de locais incomportável sem revisão"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Remove every recurring element from the separate episodes",
+              "nb": "Fjern alle tilbakevendende elementer fra episodene",
+              "fr": "Supprimer tout élément récurrent des épisodes",
+              "pt": "Eliminar todos os elementos recorrentes dos episódios"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Carax describes a fast Paris production with Lavant and a small budget. Design a new linked-episode concept around realistic constraints rather than copying an undocumented budget.",
+          "nb": "Carax beskriver rask Paris-produksjon med Lavant og lite budsjett. Lag et nytt episodekonsept rundt realistiske begrensninger uten å kopiere udokumenterte budsjettall.",
+          "fr": "Carax décrit un tournage rapide à Paris avec Lavant et un petit budget. Concevez des épisodes liés selon des contraintes réalistes sans inventer de budget.",
+          "pt": "Carax descreve rodagem rápida em Paris com Lavant e orçamento pequeno. Conceba episódios ligados sob restrições realistas sem inventar valores."
+        },
+        "sourceIds": [
+          "s1",
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "holymotors-transformation",
+        "area": "research",
+        "prompt": {
+          "en": "How can one performer anchor sharply different fictional identities?",
+          "nb": "Hvordan kan én utøver forankre svært ulike fiktive identiteter?",
+          "fr": "Comment un interprète relie-t-il des identités fictives très différentes ?",
+          "pt": "Como pode um intérprete ligar identidades fictícias muito diferentes?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use identical physical behavior for every fictional identity",
+              "nb": "Bruk identisk fysisk atferd for alle fiktive identiteter",
+              "fr": "Employer le même comportement physique pour chaque identité",
+              "pt": "Usar comportamento físico idêntico em todas as identidades"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat makeup and performance planning as unrelated tasks",
+              "nb": "Behandle sminke og spilleplanlegging som urelaterte oppgaver",
+              "fr": "Traiter maquillage et jeu comme tâches indépendantes",
+              "pt": "Tratar maquilhagem e interpretação como tarefas independentes"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan distinct movement, costume and makeup approaches per episode",
+              "nb": "Planlegg ulike bevegelses-, kostyme- og sminkegrep per episode",
+              "fr": "Prévoir des gestes, costumes et maquillages distincts par épisode",
+              "pt": "Planear gestos, figurinos e maquilhagem distintos por episódio"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The festival record and press kit identify Lavant and specialist makeup and effects roles. Plan distinct fictional transformations while preserving a coherent performer-centered structure.",
+          "nb": "Festivaloppføringen og pressepakken identifiserer Lavant og spesialiserte sminke- og effektroller. Planlegg ulike fiktive forvandlinger med en sammenhengende utøverbasert struktur.",
+          "fr": "Le dossier et la fiche du festival identifient Lavant et les métiers du maquillage et des effets. Prévoyez des transformations distinctes dans une structure cohérente.",
+          "pt": "O dossier e o festival identificam Lavant e equipas especializadas. Planeie transformações fictícias distintas numa estrutura coerente centrada no intérprete."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "holymotors-digital",
+        "area": "animation",
+        "prompt": {
+          "en": "How can experimental digital imagery be documented clearly?",
+          "nb": "Hvordan kan eksperimentelle digitale bilder dokumenteres tydelig?",
+          "fr": "Comment documenter clairement des images numériques expérimentales ?",
+          "pt": "Como documentar claramente imagens digitais experimentais?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Invent a software recipe from the finished appearance",
+              "nb": "Finn på en programvareoppskrift fra sluttbildet",
+              "fr": "Inventer une recette logicielle à partir de l’apparence finale",
+              "pt": "Inventar uma receita de software a partir da aparência final"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Separate capture records from intentional post-image experiments",
+              "nb": "Skill opptaksdokumentasjon fra tilsiktede bildeeksperimenter i etterarbeidet",
+              "fr": "Distinguer captation et expérimentations volontaires en postproduction",
+              "pt": "Separar registos de captação de experiências intencionais na pós-produção"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat every visual distortion as a camera malfunction",
+              "nb": "Behandle alle bildeforvrengninger som kamerafeil",
+              "fr": "Traiter toute distorsion comme une panne caméra",
+              "pt": "Tratar toda distorção visual como avaria da câmara"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The Cinémathèque identifies RED Epic, datamoshing and motion capture. Test an original digital image transformation without assuming exact historical software or settings.",
+          "nb": "Cinémathèque identifiserer RED Epic, datamoshing og bevegelsesopptak. Prøv en original digital bildeforvandling uten å anta eksakt historisk programvare eller innstillinger.",
+          "fr": "La Cinémathèque identifie RED Epic, datamoshing et capture de mouvement. Testez une transformation originale sans inventer logiciels ou réglages historiques.",
+          "pt": "A Cinémathèque identifica RED Epic, datamoshing e captura de movimento. Teste transformação original sem inventar software ou parâmetros históricos."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_gravity_2013",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Previsualized editorial, interactive light and spatial sound",
+      "nb": "Forhåndsvisualisert klipp, interaktivt lys og romlyd",
+      "fr": "Montage prévisualisé, lumière interactive et son spatial",
+      "pt": "Montagem pré-visualizada, luz interativa e som espacial"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Gravity",
+        "publisher": "Framestore",
+        "url": "https://www.framestore.com/work/gravity"
+      },
+      {
+        "id": "s1",
+        "title": "Preparing for Gravity",
+        "publisher": "Framestore",
+        "url": "https://www.framestore.com/news/preparing-gravity"
+      },
+      {
+        "id": "s2",
+        "title": "Deconstructing Gravity",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/events/deconstructing-gravity"
+      },
+      {
+        "id": "s3",
+        "title": "History of ARRI - Emmanuel Lubezki",
+        "publisher": "ARRI",
+        "url": "https://100.arri.com/timeline/event/59ad95b027fc605792b770b0"
+      },
+      {
+        "id": "s5",
+        "title": "The Art of the Cut: Gravity co-Editor and Oscar Winner Mark Sanger Explains His Craft and Style",
+        "publisher": "ProVideo Coalition",
+        "url": "https://www.provideocoalition.com/gravity-co-editor-and-oscar-nominee-mark-sanger/"
+      },
+      {
+        "id": "s6",
+        "title": "The Sound of Gravity",
+        "publisher": "SoundWorks Collection",
+        "url": "https://soundworkscollection.com/videos/gravity"
+      },
+      {
+        "id": "s7",
+        "title": "How the sound masters of Gravity broke the rules to make noise in a vacuum",
+        "publisher": "The Verge",
+        "url": "https://www.theverge.com/2013/10/10/4822482/the-sound-design-of-gravity-glenn-freemantle-skip-lievsay"
+      }
+    ],
+    "questions": [
+      {
+        "id": "gravity-previs",
+        "area": "animation",
+        "prompt": {
+          "en": "How should an effects-led sequence be planned before photography?",
+          "nb": "Hvordan bør en effektdrevet sekvens planlegges før opptak?",
+          "fr": "Comment préparer une séquence dominée par les effets avant tournage ?",
+          "pt": "Como planear uma sequência dominada por efeitos antes da rodagem?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use an editable previs to coordinate timing and production handoffs",
+              "nb": "Bruk redigerbar previs for å samordne timing og produksjonsoverganger",
+              "fr": "Utiliser une prévisualisation modifiable pour coordonner rythme et transmissions",
+              "pt": "Usar pré-visualização editável para coordenar ritmo e transições"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Postpone all editorial decisions until effects are completed",
+              "nb": "Utsett alle klippevalg til effektene er ferdige",
+              "fr": "Reporter tous les choix de montage jusqu’à la fin des effets",
+              "pt": "Adiar todas as decisões de montagem até terminar os efeitos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume each department can plan independently of the sequence",
+              "nb": "Anta at hver avdeling kan planlegge uavhengig av sekvensen",
+              "fr": "Supposer que chaque département planifie indépendamment",
+              "pt": "Supor que cada departamento planeia independentemente"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Framestore and Sanger describe previs as editorial and the later performance feedback loop. Build a short animatic with explicit handoffs instead of assuming conventional coverage.",
+          "nb": "Framestore og Sanger beskriver previs som klipp og den senere tilbakeføringen av skuespill. Lag en kort animatic med tydelige overleveringer fremfor å anta konvensjonell dekning.",
+          "fr": "Framestore et Sanger décrivent la prévisualisation comme montage et la boucle de jeu. Créez une animatique courte avec transmissions explicites.",
+          "pt": "Framestore e Sanger descrevem pré-visualização como montagem e retorno da interpretação. Crie animática curta com transições explícitas."
+        },
+        "sourceIds": [
+          "s1",
+          "s2",
+          "s5"
+        ]
+      },
+      {
+        "id": "gravity-lightbox",
+        "area": "camera",
+        "prompt": {
+          "en": "What is the distinction between interactive illumination and a final digital environment?",
+          "nb": "Hva skiller interaktiv belysning fra et ferdig digitalt miljø?",
+          "fr": "Quelle différence entre éclairage interactif et environnement numérique final ?",
+          "pt": "Qual a diferença entre iluminação interativa e ambiente digital final?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume the lighting display supplies every final background pixel",
+              "nb": "Anta at lysdisplayet leverer alle endelige bakgrunnspiksler",
+              "fr": "Supposer que l’écran lumineux fournit chaque pixel du décor final",
+              "pt": "Supor que o ecrã luminoso fornece cada píxel do fundo final"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore lighting direction when integrating photographed elements",
+              "nb": "Ignorer lysretning når fotograferte elementer integreres",
+              "fr": "Ignorer la direction lumineuse lors de l’intégration",
+              "pt": "Ignorar direção da luz ao integrar elementos filmados"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test photographed faces under changing light before compositing",
+              "nb": "Prøv fotograferte ansikter under skiftende lys før kompositering",
+              "fr": "Tester les visages filmés sous lumière variable avant compositing",
+              "pt": "Testar rostos filmados sob luz variável antes da composição"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Framestore describes LED illumination around photographed faces and CG environments; ARRI documents the live-action camera. Test small-scale lighting without reproducing industrial equipment.",
+          "nb": "Framestore beskriver LED-lys rundt fotograferte ansikter og digitale miljøer; ARRI dokumenterer realopptakskameraet. Prøv lys i liten skala uten å gjenskape industriutstyr.",
+          "fr": "Framestore décrit l’éclairage LED des visages et les décors numériques ; ARRI documente la caméra réelle. Testez l’éclairage à petite échelle sans reproduire les machines.",
+          "pt": "Framestore descreve iluminação LED de rostos e ambientes digitais; ARRI documenta a câmara real. Teste iluminação em pequena escala sem reproduzir máquinas."
+        },
+        "sourceIds": [
+          "s0",
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "gravity-soundfield",
+        "area": "sound",
+        "prompt": {
+          "en": "How can point of audition guide a scene set in a vacuum?",
+          "nb": "Hvordan kan lytteperspektivet styre en scene i vakuum?",
+          "fr": "Comment le point d’écoute guide-t-il une scène dans le vide ?",
+          "pt": "Como pode o ponto de escuta orientar uma cena no vácuo?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat surround and stereo output as identical mix records",
+              "nb": "Behandle surround- og stereoutdata som identiske miksopplysninger",
+              "fr": "Traiter sorties surround et stéréo comme des mixages identiques",
+              "pt": "Tratar saídas surround e estéreo como misturas idênticas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Distinguish contact, body and radio sounds from exterior silence",
+              "nb": "Skill kontaktlyd, kroppslyd og radio fra utvendig stillhet",
+              "fr": "Distinguer sons de contact, corporels et radio du silence extérieur",
+              "pt": "Distinguir sons de contacto, corporais e rádio do silêncio exterior"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use ordinary airborne exterior sound without narrative justification",
+              "nb": "Bruk vanlig luftbåren utelyd uten fortellermessig begrunnelse",
+              "fr": "Employer des sons extérieurs aériens sans justification narrative",
+              "pt": "Usar sons exteriores aéreos sem justificação narrativa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Freemantle and Lievsay describe contact, bodily and radio sound choices developed during previs. Create a fictional point-of-audition test and document the intended spatial mix.",
+          "nb": "Freemantle og Lievsay beskriver kontakt-, kropps- og radiolydvalg utviklet under previs. Lag en fiktiv lytteperspektivprøve og dokumenter den tilsiktede rommiksen.",
+          "fr": "Freemantle et Lievsay décrivent sons de contact, corporels et radio élaborés en prévisualisation. Créez un essai fictif de point d’écoute et documentez le mixage spatial.",
+          "pt": "Freemantle e Lievsay descrevem sons de contacto, corpo e rádio desenvolvidos na pré-visualização. Crie teste fictício de ponto de escuta e documente mistura espacial."
+        },
+        "sourceIds": [
+          "s6",
+          "s7"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_ida_2013",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Monochrome finishing, portrait framing and shared authorship",
+      "nb": "Monokromt etterarbeid, portrettutsnitt og delt opphav",
+      "fr": "Finition monochrome, cadrage portrait et attribution partagée",
+      "pt": "Acabamento monocromático, enquadramento de retrato e autoria partilhada"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Ida",
+        "publisher": "Opus Film",
+        "url": "https://opusfilm.com/films/feature-films/ida"
+      },
+      {
+        "id": "s1",
+        "title": "IDA Award Press Notes 2014",
+        "publisher": "Music Box Films / Phoenix Film / Opus Film",
+        "url": "https://www.musicboxfilms.com/wp-content/uploads/2018/09/IDA_AWARD_PRESS_NOTES_2014.pdf"
+      },
+      {
+        "id": "s3",
+        "title": "Three Scenes from Ida",
+        "publisher": "The Film Book",
+        "url": "https://thefilmbook.net/2015/01/three-scenes-from-ida/"
+      },
+      {
+        "id": "s4",
+        "title": "Squaring the Circles: Pawel Pawlikowski on Ida",
+        "publisher": "Senses of Cinema",
+        "url": "https://www.sensesofcinema.com/2014/feature-articles/squaring-the-circles-pawel-pawlikowski-on-ida/"
+      },
+      {
+        "id": "s5",
+        "title": "Ida",
+        "publisher": "FilmPolski.pl",
+        "url": "https://filmpolski.pl/fp/index.php?film=1229196"
+      }
+    ],
+    "questions": [
+      {
+        "id": "ida-monochrome",
+        "area": "camera",
+        "prompt": {
+          "en": "How should color capture and monochrome finishing be recorded?",
+          "nb": "Hvordan bør fargeopptak og monokromt etterarbeid dokumenteres?",
+          "fr": "Comment documenter captation couleur et finition monochrome ?",
+          "pt": "Como documentar captação a cores e acabamento monocromático?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Keep camera originals and monochrome grade decisions distinct",
+              "nb": "Hold kameraoriginaler og monokrome graderingsvalg adskilt",
+              "fr": "Distinguer originaux caméra et choix d’étalonnage monochrome",
+              "pt": "Distinguir originais de câmara e escolhas de gradação monocromática"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume black-and-white release means black-and-white capture",
+              "nb": "Anta at svart-hvitt-visning betyr svart-hvitt-opptak",
+              "fr": "Supposer qu’une diffusion monochrome implique une captation monochrome",
+              "pt": "Supor que exibição monocromática implica captação monocromática"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Discard the color source immediately after conversion",
+              "nb": "Forkast fargekilden straks etter konvertering",
+              "fr": "Écarter la source couleur immédiatement après conversion",
+              "pt": "Descartar fonte a cores logo após conversão"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Craft reporting documents color ARRIRAW and monochrome conversion at DI Factory. Compare tonal grades from original material without conflating acquisition with finishing.",
+          "nb": "Fagrapportering dokumenterer ARRIRAW i farger og monokrom konvertering hos DI Factory. Sammenlign tonegraderinger fra originalmaterialet uten å blande opptak og etterarbeid.",
+          "fr": "Les sources techniques documentent ARRIRAW couleur et conversion monochrome chez DI Factory. Comparez les tonalités sans confondre captation et finition.",
+          "pt": "Fontes técnicas documentam ARRIRAW a cores e conversão monocromática na DI Factory. Compare tonalidades sem confundir captação e acabamento."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "ida-framing",
+        "area": "camera",
+        "prompt": {
+          "en": "How can an Academy-like frame use negative space expressively?",
+          "nb": "Hvordan kan et Academy-lignende format bruke negativt rom uttrykksfullt?",
+          "fr": "Comment un cadre proche du format Academy exploite-t-il l’espace négatif ?",
+          "pt": "Como pode um quadro próximo do formato Academy explorar espaço negativo?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Always center every face regardless of dramatic purpose",
+              "nb": "Sentrer alltid hvert ansikt uavhengig av dramatisk formål",
+              "fr": "Centrer toujours chaque visage sans égard au récit",
+              "pt": "Centrar sempre cada rosto sem atender à narrativa"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume a wider frame is automatically more expressive",
+              "nb": "Anta at bredere format automatisk er mer uttrykksfullt",
+              "fr": "Supposer qu’un cadre large est automatiquement plus expressif",
+              "pt": "Supor que quadro mais largo é automaticamente mais expressivo"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare headroom and placement against narrative perspective",
+              "nb": "Sammenlign luft over hodet og plassering mot fortellerperspektivet",
+              "fr": "Comparer espace au-dessus des têtes et placement selon le récit",
+              "pt": "Comparar espaço acima da cabeça e posição segundo a narrativa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Pawlikowski discusses 4:3 portrait framing and negative space; FilmPolski records a 1.33 label. Test your own compositions and retain catalogue variance rather than inventing an exact raster.",
+          "nb": "Pawlikowski omtaler 4:3-portrettutsnitt og negativt rom; FilmPolski oppgir 1,33. Prøv egne komposisjoner og bevar katalogvariasjon fremfor å finne på eksakt pikselraster.",
+          "fr": "Pawlikowski décrit portrait 4:3 et espace négatif ; FilmPolski indique 1,33. Testez vos compositions en préservant les variantes sans inventer de raster exact.",
+          "pt": "Pawlikowski descreve retrato 4:3 e espaço negativo; FilmPolski indica 1,33. Teste composições preservando variantes sem inventar raster exato."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "ida-credits",
+        "area": "research",
+        "prompt": {
+          "en": "How should a cinematography handoff be credited and documented?",
+          "nb": "Hvordan bør et fotografskifte krediteres og dokumenteres?",
+          "fr": "Comment créditer et documenter un relais de direction photo ?",
+          "pt": "Como creditar e documentar uma transição na direção de fotografia?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Remove preparation work from the production record",
+              "nb": "Fjern forberedelsesarbeid fra produksjonsloggen",
+              "fr": "Supprimer le travail préparatoire du dossier",
+              "pt": "Retirar preparação do registo de produção"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Preserve shared credits and distinguish known contributions",
+              "nb": "Bevar delte krediteringer og skill dokumenterte bidrag",
+              "fr": "Préserver les crédits partagés et distinguer les apports connus",
+              "pt": "Preservar créditos partilhados e distinguir contributos conhecidos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assign every shot to one cinematographer without documentation",
+              "nb": "Tildel hvert bilde én fotograf uten dokumentasjon",
+              "fr": "Attribuer chaque plan à un directeur photo sans preuve",
+              "pt": "Atribuir cada plano a um diretor de fotografia sem provas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Opus and the press notes preserve the shared cinematography credit; craft reporting describes the workflow. Document a hypothetical handoff without inventing shot-level authorship.",
+          "nb": "Opus og pressepakken bevarer delt fotokreditering; fagkilder beskriver arbeidsflyten. Dokumenter et tenkt fotografskifte uten å finne på opphav på bildenivå.",
+          "fr": "Opus et le dossier préservent le crédit photo partagé ; les sources techniques décrivent le flux. Documentez un relais fictif sans inventer l’attribution des plans.",
+          "pt": "Opus e o dossier preservam crédito fotográfico partilhado; fontes técnicas descrevem o fluxo. Documente uma transição fictícia sem inventar autoria de planos."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s3"
+        ]
+      }
+    ]
   }
 ] as const satisfies readonly SourceBackedCaseWorkshop[];

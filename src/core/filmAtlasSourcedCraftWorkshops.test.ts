@@ -231,15 +231,22 @@ const ids = [
   "scenario_alamar_2009",
   "scenario_uncle_boonmee_2010",
   "scenario_the_social_network_2010",
+  "scenario_tree_of_life_2011",
+  "scenario_a_separation_2011",
+  "scenario_pina_2011",
+  "scenario_amour_2012",
+  "scenario_holy_motors_2012",
+  "scenario_gravity_2013",
+  "scenario_ida_2013",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly two hundred and twenty-two existing cases have six hundred and sixty-six original, source-backed decisions", () => {
+test("Exactly two hundred and twenty-nine existing cases have six hundred and eighty-seven original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 222);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 666);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 229);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 687);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -593,6 +600,13 @@ test("Exactly two hundred and twenty-two existing cases have six hundred and six
       const [path, definition] = configs[workshop.scenarioId]!;
       if (definition === "seed") assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
       else assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
+      assert.ok(verification.includes('scenarioId: "' + workshop.scenarioId + '"'));
+      for (const source of workshop.sources) assert.ok(verification.includes(source.url));
+    } else if (["scenario_tree_of_life_2011","scenario_a_separation_2011","scenario_pina_2011","scenario_amour_2012","scenario_holy_motors_2012","scenario_gravity_2013","scenario_ida_2013"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_tree_of_life_2011":["src/ui/data/scenarioProductionVerificationTreeOfLife.ts","chapterEighteenTreeOfLifeExpansion"],"scenario_a_separation_2011":["src/ui/data/scenarioProductionVerificationASeparation.ts","chapterEighteenASeparationExpansion"],"scenario_pina_2011":["src/ui/data/scenarioProductionVerificationPina.ts","chapterEighteenPinaExpansion"],"scenario_amour_2012":["src/ui/data/scenarioProductionVerificationAmour.ts","chapterEighteenAmourExpansion"],"scenario_holy_motors_2012":["src/ui/data/scenarioProductionVerificationHolyMotors.ts","chapterEighteenHolyMotorsExpansion"],"scenario_gravity_2013":["src/ui/data/scenarioProductionVerificationGravity.ts","chapterEighteenGravityExpansion"],"scenario_ida_2013":["src/ui/data/scenarioProductionVerificationIda.ts","chapterEighteenIdaExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
       const verification = readFileSync(path, "utf8");
       assert.ok(verification.includes('scenarioId: "' + workshop.scenarioId + '"'));
       for (const source of workshop.sources) assert.ok(verification.includes(source.url));
@@ -1287,4 +1301,15 @@ test("Digital convergence workshops retain film-specific decisions", () => {
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_alamar_2009")?.questions.map(q => q.id), ["alamar-fiction","alamar-place","alamar-format"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_uncle_boonmee_2010")?.questions.map(q => q.id), ["uncleboonmee-memory","uncleboonmee-night","uncleboonmee-ambience"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_social_network_2010")?.questions.map(q => q.id), ["socialnetwork-metadata","socialnetwork-twins","socialnetwork-dialogue"]);
+});
+
+
+test("2011–2013 workshops retain film-specific production decisions", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_tree_of_life_2011")?.questions.map(q => q.id), ["treeoflife-light","treeoflife-creation","treeoflife-editors"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_a_separation_2011")?.questions.map(q => q.id), ["aseparation-rehearsal","aseparation-viewpoint","aseparation-information"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_pina_2011")?.questions.map(q => q.id), ["pina-depth","pina-live","pina-stereo"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_amour_2012")?.questions.map(q => q.id), ["amour-apartment","amour-continuity","amour-care"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_holy_motors_2012")?.questions.map(q => q.id), ["holymotors-constraints","holymotors-transformation","holymotors-digital"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_gravity_2013")?.questions.map(q => q.id), ["gravity-previs","gravity-lightbox","gravity-soundfield"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_ida_2013")?.questions.map(q => q.id), ["ida-monochrome","ida-framing","ida-credits"]);
 });
