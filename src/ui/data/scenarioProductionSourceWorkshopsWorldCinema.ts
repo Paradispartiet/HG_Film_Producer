@@ -11650,5 +11650,987 @@ export const worldCinemaSourceWorkshops = [
         ]
       }
     ]
+  },
+  {
+    "scenarioId": "scenario_before_sunrise_1995",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Collaborative dialogue, walking locations and rehearsal",
+      "nb": "Samarbeid om dialog, vandresteder og prøver",
+      "fr": "Dialogue collaboratif, lieux de promenade et répétitions",
+      "pt": "Diálogo colaborativo, locais de passeio e ensaios"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "The first kiss takes so long: Richard Linklater on Before Sunrise",
+        "publisher": "BFI Sight and Sound",
+        "url": "https://www.bfi.org.uk/sight-and-sound/features/first-kiss-takes-so-long-richard-linklater-before-sunrise"
+      },
+      {
+        "id": "s2",
+        "title": "Julie Delpy and Ethan Hawke: how we made the Before Sunrise trilogy",
+        "publisher": "The Guardian",
+        "url": "https://www.theguardian.com/film/2019/nov/04/julie-delpy-ethan-hawke-how-we-made-before-sunrise-trilogy-sunset-midnight"
+      },
+      {
+        "id": "s3",
+        "title": "Romancing a Trilogy: Sandra Adair Edits Before Midnight",
+        "publisher": "CineMontage",
+        "url": "https://cinemontage.org/sandra-adair-before-midnight/"
+      },
+      {
+        "id": "s5",
+        "title": "30 years of Before Sunrise: retracing Celine and Jesse's footsteps in Vienna",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/before-sunrise-richard-linklater-vienna-locations"
+      },
+      {
+        "id": "s7",
+        "title": "Richard Linklater, Julie Delpy and Ethan Hawke on Their Before Trilogy",
+        "publisher": "Motion Picture Association",
+        "url": "https://www.motionpictures.org/2014/01/richard-linklater-julie-delpy-ethan-hawke-on-their-before-trilogy/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "sunrise-writing",
+        "area": "research",
+        "prompt": {
+          "en": "The actors describe collaborative rewriting from the audition process onward. Which approach would you choose in a new production exercise?",
+          "nb": "Skuespillerne beskriver felles manusrevisjon fra castingprosessen av. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les acteurs décrivent une réécriture collective dès les auditions. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os atores descrevem reescrita colaborativa desde o casting. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Workshop a conversation and preserve both characters’ viewpoints",
+              "nb": "Utvikle en samtale i fellesskap og bevar begge karakterenes perspektiver",
+              "fr": "Travailler une conversation en préservant les deux points de vue",
+              "pt": "Trabalhar uma conversa preservando ambos os pontos de vista"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Give all narrative initiative to one character",
+              "nb": "Gi alt fortellermessig initiativ til én karakter",
+              "fr": "Donner toute l’initiative narrative à un seul personnage",
+              "pt": "Dar toda a iniciativa narrativa a uma personagem"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat rehearsed dialogue as necessarily spontaneous improvisation",
+              "nb": "Behandle innøvd dialog som nødvendigvis spontan improvisasjon",
+              "fr": "Traiter le dialogue répété comme improvisation nécessairement spontanée",
+              "pt": "Tratar diálogo ensaiado como improvisação necessariamente espontânea"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The actors describe collaborative rewriting from the audition process onward. In a new exercise, test this approach: Workshop a conversation and preserve both characters’ viewpoints.",
+          "nb": "Skuespillerne beskriver felles manusrevisjon fra castingprosessen av. Prøv denne tilnærmingen i en ny øvelse: Utvikle en samtale i fellesskap og bevar begge karakterenes perspektiver.",
+          "fr": "Les acteurs décrivent une réécriture collective dès les auditions. Dans un nouvel exercice, tester cette approche : Travailler une conversation en préservant les deux points de vue.",
+          "pt": "Os atores descrevem reescrita colaborativa desde o casting. Num novo exercício, testar esta abordagem: Trabalhar uma conversa preservando ambos os pontos de vista."
+        },
+        "sourceIds": [
+          "s2",
+          "s7"
+        ]
+      },
+      {
+        "id": "sunrise-city",
+        "area": "camera",
+        "prompt": {
+          "en": "Vienna’s real streets and meeting places support walking and conversation. Which approach would you choose in a new production exercise?",
+          "nb": "Wiens virkelige gater og møtesteder støtter vandring og samtale. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les rues et lieux réels de Vienne soutiennent la marche et la conversation. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "As ruas e locais reais de Viena sustentam caminhada e conversa. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Scout a walkable route with varied backgrounds and sound conditions",
+              "nb": "Befar en gangrute med varierte bakgrunner og lydforhold",
+              "fr": "Repérer un itinéraire piéton aux fonds et conditions sonores variés",
+              "pt": "Reconhecer um percurso pedonal com fundos e condições sonoras variados"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose every location solely for scenic beauty",
+              "nb": "Velg alle steder utelukkende etter visuell skjønnhet",
+              "fr": "Choisir chaque lieu uniquement pour sa beauté",
+              "pt": "Escolher cada local apenas pela beleza"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Vienna’s real streets and meeting places support walking and conversation. In a new exercise, test this approach: Scout a walkable route with varied backgrounds and sound conditions.",
+          "nb": "Wiens virkelige gater og møtesteder støtter vandring og samtale. Prøv denne tilnærmingen i en ny øvelse: Befar en gangrute med varierte bakgrunner og lydforhold.",
+          "fr": "Les rues et lieux réels de Vienne soutiennent la marche et la conversation. Dans un nouvel exercice, tester cette approche : Repérer un itinéraire piéton aux fonds et conditions sonores variés.",
+          "pt": "As ruas e locais reais de Viena sustentam caminhada e conversa. Num novo exercício, testar esta abordagem: Reconhecer um percurso pedonal com fundos e condições sonoras variados."
+        },
+        "sourceIds": [
+          "s5",
+          "s1"
+        ]
+      },
+      {
+        "id": "sunrise-rhythm",
+        "area": "research",
+        "prompt": {
+          "en": "Adair describes shaping dense dialogue through rehearsal and editorial timing. Which approach would you choose in a new production exercise?",
+          "nb": "Adair beskriver utforming av tett dialog gjennom prøver og klippetiming. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Adair décrit le façonnage du dialogue dense par répétitions et montage. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Adair descreve construção de diálogo denso por ensaios e montagem. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Remove every pause irrespective of emotional meaning",
+              "nb": "Fjern alle pauser uansett følelsesmessig betydning",
+              "fr": "Supprimer chaque pause quelle que soit sa signification",
+              "pt": "Eliminar todas as pausas independentemente do significado"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare pauses and reaction shots while retaining conversational flow",
+              "nb": "Sammenlign pauser og reaksjonsbilder mens samtaleflyten bevares",
+              "fr": "Comparer pauses et réactions en préservant le flux de conversation",
+              "pt": "Comparar pausas e reações preservando fluxo da conversa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Adair describes shaping dense dialogue through rehearsal and editorial timing. In a new exercise, test this approach: Compare pauses and reaction shots while retaining conversational flow.",
+          "nb": "Adair beskriver utforming av tett dialog gjennom prøver og klippetiming. Prøv denne tilnærmingen i en ny øvelse: Sammenlign pauser og reaksjonsbilder mens samtaleflyten bevares.",
+          "fr": "Adair décrit le façonnage du dialogue dense par répétitions et montage. Dans un nouvel exercice, tester cette approche : Comparer pauses et réactions en préservant le flux de conversation.",
+          "pt": "Adair descreve construção de diálogo denso por ensaios e montagem. Num novo exercício, testar esta abordagem: Comparar pausas e reações preservando fluxo da conversa."
+        },
+        "sourceIds": [
+          "s3",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_before_sunset_2004",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Real-time structure, moving camera and continuity",
+      "nb": "Sanntidsstruktur, bevegelig kamera og kontinuitet",
+      "fr": "Structure en temps réel, caméra mobile et raccords",
+      "pt": "Estrutura em tempo real, câmara móvel e continuidade"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Richard Linklater's Before Sunset",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/archives/issues/spring2004/features/paris_day.php"
+      },
+      {
+        "id": "s1",
+        "title": "Love has to be about more than commitment",
+        "publisher": "Salon",
+        "url": "https://www.salon.com/2004/07/02/linklater_2/"
+      },
+      {
+        "id": "s3",
+        "title": "Richard Linklater on His Before Trilogy",
+        "publisher": "Directors Guild of America",
+        "url": "https://www.dga.org/craft/dgaq/issues/1501-winter-2015/before-trilogy"
+      },
+      {
+        "id": "s7",
+        "title": "Gee, long time no see",
+        "publisher": "Los Angeles Times",
+        "url": "https://www.latimes.com/archives/la-xpm-2004-jun-20-ca-verini20-story.html"
+      },
+      {
+        "id": "s9",
+        "title": "Film Independent: Richard Linklater",
+        "publisher": "RogerEbert.com",
+        "url": "https://www.rogerebert.com/far-flung-correspondents/film-independent-richard-linklater"
+      }
+    ],
+    "questions": [
+      {
+        "id": "sunset-clock",
+        "area": "research",
+        "prompt": {
+          "en": "Linklater describes fully scripted dialogue shaped to an eighty-minute real-time structure. Which approach would you choose in a new production exercise?",
+          "nb": "Linklater beskriver ferdigskrevet dialog formet til en åtti minutters sanntidsstruktur. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Linklater décrit un dialogue écrit selon une structure de quatre-vingts minutes en temps réel. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Linklater descreve diálogo escrito numa estrutura de oitenta minutos em tempo real. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Time a fictional conversation and its transitions during rehearsal",
+              "nb": "Mål varigheten av en fiktiv samtale og overgangene under prøver",
+              "fr": "Chronométrer une conversation fictive et ses transitions en répétition",
+              "pt": "Cronometrar uma conversa fictícia e transições durante ensaios"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume real-time drama requires unscripted dialogue",
+              "nb": "Anta at sanntidsdrama krever dialog uten manus",
+              "fr": "Supposer que le temps réel exige un dialogue improvisé",
+              "pt": "Supor que drama em tempo real exige diálogo improvisado"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Linklater describes fully scripted dialogue shaped to an eighty-minute real-time structure. In a new exercise, test this approach: Time a fictional conversation and its transitions during rehearsal.",
+          "nb": "Linklater beskriver ferdigskrevet dialog formet til en åtti minutters sanntidsstruktur. Prøv denne tilnærmingen i en ny øvelse: Mål varigheten av en fiktiv samtale og overgangene under prøver.",
+          "fr": "Linklater décrit un dialogue écrit selon une structure de quatre-vingts minutes en temps réel. Dans un nouvel exercice, tester cette approche : Chronométrer une conversation fictive et ses transitions en répétition.",
+          "pt": "Linklater descreve diálogo escrito numa estrutura de oitenta minutos em tempo real. Num novo exercício, testar esta abordagem: Cronometrar uma conversa fictícia e transições durante ensaios."
+        },
+        "sourceIds": [
+          "s1",
+          "s7"
+        ]
+      },
+      {
+        "id": "sunset-movement",
+        "area": "camera",
+        "prompt": {
+          "en": "The director describes long moving shots and tightly coordinated choreography. Which approach would you choose in a new production exercise?",
+          "nb": "Regissøren beskriver lange bevegelige opptak og tett koordinert koreografi. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le réalisateur décrit des plans mobiles longs et une chorégraphie coordonnée. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O realizador descreve planos móveis longos e coreografia coordenada. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse walking pace, camera path and stopping points together",
+              "nb": "Øv gangtempo, kamerabane og stoppunkter samlet",
+              "fr": "Répéter ensemble allure, trajet caméra et points d’arrêt",
+              "pt": "Ensaiar juntos ritmo de marcha, trajeto de câmara e paragens"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Let the camera operator discover every obstacle during recording",
+              "nb": "La fotografen oppdage alle hindringer under opptak",
+              "fr": "Laisser le cadreur découvrir tous les obstacles pendant la prise",
+              "pt": "Deixar operador descobrir todos os obstáculos durante gravação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The director describes long moving shots and tightly coordinated choreography. In a new exercise, test this approach: Rehearse walking pace, camera path and stopping points together.",
+          "nb": "Regissøren beskriver lange bevegelige opptak og tett koordinert koreografi. Prøv denne tilnærmingen i en ny øvelse: Øv gangtempo, kamerabane og stoppunkter samlet.",
+          "fr": "Le réalisateur décrit des plans mobiles longs et une chorégraphie coordonnée. Dans un nouvel exercice, tester cette approche : Répéter ensemble allure, trajet caméra et points d’arrêt.",
+          "pt": "O realizador descreve planos móveis longos e coreografia coordenada. Num novo exercício, testar esta abordagem: Ensaiar juntos ritmo de marcha, trajeto de câmara e paragens."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "sunset-continuity",
+        "area": "camera",
+        "prompt": {
+          "en": "The taxi scene required matching changing traffic and natural light across takes. Which approach would you choose in a new production exercise?",
+          "nb": "Drosjescenen krevde samsvar mellom skiftende trafikk og naturlig lys på tvers av opptak. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "La scène du taxi exigeait des raccords de circulation et de lumière changeantes. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A cena do táxi exigiu continuidade de trânsito e luz variável entre tomadas. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Join takes solely according to dialogue wording",
+              "nb": "Sett sammen opptak utelukkende etter replikkordlyd",
+              "fr": "Assembler les prises uniquement selon les paroles",
+              "pt": "Juntar tomadas apenas pela formulação do diálogo"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare takes for light and reaction continuity in a stationary mock-up",
+              "nb": "Sammenlign opptak for lys- og reaksjonskontinuitet i en stillestående modell",
+              "fr": "Comparer prises pour raccords lumineux et réactions dans une maquette fixe",
+              "pt": "Comparar tomadas por continuidade de luz e reação numa maquete fixa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The taxi scene required matching changing traffic and natural light across takes. In a new exercise, test this approach: Compare takes for light and reaction continuity in a stationary mock-up.",
+          "nb": "Drosjescenen krevde samsvar mellom skiftende trafikk og naturlig lys på tvers av opptak. Prøv denne tilnærmingen i en ny øvelse: Sammenlign opptak for lys- og reaksjonskontinuitet i en stillestående modell.",
+          "fr": "La scène du taxi exigeait des raccords de circulation et de lumière changeantes. Dans un nouvel exercice, tester cette approche : Comparer prises pour raccords lumineux et réactions dans une maquette fixe.",
+          "pt": "A cena do táxi exigiu continuidade de trânsito e luz variável entre tomadas. Num novo exercício, testar esta abordagem: Comparar tomadas por continuidade de luz e reação numa maquete fixa."
+        },
+        "sourceIds": [
+          "s9",
+          "s0"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_clerks_1994",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Microbudget planning, monochrome photography and location writing",
+      "nb": "Mikrobudsjett, svart-hvitt-fotografi og stedsbasert manus",
+      "fr": "Microbudget, photographie monochrome et écriture de lieu",
+      "pt": "Micro-orçamento, fotografia monocromática e escrita de local"
+    },
+    "sources": [
+      {
+        "id": "s3",
+        "title": "As Clerks Turns 30, Look Back at Kevin Smith's Iconic Fest Appearances",
+        "publisher": "Sundance Institute",
+        "url": "https://www.sundance.org/blogs/as-clerks-turns-30-look-back-at-kevin-smiths-iconic-fest-appearances/"
+      },
+      {
+        "id": "s4",
+        "title": "How Kevin Smith Made and Distributed Red State His Own Way",
+        "publisher": "Sundance Institute",
+        "url": "https://www.sundance.org/blogs/how-kevin-smith-made-and-distributed-red-state-his-own-way-3/"
+      },
+      {
+        "id": "s5",
+        "title": "Women Rule 2019 National Film Registry",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/item/prn-19-116/women-rule-2019-national-film-registry/2019-12-11/"
+      },
+      {
+        "id": "s6",
+        "title": "Kevin and David Make a Porno",
+        "publisher": "MovieMaker Magazine",
+        "url": "https://www.moviemaker.com/kevin-smith-david-klein-zack-and-miri-make-a-porno-20081014/"
+      },
+      {
+        "id": "s7",
+        "title": "Kevin Smith Breaks Down His Most Iconic Films",
+        "publisher": "GQ",
+        "url": "https://www.gq.com/video/watch/iconic-characters-kevin-smith-breaks-down-his-most-iconic-films"
+      }
+    ],
+    "questions": [
+      {
+        "id": "clerks-budget",
+        "area": "research",
+        "prompt": {
+          "en": "Smith reports a microbudget for the store-based independent production. Which approach would you choose in a new production exercise?",
+          "nb": "Smith oppgir et mikrobudsjett for den uavhengige butikkproduksjonen. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Smith rapporte un microbudget pour la production indépendante en magasin. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Smith refere um micro-orçamento para a produção independente numa loja. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Separate production costs, later distribution and revenues in a sample ledger",
+              "nb": "Skill produksjonskostnader, senere distribusjon og inntekter i et eksempelregnskap",
+              "fr": "Séparer coûts, distribution ultérieure et recettes dans un exemple",
+              "pt": "Separar custos, distribuição posterior e receitas num exemplo contabilístico"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat theatrical gross as the filmmaker’s net profit",
+              "nb": "Behandle kinoinntektene som filmskaperens nettofortjeneste",
+              "fr": "Traiter les recettes brutes comme bénéfice net du cinéaste",
+              "pt": "Tratar receita bruta como lucro líquido do cineasta"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Smith reports a microbudget for the store-based independent production. In a new exercise, test this approach: Separate production costs, later distribution and revenues in a sample ledger.",
+          "nb": "Smith oppgir et mikrobudsjett for den uavhengige butikkproduksjonen. Prøv denne tilnærmingen i en ny øvelse: Skill produksjonskostnader, senere distribusjon og inntekter i et eksempelregnskap.",
+          "fr": "Smith rapporte un microbudget pour la production indépendante en magasin. Dans un nouvel exercice, tester cette approche : Séparer coûts, distribution ultérieure et recettes dans un exemple.",
+          "pt": "Smith refere um micro-orçamento para a produção independente numa loja. Num novo exercício, testar esta abordagem: Separar custos, distribuição posterior e receitas num exemplo contabilístico."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "clerks-monochrome",
+        "area": "camera",
+        "prompt": {
+          "en": "Smith describes fluorescent store lighting and limited resources informing monochrome capture. Which approach would you choose in a new production exercise?",
+          "nb": "Smith beskriver butikkens lysrør og begrensede ressurser som grunnlag for svart-hvitt-opptak. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Smith décrit les fluorescents et ressources limitées motivant la capture monochrome. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Smith descreve fluorescentes e recursos limitados motivando captação monocromática. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare monochrome and colour tests under existing practical lights",
+              "nb": "Sammenlign svart-hvitt- og fargeprøver under eksisterende praktisk lys",
+              "fr": "Comparer essais monochromes et couleur sous l’éclairage existant",
+              "pt": "Comparar testes monocromáticos e a cores sob luz existente"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume monochrome eliminates all lighting decisions",
+              "nb": "Anta at svart-hvitt fjerner alle lysvalg",
+              "fr": "Supposer que le monochrome supprime toute décision d’éclairage",
+              "pt": "Supor que monocromia elimina todas as decisões de luz"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Smith describes fluorescent store lighting and limited resources informing monochrome capture. In a new exercise, test this approach: Compare monochrome and colour tests under existing practical lights.",
+          "nb": "Smith beskriver butikkens lysrør og begrensede ressurser som grunnlag for svart-hvitt-opptak. Prøv denne tilnærmingen i en ny øvelse: Sammenlign svart-hvitt- og fargeprøver under eksisterende praktisk lys.",
+          "fr": "Smith décrit les fluorescents et ressources limitées motivant la capture monochrome. Dans un nouvel exercice, tester cette approche : Comparer essais monochromes et couleur sous l’éclairage existant.",
+          "pt": "Smith descreve fluorescentes e recursos limitados motivando captação monocromática. Num novo exercício, testar esta abordagem: Comparar testes monocromáticos e a cores sob luz existente."
+        },
+        "sourceIds": [
+          "s6",
+          "s7"
+        ]
+      },
+      {
+        "id": "clerks-store",
+        "area": "research",
+        "prompt": {
+          "en": "Smith wrote from experience working in a convenience store. Which approach would you choose in a new production exercise?",
+          "nb": "Smith skrev med utgangspunkt i erfaring fra butikkarbeid. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Smith écrivait à partir de son expérience en supérette. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Smith escreveu a partir da experiência numa loja de conveniência. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Copy identifiable customer conversations without consent",
+              "nb": "Kopier identifiserbare kundesamtaler uten samtykke",
+              "fr": "Copier des conversations identifiables sans consentement",
+              "pt": "Copiar conversas identificáveis sem consentimento"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Develop fictional dialogue around observed work routines",
+              "nb": "Utvikle fiktiv dialog rundt observerte arbeidsrutiner",
+              "fr": "Développer des dialogues fictifs autour de routines observées",
+              "pt": "Desenvolver diálogo ficcional em torno de rotinas observadas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Smith wrote from experience working in a convenience store. In a new exercise, test this approach: Develop fictional dialogue around observed work routines.",
+          "nb": "Smith skrev med utgangspunkt i erfaring fra butikkarbeid. Prøv denne tilnærmingen i en ny øvelse: Utvikle fiktiv dialog rundt observerte arbeidsrutiner.",
+          "fr": "Smith écrivait à partir de son expérience en supérette. Dans un nouvel exercice, tester cette approche : Développer des dialogues fictifs autour de routines observées.",
+          "pt": "Smith escreveu a partir da experiência numa loja de conveniência. Num novo exercício, testar esta abordagem: Desenvolver diálogo ficcional em torno de rotinas observadas."
+        },
+        "sourceIds": [
+          "s6",
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_fargo_1996",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Snow compositions, regional performance and fictional provenance",
+      "nb": "Snøkomposisjoner, regionalt skuespillerarbeid og fiktiv proveniens",
+      "fr": "Compositions enneigées, jeu régional et provenance fictionnelle",
+      "pt": "Composições nevadas, atuação regional e proveniência ficcional"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Fargo: Cold-Blooded Scheming",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/articles/fargo-cold-blooded-scheming"
+      },
+      {
+        "id": "s1",
+        "title": "Hell freezes over: the Coen brothers on Fargo",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/sight-and-sound/features/joel-ethan-coen-brothers-fargo-1996"
+      },
+      {
+        "id": "s2",
+        "title": "Fargo",
+        "publisher": "American Film Institute",
+        "url": "https://catalog.afi.com/Film/60219-FARGO"
+      },
+      {
+        "id": "s4",
+        "title": "Closer to the Life Than the Conventions of Cinema: Interview with the Coen Brothers",
+        "publisher": "Cambridge University Press",
+        "url": "https://www.cambridge.org/core/books/abs/coen-brothers-fargo/closer-to-the-life-than-the-conventions-of-cinema-interview-with-the-coen-brothers-conducted-in-cannes-on-may-16-1996/0ED806DBF86325321DD9F95D58B88AB5"
+      },
+      {
+        "id": "s6",
+        "title": "Fargo",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/fargo/"
+      },
+      {
+        "id": "s9",
+        "title": "Interview: Roger and James Deakins on Cinematography and Navigating a Changing Film World",
+        "publisher": "The Reveal",
+        "url": "https://thereveal.film/interview-roger-and-james-deakins-on-cinematography-and-navigating-a-changing-film-world/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "fargo-snow",
+        "area": "camera",
+        "prompt": {
+          "en": "Deakins describes revising a planned composition in response to the actual snowy location. Which approach would you choose in a new production exercise?",
+          "nb": "Deakins beskriver revisjon av en planlagt komposisjon i møte med det faktiske snølandskapet. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Deakins décrit une composition modifiée selon le lieu enneigé réel. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Deakins descreve composição revista segundo o local nevado real. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare storyboard intent with a location framing test",
+              "nb": "Sammenlign storyboardets hensikt med en utsnittsprøve på stedet",
+              "fr": "Comparer intention du storyboard et essai de cadre sur place",
+              "pt": "Comparar intenção do storyboard e teste de enquadramento no local"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Follow the storyboard regardless of what the location offers",
+              "nb": "Følg storyboardet uansett hva stedet tilbyr",
+              "fr": "Suivre le storyboard indépendamment des possibilités du lieu",
+              "pt": "Seguir storyboard independentemente do que o local oferece"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Deakins describes revising a planned composition in response to the actual snowy location. In a new exercise, test this approach: Compare storyboard intent with a location framing test.",
+          "nb": "Deakins beskriver revisjon av en planlagt komposisjon i møte med det faktiske snølandskapet. Prøv denne tilnærmingen i en ny øvelse: Sammenlign storyboardets hensikt med en utsnittsprøve på stedet.",
+          "fr": "Deakins décrit une composition modifiée selon le lieu enneigé réel. Dans un nouvel exercice, tester cette approche : Comparer intention du storyboard et essai de cadre sur place.",
+          "pt": "Deakins descreve composição revista segundo o local nevado real. Num novo exercício, testar esta abordagem: Comparar intenção do storyboard e teste de enquadramento no local."
+        },
+        "sourceIds": [
+          "s0",
+          "s9"
+        ]
+      },
+      {
+        "id": "fargo-regional",
+        "area": "research",
+        "prompt": {
+          "en": "The filmmakers discuss regional speech, casting and everyday detail. Which approach would you choose in a new production exercise?",
+          "nb": "Filmskaperne omtaler regional tale, casting og hverdagsdetaljer. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les cinéastes évoquent parole régionale, casting et détails quotidiens. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os cineastas discutem fala regional, casting e detalhes quotidianos. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Work with regional advisers to test dialogue without caricature",
+              "nb": "Arbeid med regionale rådgivere for å prøve dialog uten karikatur",
+              "fr": "Travailler avec des conseillers régionaux pour tester le dialogue sans caricature",
+              "pt": "Trabalhar com consultores regionais para testar diálogo sem caricatura"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Exaggerate every accent independently of character",
+              "nb": "Overdriv alle aksenter uavhengig av karakter",
+              "fr": "Exagérer chaque accent indépendamment du personnage",
+              "pt": "Exagerar cada sotaque independentemente da personagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The filmmakers discuss regional speech, casting and everyday detail. In a new exercise, test this approach: Work with regional advisers to test dialogue without caricature.",
+          "nb": "Filmskaperne omtaler regional tale, casting og hverdagsdetaljer. Prøv denne tilnærmingen i en ny øvelse: Arbeid med regionale rådgivere for å prøve dialog uten karikatur.",
+          "fr": "Les cinéastes évoquent parole régionale, casting et détails quotidiens. Dans un nouvel exercice, tester cette approche : Travailler avec des conseillers régionaux pour tester le dialogue sans caricature.",
+          "pt": "Os cineastas discutem fala regional, casting e detalhes quotidianos. Num novo exercício, testar esta abordagem: Trabalhar com consultores regionais para testar diálogo sem caricatura."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "fargo-fiction",
+        "area": "research",
+        "prompt": {
+          "en": "The filmmakers distinguish invented characters from the claim of factual inspiration. Which approach would you choose in a new production exercise?",
+          "nb": "Filmskaperne skiller oppdiktede karakterer fra påstanden om faktisk inspirasjon. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les cinéastes distinguent personnages inventés et affirmation d’inspiration factuelle. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os cineastas distinguem personagens inventadas da alegação de inspiração factual. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat a film’s opening claim as sufficient historical evidence",
+              "nb": "Behandle filmens åpningspåstand som tilstrekkelig historisk bevis",
+              "fr": "Traiter l’affirmation initiale comme preuve historique suffisante",
+              "pt": "Tratar afirmação inicial como prova histórica suficiente"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Clearly label fictional material in research and teaching notes",
+              "nb": "Merk fiktivt materiale tydelig i research- og undervisningsnotater",
+              "fr": "Identifier clairement la fiction dans les notes de recherche et pédagogie",
+              "pt": "Identificar claramente ficção nas notas de pesquisa e ensino"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The filmmakers distinguish invented characters from the claim of factual inspiration. In a new exercise, test this approach: Clearly label fictional material in research and teaching notes.",
+          "nb": "Filmskaperne skiller oppdiktede karakterer fra påstanden om faktisk inspirasjon. Prøv denne tilnærmingen i en ny øvelse: Merk fiktivt materiale tydelig i research- og undervisningsnotater.",
+          "fr": "Les cinéastes distinguent personnages inventés et affirmation d’inspiration factuelle. Dans un nouvel exercice, tester cette approche : Identifier clairement la fiction dans les notes de recherche et pédagogie.",
+          "pt": "Os cineastas distinguem personagens inventadas da alegação de inspiração factual. Num novo exercício, testar esta abordagem: Identificar claramente ficção nas notas de pesquisa e ensino."
+        },
+        "sourceIds": [
+          "s4",
+          "s6"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_big_lebowski_1998",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Dream transitions, costume performance and source music",
+      "nb": "Drømmeoverganger, kostymespill og kildemusikk",
+      "fr": "Transitions oniriques, jeu costumé et musique de source",
+      "pt": "Transições oníricas, figurino e música de fonte"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "Sleeping and Severed Toes: Ethan Coen & Joel Coen on the Art of Screenwriting",
+        "publisher": "Focus Features",
+        "url": "https://www.focusfeatures.com/article/sleeping_and_severed_toes__ethan_coen___joel_coen_on_the_art_o"
+      },
+      {
+        "id": "s5",
+        "title": "Mary Zophres — Costume Designer",
+        "publisher": "Team Deakins",
+        "url": "https://teamdeakins.libsyn.com/mary-zophres-costume-designer"
+      },
+      {
+        "id": "s6",
+        "title": "The Big Lebowski",
+        "publisher": "Carter Burwell",
+        "url": "https://www.carterburwell.com/projects/Big_Lebowski.shtml"
+      },
+      {
+        "id": "s7",
+        "title": "The Perfect Match — Hollywood Costume Collaborations",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/events/perfect-match-hollywood-costume-collaborations"
+      },
+      {
+        "id": "s8",
+        "title": "Michael Barry on His Career in Film Sound",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/35311-michael-barry-talks-about-sound-in-film/"
+      },
+      {
+        "id": "s9",
+        "title": "Jeff Bridges: The Wanderer",
+        "publisher": "Film Comment",
+        "url": "https://www.filmcomment.com/jeff-bridges-the-wanderer/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "lebowski-dream",
+        "area": "research",
+        "prompt": {
+          "en": "The writers describe elaborate dream sequences as expressions of character viewpoint. Which approach would you choose in a new production exercise?",
+          "nb": "Manusforfatterne beskriver omfattende drømmesekvenser som uttrykk for karakterperspektiv. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les auteurs décrivent des séquences oniriques exprimant le point de vue. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os autores descrevem sequências oníricas como expressão do ponto de vista. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Develop an original dream sequence from established character motifs",
+              "nb": "Utvikle en original drømmesekvens fra etablerte karaktermotiver",
+              "fr": "Développer un rêve original à partir de motifs du personnage",
+              "pt": "Desenvolver sonho original a partir de motivos da personagem"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Add spectacle unrelated to the character’s experience",
+              "nb": "Legg til spektakel uten sammenheng med karakterens opplevelse",
+              "fr": "Ajouter un spectacle sans rapport avec l’expérience du personnage",
+              "pt": "Adicionar espetáculo sem relação com experiência da personagem"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The writers describe elaborate dream sequences as expressions of character viewpoint. In a new exercise, test this approach: Develop an original dream sequence from established character motifs.",
+          "nb": "Manusforfatterne beskriver omfattende drømmesekvenser som uttrykk for karakterperspektiv. Prøv denne tilnærmingen i en ny øvelse: Utvikle en original drømmesekvens fra etablerte karaktermotiver.",
+          "fr": "Les auteurs décrivent des séquences oniriques exprimant le point de vue. Dans un nouvel exercice, tester cette approche : Développer un rêve original à partir de motifs du personnage.",
+          "pt": "Os autores descrevem sequências oníricas como expressão do ponto de vista. Num novo exercício, testar esta abordagem: Desenvolver sonho original a partir de motivos da personagem."
+        },
+        "sourceIds": [
+          "s1",
+          "s7"
+        ]
+      },
+      {
+        "id": "lebowski-costume",
+        "area": "research",
+        "prompt": {
+          "en": "Zophres describes fittings and costume’s influence on posture and performance. Which approach would you choose in a new production exercise?",
+          "nb": "Zophres beskriver kostymeprøver og kostymets innflytelse på kroppsholdning og spill. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Zophres décrit les essayages et l’influence du costume sur posture et jeu. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Zophres descreve provas e influência do figurino na postura e atuação. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare movement and silhouette in actor-led costume tests",
+              "nb": "Sammenlign bevegelse og silhuett i skuespillerstyrte kostymeprøver",
+              "fr": "Comparer mouvement et silhouette lors d’essais avec les acteurs",
+              "pt": "Comparar movimento e silhueta em testes de figurino com atores"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Approve costume from a hanger without testing movement",
+              "nb": "Godkjenn kostyme på kleshenger uten å prøve bevegelse",
+              "fr": "Valider le costume sur cintre sans tester les mouvements",
+              "pt": "Aprovar figurino no cabide sem testar movimento"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Zophres describes fittings and costume’s influence on posture and performance. In a new exercise, test this approach: Compare movement and silhouette in actor-led costume tests.",
+          "nb": "Zophres beskriver kostymeprøver og kostymets innflytelse på kroppsholdning og spill. Prøv denne tilnærmingen i en ny øvelse: Sammenlign bevegelse og silhuett i skuespillerstyrte kostymeprøver.",
+          "fr": "Zophres décrit les essayages et l’influence du costume sur posture et jeu. Dans un nouvel exercice, tester cette approche : Comparer mouvement et silhouette lors d’essais avec les acteurs.",
+          "pt": "Zophres descreve provas e influência do figurino na postura e atuação. Num novo exercício, testar esta abordagem: Comparar movimento e silhueta em testes de figurino com atores."
+        },
+        "sourceIds": [
+          "s5",
+          "s9"
+        ]
+      },
+      {
+        "id": "lebowski-music",
+        "area": "sound",
+        "prompt": {
+          "en": "Burwell describes transitions between score and music heard within the story world. Which approach would you choose in a new production exercise?",
+          "nb": "Burwell beskriver overganger mellom filmmusikk og musikk hørt i fortellingens verden. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Burwell décrit les transitions entre musique de fosse et musique diégétique. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Burwell descreve transições entre música de acompanhamento e música diegética. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Mix source music and score identically regardless of perspective",
+              "nb": "Miks kildemusikk og filmmusikk identisk uansett perspektiv",
+              "fr": "Mixer source et musique de fosse sans distinction de perspective",
+              "pt": "Misturar fonte e música de acompanhamento sem distinguir perspetiva"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Approve the result without comparing alternative approaches",
+              "nb": "Godkjenn resultatet uten å sammenligne alternative tilnærminger",
+              "fr": "Valider le résultat sans comparer les approches alternatives",
+              "pt": "Aprovar o resultado sem comparar abordagens alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test an original cue moving between radio source and score",
+              "nb": "Prøv et originalt musikkinnslag som går mellom radiokilde og filmmusikk",
+              "fr": "Tester un motif original passant de la radio à la musique de fosse",
+              "pt": "Testar motivo original passando de fonte rádio à música de acompanhamento"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Burwell describes transitions between score and music heard within the story world. In a new exercise, test this approach: Test an original cue moving between radio source and score.",
+          "nb": "Burwell beskriver overganger mellom filmmusikk og musikk hørt i fortellingens verden. Prøv denne tilnærmingen i en ny øvelse: Prøv et originalt musikkinnslag som går mellom radiokilde og filmmusikk.",
+          "fr": "Burwell décrit les transitions entre musique de fosse et musique diégétique. Dans un nouvel exercice, tester cette approche : Tester un motif original passant de la radio à la musique de fosse.",
+          "pt": "Burwell descreve transições entre música de acompanhamento e música diegética. Num novo exercício, testar esta abordagem: Testar motivo original passando de fonte rádio à música de acompanhamento."
+        },
+        "sourceIds": [
+          "s6",
+          "s8"
+        ]
+      }
+    ]
   }
 ] as const satisfies readonly SourceBackedCaseWorkshop[];
