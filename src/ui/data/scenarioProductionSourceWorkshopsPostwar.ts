@@ -19224,5 +19224,1136 @@ export const postwarSourceWorkshops = [
         ]
       }
     ]
+  },
+  {
+    "scenarioId": "scenario_oldboy_2003",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Long takes, set design and photochemical finish",
+      "nb": "Lange tagninger, scenografi og fotokjemisk etterarbeid",
+      "fr": "Plans longs, décors et finition photochimique",
+      "pt": "Planos longos, cenografia e acabamento fotoquímico"
+    },
+    "sources": [
+      {
+        "id": "s2",
+        "title": "The Tarantino Factor (According to Chan-Wook Park)",
+        "publisher": "LA Weekly",
+        "url": "https://www.laweekly.com/the-tarantino-factor-according-to-chan-wook-park/"
+      },
+      {
+        "id": "s3",
+        "title": "Out for revenge: Park Chan-Wook on Oldboy",
+        "publisher": "BFI Sight and Sound",
+        "url": "https://www.bfi.org.uk/sight-and-sound/features/out-revenge-park-chan-wook-oldboy"
+      },
+      {
+        "id": "s4",
+        "title": "Ryu Seonghie interview - Behind The Production Designer",
+        "publisher": "Mini Mini Movies / KCCUK interview session",
+        "url": "https://miniminimovie.com/2014/12/21/ryu-seonghie-interview-behind-the-production-designer/"
+      },
+      {
+        "id": "s5",
+        "title": "Extremely Grotesque: Park Chan-wook on Oldboy",
+        "publisher": "RogerEbert.com",
+        "url": "https://www.rogerebert.com/interviews/park-chan-wook-interview-oldboy"
+      }
+    ],
+    "questions": [
+      {
+        "id": "oldboy-master",
+        "area": "camera",
+        "prompt": {
+          "en": "How should a rehearsal compare montage with a long master shot?",
+          "nb": "Hvordan bør en prøve sammenligne montasje med en lang hovedtagning?",
+          "fr": "Comment comparer montage et plan maître prolongé en répétition ?",
+          "pt": "Como comparar montagem e plano geral longo num ensaio?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse safe blocking and compare both versions",
+              "nb": "Prøv trygg blokkering og sammenlign begge versjoner",
+              "fr": "Répéter des déplacements sûrs et comparer les deux versions",
+              "pt": "Ensaiar movimentos seguros e comparar ambas as versões"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Keep the storyboard regardless of the result",
+              "nb": "Behold storyboardet uansett resultat",
+              "fr": "Conserver le découpage quel que soit le résultat",
+              "pt": "Manter o storyboard independentemente do resultado"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume every sequence used a single take",
+              "nb": "Anta at alle sekvenser brukte én tagning",
+              "fr": "Supposer que chaque séquence est un plan unique",
+              "pt": "Supor que todas as sequências usam um só plano"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Park describes abandoning planned corridor cuts in favor of a long master. Compare safely rehearsed alternatives rather than recreating the original physical strain.",
+          "nb": "Park beskriver hvordan planlagte korridorklipp ble erstattet av en lang hovedtagning. Sammenlign trygt innøvde alternativer uten å gjenskape den fysiske belastningen.",
+          "fr": "Park décrit l’abandon du découpage du couloir au profit d’un plan long. Comparer des variantes répétées en sécurité, sans reproduire l’effort physique original.",
+          "pt": "Park descreve o abandono dos cortes do corredor a favor de um plano longo. Compare alternativas ensaiadas em segurança, sem reproduzir o esforço físico original."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "oldboy-design",
+        "area": "research",
+        "prompt": {
+          "en": "How can a penthouse suggest power without lavish decoration?",
+          "nb": "Hvordan kan en toppleilighet uttrykke makt uten overdådig dekor?",
+          "fr": "Comment suggérer le pouvoir dans un penthouse sans décor luxueux ?",
+          "pt": "Como sugerir poder num apartamento de luxo sem decoração exuberante?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Fill the space with unrelated luxury objects",
+              "nb": "Fyll rommet med tilfeldige luksusobjekter",
+              "fr": "Remplir l’espace d’objets luxueux sans rapport",
+              "pt": "Encher o espaço de objetos luxuosos sem relação"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat the prison and penthouse as identical sets",
+              "nb": "Behandle fengselet og toppleiligheten som samme dekor",
+              "fr": "Traiter prison et penthouse comme des décors identiques",
+              "pt": "Tratar prisão e apartamento como cenários idênticos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use cold materials and carefully chosen spatial elements",
+              "nb": "Bruk kalde materialer og nøye valgte romelementer",
+              "fr": "Employer des matériaux froids et des éléments spatiaux choisis",
+              "pt": "Usar materiais frios e elementos espaciais selecionados"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The director and designer describe concrete, water and restrained furnishings as deliberate choices under budget constraints. Design your own spatial contrast.",
+          "nb": "Regissøren og scenografen beskriver betong, vann og sparsom møblering som bevisste valg under budsjettpress. Utform din egen romlige kontrast.",
+          "fr": "Le réalisateur et la décoratrice décrivent béton, eau et mobilier réduit comme choix délibérés sous contrainte budgétaire. Concevez votre propre contraste spatial.",
+          "pt": "O realizador e a cenógrafa descrevem betão, água e mobiliário reduzido como escolhas deliberadas sob pressão orçamental. Crie o seu contraste espacial."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "oldboy-finish",
+        "area": "camera",
+        "prompt": {
+          "en": "How should the high-contrast finish be developed?",
+          "nb": "Hvordan bør det kontrastrike bildeuttrykket utvikles?",
+          "fr": "Comment développer la finition à fort contraste ?",
+          "pt": "Como desenvolver o acabamento de alto contraste?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Apply a polished high-saturation look without tests",
+              "nb": "Bruk et polert høy­mettet uttrykk uten prøver",
+              "fr": "Appliquer un rendu lisse et saturé sans essais",
+              "pt": "Aplicar um visual polido e saturado sem testes"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test contrast, grain and saturation before committing",
+              "nb": "Test kontrast, korn og metning før du velger",
+              "fr": "Tester contraste, grain et saturation avant de choisir",
+              "pt": "Testar contraste, grão e saturação antes de decidir"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Claim an exact lab recipe without documentation",
+              "nb": "Påstå en eksakt laboratorieoppskrift uten dokumentasjon",
+              "fr": "Affirmer une recette de laboratoire sans documentation",
+              "pt": "Afirmar uma receita laboratorial sem documentação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Park recalls preproduction bleach-bypass tests and treatment of the negative. A modern exercise can compare looks without claiming undocumented laboratory settings.",
+          "nb": "Park forteller om bleach-bypass-prøver før opptak og behandling av negativet. En moderne øvelse kan sammenligne uttrykk uten å påstå udokumenterte laboratorieverdier.",
+          "fr": "Park rappelle les essais de traitement sans blanchiment et le traitement du négatif. Un exercice moderne peut comparer les rendus sans inventer les réglages du laboratoire.",
+          "pt": "Park recorda os testes de bleach bypass e o tratamento do negativo. Um exercício moderno pode comparar visuais sem inventar parâmetros laboratoriais."
+        },
+        "sourceIds": [
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_dogville_2003",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Abstract stage, ensemble blocking and invisible architecture",
+      "nb": "Abstrakt scene, ensemblespill og usynlig arkitektur",
+      "fr": "Scène abstraite, jeu collectif et architecture invisible",
+      "pt": "Palco abstrato, representação coletiva e arquitetura invisível"
+    },
+    "sources": [
+      {
+        "id": "s3",
+        "title": "The Road to Dogville",
+        "publisher": "Wired",
+        "url": "https://www.wired.com/2004/03/the-road-to-dogville/"
+      },
+      {
+        "id": "s4",
+        "title": "900 Lights and a 50-Pound Lars-Cam",
+        "publisher": "The Village Voice",
+        "url": "https://www.villagevoice.com/900-lights-and-a-50-pound-lars-cam/"
+      },
+      {
+        "id": "s6",
+        "title": "A-list Meets Arthouse: When Megastar Actors Work for Auteurs",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/list-meets-arthouse-when-megastar-actors-work-auteurs"
+      },
+      {
+        "id": "s8",
+        "title": "Sound Makes the Picture",
+        "publisher": "Mix",
+        "url": "https://www.mixonline.com/sfp/sound-makes-picture-369136"
+      }
+    ],
+    "questions": [
+      {
+        "id": "dogville-plan",
+        "area": "research",
+        "prompt": {
+          "en": "How can actors make a town readable on a bare stage?",
+          "nb": "Hvordan kan skuespillere gjøre en by lesbar på en tom scene?",
+          "fr": "Comment les acteurs rendent-ils une ville lisible sur un plateau nu ?",
+          "pt": "Como podem os atores tornar uma cidade legível num palco vazio?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map floor boundaries and rehearse shared spatial rules",
+              "nb": "Merk gulvgrenser og øv inn felles romregler",
+              "fr": "Tracer les limites au sol et répéter des règles spatiales communes",
+              "pt": "Marcar limites no chão e ensaiar regras espaciais comuns"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Build realistic walls around every room",
+              "nb": "Bygg realistiske vegger rundt alle rom",
+              "fr": "Construire des murs réalistes autour de chaque pièce",
+              "pt": "Construir paredes realistas em todos os espaços"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Let every performer invent different boundaries",
+              "nb": "La hver skuespiller finne på ulike romgrenser",
+              "fr": "Laisser chaque interprète inventer des limites différentes",
+              "pt": "Deixar cada intérprete inventar limites diferentes"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Wired and BFI describe the marked stage and sparse scenery. The exercise uses shared spatial rules so the audience can infer absent walls.",
+          "nb": "Wired og BFI beskriver den oppmerkede scenen og sparsomme dekoren. Øvelsen bruker felles romregler slik at publikum kan forstå de usynlige veggene.",
+          "fr": "Wired et le BFI décrivent le plateau tracé et les décors réduits. L’exercice emploie des règles communes pour rendre lisibles les murs absents.",
+          "pt": "A Wired e o BFI descrevem o palco marcado e o cenário escasso. O exercício usa regras comuns para tornar legíveis as paredes ausentes."
+        },
+        "sourceIds": [
+          "s3",
+          "s6"
+        ]
+      },
+      {
+        "id": "dogville-overhead",
+        "area": "camera",
+        "prompt": {
+          "en": "How should a wide overhead view relate to mobile coverage?",
+          "nb": "Hvordan bør et oversiktsbilde ovenfra forholde seg til mobile opptak?",
+          "fr": "Comment relier une vue plongeante générale aux prises mobiles ?",
+          "pt": "Como relacionar uma vista aérea geral com a cobertura móvel?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use only close-ups without any spatial reference",
+              "nb": "Bruk bare nærbilder uten romlig referanse",
+              "fr": "Employer uniquement des gros plans sans repère spatial",
+              "pt": "Usar apenas grandes planos sem referência espacial"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume overhead images require no compositing",
+              "nb": "Anta at oversiktsbilder ikke trenger kompositering",
+              "fr": "Supposer que les vues plongeantes excluent le compositing",
+              "pt": "Supor que as vistas aéreas dispensam composição"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan complementary views and test their spatial continuity",
+              "nb": "Planlegg utfyllende vinkler og test romlig kontinuitet",
+              "fr": "Prévoir des vues complémentaires et tester leur continuité spatiale",
+              "pt": "Planear vistas complementares e testar a continuidade espacial"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Dod Mantle describes mobile coverage and composited overhead imagery. Plan these as different but coordinated ways of describing the stage.",
+          "nb": "Dod Mantle beskriver mobile opptak og kompositerte oversiktsbilder. Planlegg dem som ulike, men samordnede måter å beskrive scenen på.",
+          "fr": "Dod Mantle décrit prises mobiles et vues plongeantes composites. Planifiez-les comme deux manières distinctes mais coordonnées de décrire le plateau.",
+          "pt": "Dod Mantle descreve cobertura móvel e vistas aéreas compostas. Planeie-as como formas distintas mas coordenadas de descrever o palco."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "dogville-door",
+        "area": "sound",
+        "prompt": {
+          "en": "How can an invisible door become perceptible to viewers?",
+          "nb": "Hvordan kan en usynlig dør bli forståelig for publikum?",
+          "fr": "Comment rendre une porte invisible perceptible au spectateur ?",
+          "pt": "Como tornar uma porta invisível percetível ao público?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use unrelated music to describe every boundary",
+              "nb": "Bruk uvedkommende musikk til å beskrive alle grenser",
+              "fr": "Employer une musique sans rapport pour chaque limite",
+              "pt": "Usar música sem relação para descrever cada limite"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Synchronize mime, timing and a designed door sound",
+              "nb": "Samordne mime, timing og en utformet dørlyd",
+              "fr": "Synchroniser mime, rythme et bruit de porte conçu",
+              "pt": "Sincronizar mímica, tempo e som de porta criado"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Remove all sound whenever a door is mimed",
+              "nb": "Fjern all lyd når en dør mimes",
+              "fr": "Supprimer tout son lors du mime d’une porte",
+              "pt": "Eliminar todo o som quando se imita uma porta"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI identifies mime and sound effects for invisible doors; Mix describes sound conceived alongside the script. Design the sound as part of the architecture.",
+          "nb": "BFI beskriver mime og lydeffekter for usynlige dører; Mix omtaler lyd utviklet sammen med manus. Utform lyden som del av arkitekturen.",
+          "fr": "Le BFI relève mime et bruitages pour les portes invisibles ; Mix décrit un son pensé avec le scénario. Concevez le son comme partie de l’architecture.",
+          "pt": "O BFI identifica mímica e efeitos para portas invisíveis; a Mix descreve som pensado com o argumento. Crie o som como parte da arquitetura."
+        },
+        "sourceIds": [
+          "s6",
+          "s8"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_brokeback_mountain_2005",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Location research, restrained framing and sparse music",
+      "nb": "Stedsresearch, tilbakeholden bildekomposisjon og sparsom musikk",
+      "fr": "Recherche de lieux, cadrage retenu et musique parcimonieuse",
+      "pt": "Pesquisa de locais, enquadramento contido e música esparsa"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Brokeback Mountain",
+        "publisher": "American Film Institute Catalog",
+        "url": "https://catalog.afi.com/Catalog/moviedetails/54466"
+      },
+      {
+        "id": "s1",
+        "title": "Voices of Brokeback Mountain",
+        "publisher": "Focus Features",
+        "url": "https://www.focusfeatures.com/article/voices_of_brokeback_mountain?film=brokeback_mountain"
+      },
+      {
+        "id": "s2",
+        "title": "Brokeback Mountain's Cast and Crew Remember How the Movie Came to Be",
+        "publisher": "Focus Features",
+        "url": "https://www.focusfeatures.com/article/brokeback-mountain_filmmaker-voices"
+      },
+      {
+        "id": "s3",
+        "title": "Crossing Borders - Ang Lee interview",
+        "publisher": "Directors Guild of America",
+        "url": "https://www.dga.org/craft/dgaq/issues/1001-spring-2010/dga-interview-ang-lee"
+      },
+      {
+        "id": "s7",
+        "title": "Rodrigo Prieto on Brokeback Mountain's 1.85:1 mountain framing",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/articles/killers-of-the-flower-moon-greed-hubris-and-homicide"
+      }
+    ],
+    "questions": [
+      {
+        "id": "brokebackmountain-geography",
+        "area": "research",
+        "prompt": {
+          "en": "How should a location plan distinguish story from shooting geography?",
+          "nb": "Hvordan bør en stedsplan skille handlingssted fra opptakssted?",
+          "fr": "Comment distinguer les lieux du récit des lieux de tournage ?",
+          "pt": "Como distinguir a geografia da narrativa da rodagem?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Research story locations and select practical doubles",
+              "nb": "Undersøk handlingssteder og velg egnede opptakssteder",
+              "fr": "Étudier les lieux du récit et choisir des substituts adaptés",
+              "pt": "Pesquisar os locais narrativos e escolher alternativas práticas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume all Wyoming scenes were filmed in Wyoming",
+              "nb": "Anta at alle Wyoming-scener ble filmet i Wyoming",
+              "fr": "Supposer que toutes les scènes du Wyoming y ont été tournées",
+              "pt": "Supor que todas as cenas do Wyoming foram aí filmadas"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore weather and period details in the location plan",
+              "nb": "Se bort fra vær og tidsdetaljer i stedsplanen",
+              "fr": "Ignorer météo et détails d’époque dans le plan",
+              "pt": "Ignorar o clima e os detalhes de época no plano"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI documents Alberta filming; Focus describes research, exterior logistics and period design. Keep story and actual locations separate in your plan.",
+          "nb": "AFI dokumenterer opptak i Alberta; Focus beskriver research, eksteriørlogistikk og tidskoloritt. Skill handlingssteder og faktiske opptakssteder i planen.",
+          "fr": "L’AFI documente le tournage en Alberta ; Focus décrit recherche, logistique extérieure et décors d’époque. Distinguez lieux fictifs et réels dans le plan.",
+          "pt": "O AFI documenta a rodagem em Alberta; a Focus descreve pesquisa, logística exterior e cenários de época. Separe locais narrativos e reais no plano."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "brokebackmountain-framing",
+        "area": "camera",
+        "prompt": {
+          "en": "How can mountain framing support restrained drama?",
+          "nb": "Hvordan kan fjellkomposisjon støtte et tilbakeholdent drama?",
+          "fr": "Comment cadrer les montagnes au service d’un drame retenu ?",
+          "pt": "Como enquadrar montanhas ao serviço de um drama contido?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Select the widest ratio solely for spectacle",
+              "nb": "Velg bredeste format utelukkende for spektakel",
+              "fr": "Choisir le format le plus large pour le seul spectacle",
+              "pt": "Escolher o formato mais largo só pelo espetáculo"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use constant rapid movement regardless of performance",
+              "nb": "Bruk stadig rask kamerabevegelse uavhengig av spillet",
+              "fr": "Employer un mouvement rapide constant sans égard au jeu",
+              "pt": "Usar movimento rápido constante sem atender à interpretação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare tall compositions and quiet camera movement",
+              "nb": "Sammenlign høye komposisjoner og rolig kamerabevegelse",
+              "fr": "Comparer compositions verticales et mouvements discrets",
+              "pt": "Comparar composições altas e movimentos discretos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Lee describes a tranquil visual approach; Prieto links the 1.85:1 ratio to mountain height. Compare framing in service of performance, not spectacle alone.",
+          "nb": "Lee beskriver et rolig bildeuttrykk; Prieto knytter 1,85:1 til fjellenes høyde. Sammenlign komposisjoner som støtter skuespillet, ikke bare spektakelet.",
+          "fr": "Lee décrit une approche calme ; Prieto relie le 1,85:1 à la hauteur des montagnes. Comparez des cadrages au service du jeu, pas du seul spectacle.",
+          "pt": "Lee descreve uma abordagem calma; Prieto associa o 1,85:1 à altura das montanhas. Compare enquadramentos ao serviço da interpretação, não só do espetáculo."
+        },
+        "sourceIds": [
+          "s3",
+          "s7"
+        ]
+      },
+      {
+        "id": "brokebackmountain-score",
+        "area": "sound",
+        "prompt": {
+          "en": "How can a sparse score leave room for performance?",
+          "nb": "Hvordan kan sparsom filmmusikk gi plass til skuespillet?",
+          "fr": "Comment une musique parcimonieuse laisse-t-elle place au jeu ?",
+          "pt": "Como pode uma música esparsa dar espaço à interpretação?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose cues without watching the performances",
+              "nb": "Velg musikkinnslag uten å se skuespillet",
+              "fr": "Choisir les interventions sans regarder le jeu",
+              "pt": "Escolher entradas sem observar a interpretação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test a few musical cues against silence and ambience",
+              "nb": "Prøv noen få musikkinnslag mot stillhet og romlyd",
+              "fr": "Tester quelques interventions musicales face au silence et à l’ambiance",
+              "pt": "Testar poucas entradas musicais perante silêncio e ambiente"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Cover every exchange with continuous orchestral music",
+              "nb": "Dekk hver samtale med kontinuerlig orkestermusikk",
+              "fr": "Couvrir chaque échange d’une musique orchestrale continue",
+              "pt": "Cobrir cada diálogo com música orquestral contínua"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Focus interviews document the sparse Santaolalla score and Lee's collaboration. Use a new exercise cue to compare the emotional effect of music and absence.",
+          "nb": "Focus-intervjuer dokumenterer Santaolallas sparsomme musikk og samarbeidet med Lee. Bruk et nytt musikkinnslag til å sammenligne virkningen av musikk og fravær.",
+          "fr": "Les entretiens Focus documentent la musique parcimonieuse de Santaolalla et sa collaboration avec Lee. Comparez l’effet émotionnel d’une musique originale et de son absence.",
+          "pt": "As entrevistas Focus documentam a música esparsa de Santaolalla e a colaboração com Lee. Compare o efeito emocional de uma música original e da sua ausência."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_cache_2005",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Image provenance, static framing and digital-to-film workflow",
+      "nb": "Bildets opphav, statisk komposisjon og digital-til-film-arbeidsflyt",
+      "fr": "Provenance de l’image, cadre fixe et chaîne numérique vers pellicule",
+      "pt": "Proveniência da imagem, quadro fixo e fluxo digital para película"
+    },
+    "sources": [
+      {
+        "id": "s2",
+        "title": "Lives on Tape",
+        "publisher": "American Cinematographer, vol. 87 no. 1 (January 2006)",
+        "url": "https://www.scribd.com/document/63868874/American-Cinematographer-Magazine-January-2006"
+      },
+      {
+        "id": "s3",
+        "title": "Secrets, Lies & Videotape",
+        "publisher": "BFI Sight and Sound",
+        "url": "https://old.bfi.org.uk/sightandsound/feature/49266"
+      },
+      {
+        "id": "s4",
+        "title": "Hidden - BFI Southbank Programme Notes",
+        "publisher": "BFI Documentation Unit / Sight and Sound",
+        "url": "https://bfidatadigipres.github.io/re-releases/2025/06/19/hidden/"
+      },
+      {
+        "id": "s5",
+        "title": "Christian Berger interview",
+        "publisher": "HollywoodChicago",
+        "url": "https://www.hollywoodchicago.com/news/9728/interview-cinematographer-christian-berger-unravels-the-white-ribbon"
+      }
+    ],
+    "questions": [
+      {
+        "id": "cache-provenance",
+        "area": "camera",
+        "prompt": {
+          "en": "How can two kinds of image remain visually ambiguous?",
+          "nb": "Hvordan kan to bildetyper forbli visuelt tvetydige?",
+          "fr": "Comment maintenir une ambiguïté visuelle entre deux types d’images ?",
+          "pt": "Como manter a ambiguidade visual entre dois tipos de imagem?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test matched image characteristics and withhold explicit labels",
+              "nb": "Prøv like bildeegenskaper og unngå entydige merkelapper",
+              "fr": "Tester des caractéristiques proches sans étiquettes explicites",
+              "pt": "Testar características semelhantes sem rótulos explícitos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Add a prominent surveillance label to every such image",
+              "nb": "Merk alle slike bilder tydelig som overvåkning",
+              "fr": "Étiqueter clairement chaque image de surveillance",
+              "pt": "Identificar claramente todas as imagens de vigilância"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Give the two image types unrelated color palettes",
+              "nb": "Gi de to bildetypene helt ulike fargepaletter",
+              "fr": "Donner deux palettes sans rapport aux types d’images",
+              "pt": "Dar paletas de cor sem relação aos dois tipos de imagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Berger describes rejecting a mixed film/digital strategy; BFI links HD to ambiguous image provenance. Test whether viewers can distinguish images without explicit markers.",
+          "nb": "Berger beskriver at en blandet film- og digitalstrategi ble forkastet; BFI knytter HD til tvetydig bildeopphav. Prøv om publikum kan skille bildene uten tydelig merking.",
+          "fr": "Berger décrit l’abandon d’une stratégie mixte ; le BFI relie la HD à l’ambiguïté de provenance. Testez la distinction sans marqueurs explicites.",
+          "pt": "Berger descreve o abandono de uma estratégia mista; o BFI associa HD à ambiguidade de proveniência. Teste a distinção sem marcas explícitas."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "cache-duration",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a fixed frame invite sustained observation?",
+          "nb": "Hvordan kan et fast utsnitt invitere til vedvarende observasjon?",
+          "fr": "Comment un cadre fixe invite-t-il à une observation prolongée ?",
+          "pt": "Como pode um quadro fixo convidar à observação prolongada?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Cut immediately whenever any movement appears",
+              "nb": "Klipp umiddelbart ved enhver bevegelse",
+              "fr": "Couper immédiatement dès qu’un mouvement apparaît",
+              "pt": "Cortar imediatamente sempre que surge movimento"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Explain every clue with a close-up and caption",
+              "nb": "Forklar hvert spor med nærbilde og tekst",
+              "fr": "Expliquer chaque indice par gros plan et légende",
+              "pt": "Explicar cada pista com grande plano e legenda"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Let significant action unfold within a held composition",
+              "nb": "La betydningsfull handling utfolde seg i et fastholdt utsnitt",
+              "fr": "Laisser l’action significative se déployer dans un cadre tenu",
+              "pt": "Deixar a ação significativa decorrer num quadro mantido"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI discusses the uncertain status of the images and Berger recalls the detached visual plan. The exercise tests attention within one composition without dictating an interpretation.",
+          "nb": "BFI drøfter bildenes usikre status, og Berger beskriver det distanserte bildeuttrykket. Øvelsen prøver oppmerksomhet innenfor ett utsnitt uten å diktere tolkning.",
+          "fr": "Le BFI examine le statut incertain des images et Berger rappelle le projet visuel distant. L’exercice teste l’attention dans un cadre sans imposer d’interprétation.",
+          "pt": "O BFI discute o estatuto incerto das imagens e Berger recorda o plano visual distanciado. O exercício testa a atenção num quadro sem impor interpretação."
+        },
+        "sourceIds": [
+          "s3",
+          "s5"
+        ]
+      },
+      {
+        "id": "cache-workflow",
+        "area": "research",
+        "prompt": {
+          "en": "How should the production record describe capture and final transfer?",
+          "nb": "Hvordan bør produksjonsloggen beskrive opptak og slutt­overføring?",
+          "fr": "Comment documenter la captation et le transfert final ?",
+          "pt": "Como documentar a captação e a transferência final?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Invent exact recording settings from the release format",
+              "nb": "Finn på eksakte opptaksinnstillinger fra visningsformatet",
+              "fr": "Inventer les réglages de captation à partir du format de diffusion",
+              "pt": "Inventar parâmetros de captação a partir do formato de exibição"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Separate digital capture, grading and film-out records",
+              "nb": "Skill dokumentasjon av digitalt opptak, gradering og filmoverføring",
+              "fr": "Séparer les traces de captation numérique, étalonnage et transfert film",
+              "pt": "Separar registos de captação digital, gradação e transferência para película"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Describe all images as originally shot on 35mm",
+              "nb": "Beskriv alle bilder som opprinnelig tatt opp på 35 mm",
+              "fr": "Décrire toutes les images comme tournées en 35 mm",
+              "pt": "Descrever todas as imagens como rodadas em 35 mm"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Berger's production account distinguishes HD acquisition, grading and 35mm film-out. BFI credits preserve laboratory roles; do not infer undocumented settings.",
+          "nb": "Bergers produksjonsberetning skiller HD-opptak, gradering og 35 mm-overføring. BFI-krediteringen bevarer laboratorierollene; ikke utled udokumenterte innstillinger.",
+          "fr": "Le récit de Berger distingue captation HD, étalonnage et transfert 35 mm. Le BFI conserve les crédits des laboratoires ; n’inventez pas les réglages.",
+          "pt": "O relato de Berger distingue captação HD, gradação e transferência 35 mm. O BFI preserva os créditos dos laboratórios; não invente parâmetros."
+        },
+        "sourceIds": [
+          "s2",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_pans_labyrinth_2006",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Contrasting design systems, creature craft and visual effects",
+      "nb": "Kontrasterende scenografi, skapningseffekter og visuelle effekter",
+      "fr": "Systèmes de décors opposés, créatures et effets visuels",
+      "pt": "Sistemas cenográficos opostos, criaturas e efeitos visuais"
+    },
+    "sources": [
+      {
+        "id": "s2",
+        "title": "Fear and Fantasy",
+        "publisher": "American Cinematographer",
+        "url": "https://web.archive.org/web/20070511033220/http://www.ascmag.com/magazine_dynamic/January2007/PansLabyrinth/page1.php"
+      },
+      {
+        "id": "s3",
+        "title": "Beauty and the Beasts",
+        "publisher": "Directors Guild of America",
+        "url": "https://www.dga.org/craft/dgaq/issues/1401-winter-2014/dga-interview-del-toro"
+      },
+      {
+        "id": "s4",
+        "title": "Qumra 2019: Oscar Winner Eugenio Caballero on Pan's Labyrinth, Roma and more",
+        "publisher": "The Playlist / Doha Film Institute Qumra coverage",
+        "url": "https://theplaylist.net/qumra-2019-eugenio-caballero-20190319/"
+      },
+      {
+        "id": "s5",
+        "title": "A VFX Labyrinth",
+        "publisher": "fxguide",
+        "url": "https://www.fxguide.com/fxfeatured/a_vfx_labyrinth/"
+      },
+      {
+        "id": "s6",
+        "title": "Interview: Doug Jones (Pan's Labyrinth)",
+        "publisher": "CHUD",
+        "url": "https://www.chud.com/8772/interview-doug-jones-pans-labyrinth/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "panslabyrinth-shapes",
+        "area": "research",
+        "prompt": {
+          "en": "How can two worlds have distinct visual grammars?",
+          "nb": "Hvordan kan to verdener få ulike visuelle formspråk?",
+          "fr": "Comment donner deux grammaires visuelles distinctes à deux mondes ?",
+          "pt": "Como dar gramáticas visuais distintas a dois mundos?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Create contrasting angular and curved shape systems",
+              "nb": "Lag kontrasterende kantede og kurvede formsystemer",
+              "fr": "Créer des systèmes de formes anguleuses et courbes opposés",
+              "pt": "Criar sistemas de formas angulares e curvas contrastantes"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use identical shapes and scale in both worlds",
+              "nb": "Bruk samme former og skala i begge verdener",
+              "fr": "Employer les mêmes formes et échelles dans les deux mondes",
+              "pt": "Usar formas e escalas idênticas nos dois mundos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose every set detail independently of the world",
+              "nb": "Velg hver dekordetalj uavhengig av verdenen",
+              "fr": "Choisir chaque détail sans tenir compte du monde",
+              "pt": "Escolher cada detalhe sem considerar o mundo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Caballero describes contrasting angular reality and curved fantasy. Build a new shape board and test how each design system supports the story.",
+          "nb": "Caballero beskriver kantet virkelighet mot kurvet fantasi. Lag et nytt formkart og prøv hvordan hvert formsystem støtter fortellingen.",
+          "fr": "Caballero oppose réalité anguleuse et imaginaire courbe. Créez une planche de formes originale et testez son apport au récit.",
+          "pt": "Caballero contrapõe realidade angular e fantasia curva. Crie um painel de formas original e teste o contributo de cada sistema para a narrativa."
+        },
+        "sourceIds": [
+          "s4"
+        ]
+      },
+      {
+        "id": "panslabyrinth-creature",
+        "area": "camera",
+        "prompt": {
+          "en": "How should a creature effect combine performance and digital work?",
+          "nb": "Hvordan bør en skapningseffekt kombinere skuespill og digitalt arbeid?",
+          "fr": "Comment combiner interprétation et travail numérique pour une créature ?",
+          "pt": "Como combinar interpretação e trabalho digital numa criatura?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Replace every physical element with digital imagery",
+              "nb": "Erstatt alle fysiske elementer med digitale bilder",
+              "fr": "Remplacer chaque élément physique par une image numérique",
+              "pt": "Substituir todos os elementos físicos por imagens digitais"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume prosthetics eliminate all postproduction needs",
+              "nb": "Anta at proteser fjerner alt behov for etterarbeid",
+              "fr": "Supposer que les prothèses dispensent de toute postproduction",
+              "pt": "Supor que as próteses dispensam toda a pós-produção"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan a safe practical performance with selective digital cleanup",
+              "nb": "Planlegg trygt praktisk skuespill med selektiv digital opprydding",
+              "fr": "Prévoir un jeu physique sûr avec retouches numériques ciblées",
+              "pt": "Planear interpretação física segura com retoques digitais seletivos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Del Toro, Jones and CafeFX accounts distinguish practical performance and selective digital effects. Plan a safe test and clear handoffs, not an exact historical reconstruction.",
+          "nb": "Beretningene fra del Toro, Jones og CafeFX skiller praktisk spill og selektive digitale effekter. Planlegg en trygg prøve og tydelige overleveringer, ikke en eksakt rekonstruksjon.",
+          "fr": "Les récits de del Toro, Jones et CafeFX distinguent jeu physique et effets numériques ciblés. Préparez un essai sûr et des transmissions claires, sans reconstruction exacte.",
+          "pt": "Os relatos de del Toro, Jones e CafeFX distinguem interpretação física e efeitos digitais seletivos. Planeie um teste seguro e transições claras, sem reconstrução exata."
+        },
+        "sourceIds": [
+          "s3",
+          "s5",
+          "s6"
+        ]
+      },
+      {
+        "id": "panslabyrinth-night",
+        "area": "camera",
+        "prompt": {
+          "en": "How should a day-for-night look be prepared?",
+          "nb": "Hvordan bør et dag-for-natt-uttrykk forberedes?",
+          "fr": "Comment préparer un rendu de nuit américaine ?",
+          "pt": "Como preparar um visual de noite americana?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume grading alone solves every lighting problem",
+              "nb": "Anta at gradering alene løser alle lysproblemer",
+              "fr": "Supposer que l’étalonnage résout seul tout problème de lumière",
+              "pt": "Supor que a gradação resolve sozinha todos os problemas de luz"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare exposure tests and lighting continuity before shooting",
+              "nb": "Sammenlign eksponeringsprøver og lyskontinuitet før opptak",
+              "fr": "Comparer essais d’exposition et continuité lumineuse avant tournage",
+              "pt": "Comparar testes de exposição e continuidade luminosa antes da rodagem"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use one untested exposure setting for every location",
+              "nb": "Bruk én uprøvd eksponering på alle steder",
+              "fr": "Employer un réglage non testé pour chaque lieu",
+              "pt": "Usar uma exposição não testada em todos os locais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "American Cinematographer documents day-for-night and selected underexposure. Test your own camera and light conditions rather than copying a historical exposure value blindly.",
+          "nb": "American Cinematographer dokumenterer dag-for-natt og utvalgt undereksponering. Prøv ditt eget kamera og lys fremfor å kopiere en historisk eksponeringsverdi blindt.",
+          "fr": "American Cinematographer documente la nuit américaine et certaines sous-expositions. Testez votre caméra et votre lumière plutôt que de copier aveuglément une valeur historique.",
+          "pt": "A American Cinematographer documenta noite americana e subexposição seletiva. Teste a sua câmara e luz em vez de copiar cegamente um valor histórico."
+        },
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_children_of_men_2006",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Long-duration staging, invisible joins and practical-digital effects",
+      "nb": "Langvarig iscenesettelse, usynlige skjøter og praktisk-digitale effekter",
+      "fr": "Mise en scène longue, raccords invisibles et effets hybrides",
+      "pt": "Encenação prolongada, junções invisíveis e efeitos híbridos"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "Children of Men: Humanity's Last Hope",
+        "publisher": "American Cinematographer / American Society of Cinematographers",
+        "url": "https://theasc.com/article/children-of-men-humanitys-last-hope/"
+      },
+      {
+        "id": "s2",
+        "title": "AC Gallery: Children of Men",
+        "publisher": "American Cinematographer / American Society of Cinematographers",
+        "url": "https://theasc.com/articles/ac-gallery-children-of-men"
+      },
+      {
+        "id": "s3",
+        "title": "Children of Men",
+        "publisher": "Framestore",
+        "url": "https://www.framestore.com/work/children-men"
+      }
+    ],
+    "questions": [
+      {
+        "id": "childrenofmen-blocking",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a long scene maintain a documentary-like viewpoint?",
+          "nb": "Hvordan kan en lang scene bevare et dokumentarpreget perspektiv?",
+          "fr": "Comment une scène longue conserve-t-elle un regard documentaire ?",
+          "pt": "Como manter um olhar documental numa cena longa?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse coordinated actor and camera paths in a safe space",
+              "nb": "Øv inn samordnede skuespiller- og kamerabaner i et trygt rom",
+              "fr": "Répéter les trajets coordonnés des acteurs et de la caméra en sécurité",
+              "pt": "Ensaiar trajetos coordenados de atores e câmara num espaço seguro"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Let camera movement ignore the performers entirely",
+              "nb": "La kamerabevegelsen ignorere skuespillerne helt",
+              "fr": "Ignorer entièrement les interprètes dans le mouvement de caméra",
+              "pt": "Ignorar totalmente os atores nos movimentos de câmara"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Rely on fast cutting before testing continuous blocking",
+              "nb": "Stol på rask klipping før sammenhengende blokkering er prøvd",
+              "fr": "Compter sur le montage rapide avant de tester la continuité du jeu",
+              "pt": "Depender de cortes rápidos antes de testar a encenação contínua"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Lubezki describes documentary-inspired staging and specialized camera work. Practice coordinated movement on a safe scale without reproducing the original rig.",
+          "nb": "Lubezki beskriver dokumentarpreget iscenesettelse og spesialisert kameraarbeid. Øv på samordnet bevegelse i trygg skala uten å gjenskape originalriggen.",
+          "fr": "Lubezki décrit une mise en scène documentaire et un travail de caméra spécialisé. Pratiquez le mouvement coordonné à une échelle sûre sans reproduire le dispositif original.",
+          "pt": "Lubezki descreve encenação de inspiração documental e trabalho de câmara especializado. Pratique movimentos coordenados em escala segura sem reproduzir o equipamento original."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "childrenofmen-joins",
+        "area": "camera",
+        "prompt": {
+          "en": "How should apparent one-shot continuity be evaluated?",
+          "nb": "Hvordan bør tilsynelatende kontinuitet i én tagning vurderes?",
+          "fr": "Comment évaluer la continuité apparente d’un plan unique ?",
+          "pt": "Como avaliar a continuidade aparente de um plano único?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Claim every apparent long take is unedited",
+              "nb": "Påstå at alle tilsynelatende lange tagninger er uklippet",
+              "fr": "Affirmer que tout plan long apparent est sans montage",
+              "pt": "Afirmar que todo plano longo aparente não tem montagem"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Make every transition intentionally conspicuous",
+              "nb": "Gjør alle overganger bevisst påfallende",
+              "fr": "Rendre chaque transition volontairement visible",
+              "pt": "Tornar cada transição deliberadamente visível"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare uninterrupted perception with documented invisible joins",
+              "nb": "Sammenlign opplevd kontinuitet med dokumenterte usynlige skjøter",
+              "fr": "Comparer continuité perçue et raccords invisibles documentés",
+              "pt": "Comparar continuidade percebida e junções invisíveis documentadas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "ASC and Framestore describe seamless joins in specific sequences. Distinguish the viewer's continuous experience from how the footage was assembled.",
+          "nb": "ASC og Framestore beskriver sømløse skjøter i bestemte sekvenser. Skill publikums sammenhengende opplevelse fra hvordan opptakene ble satt sammen.",
+          "fr": "L’ASC et Framestore décrivent des raccords invisibles dans des séquences précises. Distinguez l’expérience continue du spectateur de l’assemblage des images.",
+          "pt": "A ASC e a Framestore descrevem junções invisíveis em sequências específicas. Distinga a experiência contínua do público da montagem das imagens."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "childrenofmen-handoff",
+        "area": "animation",
+        "prompt": {
+          "en": "How should a digital infant effect be integrated with live action?",
+          "nb": "Hvordan bør en digital spedbarnseffekt integreres med realopptak?",
+          "fr": "Comment intégrer un nourrisson numérique aux prises réelles ?",
+          "pt": "Como integrar um bebé digital nas imagens reais?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat all shots as entirely practical without checking evidence",
+              "nb": "Behandle alle bilder som rent praktiske uten å sjekke kildene",
+              "fr": "Traiter toutes les images comme entièrement physiques sans vérifier",
+              "pt": "Tratar todos os planos como inteiramente práticos sem verificar fontes"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan tracking, stand-in reference and compositing handoffs",
+              "nb": "Planlegg sporing, fysisk referanse og overlevering til kompositering",
+              "fr": "Prévoir suivi, référence physique et transmission au compositing",
+              "pt": "Planear rastreio, referência física e passagem à composição"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Add a digital figure without matching movement or light",
+              "nb": "Legg til en digital figur uten å matche bevegelse eller lys",
+              "fr": "Ajouter une figure numérique sans adapter mouvement ni lumière",
+              "pt": "Adicionar uma figura digital sem corresponder ao movimento ou à luz"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Framestore documents a partial stand-in, digital infant and tracking/compositing work. Design a fictional object test to learn the handoff without claiming all effects used this method.",
+          "nb": "Framestore dokumenterer en delvis fysisk referanse, digitalt spedbarn og sporings- og kompositeringsarbeid. Lag en fiktiv objektprøve for å lære arbeidsflyten uten å generalisere metoden.",
+          "fr": "Framestore documente une référence partielle, un nourrisson numérique et le suivi/compositing. Concevez un essai d’objet fictif pour apprendre la transmission sans généraliser la méthode.",
+          "pt": "A Framestore documenta uma referência parcial, um bebé digital e trabalho de rastreio e composição. Crie um teste com objeto fictício para aprender a passagem sem generalizar o método."
+        },
+        "sourceIds": [
+          "s3"
+        ]
+      }
+    ]
   }
 ] as const satisfies readonly SourceBackedCaseWorkshop[];

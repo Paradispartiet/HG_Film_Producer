@@ -211,15 +211,21 @@ const ids = [
   "scenario_spirited_away_2001",
   "scenario_amelie_2001",
   "scenario_city_of_god_2002",
+  "scenario_oldboy_2003",
+  "scenario_dogville_2003",
+  "scenario_brokeback_mountain_2005",
+  "scenario_cache_2005",
+  "scenario_pans_labyrinth_2006",
+  "scenario_children_of_men_2006",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly two hundred and two existing cases have six hundred and six original, source-backed decisions", () => {
+test("Exactly two hundred and eight existing cases have six hundred and twenty-four original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 202);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 606);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 208);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 624);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -546,6 +552,14 @@ test("Exactly two hundred and two existing cases have six hundred and six origin
       for (const source of workshop.sources) assert.ok(verification.includes(source.url));
     } else if (["scenario_in_the_mood_for_love_2000","scenario_yi_yi_2000","scenario_crouching_tiger_hidden_dragon_2000","scenario_spirited_away_2001","scenario_amelie_2001","scenario_city_of_god_2002"].includes(workshop.scenarioId)) {
       const configs: Record<string, [string, string]> = {"scenario_in_the_mood_for_love_2000":["src/ui/data/scenarioProductionVerificationInTheMoodForLove.ts","chapterEighteenInTheMoodForLoveExpansion"],"scenario_yi_yi_2000":["src/ui/data/scenarioProductionVerificationYiYi.ts","chapterEighteenYiYiExpansion"],"scenario_crouching_tiger_hidden_dragon_2000":["src/ui/data/scenarioProductionVerificationCrouchingTigerHiddenDragon.ts","chapterEighteenCrouchingTigerHiddenDragonExpansion"],"scenario_spirited_away_2001":["src/ui/data/scenarioProductionVerificationSpiritedAway.ts","chapterEighteenSpiritedAwayExpansion"],"scenario_amelie_2001":["src/ui/data/scenarioProductionVerificationAmelie.ts","seed"],"scenario_city_of_god_2002":["src/ui/data/scenarioProductionVerificationCityOfGod.ts","chapterEighteenCityOfGodExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      if (definition === "seed") assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
+      else assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
+      assert.ok(verification.includes('scenarioId: "' + workshop.scenarioId + '"'));
+      for (const source of workshop.sources) assert.ok(verification.includes(source.url));
+    } else if (["scenario_oldboy_2003","scenario_dogville_2003","scenario_brokeback_mountain_2005","scenario_cache_2005","scenario_pans_labyrinth_2006","scenario_children_of_men_2006"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_oldboy_2003":["src/ui/data/scenarioProductionVerificationOldboy.ts","chapterEighteenOldboyExpansion"],"scenario_dogville_2003":["src/ui/data/scenarioProductionVerificationDogville.ts","seed"],"scenario_brokeback_mountain_2005":["src/ui/data/scenarioProductionVerificationBrokebackMountain.ts","chapterEighteenBrokebackMountainExpansion"],"scenario_cache_2005":["src/ui/data/scenarioProductionVerificationCache.ts","chapterEighteenCacheExpansion"],"scenario_pans_labyrinth_2006":["src/ui/data/scenarioProductionVerificationPansLabyrinth.ts","chapterEighteenPansLabyrinthExpansion"],"scenario_children_of_men_2006":["src/ui/data/scenarioProductionVerificationChildrenOfMen.ts","chapterEighteenChildrenOfMenExpansion"]};
       const [path, definition] = configs[workshop.scenarioId]!;
       if (definition === "seed") assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
       else assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
@@ -1211,4 +1225,14 @@ test("Early 2000s international workshops retain film-specific questions and sou
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_spirited_away_2001")?.questions.map(q => q.id), ["spiritedaway-pipeline","spiritedaway-scope","spiritedaway-color"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_amelie_2001")?.questions.map(q => q.id), ["amelie-locations","amelie-imagination","amelie-mix"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_city_of_god_2002")?.questions.map(q => q.id), ["cityofgod-rehearsal","cityofgod-formats","cityofgod-credits"]);
+});
+
+
+test("2003–2006 workshops retain distinct source-based production decisions", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_oldboy_2003")?.questions.map(q => q.id), ["oldboy-master","oldboy-design","oldboy-finish"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_dogville_2003")?.questions.map(q => q.id), ["dogville-plan","dogville-overhead","dogville-door"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_brokeback_mountain_2005")?.questions.map(q => q.id), ["brokebackmountain-geography","brokebackmountain-framing","brokebackmountain-score"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_cache_2005")?.questions.map(q => q.id), ["cache-provenance","cache-duration","cache-workflow"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_pans_labyrinth_2006")?.questions.map(q => q.id), ["panslabyrinth-shapes","panslabyrinth-creature","panslabyrinth-night"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_children_of_men_2006")?.questions.map(q => q.id), ["childrenofmen-blocking","childrenofmen-joins","childrenofmen-handoff"]);
 });
