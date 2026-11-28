@@ -3,6 +3,8 @@ import type { SourceBackedCaseWorkshop } from "./scenarioProductionSourceWorksho
 import { sourceWorkshops2024 } from "./scenarioProductionSourceWorkshops2024.js";
 import { sourceWorkshops2025 } from "./scenarioProductionSourceWorkshops2025.js";
 
+import { worldCinemaSourceWorkshops } from "./scenarioProductionSourceWorkshopsWorldCinema.js";
+
 export const contemporarySourceWorkshops = [
   {
     "scenarioId": "scenario_anatomy_of_a_fall_2023",
@@ -2657,5 +2659,6 @@ export const contemporarySourceWorkshops = [
     ]
   },
   ...sourceWorkshops2024,
-  ...sourceWorkshops2025
+  ...sourceWorkshops2025,
+  ...worldCinemaSourceWorkshops
 ] as const satisfies readonly SourceBackedCaseWorkshop[];

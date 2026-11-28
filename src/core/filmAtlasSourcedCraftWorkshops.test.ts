@@ -314,15 +314,25 @@ const ids = [
   "scenario_sound_of_falling_2025",
   "scenario_resurrection_2025",
   "scenario_the_secret_agent_2025",
+  "scenario_living_in_bondage_1992",
+  "scenario_birds_of_passage_2018",
+  "scenario_the_motorcycle_diaries_2004",
+  "scenario_the_lunchbox_2013",
+  "scenario_capernaum_2018",
+  "scenario_where_is_the_friend_s_house_1987",
+  "scenario_kitchen_stories_2003",
+  "scenario_brothers_2015",
+  "scenario_drommer_2024",
+  "scenario_four_daughters_2023",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly three hundred and five existing cases have nine hundred and fifteen original, source-backed decisions", () => {
+test("Exactly three hundred and fifteen existing cases have nine hundred and forty-five original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 305);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 915);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 315);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 945);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -736,6 +746,14 @@ test("Exactly three hundred and five existing cases have nine hundred and fiftee
       const configs: Record<string, [string, string]> = {"scenario_the_brutalist_2024":["src/ui/data/scenarioProductionVerificationTheBrutalist.ts","chapterNineteenTheBrutalistExpansion"],"scenario_all_we_imagine_as_light_2024":["src/ui/data/scenarioProductionVerificationAllWeImagineAsLight.ts","chapterNineteenAllWeImagineAsLightExpansion"],"scenario_the_seed_of_the_sacred_fig_2024":["src/ui/data/scenarioProductionVerificationTheSeedOfTheSacredFig.ts","chapterNineteenTheSeedOfTheSacredFigExpansion"],"scenario_furiosa_a_mad_max_saga_2024":["src/ui/data/scenarioProductionVerificationFuriosa.ts","chapterNineteenFuriosaExpansion"],"scenario_emilia_perez_2024":["src/ui/data/scenarioProductionVerificationEmiliaPerez.ts","chapterNineteenEmiliaPerezExpansion"],"scenario_kinds_of_kindness_2024":["src/ui/data/scenarioProductionVerificationKindsOfKindness.ts","chapterNineteenKindsOfKindnessExpansion"],"scenario_grand_tour_2024":["src/ui/data/scenarioProductionVerificationGrandTour.ts","chapterNineteenGrandTourExpansion"],"scenario_sentimental_value_2025":["src/ui/data/scenarioProductionVerificationSentimentalValue.ts","chapterNineteenSentimentalValueExpansion"],"scenario_sinners_2025":["src/ui/data/scenarioProductionVerificationSinners.ts","chapterNineteenSinnersExpansion"],"scenario_one_battle_after_another_2025":["src/ui/data/scenarioProductionVerificationOneBattleAfterAnother.ts","chapterNineteenOneBattleAfterAnotherExpansion"],"scenario_it_was_just_an_accident_2025":["src/ui/data/scenarioProductionVerificationItWasJustAnAccident.ts","chapterNineteenItWasJustAnAccidentExpansion"],"scenario_sirat_2025":["src/ui/data/scenarioProductionVerificationSirat.ts","chapterNineteenSiratExpansion"],"scenario_sound_of_falling_2025":["src/ui/data/scenarioProductionVerificationSoundOfFalling.ts","chapterNineteenSoundOfFallingExpansion"],"scenario_resurrection_2025":["src/ui/data/scenarioProductionVerificationResurrection.ts","chapterNineteenResurrectionExpansion"],"scenario_the_secret_agent_2025":["src/ui/data/scenarioProductionVerificationTheSecretAgent.ts","chapterNineteenTheSecretAgentExpansion"]};
       const [path, definition] = configs[workshop.scenarioId]!;
       assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
+      assert.ok(verification.includes('scenarioId: "' + workshop.scenarioId + '"'));
+      for (const source of workshop.sources) assert.ok(verification.includes(source.url));
+    } else if (["scenario_living_in_bondage_1992","scenario_birds_of_passage_2018","scenario_the_motorcycle_diaries_2004","scenario_the_lunchbox_2013","scenario_capernaum_2018","scenario_where_is_the_friend_s_house_1987","scenario_kitchen_stories_2003","scenario_brothers_2015","scenario_drommer_2024","scenario_four_daughters_2023"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_living_in_bondage_1992":["src/ui/data/scenarioProductionVerificationLivingInBondage.ts","nollywoodLivingInBondageExpansion"],"scenario_birds_of_passage_2018":["src/ui/data/scenarioProductionVerificationBirdsOfPassage.ts","seed"],"scenario_the_motorcycle_diaries_2004":["src/ui/data/scenarioProductionVerificationMotorcycleDiaries.ts","seed"],"scenario_the_lunchbox_2013":["src/ui/data/scenarioProductionVerificationLunchbox.ts","southSoutheastAsianExpansion"],"scenario_capernaum_2018":["src/ui/data/scenarioProductionVerificationCapernaum.ts","seed"],"scenario_where_is_the_friend_s_house_1987":["src/ui/data/scenarioProductionVerificationWhereFriendsHouse.ts","seed"],"scenario_kitchen_stories_2003":["src/ui/data/scenarioProductionVerificationKitchenStories.ts","seed"],"scenario_brothers_2015":["src/ui/data/scenarioProductionVerificationBrothers.ts","seed"],"scenario_drommer_2024":["src/ui/data/scenarioProductionVerificationDrommer.ts","chapterNineteenDrommerExpansion"],"scenario_four_daughters_2023":["src/ui/data/scenarioProductionVerificationFourDaughters.ts","chapterNineteenFourDaughtersExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      if (definition === "seed") assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
+      else assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
       const verification = readFileSync(path, "utf8");
       assert.ok(verification.includes('scenarioId: "' + workshop.scenarioId + '"'));
       for (const source of workshop.sources) assert.ok(verification.includes(source.url));
@@ -1545,4 +1563,18 @@ test("2024–2025 workshops retain film-specific production decisions", () => {
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_sound_of_falling_2025")?.questions.map(q => q.id), ["soundfalling-memory","soundfalling-structure","soundfalling-sound"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_resurrection_2025")?.questions.map(q => q.id), ["resurrection-chapters","resurrection-movement","resurrection-music"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_secret_agent_2025")?.questions.map(q => q.id), ["secretagent-city","secretagent-optics","secretagent-archive"]);
+});
+
+
+test("World cinema workshops retain film-specific production decisions", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_living_in_bondage_1992")?.questions.map(q => q.id), ["bondage-format","bondage-distribution","bondage-roles"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_birds_of_passage_2018")?.questions.map(q => q.id), ["birdswayuu-community","birdswayuu-genre","birdswayuu-frame"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_motorcycle_diaries_2004")?.questions.map(q => q.id), ["motorcycle-route","motorcycle-adapt","motorcycle-location"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_lunchbox_2013")?.questions.map(q => q.id), ["lunchbox-object","lunchbox-city","lunchbox-ambience"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_capernaum_2018")?.questions.map(q => q.id), ["capernaum-casting","capernaum-height","capernaum-edit"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_where_is_the_friend_s_house_1987")?.questions.map(q => q.id), ["friendhouse-quest","friendhouse-place","friendhouse-restore"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_kitchen_stories_2003")?.questions.map(q => q.id), ["kitchen-history","kitchen-space","kitchen-timing"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_brothers_2015")?.questions.map(q => q.id), ["brothers-consent","brothers-archive","brothers-montage"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_drommer_2024")?.questions.map(q => q.id), ["drommer-trilogy","drommer-voice","drommer-closeup"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_four_daughters_2023")?.questions.map(q => q.id), ["fourdaughters-reenact","fourdaughters-safety","fourdaughters-space"]);
 });
