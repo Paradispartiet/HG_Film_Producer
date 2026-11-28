@@ -14667,5 +14667,1722 @@ export const postwarSourceWorkshops = [
         ]
       }
     ]
+  },
+  {
+    "scenarioId": "scenario_sankofa_1993",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Independent distribution, location changes and historical research",
+      "nb": "Uavhengig distribusjon, stedsendringer og historisk research",
+      "fr": "Distribution indépendante, changements de lieux et recherche historique",
+      "pt": "Distribuição independente, mudanças de locais e pesquisa histórica"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Sankofa",
+        "publisher": "UCLA Film & Television Archive",
+        "url": "https://cinema.ucla.edu/collections/la-rebellion/sankofa/"
+      },
+      {
+        "id": "s1",
+        "title": "Sankofa (1993)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/84338d2e-36bf-5532-9fcf-44b30f282767/sankofa"
+      },
+      {
+        "id": "s2",
+        "title": "SANKOFA – In the Black Fantastic programme",
+        "publisher": "British Film Institute",
+        "url": "https://bfidatadigipres.github.io/pdf/2022-07-02-sankofa.pdf"
+      },
+      {
+        "id": "s3",
+        "title": "'Sankofa' Takes a Different Route to Theaters",
+        "publisher": "Los Angeles Times",
+        "url": "https://www.latimes.com/archives/la-xpm-1994-01-25-fi-15137-story.html"
+      },
+      {
+        "id": "s4",
+        "title": "'Sankofa': A Saga of Slavery Reaches the Big Screen",
+        "publisher": "Los Angeles Times",
+        "url": "https://www.latimes.com/archives/la-xpm-1995-05-29-ca-7370-story.html"
+      },
+      {
+        "id": "s5",
+        "title": "Merawi Gerima on Haile Gerima",
+        "publisher": "BFI Sight and Sound",
+        "url": "https://www.bfi.org.uk/sight-and-sound/features/black-film-bulletin-merawi-gerima-haile-gerima"
+      },
+      {
+        "id": "s6",
+        "title": "Haile Gerima: decolonising film",
+        "publisher": "BFI Sight and Sound / Black Film Bulletin",
+        "url": "https://www.bfi.org.uk/sight-and-sound/features/black-film-bulletin-haile-gerima-decolonising-film"
+      },
+      {
+        "id": "s7",
+        "title": "Haile Gerima, Menace II the Status Quo",
+        "publisher": "The Washington Post",
+        "url": "https://www.washingtonpost.com/archive/lifestyle/style/1993/10/24/haile-gerima-menace-ii-the-status-quo/91b30153-a795-49a9-a452-29fa286313ea/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "sankofa-distribution",
+        "area": "research",
+        "prompt": {
+          "en": "How can independent exhibition support wider film distribution?",
+          "nb": "Hvordan kan uavhengig kinovisning støtte bredere filmdistribusjon?",
+          "fr": "Comment une diffusion indépendante peut-elle élargir la circulation du film ?",
+          "pt": "Como pode exibição independente ampliar a distribuição do filme?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan community screenings and reinvest documented receipts",
+              "nb": "Planlegg lokale visninger og reinvester dokumenterte inntekter",
+              "fr": "Prévoir des projections locales et réinvestir les recettes attestées",
+              "pt": "Planear sessões comunitárias e reinvestir receitas documentadas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume national distribution is secured before production",
+              "nb": "Anta at nasjonal distribusjon er sikret før produksjonen",
+              "fr": "Supposer la distribution nationale acquise avant production",
+              "pt": "Supor distribuição nacional garantida antes da produção"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore audience partnerships and exhibition expenses",
+              "nb": "Ignorer publikumssamarbeid og visningsutgifter",
+              "fr": "Ignorer les partenariats publics et les frais de projection",
+              "pt": "Ignorar parcerias comunitárias e despesas de exibição"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Gerima describes self-distribution after conventional distributors declined. Prepare a fictional community circulation plan with realistic costs and distinct production and exhibition budgets.",
+          "nb": "Gerima beskriver selvdistribusjon etter avslag fra ordinære distributører. Lag en fiktiv lokal visningsplan med realistiske kostnader og separate produksjons- og visningsbudsjetter.",
+          "fr": "Gerima décrit l’autodistribution après les refus des distributeurs. Concevez un circuit fictif avec coûts réalistes et budgets distincts.",
+          "pt": "Gerima descreve autodistribuição após recusas de distribuidores. Crie um circuito fictício com custos realistas e orçamentos distintos."
+        },
+        "sourceIds": [
+          "s3",
+          "s6"
+        ]
+      },
+      {
+        "id": "sankofa-location",
+        "area": "camera",
+        "prompt": {
+          "en": "How should a historical setting survive a change of filming location?",
+          "nb": "Hvordan kan et historisk filmmiljø bevares ved bytte av opptakssted?",
+          "fr": "Comment conserver un décor historique en changeant de lieu de tournage ?",
+          "pt": "Como preservar um cenário histórico ao mudar o local de filmagem?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Discard earlier research when production changes countries",
+              "nb": "Forkast tidligere research når produksjonen bytter land",
+              "fr": "Abandonner les recherches lorsque le tournage change de pays",
+              "pt": "Abandonar pesquisa anterior quando a produção muda de país"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Update design references and continuity records for the new location",
+              "nb": "Oppdater scenografireferanser og kontinuitetsnotater for det nye stedet",
+              "fr": "Actualiser références de décor et raccords pour le nouveau lieu",
+              "pt": "Atualizar referências de cenário e continuidade para o novo local"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume the represented place is the actual filming location",
+              "nb": "Anta at det representerte stedet er det faktiske opptaksstedet",
+              "fr": "Supposer que le lieu représenté est le lieu réel du tournage",
+              "pt": "Supor que o lugar representado é o local real de filmagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Gerima recalls moving planned plantation footage from Louisiana to Jamaica for cost reasons. Distinguish fictional geography and actual production locations in an original plan.",
+          "nb": "Gerima beskriver flyttingen av planlagte plantasjeopptak fra Louisiana til Jamaica av kostnadshensyn. Skill fortellingens geografi fra faktiske opptakssteder i en egen plan.",
+          "fr": "Gerima évoque le transfert du tournage de Louisiane en Jamaïque pour des raisons de coût. Distinguez lieux narratifs et lieux réels dans un projet original.",
+          "pt": "Gerima recorda transferência da Luisiana para a Jamaica por custos. Distinga geografia narrativa de locais reais num plano original."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "sankofa-history",
+        "area": "research",
+        "prompt": {
+          "en": "How can historical research inform a fictional account of resistance?",
+          "nb": "Hvordan kan historisk research informere en fiktiv fortelling om motstand?",
+          "fr": "Comment la recherche historique nourrit-elle un récit fictif de résistance ?",
+          "pt": "Como pode pesquisa histórica informar uma narrativa fictícia de resistência?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat every dramatized image as direct archival testimony",
+              "nb": "Behandle alle dramatiserte bilder som direkte arkivvitnesbyrd",
+              "fr": "Traiter toute image dramatisée comme archive directe",
+              "pt": "Tratar toda imagem dramatizada como testemunho de arquivo"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Reduce historical communities to a single interchangeable portrayal",
+              "nb": "Reduser historiske samfunn til én utskiftbar fremstilling",
+              "fr": "Réduire les communautés historiques à un portrait interchangeable",
+              "pt": "Reduzir comunidades históricas a uma representação intercambiável"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Distinguish historical evidence from invented characters and events",
+              "nb": "Skill historiske belegg fra oppdiktede figurer og hendelser",
+              "fr": "Distinguer preuves historiques et personnages ou événements inventés",
+              "pt": "Distinguir provas históricas de personagens e eventos inventados"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Gerima describes his long research into slavery and resistance. Build a source log for a fictional scene that respects historical specificity and distinguishes interpretation from evidence.",
+          "nb": "Gerima beskriver sin langvarige research om slaveri og motstand. Lag en kildelogg for en fiktiv scene som respekterer historisk særpreg og skiller tolkning fra belegg.",
+          "fr": "Gerima décrit ses longues recherches sur l’esclavage et la résistance. Créez un registre de sources respectant le contexte et distinguant interprétation et preuve.",
+          "pt": "Gerima descreve longa pesquisa sobre escravatura e resistência. Crie registo de fontes respeitando contexto e distinguindo interpretação de prova."
+        },
+        "sourceIds": [
+          "s0",
+          "s7"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_pulp_fiction_1994",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Nonlinear narrative, independent financing and contrasting set colors",
+      "nb": "Ikke-lineær fortelling, uavhengig finansiering og kontrasterende kulissefarger",
+      "fr": "Récit non linéaire, financement indépendant et contrastes des décors",
+      "pt": "Narrativa não linear, financiamento independente e contraste de cenários"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "PULP FICTION",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/pulp-fiction/"
+      },
+      {
+        "id": "s1",
+        "title": "Pulp Fiction",
+        "publisher": "Danish Film Institute",
+        "url": "https://www.dfi.dk/en/viden-om-film/filmdatabasen/film/pulp-fiction"
+      },
+      {
+        "id": "s2",
+        "title": "Pulp Fiction (30th Anniversary) - BFI Southbank Programme Notes",
+        "publisher": "British Film Institute",
+        "url": "https://bfidatadigipres.github.io/re-releases/2024/08/23/pulp-fiction/"
+      },
+      {
+        "id": "s3",
+        "title": "PULP FICTION in 35mm",
+        "publisher": "AFI Silver Theatre and Cultural Center",
+        "url": "https://silver.afi.com/movies/detail/0100000033/"
+      },
+      {
+        "id": "s4",
+        "title": "Pulp Fiction",
+        "publisher": "American Film Institute",
+        "url": "https://watch.afi.com/movie/pulp-fiction"
+      },
+      {
+        "id": "s5",
+        "title": "The 67th Academy Awards | 1995",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/oscars/ceremonies/1995"
+      },
+      {
+        "id": "s6",
+        "title": "CANNES/ETATS UNIS Les folles entreprises de Lawrence Bender",
+        "publisher": "Le Monde",
+        "url": "https://www.lemonde.fr/archives/article/1994/05/12/cannes-etats-unis-les-folles-entreprises-de-lawrence-bender_3823306_1819218.html"
+      },
+      {
+        "id": "s7",
+        "title": "Pulp Fiction Turns 30: How Quentin Tarantino's Masterpiece Saved Careers, Conquered Film Festivals and Changed Cinema Forever",
+        "publisher": "Variety",
+        "url": "https://au.variety.com/2024/film/features/pulp-fiction-quentin-tarantino-30th-anniversary-retrospective-part-one-18171/"
+      },
+      {
+        "id": "s8",
+        "title": "Vermont Voices: Q&A with David Wasco and Sandy Reynolds-Wasco",
+        "publisher": "Vermont Magazine",
+        "url": "https://www.vtmag.com/post/vermont-voices-q-a-with-david-wasco-and-sandy-reynolds-wasco"
+      }
+    ],
+    "questions": [
+      {
+        "id": "pulpfiction-structure",
+        "area": "research",
+        "prompt": {
+          "en": "How can a nonlinear screenplay retain a coherent narrative?",
+          "nb": "Hvordan kan et ikke-lineært manus bevare en sammenhengende fortelling?",
+          "fr": "Comment un scénario non linéaire conserve-t-il sa cohérence ?",
+          "pt": "Como pode um argumento não linear manter uma narrativa coerente?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Attribute the original story and screenplay to identical roles",
+              "nb": "Tilskriv forelegg og manus identiske opphavsroller",
+              "fr": "Attribuer histoire originale et scénario aux mêmes rôles",
+              "pt": "Atribuir história original e argumento a funções idênticas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map chronological events separately from presentation order",
+              "nb": "Kartlegg kronologiske hendelser separat fra visningsrekkefølgen",
+              "fr": "Cartographier la chronologie séparément de l’ordre de présentation",
+              "pt": "Mapear cronologia separadamente da ordem de apresentação"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Shuffle every scene without considering dramatic dependencies",
+              "nb": "Bland alle scener uten å vurdere dramatiske avhengigheter",
+              "fr": "Mélanger les scènes sans considérer leurs dépendances dramatiques",
+              "pt": "Misturar cenas sem considerar dependências dramáticas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The Academy distinguishes Tarantino's screenplay from the shared story credit with Avary; Cannes credits Menke's editing. Map an original narrative with separate writing and editorial contributions.",
+          "nb": "Academy skiller Tarantinos manus fra det delte historieopphavet med Avary; Cannes krediterer Menkes klipping. Kartlegg en egen fortelling med separate manus- og klippebidrag.",
+          "fr": "L’Académie distingue le scénario de Tarantino et l’histoire partagée avec Avary ; Cannes crédite Menke. Cartographiez un récit original aux contributions distinctes.",
+          "pt": "A Academia distingue argumento de Tarantino e história partilhada com Avary; Cannes credita Menke. Mapeie narrativa original com contributos distintos."
+        },
+        "sourceIds": [
+          "s0",
+          "s5"
+        ]
+      },
+      {
+        "id": "pulpfiction-finance",
+        "area": "research",
+        "prompt": {
+          "en": "How should an independent production handle a contingency budget?",
+          "nb": "Hvordan bør en uavhengig produksjon håndtere et reservebudsjett?",
+          "fr": "Comment gérer une réserve budgétaire en production indépendante ?",
+          "pt": "Como gerir uma reserva orçamental numa produção independente?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat every reported budget figure as the same accounting measure",
+              "nb": "Behandle alle rapporterte budsjettall som samme regnskapsmål",
+              "fr": "Traiter tous les budgets cités comme la même mesure comptable",
+              "pt": "Tratar todos os valores citados como a mesma medida contabilística"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume festival success secures the initial completion bond",
+              "nb": "Anta at festivalsuksess sikrer den opprinnelige ferdigstillelsesgarantien",
+              "fr": "Supposer que le succès en festival garantit la caution initiale",
+              "pt": "Supor que sucesso em festival garante garantia inicial"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Separate base costs, contingency and documented final spending",
+              "nb": "Skill grunnkostnader, reserve og dokumenterte sluttkostnader",
+              "fr": "Distinguer coûts de base, réserve et dépenses finales attestées",
+              "pt": "Distinguir custos de base, reserva e despesas finais documentadas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Bender's contemporary and retrospective accounts distinguish financing challenges and budget estimates. Build a fictional budget with explicit contingency rather than asserting one audited historical figure.",
+          "nb": "Benders samtidige og retrospektive beretninger skiller finansieringsutfordringer og budsjettanslag. Lag et fiktivt budsjett med eksplisitt reserve fremfor å hevde ett revidert historisk tall.",
+          "fr": "Les récits de Bender distinguent difficultés financières et estimations. Créez un budget fictif avec réserve explicite sans prétendre à un chiffre historique audité.",
+          "pt": "Os relatos de Bender distinguem dificuldades financeiras e estimativas. Crie orçamento fictício com reserva explícita sem alegar valor histórico auditado."
+        },
+        "sourceIds": [
+          "s6",
+          "s7"
+        ]
+      },
+      {
+        "id": "pulpfiction-color",
+        "area": "camera",
+        "prompt": {
+          "en": "How can contrasting sets distinguish intersecting storylines?",
+          "nb": "Hvordan kan kontrasterende kulisser skille kryssende fortellinger?",
+          "fr": "Comment des décors contrastés distinguent-ils des récits croisés ?",
+          "pt": "Como podem cenários contrastantes distinguir narrativas cruzadas?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Coordinate distinct palettes with shared visual references",
+              "nb": "Samordne ulike paletter med felles bildereferanser",
+              "fr": "Coordonner palettes distinctes et références visuelles communes",
+              "pt": "Coordenar paletas distintas com referências visuais comuns"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Apply the same wallpaper and colors to every environment",
+              "nb": "Bruk samme tapet og farger i alle miljøer",
+              "fr": "Appliquer les mêmes papiers peints et couleurs partout",
+              "pt": "Aplicar o mesmo papel de parede e cores em todos os ambientes"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Infer every lighting setting from the designer's interview",
+              "nb": "Utled alle lysinnstillinger fra scenografens intervju",
+              "fr": "Déduire tous les réglages lumineux de l’entretien du décorateur",
+              "pt": "Deduzir toda iluminação da entrevista do cenógrafo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Reynolds-Wasco recalls deliberate contrasting set colors. Develop an original palette study with design and camera collaboration rather than inventing historical lighting settings.",
+          "nb": "Reynolds-Wasco beskriver bevisste kontraster mellom kulissefarger. Utvikle en egen palettstudie med samarbeid mellom scenografi og foto, uten oppdiktede lysinnstillinger.",
+          "fr": "Reynolds-Wasco évoque des couleurs de décor contrastées. Créez une étude originale coordonnant décor et image sans inventer les réglages historiques.",
+          "pt": "Reynolds-Wasco recorda cores contrastantes de cenários. Crie estudo original coordenando cenário e fotografia sem inventar configurações históricas."
+        },
+        "sourceIds": [
+          "s2",
+          "s8"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_chungking_express_1994",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Adaptive shooting, shared cinematography and restored sound",
+      "nb": "Adaptiv filming, delt fotoarbeid og restaurert lyd",
+      "fr": "Tournage adaptatif, photographie partagée et son restauré",
+      "pt": "Filmagem adaptativa, fotografia partilhada e som restaurado"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Hong Kong Filmmakers Search: WONG Kar-wai",
+        "publisher": "Hong Kong Film Archive",
+        "url": "https://www.filmarchive.gov.hk/documents/6.-Research-and-Publication/06-02-Filmmakers-Search/English/WONG-Kar-wai_e.pdf"
+      },
+      {
+        "id": "s1",
+        "title": "Christopher Doyle on shooting Chungking Express for Wong Kar-wai",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/interviews/christopher-doyle-shooting-chungking-express"
+      },
+      {
+        "id": "s2",
+        "title": "Poet of time: Wong Kar-Wai on Chungking Express",
+        "publisher": "BFI Sight and Sound",
+        "url": "https://www.bfi.org.uk/sight-and-sound/features/poet-time-wong-kar-wai-chungking-express"
+      },
+      {
+        "id": "s3",
+        "title": "Chungking Express",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/226"
+      },
+      {
+        "id": "s4",
+        "title": "Watch Chungking Express online",
+        "publisher": "BFI Player",
+        "url": "https://player.bfi.org.uk/rentals/film/watch-chungking-express-1994-online"
+      },
+      {
+        "id": "s5",
+        "title": "CHUNGKING EXPRESS (1994)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/e764a546-65ee-57e3-b249-7e6dd54ee441/chungking-express"
+      },
+      {
+        "id": "s6",
+        "title": "World of Wong Kar Wai: Director's Note",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/current/posts/7325-world-of-wong-kar-wai-director-s-note"
+      }
+    ],
+    "questions": [
+      {
+        "id": "chungkingexpress-revision",
+        "area": "research",
+        "prompt": {
+          "en": "How can an evolving screenplay be managed during a short shoot?",
+          "nb": "Hvordan kan et manus i utvikling håndteres under korte opptak?",
+          "fr": "Comment gérer un scénario évolutif pendant un tournage court ?",
+          "pt": "Como gerir argumento em evolução durante filmagem curta?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume an unfinished screenplay needs no continuity planning",
+              "nb": "Anta at et uferdig manus ikke trenger kontinuitetsplanlegging",
+              "fr": "Supposer qu’un scénario inachevé dispense de continuité",
+              "pt": "Supor que argumento inacabado dispensa continuidade"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat material developed for another film as automatically included",
+              "nb": "Behandle materiale utviklet til en annen film som automatisk inkludert",
+              "fr": "Inclure automatiquement le matériau destiné à un autre film",
+              "pt": "Incluir automaticamente material destinado a outro filme"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Maintain dated revisions and communicate changes to each department",
+              "nb": "Før daterte revisjoner og kommuniser endringer til hver avdeling",
+              "fr": "Tenir des versions datées et communiquer les changements aux équipes",
+              "pt": "Manter revisões datadas e comunicar mudanças aos departamentos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Doyle and Wong describe a rapid shoot with rewriting and material later moved into Fallen Angels. Plan a fictional revision workflow that keeps the two projects distinct.",
+          "nb": "Doyle og Wong beskriver raske opptak med omskriving og materiale som senere ble flyttet til Fallen Angels. Lag en fiktiv revisjonsflyt som holder prosjektene adskilt.",
+          "fr": "Doyle et Wong décrivent un tournage rapide, des révisions et du matériau transféré à Fallen Angels. Concevez un processus fictif distinguant les projets.",
+          "pt": "Doyle e Wong descrevem filmagem rápida, revisões e material transferido para Fallen Angels. Crie fluxo fictício distinguindo projetos."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "chungkingexpress-handoff",
+        "area": "camera",
+        "prompt": {
+          "en": "How can two cinematographers maintain unity across different story segments?",
+          "nb": "Hvordan kan to filmfotografer bevare enhet på tvers av ulike fortellingsdeler?",
+          "fr": "Comment deux chefs opérateurs maintiennent-ils l’unité entre récits distincts ?",
+          "pt": "Como podem dois diretores de fotografia manter unidade entre segmentos distintos?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Share reference images while documenting each segment's choices",
+              "nb": "Del referansebilder og dokumenter valgene i hver fortellingsdel",
+              "fr": "Partager des références et documenter les choix de chaque segment",
+              "pt": "Partilhar referências e documentar escolhas de cada segmento"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Remove distinct cinematographer credits from the production record",
+              "nb": "Fjern separate fotokrediteringer fra produksjonsdokumentasjonen",
+              "fr": "Supprimer les crédits distincts des chefs opérateurs",
+              "pt": "Remover créditos distintos dos diretores de fotografia"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume visual unity requires identical framing in every shot",
+              "nb": "Anta at visuell enhet krever identiske utsnitt i alle bilder",
+              "fr": "Supposer que l’unité impose un cadrage identique partout",
+              "pt": "Supor que unidade exige enquadramento idêntico em todos os planos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Wong documents Andrew Lau and Doyle's handoff and selective reshoots for unity. Design an original handoff plan preserving distinct creative contributions.",
+          "nb": "Wong dokumenterer overleveringen mellom Andrew Lau og Doyle og enkelte nye opptak for visuell enhet. Lag en egen overleveringsplan som bevarer separate kreative bidrag.",
+          "fr": "Wong documente le relais entre Andrew Lau et Doyle et les reprises pour l’unité. Concevez un relais original conservant leurs apports distincts.",
+          "pt": "Wong documenta transição entre Andrew Lau e Doyle e novas tomadas para unidade. Crie plano original preservando contributos distintos."
+        },
+        "sourceIds": [
+          "s1",
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "chungkingexpress-sound",
+        "area": "sound",
+        "prompt": {
+          "en": "How should original and restored sound mixes be compared?",
+          "nb": "Hvordan bør originale og restaurerte lydmikser sammenlignes?",
+          "fr": "Comment comparer les mixages sonores originaux et restaurés ?",
+          "pt": "Como comparar misturas de som originais e restauradas?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Compare mixes without recording which edition was played",
+              "nb": "Sammenlign mikser uten å registrere hvilken utgave som ble avspilt",
+              "fr": "Comparer les mixages sans noter l’édition écoutée",
+              "pt": "Comparar misturas sem registar edição reproduzida"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Identify the edition and document its channel configuration",
+              "nb": "Identifiser utgaven og dokumenter kanaloppsettet",
+              "fr": "Identifier l’édition et documenter sa configuration de canaux",
+              "pt": "Identificar edição e documentar configuração de canais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume the later surround mix was the original release format",
+              "nb": "Anta at den senere surroundmiksen var originalt utgivelsesformat",
+              "fr": "Supposer que le mixage surround ultérieur était le format original",
+              "pt": "Supor que mistura surround posterior era o formato original"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Wong's restoration note explicitly distinguishes the pre-5.1 original from later retooling. Record sound provenance before evaluating spatial changes in identified editions.",
+          "nb": "Wongs restaureringsnotat skiller uttrykkelig originalen før 5.1 fra senere omarbeiding. Registrer lydproveniens før romlige forskjeller i identifiserte utgaver vurderes.",
+          "fr": "La note de Wong distingue l’original antérieur au 5.1 du remaniement. Notez la provenance sonore avant d’évaluer les différences spatiales.",
+          "pt": "A nota de Wong distingue original anterior a 5.1 da revisão posterior. Registe proveniência sonora antes de avaliar diferenças espaciais."
+        },
+        "sourceIds": [
+          "s3",
+          "s6"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_three_colours_red_1994",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Trilogy coordination, interior staging and transnational production",
+      "nb": "Trilogisamordning, interiøriscenesettelse og transnasjonal produksjon",
+      "fr": "Coordination de trilogie, mise en scène intérieure et production transnationale",
+      "pt": "Coordenação de trilogia, encenação interior e produção transnacional"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "TROIS COULEURS ROUGE",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/trois-couleurs-rouge/"
+      },
+      {
+        "id": "s1",
+        "title": "Trois couleurs rouge (1994)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/ab9fc02d-7f6b-586c-90c6-8b2458fabef1/trois-couleurs-rouge"
+      },
+      {
+        "id": "s2",
+        "title": "Three Colors: Red",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/27733-three-colors-red"
+      },
+      {
+        "id": "s3",
+        "title": "Three Colours - Red - BFI Southbank Programme Notes",
+        "publisher": "British Film Institute",
+        "url": "https://bfidatadigipres.github.io/the%20three%20colours%20trilogy/2023/05/26/three-colours-red/"
+      },
+      {
+        "id": "s4",
+        "title": "‘What makes you angry?’ How we made Three Colours: Red",
+        "publisher": "The Guardian",
+        "url": "https://www.theguardian.com/culture/2023/may/01/how-we-made-three-colours-red-krzysztof-kieslowski-french-revolution"
+      },
+      {
+        "id": "s5",
+        "title": "Trois couleurs : Rouge",
+        "publisher": "La Cinémathèque française",
+        "url": "https://www.cinematheque.fr/film/52785.html"
+      },
+      {
+        "id": "s6",
+        "title": "Three Colours: Red",
+        "publisher": "Cineuropa",
+        "url": "https://cineuropa.org/en/film/401451/"
+      },
+      {
+        "id": "s7",
+        "title": "The conclusion we came to about equality is that nobody really wants it: Krzysztof Kieślowski on the Three Colours trilogy",
+        "publisher": "BFI Sight and Sound",
+        "url": "https://www.bfi.org.uk/sight-and-sound/features/kieslowski-three-colours-interview"
+      }
+    ],
+    "questions": [
+      {
+        "id": "threecoloursred-trilogy",
+        "area": "research",
+        "prompt": {
+          "en": "How can related films share resources while preserving distinct narratives?",
+          "nb": "Hvordan kan beslektede filmer dele ressurser og bevare ulike fortellinger?",
+          "fr": "Comment des films liés partagent-ils leurs ressources tout en gardant des récits distincts ?",
+          "pt": "Como podem filmes ligados partilhar recursos mantendo narrativas distintas?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map shared production dependencies and film-specific creative plans",
+              "nb": "Kartlegg felles produksjonsavhengigheter og filmspesifikke kreative planer",
+              "fr": "Cartographier dépendances communes et projets créatifs propres",
+              "pt": "Mapear dependências comuns e planos criativos específicos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume every film in a trilogy has identical requirements",
+              "nb": "Anta at alle filmer i en trilogi har identiske krav",
+              "fr": "Supposer que chaque film de la trilogie a les mêmes besoins",
+              "pt": "Supor que cada filme da trilogia tem requisitos idênticos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Merge all individual film credits into one undocumented list",
+              "nb": "Slå alle individuelle filmkrediteringer sammen til én udokumentert liste",
+              "fr": "Fusionner tous les crédits en une liste non documentée",
+              "pt": "Fundir todos os créditos numa lista não documentada"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Participant testimony describes trilogy production pressure, while BFI records the co-production partners. Plan an original linked series with distinct film-level schedules and credits.",
+          "nb": "Medvirkendes beretninger beskriver trilogiens produksjonspress, mens BFI registrerer samproduksjonspartnerne. Lag en egen serie med separate filmplaner og krediteringer.",
+          "fr": "Les témoignages décrivent la pression de la trilogie et le BFI recense les partenaires. Concevez une série avec calendriers et crédits propres à chaque film.",
+          "pt": "Testemunhos descrevem pressão da trilogia e o BFI regista parceiros. Crie série com calendários e créditos próprios de cada filme."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "threecoloursred-interior",
+        "area": "camera",
+        "prompt": {
+          "en": "How can repeated interior scenes reveal changing relationships?",
+          "nb": "Hvordan kan gjentatte interiørscener vise endringer i relasjoner?",
+          "fr": "Comment des scènes intérieures récurrentes révèlent-elles des rapports changeants ?",
+          "pt": "Como podem cenas interiores recorrentes revelar relações em mudança?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Infer exact historical lighting ratios from oral testimony alone",
+              "nb": "Utled eksakte historiske lysforhold fra muntlig beretning alene",
+              "fr": "Déduire les rapports lumineux exacts du seul témoignage",
+              "pt": "Deduzir relações luminosas exatas apenas do testemunho"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse actor placement and vary motivated framing and contrast",
+              "nb": "Øv på skuespillerplassering og varier motivert utsnitt og kontrast",
+              "fr": "Répéter les placements et varier cadrage et contraste motivés",
+              "pt": "Ensaiar posições e variar enquadramento e contraste motivados"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Keep every position unchanged regardless of the dramatic shift",
+              "nb": "Behold alle posisjoner uendret uansett dramatisk utvikling",
+              "fr": "Garder toutes les positions malgré les changements dramatiques",
+              "pt": "Manter posições inalteradas apesar de mudanças dramáticas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Jacob and Piesiewicz describe work in the judge's house, blocking and chiaroscuro. Create a distinct fictional interior study without claiming an exact historical lighting reconstruction.",
+          "nb": "Jacob og Piesiewicz beskriver arbeidet i dommerens hus, plassering og chiaroscuro. Lag en egen fiktiv interiørstudie uten å hevde eksakt historisk lysrekonstruksjon.",
+          "fr": "Jacob et Piesiewicz décrivent la maison du juge, les placements et le clair-obscur. Créez une étude originale sans prétendre restituer l’éclairage exact.",
+          "pt": "Jacob e Piesiewicz descrevem casa do juiz, posições e chiaroscuro. Crie estudo original sem alegar reconstrução exata da iluminação."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
+        ]
+      },
+      {
+        "id": "threecoloursred-credits",
+        "area": "research",
+        "prompt": {
+          "en": "How should differing screenplay credits be reconciled in a film dossier?",
+          "nb": "Hvordan bør ulike manusoppføringer avstemmes i en filmmappe?",
+          "fr": "Comment rapprocher des crédits d’écriture divergents dans un dossier ?",
+          "pt": "Como conciliar créditos de escrita divergentes num dossier?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat every listed consultant as a credited screenplay author",
+              "nb": "Behandle alle oppførte konsulenter som krediterte manusforfattere",
+              "fr": "Traiter chaque consultant comme scénariste crédité",
+              "pt": "Tratar cada consultor como argumentista creditado"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Discard conflicting institutional records without documenting them",
+              "nb": "Forkast motstridende institusjonelle oppføringer uten dokumentasjon",
+              "fr": "Écarter les notices divergentes sans les documenter",
+              "pt": "Descartar registos divergentes sem documentá-los"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Distinguish screenplay authors from credited consultants and cite each record",
+              "nb": "Skill manusforfattere fra krediterte konsulenter og oppgi hver kilde",
+              "fr": "Distinguer scénaristes et consultants crédités et citer chaque notice",
+              "pt": "Distinguir argumentistas de consultores creditados e citar cada registo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Cannes identifies Kieślowski and Piesiewicz as screenwriters; Criterion distinguishes consultancy credits. Preserve institutional variation without assigning undocumented authorship.",
+          "nb": "Cannes identifiserer Kieślowski og Piesiewicz som manusforfattere; Criterion skiller ut konsulentkreditering. Bevar institusjonelle avvik uten å tilskrive udokumentert opphav.",
+          "fr": "Cannes identifie Kieślowski et Piesiewicz comme scénaristes ; Criterion distingue les consultants. Conservez les variations sans attribuer une écriture non attestée.",
+          "pt": "Cannes identifica Kieślowski e Piesiewicz como argumentistas; Criterion distingue consultores. Preserve variações sem atribuir autoria não documentada."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_bandit_queen_1994",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Biographical adaptation, performer consent and certification history",
+      "nb": "Biografisk adaptasjon, skuespillersamtykke og sensurhistorie",
+      "fr": "Adaptation biographique, consentement des interprètes et certification",
+      "pt": "Adaptação biográfica, consentimento dos intérpretes e certificação"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Bandit Queen (1994)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/7f0293b4-b962-58de-a051-d7ae2e2493b5/bandit-queen"
+      },
+      {
+        "id": "s1",
+        "title": "India Now! Retrospective: Bandit Queen",
+        "publisher": "India Now! / Noah Cowan programme archive",
+        "url": "https://www.noahcowanfilm.com/south-asian-cinema/india-now-retrospective"
+      },
+      {
+        "id": "s2",
+        "title": "Bandit queen",
+        "publisher": "Danish Film Institute",
+        "url": "https://www.dfi.dk/en/viden-om-film/filmdatabasen/film/bandit-queen"
+      },
+      {
+        "id": "s3",
+        "title": "A film of less doubt and more courage: Bandit Queen",
+        "publisher": "Shekhar Kapur",
+        "url": "https://shekharkapur.com/blog/2009/11/a-film-of-less-doubt-and-more-courage-bandit-queen/"
+      },
+      {
+        "id": "s4",
+        "title": "The History and Practice of Cinematography in India: Ashok Mehta interview",
+        "publisher": "Raqs Media Collective archive",
+        "url": "https://works.raqsmediacollective.net/wp-content/uploads/2022/11/ashok_mehta.pdf"
+      },
+      {
+        "id": "s5",
+        "title": "Seema Biswas: After watching Bandit Queen...",
+        "publisher": "The Times of India",
+        "url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/seema-biswas-after-watching-bandit-queen-my-father-told-my-mother-meera-only-our-daughter-seema-could-have-done-this-exclusive/articleshow/112636670.cms"
+      },
+      {
+        "id": "s6",
+        "title": "Phoolan Devi vs Shekhar Kapoor And Ors., 1 December 1994",
+        "publisher": "Delhi High Court via Indian Kanoon",
+        "url": "https://indiankanoon.org/doc/793946/"
+      },
+      {
+        "id": "s7",
+        "title": "Om Pal Singh Hoon vs Union Of India, 7 March 1996",
+        "publisher": "Delhi High Court via Indian Kanoon",
+        "url": "https://indiankanoon.org/doc/1931568/"
+      },
+      {
+        "id": "s8",
+        "title": "'The Bandit Queen' Still an Outcast in India",
+        "publisher": "Los Angeles Times",
+        "url": "https://www.latimes.com/archives/la-xpm-1994-10-20-ca-52584-story.html"
+      }
+    ],
+    "questions": [
+      {
+        "id": "banditqueen-adaptation",
+        "area": "research",
+        "prompt": {
+          "en": "How should a disputed biographical adaptation be researched?",
+          "nb": "Hvordan bør en omstridt biografisk adaptasjon undersøkes?",
+          "fr": "Comment étudier une adaptation biographique contestée ?",
+          "pt": "Como investigar uma adaptação biográfica contestada?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat fictionalized dialogue as undisputed biographical evidence",
+              "nb": "Behandle dramatisert dialog som uomstridt biografisk dokumentasjon",
+              "fr": "Traiter le dialogue fictionnalisé comme preuve biographique incontestée",
+              "pt": "Tratar diálogo ficcionalizado como prova biográfica incontestada"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Distinguish agreements, disputed claims and independently verified evidence",
+              "nb": "Skill avtaler, omstridte påstander og uavhengig verifiserte belegg",
+              "fr": "Distinguer accords, allégations contestées et preuves indépendantes",
+              "pt": "Distinguir acordos, alegações contestadas e provas independentes"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat an adaptation agreement as proof of consent to every depiction",
+              "nb": "Behandle en adaptasjonsavtale som bevis på samtykke til alle fremstillinger",
+              "fr": "Traiter un accord comme consentement à toute représentation",
+              "pt": "Tratar acordo como consentimento a toda representação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The 1994 court record preserves Devi's privacy claims and disputes over the agreement and sources. Build a research ledger that distinguishes allegations, evidence and fictional choices.",
+          "nb": "Rettsdokumentet fra 1994 bevarer Devis personvernkrav og uenighet om avtalen og kildene. Lag en researchlogg som skiller påstander, belegg og fiktive valg.",
+          "fr": "Le dossier judiciaire de 1994 conserve les revendications de Devi et les litiges sur accord et sources. Créez un registre distinguant allégations, preuves et fiction.",
+          "pt": "O registo judicial de 1994 conserva reivindicações de Devi e disputas sobre acordo e fontes. Crie registo distinguindo alegações, provas e ficção."
+        },
+        "sourceIds": [
+          "s0",
+          "s6"
+        ]
+      },
+      {
+        "id": "banditqueen-consent",
+        "area": "research",
+        "prompt": {
+          "en": "How should sensitive performance requirements be agreed today?",
+          "nb": "Hvordan bør sensitive krav til skuespill avklares i dag?",
+          "fr": "Comment convenir aujourd’hui d’exigences de jeu sensibles ?",
+          "pt": "Como acordar hoje exigências sensíveis de interpretação?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume a signed contract overrides later consent concerns",
+              "nb": "Anta at en signert kontrakt overstyrer senere samtykkebekymringer",
+              "fr": "Supposer qu’un contrat annule les préoccupations ultérieures de consentement",
+              "pt": "Supor que contrato anula preocupações posteriores de consentimento"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use historical performer testimony as a complete modern protocol",
+              "nb": "Bruk historisk skuespillervitnesbyrd som fullstendig moderne protokoll",
+              "fr": "Utiliser un témoignage historique comme protocole moderne complet",
+              "pt": "Usar testemunho histórico como protocolo moderno completo"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Agree specific boundaries, ongoing consent and appropriate support",
+              "nb": "Avtal konkrete grenser, løpende samtykke og egnet støtte",
+              "fr": "Convenir de limites précises, consentement continu et soutien adapté",
+              "pt": "Acordar limites específicos, consentimento contínuo e apoio adequado"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Biswas recalls reservations and an agreed body double. Treat this as specific historical testimony and develop a modern consent-centered process, not a reenactment of sensitive scenes.",
+          "nb": "Biswas beskriver reservasjoner og en avtalt kroppsdobbel. Behandle dette som et bestemt historisk vitnesbyrd og lag en moderne samtykkebasert prosess, ikke gjenskaping av sensitive scener.",
+          "fr": "Biswas évoque ses réserves et une doublure convenue. Traitez cela comme un témoignage précis et concevez un processus moderne centré sur le consentement.",
+          "pt": "Biswas recorda reservas e uma dupla acordada. Trate como testemunho específico e crie processo moderno centrado no consentimento."
+        },
+        "sourceIds": [
+          "s5"
+        ]
+      },
+      {
+        "id": "banditqueen-certification",
+        "area": "research",
+        "prompt": {
+          "en": "How should legal and certification records be compared with released editions?",
+          "nb": "Hvordan bør retts- og sensurdokumenter sammenlignes med utgitte versjoner?",
+          "fr": "Comment comparer dossiers judiciaires et de certification aux versions sorties ?",
+          "pt": "Como comparar registos judiciais e de certificação com edições lançadas?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Identify each proposed modification and verify the relevant edition",
+              "nb": "Identifiser hver foreslåtte endring og verifiser relevant utgave",
+              "fr": "Identifier chaque modification proposée et vérifier l’édition concernée",
+              "pt": "Identificar cada alteração proposta e verificar edição relevante"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume every proposed cut was implemented in every release",
+              "nb": "Anta at alle foreslåtte klipp ble gjennomført i alle utgivelser",
+              "fr": "Supposer que toutes les coupes proposées figurent dans chaque sortie",
+              "pt": "Supor que todos os cortes propostos foram feitos em cada lançamento"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use the film's runtime alone to resolve the legal dispute",
+              "nb": "Bruk bare spilletiden til å løse den juridiske tvisten",
+              "fr": "Utiliser la seule durée pour résoudre le litige",
+              "pt": "Usar apenas duração para resolver o litígio"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The 1996 certification litigation documents proposed modifications; contemporary reporting covers the earlier dispute. Distinguish proposals, rulings and edition evidence rather than guessing from runtime.",
+          "nb": "Sensursaken fra 1996 dokumenterer foreslåtte endringer; samtidige reportasjer omtaler den tidligere tvisten. Skill forslag, avgjørelser og utgavebelegg fremfor å gjette ut fra spilletid.",
+          "fr": "Le contentieux de 1996 documente les modifications proposées ; la presse couvre le litige antérieur. Distinguez propositions, décisions et versions.",
+          "pt": "O litígio de 1996 documenta alterações propostas; notícias cobrem disputa anterior. Distinga propostas, decisões e provas de edições."
+        },
+        "sourceIds": [
+          "s6",
+          "s7",
+          "s8"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_white_balloon_1995",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Child-centered urban storytelling, real-time structure and collaborative credits",
+      "nb": "Barnesentrert byfortelling, sanntidsstruktur og kollektiv kreditering",
+      "fr": "Récit urbain centré sur l’enfant, temps réel et crédits collectifs",
+      "pt": "Narrativa urbana centrada na criança, tempo real e créditos coletivos"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "About Jafar Panahi",
+        "publisher": "Festival de Cannes",
+        "url": "https://cdn.festival-cannes.com/media/uploads/2025/05/189496.pdf"
+      },
+      {
+        "id": "s1",
+        "title": "The White Balloon",
+        "publisher": "International Film Festival Rotterdam",
+        "url": "https://iffr.com/en/iffr/1995/films/the-white-balloon"
+      },
+      {
+        "id": "s2",
+        "title": "Badkonake sefid",
+        "publisher": "Torino Film Festival",
+        "url": "https://www.torinofilmfest.org/en/13-festival-internazionale-cinema-giovani/film/badkonake-sefid/1632/"
+      },
+      {
+        "id": "s3",
+        "title": "WHITE BALLOON, THE",
+        "publisher": "Celluloid Dreams",
+        "url": "https://celluloid-dreams.com/films/white-balloon-the/"
+      },
+      {
+        "id": "s4",
+        "title": "90 great films of the 1990s: The White Balloon",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/90-great-films-1990s"
+      },
+      {
+        "id": "s5",
+        "title": "10 great Iranian family dramas",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/lists/10-great-iranian-family-dramas"
+      },
+      {
+        "id": "s6",
+        "title": "The White balloon",
+        "publisher": "Australian Centre for the Moving Image",
+        "url": "https://www.acmi.net.au/works/85485--the-white-balloon/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "thewhiteballoon-time",
+        "area": "research",
+        "prompt": {
+          "en": "How can a short urban quest feel as though it unfolds in real time?",
+          "nb": "Hvordan kan en kort letefortelling i byen oppleves som sanntid?",
+          "fr": "Comment une courte quête urbaine paraît-elle se dérouler en temps réel ?",
+          "pt": "Como pode uma breve busca urbana parecer decorrer em tempo real?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Insert unexplained time jumps without dramatic intention",
+              "nb": "Legg inn uforklarte tidshopp uten dramatisk hensikt",
+              "fr": "Insérer des ellipses inexpliquées sans intention dramatique",
+              "pt": "Inserir saltos temporais inexplicados sem intenção dramática"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume real-time narration requires one uninterrupted shot",
+              "nb": "Anta at sanntidsfortelling krever én uavbrutt tagning",
+              "fr": "Supposer que le temps réel exige un plan unique ininterrompu",
+              "pt": "Supor que tempo real exige plano único ininterrupto"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map elapsed time and recurring spatial encounters",
+              "nb": "Kartlegg medgått tid og tilbakevendende møter i byrommet",
+              "fr": "Cartographier le temps écoulé et les rencontres spatiales",
+              "pt": "Mapear tempo decorrido e encontros espaciais recorrentes"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI describes the child-centered Tehran quest unfolding in real time. Design an original timed narrative with coherent spatial and temporal progression.",
+          "nb": "BFI beskriver den barnesentrerte letefortellingen i Teheran som utspiller seg i sanntid. Lag en egen tidsstyrt fortelling med sammenhengende romlig og tidsmessig utvikling.",
+          "fr": "Le BFI décrit la quête enfantine à Téhéran en temps réel. Créez un récit original à progression spatiale et temporelle cohérente.",
+          "pt": "O BFI descreve busca infantil em Teerão em tempo real. Crie narrativa original com progressão espacial e temporal coerente."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "thewhiteballoon-performance",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a child perform a short fictional scene comfortably?",
+          "nb": "Hvordan kan et barn spille en kort fiktiv scene på en trygg måte?",
+          "fr": "Comment un enfant peut-il jouer une courte scène fictive sereinement ?",
+          "pt": "Como pode uma criança interpretar uma breve cena fictícia confortavelmente?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use age-appropriate rehearsals, clear assent and supportive breaks",
+              "nb": "Bruk alderstilpassede prøver, tydelig medvirkningssamtykke og støttende pauser",
+              "fr": "Utiliser répétitions adaptées, assentiment clair et pauses",
+              "pt": "Usar ensaios adequados, assentimento claro e pausas de apoio"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Withhold essential information to create genuine distress",
+              "nb": "Hold tilbake nødvendig informasjon for å skape ekte ubehag",
+              "fr": "Retenir des informations essentielles pour susciter une détresse réelle",
+              "pt": "Ocultar informação essencial para provocar sofrimento real"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume child performers require no safeguarding arrangements",
+              "nb": "Anta at barneskuespillere ikke trenger trygghetstiltak",
+              "fr": "Supposer que les enfants interprètes n’exigent aucune protection",
+              "pt": "Supor que intérpretes infantis dispensam medidas de proteção"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI describes the historical practice of providing script portions to children. Design an ethical present-day rehearsal with age-appropriate preparation and safeguarding, not an uncritical recreation.",
+          "nb": "BFI beskriver den historiske metoden med å gi barn deler av manuset. Lag en etisk moderne prøve med alderstilpasset forberedelse og trygghet, ikke ukritisk gjenskaping.",
+          "fr": "Le BFI décrit la remise de portions du scénario aux enfants. Concevez une répétition actuelle éthique avec préparation adaptée et protection.",
+          "pt": "O BFI descreve entrega de partes do argumento às crianças. Crie ensaio ético atual com preparação adequada e proteção."
+        },
+        "sourceIds": [
+          "s4"
+        ]
+      },
+      {
+        "id": "thewhiteballoon-credits",
+        "area": "research",
+        "prompt": {
+          "en": "How should different catalogue authorship and producer credits be recorded?",
+          "nb": "Hvordan bør ulike katalogoppføringer om opphav og produsenter registreres?",
+          "fr": "Comment noter les divergences de crédits d’auteur et de production ?",
+          "pt": "Como registar divergências de créditos de autoria e produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Discard the festival credit record in favor of a single current listing",
+              "nb": "Forkast festivalkrediteringen til fordel for én nåværende oppføring",
+              "fr": "Écarter les crédits du festival au profit d’une seule notice actuelle",
+              "pt": "Descartar créditos de festival em favor de uma única ficha atual"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Preserve each institutional record and distinguish rights from production roles",
+              "nb": "Bevar hver institusjonell oppføring og skill rettigheter fra produksjonsroller",
+              "fr": "Conserver chaque notice et distinguer droits et rôles de production",
+              "pt": "Preservar cada registo e distinguir direitos de funções de produção"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat every rights holder as an original producer automatically",
+              "nb": "Behandle alle rettighetshavere automatisk som opprinnelige produsenter",
+              "fr": "Traiter automatiquement chaque détenteur de droits comme producteur original",
+              "pt": "Tratar automaticamente cada titular de direitos como produtor original"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Festival and sales catalogues preserve different authorship and producer attributions. Maintain source-specific credits rather than guessing how the institutions' roles overlap.",
+          "nb": "Festival- og salgskataloger bevarer ulike oppføringer om opphav og produsenter. Behold kildespesifikke krediteringer fremfor å gjette hvordan institusjonenes roller overlapper.",
+          "fr": "Catalogues de festivals et de ventes conservent des attributions différentes. Gardez les crédits propres aux sources sans deviner les recoupements.",
+          "pt": "Catálogos de festivais e vendas preservam atribuições distintas. Mantenha créditos por fonte sem adivinhar sobreposições institucionais."
+        },
+        "sourceIds": [
+          "s1",
+          "s2",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_toy_story_1995",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Digital animation pipeline, story revision and color scripting",
+      "nb": "Digital animasjonsflyt, historierevisjon og fargemanus",
+      "fr": "Chaîne d’animation numérique, révision narrative et scénario chromatique",
+      "pt": "Fluxo de animação digital, revisão narrativa e guião de cor"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Our Story",
+        "publisher": "Pixar Animation Studios",
+        "url": "https://www.pixar.com/our-story"
+      },
+      {
+        "id": "s1",
+        "title": "Toy Story (1995)",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/55210-TOY-STORY"
+      },
+      {
+        "id": "s2",
+        "title": "Toy Story (1995)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/123fc4c0-eb47-574f-921d-1db6d9365425/toy-story"
+      },
+      {
+        "id": "s3",
+        "title": "Toy Story: 20 Years of Being an Animation Game-Changer",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/events/toy-story-20-years-being-animation-game-changer"
+      },
+      {
+        "id": "s4",
+        "title": "'Toy Story' Turns 30: A Look Back at the Groundbreaking Film",
+        "publisher": "The Walt Disney Company",
+        "url": "https://thewaltdisneycompany.com/news/toy-story-30th-anniversary/"
+      },
+      {
+        "id": "s5",
+        "title": "The Evolution of RenderMan",
+        "publisher": "Pixar RenderMan",
+        "url": "https://renderman.pixar.com/the-evolution-of-renderman"
+      },
+      {
+        "id": "s6",
+        "title": "Toy Story",
+        "publisher": "Skywalker Sound",
+        "url": "https://www.skysound.com/projects/toy-story/"
+      },
+      {
+        "id": "s7",
+        "title": "Toy Story",
+        "publisher": "Danish Film Institute",
+        "url": "https://www.dfi.dk/en/viden-om-film/filmdatabasen/film/toy-story"
+      },
+      {
+        "id": "s8",
+        "title": "Toy Story (1995)",
+        "publisher": "Library of Congress",
+        "url": "https://www.loc.gov/item/event-419004/toy-story-1995/2026-01-16/"
+      },
+      {
+        "id": "s9",
+        "title": "Toy Story",
+        "publisher": "Disney+",
+        "url": "https://www.disneyplus.com/browse/entity-f6174ebf-cb92-453c-a52b-62bb3576e402"
+      },
+      {
+        "id": "s10",
+        "title": "The 68th Academy Awards Memorable Moments",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/oscars/ceremonies/1996/memorable-moments"
+      }
+    ],
+    "questions": [
+      {
+        "id": "toystory-revision",
+        "area": "animation",
+        "prompt": {
+          "en": "How can an animation team revise a story before expensive final production?",
+          "nb": "Hvordan kan et animasjonsteam revidere historien før kostbar sluttproduksjon?",
+          "fr": "Comment une équipe d’animation révise-t-elle le récit avant la production finale coûteuse ?",
+          "pt": "Como pode uma equipa de animação rever história antes da produção final dispendiosa?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Review story reels and resolve structural problems before final animation",
+              "nb": "Gjennomgå story reels og løs strukturproblemer før ferdig animasjon",
+              "fr": "Examiner les animatiques et résoudre la structure avant animation finale",
+              "pt": "Rever animáticas e resolver estrutura antes da animação final"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Render every sequence before assessing story coherence",
+              "nb": "Render alle sekvenser før fortellingens sammenheng vurderes",
+              "fr": "Rendre toutes les séquences avant d’évaluer la cohérence narrative",
+              "pt": "Renderizar todas as sequências antes de avaliar coerência narrativa"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume a change in the story needs no production rescheduling",
+              "nb": "Anta at en historieendring ikke krever omplanlegging",
+              "fr": "Supposer qu’une révision narrative n’affecte pas le calendrier",
+              "pt": "Supor que revisão narrativa não afeta calendário"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The Academy and Disney describe the pre-animation story rethink and rapid revision. Plan an original animatic review with explicit criteria and revision milestones.",
+          "nb": "Academy og Disney beskriver omarbeidingen av historien før animasjon og den raske revisjonen. Lag en egen animatikkgjennomgang med tydelige kriterier og revisjonsmilepæler.",
+          "fr": "L’Académie et Disney décrivent la révision narrative avant animation. Concevez une revue d’animatique avec critères et étapes de révision.",
+          "pt": "A Academia e Disney descrevem revisão narrativa antes da animação. Crie revisão de animática com critérios e marcos de revisão."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "toystory-colorscript",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a color script guide an animated feature's emotional progression?",
+          "nb": "Hvordan kan et fargemanus styre en animert films følelsesmessige utvikling?",
+          "fr": "Comment un scénario chromatique guide-t-il la progression émotionnelle d’un film animé ?",
+          "pt": "Como pode um guião de cor orientar progressão emocional de um filme animado?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the historical film's exact character and palette designs",
+              "nb": "Kopier filmens eksakte figur- og palettdesign",
+              "fr": "Copier exactement les personnages et palettes du film",
+              "pt": "Copiar exatamente personagens e paletas do filme"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Develop palette transitions across sequences before detailed lighting",
+              "nb": "Utvikle palettoverganger mellom sekvenser før detaljert lyssetting",
+              "fr": "Développer les transitions chromatiques avant l’éclairage détaillé",
+              "pt": "Desenvolver transições de paleta antes da iluminação detalhada"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose unrelated colors independently for every individual frame",
+              "nb": "Velg urelaterte farger uavhengig for hvert enkelt bilde",
+              "fr": "Choisir des couleurs sans lien pour chaque image",
+              "pt": "Escolher cores sem ligação para cada imagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The Academy retrospective identifies Eggleston's design work and colorscripts. Create original palette thumbnails that connect narrative beats and production decisions.",
+          "nb": "Academys retrospektiv identifiserer Egglestons designarbeid og fargemanus. Lag egne palettskisser som forbinder fortellingspunkter og produksjonsvalg.",
+          "fr": "La rétrospective de l’Académie identifie Eggleston et les scénarios chromatiques. Créez des vignettes originales reliant récit et production.",
+          "pt": "A retrospetiva da Academia identifica Eggleston e guiões de cor. Crie miniaturas originais ligando narrativa e decisões de produção."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "toystory-render",
+        "area": "animation",
+        "prompt": {
+          "en": "How should a digital animation pipeline separate creative and technical tasks?",
+          "nb": "Hvordan bør en digital animasjonsflyt skille kreative og tekniske oppgaver?",
+          "fr": "Comment une chaîne d’animation numérique distingue-t-elle tâches créatives et techniques ?",
+          "pt": "Como deve um fluxo de animação digital distinguir tarefas criativas e técnicas?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume a renderer automatically performs all creative animation work",
+              "nb": "Anta at en renderer automatisk utfører alt kreativt animasjonsarbeid",
+              "fr": "Supposer que le moteur de rendu réalise toute l’animation créative",
+              "pt": "Supor que motor de renderização executa todo trabalho criativo de animação"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Infer the original computing infrastructure from modern software defaults",
+              "nb": "Utled original datainfrastruktur fra moderne programvarestandarder",
+              "fr": "Déduire l’infrastructure historique des réglages logiciels actuels",
+              "pt": "Deduzir infraestrutura histórica das definições de software atuais"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Define modeling, animation, lighting and rendering responsibilities",
+              "nb": "Definer ansvar for modellering, animasjon, lyssetting og rendering",
+              "fr": "Définir les responsabilités de modélisation, animation, éclairage et rendu",
+              "pt": "Definir responsabilidades de modelação, animação, iluminação e renderização"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Pixar identifies its historical RenderMan renderer and Marionette system; the Academy records development for feature animation. Plan a modern original workflow without claiming undocumented historical settings.",
+          "nb": "Pixar identifiserer historisk RenderMan og Marionette-systemet; Academy dokumenterer utvikling for langfilmanimasjon. Lag en moderne original arbeidsflyt uten udokumenterte historiske innstillinger.",
+          "fr": "Pixar identifie RenderMan et Marionette historiques ; l’Académie documente le développement du long métrage. Concevez un processus moderne sans inventer les réglages anciens.",
+          "pt": "Pixar identifica RenderMan e Marionette históricos; a Academia documenta desenvolvimento da longa. Crie fluxo moderno sem inventar configurações históricas."
+        },
+        "sourceIds": [
+          "s0",
+          "s3",
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_fire_1996",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Language decisions, expressive color and situated representation",
+      "nb": "Språkvalg, uttrykksfull farge og kontekstuell representasjon",
+      "fr": "Choix linguistiques, couleur expressive et représentation située",
+      "pt": "Escolhas linguísticas, cor expressiva e representação contextual"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Fire",
+        "publisher": "TIFF Canadian Film Encyclopedia",
+        "url": "https://cfe.tiff.net/canadianfilmencyclopedia/content/films/fire"
+      },
+      {
+        "id": "s1",
+        "title": "Fire (1996)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/49060fbb-208d-5185-b48c-606ffacfc009/fire"
+      },
+      {
+        "id": "s2",
+        "title": "Fire",
+        "publisher": "UCLA Film & Television Archive",
+        "url": "https://cinema.ucla.edu/events/fire-2016-03-19"
+      },
+      {
+        "id": "s3",
+        "title": "Fire",
+        "publisher": "Mongrel Media",
+        "url": "https://www.mongrelmedia.com/index.php/filmlink?id=1b517cc4-dad6-495d-b006-c4eeed152447"
+      },
+      {
+        "id": "s4",
+        "title": "CINEMA-INDIA: 'Fire' Brings Another Taboo Subject to Screen",
+        "publisher": "Inter Press Service",
+        "url": "https://www.ipsnews.net/1996/12/cinema-india-fire-brings-another-taboo-subject-to-screen/"
+      },
+      {
+        "id": "s5",
+        "title": "Fire director's statement",
+        "publisher": "Deepa Mehta / Mongrel Media press materials",
+        "url": "https://cdn.filmtrackonline.com.s3.amazonaws.com/mongrelmedia/starcm_vault_root/images%2Ffiles%2F32%2F32ad1565-58fc-46f7-99a3-b5c5b10d2a1f.pdf"
+      },
+      {
+        "id": "s6",
+        "title": "Maps and Movies: Talking with Deepa Mehta",
+        "publisher": "Bright Lights Film Journal",
+        "url": "https://brightlightsfilm.com/maps-and-movies-talking-with-deepa-mehta/"
+      },
+      {
+        "id": "s7",
+        "title": "Fire",
+        "publisher": "Canadian Women Film Directors Database (FemFilm)",
+        "url": "https://femfilm.ca/film_search.php?film=mehta-fire&lang=e"
+      }
+    ],
+    "questions": [
+      {
+        "id": "fire-language",
+        "area": "sound",
+        "prompt": {
+          "en": "How should a multilingual screenplay's language choice be planned?",
+          "nb": "Hvordan bør språkvalget i et flerspråklig manus planlegges?",
+          "fr": "Comment prévoir les choix linguistiques d’un scénario multilingue ?",
+          "pt": "Como planear escolhas linguísticas de um argumento multilingue?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Replace all language distinctions with generic dialogue",
+              "nb": "Erstatt alle språklige forskjeller med generisk dialog",
+              "fr": "Remplacer toutes les distinctions linguistiques par un dialogue générique",
+              "pt": "Substituir todas as distinções linguísticas por diálogo genérico"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Document character context, performance needs and subtitle decisions",
+              "nb": "Dokumenter figurenes kontekst, skuespillbehov og tekstingsvalg",
+              "fr": "Documenter contexte des personnages, besoins du jeu et sous-titrage",
+              "pt": "Documentar contexto das personagens, interpretação e legendagem"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume every language decision was fixed at the first draft",
+              "nb": "Anta at alle språkvalg var fastlagt i første utkast",
+              "fr": "Supposer que tous les choix linguistiques étaient fixés dès le premier jet",
+              "pt": "Supor que todas as escolhas linguísticas estavam fixas no primeiro rascunho"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Mehta's contemporary interview describes a late language decision, and the distributor identifies Hindi and English. Keep writing, performance and release-language evidence distinct.",
+          "nb": "Mehtas samtidige intervju beskriver et sent språkvalg, og distributøren identifiserer hindi og engelsk. Skill manus, skuespill og dokumentasjon av utgivelsesspråk.",
+          "fr": "L’entretien de Mehta décrit un choix linguistique tardif ; le distributeur indique hindi et anglais. Distinguez écriture, jeu et langues de sortie.",
+          "pt": "A entrevista de Mehta descreve decisão linguística tardia; distribuidor identifica hindi e inglês. Distinga escrita, interpretação e idiomas de lançamento."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "fire-color",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a recurring color connect domestic spaces with dramatic change?",
+          "nb": "Hvordan kan en tilbakevendende farge knytte hjemlige rom til dramatisk endring?",
+          "fr": "Comment une couleur récurrente relie-t-elle les espaces domestiques au changement dramatique ?",
+          "pt": "Como pode uma cor recorrente ligar espaços domésticos a mudanças dramáticas?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Apply the same saturated filter to every shot mechanically",
+              "nb": "Bruk samme mettede filter mekanisk i alle bilder",
+              "fr": "Appliquer mécaniquement le même filtre saturé à chaque plan",
+              "pt": "Aplicar mecanicamente o mesmo filtro saturado em todos os planos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume one color carries an identical meaning in every culture",
+              "nb": "Anta at én farge har identisk betydning i alle kulturer",
+              "fr": "Supposer qu’une couleur a le même sens dans toutes les cultures",
+              "pt": "Supor que uma cor tem significado idêntico em todas as culturas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Coordinate set colors, costume and motivated lighting across scenes",
+              "nb": "Samordne kulissefarger, kostymer og motivert lys mellom scener",
+              "fr": "Coordonner couleurs des décors, costumes et éclairage motivé",
+              "pt": "Coordenar cores de cenários, figurinos e iluminação motivada"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Mehta describes deliberate visualization of reds, design and lighting. Create an original color progression with distinct craft collaboration and avoid universal symbolic claims.",
+          "nb": "Mehta beskriver bevisst visualisering av rødfarger, scenografi og lys. Lag en egen fargeutvikling med tydelig fagsamarbeid og unngå universelle symbolpåstander.",
+          "fr": "Mehta décrit sa visualisation des rouges, décors et éclairages. Créez une progression originale coordonnant les métiers sans prétention symbolique universelle.",
+          "pt": "Mehta descreve visualização de vermelhos, cenografia e luz. Crie progressão original coordenando funções sem alegações simbólicas universais."
+        },
+        "sourceIds": [
+          "s0",
+          "s6"
+        ]
+      },
+      {
+        "id": "fire-representation",
+        "area": "research",
+        "prompt": {
+          "en": "How can a domestic drama avoid exoticizing its cultural setting?",
+          "nb": "Hvordan kan et hjemlig drama unngå å eksotifisere kulturmiljøet?",
+          "fr": "Comment un drame domestique évite-t-il d’exotiser son contexte culturel ?",
+          "pt": "Como pode um drama doméstico evitar exotizar seu contexto cultural?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Research specific everyday practices and preserve characters' individuality",
+              "nb": "Undersøk konkrete hverdagspraksiser og bevar figurenes individualitet",
+              "fr": "Étudier les pratiques quotidiennes spécifiques et préserver l’individualité",
+              "pt": "Investigar práticas quotidianas específicas e preservar individualidade"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use cultural symbols as interchangeable decorative shorthand",
+              "nb": "Bruk kultursymboler som utskiftbar dekorativ snarvei",
+              "fr": "Utiliser les symboles culturels comme raccourcis décoratifs interchangeables",
+              "pt": "Usar símbolos culturais como atalhos decorativos intercambiáveis"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat one fictional household as representative of an entire society",
+              "nb": "Behandle én fiktiv husholdning som representativ for hele samfunnet",
+              "fr": "Traiter un foyer fictif comme représentatif de toute une société",
+              "pt": "Tratar um lar fictício como representativo de toda a sociedade"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Mehta's statement describes her contemporary middle-class setting and anti-exoticizing intent. Develop a situated fictional scene without treating authorial intent as proof of universal reception.",
+          "nb": "Mehtas regierklæring beskriver samtidens middelklassemiljø og ønsket om å unngå eksotifisering. Utvikle en kontekstuell fiktiv scene uten å behandle intensjon som bevis på universell mottakelse.",
+          "fr": "Mehta décrit un milieu contemporain de classe moyenne et une intention anti-exotisante. Développez une scène située sans confondre intention et réception universelle.",
+          "pt": "Mehta descreve contexto contemporâneo de classe média e intenção antiexotizante. Desenvolva cena contextual sem confundir intenção com receção universal."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      }
+    ]
   }
 ] as const satisfies readonly SourceBackedCaseWorkshop[];
