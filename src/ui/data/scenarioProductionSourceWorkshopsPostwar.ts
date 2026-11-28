@@ -8364,5 +8364,1521 @@ export const postwarSourceWorkshops = [
         ]
       }
     ]
+  },
+  {
+    "scenarioId": "scenario_a_clockwork_orange_1971",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Constructed futures, visual progression and musical counterpoint",
+      "nb": "Konstruert fremtid, visuell utvikling og musikalsk kontrapunkt",
+      "fr": "Futur construit, progression visuelle et contrepoint musical",
+      "pt": "Futuro construído, progressão visual e contraponto musical"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "A Clockwork Orange",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/54041-A-CLOCKWORKORANGE"
+      },
+      {
+        "id": "s1",
+        "title": "The Old Ultra-Violence: A Clockwork Orange",
+        "publisher": "American Cinematographer",
+        "url": "https://staging.ascmag.com/articles/the-old-ultra-violence-a-clockwork-orange"
+      },
+      {
+        "id": "s2",
+        "title": "A Clockwork Orange (1971)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/42658f34-6e1f-5712-990e-4a64564d666f/a-clockwork-orange"
+      },
+      {
+        "id": "s3",
+        "title": "Stanley Kubrick's Britain",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/stanley-kubricks-britain/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "aclockworkorange-architecture",
+        "area": "camera",
+        "prompt": {
+          "en": "How can existing architecture suggest a fictional future?",
+          "nb": "Hvordan kan eksisterende arkitektur antyde en fiktiv fremtid?",
+          "fr": "Comment une architecture existante évoque-t-elle un futur fictif ?",
+          "pt": "Como pode a arquitetura existente sugerir um futuro fictício?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Select locations and coordinate original design elements",
+              "nb": "Velg opptakssteder og samordne egne designelementer",
+              "fr": "Choisir les lieux et coordonner des éléments originaux",
+              "pt": "Escolher locais e coordenar elementos originais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume all futuristic buildings were built as sets",
+              "nb": "Anta at alle fremtidsbygninger ble bygget som kulisser",
+              "fr": "Supposer que tous les bâtiments futuristes sont des décors",
+              "pt": "Supor que todos os edifícios futuristas são cenários"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore the visual relationship between different locations",
+              "nb": "Ignorer det visuelle forholdet mellom ulike steder",
+              "fr": "Ignorer les rapports visuels entre les lieux",
+              "pt": "Ignorar relações visuais entre locais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI identifies actual British modernist sites used in the film. Build an original location plan that distinguishes existing architecture from fictional design.",
+          "nb": "BFI identifiserer faktiske britiske modernistiske steder brukt i filmen. Lag en egen stedsplan som skiller eksisterende arkitektur fra fiktiv design.",
+          "fr": "Le BFI identifie des sites modernistes britanniques. Créez un plan original distinguant architecture existante et design fictif.",
+          "pt": "O BFI identifica locais modernistas britânicos. Crie um plano original distinguindo arquitetura existente de design fictício."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "aclockworkorange-progression",
+        "area": "camera",
+        "prompt": {
+          "en": "How can visual style change across three narrative phases?",
+          "nb": "Hvordan kan bildestilen endres gjennom tre fortellingsfaser?",
+          "fr": "Comment le style visuel évolue-t-il en trois phases narratives ?",
+          "pt": "Como pode o estilo visual mudar em três fases narrativas?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Infer exact historical exposure from a modern copy",
+              "nb": "Utled eksakt historisk eksponering fra en moderne kopi",
+              "fr": "Déduire l’exposition historique exacte d’une copie moderne",
+              "pt": "Deduzir exposição histórica exata de uma cópia moderna"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Create contrasting palettes and framing rules for each phase",
+              "nb": "Lag kontrasterende paletter og utsnittsregler for hver fase",
+              "fr": "Créer des palettes et cadrages distincts pour chaque phase",
+              "pt": "Criar paletas e enquadramentos distintos para cada fase"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Apply one unchanging visual treatment to all phases",
+              "nb": "Bruk én uforanderlig bildebehandling i alle faser",
+              "fr": "Appliquer un traitement visuel identique à toutes les phases",
+              "pt": "Aplicar um tratamento visual idêntico a todas as fases"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "ASC describes John Alcott's visual progression and collaboration with Kubrick. Develop three original visual studies without inventing historical camera settings.",
+          "nb": "ASC beskriver John Alcotts visuelle utvikling og samarbeid med Kubrick. Lag tre egne bildestudier uten å dikte opp historiske kamerainnstillinger.",
+          "fr": "L’ASC décrit la progression visuelle d’Alcott et sa collaboration avec Kubrick. Créez trois études sans inventer les réglages historiques.",
+          "pt": "A ASC descreve progressão visual de Alcott e colaboração com Kubrick. Crie três estudos sem inventar regulações históricas."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "aclockworkorange-counterpoint",
+        "area": "sound",
+        "prompt": {
+          "en": "How can musical counterpoint complicate a fictional image?",
+          "nb": "Hvordan kan musikalsk kontrapunkt komplisere et fiktivt bilde?",
+          "fr": "Comment le contrepoint musical complexifie-t-il une image fictive ?",
+          "pt": "Como pode o contraponto musical complexificar uma imagem fictícia?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume music must always duplicate the image's mood",
+              "nb": "Anta at musikken alltid må gjenta bildets stemning",
+              "fr": "Supposer que la musique doit toujours doubler l’ambiance de l’image",
+              "pt": "Supor que a música deve sempre duplicar o ambiente da imagem"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy Wendy Carlos's recordings without authorization",
+              "nb": "Kopier Wendy Carlos' innspillinger uten tillatelse",
+              "fr": "Copier les enregistrements de Wendy Carlos sans autorisation",
+              "pt": "Copiar gravações de Wendy Carlos sem autorização"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare contrasting original cues against a benign scene",
+              "nb": "Sammenlign kontrasterende egne lydinnslag mot en ufarlig scene",
+              "fr": "Comparer des motifs originaux contrastés sur une scène inoffensive",
+              "pt": "Comparar motivos originais contrastantes numa cena inofensiva"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "ASC and BFI document Carlos's electronic-classical contribution. Test original musical contrasts and discuss their ethical implications without reproducing the film's violence.",
+          "nb": "ASC og BFI dokumenterer Carlos' elektronisk-klassiske bidrag. Test egne musikkontraster og drøft etiske konsekvenser uten å gjenskape filmens vold.",
+          "fr": "L’ASC et le BFI documentent l’apport électronique et classique de Carlos. Testez des contrastes originaux et leurs implications éthiques sans reproduire la violence du film.",
+          "pt": "A ASC e o BFI documentam o contributo eletrónico e clássico de Carlos. Teste contrastes originais e implicações éticas sem reproduzir a violência do filme."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_scenes_from_a_marriage_1974",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Television intimacy, performance and edition structure",
+      "nb": "TV-intimitet, skuespill og utgavestruktur",
+      "fr": "Intimité télévisuelle, jeu et structure des versions",
+      "pt": "Intimidade televisiva, interpretação e estrutura das versões"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Scenes from a Marriage",
+        "publisher": "Ingmar Bergman Foundation",
+        "url": "https://www.ingmarbergman.se/en/production/scenes-marriage"
+      },
+      {
+        "id": "s1",
+        "title": "Media gallery for Scenes from a Marriage",
+        "publisher": "Ingmar Bergman Foundation",
+        "url": "https://www.ingmarbergman.se/en/production/scenes-marriage/media"
+      },
+      {
+        "id": "s2",
+        "title": "Scenes from a Marriage",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/710-scenes-from-a-marriage"
+      },
+      {
+        "id": "s3",
+        "title": "Scenes from a Marriage: Natural Antagonists",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/current/posts/318-scenes-from-a-marriage-natural-antagonists"
+      }
+    ],
+    "questions": [
+      {
+        "id": "scenesfromamarriage-format",
+        "area": "research",
+        "prompt": {
+          "en": "How should a serial drama be planned for television?",
+          "nb": "Hvordan bør en dramaserie planlegges for fjernsyn?",
+          "fr": "Comment planifier une série dramatique pour la télévision ?",
+          "pt": "Como planear uma série dramática para televisão?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume television requires a large theatrical budget",
+              "nb": "Anta at TV krever et stort kinobudsjett",
+              "fr": "Supposer que la télévision exige un grand budget de cinéma",
+              "pt": "Supor que televisão exige um grande orçamento de cinema"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map episode arcs and shared production resources",
+              "nb": "Kartlegg episodeforløp og felles produksjonsressurser",
+              "fr": "Cartographier les arcs des épisodes et ressources communes",
+              "pt": "Mapear arcos dos episódios e recursos comuns"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat all episodes as unrelated short films",
+              "nb": "Behandle alle episoder som urelaterte kortfilmer",
+              "fr": "Traiter chaque épisode comme un court métrage sans lien",
+              "pt": "Tratar cada episódio como curta-metragem sem ligação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The Bergman archive documents a six-part television conception and modest 16 mm production. Plan an original serial with coherent arcs and realistic resources.",
+          "nb": "Bergman-arkivet dokumenterer en TV-serie i seks deler og beskjeden 16 mm-produksjon. Planlegg en egen serie med sammenhengende forløp og realistiske ressurser.",
+          "fr": "Les archives Bergman documentent six épisodes et une production modeste en 16 mm. Planifiez une série originale cohérente et réaliste.",
+          "pt": "O arquivo Bergman documenta seis episódios e produção modesta em 16 mm. Planeie uma série original coerente e realista."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "scenesfromamarriage-intimacy",
+        "area": "camera",
+        "prompt": {
+          "en": "How can close-ups support nuanced dialogue performances?",
+          "nb": "Hvordan kan nærbilder støtte nyansert dialogspill?",
+          "fr": "Comment les gros plans soutiennent-ils un jeu dialogué nuancé ?",
+          "pt": "Como podem grandes planos apoiar interpretação dialogada subtil?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use extreme close-ups regardless of performance needs",
+              "nb": "Bruk ekstreme nærbilder uavhengig av spillets behov",
+              "fr": "Employer des très gros plans sans tenir compte du jeu",
+              "pt": "Usar grandes planos extremos sem atender à interpretação"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Replace rehearsals with constant camera movement",
+              "nb": "Erstatt prøvene med konstant kamerabevegelse",
+              "fr": "Remplacer les répétitions par des mouvements constants",
+              "pt": "Substituir ensaios por movimentos constantes de câmara"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Coordinate distance, pauses and actor eyelines during rehearsal",
+              "nb": "Samordne avstand, pauser og blikkretning under prøvene",
+              "fr": "Coordonner distance, pauses et regards pendant les répétitions",
+              "pt": "Coordenar distância, pausas e olhares durante ensaios"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion describes intimate 16 mm close-ups, and the archive documents actor collaboration. Stage a new dialogue study that lets performance motivate framing.",
+          "nb": "Criterion beskriver intime 16 mm-nærbilder, og arkivet dokumenterer skuespillersamarbeid. Lag en ny dialogstudie der spillet motiverer utsnitt.",
+          "fr": "Criterion décrit les gros plans intimes en 16 mm et les archives documentent la collaboration. Créez une étude où le jeu motive le cadre.",
+          "pt": "A Criterion descreve grandes planos íntimos em 16 mm e o arquivo documenta colaboração. Crie um estudo em que a interpretação motive o enquadramento."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "scenesfromamarriage-editions",
+        "area": "research",
+        "prompt": {
+          "en": "How should the television and theatrical versions be compared?",
+          "nb": "Hvordan bør TV- og kinoversjonene sammenlignes?",
+          "fr": "Comment comparer les versions télévisée et cinéma ?",
+          "pt": "Como comparar as versões televisiva e cinematográfica?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map episode material and the later theatrical compression",
+              "nb": "Kartlegg episodemateriale og den senere kinoforkortelsen",
+              "fr": "Cartographier les épisodes et la condensation pour le cinéma",
+              "pt": "Mapear episódios e condensação posterior para cinema"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat both editions as identical in duration and rhythm",
+              "nb": "Behandle begge utgaver som identiske i varighet og rytme",
+              "fr": "Traiter les deux versions comme identiques en durée et rythme",
+              "pt": "Tratar ambas versões como idênticas em duração e ritmo"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume theatrical compression proves missing footage was lost",
+              "nb": "Anta at kinoforkortelsen beviser at opptak gikk tapt",
+              "fr": "Supposer que la condensation prouve la perte des images",
+              "pt": "Supor que condensação prova perda de imagens"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion distinguishes the five-hour television edition from the three-hour theatrical cut. Compare structural choices using identified editions rather than guessing from isolated clips.",
+          "nb": "Criterion skiller den fem timer lange TV-utgaven fra den tre timer lange kinoversjonen. Sammenlign struktur med identifiserte utgaver fremfor å gjette ut fra enkeltklipp.",
+          "fr": "Criterion distingue la version télévisée de cinq heures du montage cinéma de trois heures. Comparez les structures à partir de versions identifiées.",
+          "pt": "A Criterion distingue a versão televisiva de cinco horas do corte de cinema de três horas. Compare estruturas com versões identificadas."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_manhattan_1979",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Monochrome city imagery, widescreen staging and constructed effects",
+      "nb": "Monokrome bybilder, bredformat og konstruerte effekter",
+      "fr": "Ville monochrome, écran large et effets construits",
+      "pt": "Cidade monocromática, ecrã largo e efeitos construídos"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Manhattan",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/67202-MANHATTAN"
+      },
+      {
+        "id": "s1",
+        "title": "Manhattan",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/2108fa88-82d7-5b0f-a54a-887263d24059/manhattan"
+      },
+      {
+        "id": "s2",
+        "title": "Gordon Willis: a career in 12 pictures",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/gordon-willis-career-12-pictures"
+      },
+      {
+        "id": "s3",
+        "title": "Manhattan: Black-and-White Romantic Realism",
+        "publisher": "American Society of Cinematographers",
+        "url": "https://theasc.com/articles/manhattan-black-and-white-romantic-realism"
+      }
+    ],
+    "questions": [
+      {
+        "id": "manhattan-monochrome",
+        "area": "camera",
+        "prompt": {
+          "en": "How can monochrome photography express a city's romantic image?",
+          "nb": "Hvordan kan svart-hvitt-foto uttrykke et romantisk bybilde?",
+          "fr": "Comment la photographie monochrome exprime-t-elle une ville romantique ?",
+          "pt": "Como pode fotografia monocromática exprimir uma cidade romântica?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Remove all differences between foreground and background",
+              "nb": "Fjern alle forskjeller mellom forgrunn og bakgrunn",
+              "fr": "Supprimer toute différence entre premier plan et fond",
+              "pt": "Eliminar diferenças entre primeiro plano e fundo"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat stylized city imagery as complete documentary evidence",
+              "nb": "Behandle stiliserte bybilder som fullstendig dokumentasjon",
+              "fr": "Traiter les images stylisées comme preuve documentaire complète",
+              "pt": "Tratar imagens estilizadas como prova documental completa"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Design tonal separation and purposeful silhouettes",
+              "nb": "Utform toneskille og målrettede silhuetter",
+              "fr": "Concevoir séparation tonale et silhouettes motivées",
+              "pt": "Conceber separação tonal e silhuetas motivadas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI and ASC describe Willis's monochrome romantic realism and controlled exposure. Design an original city study that separates expressive imagery from documentary claims.",
+          "nb": "BFI og ASC beskriver Willis' monokrome romantiske realisme og kontrollerte eksponering. Lag en egen bystudie som skiller uttrykksfulle bilder fra dokumentariske påstander.",
+          "fr": "Le BFI et l’ASC décrivent le réalisme romantique monochrome de Willis. Créez une étude urbaine distinguant expression et preuve documentaire.",
+          "pt": "O BFI e a ASC descrevem realismo romântico monocromático de Willis. Crie um estudo urbano distinguindo expressão de prova documental."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "manhattan-widescreen",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a wide frame carry a quiet conversation?",
+          "nb": "Hvordan kan et bredt bilde bære en stille samtale?",
+          "fr": "Comment un cadre large porte-t-il une conversation calme ?",
+          "pt": "Como pode um quadro largo sustentar uma conversa calma?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compose performers and negative space within a stable frame",
+              "nb": "Komponer skuespillere og tomrom innenfor et stabilt utsnitt",
+              "fr": "Composer interprètes et espace vide dans un cadre stable",
+              "pt": "Compor intérpretes e espaço vazio num quadro estável"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Center every performer in unrelated tight close-ups",
+              "nb": "Sentrer hver skuespiller i urelaterte tette nærbilder",
+              "fr": "Centrer chaque acteur dans des gros plans sans lien",
+              "pt": "Centrar cada intérprete em grandes planos sem relação"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume the wide format determines acting style by itself",
+              "nb": "Anta at bredformatet alene bestemmer spillestilen",
+              "fr": "Supposer que le format large détermine seul le jeu",
+              "pt": "Supor que formato largo determina sozinho a interpretação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Willis's ASC account describes static widescreen staging and Panavision. Storyboard an original conversation where spacing and attention motivate the composition.",
+          "nb": "Willis' ASC-beretning beskriver statisk bredformatsiscenesettelse og Panavision. Lag storyboard for en samtale der avstand og oppmerksomhet motiverer komposisjonen.",
+          "fr": "Willis décrit à l’ASC le cadre large statique et Panavision. Créez un storyboard où distances et attention motivent la composition.",
+          "pt": "Willis descreve à ASC encenação estática em ecrã largo e Panavision. Crie storyboard em que distâncias e atenção motivem a composição."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "manhattan-planetarium",
+        "area": "research",
+        "prompt": {
+          "en": "How should a constructed planetarium image be documented?",
+          "nb": "Hvordan bør et konstruert planetariumsbilde dokumenteres?",
+          "fr": "Comment documenter une image de planétarium construite ?",
+          "pt": "Como documentar uma imagem de planetário construída?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat modern digital effects as the original process",
+              "nb": "Behandle moderne digitale effekter som originalprosessen",
+              "fr": "Traiter les effets numériques comme procédé original",
+              "pt": "Tratar efeitos digitais modernos como processo original"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Separate location references, practical elements and composites",
+              "nb": "Skill stedsreferanser, praktiske elementer og kompositter",
+              "fr": "Distinguer références de lieux, éléments pratiques et composites",
+              "pt": "Distinguir referências de locais, elementos práticos e compósitos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume all celestial imagery was filmed directly in space",
+              "nb": "Anta at alle himmelbilder ble filmet direkte i verdensrommet",
+              "fr": "Supposer que toutes les images célestes furent filmées dans l’espace",
+              "pt": "Supor que todas as imagens celestes foram filmadas no espaço"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "ASC records Willis's use of mattes, mirrors and models for the planetarium. Plan an original safe tabletop study while preserving the distinction between historical and modern techniques.",
+          "nb": "ASC dokumenterer Willis' bruk av masker, speil og modeller i planetariet. Lag en egen trygg bordmodellstudie og skill historiske og moderne teknikker.",
+          "fr": "L’ASC documente caches, miroirs et maquettes du planétarium. Planifiez une étude originale sur table distinguant techniques historiques et modernes.",
+          "pt": "A ASC documenta máscaras, espelhos e modelos do planetário. Planeie um estudo original de mesa distinguindo técnicas históricas e modernas."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_raging_bull_1980",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Contrasting visual registers, editing and version evidence",
+      "nb": "Kontrasterende bilderegistre, klipping og utgavebelegg",
+      "fr": "Registres visuels contrastés, montage et versions",
+      "pt": "Registos visuais contrastantes, montagem e versões"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Raging Bull",
+        "publisher": "AFI Catalog of Feature Films",
+        "url": "https://catalog.afi.com/Film/54882-RAGING-BULL"
+      },
+      {
+        "id": "s1",
+        "title": "In Memoriam: Michael Chapman, ASC (1935-2020)",
+        "publisher": "American Society of Cinematographers",
+        "url": "https://theasc.com/news/in-memoriam-michael-chapman-asc/"
+      },
+      {
+        "id": "s2",
+        "title": "Raging Bull (1980)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/0caff9bf-8c22-568b-b70e-c211b22dba41/raging-bull"
+      },
+      {
+        "id": "s3",
+        "title": "The 53rd Academy Awards",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/oscars/ceremonies/1981"
+      }
+    ],
+    "questions": [
+      {
+        "id": "ragingbull-registers",
+        "area": "camera",
+        "prompt": {
+          "en": "How can domestic scenes and performance scenes differ visually?",
+          "nb": "Hvordan kan hjemlige scener og oppvisningsscener skille seg visuelt?",
+          "fr": "Comment différencier visuellement scènes domestiques et de spectacle ?",
+          "pt": "Como diferenciar visualmente cenas domésticas e de espetáculo?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Contrast observational framing with stylized movement",
+              "nb": "Sett observerende utsnitt opp mot stilisert bevegelse",
+              "fr": "Opposer cadrage d’observation et mouvement stylisé",
+              "pt": "Contrastar enquadramento de observação com movimento estilizado"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Apply identical framing and movement to every scene",
+              "nb": "Bruk identisk utsnitt og bevegelse i alle scener",
+              "fr": "Appliquer cadrage et mouvement identiques partout",
+              "pt": "Aplicar enquadramento e movimento idênticos em todas as cenas"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Recreate physical blows to obtain realism",
+              "nb": "Gjenskap fysiske slag for å oppnå realisme",
+              "fr": "Reproduire des coups physiques pour obtenir du réalisme",
+              "pt": "Recriar golpes físicos para obter realismo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Chapman describes naturalistic domestic scenes versus balletic ring imagery. Compare two original non-contact movement studies without reproducing dangerous action.",
+          "nb": "Chapman beskriver naturalistiske hjemmescener mot ballettaktige ringbilder. Sammenlign to egne kontaktfrie bevegelsesstudier uten å gjenskape farlig handling.",
+          "fr": "Chapman décrit scènes domestiques naturalistes et images chorégraphiques du ring. Comparez deux études originales sans contact ni action dangereuse.",
+          "pt": "Chapman descreve cenas domésticas naturalistas e imagens coreográficas do ringue. Compare dois estudos originais sem contacto nem ação perigosa."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "ragingbull-editing",
+        "area": "sound",
+        "prompt": {
+          "en": "How can expressive sound change the rhythm of edited movement?",
+          "nb": "Hvordan kan uttrykksfull lyd endre rytmen i klippet bevegelse?",
+          "fr": "Comment le son expressif modifie-t-il le rythme du mouvement monté ?",
+          "pt": "Como pode som expressivo alterar o ritmo do movimento montado?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore the contribution of the editor and sound team",
+              "nb": "Ignorer bidragene fra klipper og lydteam",
+              "fr": "Ignorer l’apport du montage et de l’équipe son",
+              "pt": "Ignorar contributos da montagem e equipa de som"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare original sound accents with silence and image cuts",
+              "nb": "Sammenlign egne lydaksenter med stillhet og bildeklipp",
+              "fr": "Comparer accents sonores originaux, silence et coupes",
+              "pt": "Comparar acentos sonoros originais, silêncio e cortes"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume every recorded sound must match a visible action",
+              "nb": "Anta at alle lyder må samsvare med en synlig handling",
+              "fr": "Supposer que tout son correspond à une action visible",
+              "pt": "Supor que todo som corresponde a uma ação visível"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI documents expressive sound and the Academy recognizes Schoonmaker's editing. Design an original benign movement montage that credits editing and sound separately.",
+          "nb": "AFI dokumenterer uttrykksfull lyd, og Academy anerkjenner Schoonmakers klipping. Lag en egen ufarlig bevegelsesmontasje med separat kreditering av klipp og lyd.",
+          "fr": "L’AFI documente le son expressif et l’Académie distingue le montage de Schoonmaker. Créez un montage inoffensif créditant séparément image et son.",
+          "pt": "A AFI documenta som expressivo e a Academia distingue montagem de Schoonmaker. Crie uma montagem inofensiva creditando separadamente montagem e som."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "ragingbull-home_movies",
+        "area": "research",
+        "prompt": {
+          "en": "How should color home-movie material be distinguished from the main feature?",
+          "nb": "Hvordan bør fargede hjemmefilmopptak skilles fra hovedfilmen?",
+          "fr": "Comment distinguer les films familiaux en couleur du long métrage principal ?",
+          "pt": "Como distinguir filmes domésticos a cores da longa-metragem principal?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume every scene was captured in the same format",
+              "nb": "Anta at alle scener ble tatt opp i samme format",
+              "fr": "Supposer que toutes les scènes ont le même format",
+              "pt": "Supor que todas as cenas foram captadas no mesmo formato"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat fictional home movies as the actual family's archive",
+              "nb": "Behandle fiktive hjemmefilmer som familiens faktiske arkiv",
+              "fr": "Traiter les films familiaux fictifs comme archives réelles",
+              "pt": "Tratar filmes domésticos fictícios como arquivo real"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record the separate image format and narrative function",
+              "nb": "Registrer separat bildeformat og fortellingsfunksjon",
+              "fr": "Noter le format distinct et sa fonction narrative",
+              "pt": "Registar formato de imagem distinto e função narrativa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Chapman's ASC account distinguishes monochrome photography from separate color 16 mm home-movie material. Label original fictional inserts by format and narrative purpose.",
+          "nb": "Chapmans ASC-beretning skiller svart-hvitt-foto fra separat 16 mm-hjemmefilmmateriale i farger. Merk egne fiktive innslag etter format og fortellingsformål.",
+          "fr": "Chapman distingue à l’ASC la photographie monochrome des films familiaux couleur en 16 mm. Identifiez vos inserts fictifs par format et fonction.",
+          "pt": "Chapman distingue à ASC fotografia monocromática de filmes domésticos a cores em 16 mm. Identifique inserções fictícias por formato e função."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_raiders_of_the_lost_ark_1981",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Storyboard coordination, optical effects and layered sound",
+      "nb": "Storyboard-samordning, optiske effekter og lagdelt lyd",
+      "fr": "Coordination du storyboard, effets optiques et son stratifié",
+      "pt": "Coordenação de storyboard, efeitos óticos e som em camadas"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Raiders of the Lost Ark",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/67250-RAIDERS-OF-THE-LOST-ARK"
+      },
+      {
+        "id": "s1",
+        "title": "Of Narrow Misses and Close Calls: Raiders of the Lost Ark — Directing",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/article/flashback-raiders-of-the-lost-ark-directing/"
+      },
+      {
+        "id": "s2",
+        "title": "Raiders of the Lost Ark",
+        "publisher": "Industrial Light & Magic",
+        "url": "https://www.ilm.com/vfx/raiders-of-the-lost-ark/"
+      },
+      {
+        "id": "s3",
+        "title": "The 54th Academy Awards | 1982",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/oscars/ceremonies/1982"
+      },
+      {
+        "id": "s4",
+        "title": "Inside the World of Indiana Jones",
+        "publisher": "Lucasfilm",
+        "url": "https://www.lucasfilm.com/news/inside-the-world-of-indiana-jones/"
+      },
+      {
+        "id": "s5",
+        "title": "All Four Indiana Jones Movie Adventures on 4K Ultra HD for the First Time",
+        "publisher": "Lucasfilm",
+        "url": "https://www.lucasfilm.com/news/all-four-indiana-jones-movie-adventures-on-4k-ultra-hd-for-the-first-time/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "raidersofthelostark-planning",
+        "area": "research",
+        "prompt": {
+          "en": "How should a complex adventure production coordinate separate departments?",
+          "nb": "Hvordan bør en kompleks eventyrfilm samordne ulike avdelinger?",
+          "fr": "Comment coordonner les métiers d’une production d’aventure complexe ?",
+          "pt": "Como coordenar departamentos de uma produção de aventura complexa?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Attempt dangerous stunts to validate an initial sketch",
+              "nb": "Forsøk farlige stunt for å validere en første skisse",
+              "fr": "Tenter des cascades dangereuses pour valider un croquis",
+              "pt": "Tentar acrobacias perigosas para validar um esboço"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Share storyboards, visual references and continuity notes",
+              "nb": "Del storyboard, bildereferanser og kontinuitetsnotater",
+              "fr": "Partager storyboards, références visuelles et notes de raccord",
+              "pt": "Partilhar storyboards, referências visuais e notas de continuidade"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Let each department independently redefine the visual plan",
+              "nb": "La hver avdeling omdefinere bildeplanen uavhengig",
+              "fr": "Laisser chaque métier redéfinir seul le plan visuel",
+              "pt": "Deixar cada departamento redefinir sozinho o plano visual"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Spielberg's production account documents extensive storyboarding and crew collaboration. Plan a harmless fictional sequence on paper, not an actual stunt.",
+          "nb": "Spielbergs produksjonsberetning dokumenterer omfattende storyboardarbeid og samarbeid. Planlegg en ufarlig fiktiv sekvens på papir, ikke et faktisk stunt.",
+          "fr": "Le récit de Spielberg documente storyboards détaillés et collaboration. Planifiez une séquence fictive inoffensive sur papier, sans cascade réelle.",
+          "pt": "O relato de Spielberg documenta storyboards extensos e colaboração. Planeie uma sequência fictícia inofensiva no papel, sem acrobacia real."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "raidersofthelostark-composite",
+        "area": "camera",
+        "prompt": {
+          "en": "How can separate miniature and matte images form one fictional effect?",
+          "nb": "Hvordan kan separate miniatyr- og maskebilder danne én fiktiv effekt?",
+          "fr": "Comment maquettes et caches distincts composent-ils un effet fictif ?",
+          "pt": "Como podem miniaturas e máscaras formar um efeito fictício?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume optical compositing needs no alignment",
+              "nb": "Anta at optisk kompositering ikke trenger justering",
+              "fr": "Supposer que le compositing optique n’exige aucun alignement",
+              "pt": "Supor que composição ótica dispensa alinhamento"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Describe a modern digital composite as the historical process",
+              "nb": "Beskriv et moderne digitalt kompositt som historisk prosess",
+              "fr": "Décrire un composite numérique comme procédé historique",
+              "pt": "Descrever um compósito digital como processo histórico"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan matching perspective, light and composite layers",
+              "nb": "Planlegg samsvarende perspektiv, lys og komposittlag",
+              "fr": "Prévoir perspective, lumière et couches de composition cohérentes",
+              "pt": "Planear perspetiva, luz e camadas de composição coerentes"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "ILM documents matte painting, puppet photography and multi-pass compositing. Design an original tabletop effect and distinguish historical optical work from digital alternatives.",
+          "nb": "ILM dokumenterer matte painting, dukkefoto og kompositering i flere pass. Lag en egen bordmodelleffekt og skill historisk optisk arbeid fra digitale alternativer.",
+          "fr": "ILM documente peintures sur cache, marionnettes et compositing multipasse. Concevez un effet original sur table en distinguant optique et numérique.",
+          "pt": "A ILM documenta pinturas de máscara, marionetas e composição em várias passagens. Crie um efeito original de mesa distinguindo ótica e digital."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "raidersofthelostark-foley",
+        "area": "sound",
+        "prompt": {
+          "en": "How can layered recordings suggest a fictional environment?",
+          "nb": "Hvordan kan lagdelte opptak antyde et fiktivt miljø?",
+          "fr": "Comment des enregistrements superposés évoquent-ils un environnement fictif ?",
+          "pt": "Como podem gravações em camadas sugerir um ambiente fictício?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record safe original textures and combine them by function",
+              "nb": "Ta opp trygge egne lydteksturer og kombiner dem etter funksjon",
+              "fr": "Enregistrer des textures originales sûres et les combiner par fonction",
+              "pt": "Gravar texturas originais seguras e combiná-las por função"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Reuse recognizable franchise effects without permission",
+              "nb": "Gjenbruk gjenkjennelige franchiseeffekter uten tillatelse",
+              "fr": "Réutiliser des effets reconnaissables sans autorisation",
+              "pt": "Reutilizar efeitos reconhecíveis sem autorização"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Attribute sound effects and music to the same role",
+              "nb": "Tilskriv lydeffekter og musikk samme fagrolle",
+              "fr": "Attribuer effets et musique au même métier",
+              "pt": "Atribuir efeitos e música à mesma função"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Lucasfilm describes Burtt's layered source recordings, and the Academy recognizes distinct sound contributions. Create an original sound palette using benign household materials.",
+          "nb": "Lucasfilm beskriver Burtts lagdelte kildeopptak, og Academy anerkjenner ulike lydbidrag. Lag en egen lydpalett med ufarlige husholdningsmaterialer.",
+          "fr": "Lucasfilm décrit les enregistrements superposés de Burtt et l’Académie distingue les métiers du son. Créez une palette originale avec des matériaux domestiques sûrs.",
+          "pt": "A Lucasfilm descreve gravações em camadas de Burtt e a Academia distingue contributos sonoros. Crie uma paleta original com materiais domésticos seguros."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_blade_runner_1982",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Retrofit city design, layered lighting and release history",
+      "nb": "Påbygget bydesign, lagdelt lys og utgivelseshistorie",
+      "fr": "Ville réaménagée, lumière stratifiée et versions",
+      "pt": "Cidade readaptada, luz em camadas e versões"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Blade Runner",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/68260-BLADE-RUNNER"
+      },
+      {
+        "id": "s1",
+        "title": "Blade Runner: Cronenweth's Photography",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/article/blade-runner-cronenweths-photography/"
+      },
+      {
+        "id": "s2",
+        "title": "Discussing the Set Design of Blade Runner",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/article/blade-runner-set-design/"
+      },
+      {
+        "id": "s3",
+        "title": "Blade Runner: Special Photographic Effects",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/article/blade-runner-photographic-effects/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "bladerunner-retrofit",
+        "area": "research",
+        "prompt": {
+          "en": "How can a fictional future city feel accumulated over time?",
+          "nb": "Hvordan kan en fiktiv fremtidsby virke oppbygget over tid?",
+          "fr": "Comment une ville futuriste fictive paraît-elle construite au fil du temps ?",
+          "pt": "Como pode uma cidade futura fictícia parecer acumulada ao longo do tempo?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Make every building identical and newly constructed",
+              "nb": "Gjør alle bygninger identiske og nybygde",
+              "fr": "Rendre tous les bâtiments identiques et neufs",
+              "pt": "Tornar todos os edifícios idênticos e novos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the film's recognizable city designs exactly",
+              "nb": "Kopier filmens gjenkjennelige bydesign nøyaktig",
+              "fr": "Copier exactement les décors reconnaissables du film",
+              "pt": "Copiar exatamente os cenários reconhecíveis do filme"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Layer old structures with distinct new functional additions",
+              "nb": "Legg ulike nye funksjonelle påbygg til gamle strukturer",
+              "fr": "Superposer structures anciennes et ajouts fonctionnels nouveaux",
+              "pt": "Sobrepor estruturas antigas e novos elementos funcionais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "ASC design reporting describes Paull and Mead's retrofit city logic. Sketch a distinct fictional streetscape, recognizing the design as fiction rather than prediction.",
+          "nb": "ASCs scenografirapport beskriver Paull og Meads påbyggingslogikk. Skisser et eget fiktivt gatebilde og forstå designen som fiksjon, ikke spådom.",
+          "fr": "L’ASC décrit la logique de transformation urbaine de Paull et Mead. Dessinez une rue fictive distincte sans prendre le design pour une prédiction.",
+          "pt": "A ASC descreve a lógica de readaptação urbana de Paull e Mead. Esboce uma rua fictícia distinta sem tomar o design por previsão."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "bladerunner-light",
+        "area": "camera",
+        "prompt": {
+          "en": "How can layered light make a fictional interior visually deep?",
+          "nb": "Hvordan kan lagdelt lys gi et fiktivt interiør visuell dybde?",
+          "fr": "Comment la lumière stratifiée donne-t-elle de la profondeur à un intérieur fictif ?",
+          "pt": "Como pode luz em camadas dar profundidade a um interior fictício?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan backlight and practical sources across depth planes",
+              "nb": "Planlegg motlys og praktiske lyskilder i ulike dybdeplan",
+              "fr": "Prévoir contre-jour et sources pratiques sur plusieurs plans",
+              "pt": "Planear contraluz e fontes práticas em vários planos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Illuminate every depth plane with identical flat light",
+              "nb": "Belys alle dybdeplan med identisk flatt lys",
+              "fr": "Éclairer tous les plans d’une lumière plate identique",
+              "pt": "Iluminar todos os planos com luz plana idêntica"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Infer exact historical lighting ratios from a still image",
+              "nb": "Utled eksakte historiske lysforhold fra ett stillbilde",
+              "fr": "Déduire les rapports historiques exacts d’une image fixe",
+              "pt": "Deduzir relações históricas exatas de uma imagem fixa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Contemporary ASC reporting documents Cronenweth's backlight, practical neon and reflective light. Design a safe original lighting diagram without inventing exact historical settings.",
+          "nb": "Samtidig ASC-rapportering dokumenterer Cronenweths motlys, praktiske neonlys og reflekslys. Lag et trygt eget lysskjema uten oppdiktede historiske innstillinger.",
+          "fr": "L’ASC documente contre-jour, néons pratiques et lumière réfléchie de Cronenweth. Créez un schéma sûr sans inventer les réglages historiques.",
+          "pt": "A ASC documenta contraluz, néon prático e luz refletida de Cronenweth. Crie um esquema seguro sem inventar regulações históricas."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "bladerunner-cuts",
+        "area": "research",
+        "prompt": {
+          "en": "How should multiple release cuts be compared responsibly?",
+          "nb": "Hvordan bør ulike utgivelsesversjoner sammenlignes ansvarlig?",
+          "fr": "Comment comparer plusieurs montages sortis de manière rigoureuse ?",
+          "pt": "Como comparar várias versões lançadas de forma rigorosa?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Infer the exact cut from a single publicity still",
+              "nb": "Utled eksakt utgave fra ett reklamebilde",
+              "fr": "Déduire le montage exact d’une seule photo promotionnelle",
+              "pt": "Deduzir a versão exata de uma única foto promocional"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Identify edition, runtime and documented editorial differences",
+              "nb": "Identifiser utgave, spilletid og dokumenterte klippeforskjeller",
+              "fr": "Identifier version, durée et différences de montage documentées",
+              "pt": "Identificar versão, duração e diferenças de montagem documentadas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume all releases have identical picture and sound",
+              "nb": "Anta at alle utgaver har identisk bilde og lyd",
+              "fr": "Supposer que toutes les versions ont image et son identiques",
+              "pt": "Supor que todas as versões têm imagem e som idênticos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI records multiple runtimes and cut histories. Compare explicitly identified editions rather than treating a later reissue as the original theatrical version.",
+          "nb": "AFI dokumenterer flere spilletider og klippehistorier. Sammenlign eksplisitt identifiserte utgaver fremfor å behandle en senere gjenutgivelse som original kinoversjon.",
+          "fr": "L’AFI documente plusieurs durées et montages. Comparez des versions identifiées sans prendre une ressortie pour la version cinéma originale.",
+          "pt": "A AFI documenta várias durações e montagens. Compare versões identificadas sem tomar uma reedição pela versão de cinema original."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_et_the_extra_terrestrial_1982",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Child-height perspective, practical character and effect planning",
+      "nb": "Barnehøyt perspektiv, praktisk figur og effektplanlegging",
+      "fr": "Perspective à hauteur d’enfant, personnage pratique et effets",
+      "pt": "Perspetiva à altura da criança, personagem prática e efeitos"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "E.T.: The Extra-Terrestrial",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/67140-ET-THEEXTRA-TERRESTRIAL"
+      },
+      {
+        "id": "s1",
+        "title": "The Cinematography of E.T.",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/articles/flashback-the-cinematography-of-e-t-1"
+      },
+      {
+        "id": "s2",
+        "title": "Steven Spielberg and E.T. the Extra-Terrestrial",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/articles/spielberg-et-the-extraterrestrial"
+      },
+      {
+        "id": "s3",
+        "title": "E.T. The Extra-Terrestrial — 1982 (55th Academy Awards)",
+        "publisher": "Academy Awards Database",
+        "url": "https://awardsdatabase.oscars.org/search/getresults?query=%7B%22FilmTitle%22%3A%22e.t.%22%2C%22Sort%22%3A%222-Film%20Title-Alpha%22%2C%22AwardShowNumberFrom%22%3A0%2C%22AwardShowNumberTo%22%3A0%2C%22Search%22%3A30%7D"
+      }
+    ],
+    "questions": [
+      {
+        "id": "ettheextraterrestrial-height",
+        "area": "camera",
+        "prompt": {
+          "en": "How can camera height express a child's experience of a room?",
+          "nb": "Hvordan kan kamerahøyde uttrykke barnets opplevelse av et rom?",
+          "fr": "Comment la hauteur de caméra traduit-elle l’expérience d’une pièce par un enfant ?",
+          "pt": "Como pode altura da câmara exprimir experiência infantil de uma sala?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare low viewpoints and selective framing of adult figures",
+              "nb": "Sammenlign lave synspunkter og selektivt utsnitt av voksne figurer",
+              "fr": "Comparer points de vue bas et cadrages sélectifs des adultes",
+              "pt": "Comparar pontos de vista baixos e enquadramentos seletivos de adultos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use the same elevated angle for every viewpoint",
+              "nb": "Bruk samme høye vinkel for alle perspektiver",
+              "fr": "Employer le même angle élevé pour tous les regards",
+              "pt": "Usar o mesmo ângulo elevado para todos os pontos de vista"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume camera height alone creates emotional identification",
+              "nb": "Anta at kamerahøyde alene skaper følelsesmessig identifikasjon",
+              "fr": "Supposer que la hauteur seule crée l’identification émotionnelle",
+              "pt": "Supor que altura da câmara cria sozinha identificação emocional"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Daviau's contemporary ASC account documents the child-height camera strategy. Design a new room study that links camera position with performance and attention.",
+          "nb": "Daviau beskriver barnehøy kameraføring i en samtidig ASC-beretning. Lag en ny romstudie som knytter kameraposisjon til skuespill og oppmerksomhet.",
+          "fr": "Daviau documente à l’ASC la caméra à hauteur d’enfant. Créez une étude originale reliant position, jeu et attention.",
+          "pt": "Daviau documenta à ASC a câmara à altura da criança. Crie um estudo original ligando posição, interpretação e atenção."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "ettheextraterrestrial-character",
+        "area": "research",
+        "prompt": {
+          "en": "How should a practical fictional character's performance be credited?",
+          "nb": "Hvordan bør en praktisk fiktiv figurs fremføring krediteres?",
+          "fr": "Comment créditer le jeu d’un personnage fictif pratique ?",
+          "pt": "Como creditar a interpretação de uma personagem fictícia prática?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume all character imagery was digitally animated",
+              "nb": "Anta at alle figurbilder ble digitalt animert",
+              "fr": "Supposer que toutes les images du personnage sont numériques",
+              "pt": "Supor que todas as imagens da personagem são animação digital"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record design, movement performance, voice and image roles",
+              "nb": "Registrer design, bevegelsesspill, stemme og bildefagroller",
+              "fr": "Consigner design, mouvements, voix et métiers de l’image",
+              "pt": "Registar design, movimentos, voz e funções de imagem"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Attribute all performance solely to the creature designer",
+              "nb": "Tilskriv alt spill utelukkende figurdesigneren",
+              "fr": "Attribuer tout le jeu au seul concepteur de la créature",
+              "pt": "Atribuir toda interpretação apenas ao designer da criatura"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "AFI identifies Rambaldi's creature work and distinct movement, voice and effects credits. Plan a simple original puppet scene that recognizes each contribution.",
+          "nb": "AFI identifiserer Rambaldis figurarbeid og separate bevegelses-, stemme- og effektbidrag. Planlegg en enkel egen dukkescene som anerkjenner hvert bidrag.",
+          "fr": "L’AFI identifie le travail de Rambaldi et les crédits distincts de mouvement, voix et effets. Concevez une scène originale de marionnette reconnaissant chaque apport.",
+          "pt": "A AFI identifica trabalho de Rambaldi e créditos distintos de movimento, voz e efeitos. Planeie uma cena original de marioneta reconhecendo cada contributo."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "ettheextraterrestrial-previsualization",
+        "area": "camera",
+        "prompt": {
+          "en": "Which scenes benefit most from detailed effect storyboards?",
+          "nb": "Hvilke scener har mest nytte av detaljerte effektstoryboards?",
+          "fr": "Quelles scènes bénéficient le plus de storyboards d’effets détaillés ?",
+          "pt": "Que cenas beneficiam mais de storyboards de efeitos detalhados?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Require identical planning detail for every ordinary conversation",
+              "nb": "Krev identisk planleggingsdetalj for alle vanlige samtaler",
+              "fr": "Exiger le même détail pour chaque conversation ordinaire",
+              "pt": "Exigir detalhe idêntico para cada conversa comum"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Leave complex composite alignment entirely to chance",
+              "nb": "Overlat kompleks komposittjustering helt til tilfeldighetene",
+              "fr": "Laisser l’alignement complexe au hasard",
+              "pt": "Deixar alinhamento complexo inteiramente ao acaso"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Previsualize composite-dependent shots while allowing ordinary scenes flexibility",
+              "nb": "Forhåndsvisualiser komposittavhengige bilder og gi hverdagsscener fleksibilitet",
+              "fr": "Prévisualiser les plans composites et garder de la souplesse ailleurs",
+              "pt": "Pré-visualizar planos compósitos e manter flexibilidade nas cenas comuns"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Spielberg describes ordinary scenes left unstoryboarded and precisely planned ILM shots. Select the planning level according to the needs of a new fictional scene.",
+          "nb": "Spielberg beskriver vanlige scener uten storyboard og presist planlagte ILM-bilder. Velg planleggingsnivå etter behovene i en ny fiktiv scene.",
+          "fr": "Spielberg décrit des scènes ordinaires sans storyboard et des plans ILM précis. Choisissez le niveau de préparation selon les besoins d’une scène originale.",
+          "pt": "Spielberg descreve cenas comuns sem storyboard e planos ILM precisos. Escolha o nível de preparação conforme as necessidades de uma cena original."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_aliens_1986",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Effects department coordination, practical imagery and sequel form",
+      "nb": "Samordning av effektavdelinger, praktiske bilder og oppfølgerform",
+      "fr": "Coordination des effets, images pratiques et forme de suite",
+      "pt": "Coordenação de efeitos, imagens práticas e forma de sequela"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Aliens",
+        "publisher": "AFI Catalog of Feature Films",
+        "url": "https://catalog.afi.com/Film/68347-ALIENS"
+      },
+      {
+        "id": "s1",
+        "title": "Aliens Lands at Academy to Inaugurate Prime Tech Series",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://digitalcollections.oscars.org/digital/api/collection/p15759coll4/id/3819/download"
+      },
+      {
+        "id": "s2",
+        "title": "The 59th Academy Awards (1987)",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/oscars/ceremonies/1987"
+      },
+      {
+        "id": "s3",
+        "title": "Aliens (1986)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/f6770cd5-0ccb-5c65-be26-b5a920c05edf/aliens"
+      }
+    ],
+    "questions": [
+      {
+        "id": "aliens-departments",
+        "area": "research",
+        "prompt": {
+          "en": "How should a production distinguish creature, miniature and optical effects teams?",
+          "nb": "Hvordan bør en produksjon skille figur-, miniatyr- og optiske effektteam?",
+          "fr": "Comment distinguer équipes de créatures, maquettes et effets optiques ?",
+          "pt": "Como distinguir equipas de criaturas, miniaturas e efeitos óticos?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat the awards list as a complete shot-by-shot workflow",
+              "nb": "Behandle prislisten som en fullstendig arbeidsflyt bilde for bilde",
+              "fr": "Traiter les récompenses comme processus complet plan par plan",
+              "pt": "Tratar os prémios como processo completo plano a plano"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map responsibilities and handoffs between distinct departments",
+              "nb": "Kartlegg ansvar og overleveringer mellom ulike avdelinger",
+              "fr": "Cartographier responsabilités et échanges entre métiers distincts",
+              "pt": "Mapear responsabilidades e passagens entre departamentos distintos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Credit every effect to a single department without evidence",
+              "nb": "Krediter alle effekter én avdeling uten dokumentasjon",
+              "fr": "Créditer tous les effets à un seul métier sans preuve",
+              "pt": "Creditar todos os efeitos a um departamento sem provas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The Academy retrospective distinguishes creature, miniature and visual-effects supervision. Draw an original effects workflow with explicit credits and no invented historical shot assignments.",
+          "nb": "Academys retrospektiv skiller figur-, miniatyr- og visuelle effektansvar. Tegn en egen effektflyt med tydelig kreditering uten oppdiktede historiske bildelister.",
+          "fr": "La rétrospective de l’Académie distingue créatures, maquettes et effets visuels. Dessinez un processus original avec crédits explicites sans inventer les plans historiques.",
+          "pt": "A retrospetiva da Academia distingue criaturas, miniaturas e efeitos visuais. Desenhe um fluxo original com créditos explícitos sem inventar planos históricos."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "aliens-practical",
+        "area": "camera",
+        "prompt": {
+          "en": "How can practical imagery and optical composites be compared?",
+          "nb": "Hvordan kan praktiske bilder og optiske kompositter sammenlignes?",
+          "fr": "Comment comparer images pratiques et composites optiques ?",
+          "pt": "Como comparar imagens práticas e compósitos óticos?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume every effect was produced using one technique",
+              "nb": "Anta at alle effekter ble produsert med én teknikk",
+              "fr": "Supposer que tous les effets relèvent d’une seule technique",
+              "pt": "Supor que todos os efeitos foram produzidos com uma técnica"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use hazardous mechanical effects for a classroom demonstration",
+              "nb": "Bruk farlige mekaniske effekter i en undervisningsdemonstrasjon",
+              "fr": "Employer des effets mécaniques dangereux en démonstration",
+              "pt": "Usar efeitos mecânicos perigosos numa demonstração didática"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test safe small-scale models and compare layering options",
+              "nb": "Test trygge småskalaprototyper og sammenlign lagdelingsvalg",
+              "fr": "Tester des maquettes sûres et comparer les options de couches",
+              "pt": "Testar modelos seguros e comparar opções de camadas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The Academy technical account describes extensive in-camera solutions alongside optical compositing. Compare harmless tabletop alternatives while documenting their limitations.",
+          "nb": "Academys tekniske beretning beskriver løsninger i kamera sammen med optisk kompositering. Sammenlign ufarlige bordmodellalternativer og dokumenter begrensningene.",
+          "fr": "L’Académie décrit solutions à la prise de vues et compositing optique. Comparez des alternatives inoffensives sur table en documentant leurs limites.",
+          "pt": "A Academia descreve soluções na câmara e composição ótica. Compare alternativas inofensivas de mesa documentando as limitações."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "aliens-sequel",
+        "area": "research",
+        "prompt": {
+          "en": "How can a sequel change genre emphasis while retaining continuity?",
+          "nb": "Hvordan kan en oppfølger endre sjangervekt og samtidig bevare kontinuitet?",
+          "fr": "Comment une suite change-t-elle d’accent générique tout en gardant la continuité ?",
+          "pt": "Como pode uma sequela mudar a ênfase de género mantendo continuidade?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare narrative rhythm and ensemble roles in two fictional concepts",
+              "nb": "Sammenlign fortellingsrytme og ensembleroller i to fiktive konsepter",
+              "fr": "Comparer rythme narratif et rôles collectifs dans deux concepts fictifs",
+              "pt": "Comparar ritmo narrativo e papéis coletivos em dois conceitos fictícios"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume a sequel must reproduce every scene from its predecessor",
+              "nb": "Anta at en oppfølger må gjenta alle scener fra forgjengeren",
+              "fr": "Supposer qu’une suite doit reproduire toutes les scènes précédentes",
+              "pt": "Supor que uma sequela deve reproduzir todas as cenas anteriores"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat genre labels as proof of specific production techniques",
+              "nb": "Behandle sjangerbetegnelser som bevis på bestemte produksjonsteknikker",
+              "fr": "Prendre les genres pour preuve de techniques précises",
+              "pt": "Tomar géneros como prova de técnicas específicas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI identifies the sequel's shift toward action, and AFI documents its distinct development. Compare original narrative concepts without treating reception labels as production evidence.",
+          "nb": "BFI identifiserer oppfølgerens dreining mot action, og AFI dokumenterer dens eget utviklingsarbeid. Sammenlign egne fortellingskonsepter uten å behandle sjangermerking som produksjonsbevis.",
+          "fr": "Le BFI identifie le virage vers l’action et l’AFI documente le développement distinct. Comparez des concepts originaux sans prendre les genres pour preuves de production.",
+          "pt": "O BFI identifica a mudança para ação e a AFI documenta desenvolvimento distinto. Compare conceitos originais sem tomar géneros por provas de produção."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      }
+    ]
   }
 ] as const satisfies readonly SourceBackedCaseWorkshop[];

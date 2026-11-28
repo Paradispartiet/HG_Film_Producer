@@ -157,15 +157,23 @@ const ids = [
   "scenario_amarcord_1973",
   "scenario_manila_in_the_claws_of_light_1975",
   "scenario_the_battle_of_chile_part_i_1975",
+  "scenario_a_clockwork_orange_1971",
+  "scenario_scenes_from_a_marriage_1974",
+  "scenario_manhattan_1979",
+  "scenario_raging_bull_1980",
+  "scenario_raiders_of_the_lost_ark_1981",
+  "scenario_blade_runner_1982",
+  "scenario_et_the_extra_terrestrial_1982",
+  "scenario_aliens_1986",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly one hundred and forty-eight existing cases have four hundred and forty-four original, source-backed decisions", () => {
+test("Exactly one hundred and fifty-six existing cases have four hundred and sixty-eight original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 148);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 444);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 156);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 468);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -437,6 +445,17 @@ test("Exactly one hundred and forty-eight existing cases have four hundred and f
       const configs: Record<string, [string, string]> = {"scenario_amarcord_1973":["src/ui/data/scenarioProductionVerificationFinal1970sBatch.ts","italyFranceGermanyBeneluxExpansion"],"scenario_manila_in_the_claws_of_light_1975":["src/ui/data/scenarioProductionVerificationManilaClawsLight.ts","chapterFifteenManilaClawsLightExpansion"],"scenario_the_battle_of_chile_part_i_1975":["src/ui/data/scenarioProductionVerificationBattleChilePartOne.ts","chapterFifteenBattleChilePartOneExpansion"]};
       const [path, definition] = configs[workshop.scenarioId]!;
       assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
+      const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
+      assert.ok(start >= 0);
+      const next = verification.indexOf("\n  },", start);
+      const section = verification.slice(start, next < 0 ? undefined : next);
+      for (const source of workshop.sources) assert.ok(section.includes(source.url));
+    } else if (["scenario_a_clockwork_orange_1971","scenario_scenes_from_a_marriage_1974","scenario_manhattan_1979","scenario_raging_bull_1980","scenario_raiders_of_the_lost_ark_1981","scenario_blade_runner_1982","scenario_et_the_extra_terrestrial_1982","scenario_aliens_1986"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_a_clockwork_orange_1971":["src/ui/data/scenarioProductionVerificationFinal1970sBatch.ts","seed"],"scenario_scenes_from_a_marriage_1974":["src/ui/data/scenarioProductionVerificationFinal1970sBatch.ts","seed"],"scenario_manhattan_1979":["src/ui/data/scenarioProductionVerificationNewHollywoodNewYorkBatch.ts","seed"],"scenario_raging_bull_1980":["src/ui/data/scenarioProductionVerificationRagingBull.ts","chapterSixteenRagingBullExpansion"],"scenario_raiders_of_the_lost_ark_1981":["src/ui/data/scenarioProductionVerificationRaidersLostArk.ts","chapterSixteenRaidersLostArkExpansion"],"scenario_blade_runner_1982":["src/ui/data/scenarioProductionVerificationBladeRunner.ts","chapterSixteenBladeRunnerExpansion"],"scenario_et_the_extra_terrestrial_1982":["src/ui/data/scenarioProductionVerificationETExtraTerrestrial.ts","chapterSixteenETExtraTerrestrialExpansion"],"scenario_aliens_1986":["src/ui/data/scenarioProductionVerificationAliens.ts","chapterSixteenAliensExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      if (definition === "seed") assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
+      else assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
       const verification = readFileSync(path, "utf8");
       const start = verification.indexOf('scenarioId: "' + workshop.scenarioId + '"');
       assert.ok(start >= 0);
@@ -1020,4 +1039,16 @@ test("International 1970s cinema retains film-specific questions and sources", (
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_amarcord_1973")?.questions.map(q => q.id), ["amarcord-memory","amarcord-sets","amarcord-history"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_manila_in_the_claws_of_light_1975")?.questions.map(q => q.id), ["manilaintheclawsoflight-city","manilaintheclawsoflight-casting","manilaintheclawsoflight-versions"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_battle_of_chile_part_i_1975")?.questions.map(q => q.id), ["thebattleofchileparti-evidence","thebattleofchileparti-crew","thebattleofchileparti-sound"]);
+});
+
+
+test("Late 1970s and 1980s workshops preserve film-specific questions and evidence", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_a_clockwork_orange_1971")?.questions.map(q => q.id), ["aclockworkorange-architecture","aclockworkorange-progression","aclockworkorange-counterpoint"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_scenes_from_a_marriage_1974")?.questions.map(q => q.id), ["scenesfromamarriage-format","scenesfromamarriage-intimacy","scenesfromamarriage-editions"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_manhattan_1979")?.questions.map(q => q.id), ["manhattan-monochrome","manhattan-widescreen","manhattan-planetarium"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_raging_bull_1980")?.questions.map(q => q.id), ["ragingbull-registers","ragingbull-editing","ragingbull-home_movies"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_raiders_of_the_lost_ark_1981")?.questions.map(q => q.id), ["raidersofthelostark-planning","raidersofthelostark-composite","raidersofthelostark-foley"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_blade_runner_1982")?.questions.map(q => q.id), ["bladerunner-retrofit","bladerunner-light","bladerunner-cuts"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_et_the_extra_terrestrial_1982")?.questions.map(q => q.id), ["ettheextraterrestrial-height","ettheextraterrestrial-character","ettheextraterrestrial-previsualization"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_aliens_1986")?.questions.map(q => q.id), ["aliens-departments","aliens-practical","aliens-sequel"]);
 });
