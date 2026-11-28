@@ -344,15 +344,20 @@ const ids = [
   "scenario_the_eight_mountains_2022",
   "scenario_tori_and_lokita_2022",
   "scenario_about_dry_grasses_2023",
+  "scenario_holy_spider_2022",
+  "scenario_the_pot_au_feu_2023",
+  "scenario_aheds_knee_2021",
+  "scenario_nitram_2021",
+  "scenario_stars_at_noon_2022",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly three hundred and thirty-five existing cases have one thousand and five original, source-backed decisions", () => {
+test("Exactly three hundred and forty existing cases have one thousand and twenty original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 335);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 1005);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 340);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 1020);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -795,6 +800,13 @@ test("Exactly three hundred and thirty-five existing cases have one thousand and
       for (const source of workshop.sources) assert.ok(verification.includes(source.url));
     } else if (["scenario_broker_2022","scenario_compartment_no_6_2021","scenario_the_eight_mountains_2022","scenario_tori_and_lokita_2022","scenario_about_dry_grasses_2023"].includes(workshop.scenarioId)) {
       const configs: Record<string, [string, string]> = {"scenario_broker_2022":["src/ui/data/scenarioProductionVerificationBroker.ts","chapterNineteenBrokerExpansion"],"scenario_compartment_no_6_2021":["src/ui/data/scenarioProductionVerificationCompartmentNo6.ts","chapterNineteenCompartmentNo6Expansion"],"scenario_the_eight_mountains_2022":["src/ui/data/scenarioProductionVerificationTheEightMountains.ts","chapterNineteenTheEightMountainsExpansion"],"scenario_tori_and_lokita_2022":["src/ui/data/scenarioProductionVerificationToriAndLokita.ts","chapterNineteenToriAndLokitaExpansion"],"scenario_about_dry_grasses_2023":["src/ui/data/scenarioProductionVerificationAboutDryGrasses.ts","chapterNineteenAboutDryGrassesExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
+      assert.ok(verification.includes('scenarioId: "' + workshop.scenarioId + '"'));
+      for (const source of workshop.sources) assert.ok(verification.includes(source.url));
+    } else if (["scenario_holy_spider_2022","scenario_the_pot_au_feu_2023","scenario_aheds_knee_2021","scenario_nitram_2021","scenario_stars_at_noon_2022"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_holy_spider_2022":["src/ui/data/scenarioProductionVerificationHolySpider.ts","chapterNineteenHolySpiderExpansion"],"scenario_the_pot_au_feu_2023":["src/ui/data/scenarioProductionVerificationThePotAuFeu.ts","chapterNineteenThePotAuFeuExpansion"],"scenario_aheds_knee_2021":["src/ui/data/scenarioProductionVerificationAhedsKnee.ts","chapterNineteenAhedsKneeExpansion"],"scenario_nitram_2021":["src/ui/data/scenarioProductionVerificationNitram.ts","chapterNineteenNitramExpansion"],"scenario_stars_at_noon_2022":["src/ui/data/scenarioProductionVerificationStarsAtNoon.ts","chapterNineteenStarsAtNoonExpansion"]};
       const [path, definition] = configs[workshop.scenarioId]!;
       assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
       const verification = readFileSync(path, "utf8");
@@ -1664,4 +1676,13 @@ test("Fifth world cinema round preserves film-specific decisions", () => {
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_eight_mountains_2022")?.questions.map(q => q.id), ["eightmountains-access","eightmountains-ratio","eightmountains-blocks"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_tori_and_lokita_2022")?.questions.map(q => q.id), ["torilokita-casting","torilokita-height","torilokita-sound"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_about_dry_grasses_2023")?.questions.map(q => q.id), ["drygrasses-writing","drygrasses-seasons","drygrasses-cut"]);
+});
+
+
+test("Sixth world cinema round preserves film-specific decisions", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_holy_spider_2022")?.questions.map(q => q.id), ["holyspider-location","holyspider-period","holyspider-responsibility"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_pot_au_feu_2023")?.questions.map(q => q.id), ["potaufeu-food","potaufeu-sun","potaufeu-sound"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_aheds_knee_2021")?.questions.map(q => q.id), ["ahedsknee-schedule","ahedsknee-camera","ahedsknee-format"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_nitram_2021")?.questions.map(q => q.id), ["nitram-format","nitram-archive","nitram-ethics"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_stars_at_noon_2022")?.questions.map(q => q.id), ["starsnoon-place","starsnoon-humidity","starsnoon-versions"]);
 });
