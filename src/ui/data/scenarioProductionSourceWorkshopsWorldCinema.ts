@@ -13631,5 +13631,955 @@ export const worldCinemaSourceWorkshops = [
         ]
       }
     ]
+  },
+  {
+    "scenarioId": "scenario_adam_s_apples_2005",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Ensemble rehearsal and ironic dialogue in widescreen",
+      "nb": "Ensembleprøver og ironisk dialog i bredformat",
+      "fr": "Répétitions collectives et dialogue ironique en format large",
+      "pt": "Ensaios coletivos e diálogo irónico em formato panorâmico"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Adam's Apples",
+        "publisher": "Danish Film Institute",
+        "url": "https://www.dfi.dk/en/viden-om-film/filmdatabasen/film/adams-aebler"
+      },
+      {
+        "id": "s1",
+        "title": "Adams Äpfel",
+        "publisher": "filmportal.de",
+        "url": "https://www.filmportal.de/en/movie/adams-apfel_e9ee9dcec2144aadac2f1d5c830fef84"
+      },
+      {
+        "id": "s3",
+        "title": "Anders Thomas Jensen - Director: Fun with cruelty",
+        "publisher": "Cineuropa",
+        "url": "https://cineuropa.org/en/interview/64596/"
+      },
+      {
+        "id": "s4",
+        "title": "Succes for Adams æbler",
+        "publisher": "Filmmagasinet Ekko",
+        "url": "https://www.ekkofilm.dk/artikler/succes-for-adams-aebler/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "adams-rehearsal",
+        "area": "research",
+        "prompt": {
+          "en": "Jensen wrote for his intended actors and rehearsed repeatedly. Which approach would you test in a new production exercise?",
+          "nb": "Jensen skrev for de tiltenkte skuespillerne og gjennomførte gjentatte prøver. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Jensen écrivait pour ses acteurs et répétait plusieurs fois. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Jensen escreveu para os atores escolhidos e ensaiou repetidamente. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse precise dramatic beats before testing controlled improvisation",
+              "nb": "Øv på presise dramatiske vendepunkter før kontrollert improvisasjon",
+              "fr": "Répéter les moments dramatiques avant une improvisation contrôlée",
+              "pt": "Ensaiar momentos dramáticos antes de testar improvisação controlada"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Adopt a familiar convention without researching this specific context",
+              "nb": "Bruk en kjent konvensjon uten å undersøke denne konkrete konteksten",
+              "fr": "Adopter une convention familière sans étudier ce contexte précis",
+              "pt": "Adotar uma convenção familiar sem investigar este contexto específico"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Fix the creative decision before testing it with the team",
+              "nb": "Lås det kreative valget før det testes med teamet",
+              "fr": "Fixer la décision créative avant de la tester avec l'équipe",
+              "pt": "Fixar a decisão criativa antes de a testar com a equipa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Jensen wrote for his intended actors and rehearsed repeatedly. In a new exercise, test this approach: Rehearse precise dramatic beats before testing controlled improvisation.",
+          "nb": "Jensen skrev for de tiltenkte skuespillerne og gjennomførte gjentatte prøver. Prøv denne tilnærmingen i en ny øvelse: Øv på presise dramatiske vendepunkter før kontrollert improvisasjon.",
+          "fr": "Jensen écrivait pour ses acteurs et répétait plusieurs fois. Dans un nouvel exercice, tester cette approche : Répéter les moments dramatiques avant une improvisation contrôlée.",
+          "pt": "Jensen escreveu para os atores escolhidos e ensaiou repetidamente. Num novo exercício, testar esta abordagem: Ensaiar momentos dramáticos antes de testar improvisação controlada."
+        },
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      {
+        "id": "adams-irony",
+        "area": "editing",
+        "prompt": {
+          "en": "Jensen removed ironic lines that undermined emotional truth. Which approach would you test in a new production exercise?",
+          "nb": "Jensen fjernet ironiske replikker som undergravde emosjonell troverdighet. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Jensen supprimait les répliques ironiques nuisibles à la vérité émotionnelle. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Jensen retirava falas irónicas que prejudicavam a verdade emocional. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose the first assembly without testing narrative meaning",
+              "nb": "Velg første sammenklipp uten å teste fortellermessig mening",
+              "fr": "Choisir le premier assemblage sans tester le sens narratif",
+              "pt": "Escolher a primeira montagem sem testar o sentido narrativo"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare cuts with and without a joke that breaks the scene's tone",
+              "nb": "Sammenlign klipp med og uten en vits som bryter scenens tone",
+              "fr": "Comparer des montages avec et sans une plaisanterie qui brise le ton",
+              "pt": "Comparar montagens com e sem uma piada que quebra o tom"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Cut solely according to a fixed shot duration",
+              "nb": "Klipp utelukkende etter en fast innstillingslengde",
+              "fr": "Monter uniquement selon une durée fixe des plans",
+              "pt": "Montar apenas segundo uma duração fixa dos planos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Jensen removed ironic lines that undermined emotional truth. In a new exercise, test this approach: Compare cuts with and without a joke that breaks the scene's tone.",
+          "nb": "Jensen fjernet ironiske replikker som undergravde emosjonell troverdighet. Prøv denne tilnærmingen i en ny øvelse: Sammenlign klipp med og uten en vits som bryter scenens tone.",
+          "fr": "Jensen supprimait les répliques ironiques nuisibles à la vérité émotionnelle. Dans un nouvel exercice, tester cette approche : Comparer des montages avec et sans une plaisanterie qui brise le ton.",
+          "pt": "Jensen retirava falas irónicas que prejudicavam a verdade emocional. Num novo exercício, testar esta abordagem: Comparar montagens com e sem uma piada que quebra o tom."
+        },
+        "sourceIds": [
+          "s4"
+        ]
+      },
+      {
+        "id": "adams-scope",
+        "area": "camera",
+        "prompt": {
+          "en": "The Danish and German records identify a 35 mm CinemaScope format. Which approach would you test in a new production exercise?",
+          "nb": "Danske og tyske filmregistre oppgir 35 mm CinemaScope-format. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Les archives danoises et allemandes indiquent le format CinemaScope 35 mm. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Os arquivos dinamarquês e alemão registam CinemaScope em 35 mm. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose the look without comparing test footage",
+              "nb": "Velg det visuelle uttrykket uten å sammenligne testopptak",
+              "fr": "Choisir le rendu sans comparer les essais filmés",
+              "pt": "Escolher o visual sem comparar imagens de teste"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Change the framing or exposure arbitrarily between takes",
+              "nb": "Endre utsnitt eller eksponering vilkårlig mellom tagninger",
+              "fr": "Modifier arbitrairement le cadrage ou l'exposition entre les prises",
+              "pt": "Alterar arbitrariamente o enquadramento ou a exposição entre tomadas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Storyboard ensemble blocking across a wide frame",
+              "nb": "Lag storyboard for ensembleplassering i et bredt bilde",
+              "fr": "Dessiner le placement collectif dans un cadre large",
+              "pt": "Criar storyboard da disposição coletiva num quadro largo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The Danish and German records identify a 35 mm CinemaScope format. In a new exercise, test this approach: Storyboard ensemble blocking across a wide frame.",
+          "nb": "Danske og tyske filmregistre oppgir 35 mm CinemaScope-format. Prøv denne tilnærmingen i en ny øvelse: Lag storyboard for ensembleplassering i et bredt bilde.",
+          "fr": "Les archives danoises et allemandes indiquent le format CinemaScope 35 mm. Dans un nouvel exercice, tester cette approche : Dessiner le placement collectif dans un cadre large.",
+          "pt": "Os arquivos dinamarquês e alemão registam CinemaScope em 35 mm. Num novo exercício, testar esta abordagem: Criar storyboard da disposição coletiva num quadro largo."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_antonia_s_line_1995",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Cyclical time, ageing and rural ensemble geography",
+      "nb": "Syklisk tid, aldring og landsbyens geografi",
+      "fr": "Temps cyclique, vieillissement et géographie rurale",
+      "pt": "Tempo cíclico, envelhecimento e geografia rural"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Marleen Gorris over Antonia",
+        "publisher": "Filmkrant",
+        "url": "https://filmkrant.nl/interview/marleen-gorris-over-antonia/"
+      },
+      {
+        "id": "s1",
+        "title": "Antonia",
+        "publisher": "Nederlands Film Festival",
+        "url": "https://www.filmfestival.nl/en/film/antonia-2"
+      },
+      {
+        "id": "s2",
+        "title": "Antonia's Line",
+        "publisher": "Flanders Image",
+        "url": "https://www.flandersimage.com/titles/antonias-line"
+      },
+      {
+        "id": "s5",
+        "title": "Antonia's Line",
+        "publisher": "Turner Classic Movies",
+        "url": "https://www.tcm.com/articles/1379685/antonias-line"
+      }
+    ],
+    "questions": [
+      {
+        "id": "antonia-cycle",
+        "area": "editing",
+        "prompt": {
+          "en": "Gorris describes cyclical time in a multigenerational chronicle. Which approach would you test in a new production exercise?",
+          "nb": "Gorris beskriver syklisk tid i en flergenerasjonskrønike. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Gorris décrit un temps cyclique dans une chronique familiale. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Gorris descreve tempo cíclico numa crónica familiar. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Repeat a visual motif with changed meaning across generations",
+              "nb": "Gjenta et visuelt motiv med endret mening mellom generasjoner",
+              "fr": "Répéter un motif visuel dont le sens change entre générations",
+              "pt": "Repetir um motivo visual cujo sentido muda entre gerações"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Cut solely according to a fixed shot duration",
+              "nb": "Klipp utelukkende etter en fast innstillingslengde",
+              "fr": "Monter uniquement selon une durée fixe des plans",
+              "pt": "Montar apenas segundo uma duração fixa dos planos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose the first assembly without testing narrative meaning",
+              "nb": "Velg første sammenklipp uten å teste fortellermessig mening",
+              "fr": "Choisir le premier assemblage sans tester le sens narratif",
+              "pt": "Escolher a primeira montagem sem testar o sentido narrativo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Gorris describes cyclical time in a multigenerational chronicle. In a new exercise, test this approach: Repeat a visual motif with changed meaning across generations.",
+          "nb": "Gorris beskriver syklisk tid i en flergenerasjonskrønike. Prøv denne tilnærmingen i en ny øvelse: Gjenta et visuelt motiv med endret mening mellom generasjoner.",
+          "fr": "Gorris décrit un temps cyclique dans une chronique familiale. Dans un nouvel exercice, tester cette approche : Répéter un motif visuel dont le sens change entre générations.",
+          "pt": "Gorris descreve tempo cíclico numa crónica familiar. Num novo exercício, testar esta abordagem: Repetir um motivo visual cujo sentido muda entre gerações."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "antonia-ageing",
+        "area": "research",
+        "prompt": {
+          "en": "The director discusses restrained makeup and performance-led ageing. Which approach would you test in a new production exercise?",
+          "nb": "Regissøren beskriver diskret sminke og aldring gjennom skuespill. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "La réalisatrice décrit le maquillage discret et le vieillissement par le jeu. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "A realizadora descreve maquilhagem discreta e envelhecimento pela atuação. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Fix the creative decision before testing it with the team",
+              "nb": "Lås det kreative valget før det testes med teamet",
+              "fr": "Fixer la décision créative avant de la tester avec l'équipe",
+              "pt": "Fixar a decisão criativa antes de a testar com a equipa"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test changes in posture, tempo and subtle makeup together",
+              "nb": "Prøv endringer i holdning, tempo og diskret sminke sammen",
+              "fr": "Tester ensemble posture, rythme et maquillage discret",
+              "pt": "Testar postura, ritmo e maquilhagem discreta em conjunto"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Adopt a familiar convention without researching this specific context",
+              "nb": "Bruk en kjent konvensjon uten å undersøke denne konkrete konteksten",
+              "fr": "Adopter une convention familière sans étudier ce contexte précis",
+              "pt": "Adotar uma convenção familiar sem investigar este contexto específico"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The director discusses restrained makeup and performance-led ageing. In a new exercise, test this approach: Test changes in posture, tempo and subtle makeup together.",
+          "nb": "Regissøren beskriver diskret sminke og aldring gjennom skuespill. Prøv denne tilnærmingen i en ny øvelse: Prøv endringer i holdning, tempo og diskret sminke sammen.",
+          "fr": "La réalisatrice décrit le maquillage discret et le vieillissement par le jeu. Dans un nouvel exercice, tester cette approche : Tester ensemble posture, rythme et maquillage discret.",
+          "pt": "A realizadora descreve maquilhagem discreta e envelhecimento pela atuação. Num novo exercício, testar esta abordagem: Testar postura, ritmo e maquilhagem discreta em conjunto."
+        },
+        "sourceIds": [
+          "s0",
+          "s5"
+        ]
+      },
+      {
+        "id": "antonia-village",
+        "area": "camera",
+        "prompt": {
+          "en": "The film uses rural village settings and widescreen photography. Which approach would you test in a new production exercise?",
+          "nb": "Filmen bruker landsbymiljø og bredformatfoto. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Le film utilise un village rural et un cadre large. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "O filme utiliza uma aldeia rural e fotografia panorâmica. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose the look without comparing test footage",
+              "nb": "Velg det visuelle uttrykket uten å sammenligne testopptak",
+              "fr": "Choisir le rendu sans comparer les essais filmés",
+              "pt": "Escolher o visual sem comparar imagens de teste"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Change the framing or exposure arbitrarily between takes",
+              "nb": "Endre utsnitt eller eksponering vilkårlig mellom tagninger",
+              "fr": "Modifier arbitrairement le cadrage ou l'exposition entre les prises",
+              "pt": "Alterar arbitrariamente o enquadramento ou a exposição entre tomadas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map recurring village spaces and vary ensemble arrangements over time",
+              "nb": "Kartlegg gjentakende landsbyrom og varier ensembleplasseringen over tid",
+              "fr": "Cartographier les lieux récurrents et varier les placements au fil du temps",
+              "pt": "Mapear espaços recorrentes e variar a disposição coletiva ao longo do tempo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The film uses rural village settings and widescreen photography. In a new exercise, test this approach: Map recurring village spaces and vary ensemble arrangements over time.",
+          "nb": "Filmen bruker landsbymiljø og bredformatfoto. Prøv denne tilnærmingen i en ny øvelse: Kartlegg gjentakende landsbyrom og varier ensembleplasseringen over tid.",
+          "fr": "Le film utilise un village rural et un cadre large. Dans un nouvel exercice, tester cette approche : Cartographier les lieux récurrents et varier les placements au fil du temps.",
+          "pt": "O filme utiliza uma aldeia rural e fotografia panorâmica. Num novo exercício, testar esta abordagem: Mapear espaços recorrentes e variar a disposição coletiva ao longo do tempo."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_blue_jasmine_2013",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Associative flashbacks, wardrobe continuity and jazz",
+      "nb": "Assosiative tilbakeblikk, kostymekontinuitet og jazz",
+      "fr": "Flashbacks associatifs, continuité des costumes et jazz",
+      "pt": "Flashbacks associativos, continuidade dos figurinos e jazz"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Blue Jasmine press kit",
+        "publisher": "Sony Pictures Classics",
+        "url": "https://www.sonyclassics.com/bluejasmine/bluejasmine_presskit.pdf"
+      },
+      {
+        "id": "s2",
+        "title": "Film of the week: Blue Jasmine",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/sight-and-sound/reviews/film-week-blue-jasmine"
+      },
+      {
+        "id": "s3",
+        "title": "Interview: Woody Allen on Blue Jasmine",
+        "publisher": "Time Out",
+        "url": "https://www.timeout.com/film/interview-woody-allen-on-blue-jasmine"
+      },
+      {
+        "id": "s5",
+        "title": "Cate Blanchett's Blue Jasmine wardrobe",
+        "publisher": "British Vogue",
+        "url": "https://www.vogue.co.uk/article/cate-blanchett-blue-jasmine-karl-lagerfeld-costumes"
+      },
+      {
+        "id": "s6",
+        "title": "Blue Jasmine costume designer interview",
+        "publisher": "Town & Country",
+        "url": "https://www.townandcountrymag.com/style/fashion-trends/g578/blue-jasmine-cate-blanchett-costume-designer-interview/"
+      },
+      {
+        "id": "s7",
+        "title": "The story behind Cate Blanchett's Blue Jasmine costumes",
+        "publisher": "Allure",
+        "url": "https://www.allure.com/story/cate-blanchett-blue-jasmine-costume-designer"
+      }
+    ],
+    "questions": [
+      {
+        "id": "jasmine-memory",
+        "area": "editing",
+        "prompt": {
+          "en": "Production notes describe an associative New York past and San Francisco present. Which approach would you test in a new production exercise?",
+          "nb": "Produksjonsnotatene beskriver en assosiativ fortid i New York og nåtid i San Francisco. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Les notes décrivent un passé new-yorkais et un présent à San Francisco liés par association. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "As notas descrevem um passado em Nova Iorque e um presente em São Francisco ligados por associação. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Cut from a present stimulus to a related memory and test clarity",
+              "nb": "Klipp fra en impuls i nåtiden til et tilknyttet minne og test tydeligheten",
+              "fr": "Monter un stimulus présent vers un souvenir associé et tester la clarté",
+              "pt": "Montar de um estímulo presente para uma memória associada e testar a clareza"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Cut solely according to a fixed shot duration",
+              "nb": "Klipp utelukkende etter en fast innstillingslengde",
+              "fr": "Monter uniquement selon une durée fixe des plans",
+              "pt": "Montar apenas segundo uma duração fixa dos planos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose the first assembly without testing narrative meaning",
+              "nb": "Velg første sammenklipp uten å teste fortellermessig mening",
+              "fr": "Choisir le premier assemblage sans tester le sens narratif",
+              "pt": "Escolher a primeira montagem sem testar o sentido narrativo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Production notes describe an associative New York past and San Francisco present. In a new exercise, test this approach: Cut from a present stimulus to a related memory and test clarity.",
+          "nb": "Produksjonsnotatene beskriver en assosiativ fortid i New York og nåtid i San Francisco. Prøv denne tilnærmingen i en ny øvelse: Klipp fra en impuls i nåtiden til et tilknyttet minne og test tydeligheten.",
+          "fr": "Les notes décrivent un passé new-yorkais et un présent à San Francisco liés par association. Dans un nouvel exercice, tester cette approche : Monter un stimulus présent vers un souvenir associé et tester la clarté.",
+          "pt": "As notas descrevem um passado em Nova Iorque e um presente em São Francisco ligados por associação. Num novo exercício, testar esta abordagem: Montar de um estímulo presente para uma memória associada e testar a clareza."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "jasmine-wardrobe",
+        "area": "research",
+        "prompt": {
+          "en": "The costume designer describes repeated luxury remnants and their changing condition. Which approach would you test in a new production exercise?",
+          "nb": "Kostymedesigneren beskriver gjentatte luksusplagg og endringer i tilstanden deres. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "La costumière décrit des pièces de luxe récurrentes dont l'état évolue. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "A figurinista descreve peças de luxo recorrentes e a evolução do seu estado. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Fix the creative decision before testing it with the team",
+              "nb": "Lås det kreative valget før det testes med teamet",
+              "fr": "Fixer la décision créative avant de la tester avec l'équipe",
+              "pt": "Fixar a decisão criativa antes de a testar com a equipa"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Build a wardrobe continuity chart tracking wear and social meaning",
+              "nb": "Lag et kostymeskjema som følger slitasje og sosial betydning",
+              "fr": "Créer un tableau de continuité suivant l'usure et le sens social",
+              "pt": "Criar um mapa de continuidade de desgaste e significado social"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Adopt a familiar convention without researching this specific context",
+              "nb": "Bruk en kjent konvensjon uten å undersøke denne konkrete konteksten",
+              "fr": "Adopter une convention familière sans étudier ce contexte précis",
+              "pt": "Adotar uma convenção familiar sem investigar este contexto específico"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The costume designer describes repeated luxury remnants and their changing condition. In a new exercise, test this approach: Build a wardrobe continuity chart tracking wear and social meaning.",
+          "nb": "Kostymedesigneren beskriver gjentatte luksusplagg og endringer i tilstanden deres. Prøv denne tilnærmingen i en ny øvelse: Lag et kostymeskjema som følger slitasje og sosial betydning.",
+          "fr": "La costumière décrit des pièces de luxe récurrentes dont l'état évolue. Dans un nouvel exercice, tester cette approche : Créer un tableau de continuité suivant l'usure et le sens social.",
+          "pt": "A figurinista descreve peças de luxo recorrentes e a evolução do seu estado. Num novo exercício, testar esta abordagem: Criar um mapa de continuidade de desgaste e significado social."
+        },
+        "sourceIds": [
+          "s5",
+          "s6",
+          "s7"
+        ]
+      },
+      {
+        "id": "jasmine-jazz",
+        "area": "sound",
+        "prompt": {
+          "en": "The director discusses jazz records and production notes identify title music. Which approach would you test in a new production exercise?",
+          "nb": "Regissøren omtaler jazzplater og produksjonsnotatene identifiserer tittelmusikken. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Le réalisateur évoque les disques de jazz et les notes identifient la musique du titre. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "O realizador aborda discos de jazz e as notas identificam a música do título. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose music solely by tempo without considering character",
+              "nb": "Velg musikk bare etter tempo uten å vurdere karakteren",
+              "fr": "Choisir la musique uniquement selon le tempo sans considérer le personnage",
+              "pt": "Escolher música só pelo tempo sem considerar a personagem"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Fill every quiet passage with continuous background music",
+              "nb": "Fyll alle stille partier med kontinuerlig bakgrunnsmusikk",
+              "fr": "Remplir tous les silences avec une musique de fond continue",
+              "pt": "Preencher todos os silêncios com música de fundo contínua"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test an original or cleared musical cue as an associative character motif",
+              "nb": "Test et originalt eller klarert musikkmotiv knyttet til karakterens assosiasjoner",
+              "fr": "Tester un motif musical original ou autorisé associé au personnage",
+              "pt": "Testar um motivo musical original ou licenciado associado à personagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The director discusses jazz records and production notes identify title music. In a new exercise, test this approach: Test an original or cleared musical cue as an associative character motif.",
+          "nb": "Regissøren omtaler jazzplater og produksjonsnotatene identifiserer tittelmusikken. Prøv denne tilnærmingen i en ny øvelse: Test et originalt eller klarert musikkmotiv knyttet til karakterens assosiasjoner.",
+          "fr": "Le réalisateur évoque les disques de jazz et les notes identifient la musique du titre. Dans un nouvel exercice, tester cette approche : Tester un motif musical original ou autorisé associé au personnage.",
+          "pt": "O realizador aborda discos de jazz e as notas identificam a música do título. Num novo exercício, testar esta abordagem: Testar um motivo musical original ou licenciado associado à personagem."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_call_me_by_your_name_2017",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Single-stock photography, period costumes and musical performance",
+      "nb": "Én filmtype, periodekostymer og musikalsk fremføring",
+      "fr": "Pellicule unique, costumes d'époque et interprétation musicale",
+      "pt": "Película única, figurinos de época e interpretação musical"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "Call Me by Your Name – a sun-drenched masterpiece made with one filmstock and one lens in heavy rain",
+        "publisher": "Kodak",
+        "url": "https://www.kodak.com/en/motion/blog-post/call-me-by-your-name/"
+      },
+      {
+        "id": "s3",
+        "title": "Vogue Meets Costume Designer Giulia Piersanti",
+        "publisher": "British Vogue",
+        "url": "https://www.vogue.co.uk/article/call-me-by-your-name-costume-designer-giulia-piersanti-interview"
+      },
+      {
+        "id": "s4",
+        "title": "Luca Guadagnino on the Music of His Movies, and Why He Had to Have Sufjan Stevens for Call Me by Your Name",
+        "publisher": "Pitchfork",
+        "url": "https://pitchfork.com/thepitch/luca-guadagnino-interview-call-me-by-your-name-sufjan-stevens-music-of-his-movies/"
+      },
+      {
+        "id": "s5",
+        "title": "AFI Movie Club: Call Me by Your Name",
+        "publisher": "American Film Institute",
+        "url": "https://www.afi.com/news/afi-movie-club-call-me-by-your-name/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "cmbyn-stock",
+        "area": "camera",
+        "prompt": {
+          "en": "Kodak documents a single 35 mm stock and a single lens. Which approach would you test in a new production exercise?",
+          "nb": "Kodak dokumenterer én 35 mm-filmtype og ett objektiv. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Kodak documente une seule pellicule 35 mm et un seul objectif. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "A Kodak documenta uma única película de 35 mm e uma única objetiva. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test one stock and lens across varied natural lighting conditions",
+              "nb": "Test én filmtype og ett objektiv under varierte naturlige lysforhold",
+              "fr": "Tester une pellicule et un objectif sous diverses lumières naturelles",
+              "pt": "Testar uma película e uma objetiva em condições variadas de luz natural"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose the look without comparing test footage",
+              "nb": "Velg det visuelle uttrykket uten å sammenligne testopptak",
+              "fr": "Choisir le rendu sans comparer les essais filmés",
+              "pt": "Escolher o visual sem comparar imagens de teste"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Change the framing or exposure arbitrarily between takes",
+              "nb": "Endre utsnitt eller eksponering vilkårlig mellom tagninger",
+              "fr": "Modifier arbitrairement le cadrage ou l'exposition entre les prises",
+              "pt": "Alterar arbitrariamente o enquadramento ou a exposição entre tomadas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Kodak documents a single 35 mm stock and a single lens. In a new exercise, test this approach: Test one stock and lens across varied natural lighting conditions.",
+          "nb": "Kodak dokumenterer én 35 mm-filmtype og ett objektiv. Prøv denne tilnærmingen i en ny øvelse: Test én filmtype og ett objektiv under varierte naturlige lysforhold.",
+          "fr": "Kodak documente une seule pellicule 35 mm et un seul objectif. Dans un nouvel exercice, tester cette approche : Tester une pellicule et un objectif sous diverses lumières naturelles.",
+          "pt": "A Kodak documenta uma única película de 35 mm e uma única objetiva. Num novo exercício, testar esta abordagem: Testar uma película e uma objetiva em condições variadas de luz natural."
+        },
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "id": "cmbyn-costume",
+        "area": "research",
+        "prompt": {
+          "en": "Piersanti describes understated period clothing informed by family photographs. Which approach would you test in a new production exercise?",
+          "nb": "Piersanti beskriver nedtonede periodeklær basert på familiefotografier. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Piersanti décrit des vêtements d'époque discrets inspirés de photos familiales. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Piersanti descreve roupa de época discreta inspirada em fotografias familiares. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Fix the creative decision before testing it with the team",
+              "nb": "Lås det kreative valget før det testes med teamet",
+              "fr": "Fixer la décision créative avant de la tester avec l'équipe",
+              "pt": "Fixar a decisão criativa antes de a testar com a equipa"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Build character wardrobe boards from local period archives",
+              "nb": "Lag karakterspesifikke kostymetavler fra lokale periodearkiver",
+              "fr": "Créer des planches de costumes à partir d'archives locales d'époque",
+              "pt": "Criar painéis de figurinos a partir de arquivos locais da época"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Adopt a familiar convention without researching this specific context",
+              "nb": "Bruk en kjent konvensjon uten å undersøke denne konkrete konteksten",
+              "fr": "Adopter une convention familière sans étudier ce contexte précis",
+              "pt": "Adotar uma convenção familiar sem investigar este contexto específico"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Piersanti describes understated period clothing informed by family photographs. In a new exercise, test this approach: Build character wardrobe boards from local period archives.",
+          "nb": "Piersanti beskriver nedtonede periodeklær basert på familiefotografier. Prøv denne tilnærmingen i en ny øvelse: Lag karakterspesifikke kostymetavler fra lokale periodearkiver.",
+          "fr": "Piersanti décrit des vêtements d'époque discrets inspirés de photos familiales. Dans un nouvel exercice, tester cette approche : Créer des planches de costumes à partir d'archives locales d'époque.",
+          "pt": "Piersanti descreve roupa de época discreta inspirada em fotografias familiares. Num novo exercício, testar esta abordagem: Criar painéis de figurinos a partir de arquivos locais da época."
+        },
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      {
+        "id": "cmbyn-music",
+        "area": "sound",
+        "prompt": {
+          "en": "Guadagnino describes piano as part of Elio's inner and outer dialogue. Which approach would you test in a new production exercise?",
+          "nb": "Guadagnino beskriver pianoet som del av Elios indre og ytre dialog. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Guadagnino décrit le piano comme partie du dialogue intérieur et extérieur d'Elio. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Guadagnino descreve o piano como parte do diálogo interior e exterior de Elio. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose music solely by tempo without considering character",
+              "nb": "Velg musikk bare etter tempo uten å vurdere karakteren",
+              "fr": "Choisir la musique uniquement selon le tempo sans considérer le personnage",
+              "pt": "Escolher música só pelo tempo sem considerar a personagem"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Fill every quiet passage with continuous background music",
+              "nb": "Fyll alle stille partier med kontinuerlig bakgrunnsmusikk",
+              "fr": "Remplir tous les silences avec une musique de fond continue",
+              "pt": "Preencher todos os silêncios com música de fundo contínua"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse a playable original musical phrase as character expression",
+              "nb": "Øv inn en spillbar original musikalsk frase som karakteruttrykk",
+              "fr": "Répéter une phrase musicale originale jouable comme expression du personnage",
+              "pt": "Ensaiar uma frase musical original executável como expressão da personagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Guadagnino describes piano as part of Elio's inner and outer dialogue. In a new exercise, test this approach: Rehearse a playable original musical phrase as character expression.",
+          "nb": "Guadagnino beskriver pianoet som del av Elios indre og ytre dialog. Prøv denne tilnærmingen i en ny øvelse: Øv inn en spillbar original musikalsk frase som karakteruttrykk.",
+          "fr": "Guadagnino décrit le piano comme partie du dialogue intérieur et extérieur d'Elio. Dans un nouvel exercice, tester cette approche : Répéter une phrase musicale originale jouable comme expression du personnage.",
+          "pt": "Guadagnino descreve o piano como parte do diálogo interior e exterior de Elio. Num novo exercício, testar esta abordagem: Ensaiar uma frase musical original executável como expressão da personagem."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_clockers_1995",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Adaptation focus, location research and photographic stock tests",
+      "nb": "Adaptasjonsfokus, stedsresearch og fotografiske filmtester",
+      "fr": "Focalisation de l'adaptation, repérages et essais de pellicule",
+      "pt": "Foco da adaptação, pesquisa de locais e testes de película"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Clockers: Between ‘Rock’ and a Hard Place",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/article/clockers-lee-sayeed/"
+      },
+      {
+        "id": "s1",
+        "title": "Clockers — BFI Southbank Programme Notes",
+        "publisher": "British Film Institute",
+        "url": "https://bfidatadigipres.github.io/moviedrome%3Cbr%3Ebringing%20the%20cult%20tv%20series%20to%20the%20big%20screen/2025/07/26/clockers/"
+      },
+      {
+        "id": "s2",
+        "title": "Clockers",
+        "publisher": "Danish Film Institute",
+        "url": "https://www.dfi.dk/en/viden-om-film/filmdatabasen/film/clockers"
+      },
+      {
+        "id": "s9",
+        "title": "Richard Price's Street Life",
+        "publisher": "The New Yorker",
+        "url": "https://www.newyorker.com/culture/persons-of-interest/richard-prices-street-life"
+      }
+    ],
+    "questions": [
+      {
+        "id": "clockers-adaptation",
+        "area": "research",
+        "prompt": {
+          "en": "Lee and Price reworked the novel and narrowed its narrative focus. Which approach would you test in a new production exercise?",
+          "nb": "Lee og Price omarbeidet romanen og snevret inn perspektivet. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Lee et Price ont réécrit le roman et recentré le récit. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Lee e Price reescreveram o romance e concentraram o foco narrativo. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map an original ensemble narrative through a selected viewpoint and test omissions",
+              "nb": "Kartlegg en ensemblefortelling gjennom ett valgt perspektiv og test utelatelser",
+              "fr": "Cartographier un récit choral selon un point de vue et tester les omissions",
+              "pt": "Mapear uma narrativa coral por um ponto de vista e testar omissões"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Adopt a familiar convention without researching this specific context",
+              "nb": "Bruk en kjent konvensjon uten å undersøke denne konkrete konteksten",
+              "fr": "Adopter une convention familière sans étudier ce contexte précis",
+              "pt": "Adotar uma convenção familiar sem investigar este contexto específico"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Fix the creative decision before testing it with the team",
+              "nb": "Lås det kreative valget før det testes med teamet",
+              "fr": "Fixer la décision créative avant de la tester avec l'équipe",
+              "pt": "Fixar a decisão criativa antes de a testar com a equipa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Lee and Price reworked the novel and narrowed its narrative focus. In a new exercise, test this approach: Map an original ensemble narrative through a selected viewpoint and test omissions.",
+          "nb": "Lee og Price omarbeidet romanen og snevret inn perspektivet. Prøv denne tilnærmingen i en ny øvelse: Kartlegg en ensemblefortelling gjennom ett valgt perspektiv og test utelatelser.",
+          "fr": "Lee et Price ont réécrit le roman et recentré le récit. Dans un nouvel exercice, tester cette approche : Cartographier un récit choral selon un point de vue et tester les omissions.",
+          "pt": "Lee e Price reescreveram o romance e concentraram o foco narrativo. Num novo exercício, testar esta abordagem: Mapear uma narrativa coral por um ponto de vista e testar omissões."
+        },
+        "sourceIds": [
+          "s0",
+          "s9"
+        ]
+      },
+      {
+        "id": "clockers-location",
+        "area": "research",
+        "prompt": {
+          "en": "Contemporary cinematography reporting documents location research in Brooklyn. Which approach would you test in a new production exercise?",
+          "nb": "Samtidig filmfotografisk dokumentasjon beskriver stedsresearch i Brooklyn. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "Un reportage contemporain documente les repérages à Brooklyn. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Uma reportagem contemporânea documenta a pesquisa de locais em Brooklyn. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Fix the creative decision before testing it with the team",
+              "nb": "Lås det kreative valget før det testes med teamet",
+              "fr": "Fixer la décision créative avant de la tester avec l'équipe",
+              "pt": "Fixar a decisão criativa antes de a testar com a equipa"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Scout with permission and map everyday movement through the location",
+              "nb": "Befar med tillatelse og kartlegg daglig bevegelse gjennom stedet",
+              "fr": "Repérer avec autorisation et cartographier les déplacements quotidiens",
+              "pt": "Visitar com autorização e mapear deslocações quotidianas no local"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Adopt a familiar convention without researching this specific context",
+              "nb": "Bruk en kjent konvensjon uten å undersøke denne konkrete konteksten",
+              "fr": "Adopter une convention familière sans étudier ce contexte précis",
+              "pt": "Adotar uma convenção familiar sem investigar este contexto específico"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Contemporary cinematography reporting documents location research in Brooklyn. In a new exercise, test this approach: Scout with permission and map everyday movement through the location.",
+          "nb": "Samtidig filmfotografisk dokumentasjon beskriver stedsresearch i Brooklyn. Prøv denne tilnærmingen i en ny øvelse: Befar med tillatelse og kartlegg daglig bevegelse gjennom stedet.",
+          "fr": "Un reportage contemporain documente les repérages à Brooklyn. Dans un nouvel exercice, tester cette approche : Repérer avec autorisation et cartographier les déplacements quotidiens.",
+          "pt": "Uma reportagem contemporânea documenta a pesquisa de locais em Brooklyn. Num novo exercício, testar esta abordagem: Visitar com autorização e mapear deslocações quotidianas no local."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "clockers-stock",
+        "area": "camera",
+        "prompt": {
+          "en": "American Cinematographer documents extensive stock tests and cross-processing. Which approach would you test in a new production exercise?",
+          "nb": "American Cinematographer dokumenterer omfattende filmtester og kryssprosessering. Hvilken tilnærming ville du testet i en ny produksjonsøvelse?",
+          "fr": "American Cinematographer documente de nombreux essais et le traitement croisé. Quelle approche testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "American Cinematographer documenta testes extensos e processamento cruzado. Que abordagem testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose the look without comparing test footage",
+              "nb": "Velg det visuelle uttrykket uten å sammenligne testopptak",
+              "fr": "Choisir le rendu sans comparer les essais filmés",
+              "pt": "Escolher o visual sem comparar imagens de teste"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Change the framing or exposure arbitrarily between takes",
+              "nb": "Endre utsnitt eller eksponering vilkårlig mellom tagninger",
+              "fr": "Modifier arbitrairement le cadrage ou l'exposition entre les prises",
+              "pt": "Alterar arbitrariamente o enquadramento ou a exposição entre tomadas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare normal and experimental processing using controlled test footage",
+              "nb": "Sammenlign normal og eksperimentell fremkalling med kontrollerte testopptak",
+              "fr": "Comparer traitement normal et expérimental avec des prises contrôlées",
+              "pt": "Comparar processamento normal e experimental com imagens de teste controladas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "American Cinematographer documents extensive stock tests and cross-processing. In a new exercise, test this approach: Compare normal and experimental processing using controlled test footage.",
+          "nb": "American Cinematographer dokumenterer omfattende filmtester og kryssprosessering. Prøv denne tilnærmingen i en ny øvelse: Sammenlign normal og eksperimentell fremkalling med kontrollerte testopptak.",
+          "fr": "American Cinematographer documente de nombreux essais et le traitement croisé. Dans un nouvel exercice, tester cette approche : Comparer traitement normal et expérimental avec des prises contrôlées.",
+          "pt": "American Cinematographer documenta testes extensos e processamento cruzado. Num novo exercício, testar esta abordagem: Comparar processamento normal e experimental com imagens de teste controladas."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      }
+    ]
   }
 ] as const satisfies readonly SourceBackedCaseWorkshop[];
