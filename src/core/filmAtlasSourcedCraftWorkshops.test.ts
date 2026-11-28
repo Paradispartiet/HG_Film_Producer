@@ -334,15 +334,20 @@ const ids = [
   "scenario_unknown_pleasures_2002",
   "scenario_shiri_1999",
   "scenario_a_hero_2021",
+  "scenario_satantango_1994",
+  "scenario_4_months_3_weeks_and_2_days_2007",
+  "scenario_land_of_mine_2015",
+  "scenario_psychobitch_2019",
+  "scenario_homesick_2015",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly three hundred and twenty-five existing cases have nine hundred and seventy-five original, source-backed decisions", () => {
+test("Exactly three hundred and thirty existing cases have nine hundred and ninety original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 325);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 975);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 330);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 990);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -769,6 +774,14 @@ test("Exactly three hundred and twenty-five existing cases have nine hundred and
       for (const source of workshop.sources) assert.ok(verification.includes(source.url));
     } else if (["scenario_bombon_el_perro_2004","scenario_last_life_in_the_universe_2003","scenario_unknown_pleasures_2002","scenario_shiri_1999","scenario_a_hero_2021"].includes(workshop.scenarioId)) {
       const configs: Record<string, [string, string]> = {"scenario_bombon_el_perro_2004":["src/ui/data/scenarioProductionVerificationBombonElPerro.ts","seed"],"scenario_last_life_in_the_universe_2003":["src/ui/data/scenarioProductionVerificationLastLifeUniverse.ts","seed"],"scenario_unknown_pleasures_2002":["src/ui/data/scenarioProductionVerificationUnknownPleasures.ts","chapterEighteenUnknownPleasuresExpansion"],"scenario_shiri_1999":["src/ui/data/scenarioProductionVerificationShiri.ts","chapterSeventeenShiriExpansion"],"scenario_a_hero_2021":["src/ui/data/scenarioProductionVerificationAHero.ts","chapterNineteenAHeroExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      if (definition === "seed") assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
+      else assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
+      assert.ok(verification.includes('scenarioId: "' + workshop.scenarioId + '"'));
+      for (const source of workshop.sources) assert.ok(verification.includes(source.url));
+    } else if (["scenario_satantango_1994","scenario_4_months_3_weeks_and_2_days_2007","scenario_land_of_mine_2015","scenario_psychobitch_2019","scenario_homesick_2015"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_satantango_1994":["src/ui/data/scenarioProductionVerificationSatantango.ts","easternIberianBritishExpansion"],"scenario_4_months_3_weeks_and_2_days_2007":["src/ui/data/scenarioProductionVerificationFourMonths.ts","seed"],"scenario_land_of_mine_2015":["src/ui/data/scenarioProductionVerificationLandOfMine.ts","seed"],"scenario_psychobitch_2019":["src/ui/data/scenarioProductionVerificationPsychobitch.ts","seed"],"scenario_homesick_2015":["src/ui/data/scenarioProductionVerificationHomesick.ts","seed"]};
       const [path, definition] = configs[workshop.scenarioId]!;
       if (definition === "seed") assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
       else assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
@@ -1621,4 +1634,13 @@ test("Third world cinema round preserves film-specific decisions", () => {
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_unknown_pleasures_2002")?.questions.map(q => q.id), ["unknownpleasures-texture","unknownpleasures-schedule","unknownpleasures-transfer"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_shiri_1999")?.questions.map(q => q.id), ["shiri-budget","shiri-revision","shiri-credits"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_a_hero_2021")?.questions.map(q => q.id), ["ahero-backstory","ahero-rehearsal","ahero-frame"]);
+});
+
+
+test("Fourth world cinema round preserves film-specific decisions", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_satantango_1994")?.questions.map(q => q.id), ["satantango-structure","satantango-movement","satantango-music"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_4_months_3_weeks_and_2_days_2007")?.questions.map(q => q.id), ["fourmonths-period","fourmonths-offscreen","fourmonths-dinner"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_land_of_mine_2015")?.questions.map(q => q.id), ["landmine-history","landmine-daylight","landmine-suspense"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_psychobitch_2019")?.questions.map(q => q.id), ["psychobitch-research","psychobitch-actors","psychobitch-snow"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_homesick_2015")?.questions.map(q => q.id), ["homesick-rewrite","homesick-consent","homesick-visual"]);
 });
