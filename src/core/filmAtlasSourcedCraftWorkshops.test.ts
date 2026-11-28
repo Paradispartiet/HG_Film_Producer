@@ -329,15 +329,20 @@ const ids = [
   "scenario_norte_the_end_of_history_2013",
   "scenario_rrr_2022",
   "scenario_boy_from_heaven_2022",
+  "scenario_bombon_el_perro_2004",
+  "scenario_last_life_in_the_universe_2003",
+  "scenario_unknown_pleasures_2002",
+  "scenario_shiri_1999",
+  "scenario_a_hero_2021",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly three hundred and twenty existing cases have nine hundred and sixty original, source-backed decisions", () => {
+test("Exactly three hundred and twenty-five existing cases have nine hundred and seventy-five original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 320);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 960);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 325);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 975);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -756,6 +761,14 @@ test("Exactly three hundred and twenty existing cases have nine hundred and sixt
       for (const source of workshop.sources) assert.ok(verification.includes(source.url));
     } else if (["scenario_taste_of_cherry_1997","scenario_taxi_2015","scenario_norte_the_end_of_history_2013","scenario_rrr_2022","scenario_boy_from_heaven_2022"].includes(workshop.scenarioId)) {
       const configs: Record<string, [string, string]> = {"scenario_taste_of_cherry_1997":["src/ui/data/scenarioProductionVerificationTasteOfCherry.ts","seed"],"scenario_taxi_2015":["src/ui/data/scenarioProductionVerificationTaxi.ts","seed"],"scenario_norte_the_end_of_history_2013":["src/ui/data/scenarioProductionVerificationNorte.ts","southSoutheastAsianExpansion"],"scenario_rrr_2022":["src/ui/data/scenarioProductionVerificationRrr.ts","chapterNineteenRrrExpansion"],"scenario_boy_from_heaven_2022":["src/ui/data/scenarioProductionVerificationBoyFromHeaven.ts","chapterNineteenBoyFromHeavenExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      if (definition === "seed") assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
+      else assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
+      assert.ok(verification.includes('scenarioId: "' + workshop.scenarioId + '"'));
+      for (const source of workshop.sources) assert.ok(verification.includes(source.url));
+    } else if (["scenario_bombon_el_perro_2004","scenario_last_life_in_the_universe_2003","scenario_unknown_pleasures_2002","scenario_shiri_1999","scenario_a_hero_2021"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_bombon_el_perro_2004":["src/ui/data/scenarioProductionVerificationBombonElPerro.ts","seed"],"scenario_last_life_in_the_universe_2003":["src/ui/data/scenarioProductionVerificationLastLifeUniverse.ts","seed"],"scenario_unknown_pleasures_2002":["src/ui/data/scenarioProductionVerificationUnknownPleasures.ts","chapterEighteenUnknownPleasuresExpansion"],"scenario_shiri_1999":["src/ui/data/scenarioProductionVerificationShiri.ts","chapterSeventeenShiriExpansion"],"scenario_a_hero_2021":["src/ui/data/scenarioProductionVerificationAHero.ts","chapterNineteenAHeroExpansion"]};
       const [path, definition] = configs[workshop.scenarioId]!;
       if (definition === "seed") assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
       else assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
@@ -1599,4 +1612,13 @@ test("Second world cinema round preserves film-specific decisions", () => {
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_norte_the_end_of_history_2013")?.questions.map(q => q.id), ["norte-adapt","norte-duration","norte-environment"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_rrr_2022")?.questions.map(q => q.id), ["rrr-previs","rrr-continuity","rrr-hybrid"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_boy_from_heaven_2022")?.questions.map(q => q.id), ["boyheaven-location","boyheaven-lens","boyheaven-coproduction"]);
+});
+
+
+test("Third world cinema round preserves film-specific decisions", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_bombon_el_perro_2004")?.questions.map(q => q.id), ["bombon-casting","bombon-script","bombon-animal"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_last_life_in_the_universe_2003")?.questions.map(q => q.id), ["lastlife-language","lastlife-space","lastlife-time"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_unknown_pleasures_2002")?.questions.map(q => q.id), ["unknownpleasures-texture","unknownpleasures-schedule","unknownpleasures-transfer"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_shiri_1999")?.questions.map(q => q.id), ["shiri-budget","shiri-revision","shiri-credits"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_a_hero_2021")?.questions.map(q => q.id), ["ahero-backstory","ahero-rehearsal","ahero-frame"]);
 });

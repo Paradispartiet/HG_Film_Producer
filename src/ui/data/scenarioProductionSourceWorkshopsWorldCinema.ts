@@ -2941,5 +2941,1009 @@ export const worldCinemaSourceWorkshops = [
         ]
       }
     ]
+  },
+  {
+    "scenarioId": "scenario_bombon_el_perro_2004",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Regional casting, flexible writing and animal performance",
+      "nb": "Regional casting, fleksibelt manus og dyremedvirkning",
+      "fr": "Casting régional, écriture souple et jeu animal",
+      "pt": "Casting regional, escrita flexível e atuação animal"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Bombón, el perro / Bombón, the dog",
+        "publisher": "San Sebastián International Film Festival",
+        "url": "https://www.sansebastianfestival.com/2004/sections_and_films/official_section/7/520631/in"
+      },
+      {
+        "id": "s3",
+        "title": "Carlos Sorín regresa al árido paisaje de la Patagonia con 'Bombón'",
+        "publisher": "El País",
+        "url": "https://elpais.com/diario/2004/06/04/cine/1086300010_850215.html"
+      },
+      {
+        "id": "s4",
+        "title": "Entrevista con Carlos Sorin",
+        "publisher": "Cinencuentro",
+        "url": "https://www.cinencuentro.com/entrevista-carlos-sorin/"
+      },
+      {
+        "id": "s7",
+        "title": "Bombon El Perro",
+        "publisher": "Screen International",
+        "url": "https://www.screendaily.com/bombon-el-perro/4020293.article"
+      },
+      {
+        "id": "s8",
+        "title": "Bombón: El Perro: A quiet and understated masterpiece",
+        "publisher": "SBS",
+        "url": "https://www.sbs.com.au/whats-on/article/bombon-el-perro-a-quiet-and-understated-masterpiece/c0k8q4gja"
+      },
+      {
+        "id": "s9",
+        "title": "Bombon El Perro",
+        "publisher": "LondonNet",
+        "url": "https://www.londonnet.co.uk/cinema/cinema-interviews/bombon-el-perro/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "bombon-casting",
+        "area": "research",
+        "prompt": {
+          "en": "Sorín sought nonprofessional performers close to their characters. What would you test in a new production exercise?",
+          "nb": "Sorín søkte ikke-profesjonelle utøvere nær karakterene. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Sorín recherchait des non-professionnels proches des personnages. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Sorín procurou intérpretes não profissionais próximos das personagens. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use voluntary workshops to discover natural behaviour",
+              "nb": "Bruk frivillige verksteder for å finne naturlig atferd",
+              "fr": "Organiser des ateliers volontaires pour découvrir les gestes naturels",
+              "pt": "Usar oficinas voluntárias para descobrir comportamentos naturais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose only performers with famous screen credits",
+              "nb": "Velg bare utøvere med kjente filmroller",
+              "fr": "Choisir uniquement des acteurs célèbres",
+              "pt": "Escolher apenas intérpretes com créditos famosos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Sorín sought nonprofessional performers close to their characters. In a hypothetical exercise: Use voluntary workshops to discover natural behaviour.",
+          "nb": "Sorín søkte ikke-profesjonelle utøvere nær karakterene. I en tenkt øvelse: Bruk frivillige verksteder for å finne naturlig atferd.",
+          "fr": "Sorín recherchait des non-professionnels proches des personnages. Dans un exercice fictif : Organiser des ateliers volontaires pour découvrir les gestes naturels.",
+          "pt": "Sorín procurou intérpretes não profissionais próximos das personagens. Num exercício hipotético: Usar oficinas voluntárias para descobrir comportamentos naturais."
+        },
+        "sourceIds": [
+          "s0",
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "bombon-script",
+        "area": "research",
+        "prompt": {
+          "en": "Sorín describes adapting the screenplay to discoveries during filming. What would you test in a new production exercise?",
+          "nb": "Sorín beskriver et manus tilpasset oppdagelser under opptak. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Sorín décrit un scénario adapté aux découvertes du tournage. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Sorín descreve um argumento adaptado às descobertas da filmagem. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Review discoveries in rough cuts while preserving dramatic milestones",
+              "nb": "Vurder funn i grovklipp mens dramatiske holdepunkter bevares",
+              "fr": "Examiner les découvertes au prémontage en préservant les jalons dramatiques",
+              "pt": "Rever descobertas na montagem inicial preservando marcos dramáticos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Reject all unscripted material automatically",
+              "nb": "Avvis automatisk alt materiale utenfor manus",
+              "fr": "Rejeter automatiquement tout matériau non écrit",
+              "pt": "Rejeitar automaticamente todo material não previsto"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Sorín describes adapting the screenplay to discoveries during filming. In a hypothetical exercise: Review discoveries in rough cuts while preserving dramatic milestones.",
+          "nb": "Sorín beskriver et manus tilpasset oppdagelser under opptak. I en tenkt øvelse: Vurder funn i grovklipp mens dramatiske holdepunkter bevares.",
+          "fr": "Sorín décrit un scénario adapté aux découvertes du tournage. Dans un exercice fictif : Examiner les découvertes au prémontage en préservant les jalons dramatiques.",
+          "pt": "Sorín descreve um argumento adaptado às descobertas da filmagem. Num exercício hipotético: Rever descobertas na montagem inicial preservando marcos dramáticos."
+        },
+        "sourceIds": [
+          "s4",
+          "s7"
+        ]
+      },
+      {
+        "id": "bombon-animal",
+        "area": "camera",
+        "prompt": {
+          "en": "The dog’s reserved behaviour contributes to the dramatic tone. What would you test in a new production exercise?",
+          "nb": "Hundens tilbakeholdne atferd bidrar til den dramatiske tonen. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Le comportement réservé du chien contribue au ton dramatique. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "O comportamento reservado do cão contribui para o tom dramático. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Demand a fixed emotional expression from the animal",
+              "nb": "Krev et fast følelsesuttrykk fra dyret",
+              "fr": "Exiger une expression émotionnelle fixe de l’animal",
+              "pt": "Exigir expressão emocional fixa do animal"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan patient observation with a handler and welfare breaks",
+              "nb": "Planlegg tålmodig observasjon med dyrepasser og velferdspauser",
+              "fr": "Prévoir observation patiente, soigneur et pauses de bien-être",
+              "pt": "Planear observação paciente com tratador e pausas de bem-estar"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The dog’s reserved behaviour contributes to the dramatic tone. In a hypothetical exercise: Plan patient observation with a handler and welfare breaks.",
+          "nb": "Hundens tilbakeholdne atferd bidrar til den dramatiske tonen. I en tenkt øvelse: Planlegg tålmodig observasjon med dyrepasser og velferdspauser.",
+          "fr": "Le comportement réservé du chien contribue au ton dramatique. Dans un exercice fictif : Prévoir observation patiente, soigneur et pauses de bien-être.",
+          "pt": "O comportamento reservado do cão contribui para o tom dramático. Num exercício hipotético: Planear observação paciente com tratador e pausas de bem-estar."
+        },
+        "sourceIds": [
+          "s9",
+          "s8"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_last_life_in_the_universe_2003",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Multilingual dialogue, visual contrast and elliptical structure",
+      "nb": "Flerspråklig dialog, visuell kontrast og elliptisk struktur",
+      "fr": "Dialogue multilingue, contraste visuel et structure elliptique",
+      "pt": "Diálogo multilingue, contraste visual e estrutura elíptica"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Last Life in the Universe",
+        "publisher": "International Film Festival Rotterdam",
+        "url": "https://iffr.com/en/iffr/2004/films/last-life-in-the-universe"
+      },
+      {
+        "id": "s1",
+        "title": "Last Life in the Universe",
+        "publisher": "Irish Film Institute",
+        "url": "https://ifi.ie/film/last-life-in-the-universe/"
+      },
+      {
+        "id": "s3",
+        "title": "Stop Making Sense: Pen-ek Ratanaruang's Last Life in the Universe",
+        "publisher": "MUBI Notebook",
+        "url": "https://mubi.com/nl/notebook/posts/stop-making-sense-pen-ek-ratanaruang-s-last-life-in-the-universe"
+      },
+      {
+        "id": "s4",
+        "title": "Review: Last Life in the Universe",
+        "publisher": "Slant Magazine",
+        "url": "https://www.slantmagazine.com/film/last-life-in-the-universe/"
+      },
+      {
+        "id": "s5",
+        "title": "Last Life in the Universe เรื่องรัก น้อยนิด มหาศาล (2003)",
+        "publisher": "Asian Film Archive",
+        "url": "https://asianfilmarchive.org/event-calendar/last-life-in-the-universe-2003/"
+      },
+      {
+        "id": "s6",
+        "title": "The Last Life in the Universe",
+        "publisher": "Thessaloniki Film Festival",
+        "url": "https://filmfestival.gr/en/tiff/films/the-last-life-in-the-universe/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "lastlife-language",
+        "area": "sound",
+        "prompt": {
+          "en": "The relationship unfolds through Thai, Japanese and English. What would you test in a new production exercise?",
+          "nb": "Relasjonen utvikles gjennom thai, japansk og engelsk. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "La relation se développe en thaï, japonais et anglais. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "A relação desenvolve-se em tailandês, japonês e inglês. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test intelligibility and misunderstandings with language advisers",
+              "nb": "Prøv forståelighet og misforståelser med språkrådgivere",
+              "fr": "Tester intelligibilité et malentendus avec des conseillers linguistiques",
+              "pt": "Testar inteligibilidade e mal-entendidos com consultores linguísticos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Translate every line into one spoken language",
+              "nb": "Oversett alle replikker til ett talespråk",
+              "fr": "Traduire toutes les répliques dans une seule langue parlée",
+              "pt": "Traduzir todas as falas para uma língua falada"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The relationship unfolds through Thai, Japanese and English. In a hypothetical exercise: Test intelligibility and misunderstandings with language advisers.",
+          "nb": "Relasjonen utvikles gjennom thai, japansk og engelsk. I en tenkt øvelse: Prøv forståelighet og misforståelser med språkrådgivere.",
+          "fr": "La relation se développe en thaï, japonais et anglais. Dans un exercice fictif : Tester intelligibilité et malentendus avec des conseillers linguistiques.",
+          "pt": "A relação desenvolve-se em tailandês, japonês e inglês. Num exercício hipotético: Testar inteligibilidade e mal-entendidos com consultores linguísticos."
+        },
+        "sourceIds": [
+          "s0",
+          "s5"
+        ]
+      },
+      {
+        "id": "lastlife-space",
+        "area": "camera",
+        "prompt": {
+          "en": "The contrast between order and disorder shapes the shared space. What would you test in a new production exercise?",
+          "nb": "Kontrasten mellom orden og uorden former det felles rommet. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Le contraste entre ordre et désordre façonne l’espace commun. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "O contraste entre ordem e desordem molda o espaço partilhado. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test contrasting prop arrangements in identical frames",
+              "nb": "Prøv kontrasterende rekvisittplassering i identiske utsnitt",
+              "fr": "Tester des accessoires disposés différemment dans des cadres identiques",
+              "pt": "Testar arranjos contrastantes de adereços em quadros idênticos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Give both characters identical rooms",
+              "nb": "Gi begge karakterene identiske rom",
+              "fr": "Donner aux deux personnages des pièces identiques",
+              "pt": "Dar a ambas as personagens espaços idênticos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The contrast between order and disorder shapes the shared space. In a hypothetical exercise: Test contrasting prop arrangements in identical frames.",
+          "nb": "Kontrasten mellom orden og uorden former det felles rommet. I en tenkt øvelse: Prøv kontrasterende rekvisittplassering i identiske utsnitt.",
+          "fr": "Le contraste entre ordre et désordre façonne l’espace commun. Dans un exercice fictif : Tester des accessoires disposés différemment dans des cadres identiques.",
+          "pt": "O contraste entre ordem e desordem molda o espaço partilhado. Num exercício hipotético: Testar arranjos contrastantes de adereços em quadros idênticos."
+        },
+        "sourceIds": [
+          "s1",
+          "s6"
+        ]
+      },
+      {
+        "id": "lastlife-time",
+        "area": "research",
+        "prompt": {
+          "en": "Temporal transitions resist conventional explanatory closure. What would you test in a new production exercise?",
+          "nb": "Tidsovergangene motstår konvensjonell forklarende avslutning. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Les transitions temporelles résistent à une clôture explicative classique. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "As transições temporais resistem a um fecho explicativo convencional. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Add a date caption to every shot",
+              "nb": "Legg en datotekst på hvert bilde",
+              "fr": "Ajouter une date à chaque plan",
+              "pt": "Adicionar uma data a cada plano"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare two scene orders and track viewer inference",
+              "nb": "Sammenlign to scenerekkefølger og kartlegg seerens slutninger",
+              "fr": "Comparer deux ordres de scènes et les inférences du public",
+              "pt": "Comparar duas ordens de cenas e inferências do público"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Temporal transitions resist conventional explanatory closure. In a hypothetical exercise: Compare two scene orders and track viewer inference.",
+          "nb": "Tidsovergangene motstår konvensjonell forklarende avslutning. I en tenkt øvelse: Sammenlign to scenerekkefølger og kartlegg seerens slutninger.",
+          "fr": "Les transitions temporelles résistent à une clôture explicative classique. Dans un exercice fictif : Comparer deux ordres de scènes et les inférences du public.",
+          "pt": "As transições temporais resistem a um fecho explicativo convencional. Num exercício hipotético: Comparar duas ordens de cenas e inferências do público."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_unknown_pleasures_2002",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Digital texture, compact production and exhibition transfer",
+      "nb": "Digital tekstur, konsentrert produksjon og visningsoverføring",
+      "fr": "Texture numérique, production légère et transfert de projection",
+      "pt": "Textura digital, produção compacta e transferência de exibição"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "Attack of the zeros and ones: the early years of digital cinema",
+        "publisher": "BFI Sight and Sound",
+        "url": "https://www.bfi.org.uk/sight-and-sound/features/attack-zeros-ones-early-years-digital-cinema-told-david-lynch-miranda-july-michael-mann-more"
+      },
+      {
+        "id": "s2",
+        "title": "An Interview with Jia Zhangke",
+        "publisher": "Senses of Cinema",
+        "url": "https://www.sensesofcinema.com/2004/feature-articles/jia_zhangke/"
+      },
+      {
+        "id": "s3",
+        "title": "Interview: Jia Zhang-ke on Ash Is Purest White and the Evolution of China",
+        "publisher": "Slant Magazine",
+        "url": "https://www.slantmagazine.com/film/interview-jia-zhang-ke-on-ash-is-purest-white-censorship-and-the-evolution-of-china/"
+      },
+      {
+        "id": "s4",
+        "title": "Jia Zhangke's Hometown Trilogy: Xiao Wu, Platform, Unknown Pleasures",
+        "publisher": "University of California open monograph edition",
+        "url": "https://escholarship.org/content/qt02x9977w/qt02x9977w.pdf"
+      },
+      {
+        "id": "s5",
+        "title": "Unknown Pleasures",
+        "publisher": "Eye Filmmuseum",
+        "url": "https://www.eyefilm.nl/en/whats-on/unknown-pleasures/91853"
+      }
+    ],
+    "questions": [
+      {
+        "id": "unknownpleasures-texture",
+        "area": "camera",
+        "prompt": {
+          "en": "Jia describes DV as an aesthetic choice rather than merely a cheap substitute. What would you test in a new production exercise?",
+          "nb": "Jia beskriver DV som et estetisk valg, ikke bare en billig erstatning. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Jia décrit la DV comme choix esthétique et pas seulement économique. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Jia descreve DV como escolha estética, não apenas económica. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare digital texture in different natural light conditions",
+              "nb": "Sammenlign digital tekstur under ulike naturlige lysforhold",
+              "fr": "Comparer la texture numérique sous différentes lumières naturelles",
+              "pt": "Comparar textura digital sob diferentes condições de luz natural"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Apply film grain before assessing the images",
+              "nb": "Legg på filmkorn før bildene vurderes",
+              "fr": "Appliquer du grain avant d’évaluer les images",
+              "pt": "Aplicar grão antes de avaliar as imagens"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Jia describes DV as an aesthetic choice rather than merely a cheap substitute. In a hypothetical exercise: Compare digital texture in different natural light conditions.",
+          "nb": "Jia beskriver DV som et estetisk valg, ikke bare en billig erstatning. I en tenkt øvelse: Sammenlign digital tekstur under ulike naturlige lysforhold.",
+          "fr": "Jia décrit la DV comme choix esthétique et pas seulement économique. Dans un exercice fictif : Comparer la texture numérique sous différentes lumières naturelles.",
+          "pt": "Jia descreve DV como escolha estética, não apenas económica. Num exercício hipotético: Comparar textura digital sob diferentes condições de luz natural."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "unknownpleasures-schedule",
+        "area": "research",
+        "prompt": {
+          "en": "Jia reports a nineteen-day shoot and values digital proximity to performers. What would you test in a new production exercise?",
+          "nb": "Jia beskriver nitten opptaksdager og verdsetter digital nærhet til utøverne. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Jia évoque dix-neuf jours de tournage et la proximité numérique des interprètes. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Jia refere dezanove dias de rodagem e valoriza a proximidade digital aos intérpretes. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan compact rehearsals and locations with contingency time",
+              "nb": "Planlegg konsentrerte prøver og stedsopptak med reservetid",
+              "fr": "Prévoir répétitions et lieux dans un calendrier compact avec marge",
+              "pt": "Planear ensaios e locais num calendário compacto com margem"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Replicate nineteen days regardless of script size",
+              "nb": "Kopier nitten dager uansett manusomfang",
+              "fr": "Copier dix-neuf jours quelle que soit la taille du scénario",
+              "pt": "Copiar dezanove dias independentemente do argumento"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Jia reports a nineteen-day shoot and values digital proximity to performers. In a hypothetical exercise: Plan compact rehearsals and locations with contingency time.",
+          "nb": "Jia beskriver nitten opptaksdager og verdsetter digital nærhet til utøverne. I en tenkt øvelse: Planlegg konsentrerte prøver og stedsopptak med reservetid.",
+          "fr": "Jia évoque dix-neuf jours de tournage et la proximité numérique des interprètes. Dans un exercice fictif : Prévoir répétitions et lieux dans un calendrier compact avec marge.",
+          "pt": "Jia refere dezanove dias de rodagem e valoriza a proximidade digital aos intérpretes. Num exercício hipotético: Planear ensaios e locais num calendário compacto com margem."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "unknownpleasures-transfer",
+        "area": "camera",
+        "prompt": {
+          "en": "The dossier distinguishes digital capture, colour adjustment and later film presentation. What would you test in a new production exercise?",
+          "nb": "Dokumentasjonen skiller digitalt opptak, fargejustering og senere filmvisning. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Le dossier distingue capture numérique, réglage couleur et projection sur pellicule. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "O dossiê distingue captação digital, ajuste de cor e projeção em película. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Infer the original camera from a 35 mm print",
+              "nb": "Utled originalkameraet fra en 35 mm-kopi",
+              "fr": "Déduire la caméra originale d’une copie 35 mm",
+              "pt": "Deduzir a câmara original de uma cópia de 35 mm"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Track acquisition, intermediate and exhibition formats separately",
+              "nb": "Registrer opptaks-, mellom- og visningsformater separat",
+              "fr": "Consigner séparément formats de capture, intermédiaires et de projection",
+              "pt": "Registar separadamente formatos de captação, intermédios e de exibição"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The dossier distinguishes digital capture, colour adjustment and later film presentation. In a hypothetical exercise: Track acquisition, intermediate and exhibition formats separately.",
+          "nb": "Dokumentasjonen skiller digitalt opptak, fargejustering og senere filmvisning. I en tenkt øvelse: Registrer opptaks-, mellom- og visningsformater separat.",
+          "fr": "Le dossier distingue capture numérique, réglage couleur et projection sur pellicule. Dans un exercice fictif : Consigner séparément formats de capture, intermédiaires et de projection.",
+          "pt": "O dossiê distingue captação digital, ajuste de cor e projeção em película. Num exercício hipotético: Registar separadamente formatos de captação, intermédios e de exibição."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_shiri_1999",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Budget provenance, revision and department coordination",
+      "nb": "Budsjettkilder, manusrevisjon og fagkoordinering",
+      "fr": "Provenance budgétaire, réécriture et coordination des équipes",
+      "pt": "Proveniência orçamental, revisão e coordenação de equipas"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "SHIRI (1999)",
+        "publisher": "Korean Film Council / KoBiz",
+        "url": "https://www.koreanfilm.or.kr/eng/films/index/filmsView.jsp?category=ALL&mode=INDEX_FILMS_LIST&movieCd=19990084&pageIndex=1&pageRowSize=10&s_genre=ALL&searchKeyword=SHIRI&searchType=ALL&strMenuId=010401"
+      },
+      {
+        "id": "s1",
+        "title": "Investment & Distribution Structure in Korean Film Industry",
+        "publisher": "Korean Film Council / KoBiz",
+        "url": "https://www.koreanfilm.or.kr/eng/news/ko_pick.jsp?blbdComCd=601029&mode=VIEW&pageIndex=1&pageRowSize=10&seq=98"
+      },
+      {
+        "id": "s2",
+        "title": "A Look Back at Shiri – Korea's International Breakthrough 26 Years On",
+        "publisher": "Korean Film Council / KoBiz",
+        "url": "https://www.koreanfilm.or.kr/eng/news/ko_pick.jsp?blbdComCd=601029&mode=VIEW&pageIndex=1&pageRowSize=10&seq=144"
+      },
+      {
+        "id": "s3",
+        "title": "KANG Jekyu",
+        "publisher": "Korean Film Council / KoBiz",
+        "url": "https://www.koreanfilm.or.kr/eng/films/index/peopleView.jsp?peopleCd=10000854"
+      },
+      {
+        "id": "s4",
+        "title": "A Korean Detente",
+        "publisher": "Los Angeles Times",
+        "url": "https://www.latimes.com/archives/la-xpm-2002-feb-08-et-matsumoto8-story.html"
+      },
+      {
+        "id": "s5",
+        "title": "Samsung Research Institute analyzes five reasons for Shiri's success",
+        "publisher": "Yonhap News Agency",
+        "url": "https://www.yna.co.kr/view/AKR19990309003000002"
+      },
+      {
+        "id": "s6",
+        "title": "The people who made Shiri",
+        "publisher": "Seoul Shinmun",
+        "url": "https://www.seoul.co.kr/news/seoulPrintNew.php?id=19990306013003"
+      },
+      {
+        "id": "s8",
+        "title": "Shiri (SHIRI)",
+        "publisher": "Korean Cinematheque film database",
+        "url": "https://www.cinematheque.co.kr/cinema/19990084"
+      },
+      {
+        "id": "s10",
+        "title": "The 36th Daejong Film Awards ceremony",
+        "publisher": "The Korea Economic Daily",
+        "url": "https://www.hankyung.com/article/1999040900101"
+      }
+    ],
+    "questions": [
+      {
+        "id": "shiri-budget",
+        "area": "research",
+        "prompt": {
+          "en": "Reported production costs differ across industry sources. What would you test in a new production exercise?",
+          "nb": "Rapporterte produksjonskostnader varierer mellom bransjekilder. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Les coûts rapportés diffèrent selon les sources professionnelles. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Os custos relatados divergem entre fontes profissionais. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record each estimate with currency, scope and source",
+              "nb": "Registrer hvert anslag med valuta, omfang og kilde",
+              "fr": "Consigner chaque estimation avec devise, périmètre et source",
+              "pt": "Registar cada estimativa com moeda, âmbito e fonte"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Average estimates into an audited total",
+              "nb": "Beregn gjennomsnittet som revidert totalbeløp",
+              "fr": "Moyenner les estimations en un total audité",
+              "pt": "Calcular a média como total auditado"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Reported production costs differ across industry sources. In a hypothetical exercise: Record each estimate with currency, scope and source.",
+          "nb": "Rapporterte produksjonskostnader varierer mellom bransjekilder. I en tenkt øvelse: Registrer hvert anslag med valuta, omfang og kilde.",
+          "fr": "Les coûts rapportés diffèrent selon les sources professionnelles. Dans un exercice fictif : Consigner chaque estimation avec devise, périmètre et source.",
+          "pt": "Os custos relatados divergem entre fontes profissionais. Num exercício hipotético: Registar cada estimativa com moeda, âmbito e fonte."
+        },
+        "sourceIds": [
+          "s1",
+          "s2",
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "shiri-revision",
+        "area": "research",
+        "prompt": {
+          "en": "A contemporary report describes extended screenplay revision and preparation. What would you test in a new production exercise?",
+          "nb": "En samtidig reportasje beskriver langvarig manusrevisjon og forberedelse. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Un article contemporain décrit une longue réécriture et préparation. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Uma reportagem contemporânea descreve revisão prolongada e preparação. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare dated draft changes against production requirements",
+              "nb": "Sammenlign daterte manusendringer med produksjonskrav",
+              "fr": "Comparer les versions datées aux exigences de production",
+              "pt": "Comparar versões datadas com requisitos de produção"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Lock the first outline before department input",
+              "nb": "Lås første disposisjon før fagavdelingenes innspill",
+              "fr": "Verrouiller le premier plan avant avis des équipes",
+              "pt": "Fixar o primeiro esboço antes do contributo das equipas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "A contemporary report describes extended screenplay revision and preparation. In a hypothetical exercise: Compare dated draft changes against production requirements.",
+          "nb": "En samtidig reportasje beskriver langvarig manusrevisjon og forberedelse. I en tenkt øvelse: Sammenlign daterte manusendringer med produksjonskrav.",
+          "fr": "Un article contemporain décrit une longue réécriture et préparation. Dans un exercice fictif : Comparer les versions datées aux exigences de production.",
+          "pt": "Uma reportagem contemporânea descreve revisão prolongada e preparação. Num exercício hipotético: Comparar versões datadas com requisitos de produção."
+        },
+        "sourceIds": [
+          "s5",
+          "s0"
+        ]
+      },
+      {
+        "id": "shiri-credits",
+        "area": "research",
+        "prompt": {
+          "en": "The sources distinguish practical effects, digital imagery, editing and action departments. What would you test in a new production exercise?",
+          "nb": "Kildene skiller praktiske effekter, digitale bilder, klipp og actionavdeling. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Les sources distinguent effets pratiques, images numériques, montage et action. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "As fontes distinguem efeitos práticos, imagens digitais, montagem e ação. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assign every effect credit to the director",
+              "nb": "Tildel alle effektkrediteringer til regissøren",
+              "fr": "Attribuer tous les effets au réalisateur",
+              "pt": "Atribuir todos os créditos de efeitos ao realizador"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Assign responsibilities and review handoffs in a safe mock production",
+              "nb": "Fordel ansvar og gjennomgå overleveringer i en trygg modellproduksjon",
+              "fr": "Répartir responsabilités et transmissions dans une production simulée sûre",
+              "pt": "Distribuir responsabilidades e passagens numa produção simulada segura"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The sources distinguish practical effects, digital imagery, editing and action departments. In a hypothetical exercise: Assign responsibilities and review handoffs in a safe mock production.",
+          "nb": "Kildene skiller praktiske effekter, digitale bilder, klipp og actionavdeling. I en tenkt øvelse: Fordel ansvar og gjennomgå overleveringer i en trygg modellproduksjon.",
+          "fr": "Les sources distinguent effets pratiques, images numériques, montage et action. Dans un exercice fictif : Répartir responsabilités et transmissions dans une production simulée sûre.",
+          "pt": "As fontes distinguem efeitos práticos, imagens digitais, montagem e ação. Num exercício hipotético: Distribuir responsabilidades e passagens numa produção simulada segura."
+        },
+        "sourceIds": [
+          "s6",
+          "s8",
+          "s10"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_a_hero_2021",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Character backstories, rehearsal and large-format framing",
+      "nb": "Karakterbakgrunn, prøver og storformatutsnitt",
+      "fr": "Passé des personnages, répétitions et cadre grand format",
+      "pt": "Histórias das personagens, ensaios e enquadramento de grande formato"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "GHAHREMAN (A HERO)",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/ghahreman/"
+      },
+      {
+        "id": "s1",
+        "title": "A Hero — Cannes press kit",
+        "publisher": "Memento Production / Asghar Farhadi Production",
+        "url": "https://medias.unifrance.org/medias/68/178/242244/presse/a-hero-presskit-english.pdf"
+      },
+      {
+        "id": "s2",
+        "title": "ARRI equipment behind the prized films at Cannes",
+        "publisher": "ARRI",
+        "url": "https://www.arri.com/news-en/arri-equipment-behind-the-prized-films-at-cannes-"
+      },
+      {
+        "id": "s3",
+        "title": "Director Asghar Farhadi discusses A Hero",
+        "publisher": "Directors Guild of America",
+        "url": "https://www.dga.org/events/2022/january2022/gcs_ahero_1120"
+      }
+    ],
+    "questions": [
+      {
+        "id": "ahero-backstory",
+        "area": "research",
+        "prompt": {
+          "en": "Farhadi describes constructing unseen character histories during preparation. What would you test in a new production exercise?",
+          "nb": "Farhadi beskriver utvikling av usynlige karakterhistorier under forberedelsene. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Farhadi décrit la construction de passés invisibles pendant la préparation. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Farhadi descreve a construção de passados invisíveis durante a preparação. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Build character timelines and test conflicting motivations",
+              "nb": "Bygg karaktertidslinjer og prøv motstridende motivasjoner",
+              "fr": "Construire des chronologies et tester des motivations contradictoires",
+              "pt": "Construir cronologias e testar motivações contraditórias"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Put every backstory into spoken exposition",
+              "nb": "Legg all bakgrunnshistorie inn i forklarende dialog",
+              "fr": "Mettre tout le passé dans des dialogues explicatifs",
+              "pt": "Colocar todo o passado em exposição falada"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Farhadi describes constructing unseen character histories during preparation. In a hypothetical exercise: Build character timelines and test conflicting motivations.",
+          "nb": "Farhadi beskriver utvikling av usynlige karakterhistorier under forberedelsene. I en tenkt øvelse: Bygg karaktertidslinjer og prøv motstridende motivasjoner.",
+          "fr": "Farhadi décrit la construction de passés invisibles pendant la préparation. Dans un exercice fictif : Construire des chronologies et tester des motivations contradictoires.",
+          "pt": "Farhadi descreve a construção de passados invisíveis durante a preparação. Num exercício hipotético: Construir cronologias e testar motivações contraditórias."
+        },
+        "sourceIds": [
+          "s3",
+          "s0"
+        ]
+      },
+      {
+        "id": "ahero-rehearsal",
+        "area": "research",
+        "prompt": {
+          "en": "Farhadi describes extended rehearsal and actor-specific preparation. What would you test in a new production exercise?",
+          "nb": "Farhadi beskriver langvarige prøver og individuelt tilpasset skuespillerarbeid. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Farhadi décrit des répétitions prolongées et une préparation adaptée aux acteurs. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Farhadi descreve ensaios prolongados e preparação adaptada aos atores. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Design separate rehearsal tasks before a joint scene",
+              "nb": "Lag individuelle prøveoppgaver før en felles scene",
+              "fr": "Préparer des exercices distincts avant une scène commune",
+              "pt": "Criar exercícios distintos antes de uma cena conjunta"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use only a single table read for everyone",
+              "nb": "Bruk bare én felles leseprøve",
+              "fr": "Utiliser uniquement une lecture collective",
+              "pt": "Usar apenas uma leitura coletiva"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Farhadi describes extended rehearsal and actor-specific preparation. In a hypothetical exercise: Design separate rehearsal tasks before a joint scene.",
+          "nb": "Farhadi beskriver langvarige prøver og individuelt tilpasset skuespillerarbeid. I en tenkt øvelse: Lag individuelle prøveoppgaver før en felles scene.",
+          "fr": "Farhadi décrit des répétitions prolongées et une préparation adaptée aux acteurs. Dans un exercice fictif : Préparer des exercices distincts avant une scène commune.",
+          "pt": "Farhadi descreve ensaios prolongados e preparação adaptada aos atores. Num exercício hipotético: Criar exercícios distintos antes de uma cena conjunta."
+        },
+        "sourceIds": [
+          "s3",
+          "s1"
+        ]
+      },
+      {
+        "id": "ahero-frame",
+        "area": "camera",
+        "prompt": {
+          "en": "ARRI documents large-format capture while the press kit specifies widescreen delivery. What would you test in a new production exercise?",
+          "nb": "ARRI dokumenterer storformatopptak, mens pressematerialet angir bredformatvisning. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "ARRI documente la capture grand format, le dossier précise la diffusion panoramique. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "A ARRI documenta captação de grande formato e o dossier especifica exibição panorâmica. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat sensor size as identical to delivery ratio",
+              "nb": "Behandle sensorstørrelse som identisk med visningsformat",
+              "fr": "Confondre taille du capteur et rapport de diffusion",
+              "pt": "Confundir tamanho do sensor com proporção de exibição"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a method without comparing its alternatives",
+              "nb": "Velg en metode uten å sammenligne alternativer",
+              "fr": "Choisir une méthode sans comparer les variantes",
+              "pt": "Escolher um método sem comparar alternativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test group blocking in the intended delivery aspect ratio",
+              "nb": "Prøv gruppeplassering innenfor planlagt visningsformat",
+              "fr": "Tester le placement du groupe dans le format de diffusion prévu",
+              "pt": "Testar movimentos do grupo no formato de exibição previsto"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "ARRI documents large-format capture while the press kit specifies widescreen delivery. In a hypothetical exercise: Test group blocking in the intended delivery aspect ratio.",
+          "nb": "ARRI dokumenterer storformatopptak, mens pressematerialet angir bredformatvisning. I en tenkt øvelse: Prøv gruppeplassering innenfor planlagt visningsformat.",
+          "fr": "ARRI documente la capture grand format, le dossier précise la diffusion panoramique. Dans un exercice fictif : Tester le placement du groupe dans le format de diffusion prévu.",
+          "pt": "A ARRI documenta captação de grande formato e o dossier especifica exibição panorâmica. Num exercício hipotético: Testar movimentos do grupo no formato de exibição previsto."
+        },
+        "sourceIds": [
+          "s2",
+          "s1"
+        ]
+      }
+    ]
   }
 ] as const satisfies readonly SourceBackedCaseWorkshop[];
