@@ -6384,5 +6384,1993 @@ export const digitalSourceWorkshops = [
         ]
       }
     ]
+  },
+  {
+    "scenarioId": "scenario_parasite_2019",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Designed geography, selective coverage and acoustic detail",
+      "nb": "Konstruert geografi, selektiv dekning og akustiske detaljer",
+      "fr": "Géographie construite, prises sélectives et détails acoustiques",
+      "pt": "Geografia construída, captação seletiva e detalhes acústicos"
+    },
+    "sources": [
+      {
+        "id": "s3",
+        "title": "ARRI SkyPanel shines in Academy Award-winning film Parasite",
+        "publisher": "ARRI",
+        "url": "https://www.arri.com/news-en/arri-skypanel-shines-in-academy-award-winning-film-parasite-"
+      },
+      {
+        "id": "s4",
+        "title": "How Parasite production designer Lee Ha Jun built the film's iconic house",
+        "publisher": "Screen Daily",
+        "url": "https://www.screendaily.com/features/how-parasite-production-designer-lee-ha-jun-built-the-films-iconic-house/5146742.article"
+      },
+      {
+        "id": "s5",
+        "title": "Parasite Editor Jinmo Yang Teaches Us How to Edit Without Coverage",
+        "publisher": "No Film School",
+        "url": "https://nofilmschool.com/parasite-editor-interview"
+      },
+      {
+        "id": "s6",
+        "title": "ART OF THE CUT with the editor of 2019 Cannes Palme d'Or winner Parasite",
+        "publisher": "ProVideo Coalition",
+        "url": "https://www.provideocoalition.com/aotc-parasite/"
+      },
+      {
+        "id": "s7",
+        "title": "Perfecting Parasite's award-winning sound - with Ralph Tae-Young Choi",
+        "publisher": "A Sound Effect",
+        "url": "https://www.asoundeffect.com/parasite-sound/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "parasite-space",
+        "area": "research",
+        "prompt": {
+          "en": "How can a set be designed around camera and actor movement?",
+          "nb": "Hvordan kan en kulisse utformes rundt kamera- og skuespillerbevegelse?",
+          "fr": "Comment concevoir un décor autour des mouvements caméra et acteurs ?",
+          "pt": "Como conceber um cenário em torno dos movimentos da câmara e dos atores?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test sightlines and blocking with a scaled floor plan",
+              "nb": "Prøv siktlinjer og blokkering med en målsatt plan",
+              "fr": "Tester axes visuels et déplacements sur un plan à l’échelle",
+              "pt": "Testar linhas de visão e marcações numa planta à escala"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose room dimensions without considering camera placement",
+              "nb": "Velg rommål uten å vurdere kameraplassering",
+              "fr": "Choisir les dimensions sans considérer la caméra",
+              "pt": "Escolher dimensões sem considerar a câmara"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume every interior was an existing location",
+              "nb": "Anta at alle interiører var eksisterende steder",
+              "fr": "Supposer que tous les intérieurs existaient déjà",
+              "pt": "Supor que todos os interiores já existiam"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Lee Ha-jun describes camera-led construction and vertical spatial design. Develop a new set plan that coordinates framing and movement.",
+          "nb": "Lee Ha-jun beskriver kamerastyrt bygging og vertikal romdesign. Utform en ny kulisseplan som samordner utsnitt og bevegelse.",
+          "fr": "Lee Ha-jun décrit une construction guidée par la caméra et la verticalité. Concevez un décor coordonnant cadre et mouvement.",
+          "pt": "Lee Ha-jun descreve construção guiada pela câmara e verticalidade. Conceba cenário que coordene enquadramento e movimento."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "parasite-coverage",
+        "area": "camera",
+        "prompt": {
+          "en": "How can planned coverage protect precise dramatic timing?",
+          "nb": "Hvordan kan planlagt dekning bevare presis dramatisk timing?",
+          "fr": "Comment des prises planifiées préservent-elles le rythme dramatique ?",
+          "pt": "Como pode captação planeada preservar ritmo dramático?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Record arbitrary angles with no intended editorial purpose",
+              "nb": "Ta opp vilkårlige vinkler uten klippeformål",
+              "fr": "Filmer des angles arbitraires sans fonction au montage",
+              "pt": "Filmar ângulos arbitrários sem função na montagem"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume every scene requires a conventional master shot",
+              "nb": "Anta at alle scener krever et konvensjonelt totalbilde",
+              "fr": "Supposer que chaque scène exige un plan maître",
+              "pt": "Supor que cada cena exige um plano geral mestre"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Storyboard essential angles and compare performance timing",
+              "nb": "Lag storyboard for nødvendige vinkler og sammenlign spillerytme",
+              "fr": "Prévoir les angles essentiels et comparer le rythme du jeu",
+              "pt": "Planear ângulos essenciais e comparar ritmo da interpretação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Yang Jin-mo describes extensive storyboarding and unconventional coverage. Test a short scene with selected angles and verify its editability.",
+          "nb": "Yang Jin-mo beskriver omfattende storyboard og uvanlig dekning. Prøv en kort scene med utvalgte vinkler og verifiser klippbarheten.",
+          "fr": "Yang Jin-mo décrit un découpage poussé et des prises atypiques. Testez une scène courte avec des angles choisis.",
+          "pt": "Yang Jin-mo descreve storyboard detalhado e captação atípica. Teste uma cena curta com ângulos selecionados."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "parasite-doors",
+        "area": "sound",
+        "prompt": {
+          "en": "How can sounds distinguish different fictional homes?",
+          "nb": "Hvordan kan lyder skille ulike fiktive hjem?",
+          "fr": "Comment les sons distinguent-ils des foyers fictifs ?",
+          "pt": "Como podem sons distinguir casas fictícias?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore the sound notes created during picture editing",
+              "nb": "Ignorer lydnotatene fra bildeklippen",
+              "fr": "Ignorer les notes son du montage image",
+              "pt": "Ignorar notas de som da montagem de imagem"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record distinct door and room sounds for each setting",
+              "nb": "Ta opp særpregede dør- og romlyder for hvert miljø",
+              "fr": "Enregistrer portes et ambiances distinctes pour chaque lieu",
+              "pt": "Gravar portas e ambientes distintos para cada local"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Reuse an identical door sound in every environment",
+              "nb": "Gjenbruk identisk dørlyd i alle miljøer",
+              "fr": "Réutiliser le même son de porte partout",
+              "pt": "Reutilizar o mesmo som de porta em todos os locais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Choi describes distinct door sounds and location acoustics, while Yang describes temporary sound in editorial. Compare original acoustic signatures in an exercise.",
+          "nb": "Choi beskriver særegne dørlyder og stedsakustikk, mens Yang beskriver midlertidig lyd i klippen. Sammenlign originale akustiske signaturer.",
+          "fr": "Choi décrit des portes et acoustiques distinctes, Yang le son provisoire. Comparez des signatures acoustiques originales.",
+          "pt": "Choi descreve portas e acústicas distintas, Yang o som provisório. Compare assinaturas acústicas originais."
+        },
+        "sourceIds": [
+          "s6",
+          "s7"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_irishman_2019",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Hybrid capture, performance-preserving effects and temporal editing",
+      "nb": "Hybridopptak, spillbevarende effekter og tidsklipping",
+      "fr": "Captation hybride, effets préservant le jeu et montage temporel",
+      "pt": "Captação híbrida, efeitos que preservam interpretação e montagem temporal"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "Rodrigo Prieto ASC, AMC on shooting The Irishman",
+        "publisher": "ARRI Rental",
+        "url": "https://www.arrirental.com/en/about/overview/news/rodrigo-prieto-asc-amc-on-shooting-the-irishman"
+      },
+      {
+        "id": "s2",
+        "title": "Martin Scorsese and DP Rodrigo Prieto harness Kodak film and digital capture on The Irishman",
+        "publisher": "Kodak",
+        "url": "https://www.kodak.com/en/motion/blog-post/martin-scorsese-the-irishman/"
+      },
+      {
+        "id": "s3",
+        "title": "The Irishman",
+        "publisher": "Industrial Light & Magic",
+        "url": "https://www.ilm.com/vfx/the-irishman/"
+      },
+      {
+        "id": "s4",
+        "title": "The Irishman's Oscar-Nominated Editor Thelma Schoonmaker on her 53-year Collaboration with Martin Scorsese",
+        "publisher": "Motion Picture Association – The Credits",
+        "url": "https://www.motionpictures.org/2020/01/the-irishmans-oscar-nominated-editor-thelma-schoonmaker-on-her-53-year-collaboration-with-martin-scorsese/"
+      },
+      {
+        "id": "s5",
+        "title": "Tom Fleischman and Sound Editors Eugene Gearty and Philip Stockton Reveal the Silent Secrets of The Irishman",
+        "publisher": "CineMontage / Motion Picture Editors Guild",
+        "url": "https://cinemontage.org/tom-fleischman-and-sound-editors-eugene-gearty-and-phillip-stockton-reveal-the-silent-secrets-of-the-irishman/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "irishman-hybrid",
+        "area": "camera",
+        "prompt": {
+          "en": "How should hybrid film and digital acquisition be documented?",
+          "nb": "Hvordan bør hybride film- og digitalopptak dokumenteres?",
+          "fr": "Comment documenter une captation mixte argentique et numérique ?",
+          "pt": "Como documentar captação híbrida em película e digital?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Track each capture method and its intended finishing path",
+              "nb": "Registrer hver opptaksmetode og planlagt ferdigstilling",
+              "fr": "Suivre chaque méthode de captation et sa finition prévue",
+              "pt": "Registar cada método de captação e acabamento previsto"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Declare every shot digital because effects were used",
+              "nb": "Erklær alle bilder digitale fordi effekter ble brukt",
+              "fr": "Déclarer tous les plans numériques à cause des effets",
+              "pt": "Declarar todos os planos digitais devido aos efeitos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat film and digital source records as interchangeable",
+              "nb": "Behandle film- og digitalkilder som utskiftbare",
+              "fr": "Traiter les sources argentiques et numériques comme interchangeables",
+              "pt": "Tratar fontes em película e digitais como intercambiáveis"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "ARRI and Kodak describe a custom digital rig and separate 35mm work. Preserve capture provenance instead of inferring one format for every shot.",
+          "nb": "ARRI og Kodak beskriver en digital spesialrigg og separate 35 mm-opptak. Bevar opptaksopphav fremfor å anta ett format for alle bilder.",
+          "fr": "ARRI et Kodak décrivent un dispositif numérique et des prises 35 mm séparées. Préservez la provenance sans généraliser.",
+          "pt": "ARRI e Kodak descrevem dispositivo digital e captação 35 mm separada. Preserve proveniência sem generalizar."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "irishman-face",
+        "area": "animation",
+        "prompt": {
+          "en": "How can facial effects preserve the original acting choices?",
+          "nb": "Hvordan kan ansiktseffekter bevare skuespillerens opprinnelige valg?",
+          "fr": "Comment les effets faciaux préservent-ils les choix de jeu ?",
+          "pt": "Como podem efeitos faciais preservar escolhas de interpretação?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Replace every expression with a generic facial template",
+              "nb": "Erstatt alle uttrykk med en generisk ansiktsmal",
+              "fr": "Remplacer chaque expression par un modèle facial générique",
+              "pt": "Substituir cada expressão por modelo facial genérico"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Judge the result without consulting the photographed performance",
+              "nb": "Vurder resultatet uten å se det fotograferte spillet",
+              "fr": "Juger le résultat sans consulter le jeu filmé",
+              "pt": "Avaliar resultado sem consultar interpretação filmada"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Review consented performance references against effect versions",
+              "nb": "Sammenlign samtykkebaserte spillreferanser med effektversjoner",
+              "fr": "Comparer des références de jeu consenties aux versions d’effets",
+              "pt": "Comparar referências consentidas de interpretação com versões de efeitos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "ILM describes markerless performance capture and Schoonmaker discusses editorial review of facial detail. Test a consented fictional transformation while retaining the original performance.",
+          "nb": "ILM beskriver markørløs registrering og Schoonmaker klippegjennomgang av ansiktsdetaljer. Prøv en samtykkebasert fiktiv forvandling og bevar originalspillet.",
+          "fr": "ILM décrit une captation sans marqueurs et Schoonmaker la revue du jeu facial. Testez une transformation consentie en préservant le jeu original.",
+          "pt": "ILM descreve captação sem marcadores e Schoonmaker revisão facial na montagem. Teste transformação consentida preservando interpretação original."
+        },
+        "sourceIds": [
+          "s1",
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "irishman-time",
+        "area": "research",
+        "prompt": {
+          "en": "How can abrupt temporal shifts remain emotionally coherent?",
+          "nb": "Hvordan kan brå tidsskifter forbli emosjonelt sammenhengende?",
+          "fr": "Comment des sauts temporels brusques restent-ils émotionnellement cohérents ?",
+          "pt": "Como podem saltos temporais abruptos manter coerência emocional?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume sound must fill every silent pause",
+              "nb": "Anta at lyd må fylle hver stille pause",
+              "fr": "Supposer que le son doit combler chaque silence",
+              "pt": "Supor que som deve preencher cada silêncio"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare recurring gestures and restrained sound across time jumps",
+              "nb": "Sammenlign tilbakevendende gester og dempet lyd over tidshopp",
+              "fr": "Comparer gestes récurrents et son retenu entre les époques",
+              "pt": "Comparar gestos recorrentes e som contido entre épocas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Explain every transition with unrelated narration",
+              "nb": "Forklar hver overgang med urelatert fortellerstemme",
+              "fr": "Expliquer chaque transition par une narration sans rapport",
+              "pt": "Explicar cada transição com narração sem relação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Schoonmaker discusses abrupt transitions and the sound team describes restraint. Test a short original time-jump montage and assess the emotional link.",
+          "nb": "Schoonmaker beskriver brå overganger og lydteamet tilbakeholdenhet. Prøv en kort original tidshoppmontasje og vurder følelsessammenhengen.",
+          "fr": "Schoonmaker décrit des transitions abruptes et l’équipe son la retenue. Testez un montage temporel original et son lien émotionnel.",
+          "pt": "Schoonmaker descreve transições abruptas e a equipa de som contenção. Teste montagem temporal original e ligação emocional."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_1917_2019",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Rehearsal-led space, continuous illusion and editorial feedback",
+      "nb": "Prøvestyrt rom, kontinuitetsillusjon og klippetilbakemelding",
+      "fr": "Espace guidé par les répétitions, continuité et retour du montage",
+      "pt": "Espaço guiado por ensaios, continuidade e retorno da montagem"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "The immersive camera movement of 1917",
+        "publisher": "ARRI",
+        "url": "https://www.arri.com/news-en/the-immersive-camera-movement-of-1917-"
+      },
+      {
+        "id": "s2",
+        "title": "How Cinematographer Roger Deakins & Team Pulled Off the One-Shot Masterpiece 1917",
+        "publisher": "Motion Picture Association",
+        "url": "https://www.motionpictures.org/2019/12/how-cinematographer-roger-deakins-team-pulled-off-the-one-shot-masterpiece-1917/"
+      },
+      {
+        "id": "s3",
+        "title": "1917's Production Designer on Building a World at War",
+        "publisher": "Motion Picture Association",
+        "url": "https://www.motionpictures.org/2020/01/1917s-production-designer-on-building-a-world-at-war/"
+      },
+      {
+        "id": "s4",
+        "title": "How Editor Lee Smith & Sound Editor Oliver Tarney Crafted the Immersive Story of 1917",
+        "publisher": "Motion Picture Association",
+        "url": "https://www.motionpictures.org/2020/01/how-editor-lee-smith-sound-editor-oliver-tarney-crafted-the-immersive-story-of-1917/"
+      },
+      {
+        "id": "s5",
+        "title": "1917's Oscar-Nominated VFX Supervisor on Creating Relentless Immersion",
+        "publisher": "Motion Picture Association",
+        "url": "https://www.motionpictures.org/2020/01/1917s-oscar-nominated-vfx-supervisor-on-creating-relentless-immersion/"
+      },
+      {
+        "id": "s6",
+        "title": "Screenwriter Krysty Wilson-Cairns on Helping Sam Mendes Write the WWI Epic 1917",
+        "publisher": "Motion Picture Association",
+        "url": "https://www.motionpictures.org/2019/12/screenwriter-krysty-wilson-cairns-on-helping-sam-mendes-write-the-wwi-epic-1917/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "film1917-distance",
+        "area": "research",
+        "prompt": {
+          "en": "How can rehearsal determine the dimensions of a moving-camera set?",
+          "nb": "Hvordan kan prøver bestemme dimensjonene i en kulisse for bevegelig kamera?",
+          "fr": "Comment les répétitions déterminent-elles les dimensions d’un décor mobile ?",
+          "pt": "Como podem ensaios determinar dimensões de um cenário para câmara móvel?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Measure neutral scene duration and adapt a safe rehearsal space",
+              "nb": "Mål varigheten av en nøytral scene og tilpass et trygt prøverom",
+              "fr": "Mesurer une scène neutre et adapter un espace de répétition sûr",
+              "pt": "Medir duração de cena neutra e adaptar espaço de ensaio seguro"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Build all sets before discussing actor or camera movement",
+              "nb": "Bygg alle kulisser før skuespiller- og kamerabevegelse diskuteres",
+              "fr": "Construire tous les décors avant de discuter des mouvements",
+              "pt": "Construir cenários antes de discutir movimentos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume every scripted page demands an identical physical distance",
+              "nb": "Anta at hver manusside krever identisk fysisk avstand",
+              "fr": "Supposer que chaque page exige une distance identique",
+              "pt": "Supor que cada página exige distância idêntica"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Production accounts describe rehearsal-led dimensions and continuous duration from writing onward. Test this relationship in a neutral walking scene, not a recreation of combat.",
+          "nb": "Produksjonskildene beskriver prøvestyrte dimensjoner og sammenhengende varighet fra manusstadiet. Prøv sammenhengen i en nøytral gåscene, ikke en gjenskaping av kamp.",
+          "fr": "Les sources décrivent des dimensions issues des répétitions et une durée continue dès l’écriture. Testez dans une marche neutre, sans reconstituer de combat.",
+          "pt": "As fontes descrevem dimensões guiadas por ensaios e duração contínua desde a escrita. Teste numa caminhada neutra, sem recriar combate."
+        },
+        "sourceIds": [
+          "s2",
+          "s3",
+          "s6"
+        ]
+      },
+      {
+        "id": "film1917-joins",
+        "area": "camera",
+        "prompt": {
+          "en": "How should a continuous-looking sequence be verified in editorial?",
+          "nb": "Hvordan bør en tilsynelatende sammenhengende sekvens verifiseres i klippen?",
+          "fr": "Comment vérifier au montage une séquence apparemment continue ?",
+          "pt": "Como verificar na montagem sequência aparentemente contínua?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Claim apparent continuity proves there are no edits",
+              "nb": "Påstå at opplevd kontinuitet beviser fravær av klipp",
+              "fr": "Affirmer que la continuité apparente prouve l’absence de coupes",
+              "pt": "Afirmar que continuidade aparente prova ausência de cortes"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore changes in camera motion at transitions",
+              "nb": "Ignorer kamerabevegelsens endringer ved overganger",
+              "fr": "Ignorer les variations de mouvement aux raccords",
+              "pt": "Ignorar mudanças de movimento nas transições"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare planned transitions and document the actual joins",
+              "nb": "Sammenlign planlagte overganger og dokumenter faktiske skjøter",
+              "fr": "Comparer raccords prévus et documenter les jonctions réelles",
+              "pt": "Comparar transições previstas e documentar junções reais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The editorial and VFX accounts describe seam protection and invisible joins. Compare an original neutral sequence and its source clips to distinguish perception from construction.",
+          "nb": "Klipp- og effektkildene beskriver beskyttelse av skjøter og usynlige overganger. Sammenlign en original nøytral sekvens og kildeklippene for å skille opplevelse fra konstruksjon.",
+          "fr": "Les sources montage et VFX décrivent des raccords invisibles. Comparez une séquence neutre et ses prises sources pour distinguer perception et construction.",
+          "pt": "Fontes de montagem e efeitos descrevem junções invisíveis. Compare sequência neutra e tomadas originais para distinguir perceção de construção."
+        },
+        "sourceIds": [
+          "s1",
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "film1917-sound",
+        "area": "sound",
+        "prompt": {
+          "en": "How can sound density change during a continuous scene?",
+          "nb": "Hvordan kan lydtetthet endres i en sammenhengende scene?",
+          "fr": "Comment la densité sonore varie-t-elle dans une scène continue ?",
+          "pt": "Como pode densidade sonora variar numa cena contínua?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat continuous imagery as requiring continuous music",
+              "nb": "Behandle sammenhengende bilder som krav om kontinuerlig musikk",
+              "fr": "Supposer que la continuité visuelle impose une musique continue",
+              "pt": "Supor que continuidade visual exige música contínua"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan contrasting layers and review changes with picture editorial",
+              "nb": "Planlegg kontrasterende lag og vurder endringer sammen med bildeklipp",
+              "fr": "Prévoir des couches contrastées et revoir les variations au montage",
+              "pt": "Planear camadas contrastantes e rever mudanças na montagem"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Keep every ambient layer equally loud throughout",
+              "nb": "Hold alle miljølydlag like høye hele tiden",
+              "fr": "Garder toutes les ambiances au même niveau",
+              "pt": "Manter todas as camadas ambientais igualmente altas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The department accounts describe sound infrastructure and deliberate density modulation. Test a neutral soundscape with changing focus in a short scene.",
+          "nb": "Avdelingskildene beskriver lydinfrastruktur og bevisst variasjon i tetthet. Prøv et nøytralt lydlandskap med skiftende fokus i en kort scene.",
+          "fr": "Les équipes décrivent infrastructure et modulation sonore. Testez un paysage sonore neutre avec variations d’attention.",
+          "pt": "As equipas descrevem infraestrutura e modulação sonora. Teste paisagem sonora neutra com foco variável."
+        },
+        "sourceIds": [
+          "s2",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_portrait_of_a_lady_on_fire_2019",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Portrait lighting, memory structure and sparse music",
+      "nb": "Portrettlys, minnestruktur og sparsom musikk",
+      "fr": "Lumière du portrait, mémoire et musique rare",
+      "pt": "Luz de retrato, memória e música esparsa"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Portrait de la jeune fille en feu (Portrait of a Lady on Fire)",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/portrait-de-la-jeune-fille-en-feu/"
+      },
+      {
+        "id": "s1",
+        "title": "Screenwriters' Lecture Series 2019: Céline Sciamma",
+        "publisher": "BAFTA",
+        "url": "https://www.bafta.org/media-centre/press-releases/screenwriters-lecture-series-2019-celine-sciamma/"
+      },
+      {
+        "id": "s2",
+        "title": "Claire Mathon AFC on Portrait of a Lady on Fire",
+        "publisher": "RED Digital Cinema",
+        "url": "https://www.reddigitalcinema.com/stories/claire-mathon-afc"
+      },
+      {
+        "id": "s3",
+        "title": "Claire Mathon AFC: Portrait of a Lady on Fire",
+        "publisher": "Film and Digital Times",
+        "url": "https://www.fdtimes.com/2020/05/17/claire-mathon-afc-portrait-of-a-lady-on-fire/"
+      },
+      {
+        "id": "s4",
+        "title": "Interview: Céline Sciamma on Portrait of a Lady on Fire",
+        "publisher": "Film Comment",
+        "url": "https://www.filmcomment.com/article/interview-celine-sciamma-portrait-of-a-lady-on-fire/"
+      },
+      {
+        "id": "s5",
+        "title": "Portrait of a Lady on Fire",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/30469-portrait-of-a-lady-on-fire"
+      }
+    ],
+    "questions": [
+      {
+        "id": "portraitfire-portrait",
+        "area": "camera",
+        "prompt": {
+          "en": "How can portrait photography coordinate lighting and painted reference?",
+          "nb": "Hvordan kan portrettfotografi samordne lys og maleriske referanser?",
+          "fr": "Comment la photographie de portrait coordonne-t-elle lumière et peinture ?",
+          "pt": "Como pode fotografia de retrato coordenar luz e referências pictóricas?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test soft facial light and tonal relationships with original references",
+              "nb": "Prøv mykt ansiktslys og toneforhold med egne referanser",
+              "fr": "Tester lumière douce et rapports tonals avec des références originales",
+              "pt": "Testar luz suave e relações tonais com referências originais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose every lighting decision solely by camera resolution",
+              "nb": "Velg alle lysbeslutninger bare etter kameraoppløsning",
+              "fr": "Choisir l’éclairage uniquement selon la résolution caméra",
+              "pt": "Escolher iluminação apenas pela resolução da câmara"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat the film's paintings as generic background decorations",
+              "nb": "Behandle filmens malerier som generisk bakgrunnspynt",
+              "fr": "Traiter les peintures comme décor générique",
+              "pt": "Tratar pinturas como decoração genérica"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Mathon describes facial lighting and camera tests; Criterion documents the film's artwork. Make a new portrait study with coordinated visual references.",
+          "nb": "Mathon beskriver ansiktslys og kameraprøver; Criterion dokumenterer filmens malerier. Lag en ny portrettstudie med samordnede visuelle referanser.",
+          "fr": "Mathon décrit lumière du visage et essais caméra ; Criterion documente les tableaux. Créez une étude de portrait avec références coordonnées.",
+          "pt": "Mathon descreve luz facial e testes de câmara; Criterion documenta pinturas. Crie estudo de retrato com referências coordenadas."
+        },
+        "sourceIds": [
+          "s2",
+          "s3",
+          "s5"
+        ]
+      },
+      {
+        "id": "portraitfire-memory",
+        "area": "research",
+        "prompt": {
+          "en": "How can a memory-led narrative omit connective scenes?",
+          "nb": "Hvordan kan en minnestyrt fortelling utelate forbindelsesscener?",
+          "fr": "Comment un récit de mémoire peut-il omettre les scènes de liaison ?",
+          "pt": "Como pode narrativa de memória omitir cenas de ligação?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Insert explanatory scenes between every remembered event",
+              "nb": "Sett inn forklaringsscener mellom hver erindret hendelse",
+              "fr": "Insérer des scènes explicatives entre chaque souvenir",
+              "pt": "Inserir cenas explicativas entre cada memória"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume memory and chronology must be identical",
+              "nb": "Anta at erindring og kronologi må være identiske",
+              "fr": "Supposer que mémoire et chronologie doivent être identiques",
+              "pt": "Supor que memória e cronologia devem ser idênticas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Select meaningful encounters and test transitions between them",
+              "nb": "Velg meningsfulle møter og prøv overgangene mellom dem",
+              "fr": "Choisir des rencontres significatives et tester leurs transitions",
+              "pt": "Selecionar encontros significativos e testar transições"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Sciamma describes desired-scene writing and removal of connective scenes. Design an original memory structure and evaluate whether its emotional progression remains legible.",
+          "nb": "Sciamma beskriver skriving av ønskede scener og fjerning av forbindelsesscener. Lag en original minnestruktur og vurder om følelsesutviklingen forblir tydelig.",
+          "fr": "Sciamma décrit l’écriture des scènes désirées et la suppression des liaisons. Concevez une mémoire originale et évaluez sa progression émotionnelle.",
+          "pt": "Sciamma descreve escrita de cenas desejadas e eliminação de ligações. Conceba memória original e avalie progressão emocional."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "portraitfire-music",
+        "area": "sound",
+        "prompt": {
+          "en": "How can rare music become a shared dramatic event?",
+          "nb": "Hvordan kan sjelden musikk bli en felles dramatisk hendelse?",
+          "fr": "Comment une musique rare devient-elle un événement dramatique partagé ?",
+          "pt": "Como pode música rara tornar-se acontecimento dramático partilhado?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat music as unrelated to memory or character experience",
+              "nb": "Behandle musikk som urelatert til minner og karakteropplevelse",
+              "fr": "Traiter la musique comme étrangère à la mémoire et au vécu",
+              "pt": "Tratar música como alheia à memória e experiência"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare silence with an original cue heard by the characters",
+              "nb": "Sammenlign stillhet med et originalt musikkinnslag karakterene hører",
+              "fr": "Comparer silence et musique originale entendue par les personnages",
+              "pt": "Comparar silêncio e música original ouvida pelas personagens"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Fill every dialogue scene with background scoring",
+              "nb": "Fyll alle dialogscener med bakgrunnsmusikk",
+              "fr": "Remplir chaque dialogue de musique de fond",
+              "pt": "Preencher cada diálogo com música de fundo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Sciamma describes withholding conventional score and using music as experience and memory. Test an original musical event against silence without reproducing the film's music.",
+          "nb": "Sciamma beskriver fravær av konvensjonell filmmusikk og musikk som opplevelse og minne. Prøv et originalt musikkinnslag mot stillhet uten å gjenskape filmens musikk.",
+          "fr": "Sciamma décrit l’absence de musique conventionnelle et la musique comme expérience et mémoire. Testez un événement musical original face au silence.",
+          "pt": "Sciamma descreve ausência de música convencional e música como experiência e memória. Teste acontecimento musical original perante silêncio."
+        },
+        "sourceIds": [
+          "s1",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_atlantics_2019",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Day-night acquisition, situated casting and late poetic writing",
+      "nb": "Dag-natt-opptak, stedbasert casting og sen poetisk skriving",
+      "fr": "Captation jour-nuit, casting situé et écriture poétique tardive",
+      "pt": "Captação dia-noite, elenco situado e escrita poética tardia"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Atlantique",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/atlantique/"
+      },
+      {
+        "id": "s1",
+        "title": "Portrait de la jeune fille en feu et Atlantique – entretiens avec Claire Mathon",
+        "publisher": "CineCimes",
+        "url": "https://cinecimes.fr/portrait-de-la-jeune-fille-en-feu-et-atlantique-entretiens-avec-claire-mathon-directrice-de-la-photographie/"
+      },
+      {
+        "id": "s2",
+        "title": "Entretiens avec les laureats du Prix de la CST 2019",
+        "publisher": "Commission Superieure Technique de l'Image et du Son",
+        "url": "https://prix.cst.fr/entretiens-avec-les-laureats-du-prix-de-la-cst-2019/"
+      },
+      {
+        "id": "s3",
+        "title": "La Lettre de l'AFC 298",
+        "publisher": "Association Francaise des directrices et directeurs de la photographie cinematographique",
+        "url": "https://www.afcinema.com/IMG/pdf/4/a/8/lettre_298.pdf"
+      },
+      {
+        "id": "s4",
+        "title": "Mati Diop on Atlantique",
+        "publisher": "British Vogue",
+        "url": "https://www.vogue.co.uk/arts-and-lifestyle/article/mati-diop-interview"
+      },
+      {
+        "id": "s5",
+        "title": "ScreenTalks Archive: Mati Diop on Atlantics",
+        "publisher": "Barbican",
+        "url": "https://www.barbican.org.uk/read-watch-listen/screentalks-archive-mati-diop-on-atlantics"
+      }
+    ],
+    "questions": [
+      {
+        "id": "atlantics-night",
+        "area": "camera",
+        "prompt": {
+          "en": "How should day and night capture choices be compared?",
+          "nb": "Hvordan bør opptaksvalg for dag og natt sammenlignes?",
+          "fr": "Comment comparer les choix de captation de jour et de nuit ?",
+          "pt": "Como comparar escolhas de captação de dia e noite?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test available-light conditions and preserve equipment provenance",
+              "nb": "Prøv tilgjengelige lysforhold og bevar utstyrets kildeopphav",
+              "fr": "Tester la lumière disponible et conserver la provenance du matériel",
+              "pt": "Testar luz disponível e preservar proveniência do equipamento"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume both camera records name exactly the same model",
+              "nb": "Anta at begge kameraopplysninger angir nøyaktig samme modell",
+              "fr": "Supposer que les sources nomment exactement le même modèle",
+              "pt": "Supor que fontes nomeiam exatamente o mesmo modelo"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose night settings without testing actual local light",
+              "nb": "Velg nattinnstillinger uten å prøve lyset på stedet",
+              "fr": "Choisir les réglages nocturnes sans tester la lumière locale",
+              "pt": "Escolher parâmetros noturnos sem testar luz local"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Mathon describes separate day and night strategies, with differing VariCam descriptions in equipment sources. Retain that uncertainty and test your own light conditions.",
+          "nb": "Mathon beskriver separate dag- og nattstrategier, med ulike VariCam-beskrivelser i utstyrskildene. Bevar usikkerheten og prøv egne lysforhold.",
+          "fr": "Mathon décrit des stratégies jour et nuit et les sources divergent sur le VariCam. Gardez cette incertitude et testez votre lumière.",
+          "pt": "Mathon descreve estratégias de dia e noite e fontes divergem sobre VariCam. Preserve incerteza e teste luz própria."
+        },
+        "sourceIds": [
+          "s1",
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "atlantics-place",
+        "area": "research",
+        "prompt": {
+          "en": "How can casting and social geography support a situated story?",
+          "nb": "Hvordan kan casting og sosial geografi støtte en stedbasert fortelling?",
+          "fr": "Comment casting et géographie sociale servent-ils un récit situé ?",
+          "pt": "Como podem elenco e geografia social apoiar narrativa situada?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat local identity as a substitute for individual characterization",
+              "nb": "Behandle lokal identitet som erstatning for individuell karakterisering",
+              "fr": "Traiter l’identité locale comme substitut à la caractérisation",
+              "pt": "Tratar identidade local como substituto de caracterização"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore the social setting when selecting fictional locations",
+              "nb": "Ignorer det sosiale miljøet ved valg av fiktive steder",
+              "fr": "Ignorer le contexte social lors du choix des lieux",
+              "pt": "Ignorar contexto social ao escolher locais fictícios"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Consult local collaborators and distinguish fictional roles from real lives",
+              "nb": "Rådfør deg med lokale samarbeidspartnere og skill fiktive roller fra virkelige liv",
+              "fr": "Consulter les collaborateurs locaux et distinguer fiction et vies réelles",
+              "pt": "Consultar colaboradores locais e distinguir ficção de vidas reais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Diop discusses casting and Dakar's social geography. Design a consent-based fictional place study without making individuals stand for an entire community.",
+          "nb": "Diop omtaler casting og Dakars sosiale geografi. Lag en samtykkebasert fiktiv stedsstudie uten å la enkeltpersoner representere et helt samfunn.",
+          "fr": "Diop évoque casting et géographie sociale de Dakar. Concevez une étude fictive consentie sans faire représenter toute une communauté par une personne.",
+          "pt": "Diop aborda elenco e geografia social de Dakar. Crie estudo fictício consentido sem fazer uma pessoa representar toda a comunidade."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
+        ]
+      },
+      {
+        "id": "atlantics-poetry",
+        "area": "sound",
+        "prompt": {
+          "en": "How can late-written poetic text alter a film's emotional structure?",
+          "nb": "Hvordan kan sent skrevet poetisk tekst endre filmens følelsesstruktur?",
+          "fr": "Comment un texte poétique tardif modifie-t-il la structure émotionnelle ?",
+          "pt": "Como pode texto poético tardio alterar estrutura emocional do filme?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume late writing cannot change the film's structure",
+              "nb": "Anta at sen skriving ikke kan endre filmens struktur",
+              "fr": "Supposer qu’une écriture tardive ne change pas la structure",
+              "pt": "Supor que escrita tardia não altera estrutura"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test original spoken text against the existing cut and music",
+              "nb": "Prøv original muntlig tekst mot eksisterende klipp og musikk",
+              "fr": "Tester un texte parlé original face au montage et à la musique",
+              "pt": "Testar texto falado original perante montagem e música"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Record every addition as if it came from principal photography",
+              "nb": "Registrer alle tillegg som om de kom fra hovedopptak",
+              "fr": "Enregistrer tout ajout comme issu du tournage principal",
+              "pt": "Registar cada adição como se viesse da rodagem principal"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Diop describes a poetic text written near the end of editing and deliberate musical collaboration. Try original spoken text while documenting the distinction between production stages.",
+          "nb": "Diop beskriver poetisk tekst skrevet mot slutten av klippen og bevisst musikalsk samarbeid. Prøv original muntlig tekst og dokumenter skillet mellom produksjonsstadiene.",
+          "fr": "Diop décrit un texte poétique tardif et une collaboration musicale choisie. Testez un texte original en distinguant les étapes.",
+          "pt": "Diop descreve texto poético tardio e colaboração musical deliberada. Teste texto original distinguindo etapas."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_lighthouse_2019",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Historical texture, narrow framing and optical testing",
+      "nb": "Historisk tekstur, smalt utsnitt og optiske prøver",
+      "fr": "Texture historique, cadre étroit et essais optiques",
+      "pt": "Textura histórica, quadro estreito e testes óticos"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Stormy Isle: The Lighthouse",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/articles/stormy-isle-the-lighthouse"
+      },
+      {
+        "id": "s1",
+        "title": "Jarin Blaschke and Dan Sasaki Discuss Vintage and Custom Lenses",
+        "publisher": "Panavision",
+        "url": "https://www.panavision.com/highlights/highlights-detail/jarin-blaschke-and-dan-sasaki-discuss-vintage-and-custom-lenses"
+      },
+      {
+        "id": "s2",
+        "title": "How The Lighthouse Created That Ominous Visual Style",
+        "publisher": "Los Angeles Times",
+        "url": "https://www.latimes.com/entertainment-arts/movies/story/2019-11-12/crafts-lighthouse"
+      }
+    ],
+    "questions": [
+      {
+        "id": "lighthouse-frame",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a narrow frame change the relationship between figure and space?",
+          "nb": "Hvordan kan et smalt utsnitt endre forholdet mellom figur og rom?",
+          "fr": "Comment un cadre étroit modifie-t-il le rapport figure-espace ?",
+          "pt": "Como pode quadro estreito alterar relação entre figura e espaço?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare vertical compositions in a neutral interior",
+              "nb": "Sammenlign vertikale komposisjoner i et nøytralt interiør",
+              "fr": "Comparer compositions verticales dans un intérieur neutre",
+              "pt": "Comparar composições verticais num interior neutro"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume wider framing always communicates isolation better",
+              "nb": "Anta at bredere utsnitt alltid formidler isolasjon bedre",
+              "fr": "Supposer qu’un cadre large communique toujours mieux l’isolement",
+              "pt": "Supor que quadro largo comunica sempre melhor isolamento"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose an aspect ratio without testing character placement",
+              "nb": "Velg sideforhold uten å prøve karakterplassering",
+              "fr": "Choisir un ratio sans tester le placement des personnages",
+              "pt": "Escolher proporção sem testar posição da personagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Blaschke and Sasaki discuss the 1.19 frame and historical optical references. Test your own compositions rather than treating the ratio as a universal rule.",
+          "nb": "Blaschke og Sasaki omtaler 1,19-formatet og historiske optiske referanser. Prøv egne komposisjoner fremfor å gjøre formatet til en universell regel.",
+          "fr": "Blaschke et Sasaki évoquent le cadre 1,19 et ses références historiques. Testez vos compositions sans universaliser le ratio.",
+          "pt": "Blaschke e Sasaki abordam quadro 1,19 e referências históricas. Teste composições sem universalizar a proporção."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "lighthouse-tones",
+        "area": "camera",
+        "prompt": {
+          "en": "How can monochrome tests approximate an earlier photographic response?",
+          "nb": "Hvordan kan monokrome prøver tilnærme et eldre fotografisk uttrykk?",
+          "fr": "Comment des essais monochromes évoquent-ils une réponse photographique ancienne ?",
+          "pt": "Como podem testes monocromáticos evocar resposta fotográfica antiga?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume every black-and-white film uses the same spectral response",
+              "nb": "Anta at alle svart-hvitt-filmer har samme spektralrespons",
+              "fr": "Supposer que tous les films monochromes ont la même réponse spectrale",
+              "pt": "Supor que todos os filmes monocromáticos têm resposta espectral igual"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Infer exact filter settings from the final image alone",
+              "nb": "Utled eksakte filterinnstillinger fra sluttbildet alene",
+              "fr": "Déduire les réglages exacts du seul résultat",
+              "pt": "Deduzir parâmetros exatos apenas da imagem final"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare tonal response under controlled lighting with reference images",
+              "nb": "Sammenlign tonegjengivelse i kontrollert lys med referansebilder",
+              "fr": "Comparer la réponse tonale sous lumière contrôlée avec des références",
+              "pt": "Comparar resposta tonal sob luz controlada com referências"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "ASC and the Los Angeles Times document Double-X and a custom filter approximating an older response. Compare original tonal tests without inventing historical optical specifications.",
+          "nb": "ASC og Los Angeles Times dokumenterer Double-X og et spesialfilter som tilnærmer eldre respons. Sammenlign egne toneprøver uten å finne på optiske spesifikasjoner.",
+          "fr": "ASC et Los Angeles Times documentent Double-X et filtre adapté. Comparez vos essais tonals sans inventer de spécifications historiques.",
+          "pt": "ASC e Los Angeles Times documentam Double-X e filtro adaptado. Compare testes tonais sem inventar especificações históricas."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "lighthouse-set",
+        "area": "research",
+        "prompt": {
+          "en": "How can period construction and lens tests inform each other?",
+          "nb": "Hvordan kan historisk kulissebygging og objektivprøver informere hverandre?",
+          "fr": "Comment construction d’époque et essais optiques s’informent-ils mutuellement ?",
+          "pt": "Como podem construção de época e testes óticos informar-se mutuamente?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume vintage optics make historical research unnecessary",
+              "nb": "Anta at eldre optikk gjør historisk research unødvendig",
+              "fr": "Supposer que les optiques anciennes dispensent de recherche historique",
+              "pt": "Supor que óticas antigas dispensam pesquisa histórica"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test material textures at the intended framing and lighting",
+              "nb": "Prøv materialteksturer med planlagt utsnitt og lys",
+              "fr": "Tester textures de matériaux avec cadre et lumière prévus",
+              "pt": "Testar texturas com enquadramento e luz previstos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Select materials without viewing them through the camera",
+              "nb": "Velg materialer uten å se dem gjennom kameraet",
+              "fr": "Choisir les matériaux sans les voir à la caméra",
+              "pt": "Escolher materiais sem vê-los pela câmara"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The craft sources describe a built lighthouse and purpose-selected vintage optics. Create a small material study coordinating period reference, light and lens choice.",
+          "nb": "Fagkildene beskriver et bygget fyr og målrettet valgt eldre optikk. Lag en liten materialstudie som samordner tidsreferanser, lys og objektivvalg.",
+          "fr": "Les sources décrivent un phare construit et des optiques anciennes choisies. Créez une étude de matériaux coordonnant époque, lumière et optique.",
+          "pt": "As fontes descrevem farol construído e óticas antigas selecionadas. Crie estudo de materiais coordenando época, luz e objetiva."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_tenet_2020",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Directional motion, mixed formats and processed sound",
+      "nb": "Retningsstyrt bevegelse, blandede formater og bearbeidet lyd",
+      "fr": "Mouvement directionnel, formats mixtes et son traité",
+      "pt": "Movimento direcional, formatos mistos e som processado"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "Tenet DP Hoyte van Hoytema FSF NSC ASC says the big screen is best for movies",
+        "publisher": "Cinematography World",
+        "url": "https://www.cinematography.world/hoyte-van-hoytema-fsf-nsc-asc-on-getting-tenet-on-to-the-big-screen/"
+      },
+      {
+        "id": "s2",
+        "title": "Lenses & Cameras used on Tenet",
+        "publisher": "Panavision",
+        "url": "https://www.panavision.com/highlights/credits/credits-detail/tenet"
+      },
+      {
+        "id": "s3",
+        "title": "Warner Bros. Pictures' and Christopher Nolan's Tenet To Open In IMAX 70mm",
+        "publisher": "IMAX",
+        "url": "https://www.imax.com/news/experience-tenet-IMAX-70mm?page=1"
+      },
+      {
+        "id": "s5",
+        "title": "Behind the VFX of TENET",
+        "publisher": "DNEG",
+        "url": "https://www.dneg.com/news/behind-the-vfx-of-tenet"
+      },
+      {
+        "id": "s6",
+        "title": "Wonder Woman and Tenet Sound Designer Richard King",
+        "publisher": "postPerspective",
+        "url": "https://postperspective.com/wonder-woman-and-tenet-sound-designer-richard-king/"
+      },
+      {
+        "id": "s7",
+        "title": "Ludwig Goransson discusses Tenet score in Variety",
+        "publisher": "USC Thornton School of Music",
+        "url": "https://music.usc.edu/ludwig-goransson-discusses-tenet-score-in-variety/"
+      },
+      {
+        "id": "s8",
+        "title": "How Do Composers Score Music During a Pandemic? One Single Instrument At a Time",
+        "publisher": "Rolling Stone",
+        "url": "https://au.rollingstone.com/music/music-features/tenet-film-score-composers-pandemic-20914/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "tenet-direction",
+        "area": "camera",
+        "prompt": {
+          "en": "How can opposite motion directions be made readable in an edit?",
+          "nb": "Hvordan kan motsatte bevegelsesretninger gjøres lesbare i klippen?",
+          "fr": "Comment rendre lisibles des directions de mouvement opposées au montage ?",
+          "pt": "Como tornar direções opostas de movimento legíveis na montagem?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Storyboard neutral object motion and label its intended direction",
+              "nb": "Lag storyboard for nøytral objektbevegelse og merk tilsiktet retning",
+              "fr": "Prévoir des mouvements d’objets neutres et signaler leur direction",
+              "pt": "Planear movimento neutro de objetos e indicar direção"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume reversing footage preserves every physical detail naturally",
+              "nb": "Anta at reversert opptak naturlig bevarer alle fysiske detaljer",
+              "fr": "Supposer que l’inversion conserve naturellement chaque détail physique",
+              "pt": "Supor que inversão preserva naturalmente cada detalhe físico"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Mix directions without reviewing visual continuity",
+              "nb": "Bland retninger uten å vurdere visuell kontinuitet",
+              "fr": "Mélanger les directions sans revoir la continuité",
+              "pt": "Misturar direções sem rever continuidade"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Van Hoytema describes forward and backward capture. Test the distinction with a harmless tabletop object and document intended movement rather than recreating action scenes.",
+          "nb": "Van Hoytema beskriver forlengs og baklengs opptak. Prøv skillet med et ufarlig bordobjekt og dokumenter bevegelsen fremfor å gjenskape actionscener.",
+          "fr": "Van Hoytema décrit des prises dans les deux sens. Testez avec un objet de table sans danger et documentez le mouvement sans recréer d’action.",
+          "pt": "Van Hoytema descreve captação em ambos sentidos. Teste com objeto de mesa sem perigo e documente movimento sem recriar ação."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "tenet-formats",
+        "area": "research",
+        "prompt": {
+          "en": "How should a large-format effects workflow preserve source lineage?",
+          "nb": "Hvordan bør en storformatbasert effektflyt bevare kildeopphav?",
+          "fr": "Comment préserver la provenance dans une chaîne d’effets grand format ?",
+          "pt": "Como preservar proveniência num fluxo de efeitos de grande formato?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Infer every shot's acquisition format from the cinema screen",
+              "nb": "Utled alle bilders opptaksformat fra kinolerretet",
+              "fr": "Déduire la captation de chaque plan de l’écran de cinéma",
+              "pt": "Deduzir captação de cada plano a partir do ecrã"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat a digital effects scan as proof of digital camera acquisition",
+              "nb": "Behandle en digital effektskann som bevis på digitalt kameraopptak",
+              "fr": "Traiter un scan d’effets comme preuve de captation numérique",
+              "pt": "Tratar digitalização de efeitos como prova de captação digital"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record acquisition, scanned elements and final presentation separately",
+              "nb": "Registrer opptak, skannede elementer og sluttvisning separat",
+              "fr": "Documenter séparément captation, éléments scannés et projection",
+              "pt": "Registar separadamente captação, elementos digitalizados e exibição"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Production and vendor accounts distinguish large-format acquisition, effects scans and presentation. Create a provenance log that keeps the stages separate.",
+          "nb": "Produksjons- og leverandørkildene skiller storformatopptak, effektskann og visning. Lag en kildeopphavslogg som holder trinnene adskilt.",
+          "fr": "Les sources distinguent captation grand format, scans d’effets et projection. Créez un registre séparant les étapes.",
+          "pt": "As fontes distinguem captação de grande formato, digitalização de efeitos e exibição. Crie registo separando etapas."
+        },
+        "sourceIds": [
+          "s1",
+          "s2",
+          "s3",
+          "s5"
+        ]
+      },
+      {
+        "id": "tenet-music",
+        "area": "sound",
+        "prompt": {
+          "en": "How can processed sound distinguish unusual narrative movement?",
+          "nb": "Hvordan kan bearbeidet lyd skille uvanlig narrativ bevegelse?",
+          "fr": "Comment un son traité distingue-t-il un mouvement narratif inhabituel ?",
+          "pt": "Como pode som processado distinguir movimento narrativo invulgar?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume remote score recording describes the principal shoot",
+              "nb": "Anta at fjerninnspilling av musikk beskriver hovedopptakene",
+              "fr": "Supposer que l’enregistrement musical distant décrit le tournage principal",
+              "pt": "Supor que gravação musical remota descreve rodagem principal"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare original stretched or reversed textures with intelligible dialogue",
+              "nb": "Sammenlign originale strukne eller reverserte teksturer med forståelig dialog",
+              "fr": "Comparer textures originales étirées ou inversées et dialogue intelligible",
+              "pt": "Comparar texturas originais esticadas ou invertidas com diálogo inteligível"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Apply the same distortion to every dialogue and music track",
+              "nb": "Bruk samme forvrengning på alle dialog- og musikkspor",
+              "fr": "Appliquer la même distorsion à tous les dialogues et musiques",
+              "pt": "Aplicar mesma distorção a todos os diálogos e músicas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "King discusses dialogue work and Göransson's accounts describe processed music and remote recording. Test original audio textures and preserve separate production and post records.",
+          "nb": "King omtaler dialogarbeid og Göransson bearbeidet musikk og fjerninnspilling. Prøv originale lydteksturer og bevar separate opptaks- og etterarbeidslogger.",
+          "fr": "King décrit le dialogue et Göransson la musique traitée et distante. Testez des textures originales en séparant tournage et postproduction.",
+          "pt": "King aborda diálogo e Göransson música processada e remota. Teste texturas originais separando rodagem e pós-produção."
+        },
+        "sourceIds": [
+          "s6",
+          "s7",
+          "s8"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_nomadland_2020",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Participant boundaries, mobile photography and landscape sound",
+      "nb": "Deltakergrenser, mobil fotografering og landskapslyd",
+      "fr": "Limites des participants, photographie mobile et son du paysage",
+      "pt": "Limites dos participantes, fotografia móvel e som da paisagem"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "Nomadland",
+        "publisher": "Searchlight Pictures",
+        "url": "https://www.searchlightpictures.com/nomadland/?pp=1"
+      },
+      {
+        "id": "s2",
+        "title": "Nomadland: New Naturalism",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/article/nomadland-new-naturalism/"
+      },
+      {
+        "id": "s3",
+        "title": "How Do You Connect with Someone with a Camera? It's a Hard Thing to Talk About: DP Joshua James Richards on Shooting Nomadland",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/111365-how-do-you-connect-with-someone-with-a-camera-its-a-hard-thing-to-talk-about-dp-joshua-james-richards-on-shooting-nomadland/"
+      },
+      {
+        "id": "s4",
+        "title": "BAFTA Film Sessions 2021: Director",
+        "publisher": "BAFTA",
+        "url": "https://www.bafta.org/media-centre/press-releases/bafta-film-sessions-2021-director/"
+      },
+      {
+        "id": "s5",
+        "title": "The Sound of Nomadland",
+        "publisher": "SoundWorks Collection",
+        "url": "https://next.soundworkscollection.com/posts/the-sound-of-nomadland"
+      }
+    ],
+    "questions": [
+      {
+        "id": "nomadland-people",
+        "area": "research",
+        "prompt": {
+          "en": "How can fiction involve real participants responsibly?",
+          "nb": "Hvordan kan fiksjon involvere virkelige deltakere på en ansvarlig måte?",
+          "fr": "Comment une fiction implique-t-elle des participants réels de façon responsable ?",
+          "pt": "Como pode ficção envolver participantes reais responsavelmente?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Discuss consent and distinguish personal testimony from fictional scenes",
+              "nb": "Avklar samtykke og skill personlige vitnesbyrd fra fiktive scener",
+              "fr": "Discuter du consentement et distinguer témoignage et fiction",
+              "pt": "Discutir consentimento e distinguir testemunho de ficção"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume appearing in a film grants unlimited use of personal stories",
+              "nb": "Anta at medvirkning gir ubegrenset bruk av personlige historier",
+              "fr": "Supposer qu’apparaître autorise tout usage des récits personnels",
+              "pt": "Supor que participação autoriza uso ilimitado de histórias pessoais"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat all filmed participants as invented characters",
+              "nb": "Behandle alle filmede deltakere som oppdiktede karakterer",
+              "fr": "Traiter tous les participants comme des personnages inventés",
+              "pt": "Tratar todos os participantes como personagens inventadas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Searchlight identifies real nomad participants and Richards discusses relationships and boundaries. Plan a fictional collaborative exercise with explicit consent and privacy limits.",
+          "nb": "Searchlight identifiserer virkelige nomadedeltakere og Richards omtaler relasjoner og grenser. Planlegg en fiktiv samarbeidsøvelse med tydelig samtykke og personvern.",
+          "fr": "Searchlight identifie des participants nomades et Richards évoque les limites. Prévoyez une collaboration fictive avec consentement et confidentialité.",
+          "pt": "Searchlight identifica participantes nómadas e Richards aborda limites. Planeie colaboração fictícia com consentimento e privacidade."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "nomadland-light",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a small mobile crew respond to changing available light?",
+          "nb": "Hvordan kan et lite mobilt team tilpasse seg skiftende tilgjengelig lys?",
+          "fr": "Comment une petite équipe mobile répond-elle à la lumière changeante ?",
+          "pt": "Como pode pequena equipa móvel responder a luz variável?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume available light removes the need for preparation",
+              "nb": "Anta at tilgjengelig lys fjerner behovet for forberedelse",
+              "fr": "Supposer que la lumière disponible dispense de préparation",
+              "pt": "Supor que luz disponível dispensa preparação"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose camera positions without considering participant comfort",
+              "nb": "Velg kameraposisjoner uten å vurdere deltakernes komfort",
+              "fr": "Choisir les positions caméra sans considérer le confort",
+              "pt": "Escolher posições de câmara sem considerar conforto"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan flexible scene windows and test compact lighting options",
+              "nb": "Planlegg fleksible scenevinduer og prøv kompakte lysalternativer",
+              "fr": "Prévoir des créneaux flexibles et tester des éclairages compacts",
+              "pt": "Planear janelas flexíveis e testar iluminação compacta"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The craft accounts describe a small crew, available light and mobile configurations. Test a safe, compact local filming plan without claiming every scene was naturally lit.",
+          "nb": "Fagkildene beskriver et lite team, tilgjengelig lys og mobile oppsett. Prøv en trygg kompakt opptaksplan uten å påstå at alle scener hadde naturlig lys.",
+          "fr": "Les sources décrivent petite équipe, lumière disponible et dispositifs mobiles. Testez un plan local sûr sans généraliser la lumière naturelle.",
+          "pt": "As fontes descrevem equipa pequena, luz disponível e dispositivos móveis. Teste plano local seguro sem generalizar luz natural."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "nomadland-sound",
+        "area": "sound",
+        "prompt": {
+          "en": "How can landscape sound support a restrained editorial approach?",
+          "nb": "Hvordan kan landskapslyd støtte en tilbakeholden klippestil?",
+          "fr": "Comment le son du paysage soutient-il un montage retenu ?",
+          "pt": "Como pode som da paisagem apoiar montagem contida?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Remove all quiet moments to maintain a fixed pace",
+              "nb": "Fjern alle stille øyeblikk for å opprettholde fast tempo",
+              "fr": "Supprimer tous les silences pour garder un rythme fixe",
+              "pt": "Eliminar silêncios para manter ritmo fixo"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare location ambience and tonal transitions without forcing emotion",
+              "nb": "Sammenlign stedslyd og toneoverganger uten å påtvinge følelser",
+              "fr": "Comparer ambiances et transitions tonales sans imposer d’émotion",
+              "pt": "Comparar ambientes e transições tonais sem impor emoção"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use the same atmospheric sound in every geographical setting",
+              "nb": "Bruk samme atmosfærelyd på alle geografiske steder",
+              "fr": "Employer la même ambiance dans tous les lieux",
+              "pt": "Usar o mesmo ambiente em todos os lugares"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Zhao describes editorial choices about tone; the sound team describes landscape-specific restraint. Create an original sound montage that allows listeners room for interpretation.",
+          "nb": "Zhao beskriver klippevalg om tone, og lydteamet stedsspesifikk tilbakeholdenhet. Lag en original lydmontasje som gir lytteren rom for tolkning.",
+          "fr": "Zhao décrit les choix de tonalité et l’équipe son la retenue liée aux lieux. Créez un montage original laissant place à l’interprétation.",
+          "pt": "Zhao descreve escolhas de tonalidade e a equipa sonora contenção ligada aos locais. Crie montagem original com espaço para interpretação."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_soul_2020",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Dual-world design, culturally informed lighting and musical performance",
+      "nb": "Design av to verdener, kulturforankret lys og musikalsk spill",
+      "fr": "Design de deux mondes, lumière culturellement informée et jeu musical",
+      "pt": "Design de dois mundos, luz culturalmente informada e interpretação musical"
+    },
+    "sources": [
+      {
+        "id": "s2",
+        "title": "Soul",
+        "publisher": "Pixar Animation Studios",
+        "url": "https://www.pixar.com/soul"
+      },
+      {
+        "id": "s3",
+        "title": "Cinematography with Soul",
+        "publisher": "Pixar RenderMan",
+        "url": "https://renderman.pixar.com/stories/cinematography-with-soul"
+      },
+      {
+        "id": "s4",
+        "title": "An Inside Look at the Animation in Pixar's Soul",
+        "publisher": "Disney News",
+        "url": "https://news.disney.com/animators-of-pixar-soul"
+      },
+      {
+        "id": "s6",
+        "title": "Soul (film)",
+        "publisher": "D23",
+        "url": "https://d23.com/a-to-z/soul-film/"
+      },
+      {
+        "id": "s7",
+        "title": "The Music Behind Pixar's Soul",
+        "publisher": "Disney News",
+        "url": "https://news.disney.com/music-for-soul"
+      },
+      {
+        "id": "s8",
+        "title": "A Behind-the-Scenes Look at the Heart and Soul of Pixar's Latest Feature",
+        "publisher": "ACM SIGGRAPH Blog",
+        "url": "https://blog.siggraph.org/2020/12/a-behind-the-scenes-look-at-the-heart-and-soul-of-pixars-latest-feature.html/"
+      },
+      {
+        "id": "s9",
+        "title": "How Soul directors created Pixar's first Black protagonist",
+        "publisher": "Los Angeles Times",
+        "url": "https://www.latimes.com/entertainment-arts/movies/story/2020-11-19/pixar-soul-pete-docter-kemp-powers"
+      },
+      {
+        "id": "s10",
+        "title": "ART OF THE CUT on editing PIXAR's Soul with Kevin Nolting, ACE",
+        "publisher": "ProVideo Coalition",
+        "url": "https://www.provideocoalition.com/art-of-the-cut-soul/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "soul-worlds",
+        "area": "animation",
+        "prompt": {
+          "en": "How can two animated worlds communicate different narrative rules?",
+          "nb": "Hvordan kan to animerte verdener formidle ulike fortellerregler?",
+          "fr": "Comment deux mondes animés communiquent-ils des règles narratives différentes ?",
+          "pt": "Como podem dois mundos animados comunicar regras narrativas diferentes?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Develop distinct shape and line systems with readable character motion",
+              "nb": "Utvikle ulike form- og linjesystemer med lesbar karakterbevegelse",
+              "fr": "Développer formes et traits distincts avec mouvement lisible",
+              "pt": "Desenvolver formas e linhas distintas com movimento legível"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use identical rendering and motion rules for both worlds",
+              "nb": "Bruk identiske render- og bevegelsesregler i begge verdener",
+              "fr": "Employer les mêmes règles de rendu et mouvement",
+              "pt": "Usar regras idênticas de renderização e movimento"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Design abstract characters without testing expression clarity",
+              "nb": "Utform abstrakte karakterer uten å prøve uttrykkets tydelighet",
+              "fr": "Concevoir les personnages abstraits sans tester leur expressivité",
+              "pt": "Conceber personagens abstratas sem testar clareza expressiva"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Pixar describes distinct world design and new line techniques. Make an original two-world style study and test character readability across both.",
+          "nb": "Pixar beskriver ulik verdensdesign og nye linjeteknikker. Lag en original toverdensstudie og prøv karakterenes lesbarhet i begge.",
+          "fr": "Pixar décrit deux univers et de nouvelles techniques de trait. Créez une étude originale et testez la lisibilité des personnages.",
+          "pt": "Pixar descreve mundos distintos e novas técnicas de linha. Crie estudo original e teste legibilidade das personagens."
+        },
+        "sourceIds": [
+          "s2",
+          "s4",
+          "s8"
+        ]
+      },
+      {
+        "id": "soul-lighting",
+        "area": "animation",
+        "prompt": {
+          "en": "How can character shading be developed with culturally informed references?",
+          "nb": "Hvordan kan karakterskyggelegging utvikles med kulturforankrede referanser?",
+          "fr": "Comment développer l’ombrage des personnages avec des références culturellement informées ?",
+          "pt": "Como desenvolver sombreamento de personagens com referências culturalmente informadas?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume one generic shading preset fits all characters",
+              "nb": "Anta at én generisk skyggeleggingsmal passer alle karakterer",
+              "fr": "Supposer qu’un préréglage générique convient à tous",
+              "pt": "Supor que predefinição genérica serve todas as personagens"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat photographic reference and cultural consultation as irrelevant",
+              "nb": "Behandle fotoreferanser og kulturrådgivning som uvesentlig",
+              "fr": "Traiter références photo et consultation culturelle comme inutiles",
+              "pt": "Tratar referências fotográficas e consulta cultural como irrelevantes"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Consult relevant expertise and test varied skin and hair rendering",
+              "nb": "Rådfør deg med relevant ekspertise og prøv variert hud- og hårrendering",
+              "fr": "Consulter des spécialistes et tester diverses peaux et chevelures",
+              "pt": "Consultar especialistas e testar renderização variada de pele e cabelo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "RenderMan and Disney accounts describe dedicated Black-skin and hair development and consultation. Test original characters with varied lighting and seek informed feedback rather than universalizing one preset.",
+          "nb": "RenderMan og Disney beskriver særskilt utvikling av svart hud og hår samt rådgivning. Prøv egne karakterer i variert lys og søk kvalifisert tilbakemelding fremfor å generalisere én mal.",
+          "fr": "RenderMan et Disney décrivent le travail sur peaux et cheveux noirs et la consultation. Testez des personnages originaux et sollicitez des avis informés.",
+          "pt": "RenderMan e Disney descrevem trabalho de pele e cabelo negros e consulta. Teste personagens originais sob luz variada e procure avaliação informada."
+        },
+        "sourceIds": [
+          "s3",
+          "s6",
+          "s9"
+        ]
+      },
+      {
+        "id": "soul-jazz",
+        "area": "sound",
+        "prompt": {
+          "en": "How can animated musical performance align with credible playing gestures?",
+          "nb": "Hvordan kan animert musikkspill samsvare med troverdige spillebevegelser?",
+          "fr": "Comment le jeu musical animé s’aligne-t-il sur des gestes crédibles ?",
+          "pt": "Como pode interpretação musical animada alinhar-se com gestos credíveis?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat jazz performance and otherworldly score as the same task",
+              "nb": "Behandle jazzspill og musikk for den andre verdenen som samme oppgave",
+              "fr": "Traiter jazz et musique de l’autre monde comme une seule tâche",
+              "pt": "Tratar jazz e música do outro mundo como tarefa igual"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use consented performance references and original music to test synchronization",
+              "nb": "Bruk samtykkebaserte spillreferanser og original musikk for å prøve synkronisering",
+              "fr": "Utiliser des références consenties et une musique originale pour tester la synchronisation",
+              "pt": "Usar referências consentidas e música original para testar sincronização"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Animate unrelated hand movements without listening to the music",
+              "nb": "Animer urelaterte håndbevegelser uten å lytte til musikken",
+              "fr": "Animer des gestes sans rapport sans écouter la musique",
+              "pt": "Animar gestos sem relação sem ouvir música"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Disney describes Batiste's piano reference and separate score roles; Nolting describes early music in editorial. Test an original musical gesture and preserve the division of contributions.",
+          "nb": "Disney beskriver Batistes pianoreferanser og separate musikkroller; Nolting beskriver tidlig musikk i klippen. Prøv en original musikalsk gest og bevar bidragsskillet.",
+          "fr": "Disney décrit les références piano de Batiste et les rôles distincts ; Nolting la musique précoce au montage. Testez un geste musical original.",
+          "pt": "Disney descreve referências de piano de Batiste e funções distintas; Nolting música inicial na montagem. Teste gesto musical original."
+        },
+        "sourceIds": [
+          "s6",
+          "s7",
+          "s10"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_wolfwalkers_2020",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Graphic world contrast, hybrid perspective and iterative animatics",
+      "nb": "Grafisk verdenskontrast, hybrid perspektiv og iterative animatics",
+      "fr": "Contraste graphique, perspective hybride et animatiques itératives",
+      "pt": "Contraste gráfico, perspetiva híbrida e animáticas iterativas"
+    },
+    "sources": [
+      {
+        "id": "s2",
+        "title": "A First Look at 'Wolfwalkers,' Tomm Moore's New Feature (Trailer Exclusive)",
+        "publisher": "Cartoon Brew",
+        "url": "https://www.cartoonbrew.com/feature-film/first-look-wolfwalkers-tomm-moores-new-feature-trailer-exclusive-149399.html"
+      },
+      {
+        "id": "s3",
+        "title": "Director Tomm Moore Reveals New Details About 'Wolfwalkers,' Coming to Apple TV+ (Annecy WIP)",
+        "publisher": "Cartoon Brew",
+        "url": "https://www.cartoonbrew.com/feature-film/director-tomm-moore-reveals-new-details-about-wolfwalkers-coming-to-apple-tv-annecy-wip-193335.html"
+      },
+      {
+        "id": "s4",
+        "title": "2D Isn't Dead, It Just Became Something Different: Using Blender For Wolfwalkers",
+        "publisher": "Blender",
+        "url": "https://www.blender.org/user-stories/2d-isnt-dead-it-just-became-something-different-using-blender-for-wolfwalkers/"
+      },
+      {
+        "id": "s5",
+        "title": "Tomm Moore and Ross Stewart Talk 'Wolfwalkers'",
+        "publisher": "Animation World Network",
+        "url": "https://www.awn.com/animationworld/tomm-moore-and-ross-stewart-talk-wolfwalkers"
+      },
+      {
+        "id": "s6",
+        "title": "'Wolfwalkers' Story Artist Iker Maidagan Has Written A Priceless Account Of The Film's Development",
+        "publisher": "Cartoon Brew",
+        "url": "https://www.cartoonbrew.com/educational/wolfwalkers-story-artist-iker-maidagan-has-written-a-priceless-account-of-the-films-development-203223.html"
+      }
+    ],
+    "questions": [
+      {
+        "id": "wolfwalkers-styles",
+        "area": "animation",
+        "prompt": {
+          "en": "How can contrasting graphic styles express different fictional environments?",
+          "nb": "Hvordan kan kontrasterende grafiske stiler uttrykke ulike fiktive miljøer?",
+          "fr": "Comment des styles graphiques opposés expriment-ils des décors différents ?",
+          "pt": "Como podem estilos gráficos contrastantes exprimir ambientes fictícios?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Develop distinct geometric and organic line systems",
+              "nb": "Utvikle ulike geometriske og organiske linjesystemer",
+              "fr": "Développer des systèmes de traits géométriques et organiques",
+              "pt": "Desenvolver sistemas de linhas geométricas e orgânicas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Give every environment identical perspective and line texture",
+              "nb": "Gi alle miljøer identisk perspektiv og linjetekstur",
+              "fr": "Donner à tous les décors les mêmes perspectives et traits",
+              "pt": "Dar a todos os ambientes perspetiva e linha iguais"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose visual styles independently of story viewpoint",
+              "nb": "Velg visuell stil uavhengig av fortellerperspektivet",
+              "fr": "Choisir les styles indépendamment du point de vue",
+              "pt": "Escolher estilos independentemente da perspetiva narrativa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Moore describes contrasting block-print and forest forms. Create an original visual contrast and test how it communicates different viewpoints.",
+          "nb": "Moore beskriver kontrast mellom blokktrykk og skogformer. Lag en original visuell kontrast og prøv hvordan den formidler ulike perspektiver.",
+          "fr": "Moore décrit le contraste entre gravure et forêt. Créez un contraste original et testez les points de vue communiqués.",
+          "pt": "Moore descreve contraste entre gravura e floresta. Crie contraste original e teste perspetivas comunicadas."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "wolfwalkers-wolfvision",
+        "area": "animation",
+        "prompt": {
+          "en": "How can three-dimensional previsualization support hand-drawn perspective?",
+          "nb": "Hvordan kan tredimensjonal forhåndsvisualisering støtte håndtegnet perspektiv?",
+          "fr": "Comment la prévisualisation 3D sert-elle une perspective dessinée ?",
+          "pt": "Como pode pré-visualização 3D apoiar perspetiva desenhada?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume hand-drawn appearance rules out digital spatial planning",
+              "nb": "Anta at håndtegnet uttrykk utelukker digital romplanlegging",
+              "fr": "Supposer que le dessin exclut toute planification spatiale numérique",
+              "pt": "Supor que desenho exclui planeamento espacial digital"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Apply the Wolfvision cadence to every scene without evidence",
+              "nb": "Bruk Wolfvision-rytmen på alle scener uten dokumentasjon",
+              "fr": "Appliquer la cadence Wolfvision à toutes les scènes sans preuve",
+              "pt": "Aplicar cadência Wolfvision a todas as cenas sem provas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use simple 3D motion guides and develop original drawn layers",
+              "nb": "Bruk enkle 3D-bevegelsesguider og utvikle egne tegnede lag",
+              "fr": "Utiliser des guides 3D simples et créer des couches dessinées originales",
+              "pt": "Usar guias 3D simples e criar camadas desenhadas originais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The Blender and AWN accounts describe 3D planning followed by paper-based rendering. Test a small original moving perspective while keeping the technique's scope explicit.",
+          "nb": "Blender og AWN beskriver 3D-planlegging etterfulgt av papirbasert rendering. Prøv et lite originalt bevegelig perspektiv og avgrens teknikkens omfang.",
+          "fr": "Blender et AWN décrivent la préparation 3D suivie d’un rendu sur papier. Testez une perspective mobile originale en délimitant la technique.",
+          "pt": "Blender e AWN descrevem planeamento 3D seguido de desenho em papel. Teste perspetiva móvel original delimitando a técnica."
+        },
+        "sourceIds": [
+          "s3",
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "wolfwalkers-animatic",
+        "area": "research",
+        "prompt": {
+          "en": "How should successive animatics guide story development?",
+          "nb": "Hvordan bør successive animatics styre fortellingsutviklingen?",
+          "fr": "Comment des animatiques successives guident-elles le récit ?",
+          "pt": "Como devem animáticas sucessivas orientar desenvolvimento narrativo?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume a single storyboard pass resolves every story problem",
+              "nb": "Anta at én storyboardrunde løser alle fortellingsproblemer",
+              "fr": "Supposer qu’un seul découpage résout tous les problèmes",
+              "pt": "Supor que uma ronda de storyboard resolve todos os problemas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Keep versions and compare story clarity before committing to animation",
+              "nb": "Behold versjoner og sammenlign fortellingens tydelighet før animasjon",
+              "fr": "Conserver les versions et comparer la clarté avant animation",
+              "pt": "Preservar versões e comparar clareza antes da animação"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Discard each previous animatic immediately after revision",
+              "nb": "Forkast hver tidligere animatic straks etter revisjon",
+              "fr": "Écarter chaque animatique précédente après révision",
+              "pt": "Descartar animática anterior após revisão"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Cartoon Brew documents multiple animatics and a dedicated story-team process. Build a versioned original sequence and compare how revisions affect clarity and rhythm.",
+          "nb": "Cartoon Brew dokumenterer flere animatics og et eget fortellingsteam. Lag en versjonert original sekvens og sammenlign hvordan revisjoner påvirker tydelighet og rytme.",
+          "fr": "Cartoon Brew documente plusieurs animatiques et une équipe narrative dédiée. Créez une séquence versionnée et comparez clarté et rythme.",
+          "pt": "Cartoon Brew documenta várias animáticas e equipa narrativa dedicada. Crie sequência versionada e compare clareza e ritmo."
+        },
+        "sourceIds": [
+          "s2",
+          "s6"
+        ]
+      }
+    ]
   }
 ] as const satisfies readonly SourceBackedCaseWorkshop[];
