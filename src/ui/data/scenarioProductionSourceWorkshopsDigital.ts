@@ -4434,5 +4434,1955 @@ export const digitalSourceWorkshops = [
         ]
       }
     ]
+  },
+  {
+    "scenarioId": "scenario_i_daniel_blake_2016",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Social research, local casting and chronological revelation",
+      "nb": "Sosial research, lokal casting og kronologisk avsløring",
+      "fr": "Recherche sociale, casting local et révélation chronologique",
+      "pt": "Pesquisa social, elenco local e revelação cronológica"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "Ken Loach starts 'I, Daniel Blake' shoot",
+        "publisher": "Screen Daily",
+        "url": "https://www.screendaily.com/news/ken-loach-starts-i-daniel-blake-shoot/5096060.article"
+      },
+      {
+        "id": "s2",
+        "title": "Casting I, Daniel Blake",
+        "publisher": "Criterion Collection",
+        "url": "https://www.criterion.com/current/posts/5306-casting-i-daniel-blake"
+      },
+      {
+        "id": "s3",
+        "title": "Film of the week: I, Daniel Blake",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/sight-and-sound/reviews/film-week-i-daniel-blake"
+      },
+      {
+        "id": "s4",
+        "title": "Films on film sweep Cannes 2016 as Robbie Ryan BSC shines",
+        "publisher": "British Cinematographer",
+        "url": "https://britishcinematographer.co.uk/films-film-sweep-cannes-2016-robbie-ryan-bsc-shines/"
+      },
+      {
+        "id": "s7",
+        "title": "Ken Loach and Hayley Squires on making I, Daniel Blake",
+        "publisher": "The Guardian",
+        "url": "https://www.theguardian.com/culture/2026/apr/13/ken-loach-made-i-daniel-blake-film-food-banks"
+      }
+    ],
+    "questions": [
+      {
+        "id": "danielblake-research",
+        "area": "research",
+        "prompt": {
+          "en": "How should welfare procedures be adapted into fictional drama?",
+          "nb": "Hvordan bør velferdsprosedyrer bearbeides til fiktivt drama?",
+          "fr": "Comment adapter les procédures sociales en fiction ?",
+          "pt": "Como adaptar procedimentos sociais à ficção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare documented procedures with interview testimony",
+              "nb": "Sammenlign dokumenterte prosedyrer med intervjuvitnesbyrd",
+              "fr": "Comparer procédures documentées et témoignages",
+              "pt": "Comparar procedimentos documentados e testemunhos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Invent procedures without any research",
+              "nb": "Finn på prosedyrer uten å undersøke dem",
+              "fr": "Inventer des procédures sans recherche",
+              "pt": "Inventar procedimentos sem pesquisa"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat one fictional scene as universal evidence",
+              "nb": "Behandle én fiktiv scene som universelt bevis",
+              "fr": "Traiter une scène fictive comme preuve universelle",
+              "pt": "Tratar uma cena fictícia como prova universal"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Laverty's research and the BFI analysis connect administrative processes to dramatic structure. Distinguish sourced procedures from fictional compression.",
+          "nb": "Lavertys research og BFI-analysen knytter administrative prosesser til dramaet. Skill dokumenterte prosedyrer fra fiktiv komprimering.",
+          "fr": "La recherche de Laverty et l’analyse du BFI relient procédures et drame. Distinguez faits documentés et condensation fictive.",
+          "pt": "A pesquisa de Laverty e a análise do BFI ligam procedimentos e drama. Distinga factos documentados de condensação fictícia."
+        },
+        "sourceIds": [
+          "s3",
+          "s7"
+        ]
+      },
+      {
+        "id": "danielblake-casting",
+        "area": "research",
+        "prompt": {
+          "en": "How can a local ensemble be cast responsibly?",
+          "nb": "Hvordan kan et lokalt ensemble castes på en ansvarlig måte?",
+          "fr": "Comment constituer un ensemble local de manière responsable ?",
+          "pt": "Como selecionar um elenco local de forma responsável?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume regional identity guarantees acting ability",
+              "nb": "Anta at regional identitet garanterer skuespillerferdighet",
+              "fr": "Supposer que l’origine régionale garantit le talent",
+              "pt": "Supor que origem regional garante talento"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ask performers to disclose private hardship publicly",
+              "nb": "Be utøvere offentliggjøre private vanskeligheter",
+              "fr": "Demander aux acteurs de divulguer leurs difficultés privées",
+              "pt": "Pedir aos atores que divulguem dificuldades privadas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use supported auditions and respect individual experience",
+              "nb": "Bruk tilrettelagte prøver og respekter individuell erfaring",
+              "fr": "Prévoir des auditions accompagnées et respecter les expériences",
+              "pt": "Prever audições acompanhadas e respeitar experiências individuais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Criterion documents local casting and novice performers; Screen Daily confirms regional production. Design a consent-based audition without demanding personal disclosure.",
+          "nb": "Criterion dokumenterer lokal casting og nybegynnere; Screen Daily bekrefter regional produksjon. Lag en samtykkebasert prøve uten krav om privat utlevering.",
+          "fr": "Criterion documente casting local et débutants ; Screen Daily confirme le tournage régional. Concevez une audition consentie sans exiger de confidences.",
+          "pt": "A Criterion documenta elenco local e principiantes; Screen Daily confirma rodagem regional. Planeie audição consentida sem exigir confidências."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "danielblake-revelation",
+        "area": "camera",
+        "prompt": {
+          "en": "How can chronological revelation support a performance?",
+          "nb": "Hvordan kan kronologisk avsløring støtte skuespillet?",
+          "fr": "Comment la révélation chronologique sert-elle le jeu ?",
+          "pt": "Como pode revelação cronológica apoiar a interpretação?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume 35mm capture determines actor reactions",
+              "nb": "Anta at 35 mm-opptak bestemmer skuespillerreaksjoner",
+              "fr": "Supposer que le 35 mm détermine les réactions",
+              "pt": "Supor que 35 mm determina reações dos atores"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Agree on boundaries and introduce fictional information in stages",
+              "nb": "Avtal grenser og introduser fiktiv informasjon trinnvis",
+              "fr": "Convenir de limites et introduire progressivement les informations fictives",
+              "pt": "Acordar limites e introduzir informação fictícia por etapas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Withhold safety information to provoke genuine distress",
+              "nb": "Hold tilbake sikkerhetsinformasjon for å fremkalle ekte uro",
+              "fr": "Cacher des informations de sécurité pour provoquer la détresse",
+              "pt": "Ocultar informação de segurança para provocar sofrimento"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Loach and Squires describe restricted future-script access. Try staged fictional disclosure with informed consent; never withhold safety information or confuse the approach with film format.",
+          "nb": "Loach og Squires beskriver begrenset tilgang til fremtidig manus. Prøv trinnvis fiktiv avsløring med informert samtykke; hold aldri tilbake sikkerhetsinformasjon.",
+          "fr": "Loach et Squires décrivent un accès limité au scénario futur. Testez une révélation fictive consentie sans jamais cacher les informations de sécurité.",
+          "pt": "Loach e Squires descrevem acesso limitado ao argumento futuro. Teste revelação fictícia consentida sem ocultar informação de segurança."
+        },
+        "sourceIds": [
+          "s7",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_i_am_not_your_negro_2016",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Text-led documentary, archival provenance and rights clearance",
+      "nb": "Tekststyrt dokumentar, arkivopphav og rettighetsavklaring",
+      "fr": "Documentaire guidé par le texte, provenance et droits",
+      "pt": "Documentário guiado pelo texto, proveniência e direitos"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "I Am Not Your Negro",
+        "publisher": "PBS Independent Lens",
+        "url": "https://www.pbs.org/independentlens/documentaries/i-am-not-your-negro/"
+      },
+      {
+        "id": "s2",
+        "title": "I Am Not Your Negro Press Kit",
+        "publisher": "Magnolia Pictures",
+        "url": "https://www.magpictures.com/presskit.aspx?id=9f588349-a711-4eb6-8150-210b7bb6eb80"
+      },
+      {
+        "id": "s3",
+        "title": "The AFI FEST Interview: I AM NOT YOUR NEGRO Director Raoul Peck",
+        "publisher": "American Film Institute",
+        "url": "https://www.afi.com/news/the-afi-fest-interview-i-am-not-your-negro-director-raoul-peck/"
+      },
+      {
+        "id": "s4",
+        "title": "The POV Interview: Raoul Peck Talks I Am Not Your Negro",
+        "publisher": "POV Magazine",
+        "url": "https://povmagazine.com/i-am-not-your-negro-interview/"
+      },
+      {
+        "id": "s5",
+        "title": "How Editor Alexandra Strauss Cut an Impossible Film",
+        "publisher": "No Film School",
+        "url": "https://nofilmschool.com/2017/02/i-am-not-your-negro-oscar-editor-alexandra-strauss-interview"
+      },
+      {
+        "id": "s6",
+        "title": "I Am Not Your Negro Remixes James Baldwin with America's Tradition of On-Screen Racism",
+        "publisher": "MovieMaker Magazine",
+        "url": "https://www.moviemaker.com/i-am-not-your-negro-james-baldwin-tradition-on-screen-racism/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "iamnotyournegro-text",
+        "area": "research",
+        "prompt": {
+          "en": "How can archival editing remain anchored in an author's text?",
+          "nb": "Hvordan kan arkivklipping forankres i en forfatters tekst?",
+          "fr": "Comment ancrer le montage d’archives dans le texte d’un auteur ?",
+          "pt": "Como ancorar montagem de arquivo no texto de um autor?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map passages to documented images and editorial interpretations",
+              "nb": "Knytt tekstpassasjer til dokumenterte bilder og redaksjonelle tolkninger",
+              "fr": "Relier passages, images documentées et interprétations éditoriales",
+              "pt": "Ligar passagens, imagens documentadas e interpretações editoriais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Attribute newly written commentary to the original author",
+              "nb": "Tilskriv nyskrevet kommentar til originalforfatteren",
+              "fr": "Attribuer un nouveau commentaire à l’auteur original",
+              "pt": "Atribuir comentário novo ao autor original"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose images solely because they look emotionally similar",
+              "nb": "Velg bilder bare fordi de virker følelsesmessig like",
+              "fr": "Choisir des images uniquement pour leur ressemblance émotionnelle",
+              "pt": "Escolher imagens apenas pela semelhança emocional"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Peck describes a Baldwin-centered text-first process and Strauss describes building structure from diverse images. Preserve the distinction between original words and editorial argument.",
+          "nb": "Peck beskriver en Baldwin-forankret tekststyrt prosess og Strauss en struktur av ulike bilder. Bevar skillet mellom originalord og redaksjonelt argument.",
+          "fr": "Peck décrit une démarche centrée sur Baldwin et Strauss une structure d’images diverses. Distinguez paroles originales et argument éditorial.",
+          "pt": "Peck descreve abordagem centrada em Baldwin e Strauss estrutura de imagens diversas. Distinga palavras originais e argumento editorial."
+        },
+        "sourceIds": [
+          "s3",
+          "s5"
+        ]
+      },
+      {
+        "id": "iamnotyournegro-rights",
+        "area": "research",
+        "prompt": {
+          "en": "How should archive rights be tracked during a documentary edit?",
+          "nb": "Hvordan bør arkivrettigheter registreres under dokumentarklipping?",
+          "fr": "Comment suivre les droits d’archives pendant le montage documentaire ?",
+          "pt": "Como acompanhar direitos de arquivo na montagem documental?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume public accessibility grants unlimited reuse rights",
+              "nb": "Anta at offentlig tilgang gir ubegrenset gjenbruksrett",
+              "fr": "Supposer que l’accès public autorise toute réutilisation",
+              "pt": "Supor que acesso público permite reutilização ilimitada"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Remove the source log after assembling the first cut",
+              "nb": "Fjern kildeloggen etter første klipp",
+              "fr": "Supprimer le registre des sources après le premier montage",
+              "pt": "Eliminar o registo de fontes após primeira montagem"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record provenance, permissions and qualified legal review",
+              "nb": "Registrer kildeopphav, tillatelser og kvalifisert juridisk vurdering",
+              "fr": "Documenter provenance, autorisations et examen juridique qualifié",
+              "pt": "Registar proveniência, autorizações e revisão jurídica qualificada"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Peck describes estate access, licensing distinctions and legal review across edits. Design a rights ledger; do not assume that one production's legal determination transfers to another.",
+          "nb": "Peck beskriver arkivtilgang, lisensforskjeller og juridisk gjennomgang. Lag en rettighetslogg; ikke anta at én produksjons juridiske vurdering gjelder en annen.",
+          "fr": "Peck décrit accès aux archives, licences et examen juridique. Créez un registre des droits sans transposer automatiquement une décision juridique.",
+          "pt": "Peck descreve acesso a arquivos, licenças e revisão jurídica. Crie registo de direitos sem transferir automaticamente uma decisão jurídica."
+        },
+        "sourceIds": [
+          "s1",
+          "s4"
+        ]
+      },
+      {
+        "id": "iamnotyournegro-layers",
+        "area": "camera",
+        "prompt": {
+          "en": "How should new documentary footage relate to historical archive images?",
+          "nb": "Hvordan bør nye dokumentaropptak forholde seg til historiske arkivbilder?",
+          "fr": "Comment relier nouvelles prises documentaires et images d’archives ?",
+          "pt": "Como relacionar novas imagens documentais e arquivos históricos?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Remove all contextual dates from the editorial records",
+              "nb": "Fjern alle kontekstuelle datoer fra klippeloggen",
+              "fr": "Supprimer toutes les dates contextuelles des dossiers",
+              "pt": "Eliminar datas contextuais dos registos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Label time and provenance while testing meaningful juxtapositions",
+              "nb": "Merk tid og kildeopphav og prøv meningsfulle sammenstillinger",
+              "fr": "Identifier dates et provenance et tester des rapprochements",
+              "pt": "Identificar datas e proveniência e testar justaposições"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Present all newly shot images as archival recordings",
+              "nb": "Presenter alle nye opptak som arkivopptak",
+              "fr": "Présenter toute prise nouvelle comme image d’archives",
+              "pt": "Apresentar todas as imagens novas como arquivo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The production sources describe deliberate intercutting of contemporary and archival material. Test an original montage that preserves dates and separates documented fact from interpretive juxtaposition.",
+          "nb": "Produksjonskildene beskriver bevisst sammenklipping av samtids- og arkivmateriale. Prøv en original montasje som bevarer datoer og skiller fakta fra tolkende sammenstilling.",
+          "fr": "Les sources décrivent le montage de prises contemporaines et d’archives. Testez un montage original préservant dates et distinction entre faits et interprétation.",
+          "pt": "As fontes descrevem montagem de imagens contemporâneas e de arquivo. Teste montagem original preservando datas e distinguindo factos de interpretação."
+        },
+        "sourceIds": [
+          "s2",
+          "s6"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_get_out_2017",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Visual escalation, performance timing and practical-digital effects",
+      "nb": "Visuell eskalering, spillerytme og praktisk-digitale effekter",
+      "fr": "Escalade visuelle, rythme du jeu et effets hybrides",
+      "pt": "Escalada visual, ritmo da interpretação e efeitos híbridos"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "GET OUT",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/70923-GET-OUT"
+      },
+      {
+        "id": "s2",
+        "title": "DP Toby Oliver on Get Out, Cheating the Sunken Place and Color Grading Trailers",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/102038-dp-toby-oliver-on-get-out-cheating-the-sunken-place-and-color-grading-trailers/"
+      },
+      {
+        "id": "s3",
+        "title": "Get Out — Toby Oliver, ACS",
+        "publisher": "American Society of Cinematographers",
+        "url": "https://staging.ascmag.com/podcasts/get-out-toby-oliver-acs"
+      },
+      {
+        "id": "s4",
+        "title": "Editor Gregory Plotkin on Working With Jordan Peele on Get Out",
+        "publisher": "Yahoo Entertainment / Deadline",
+        "url": "https://www.yahoo.com/entertainment/editor-gregory-plotkin-working-jordan-180847198.html"
+      }
+    ],
+    "questions": [
+      {
+        "id": "getout-look",
+        "area": "camera",
+        "prompt": {
+          "en": "How can visual treatment shift from social realism toward horror?",
+          "nb": "Hvordan kan bildeuttrykk gå fra sosial realisme mot skrekk?",
+          "fr": "Comment passer visuellement du réalisme social à l’horreur ?",
+          "pt": "Como passar visualmente do realismo social ao terror?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test gradual changes in light and framing across the scene",
+              "nb": "Prøv gradvise endringer i lys og utsnitt gjennom scenen",
+              "fr": "Tester des changements progressifs de lumière et cadrage",
+              "pt": "Testar mudanças graduais de luz e enquadramento"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use the same visual intensity for every narrative beat",
+              "nb": "Bruk samme visuelle intensitet ved alle dramatiske vendepunkter",
+              "fr": "Garder la même intensité visuelle pour chaque moment",
+              "pt": "Manter intensidade visual igual em cada momento"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a color treatment without reviewing the performance",
+              "nb": "Velg fargebehandling uten å vurdere skuespillet",
+              "fr": "Choisir un étalonnage sans examiner le jeu",
+              "pt": "Escolher gradação sem avaliar interpretação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Oliver describes multiple look treatments and a movement from naturalistic space toward horror. Test a fictional scene with a gradual visual shift rather than copying exact LUT settings.",
+          "nb": "Oliver beskriver flere bildeuttrykk og overgang fra naturalisme mot skrekk. Prøv en fiktiv scene med gradvis visuelt skifte uten å kopiere LUT-innstillinger.",
+          "fr": "Oliver décrit plusieurs rendus et le passage du naturalisme à l’horreur. Testez une transition fictive sans inventer les réglages LUT.",
+          "pt": "Oliver descreve vários visuais e passagem do naturalismo ao terror. Teste transição fictícia sem inventar parâmetros LUT."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "getout-timing",
+        "area": "research",
+        "prompt": {
+          "en": "How can an edit balance comic timing and growing unease?",
+          "nb": "Hvordan kan klipping balansere komisk timing og økende uro?",
+          "fr": "Comment équilibrer rythme comique et malaise croissant au montage ?",
+          "pt": "Como equilibrar ritmo cómico e inquietação crescente na montagem?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Cut at an identical interval throughout the scene",
+              "nb": "Klipp med identisk intervall gjennom hele scenen",
+              "fr": "Couper à intervalles identiques dans toute la scène",
+              "pt": "Cortar em intervalos idênticos durante a cena"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore the actors' timing in favor of a fixed rhythm",
+              "nb": "Ignorer skuespillernes timing til fordel for fast rytme",
+              "fr": "Ignorer le rythme des acteurs au profit d’un rythme fixe",
+              "pt": "Ignorar ritmo dos atores em favor de ritmo fixo"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare reaction holds and pauses before selecting a cut",
+              "nb": "Sammenlign reaksjonsbilder og pauser før valg av klipp",
+              "fr": "Comparer réactions prolongées et pauses avant le choix de coupe",
+              "pt": "Comparar reações prolongadas e pausas antes de escolher corte"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Plotkin discusses suspense and comedy timing, longer holds and performance-first editing. Compare alternate cuts of an original neutral conversation.",
+          "nb": "Plotkin omtaler spennings- og komedietiming, lengre bilder og spillstyrt klipp. Sammenlign alternative klipp av en original nøytral samtale.",
+          "fr": "Plotkin décrit rythme comique, suspense et plans prolongés guidés par le jeu. Comparez plusieurs montages d’une conversation originale neutre.",
+          "pt": "Plotkin descreve ritmo cómico, suspense e planos prolongados guiados pela interpretação. Compare montagens de conversa original neutra."
+        },
+        "sourceIds": [
+          "s1",
+          "s4"
+        ]
+      },
+      {
+        "id": "getout-effects",
+        "area": "animation",
+        "prompt": {
+          "en": "How can an abstract visual effect be tested during editorial?",
+          "nb": "Hvordan kan en abstrakt visuell effekt prøves under klipping?",
+          "fr": "Comment tester un effet visuel abstrait pendant le montage ?",
+          "pt": "Como testar efeito visual abstrato durante montagem?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Postpone every timing decision until final effects delivery",
+              "nb": "Utsett alle timingvalg til endelig effektlevering",
+              "fr": "Reporter tous les choix de rythme jusqu’aux effets finaux",
+              "pt": "Adiar decisões de ritmo até entrega dos efeitos finais"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use safe practical elements and temporary composites for timing",
+              "nb": "Bruk trygge praktiske elementer og midlertidige kompositter for timing",
+              "fr": "Utiliser des éléments pratiques sûrs et composites temporaires",
+              "pt": "Usar elementos práticos seguros e composições temporárias"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume the temporary composite is the final visual effect",
+              "nb": "Anta at midlertidig kompositt er ferdig visuell effekt",
+              "fr": "Supposer que le composite temporaire est l’effet final",
+              "pt": "Supor que composição temporária é efeito final"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Oliver describes practical methods for the Sunken Place and Plotkin recalls temporary editorial work. Test an unrelated abstract effect and distinguish temporary from final imagery.",
+          "nb": "Oliver beskriver praktiske metoder for Sunken Place og Plotkin midlertidig klippearbeid. Prøv en urelatert abstrakt effekt og skill midlertidige fra endelige bilder.",
+          "fr": "Oliver décrit les méthodes pratiques du Sunken Place et Plotkin les essais de montage. Testez un effet abstrait distinct en séparant provisoire et final.",
+          "pt": "Oliver descreve métodos práticos do Sunken Place e Plotkin ensaios de montagem. Teste efeito abstrato independente distinguindo temporário e final."
+        },
+        "sourceIds": [
+          "s2",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_dunkirk_2017",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Interlocking time, format provenance and integrated sound",
+      "nb": "Sammenvevd tid, formatopphav og integrert lyd",
+      "fr": "Temps entrecroisés, provenance des formats et son intégré",
+      "pt": "Tempos entrecruzados, proveniência dos formatos e som integrado"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "WWII on a Grand Scale",
+        "publisher": "Directors Guild of America",
+        "url": "https://www.dga.org/craft/dgaq/issues/1703-summer-2017/wwii-dunkirk"
+      },
+      {
+        "id": "s1",
+        "title": "Kodak large format film enables IMAX and 65mm capture on Christopher Nolan's Dunkirk",
+        "publisher": "Kodak",
+        "url": "https://www.kodak.com/en/motion/blog-post/dunkirk-imax/"
+      },
+      {
+        "id": "s2",
+        "title": "Watch Dunkirk Discussion with Hoyte van Hoytema, ASC, FSF, NSC",
+        "publisher": "American Society of Cinematographers",
+        "url": "https://theasc.com/article/dunkirk-discussion-with-hoyte-van-hoytema-asc-fsf-nsc/"
+      },
+      {
+        "id": "s4",
+        "title": "Art of the Cut with Lee Smith, ACE on Dunkirk",
+        "publisher": "ProVideo Coalition",
+        "url": "https://www.provideocoalition.com/art-cut-oscar-nominated-editor-lee-smith-ace-dunkirk/"
+      },
+      {
+        "id": "s5",
+        "title": "You Are There: The Realism of Dunkirk",
+        "publisher": "Mix",
+        "url": "https://www.mixonline.com/sfp/you-are-there-430474"
+      },
+      {
+        "id": "s6",
+        "title": "A Life in Pictures: Christopher Nolan",
+        "publisher": "BAFTA",
+        "url": "https://www.bafta.org/media-centre/press-releases/a-life-in-pictures-christopher-nolan/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "dunkirk-time",
+        "area": "research",
+        "prompt": {
+          "en": "How can multiple narrative times remain clear in a cross-cut sequence?",
+          "nb": "Hvordan kan flere fortellingstider forbli tydelige i en kryssklippet sekvens?",
+          "fr": "Comment clarifier plusieurs temporalités dans un montage alterné ?",
+          "pt": "Como clarificar várias temporalidades numa montagem alternada?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map each timeline and verify points of convergence",
+              "nb": "Kartlegg hver tidslinje og verifiser møtepunktene",
+              "fr": "Cartographier chaque temporalité et vérifier les convergences",
+              "pt": "Mapear cada linha temporal e verificar convergências"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat all intercut events as simultaneous without evidence",
+              "nb": "Behandle alle kryssklippede hendelser som samtidige uten dokumentasjon",
+              "fr": "Traiter tous les événements alternés comme simultanés sans preuve",
+              "pt": "Tratar todos os acontecimentos alternados como simultâneos sem prova"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Remove timeline markers from the editorial plan",
+              "nb": "Fjern tidslinjemerker fra klippeplanen",
+              "fr": "Supprimer les repères temporels du plan de montage",
+              "pt": "Eliminar marcadores temporais do plano de montagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Nolan describes different narrative time frames and Smith uses chronology cards. Design an unrelated three-timeline animatic and test where viewers perceive convergence.",
+          "nb": "Nolan beskriver ulike fortellingstider og Smith bruker kronologikort. Lag en urelatert animatic med tre tidslinjer og prøv hvor seerne oppfatter sammenfall.",
+          "fr": "Nolan décrit des temporalités distinctes et Smith des cartes chronologiques. Créez une animatique indépendante et testez les convergences perçues.",
+          "pt": "Nolan descreve temporalidades distintas e Smith cartões cronológicos. Crie animática independente e teste convergências percebidas."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
+        ]
+      },
+      {
+        "id": "dunkirk-format",
+        "area": "camera",
+        "prompt": {
+          "en": "How should different large-format capture records be preserved?",
+          "nb": "Hvordan bør ulike storformatopptak dokumenteres?",
+          "fr": "Comment conserver les mentions des différents formats de captation ?",
+          "pt": "Como preservar registos de diferentes formatos de captação?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume all footage was acquired in one film format",
+              "nb": "Anta at alle opptak brukte ett filmformat",
+              "fr": "Supposer que toutes les prises utilisent un seul format",
+              "pt": "Supor que todas as imagens usam um só formato"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Resolve different production estimates by inventing an average",
+              "nb": "Løs ulike produksjonsanslag ved å finne på et gjennomsnitt",
+              "fr": "Résoudre les estimations divergentes par une moyenne inventée",
+              "pt": "Resolver estimativas divergentes inventando média"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record capture format and presentation ratio separately",
+              "nb": "Registrer opptaksformat og visningsformat separat",
+              "fr": "Documenter séparément captation et ratio de projection",
+              "pt": "Registar separadamente captação e proporção de exibição"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Kodak and ASC document both 15-perf and 5-perf formats with different IMAX estimates. Preserve the source-specific estimates and distinguish release versions from acquisition.",
+          "nb": "Kodak og ASC dokumenterer både 15-perf og 5-perf med ulike IMAX-anslag. Bevar kildespesifikke anslag og skill visningsversjoner fra opptak.",
+          "fr": "Kodak et ASC documentent les deux formats et des estimations IMAX distinctes. Préservez les estimations et distinguez diffusion et captation.",
+          "pt": "Kodak e ASC documentam ambos formatos e estimativas IMAX distintas. Preserve estimativas e distinga exibição de captação."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "dunkirk-rhythm",
+        "area": "sound",
+        "prompt": {
+          "en": "How can sound bridges link separate narrative timelines?",
+          "nb": "Hvordan kan lydbroer knytte sammen ulike fortellingstider?",
+          "fr": "Comment des ponts sonores relient-ils des temporalités distinctes ?",
+          "pt": "Como podem pontes sonoras ligar temporalidades distintas?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat effects, music and editorial rhythm as independent outputs",
+              "nb": "Behandle effekter, musikk og klipperytme som uavhengige leveranser",
+              "fr": "Traiter effets, musique et rythme comme sorties indépendantes",
+              "pt": "Tratar efeitos, música e ritmo como saídas independentes"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test original recurring sound motifs across editorial transitions",
+              "nb": "Prøv originale tilbakevendende lydmotiver over klippeoverganger",
+              "fr": "Tester des motifs sonores originaux entre transitions",
+              "pt": "Testar motivos sonoros originais entre transições"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use unrelated music to conceal every chronology change",
+              "nb": "Bruk uvedkommende musikk til å skjule alle tidsskifter",
+              "fr": "Employer une musique sans rapport pour cacher chaque changement",
+              "pt": "Usar música sem relação para esconder mudanças temporais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Smith and Nolan describe sound and score integrated with editorial rhythm. Create a neutral suspense exercise using original sound bridges and assess temporal clarity.",
+          "nb": "Smith og Nolan beskriver lyd og musikk integrert med klipperytme. Lag en nøytral spenningsøvelse med originale lydbroer og vurder tidsklarhet.",
+          "fr": "Smith et Nolan décrivent son et musique intégrés au rythme. Créez un exercice neutre avec ponts sonores originaux et évaluez la clarté temporelle.",
+          "pt": "Smith e Nolan descrevem som e música integrados no ritmo. Crie exercício neutro com pontes sonoras originais e avalie clareza temporal."
+        },
+        "sourceIds": [
+          "s4",
+          "s5",
+          "s6"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_florida_project_2017",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Community research, child viewpoint and hybrid color workflow",
+      "nb": "Lokalsamfunnsresearch, barneperspektiv og hybrid fargeflyt",
+      "fr": "Recherche communautaire, regard enfantin et chaîne couleur hybride",
+      "pt": "Pesquisa comunitária, olhar infantil e fluxo cromático híbrido"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The Florida Project director, Sean Baker, urges other filmmakers to shoot on film",
+        "publisher": "Eastman Kodak Company",
+        "url": "https://www.kodak.com/en/motion/blog-post/the-florida-project/"
+      },
+      {
+        "id": "s1",
+        "title": "It's a Small World: Sean Baker on The Florida Project, Shooting 35mm and Going Union",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/103243-its-a-small-world/"
+      },
+      {
+        "id": "s2",
+        "title": "Interview: Sean Baker",
+        "publisher": "Film Comment",
+        "url": "https://www.filmcomment.com/interview-sean-baker-florida-project/"
+      },
+      {
+        "id": "s4",
+        "title": "The Florida Project Team on the Casting Process and the Power of Cinema",
+        "publisher": "Film at Lincoln Center",
+        "url": "https://www.filmlinc.org/nyff2017/daily/watch-the-florida-project-team-on-the-casting-process-and-the-power-of-cinema/"
+      },
+      {
+        "id": "s5",
+        "title": "Color Plays Big Role in Director Sean Baker's The Florida Project",
+        "publisher": "postPerspective",
+        "url": "https://postperspective.com/color-plays-big-role-director-sean-bakers-florida-project/"
+      },
+      {
+        "id": "s6",
+        "title": "The DP-Colorist Relationship: The Florida Project",
+        "publisher": "Post Magazine",
+        "url": "https://www.postmagazine.com/Publications/Post-Magazine/2018/May-1-2018/The-DP-Colorist-Relationship-I-The-Florida-Proje.aspx"
+      }
+    ],
+    "questions": [
+      {
+        "id": "floridaproject-community",
+        "area": "research",
+        "prompt": {
+          "en": "How should a fictional film research a real community responsibly?",
+          "nb": "Hvordan bør en fiksjonsfilm undersøke et virkelig lokalsamfunn ansvarlig?",
+          "fr": "Comment documenter une communauté réelle de manière responsable ?",
+          "pt": "Como pesquisar comunidade real de forma responsável?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Consult residents and workers with consent and preserve privacy",
+              "nb": "Rådfør deg med beboere og ansatte med samtykke og vern privatlivet",
+              "fr": "Consulter résidents et travailleurs avec consentement et confidentialité",
+              "pt": "Consultar residentes e trabalhadores com consentimento e privacidade"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume one news report fully represents the community",
+              "nb": "Anta at én nyhetsartikkel representerer hele miljøet",
+              "fr": "Supposer qu’un reportage représente toute la communauté",
+              "pt": "Supor que uma notícia representa toda a comunidade"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use identifiable private details without permission",
+              "nb": "Bruk identifiserbare private detaljer uten tillatelse",
+              "fr": "Utiliser des détails privés identifiables sans autorisation",
+              "pt": "Usar detalhes privados identificáveis sem autorização"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Kodak and Film Comment describe field research and the real motel setting. Develop a fictional community study that distinguishes informed observation from invented characters.",
+          "nb": "Kodak og Film Comment beskriver feltresearch og det virkelige motellmiljøet. Utvikle en fiktiv miljøstudie som skiller informert observasjon fra oppdiktede karakterer.",
+          "fr": "Kodak et Film Comment décrivent recherche de terrain et motel réel. Créez une étude fictive distinguant observation et personnages inventés.",
+          "pt": "Kodak e Film Comment descrevem pesquisa de campo e motel real. Crie estudo fictício distinguindo observação de personagens inventadas."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "floridaproject-viewpoint",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a child's viewpoint shape color and performance choices?",
+          "nb": "Hvordan kan barneperspektiv forme farge- og spillevalg?",
+          "fr": "Comment le regard enfantin façonne-t-il couleur et jeu ?",
+          "pt": "Como pode o olhar infantil moldar cor e interpretação?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Demand adult-style emotional performance from children",
+              "nb": "Krev voksent følelsesspill fra barn",
+              "fr": "Exiger un jeu émotionnel adulte des enfants",
+              "pt": "Exigir interpretação emocional adulta de crianças"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a palette unrelated to the character's perspective",
+              "nb": "Velg en palett uten forbindelse til karakterperspektivet",
+              "fr": "Choisir une palette sans rapport avec le personnage",
+              "pt": "Escolher paleta sem relação com a perspetiva da personagem"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Coordinate color tests and age-appropriate supported rehearsal",
+              "nb": "Samordne fargeprøver og alderstilpassede tilrettelagte prøver",
+              "fr": "Coordonner essais couleur et répétitions adaptées à l’âge",
+              "pt": "Coordenar testes de cor e ensaios adaptados à idade"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Baker describes coaching and flexible child performance; Zabé describes color balancing childhood perception and adult reality. Plan a neutral viewpoint study with appropriate safeguards.",
+          "nb": "Baker beskriver veiledning og fleksibelt barnespill; Zabé beskriver fargebalanse mellom barneblikk og voksenvirkelighet. Planlegg en nøytral perspektivstudie med nødvendige trygghetstiltak.",
+          "fr": "Baker décrit accompagnement des enfants et Zabé l’équilibre chromatique des regards enfantin et adulte. Préparez une étude neutre avec protections adaptées.",
+          "pt": "Baker descreve acompanhamento infantil e Zabé equilíbrio cromático entre olhares infantil e adulto. Planeie estudo neutro com proteção adequada."
+        },
+        "sourceIds": [
+          "s1",
+          "s4",
+          "s6"
+        ]
+      },
+      {
+        "id": "floridaproject-hybrid",
+        "area": "camera",
+        "prompt": {
+          "en": "How should mixed capture formats be matched during finishing?",
+          "nb": "Hvordan bør blandede opptaksformater samordnes under etterarbeid?",
+          "fr": "Comment harmoniser des formats de captation mixtes en finition ?",
+          "pt": "Como harmonizar formatos de captação mistos no acabamento?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Discard original formats after matching the final color",
+              "nb": "Forkast originalformatene etter fargetilpasning",
+              "fr": "Écarter les formats originaux après harmonisation",
+              "pt": "Descartar formatos originais após correspondência cromática"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Preserve source records and compare color-matching tests",
+              "nb": "Bevar kildeopplysninger og sammenlign fargetilpasningsprøver",
+              "fr": "Conserver les mentions sources et comparer des essais colorimétriques",
+              "pt": "Preservar registos de origem e comparar testes de correspondência cromática"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Claim every image originated on 35mm film",
+              "nb": "Påstå at alle bilder opprinnelig ble tatt på 35 mm",
+              "fr": "Affirmer que toutes les images proviennent du 35 mm",
+              "pt": "Afirmar que todas as imagens tiveram origem em 35 mm"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Daley documents film stocks, digital night work and phone imagery matched in post. Test matching original clips while retaining the distinction between capture and finishing.",
+          "nb": "Daley dokumenterer filmtyper, digitale nattopptak og mobilbilder tilpasset i etterarbeid. Prøv å samordne egne klipp og bevar skillet mellom opptak og ferdigstilling.",
+          "fr": "Daley documente pellicules, nuits numériques et images de téléphone harmonisées en postproduction. Testez vos plans en distinguant captation et finition.",
+          "pt": "Daley documenta películas, noites digitais e imagens de telefone harmonizadas. Teste planos próprios distinguindo captação e acabamento."
+        },
+        "sourceIds": [
+          "s5",
+          "s6"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_roma_2018",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Memory-led design, monochrome workflow and offscreen voices",
+      "nb": "Minnebasert scenografi, monokrom arbeidsflyt og stemmer utenfor bildet",
+      "fr": "Décor guidé par la mémoire, chaîne monochrome et voix hors champ",
+      "pt": "Cenografia guiada pela memória, fluxo monocromático e vozes fora de campo"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Roma: Memories of Mexico",
+        "publisher": "American Society of Cinematographers",
+        "url": "https://theasc.com/article/roma-memories-of-mexico/"
+      },
+      {
+        "id": "s2",
+        "title": "Roma by Alfonso Cuarón — Production Notes",
+        "publisher": "Netflix production notes preserved by in70mm.com",
+        "url": "https://www.in70mm.com/presents/1963_blow_up/titel/r/roma/press/index.htm"
+      },
+      {
+        "id": "s3",
+        "title": "Editing Roma: An Emotional Journey from Indie to Oscars",
+        "publisher": "Frame.io",
+        "url": "https://blog.frame.io/2019/02/04/adam-gough-roma/"
+      },
+      {
+        "id": "s4",
+        "title": "Skip Lievsay and Craig Henighan on Designing the Sound of Alfonso Cuarón's Roma",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/106491-skip-lievsay-craig-henighan-alfonso-cuaron-roma/"
+      },
+      {
+        "id": "s6",
+        "title": "Four Netflix Films Added to the Criterion Collection",
+        "publisher": "Netflix",
+        "url": "https://about.netflix.com/news/four-netflix-films-added-to-the-criterion-collection"
+      }
+    ],
+    "questions": [
+      {
+        "id": "roma-memory",
+        "area": "research",
+        "prompt": {
+          "en": "How should personal memory inform a reconstructed period setting?",
+          "nb": "Hvordan bør personlige minner informere et rekonstruert tidsmiljø?",
+          "fr": "Comment la mémoire personnelle nourrit-elle un décor d’époque ?",
+          "pt": "Como pode memória pessoal informar cenário de época?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare remembered details with research and design records",
+              "nb": "Sammenlign erindrede detaljer med research og designlogger",
+              "fr": "Comparer souvenirs, recherche et dossiers de décor",
+              "pt": "Comparar detalhes recordados com pesquisa e registos de design"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume every remembered detail is an independently verified fact",
+              "nb": "Anta at alle erindrede detaljer er uavhengig bekreftede fakta",
+              "fr": "Supposer que chaque souvenir est un fait vérifié indépendamment",
+              "pt": "Supor que cada memória é facto verificado independentemente"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat reconstructed interiors as unchanged historical locations",
+              "nb": "Behandle rekonstruerte interiører som uendrede historiske steder",
+              "fr": "Traiter les intérieurs reconstruits comme lieux historiques intacts",
+              "pt": "Tratar interiores reconstruídos como locais históricos intactos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "ASC and the production notes document transformed locations and reconstructed family spaces. Build an original memory-based design board separating research, recollection and invention.",
+          "nb": "ASC og produksjonsnotatene dokumenterer omformede steder og rekonstruerte familierom. Lag et originalt minnebasert designkart som skiller research, erindring og diktning.",
+          "fr": "L’ASC et les notes décrivent des lieux transformés et espaces familiaux reconstruits. Créez une planche distinguant recherche, souvenir et invention.",
+          "pt": "A ASC e as notas documentam locais transformados e espaços familiares reconstruídos. Crie painel distinguindo pesquisa, memória e invenção."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "roma-mono",
+        "area": "camera",
+        "prompt": {
+          "en": "How should color acquisition and monochrome editing be linked?",
+          "nb": "Hvordan bør fargeopptak og monokrom klipping kobles?",
+          "fr": "Comment relier captation couleur et montage monochrome ?",
+          "pt": "Como ligar captação a cores e montagem monocromática?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Discard color originals once monochrome proxies exist",
+              "nb": "Forkast fargeoriginaler når monokrome proxyer finnes",
+              "fr": "Écarter les originaux couleur dès que les proxys existent",
+              "pt": "Descartar originais a cores quando existem proxies"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Infer acquisition format from the final grayscale image",
+              "nb": "Utled opptaksformat fra det ferdige gråtonebildet",
+              "fr": "Déduire la captation de l’image finale en niveaux de gris",
+              "pt": "Deduzir captação a partir da imagem final em cinzento"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Keep color originals and verify monochrome viewing transforms",
+              "nb": "Behold fargeoriginaler og verifiser monokrome visningstransformer",
+              "fr": "Conserver les originaux couleur et vérifier les transformations monochromes",
+              "pt": "Preservar originais a cores e verificar transformações monocromáticas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Cuarón's craft account and Gough's interview distinguish color acquisition, monochrome editorial viewing and finishing. Test the separate stages using a short original clip.",
+          "nb": "Cuaróns fagberetning og Goughs intervju skiller fargeopptak, monokrom klippevisning og ferdigstilling. Prøv de separate trinnene med et eget kortklipp.",
+          "fr": "Les entretiens de Cuarón et Gough distinguent captation couleur, visionnage monochrome et finition. Testez ces étapes sur un plan original.",
+          "pt": "Os relatos de Cuarón e Gough distinguem captação a cores, visualização monocromática e acabamento. Teste etapas num plano original."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "roma-voices",
+        "area": "sound",
+        "prompt": {
+          "en": "How can background voices create an offscreen world?",
+          "nb": "Hvordan kan bakgrunnsstemmer skape en verden utenfor bildet?",
+          "fr": "Comment les voix de fond créent-elles un monde hors champ ?",
+          "pt": "Como podem vozes de fundo criar um mundo fora de campo?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume an immersive mix removes the need for sound design",
+              "nb": "Anta at rommiks fjerner behovet for lyddesign",
+              "fr": "Supposer qu’un mixage immersif dispense de conception sonore",
+              "pt": "Supor que mistura imersiva dispensa design sonoro"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Write and record specific background voices for spatial placement",
+              "nb": "Skriv og ta opp spesifikke bakgrunnsstemmer for romlig plassering",
+              "fr": "Écrire et enregistrer des voix spécifiques pour placement spatial",
+              "pt": "Escrever e gravar vozes específicas para colocação espacial"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use the same indistinct crowd recording in every setting",
+              "nb": "Bruk samme utydelige folkemengdeopptak i alle miljøer",
+              "fr": "Utiliser le même brouhaha indistinct dans chaque décor",
+              "pt": "Usar a mesma multidão indistinta em todos os ambientes"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The sound team describes specifically written background voices and Atmos placement. Create a fictional sound scene with original voices and deliberate spatial relationships.",
+          "nb": "Lydteamet beskriver spesialskrevne bakgrunnsstemmer og Atmos-plassering. Lag en fiktiv lydscene med egne stemmer og bevisste romlige forhold.",
+          "fr": "L’équipe son décrit des voix écrites spécifiquement et leur placement Atmos. Créez une scène sonore fictive avec voix originales et relations spatiales.",
+          "pt": "A equipa de som descreve vozes escritas especificamente e colocação Atmos. Crie cena sonora fictícia com vozes originais e relações espaciais."
+        },
+        "sourceIds": [
+          "s4",
+          "s6"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_cold_war_2018",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Elliptical time, monochrome image tests and musical geography",
+      "nb": "Elliptisk tid, monokrome bildeprøver og musikalsk geografi",
+      "fr": "Temps elliptique, essais monochromes et géographie musicale",
+      "pt": "Tempo elíptico, testes monocromáticos e geografia musical"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Zimna wojna",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/21f2d998-4b45-58b0-8661-c649bc2ed11f/zimna-wojna"
+      },
+      {
+        "id": "s2",
+        "title": "Opposites Attract: Cold War",
+        "publisher": "American Society of Cinematographers",
+        "url": "https://theasc.com/articles/opposites-attract-cold-war"
+      },
+      {
+        "id": "s3",
+        "title": "Lukasz Zal PSC Crafts a Stark Aesthetic for Cold War",
+        "publisher": "Codex",
+        "url": "https://codex.online/casestudies/Lukasz-Zal-PSC-Crafts-a-Stark-Aesthetic-for-Cold-War"
+      },
+      {
+        "id": "s4",
+        "title": "Interview: Pawel Pawlikowski on Cold War",
+        "publisher": "Film4",
+        "url": "https://www.film4productions.com/news/interview/2018-05/interview-pawel-pawlikowski-cold-war"
+      },
+      {
+        "id": "s5",
+        "title": "Cold War",
+        "publisher": "Opus Film",
+        "url": "https://www.opusfilm.com/films/feature-films/cold-war"
+      }
+    ],
+    "questions": [
+      {
+        "id": "coldwar-ellipsis",
+        "area": "research",
+        "prompt": {
+          "en": "How can an elliptical story convey change across years?",
+          "nb": "Hvordan kan en elliptisk fortelling formidle endring over år?",
+          "fr": "Comment un récit elliptique transmet-il le changement sur plusieurs années ?",
+          "pt": "Como pode narrativa elíptica transmitir mudança ao longo de anos?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Select turning points and test what viewers infer between them",
+              "nb": "Velg vendepunkter og prøv hva publikum utleder mellom dem",
+              "fr": "Choisir les tournants et tester les inférences du public",
+              "pt": "Selecionar pontos de viragem e testar inferências do público"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Explain every missing year through lengthy narration",
+              "nb": "Forklar hvert manglende år med lang fortellerstemme",
+              "fr": "Expliquer chaque année absente par une longue narration",
+              "pt": "Explicar cada ano ausente com narração longa"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Remove all recurring motifs between the episodes",
+              "nb": "Fjern alle tilbakevendende motiver mellom episodene",
+              "fr": "Supprimer les motifs récurrents entre épisodes",
+              "pt": "Eliminar motivos recorrentes entre episódios"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Pawlikowski describes an anti-biopic built through ellipsis. Design a short fictional series of turning points and test whether the omitted intervals remain understandable.",
+          "nb": "Pawlikowski beskriver en antibiografi bygget gjennom ellipser. Lag en kort fiktiv serie vendepunkter og prøv om utelatte intervaller forblir forståelige.",
+          "fr": "Pawlikowski décrit un anti-biopic elliptique. Créez des tournants fictifs et vérifiez la compréhension des intervalles omis.",
+          "pt": "Pawlikowski descreve anti-biografia elíptica. Crie pontos de viragem fictícios e teste compreensão dos intervalos omitidos."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
+        ]
+      },
+      {
+        "id": "coldwar-tests",
+        "area": "camera",
+        "prompt": {
+          "en": "How should a monochrome production choose its capture method?",
+          "nb": "Hvordan bør en monokrom produksjon velge opptaksmetode?",
+          "fr": "Comment une production monochrome choisit-elle sa captation ?",
+          "pt": "Como deve produção monocromática escolher método de captação?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume a black-and-white image proves film-origin capture",
+              "nb": "Anta at svart-hvitt-bildet beviser analogt filmopptak",
+              "fr": "Supposer qu’une image monochrome prouve une captation argentique",
+              "pt": "Supor que imagem monocromática prova captação em película"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose camera settings solely from the theatrical runtime",
+              "nb": "Velg kamerainnstillinger bare ut fra spilletiden",
+              "fr": "Choisir les réglages selon la seule durée de projection",
+              "pt": "Escolher parâmetros apenas pela duração de exibição"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare acquisition tests through the intended monochrome finish",
+              "nb": "Sammenlign opptaksprøver gjennom tilsiktet monokromt etterarbeid",
+              "fr": "Comparer essais de captation jusqu’à la finition monochrome",
+              "pt": "Comparar testes de captação até acabamento monocromático"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Żal describes film and digital tests; Codex documents color ARRIRAW and monochrome finishing. Compare original test images without confusing acquisition with the final aesthetic.",
+          "nb": "Żal beskriver film- og digitalprøver; Codex dokumenterer farge-ARRIRAW og monokrom ferdigstilling. Sammenlign egne prøvebilder uten å blande opptak og slutt­uttrykk.",
+          "fr": "Żal décrit essais argentiques et numériques ; Codex documente ARRIRAW couleur et finition monochrome. Comparez vos essais sans confondre captation et esthétique finale.",
+          "pt": "Żal descreve testes em película e digitais; Codex documenta ARRIRAW a cores e acabamento monocromático. Compare testes sem confundir captação e estética final."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "coldwar-music",
+        "area": "sound",
+        "prompt": {
+          "en": "How can recurring music express changes of place and time?",
+          "nb": "Hvordan kan tilbakevendende musikk uttrykke skifte i sted og tid?",
+          "fr": "Comment une musique récurrente exprime-t-elle les changements de lieu et d’époque ?",
+          "pt": "Como pode música recorrente exprimir mudanças de lugar e tempo?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use unrelated pieces without considering narrative chronology",
+              "nb": "Bruk urelaterte stykker uten å vurdere fortellingens kronologi",
+              "fr": "Employer des pièces sans rapport avec la chronologie",
+              "pt": "Usar peças sem relação com cronologia narrativa"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Develop original motifs with researched musical context",
+              "nb": "Utvikle originale motiver med undersøkt musikalsk kontekst",
+              "fr": "Développer des motifs originaux dans un contexte musical documenté",
+              "pt": "Desenvolver motivos originais com contexto musical pesquisado"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat every arrangement as culturally interchangeable",
+              "nb": "Behandle alle arrangementer som kulturelt utskiftbare",
+              "fr": "Traiter tous les arrangements comme culturellement interchangeables",
+              "pt": "Tratar arranjos como culturalmente intercambiáveis"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Pawlikowski describes music as a third character and connects it to geography and time. Create original variations with documented context rather than copying the film's arrangements.",
+          "nb": "Pawlikowski beskriver musikk som en tredje karakter knyttet til geografi og tid. Lag originale variasjoner med dokumentert kontekst fremfor å kopiere arrangementene.",
+          "fr": "Pawlikowski décrit la musique comme troisième personnage lié au lieu et au temps. Créez des variations originales avec contexte documenté.",
+          "pt": "Pawlikowski descreve música como terceira personagem ligada a lugar e tempo. Crie variações originais com contexto documentado."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_burning_2018",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Adaptation, restricted knowledge and patient ambiguity",
+      "nb": "Adaptasjon, avgrenset kunnskap og tålmodig tvetydighet",
+      "fr": "Adaptation, savoir restreint et ambiguïté patiente",
+      "pt": "Adaptação, conhecimento restrito e ambiguidade paciente"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Burning",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/burning/"
+      },
+      {
+        "id": "s1",
+        "title": "Burning (2018)",
+        "publisher": "Korean Film Council",
+        "url": "https://koreanfilm.or.kr/eng/films/index/filmsView.jsp?movieCd=20173202"
+      },
+      {
+        "id": "s2",
+        "title": "Lee Chang-dong's Burning on Track to Set Theaters Ablaze in 2018",
+        "publisher": "Korean Film Council",
+        "url": "https://www.koreanfilm.or.kr/eng/news/news.jsp?blbdComCd=601006&mode=VIEW&seq=4703"
+      },
+      {
+        "id": "s3",
+        "title": "Burning review: Lee Changdong's drama sparks with rage and imagination",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/sight-and-sound/reviews/burning-review-lee-changdongs-drama-sparks-rage-imagination"
+      }
+    ],
+    "questions": [
+      {
+        "id": "burning-adaptation",
+        "area": "research",
+        "prompt": {
+          "en": "How can a short-story adaptation expand its social world?",
+          "nb": "Hvordan kan en novelleadaptasjon utvide sin sosiale verden?",
+          "fr": "Comment une adaptation de nouvelle élargit-elle son monde social ?",
+          "pt": "Como pode adaptação de conto ampliar o mundo social?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Identify source elements and develop clearly marked new material",
+              "nb": "Identifiser kildeelementer og utvikle tydelig merket nytt materiale",
+              "fr": "Identifier les éléments sources et développer de nouveaux apports signalés",
+              "pt": "Identificar elementos de origem e desenvolver material novo assinalado"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Attribute every new scene to the original short story",
+              "nb": "Tilskriv alle nye scener til originalnovellen",
+              "fr": "Attribuer chaque nouvelle scène à la nouvelle originale",
+              "pt": "Atribuir cada nova cena ao conto original"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat adaptation as a literal transcription without interpretation",
+              "nb": "Behandle adaptasjon som ordrett gjengivelse uten tolkning",
+              "fr": "Traiter l’adaptation comme transcription littérale sans interprétation",
+              "pt": "Tratar adaptação como transcrição literal sem interpretação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "KOFIC identifies the Murakami adaptation and BFI discusses its expanded social context. Plan an original adaptation study and label newly created material separately.",
+          "nb": "KOFIC identifiserer Murakami-adaptasjonen og BFI omtaler den utvidede sosiale konteksten. Planlegg en original adaptasjonsstudie og merk nyskapt materiale separat.",
+          "fr": "KOFIC identifie l’adaptation de Murakami et le BFI son contexte social élargi. Préparez une étude originale et identifiez séparément les apports.",
+          "pt": "KOFIC identifica adaptação de Murakami e BFI o contexto social ampliado. Planeie estudo original e identifique material novo separadamente."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "burning-view",
+        "area": "camera",
+        "prompt": {
+          "en": "How can restricted viewpoint preserve uncertainty in a fictional scene?",
+          "nb": "Hvordan kan avgrenset perspektiv bevare usikkerhet i en fiktiv scene?",
+          "fr": "Comment un point de vue restreint préserve-t-il l’incertitude ?",
+          "pt": "Como pode perspetiva restrita preservar incerteza numa cena fictícia?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Provide omniscient confirmation of each character suspicion",
+              "nb": "Gi allvitende bekreftelse på hver karakters mistanke",
+              "fr": "Confirmer chaque soupçon par un regard omniscient",
+              "pt": "Confirmar cada suspeita por olhar omnisciente"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat ambiguous visual details as proven factual evidence",
+              "nb": "Behandle tvetydige visuelle detaljer som bevist fakta",
+              "fr": "Traiter les détails ambigus comme preuves établies",
+              "pt": "Tratar detalhes ambíguos como provas estabelecidas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Show observable details without confirming every inference",
+              "nb": "Vis observerbare detaljer uten å bekrefte alle slutninger",
+              "fr": "Montrer des détails observables sans confirmer chaque inférence",
+              "pt": "Mostrar detalhes observáveis sem confirmar cada inferência"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI analysis emphasizes restricted viewpoint and constructive ambiguity. Test a neutral fictional scene with observable clues while retaining multiple interpretations; this is formal analysis, not a documented shot recipe.",
+          "nb": "BFI-analysen fremhever avgrenset perspektiv og konstruktiv tvetydighet. Prøv en nøytral fiktiv scene med spor og flere tolkninger; dette er formanalyse, ikke en dokumentert bildeoppskrift.",
+          "fr": "L’analyse BFI souligne point de vue restreint et ambiguïté. Testez une scène neutre à indices observables et plusieurs interprétations ; analyse formelle, non recette documentée.",
+          "pt": "A análise BFI destaca perspetiva restrita e ambiguidade. Teste cena neutra com indícios e várias interpretações; análise formal, não receita documentada."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "burning-duration",
+        "area": "sound",
+        "prompt": {
+          "en": "How can duration and ambient sound leave room for interpretation?",
+          "nb": "Hvordan kan varighet og miljølyd gi rom for tolkning?",
+          "fr": "Comment durée et ambiance laissent-elles place à l’interprétation ?",
+          "pt": "Como podem duração e som ambiente dar espaço à interpretação?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume slow pacing automatically creates meaningful ambiguity",
+              "nb": "Anta at langsomt tempo automatisk skaper meningsfull tvetydighet",
+              "fr": "Supposer qu’un rythme lent crée automatiquement l’ambiguïté",
+              "pt": "Supor que ritmo lento cria automaticamente ambiguidade"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare held compositions and understated ambient cues",
+              "nb": "Sammenlign fastholdte utsnitt og diskrete miljølydsignaler",
+              "fr": "Comparer cadres prolongés et indices sonores discrets",
+              "pt": "Comparar quadros prolongados e indícios sonoros discretos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use explicit musical cues to settle every uncertainty",
+              "nb": "Bruk tydelige musikkinnslag til å avgjøre all usikkerhet",
+              "fr": "Employer des signaux musicaux explicites pour résoudre toute incertitude",
+              "pt": "Usar sinais musicais explícitos para resolver toda incerteza"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI describes patient visual and sonic control, while KOFIC records the production. Compare alternate durations and original ambient layers without inventing technical settings.",
+          "nb": "BFI beskriver tålmodig visuell og lydlig kontroll, mens KOFIC dokumenterer produksjonen. Sammenlign alternative varigheter og egne miljølydlag uten å finne på tekniske innstillinger.",
+          "fr": "Le BFI analyse la maîtrise patiente de l’image et du son, KOFIC documente la production. Comparez durées et ambiances originales sans inventer de réglages.",
+          "pt": "O BFI analisa controlo paciente da imagem e som, KOFIC documenta produção. Compare durações e ambientes originais sem inventar parâmetros."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_shoplifters_2018",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Hybrid set geography, adaptive editing and child performance",
+      "nb": "Hybrid scenografi, adaptiv klipping og barneskuespill",
+      "fr": "Géographie de décors hybrides, montage adaptatif et jeu enfantin",
+      "pt": "Geografia de cenários híbridos, montagem adaptativa e interpretação infantil"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Manbiki Kazoku ('Shoplifters'): Interview with DP Ryuto Kondo",
+        "publisher": "Kodak",
+        "url": "https://www.kodak.com/en/motion/blog-post/ryuto-kondo/"
+      },
+      {
+        "id": "s1",
+        "title": "MANBIKI KAZOKU (SHOPLIFTERS)",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/manbiki-kazoku/"
+      },
+      {
+        "id": "s2",
+        "title": "Is blood enough? Koreeda Hirokazu on makeshift families and Shoplifters",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/sight-and-sound/interviews/blood-enough-koreeda-hirokazu-makeshift-families-shoplifters"
+      },
+      {
+        "id": "s3",
+        "title": "SHOPLIFTERS",
+        "publisher": "Foreign Correspondents' Club of Japan",
+        "url": "https://www.fccj.or.jp/committee-blog/shoplifters"
+      },
+      {
+        "id": "s4",
+        "title": "Foreign Contenders: Shoplifters Director Hirokazu Kore-eda on Father Figures and His Methods of Working with Children",
+        "publisher": "MovieMaker Magazine",
+        "url": "https://www.moviemaker.com/foreign-contenders-shoplifters-hirokazu-kore-eda/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "shoplifters-house",
+        "area": "research",
+        "prompt": {
+          "en": "How can a real house and reconstructed interiors feel like one space?",
+          "nb": "Hvordan kan et ekte hus og rekonstruerte interiører føles som ett rom?",
+          "fr": "Comment une maison réelle et des intérieurs reconstruits forment-ils un seul espace ?",
+          "pt": "Como podem casa real e interiores reconstruídos parecer um só espaço?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Match spatial relationships and recurring design features",
+              "nb": "Samordne romforbindelser og tilbakevendende designtrekk",
+              "fr": "Harmoniser relations spatiales et éléments récurrents",
+              "pt": "Harmonizar relações espaciais e elementos recorrentes"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat the exterior and interiors as unrelated fictional geography",
+              "nb": "Behandle eksteriør og interiører som urelatert fiktiv geografi",
+              "fr": "Traiter extérieur et intérieurs comme géographies sans rapport",
+              "pt": "Tratar exterior e interiores como geografias sem relação"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume every room was filmed inside the real house",
+              "nb": "Anta at alle rom ble filmet inne i det virkelige huset",
+              "fr": "Supposer que toutes les pièces ont été filmées dans la maison réelle",
+              "pt": "Supor que todas as divisões foram filmadas na casa real"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Kore-eda describes combining real house material and recreated interiors. Design a fictional floor plan and distinguish practical location material from constructed sets.",
+          "nb": "Kore-eda beskriver kombinasjon av ekte husopptak og gjenskapte interiører. Lag en fiktiv planløsning og skill stedsopptak fra bygde kulisser.",
+          "fr": "Kore-eda décrit maison réelle et intérieurs recréés. Concevez un plan fictif distinguant prises en décors réels et constructions.",
+          "pt": "Kore-eda descreve casa real e interiores recriados. Crie planta fictícia distinguindo locais reais de cenários construídos."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "shoplifters-dailyedit",
+        "area": "camera",
+        "prompt": {
+          "en": "How can daily editorial review inform a developing shoot?",
+          "nb": "Hvordan kan daglig klippegjennomgang informere et opptak i utvikling?",
+          "fr": "Comment le montage quotidien nourrit-il un tournage évolutif ?",
+          "pt": "Como pode revisão diária de montagem informar rodagem evolutiva?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat every provisional edit as a locked final sequence",
+              "nb": "Behandle alle foreløpige klipp som låste sluttsekvenser",
+              "fr": "Traiter chaque montage provisoire comme séquence définitive",
+              "pt": "Tratar montagem provisória como sequência definitiva"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume film acquisition prevents any on-set editorial feedback",
+              "nb": "Anta at filmopptak hindrer all klippetilbakemelding på settet",
+              "fr": "Supposer que l’argentique interdit tout retour du montage",
+              "pt": "Supor que película impede retorno de montagem no set"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Review provisional cuts and plan motivated additional coverage",
+              "nb": "Gjennomgå foreløpige klipp og planlegg begrunnede tilleggsopptak",
+              "fr": "Examiner les montages provisoires et prévoir des prises motivées",
+              "pt": "Rever montagens provisórias e planear captação adicional motivada"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Kondo describes 35mm photography and daily video-assist edits that changed inserts and generated scenes. Test provisional editing with a clear change log.",
+          "nb": "Kondo beskriver 35 mm-opptak og daglig klipping fra videoassist som endret innskudd og skapte scener. Prøv foreløpig klipping med tydelig endringslogg.",
+          "fr": "Kondo décrit le 35 mm et des montages vidéo quotidiens modifiant inserts et scènes. Testez un montage provisoire avec journal des changements.",
+          "pt": "Kondo descreve 35 mm e montagens diárias por vídeo que alteraram inserções e cenas. Teste montagem provisória com registo de mudanças."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "shoplifters-children",
+        "area": "research",
+        "prompt": {
+          "en": "How can child performers be supported without demanding recited delivery?",
+          "nb": "Hvordan kan barneskuespillere støttes uten krav om innstudert resitasjon?",
+          "fr": "Comment accompagner les enfants sans exiger un jeu récité ?",
+          "pt": "Como apoiar intérpretes infantis sem exigir recitação?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat spontaneity as a reason to omit safeguards",
+              "nb": "Behandle spontanitet som grunn til å droppe trygghetstiltak",
+              "fr": "Traiter la spontanéité comme raison d’omettre les protections",
+              "pt": "Tratar espontaneidade como razão para omitir proteção"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use age-appropriate guided play and informed guardian consent",
+              "nb": "Bruk alderstilpasset veiledet lek og informert samtykke fra foresatte",
+              "fr": "Utiliser jeu guidé adapté à l’âge et consentement parental éclairé",
+              "pt": "Usar jogo orientado adequado à idade e consentimento informado dos responsáveis"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Require children to disclose difficult personal experiences",
+              "nb": "Krev at barn forteller om vanskelige personlige erfaringer",
+              "fr": "Exiger que les enfants révèlent leurs expériences difficiles",
+              "pt": "Exigir que crianças revelem experiências pessoais difíceis"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Kore-eda describes avoiding rote script drilling for inexperienced children. Create a neutral age-appropriate exercise with appropriate safeguards, without assuming the method is universally suitable.",
+          "nb": "Kore-eda beskriver å unngå mekanisk manusdrilling for uerfarne barn. Lag en nøytral alderstilpasset øvelse med trygghetstiltak, uten å anta at metoden alltid passer.",
+          "fr": "Kore-eda décrit l’évitement de la récitation mécanique. Créez un exercice neutre adapté à l’âge avec protections, sans universaliser la méthode.",
+          "pt": "Kore-eda descreve evitar recitação mecânica. Crie exercício neutro adequado à idade com proteção, sem universalizar o método."
+        },
+        "sourceIds": [
+          "s2",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_spider_man_into_the_spider_verse_2018",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Animation cadence, graphic rendering and early editorial",
+      "nb": "Animasjonsrytme, grafisk rendering og tidlig klipping",
+      "fr": "Cadence animée, rendu graphique et montage précoce",
+      "pt": "Cadência de animação, renderização gráfica e montagem inicial"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Spider-Man™: Into the Spider-Verse",
+        "publisher": "Sony Pictures Imageworks",
+        "url": "https://www.imageworks.com/node/1371"
+      },
+      {
+        "id": "s1",
+        "title": "Creating A Stylized Universe for Sony's Spider-Man: Into the Spider-Verse",
+        "publisher": "Animation World Network",
+        "url": "https://www.awn.com/animationworld/creating-stylized-universe-sonys-spider-man-spider-verse"
+      },
+      {
+        "id": "s2",
+        "title": "Rewriting the Visual Rule Book on 'Spider-Man: Into the Spider-Verse'",
+        "publisher": "Animation World Network",
+        "url": "https://www.awn.com/animationworld/rewriting-visual-rule-book-spider-man-spider-verse"
+      },
+      {
+        "id": "s3",
+        "title": "ART OF THE CUT on editing Spider-Man: Into the Spider-Verse",
+        "publisher": "ProVideo Coalition",
+        "url": "https://www.provideocoalition.com/aotc-spiderverse/"
+      },
+      {
+        "id": "s4",
+        "title": "The Sound of Spider Man: Into the Spider-Verse",
+        "publisher": "SoundWorks Collection",
+        "url": "https://next.soundworkscollection.com/posts/the-sound-of-spider-man-into-the-spiderverse"
+      }
+    ],
+    "questions": [
+      {
+        "id": "spiderverse-cadence",
+        "area": "animation",
+        "prompt": {
+          "en": "How can variable frame cadence express character movement?",
+          "nb": "Hvordan kan variabel bildefrekvens i animasjonen uttrykke karakterbevegelse?",
+          "fr": "Comment une cadence variable exprime-t-elle le mouvement du personnage ?",
+          "pt": "Como pode cadência variável exprimir movimento da personagem?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare ones and twos while preserving readable motion",
+              "nb": "Sammenlign animasjon på enere og toere og bevar lesbar bevegelse",
+              "fr": "Comparer animation sur une et deux images en gardant le mouvement lisible",
+              "pt": "Comparar animação em uns e dois mantendo movimento legível"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume all characters use one fixed animation cadence",
+              "nb": "Anta at alle karakterer bruker én fast animasjonsrytme",
+              "fr": "Supposer que tous les personnages suivent une cadence fixe",
+              "pt": "Supor que todas as personagens usam cadência fixa"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat every held frame as an accidental technical error",
+              "nb": "Behandle hvert fastholdt bilde som en tilfeldig teknisk feil",
+              "fr": "Traiter chaque image tenue comme erreur technique",
+              "pt": "Tratar cada imagem mantida como erro técnico"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Imageworks and editorial reporting document flexible stepped animation. Create original movement tests with differing exposure cadence rather than applying one rule to every shot.",
+          "nb": "Imageworks og klippekilder dokumenterer fleksibel trinnvis animasjon. Lag egne bevegelsesprøver med ulik bilderytme fremfor å bruke én regel på alle bilder.",
+          "fr": "Imageworks et les sources de montage décrivent une animation à cadence flexible. Créez des essais originaux avec différentes cadences sans règle universelle.",
+          "pt": "Imageworks e fontes de montagem documentam animação em cadência flexível. Crie testes originais com cadências distintas sem regra universal."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "spiderverse-graphics",
+        "area": "animation",
+        "prompt": {
+          "en": "How can a graphic print-inspired look be integrated into a CG pipeline?",
+          "nb": "Hvordan kan et grafisk trykkinspirert uttrykk integreres i en CG-arbeidsflyt?",
+          "fr": "Comment intégrer un rendu inspiré de l’imprimé à une chaîne CG ?",
+          "pt": "Como integrar visual inspirado em impressão num fluxo CG?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Add one generic filter after all rendering is finished",
+              "nb": "Legg på ett generisk filter når all rendering er ferdig",
+              "fr": "Ajouter un filtre générique après tout le rendu",
+              "pt": "Adicionar filtro genérico após toda renderização"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume hand-drawn effects exclude three-dimensional simulation",
+              "nb": "Anta at håndtegnede effekter utelukker tredimensjonal simulering",
+              "fr": "Supposer que les effets dessinés excluent la simulation 3D",
+              "pt": "Supor que efeitos desenhados excluem simulação tridimensional"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test line work, halftones and compositing as coordinated stages",
+              "nb": "Prøv linjer, rasterpunkter og kompositering som samordnede trinn",
+              "fr": "Tester traits, trames et compositing comme étapes coordonnées",
+              "pt": "Testar linhas, meios-tons e composição como etapas coordenadas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Imageworks and AWN document coordinated line work, print-inspired texture, simulation and artist-led compositing. Build a small original graphic test with distinct controllable layers.",
+          "nb": "Imageworks og AWN dokumenterer samordnet linjearbeid, trykktekstur, simulering og kunstnerstyrt kompositering. Lag en liten original grafisk prøve med separate kontrollerbare lag.",
+          "fr": "Imageworks et AWN documentent traits, texture imprimée, simulation et compositing artistique. Créez un essai graphique original avec couches contrôlables.",
+          "pt": "Imageworks e AWN documentam linhas, textura impressa, simulação e composição artística. Crie teste gráfico original com camadas controláveis."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "spiderverse-editorial",
+        "area": "sound",
+        "prompt": {
+          "en": "How can early editorial and sound protect emotion during animation revisions?",
+          "nb": "Hvordan kan tidlig klipp og lyd bevare følelser gjennom animasjonsrevisjoner?",
+          "fr": "Comment montage et son précoces préservent-ils l’émotion durant les révisions ?",
+          "pt": "Como podem montagem e som iniciais preservar emoção durante revisões?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Discard previous versions after every animation revision",
+              "nb": "Forkast tidligere versjoner etter hver animasjonsrevisjon",
+              "fr": "Écarter les versions précédentes après chaque révision",
+              "pt": "Descartar versões anteriores após cada revisão"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare animatic versions with original temporary sound cues",
+              "nb": "Sammenlign animatic-versjoner med egne midlertidige lydinnslag",
+              "fr": "Comparer versions d’animatique avec sons provisoires originaux",
+              "pt": "Comparar versões de animática com sons temporários originais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Wait until final rendering to test all story timing",
+              "nb": "Vent til endelig rendering med å prøve fortellingens timing",
+              "fr": "Attendre le rendu final pour tester le rythme du récit",
+              "pt": "Esperar renderização final para testar ritmo narrativo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Fisher describes editorial involvement from story development and SoundWorks describes character-specific sound. Test a versioned animatic with original temporary cues before detailed production.",
+          "nb": "Fisher beskriver klipp fra fortellingsutviklingen og SoundWorks karakterspesifikk lyd. Prøv en versjonert animatic med egne midlertidige innslag før detaljert produksjon.",
+          "fr": "Fisher décrit le montage dès le développement et SoundWorks les sons propres aux personnages. Testez une animatique versionnée avec sons originaux provisoires.",
+          "pt": "Fisher descreve montagem desde desenvolvimento e SoundWorks sons próprios das personagens. Teste animática versionada com sons originais temporários."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      }
+    ]
   }
 ] as const satisfies readonly SourceBackedCaseWorkshop[];
