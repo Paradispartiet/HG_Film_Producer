@@ -299,15 +299,30 @@ const ids = [
   "scenario_flow_2024",
   "scenario_the_substance_2024",
   "scenario_anora_2024",
+  "scenario_the_brutalist_2024",
+  "scenario_all_we_imagine_as_light_2024",
+  "scenario_the_seed_of_the_sacred_fig_2024",
+  "scenario_furiosa_a_mad_max_saga_2024",
+  "scenario_emilia_perez_2024",
+  "scenario_kinds_of_kindness_2024",
+  "scenario_grand_tour_2024",
+  "scenario_sentimental_value_2025",
+  "scenario_sinners_2025",
+  "scenario_one_battle_after_another_2025",
+  "scenario_it_was_just_an_accident_2025",
+  "scenario_sirat_2025",
+  "scenario_sound_of_falling_2025",
+  "scenario_resurrection_2025",
+  "scenario_the_secret_agent_2025",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly two hundred and ninety existing cases have eight hundred and seventy original, source-backed decisions", () => {
+test("Exactly three hundred and five existing cases have nine hundred and fifteen original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 290);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 870);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 305);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 915);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -712,6 +727,13 @@ test("Exactly two hundred and ninety existing cases have eight hundred and seven
       for (const source of workshop.sources) assert.ok(verification.includes(source.url));
     } else if (["scenario_anatomy_of_a_fall_2023","scenario_the_zone_of_interest_2023","scenario_poor_things_2023","scenario_killers_of_the_flower_moon_2023","scenario_perfect_days_2023","scenario_fallen_leaves_2023","scenario_the_boy_and_the_heron_2023","scenario_godzilla_minus_one_2023","scenario_spider_man_across_the_spider_verse_2023","scenario_dune_part_two_2024","scenario_flow_2024","scenario_the_substance_2024","scenario_anora_2024"].includes(workshop.scenarioId)) {
       const configs: Record<string, [string, string]> = {"scenario_anatomy_of_a_fall_2023":["src/ui/data/scenarioProductionVerificationAnatomyOfAFall.ts","chapterNineteenAnatomyOfAFallExpansion"],"scenario_the_zone_of_interest_2023":["src/ui/data/scenarioProductionVerificationTheZoneOfInterest.ts","chapterNineteenTheZoneOfInterestExpansion"],"scenario_poor_things_2023":["src/ui/data/scenarioProductionVerificationPoorThings.ts","chapterNineteenPoorThingsExpansion"],"scenario_killers_of_the_flower_moon_2023":["src/ui/data/scenarioProductionVerificationKillersOfTheFlowerMoon.ts","chapterNineteenKillersOfTheFlowerMoonExpansion"],"scenario_perfect_days_2023":["src/ui/data/scenarioProductionVerificationPerfectDays.ts","chapterNineteenPerfectDaysExpansion"],"scenario_fallen_leaves_2023":["src/ui/data/scenarioProductionVerificationFallenLeaves.ts","chapterNineteenFallenLeavesExpansion"],"scenario_the_boy_and_the_heron_2023":["src/ui/data/scenarioProductionVerificationTheBoyAndTheHeron.ts","chapterNineteenTheBoyAndTheHeronExpansion"],"scenario_godzilla_minus_one_2023":["src/ui/data/scenarioProductionVerificationGodzillaMinusOne.ts","chapterNineteenGodzillaMinusOneExpansion"],"scenario_spider_man_across_the_spider_verse_2023":["src/ui/data/scenarioProductionVerificationAcrossTheSpiderVerse.ts","chapterNineteenAcrossTheSpiderVerseExpansion"],"scenario_dune_part_two_2024":["src/ui/data/scenarioProductionVerificationDunePartTwo.ts","chapterNineteenDunePartTwoExpansion"],"scenario_flow_2024":["src/ui/data/scenarioProductionVerificationFlow.ts","chapterNineteenFlowExpansion"],"scenario_the_substance_2024":["src/ui/data/scenarioProductionVerificationTheSubstance.ts","chapterNineteenTheSubstanceExpansion"],"scenario_anora_2024":["src/ui/data/scenarioProductionVerificationAnora.ts","chapterNineteenAnoraExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
+      assert.ok(verification.includes('scenarioId: "' + workshop.scenarioId + '"'));
+      for (const source of workshop.sources) assert.ok(verification.includes(source.url));
+    } else if (["scenario_the_brutalist_2024","scenario_all_we_imagine_as_light_2024","scenario_the_seed_of_the_sacred_fig_2024","scenario_furiosa_a_mad_max_saga_2024","scenario_emilia_perez_2024","scenario_kinds_of_kindness_2024","scenario_grand_tour_2024","scenario_sentimental_value_2025","scenario_sinners_2025","scenario_one_battle_after_another_2025","scenario_it_was_just_an_accident_2025","scenario_sirat_2025","scenario_sound_of_falling_2025","scenario_resurrection_2025","scenario_the_secret_agent_2025"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_the_brutalist_2024":["src/ui/data/scenarioProductionVerificationTheBrutalist.ts","chapterNineteenTheBrutalistExpansion"],"scenario_all_we_imagine_as_light_2024":["src/ui/data/scenarioProductionVerificationAllWeImagineAsLight.ts","chapterNineteenAllWeImagineAsLightExpansion"],"scenario_the_seed_of_the_sacred_fig_2024":["src/ui/data/scenarioProductionVerificationTheSeedOfTheSacredFig.ts","chapterNineteenTheSeedOfTheSacredFigExpansion"],"scenario_furiosa_a_mad_max_saga_2024":["src/ui/data/scenarioProductionVerificationFuriosa.ts","chapterNineteenFuriosaExpansion"],"scenario_emilia_perez_2024":["src/ui/data/scenarioProductionVerificationEmiliaPerez.ts","chapterNineteenEmiliaPerezExpansion"],"scenario_kinds_of_kindness_2024":["src/ui/data/scenarioProductionVerificationKindsOfKindness.ts","chapterNineteenKindsOfKindnessExpansion"],"scenario_grand_tour_2024":["src/ui/data/scenarioProductionVerificationGrandTour.ts","chapterNineteenGrandTourExpansion"],"scenario_sentimental_value_2025":["src/ui/data/scenarioProductionVerificationSentimentalValue.ts","chapterNineteenSentimentalValueExpansion"],"scenario_sinners_2025":["src/ui/data/scenarioProductionVerificationSinners.ts","chapterNineteenSinnersExpansion"],"scenario_one_battle_after_another_2025":["src/ui/data/scenarioProductionVerificationOneBattleAfterAnother.ts","chapterNineteenOneBattleAfterAnotherExpansion"],"scenario_it_was_just_an_accident_2025":["src/ui/data/scenarioProductionVerificationItWasJustAnAccident.ts","chapterNineteenItWasJustAnAccidentExpansion"],"scenario_sirat_2025":["src/ui/data/scenarioProductionVerificationSirat.ts","chapterNineteenSiratExpansion"],"scenario_sound_of_falling_2025":["src/ui/data/scenarioProductionVerificationSoundOfFalling.ts","chapterNineteenSoundOfFallingExpansion"],"scenario_resurrection_2025":["src/ui/data/scenarioProductionVerificationResurrection.ts","chapterNineteenResurrectionExpansion"],"scenario_the_secret_agent_2025":["src/ui/data/scenarioProductionVerificationTheSecretAgent.ts","chapterNineteenTheSecretAgentExpansion"]};
       const [path, definition] = configs[workshop.scenarioId]!;
       assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
       const verification = readFileSync(path, "utf8");
@@ -1504,4 +1526,23 @@ test("2023–2024 workshops retain film-specific production decisions", () => {
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_flow_2024")?.questions.map(q => q.id), ["flow-previz","flow-animals","flow-render"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_substance_2024")?.questions.map(q => q.id), ["substance-design","substance-effects","substance-sound"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_anora_2024")?.questions.map(q => q.id), ["anora-location","anora-languages","anora-dialogue"]);
+});
+
+
+test("2024–2025 workshops retain film-specific production decisions", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_brutalist_2024")?.questions.map(q => q.id), ["brutalist-format","brutalist-architecture","brutalist-acoustics"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_all_we_imagine_as_light_2024")?.questions.map(q => q.id), ["imaginelight-season","imaginelight-texture","imaginelight-rain"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_seed_of_the_sacred_fig_2024")?.questions.map(q => q.id), ["sacredfig-space","sacredfig-light","sacredfig-perspective"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_furiosa_a_mad_max_saga_2024")?.questions.map(q => q.id), ["furiosa-previs","furiosa-handoff","furiosa-mix"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_emilia_perez_2024")?.questions.map(q => q.id), ["emiliaperez-set","emiliaperez-reframe","emiliaperez-musical"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_kinds_of_kindness_2024")?.questions.map(q => q.id), ["kindness-triptych","kindness-stock","kindness-score"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_grand_tour_2024")?.questions.map(q => q.id), ["grandtour-writing","grandtour-credits","grandtour-studio"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_sentimental_value_2025")?.questions.map(q => q.id), ["affeksjon-house","affeksjon-virtual","affeksjon-music"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_sinners_2025")?.questions.map(q => q.id), ["sinners-format","sinners-music","sinners-sound"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_one_battle_after_another_2025")?.questions.map(q => q.id), ["onebattle-format","onebattle-review","onebattle-sound"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_it_was_just_an_accident_2025")?.questions.map(q => q.id), ["justaccident-light","justaccident-coverage","justaccident-edit"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_sirat_2025")?.questions.map(q => q.id), ["sirat-texture","sirat-design","sirat-music"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_sound_of_falling_2025")?.questions.map(q => q.id), ["soundfalling-memory","soundfalling-structure","soundfalling-sound"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_resurrection_2025")?.questions.map(q => q.id), ["resurrection-chapters","resurrection-movement","resurrection-music"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_secret_agent_2025")?.questions.map(q => q.id), ["secretagent-city","secretagent-optics","secretagent-archive"]);
 });

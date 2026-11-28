@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Targeted browser interaction QA for all eight hundred and seventy sourced film-workshop decisions.
+ * Targeted browser interaction QA for all nine hundred and fifteen sourced film-workshop decisions.
  * No new workflow job; not a substitute for physical iPad or editorial review.
  */
 import assert from "node:assert/strict";
@@ -39,8 +39,8 @@ const cases = data.SOURCE_BACKED_CASE_WORKSHOPS.map(workshop => {
   assert.equal(briefs.resolveScenarioProductionBrief(scenario).briefType, "production_case", "Missing playable brief: " + workshop.scenarioId);
   return { workshop, scenario };
 });
-assert.equal(cases.length, 290);
-assert.equal(cases.reduce((n, c) => n + c.workshop.questions.length, 0), 870);
+assert.equal(cases.length, 305);
+assert.equal(cases.reduce((n, c) => n + c.workshop.questions.length, 0), 915);
 
 async function check(browser, language, item) {
   const context = await browser.newContext({
@@ -141,7 +141,7 @@ try {
   failures.push({ setup: String(error?.stack ?? error) });
 } finally { await browser?.close(); }
 await writeFile(resolve(REPORT_DIR, "sourced-workshop-" + (tablet ? "webkit" : "chromium") + "-summary.json"), JSON.stringify({
-  scope: "Two hundred and ninety existing films, eight hundred and seventy decisions, four languages; real UI clicks, source URLs and preserved progress, but not physical iPad or editorial approval",
+  scope: "Three hundred and five existing films, nine hundred and fifteen decisions, four languages; real UI clicks, source URLs and preserved progress, but not physical iPad or editorial approval",
   expected: languages.length * cases.length, passed, failures,
 }, null, 2) + "\n");
 console.log("Sourced workshop " + (tablet ? "WebKit" : "Chromium") + ": " + passed.length + "/" + (languages.length * cases.length) + " passed, " + failures.length + " failures");
