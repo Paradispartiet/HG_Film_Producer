@@ -165,15 +165,23 @@ const ids = [
   "scenario_blade_runner_1982",
   "scenario_et_the_extra_terrestrial_1982",
   "scenario_aliens_1986",
+  "scenario_mephisto_1981",
+  "scenario_missing_1982",
+  "scenario_the_official_story_1985",
+  "scenario_come_and_see_1985",
+  "scenario_yellow_earth_1984",
+  "scenario_police_story_1985",
+  "scenario_my_beautiful_laundrette_1985",
+  "scenario_yeelen_1987",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly one hundred and fifty-six existing cases have four hundred and sixty-eight original, source-backed decisions", () => {
+test("Exactly one hundred and sixty-four existing cases have four hundred and ninety-two original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 156);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 468);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 164);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 492);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -462,6 +470,13 @@ test("Exactly one hundred and fifty-six existing cases have four hundred and six
       const next = verification.indexOf("\n  },", start);
       const section = verification.slice(start, next < 0 ? undefined : next);
       for (const source of workshop.sources) assert.ok(section.includes(source.url));
+    } else if (["scenario_mephisto_1981","scenario_missing_1982","scenario_the_official_story_1985","scenario_come_and_see_1985","scenario_yellow_earth_1984","scenario_police_story_1985","scenario_my_beautiful_laundrette_1985","scenario_yeelen_1987"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_mephisto_1981":["src/ui/data/scenarioProductionVerificationMephisto.ts","chapterSixteenMephistoExpansion"],"scenario_missing_1982":["src/ui/data/scenarioProductionVerificationMissing.ts","chapterSixteenMissingExpansion"],"scenario_the_official_story_1985":["src/ui/data/scenarioProductionVerificationOfficialStory.ts","chapterSixteenOfficialStoryExpansion"],"scenario_come_and_see_1985":["src/ui/data/scenarioProductionVerificationComeAndSee.ts","chapterSixteenComeAndSeeExpansion"],"scenario_yellow_earth_1984":["src/ui/data/scenarioProductionVerificationYellowEarth.ts","chapterSixteenYellowEarthExpansion"],"scenario_police_story_1985":["src/ui/data/scenarioProductionVerificationPoliceStory.ts","chapterSixteenPoliceStoryExpansion"],"scenario_my_beautiful_laundrette_1985":["src/ui/data/scenarioProductionVerificationMyBeautifulLaundrette.ts","chapterSixteenMyBeautifulLaundretteExpansion"],"scenario_yeelen_1987":["src/ui/data/scenarioProductionVerificationYeelen.ts","chapterSixteenYeelenExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
+      assert.ok(verification.includes('scenarioId: "' + workshop.scenarioId + '"'));
+      for (const source of workshop.sources) assert.ok(verification.includes(source.url));
     } else if (workshop.scenarioId === "scenario_a_trip_to_the_moon_1902") {
       const definition = readFileSync("src/core/earlyCinemaExpansion.ts", "utf8");
       assert.ok(definition.includes(workshop.scenarioId));
@@ -1051,4 +1066,16 @@ test("Late 1970s and 1980s workshops preserve film-specific questions and eviden
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_blade_runner_1982")?.questions.map(q => q.id), ["bladerunner-retrofit","bladerunner-light","bladerunner-cuts"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_et_the_extra_terrestrial_1982")?.questions.map(q => q.id), ["ettheextraterrestrial-height","ettheextraterrestrial-character","ettheextraterrestrial-previsualization"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_aliens_1986")?.questions.map(q => q.id), ["aliens-departments","aliens-practical","aliens-sequel"]);
+});
+
+
+test("International 1980s workshops retain film-specific questions and evidence", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_mephisto_1981")?.questions.map(q => q.id), ["mephisto-adaptation","mephisto-costume","mephisto-editions"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_missing_1982")?.questions.map(q => q.id), ["missing-research","missing-substitution","missing-music"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_official_story_1985")?.questions.map(q => q.id), ["theofficialstory-testimony","theofficialstory-interior","theofficialstory-preservation"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_come_and_see_1985")?.questions.map(q => q.id), ["comeandsee-literature","comeandsee-viewpoint","comeandsee-sound"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_yellow_earth_1984")?.questions.map(q => q.id), ["yellowearth-landscape","yellowearth-studio","yellowearth-music"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_police_story_1985")?.questions.map(q => q.id), ["policestory-space","policestory-roles","policestory-continuity"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_my_beautiful_laundrette_1985")?.questions.map(q => q.id), ["mybeautifullaundrette-finance","mybeautifullaundrette-location","mybeautifullaundrette-format"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_yeelen_1987")?.questions.map(q => q.id), ["yeelen-light","yeelen-collaboration","yeelen-representation"]);
 });
