@@ -1944,5 +1944,1002 @@ export const worldCinemaSourceWorkshops = [
         ]
       }
     ]
+  },
+  {
+    "scenarioId": "scenario_taste_of_cherry_1997",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Separate performances, car framing and the video epilogue",
+      "nb": "Separate opptak, bilutsnitt og videoepilogen",
+      "fr": "Jeu séparé, cadre automobile et épilogue vidéo",
+      "pt": "Interpretação separada, quadro no carro e epílogo em vídeo"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Taste of Cherry",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/242-taste-of-cherry"
+      },
+      {
+        "id": "s2",
+        "title": "Taste of Cherry",
+        "publisher": "Harvard Film Archive",
+        "url": "https://harvardfilmarchive.org/calendar/taste-of-cherry-2023-05"
+      },
+      {
+        "id": "s5",
+        "title": "Taste of Cherry",
+        "publisher": "Turner Classic Movies",
+        "url": "https://www.tcm.com/articles/276345/taste-of-cherry"
+      },
+      {
+        "id": "s6",
+        "title": "Abbas Kiarostami interview",
+        "publisher": "The Iranian",
+        "url": "https://www.iranian.com/Arts/Aug98/Kiarostami/"
+      },
+      {
+        "id": "s7",
+        "title": "Taste of Cherry",
+        "publisher": "Busan International Film Festival",
+        "url": "https://www.biff.kr/eng/html/archive/arc_history_view.asp?m_idx=23813&pyear=2016"
+      },
+      {
+        "id": "s9",
+        "title": "How the Film Distributor Zeitgeist Made History",
+        "publisher": "The New Yorker",
+        "url": "https://www.newyorker.com/culture/the-front-row/how-the-film-distributor-zeitgeist-made-history"
+      }
+    ],
+    "questions": [
+      {
+        "id": "cherry-dialogue",
+        "area": "research",
+        "prompt": {
+          "en": "The apparent conversations were assembled from separately filmed performances. What would you test in a new production exercise?",
+          "nb": "De tilsynelatende samtalene ble satt sammen av separat innspilte prestasjoner. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Les conversations apparentes ont été assemblées à partir de prises séparées. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "As conversas aparentes foram montadas a partir de interpretações filmadas separadamente. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record matching eyelines and pauses separately",
+              "nb": "Ta opp samsvarende blikkretninger og pauser separat",
+              "fr": "Filmer séparément des regards et pauses raccordés",
+              "pt": "Filmar separadamente olhares e pausas correspondentes"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Require both actors in every shot",
+              "nb": "Krev begge skuespillerne i hvert opptak",
+              "fr": "Exiger les deux acteurs dans chaque plan",
+              "pt": "Exigir ambos os atores em cada plano"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore the offscreen response",
+              "nb": "Ignorer reaksjonen utenfor bildet",
+              "fr": "Ignorer la réponse hors champ",
+              "pt": "Ignorar a resposta fora de campo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The apparent conversations were assembled from separately filmed performances. In a hypothetical exercise: Record matching eyelines and pauses separately.",
+          "nb": "De tilsynelatende samtalene ble satt sammen av separat innspilte prestasjoner. I en tenkt øvelse: Ta opp samsvarende blikkretninger og pauser separat.",
+          "fr": "Les conversations apparentes ont été assemblées à partir de prises séparées. Dans un exercice fictif : Filmer séparément des regards et pauses raccordés.",
+          "pt": "As conversas aparentes foram montadas a partir de interpretações filmadas separadamente. Num exercício hipotético: Filmar separadamente olhares e pausas correspondentes."
+        },
+        "sourceIds": [
+          "s5",
+          "s2"
+        ]
+      },
+      {
+        "id": "cherry-car",
+        "area": "camera",
+        "prompt": {
+          "en": "Kiarostami discusses fixed camera positions and accepting window reflections. What would you test in a new production exercise?",
+          "nb": "Kiarostami beskriver faste kameraposisjoner og aksept av vindusreflekser. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Kiarostami évoque les positions fixes et les reflets acceptés. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Kiarostami descreve posições fixas e a aceitação de reflexos. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Change angles at random between lines",
+              "nb": "Bytt vinkel tilfeldig mellom replikkene",
+              "fr": "Changer d’angle au hasard entre répliques",
+              "pt": "Mudar o ângulo ao acaso entre falas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test reflections and framing with a stationary car",
+              "nb": "Prøv refleksjoner og utsnitt i en stillestående bil",
+              "fr": "Tester reflets et cadrage dans une voiture immobile",
+              "pt": "Testar reflexos e enquadramento num carro parado"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Remove all reflections digitally before testing",
+              "nb": "Fjern alle refleksjoner digitalt før prøver",
+              "fr": "Supprimer tous les reflets avant les essais",
+              "pt": "Eliminar todos os reflexos antes dos testes"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Kiarostami discusses fixed camera positions and accepting window reflections. In a hypothetical exercise: Test reflections and framing with a stationary car.",
+          "nb": "Kiarostami beskriver faste kameraposisjoner og aksept av vindusreflekser. I en tenkt øvelse: Prøv refleksjoner og utsnitt i en stillestående bil.",
+          "fr": "Kiarostami évoque les positions fixes et les reflets acceptés. Dans un exercice fictif : Tester reflets et cadrage dans une voiture immobile.",
+          "pt": "Kiarostami descreve posições fixas e a aceitação de reflexos. Num exercício hipotético: Testar reflexos e enquadramento num carro parado."
+        },
+        "sourceIds": [
+          "s6",
+          "s2"
+        ]
+      },
+      {
+        "id": "cherry-epilogue",
+        "area": "camera",
+        "prompt": {
+          "en": "The video epilogue disrupts the feature’s established visual world. What would you test in a new production exercise?",
+          "nb": "Videoepilogen bryter med spillefilmens etablerte bildeverden. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "L’épilogue vidéo rompt avec l’univers visuel établi. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "O epílogo em vídeo rompe com o universo visual estabelecido. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Match every image to the feature’s texture",
+              "nb": "Tilpass alle bilder til spillefilmens tekstur",
+              "fr": "Uniformiser toutes les textures sur celles du film",
+              "pt": "Uniformizar todas as texturas com as do filme"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat the epilogue as an accidental outtake",
+              "nb": "Behandle epilogen som et tilfeldig restopptak",
+              "fr": "Traiter l’épilogue comme une chute accidentelle",
+              "pt": "Tratar o epílogo como uma sobra acidental"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare an ending that exposes the filmmaking apparatus",
+              "nb": "Sammenlign en slutt som synliggjør filmapparatet",
+              "fr": "Comparer une fin révélant le dispositif de tournage",
+              "pt": "Comparar um final que revela o dispositivo de filmagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The video epilogue disrupts the feature’s established visual world. In a hypothetical exercise: Compare an ending that exposes the filmmaking apparatus.",
+          "nb": "Videoepilogen bryter med spillefilmens etablerte bildeverden. I en tenkt øvelse: Sammenlign en slutt som synliggjør filmapparatet.",
+          "fr": "L’épilogue vidéo rompt avec l’univers visuel établi. Dans un exercice fictif : Comparer une fin révélant le dispositif de tournage.",
+          "pt": "O epílogo em vídeo rompe com o universo visual estabelecido. Num exercício hipotético: Comparar um final que revela o dispositivo de filmagem."
+        },
+        "sourceIds": [
+          "s0",
+          "s7",
+          "s9"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_taxi_2015",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Mobile framing, performed reality and image authorship",
+      "nb": "Mobilt utsnitt, iscenesatt virkelighet og bildeopphav",
+      "fr": "Cadre mobile, réalité jouée et propriété des images",
+      "pt": "Quadro móvel, realidade encenada e autoria das imagens"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Taxi Tehran review",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/sight-and-sound/reviews/taxi-tehran-review"
+      },
+      {
+        "id": "s1",
+        "title": "Film of the Week: Taxi",
+        "publisher": "Film Comment",
+        "url": "https://www.filmcomment.com/blog/film-of-the-week-taxi/"
+      },
+      {
+        "id": "s4",
+        "title": "Taxi: A Banned Filmmaker Works From the Road",
+        "publisher": "NPR",
+        "url": "https://www.capradio.org/news/npr/story?storyid=444742781"
+      },
+      {
+        "id": "s5",
+        "title": "Jafar Panahi's Taxi",
+        "publisher": "Kino Lorber",
+        "url": "https://kinolorber.com/film/jafarpanahistaxi"
+      },
+      {
+        "id": "s9",
+        "title": "Tehran Taxi pressbook",
+        "publisher": "New Wave Films",
+        "url": "https://www.newwavefilms.co.uk/assets/1112/Taxi_Tehran_pressbook_with_cert.pdf"
+      }
+    ],
+    "questions": [
+      {
+        "id": "taxipanahi-frame",
+        "area": "camera",
+        "prompt": {
+          "en": "The dashboard camera turns the taxi interior into a limited recording space. What would you test in a new production exercise?",
+          "nb": "Dashbordkameraet gjør drosjeinteriøret til et avgrenset opptaksrom. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "La caméra du tableau de bord délimite l’espace de tournage. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "A câmara no painel delimita o espaço de filmagem. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse passenger blocking in a parked vehicle",
+              "nb": "Øv passasjerenes plassering i en parkert bil",
+              "fr": "Répéter les placements dans un véhicule à l’arrêt",
+              "pt": "Ensaiar posições dos passageiros num veículo parado"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Plan only aerial establishing shots",
+              "nb": "Planlegg bare oversiktsbilder fra luften",
+              "fr": "Prévoir uniquement des vues aériennes",
+              "pt": "Planear apenas planos aéreos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume a fixed frame captures every reaction",
+              "nb": "Anta at fast utsnitt fanger alle reaksjoner",
+              "fr": "Supposer que le cadre fixe saisit toute réaction",
+              "pt": "Supor que o quadro fixo capta todas as reações"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The dashboard camera turns the taxi interior into a limited recording space. In a hypothetical exercise: Rehearse passenger blocking in a parked vehicle.",
+          "nb": "Dashbordkameraet gjør drosjeinteriøret til et avgrenset opptaksrom. I en tenkt øvelse: Øv passasjerenes plassering i en parkert bil.",
+          "fr": "La caméra du tableau de bord délimite l’espace de tournage. Dans un exercice fictif : Répéter les placements dans un véhicule à l’arrêt.",
+          "pt": "A câmara no painel delimita o espaço de filmagem. Num exercício hipotético: Ensaiar posições dos passageiros num veículo parado."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
+        ]
+      },
+      {
+        "id": "taxipanahi-performance",
+        "area": "research",
+        "prompt": {
+          "en": "The passenger episodes deliberately blur fiction and observation. What would you test in a new production exercise?",
+          "nb": "Passasjerepisodene gjør skillet mellom fiksjon og observasjon uklart. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Les épisodes brouillent délibérément fiction et observation. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Os episódios confundem deliberadamente ficção e observação. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Remove all ambiguity through explanatory captions",
+              "nb": "Fjern all tvetydighet med forklarende tekster",
+              "fr": "Éliminer toute ambiguïté par des cartons explicatifs",
+              "pt": "Eliminar toda ambiguidade com legendas explicativas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Distinguish observed behaviour from scripted performance in notes",
+              "nb": "Skill observert atferd fra manusstyrt spill i notatene",
+              "fr": "Distinguer comportement observé et jeu écrit dans les notes",
+              "pt": "Distinguir comportamento observado de atuação escrita nas notas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Label all passengers as documentary witnesses",
+              "nb": "Merk alle passasjerer som dokumentarvitner",
+              "fr": "Présenter tous les passagers comme témoins documentaires",
+              "pt": "Identificar todos os passageiros como testemunhas documentais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The passenger episodes deliberately blur fiction and observation. In a hypothetical exercise: Distinguish observed behaviour from scripted performance in notes.",
+          "nb": "Passasjerepisodene gjør skillet mellom fiksjon og observasjon uklart. I en tenkt øvelse: Skill observert atferd fra manusstyrt spill i notatene.",
+          "fr": "Les épisodes brouillent délibérément fiction et observation. Dans un exercice fictif : Distinguer comportement observé et jeu écrit dans les notes.",
+          "pt": "Os episódios confundem deliberadamente ficção e observação. Num exercício hipotético: Distinguir comportamento observado de atuação escrita nas notas."
+        },
+        "sourceIds": [
+          "s1",
+          "s5"
+        ]
+      },
+      {
+        "id": "taxipanahi-credits",
+        "area": "research",
+        "prompt": {
+          "en": "The film’s unusual credit situation makes authorship and image ownership part of its form. What would you test in a new production exercise?",
+          "nb": "Filmens uvanlige kreditering gjør opphav og bildeeierskap til del av formen. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Les crédits inhabituels inscrivent l’auteur et la propriété des images dans la forme. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Os créditos invulgares integram autoria e propriedade das imagens na forma. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Publish every participant’s identity automatically",
+              "nb": "Publiser automatisk alle deltakeres identitet",
+              "fr": "Publier automatiquement l’identité de chacun",
+              "pt": "Publicar automaticamente a identidade de todos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat missing credits as proof of missing collaborators",
+              "nb": "Tolk manglende kreditering som bevis på fravær av medarbeidere",
+              "fr": "Prendre l’absence de crédits pour une absence de collaborateurs",
+              "pt": "Tomar a falta de créditos como ausência de colaboradores"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan consent and safe attribution with participants",
+              "nb": "Planlegg samtykke og trygg kreditering med deltakerne",
+              "fr": "Prévoir consentement et attribution sûre avec les participants",
+              "pt": "Planear consentimento e atribuição segura com participantes"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The film’s unusual credit situation makes authorship and image ownership part of its form. In a hypothetical exercise: Plan consent and safe attribution with participants.",
+          "nb": "Filmens uvanlige kreditering gjør opphav og bildeeierskap til del av formen. I en tenkt øvelse: Planlegg samtykke og trygg kreditering med deltakerne.",
+          "fr": "Les crédits inhabituels inscrivent l’auteur et la propriété des images dans la forme. Dans un exercice fictif : Prévoir consentement et attribution sûre avec les participants.",
+          "pt": "Os créditos invulgares integram autoria e propriedade das imagens na forma. Num exercício hipotético: Planear consentimento e atribuição segura com participantes."
+        },
+        "sourceIds": [
+          "s0",
+          "s9"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_norte_the_end_of_history_2013",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Parallel narrative, durational framing and environmental sound",
+      "nb": "Parallellfortelling, varighet og miljølyd",
+      "fr": "Récit parallèle, durée et son ambiant",
+      "pt": "Narrativa paralela, duração e som ambiente"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Norte, Hangganan ng Kasaysayan",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/norte-hangganan-ng-kasaysayan/"
+      },
+      {
+        "id": "s1",
+        "title": "A Conversation with Lav Diaz",
+        "publisher": "Harvard Film Archive",
+        "url": "https://harvardfilmarchive.org/conversations/107"
+      },
+      {
+        "id": "s3",
+        "title": "Norte, the End of History",
+        "publisher": "Museum of Modern Art",
+        "url": "https://www.moma.org/collection/works/316865"
+      },
+      {
+        "id": "s4",
+        "title": "Film of the week: Norte, the End of History",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/sight-and-sound/reviews/film-week-norte-end-history"
+      },
+      {
+        "id": "s5",
+        "title": "Cannes 2013: Norte, the End of History",
+        "publisher": "Film Comment",
+        "url": "https://www.filmcomment.com/article/cannes-2013-dennis-lim/"
+      },
+      {
+        "id": "s6",
+        "title": "Intervista a Lav Diaz",
+        "publisher": "Uzak",
+        "url": "https://www.uzak.it/rivista/uzak-11/lo-stato-delle-cose/intervista-a-lav-diaz.html"
+      }
+    ],
+    "questions": [
+      {
+        "id": "norte-adapt",
+        "area": "research",
+        "prompt": {
+          "en": "Diaz redistributes the moral problem of Crime and Punishment across several lives. What would you test in a new production exercise?",
+          "nb": "Diaz fordeler det moralske problemet fra Forbrytelse og straff på flere liv. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Diaz redistribue le dilemme de Crime et Châtiment entre plusieurs vies. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Diaz redistribui o dilema de Crime e Castigo por várias vidas. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map the consequences across parallel character arcs",
+              "nb": "Kartlegg konsekvensene i parallelle karakterforløp",
+              "fr": "Cartographier les conséquences dans des trajectoires parallèles",
+              "pt": "Mapear consequências em percursos paralelos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Follow the novel scene for scene",
+              "nb": "Følg romanen scene for scene",
+              "fr": "Suivre le roman scène par scène",
+              "pt": "Seguir o romance cena a cena"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Resolve every subplot through the protagonist",
+              "nb": "Løs alle sidehistorier gjennom hovedpersonen",
+              "fr": "Résoudre chaque intrigue par le protagoniste",
+              "pt": "Resolver todas as subtramas pelo protagonista"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Diaz redistributes the moral problem of Crime and Punishment across several lives. In a hypothetical exercise: Map the consequences across parallel character arcs.",
+          "nb": "Diaz fordeler det moralske problemet fra Forbrytelse og straff på flere liv. I en tenkt øvelse: Kartlegg konsekvensene i parallelle karakterforløp.",
+          "fr": "Diaz redistribue le dilemme de Crime et Châtiment entre plusieurs vies. Dans un exercice fictif : Cartographier les conséquences dans des trajectoires parallèles.",
+          "pt": "Diaz redistribui o dilema de Crime e Castigo por várias vidas. Num exercício hipotético: Mapear consequências em percursos paralelos."
+        },
+        "sourceIds": [
+          "s1",
+          "s4"
+        ]
+      },
+      {
+        "id": "norte-duration",
+        "area": "camera",
+        "prompt": {
+          "en": "Static and near-static long takes make ordinary time central to the film. What would you test in a new production exercise?",
+          "nb": "Statiske og nesten statiske langtakes gjør hverdagstid sentral. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Les longs plans fixes ou quasi fixes donnent une place centrale au temps ordinaire. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Planos longos fixos ou quase fixos tornam central o tempo quotidiano. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Extend the shot without rehearsing action",
+              "nb": "Forleng opptaket uten å øve handlingen",
+              "fr": "Allonger le plan sans répéter l’action",
+              "pt": "Alongar o plano sem ensaiar a ação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test a complete routine in a sustained wide shot",
+              "nb": "Prøv en hel rutine i et vedvarende totalbilde",
+              "fr": "Tester une routine entière dans un plan large prolongé",
+              "pt": "Testar uma rotina inteira num plano geral prolongado"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Cut at each small movement automatically",
+              "nb": "Klipp automatisk ved hver liten bevegelse",
+              "fr": "Couper automatiquement à chaque mouvement",
+              "pt": "Cortar automaticamente a cada movimento"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Static and near-static long takes make ordinary time central to the film. In a hypothetical exercise: Test a complete routine in a sustained wide shot.",
+          "nb": "Statiske og nesten statiske langtakes gjør hverdagstid sentral. I en tenkt øvelse: Prøv en hel rutine i et vedvarende totalbilde.",
+          "fr": "Les longs plans fixes ou quasi fixes donnent une place centrale au temps ordinaire. Dans un exercice fictif : Tester une routine entière dans un plan large prolongé.",
+          "pt": "Planos longos fixos ou quase fixos tornam central o tempo quotidiano. Num exercício hipotético: Testar uma rotina inteira num plano geral prolongado."
+        },
+        "sourceIds": [
+          "s3",
+          "s5"
+        ]
+      },
+      {
+        "id": "norte-environment",
+        "area": "sound",
+        "prompt": {
+          "en": "Diaz describes minimal manipulation and restrained added sound. What would you test in a new production exercise?",
+          "nb": "Diaz beskriver minimal bearbeiding og tilbakeholden bruk av tillagt lyd. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Diaz décrit une manipulation minimale et des ajouts sonores mesurés. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Diaz descreve manipulação mínima e som acrescentado contido. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Replace every environment with stock effects",
+              "nb": "Erstatt alle lydmiljøer med standardeffekter",
+              "fr": "Remplacer chaque ambiance par des effets de banque",
+              "pt": "Substituir todos os ambientes por efeitos de arquivo"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Fill all pauses with dramatic music",
+              "nb": "Fyll alle pauser med dramatisk musikk",
+              "fr": "Remplir toutes les pauses de musique dramatique",
+              "pt": "Preencher todas as pausas com música dramática"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record location ambience and compare a restrained mix",
+              "nb": "Ta opp stedslyd og sammenlign en tilbakeholden miks",
+              "fr": "Enregistrer l’ambiance du lieu et comparer un mix sobre",
+              "pt": "Gravar ambiente local e comparar uma mistura contida"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Diaz describes minimal manipulation and restrained added sound. In a hypothetical exercise: Record location ambience and compare a restrained mix.",
+          "nb": "Diaz beskriver minimal bearbeiding og tilbakeholden bruk av tillagt lyd. I en tenkt øvelse: Ta opp stedslyd og sammenlign en tilbakeholden miks.",
+          "fr": "Diaz décrit une manipulation minimale et des ajouts sonores mesurés. Dans un exercice fictif : Enregistrer l’ambiance du lieu et comparer un mix sobre.",
+          "pt": "Diaz descreve manipulação mínima e som acrescentado contido. Num exercício hipotético: Gravar ambiente local e comparar uma mistura contida."
+        },
+        "sourceIds": [
+          "s6",
+          "s0"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_rrr_2022",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Previsualization, continuity and hybrid effects production",
+      "nb": "Previsualisering, kontinuitet og hybride filmeffekter",
+      "fr": "Prévisualisation, continuité et effets hybrides",
+      "pt": "Pré-visualização, continuidade e efeitos híbridos"
+    },
+    "sources": [
+      {
+        "id": "s2",
+        "title": "ARRI ALEXA LF, Signature Primes, and SkyPanels on RRR",
+        "publisher": "ARRI",
+        "url": "https://www.arri.com/en/learn-help/learn-help-camera-system/camera-workflows/rrr"
+      },
+      {
+        "id": "s3",
+        "title": "RRR cinematography: K. K. Senthil Kumar",
+        "publisher": "American Society of Cinematographers",
+        "url": "https://theasc.com/articles/rrr-k-k-senthil-kumar"
+      },
+      {
+        "id": "s4",
+        "title": "RRR: Director S.S. Rajamouli and DP K.K. Senthil Kumar",
+        "publisher": "postPerspective",
+        "url": "https://postperspective.com/rrr-director-s-s-rajamouli-and-dp-k-k-senthil-kumar/"
+      },
+      {
+        "id": "s5",
+        "title": "Sabu Cyril on designing RRR",
+        "publisher": "Cinema Express",
+        "url": "https://www.cinemaexpress.com/telugu/interviews/2022/mar/31/sabu-cyril-on-designing-rrr-30615.html"
+      },
+      {
+        "id": "s7",
+        "title": "RRR Visual Effects",
+        "publisher": "Digital Domain",
+        "url": "https://digitaldomain.com/work/rrr/"
+      },
+      {
+        "id": "s8",
+        "title": "S.S. Rajamouli on the bridge sequence in RRR",
+        "publisher": "RogerEbert.com",
+        "url": "https://www.rogerebert.com/interviews/ss-rajamouli-rrr-interview"
+      }
+    ],
+    "questions": [
+      {
+        "id": "rrr-previs",
+        "area": "research",
+        "prompt": {
+          "en": "The cinematographer describes storyboards and previs as shared planning tools. What would you test in a new production exercise?",
+          "nb": "Filmfotografen beskriver storyboard og previs som felles planleggingsverktøy. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Le directeur photo décrit storyboard et prévisualisation comme outils communs de préparation. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "O diretor de fotografia descreve storyboard e pré-visualização como ferramentas comuns. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Review a previs animatic with departments before a fictional shoot",
+              "nb": "Gjennomgå en previs-animatikk med fagavdelingene før et fiktivt opptak",
+              "fr": "Revoir une animatique avec les départements avant un tournage fictif",
+              "pt": "Rever uma animática com os departamentos antes de uma filmagem fictícia"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assign all shot planning to final post-production",
+              "nb": "Overlat all opptaksplanlegging til etterarbeidet",
+              "fr": "Reporter toute préparation des plans à la postproduction",
+              "pt": "Adiar todo o planeamento para a pós-produção"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat previs as a final approved image",
+              "nb": "Behandle previs som et endelig godkjent bilde",
+              "fr": "Traiter la prévisualisation comme image finale validée",
+              "pt": "Tratar a pré-visualização como imagem final aprovada"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The cinematographer describes storyboards and previs as shared planning tools. In a hypothetical exercise: Review a previs animatic with departments before a fictional shoot.",
+          "nb": "Filmfotografen beskriver storyboard og previs som felles planleggingsverktøy. I en tenkt øvelse: Gjennomgå en previs-animatikk med fagavdelingene før et fiktivt opptak.",
+          "fr": "Le directeur photo décrit storyboard et prévisualisation comme outils communs de préparation. Dans un exercice fictif : Revoir une animatique avec les départements avant un tournage fictif.",
+          "pt": "O diretor de fotografia descreve storyboard e pré-visualização como ferramentas comuns. Num exercício hipotético: Rever uma animática com os departamentos antes de uma filmagem fictícia."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "rrr-continuity",
+        "area": "camera",
+        "prompt": {
+          "en": "Extended production required detailed camera reports to match returning material. What would you test in a new production exercise?",
+          "nb": "Langvarig produksjon krevde detaljerte kamerarapporter for å matche senere opptak. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "La production prolongée exigeait des rapports caméra détaillés pour les raccords. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "A produção prolongada exigiu relatórios de câmara detalhados para continuidade. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Change exposure arbitrarily on return",
+              "nb": "Endre eksponeringen vilkårlig ved gjenopptak",
+              "fr": "Changer arbitrairement l’exposition à la reprise",
+              "pt": "Alterar arbitrariamente a exposição no regresso"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Log lighting, lens and framing for each setup",
+              "nb": "Loggfør lys, objektiv og utsnitt for hvert oppsett",
+              "fr": "Consigner lumière, objectif et cadre de chaque installation",
+              "pt": "Registar luz, objetiva e quadro de cada montagem"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Rely solely on the operator’s memory",
+              "nb": "Stol utelukkende på fotografens hukommelse",
+              "fr": "Compter uniquement sur la mémoire de l’opérateur",
+              "pt": "Confiar apenas na memória do operador"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Extended production required detailed camera reports to match returning material. In a hypothetical exercise: Log lighting, lens and framing for each setup.",
+          "nb": "Langvarig produksjon krevde detaljerte kamerarapporter for å matche senere opptak. I en tenkt øvelse: Loggfør lys, objektiv og utsnitt for hvert oppsett.",
+          "fr": "La production prolongée exigeait des rapports caméra détaillés pour les raccords. Dans un exercice fictif : Consigner lumière, objectif et cadre de chaque installation.",
+          "pt": "A produção prolongada exigiu relatórios de câmara detalhados para continuidade. Num exercício hipotético: Registar luz, objetiva e quadro de cada montagem."
+        },
+        "sourceIds": [
+          "s2",
+          "s4"
+        ]
+      },
+      {
+        "id": "rrr-hybrid",
+        "area": "camera",
+        "prompt": {
+          "en": "The bridge sequence combined full-size builds, miniature elements and visual effects. What would you test in a new production exercise?",
+          "nb": "Brosekvensen kombinerte fullskala kulisser, miniatyrer og visuelle effekter. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "La séquence du pont combinait décors grandeur nature, miniatures et effets visuels. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "A sequência da ponte combinou cenários à escala real, miniaturas e efeitos visuais. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose one technique regardless of shot needs",
+              "nb": "Velg én teknikk uansett bildebehov",
+              "fr": "Choisir une seule technique quels que soient les plans",
+              "pt": "Escolher uma técnica independentemente dos planos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Leave all matching until the final composite",
+              "nb": "Utsett all samsvarskontroll til sluttkompositering",
+              "fr": "Reporter tous les raccords au composite final",
+              "pt": "Adiar toda a correspondência para a composição final"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Match scale and lighting across harmless tabletop elements and digital plates",
+              "nb": "Match skala og lys i ufarlige bordmodeller og digitale bildeelementer",
+              "fr": "Accorder échelle et lumière entre maquettes inoffensives et plaques numériques",
+              "pt": "Harmonizar escala e luz entre maquetes inofensivas e imagens digitais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The bridge sequence combined full-size builds, miniature elements and visual effects. In a hypothetical exercise: Match scale and lighting across harmless tabletop elements and digital plates.",
+          "nb": "Brosekvensen kombinerte fullskala kulisser, miniatyrer og visuelle effekter. I en tenkt øvelse: Match skala og lys i ufarlige bordmodeller og digitale bildeelementer.",
+          "fr": "La séquence du pont combinait décors grandeur nature, miniatures et effets visuels. Dans un exercice fictif : Accorder échelle et lumière entre maquettes inoffensives et plaques numériques.",
+          "pt": "A sequência da ponte combinou cenários à escala real, miniaturas e efeitos visuais. Num exercício hipotético: Harmonizar escala e luz entre maquetes inofensivas e imagens digitais."
+        },
+        "sourceIds": [
+          "s5",
+          "s7",
+          "s8"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_boy_from_heaven_2022",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Location substitution, lens discipline and co-production",
+      "nb": "Stedserstatning, objektivdisiplin og samproduksjon",
+      "fr": "Substitution de lieux, discipline optique et coproduction",
+      "pt": "Substituição de locais, disciplina ótica e coprodução"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "Boy from Heaven",
+        "publisher": "Atmo",
+        "url": "https://www.atmo.se/films/boy-from-heaven"
+      },
+      {
+        "id": "s2",
+        "title": "Boy from Heaven producer Kristina Åberg on working with Tarik Saleh",
+        "publisher": "Nordisk Film & TV Fond",
+        "url": "https://nordiskfilmogtvfond.com/news/stories/boy-from-heaven-producer-kristina-aberg-on-working-with-tarik-saleh"
+      },
+      {
+        "id": "s3",
+        "title": "Four co-productions competing for Palme d’Or in Cannes",
+        "publisher": "Film i Väst",
+        "url": "https://filmivast.com/news-press/news/four-co-productions-competing-for-palme-dor-in-cannes"
+      },
+      {
+        "id": "s4",
+        "title": "ARRI technology behind the scenes of Cannes 2022",
+        "publisher": "ARRI",
+        "url": "https://www.arri.com/news-en/arri-technology-in-cannes-2022"
+      },
+      {
+        "id": "s5",
+        "title": "Cannes Cinematography: Here Are the Cameras and Lenses Used to Shoot 49 Films",
+        "publisher": "IndieWire",
+        "url": "https://www.indiewire.com/features/general/cannes-2022-cinematography-cameras-lenses-1234725082/"
+      },
+      {
+        "id": "s6",
+        "title": "Walad min al-Janna",
+        "publisher": "Danish Film Institute",
+        "url": "https://www.dfi.dk/en/viden-om-film/filmdatabasen/film/116834"
+      }
+    ],
+    "questions": [
+      {
+        "id": "boyheaven-location",
+        "area": "research",
+        "prompt": {
+          "en": "Istanbul locations substituted for the story’s Egyptian setting. What would you test in a new production exercise?",
+          "nb": "Steder i Istanbul erstattet historiens egyptiske miljø. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Des lieux d’Istanbul ont remplacé le cadre égyptien du récit. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Locais de Istambul substituíram o ambiente egípcio da história. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare architecture and cultural details with advisers",
+              "nb": "Sammenlign arkitektur og kulturelle detaljer med rådgivere",
+              "fr": "Comparer architecture et détails culturels avec des conseillers",
+              "pt": "Comparar arquitetura e detalhes culturais com consultores"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume all religious buildings are interchangeable",
+              "nb": "Anta at alle religiøse bygg er utskiftbare",
+              "fr": "Supposer que tous les édifices religieux sont interchangeables",
+              "pt": "Supor que todos os edifícios religiosos são intercambiáveis"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Hide geographical differences without research",
+              "nb": "Skjul geografiske forskjeller uten research",
+              "fr": "Masquer les différences géographiques sans recherche",
+              "pt": "Ocultar diferenças geográficas sem pesquisa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Istanbul locations substituted for the story’s Egyptian setting. In a hypothetical exercise: Compare architecture and cultural details with advisers.",
+          "nb": "Steder i Istanbul erstattet historiens egyptiske miljø. I en tenkt øvelse: Sammenlign arkitektur og kulturelle detaljer med rådgivere.",
+          "fr": "Des lieux d’Istanbul ont remplacé le cadre égyptien du récit. Dans un exercice fictif : Comparer architecture et détails culturels avec des conseillers.",
+          "pt": "Locais de Istambul substituíram o ambiente egípcio da história. Num exercício hipotético: Comparar arquitetura e detalhes culturais com consultores."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "boyheaven-lens",
+        "area": "camera",
+        "prompt": {
+          "en": "Pierre Aïm describes a single scope lens used for documentary-like proximity. What would you test in a new production exercise?",
+          "nb": "Pierre Aïm beskriver ett scopeobjektiv for dokumentarisk nærhet. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Pierre Aïm décrit un seul objectif scope pour une proximité documentaire. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Pierre Aïm descreve uma única objetiva scope para proximidade documental. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Select a lens only by its price",
+              "nb": "Velg objektiv bare etter pris",
+              "fr": "Choisir un objectif uniquement selon son prix",
+              "pt": "Escolher uma objetiva apenas pelo preço"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test actor distance and blocking with one focal length",
+              "nb": "Prøv skuespilleravstand og plassering med én brennvidde",
+              "fr": "Tester distance et déplacements avec une seule focale",
+              "pt": "Testar distância e movimentos com uma só distância focal"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Change focal length for every emotional beat",
+              "nb": "Bytt brennvidde ved hvert følelsesmessige skifte",
+              "fr": "Changer de focale à chaque variation émotionnelle",
+              "pt": "Mudar a distância focal a cada mudança emocional"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Pierre Aïm describes a single scope lens used for documentary-like proximity. In a hypothetical exercise: Test actor distance and blocking with one focal length.",
+          "nb": "Pierre Aïm beskriver ett scopeobjektiv for dokumentarisk nærhet. I en tenkt øvelse: Prøv skuespilleravstand og plassering med én brennvidde.",
+          "fr": "Pierre Aïm décrit un seul objectif scope pour une proximité documentaire. Dans un exercice fictif : Tester distance et déplacements avec une seule focale.",
+          "pt": "Pierre Aïm descreve uma única objetiva scope para proximidade documental. Num exercício hipotético: Testar distância e movimentos com uma só distância focal."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "boyheaven-coproduction",
+        "area": "research",
+        "prompt": {
+          "en": "The production records identify a four-country co-production and multiple shooting territories. What would you test in a new production exercise?",
+          "nb": "Produksjonskildene identifiserer en samproduksjon mellom fire land og flere opptaksområder. Hva ville du prøvd i en ny produksjonsøvelse?",
+          "fr": "Les dossiers identifient une coproduction de quatre pays et plusieurs territoires de tournage. Que testeriez-vous dans un nouvel exercice de production ?",
+          "pt": "Os registos identificam uma coprodução de quatro países e vários territórios de filmagem. O que testaria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Infer equal financing from four countries",
+              "nb": "Utled lik finansiering fra fire land",
+              "fr": "Déduire un financement égal des quatre pays",
+              "pt": "Deduzir financiamento igual dos quatro países"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat shooting country as sole producer",
+              "nb": "Behandle opptakslandet som eneste produsent",
+              "fr": "Traiter le pays de tournage comme seul producteur",
+              "pt": "Tratar o país de filmagem como único produtor"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Separate partner credits, location plans and unknown financing shares",
+              "nb": "Skill partnerkreditering, stedsplaner og ukjente finansieringsandeler",
+              "fr": "Séparer crédits des partenaires, lieux et parts financières inconnues",
+              "pt": "Separar créditos dos parceiros, locais e participações financeiras desconhecidas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The production records identify a four-country co-production and multiple shooting territories. In a hypothetical exercise: Separate partner credits, location plans and unknown financing shares.",
+          "nb": "Produksjonskildene identifiserer en samproduksjon mellom fire land og flere opptaksområder. I en tenkt øvelse: Skill partnerkreditering, stedsplaner og ukjente finansieringsandeler.",
+          "fr": "Les dossiers identifient une coproduction de quatre pays et plusieurs territoires de tournage. Dans un exercice fictif : Séparer crédits des partenaires, lieux et parts financières inconnues.",
+          "pt": "Os registos identificam uma coprodução de quatro países e vários territórios de filmagem. Num exercício hipotético: Separar créditos dos parceiros, locais e participações financeiras desconhecidas."
+        },
+        "sourceIds": [
+          "s1",
+          "s3",
+          "s6"
+        ]
+      }
+    ]
   }
 ] as const satisfies readonly SourceBackedCaseWorkshop[];
