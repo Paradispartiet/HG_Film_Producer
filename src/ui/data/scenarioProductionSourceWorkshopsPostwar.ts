@@ -20355,5 +20355,1140 @@ export const postwarSourceWorkshops = [
         ]
       }
     ]
+  },
+  {
+    "scenarioId": "scenario_the_lives_of_others_2006",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Listening, visual research and restrained performance",
+      "nb": "Lytting, visuell research og tilbakeholdent spill",
+      "fr": "Écoute, recherche visuelle et jeu retenu",
+      "pt": "Escuta, pesquisa visual e interpretação contida"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "How we made The Lives of Others",
+        "publisher": "The Guardian",
+        "url": "https://www.theguardian.com/film/2020/nov/23/how-we-made-the-lives-of-others-stasi-florian-henckel-von-donnersmarck-sebastian-koch"
+      },
+      {
+        "id": "s1",
+        "title": "An Interview with Hagen Bogdanski",
+        "publisher": "Closely Observed Frames",
+        "url": "https://www.closelyobservedframes.com/post/an-interview-with-hagen-bogdanski"
+      },
+      {
+        "id": "s2",
+        "title": "The Lives of Others",
+        "publisher": "BFI Sight and Sound",
+        "url": "https://old.bfi.org.uk/sightandsound/review/3814"
+      }
+    ],
+    "questions": [
+      {
+        "id": "livesothers-listening",
+        "area": "sound",
+        "prompt": {
+          "en": "How can listening become dramatic action?",
+          "nb": "Hvordan kan lytting bli dramatisk handling?",
+          "fr": "Comment faire de l’écoute une action dramatique ?",
+          "pt": "Como transformar a escuta em ação dramática?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Build a scene around changes in attention and sound",
+              "nb": "Bygg scenen rundt endringer i oppmerksomhet og lyd",
+              "fr": "Construire la scène autour des changements d’attention et de son",
+              "pt": "Construir a cena em torno de mudanças de atenção e som"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Explain each reaction in spoken dialogue",
+              "nb": "Forklar hver reaksjon med muntlig dialog",
+              "fr": "Expliquer chaque réaction par le dialogue",
+              "pt": "Explicar cada reação através do diálogo"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use unrelated music for every change",
+              "nb": "Bruk uvedkommende musikk ved hver endring",
+              "fr": "Employer une musique sans rapport à chaque changement",
+              "pt": "Usar música sem relação em cada mudança"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The Guardian interview connects listening with the film's origin and moral transformation. Stage a fictional listening scene where attention changes without explanatory dialogue.",
+          "nb": "Guardian-intervjuet knytter lytting til filmens opphav og moralske utvikling. Iscenesett en fiktiv lyttescene der oppmerksomheten endres uten forklarende dialog.",
+          "fr": "L’entretien du Guardian lie l’écoute à la genèse et à la transformation morale. Imaginez une scène d’écoute où l’attention change sans dialogue explicatif.",
+          "pt": "A entrevista do Guardian liga a escuta à origem do filme e à transformação moral. Imagine uma cena de escuta em que a atenção muda sem diálogo explicativo."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "livesothers-research",
+        "area": "research",
+        "prompt": {
+          "en": "How should an institutional period world be researched?",
+          "nb": "Hvordan bør et historisk institusjonsmiljø undersøkes?",
+          "fr": "Comment documenter un univers institutionnel d’époque ?",
+          "pt": "Como pesquisar um universo institucional de época?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use modern office décor without period research",
+              "nb": "Bruk moderne kontordekor uten historisk research",
+              "fr": "Employer des bureaux modernes sans recherche historique",
+              "pt": "Usar decoração moderna sem pesquisa histórica"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume a single photograph represents every institution",
+              "nb": "Anta at ett fotografi representerer alle institusjoner",
+              "fr": "Supposer qu’une photographie représente toutes les institutions",
+              "pt": "Supor que uma fotografia representa todas as instituições"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare period photographs, films and personal testimony",
+              "nb": "Sammenlign tidsbilder, filmer og personlige vitnesbyrd",
+              "fr": "Comparer photographies, films d’époque et témoignages",
+              "pt": "Comparar fotografias, filmes de época e testemunhos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Bogdanski describes research across photographs, books, films and memory. Compare the sources before making design choices rather than treating one reference as universal.",
+          "nb": "Bogdanski beskriver research i fotografier, bøker, filmer og minner. Sammenlign kildene før scenografiske valg i stedet for å gjøre én referanse universell.",
+          "fr": "Bogdanski décrit une recherche par photos, livres, films et souvenirs. Comparez les sources avant les choix de décor plutôt que de généraliser un seul document.",
+          "pt": "Bogdanski descreve pesquisa em fotografias, livros, filmes e memórias. Compare fontes antes das escolhas cenográficas, sem generalizar um documento."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "livesothers-performance",
+        "area": "camera",
+        "prompt": {
+          "en": "How can restrained performance reveal a change of conscience?",
+          "nb": "Hvordan kan tilbakeholdent spill vise en samvittighetsendring?",
+          "fr": "Comment un jeu retenu révèle-t-il une évolution morale ?",
+          "pt": "Como revela uma interpretação contida uma mudança moral?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Replace every reaction with a written caption",
+              "nb": "Erstatt hver reaksjon med en tekstplakat",
+              "fr": "Remplacer chaque réaction par un intertitre",
+              "pt": "Substituir cada reação por um intertítulo"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare subtle gestures within a muted visual setting",
+              "nb": "Sammenlign små gester i et dempet visuelt miljø",
+              "fr": "Comparer des gestes subtils dans un cadre visuel sobre",
+              "pt": "Comparar gestos subtis num ambiente visual sóbrio"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Demand a large emotional gesture in every shot",
+              "nb": "Krev en stor følelsesgest i hvert bilde",
+              "fr": "Exiger un grand geste émotionnel dans chaque plan",
+              "pt": "Exigir um grande gesto emocional em cada plano"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The filmmaker interview and BFI review describe restrained transformation and a muted world. Test small changes in gaze and posture without claiming exact original blocking.",
+          "nb": "Filmintervjuet og BFI-omtalen beskriver tilbakeholden utvikling og et dempet miljø. Prøv små endringer i blikk og holdning uten å påstå eksakt original blokkering.",
+          "fr": "L’entretien et la critique BFI décrivent une transformation retenue et un monde sobre. Testez regard et posture sans prétendre reproduire le placement original.",
+          "pt": "A entrevista e a crítica BFI descrevem transformação contida e um mundo sóbrio. Teste olhar e postura sem alegar reproduzir a marcação original."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_no_country_for_old_men_2007",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Location planning, landscape and environmental sound",
+      "nb": "Stedsplanlegging, landskap og miljølyd",
+      "fr": "Repérages, paysage et son ambiant",
+      "pt": "Pesquisa de locais, paisagem e som ambiente"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "RT Interview: Roger Deakins on No Country for Old Men",
+        "publisher": "Rotten Tomatoes",
+        "url": "https://editorial.rottentomatoes.com/article/rt-interview-roger-deakins-on-no-country-for-old-men/"
+      },
+      {
+        "id": "s1",
+        "title": "Turning the Tables: No Country for Old Men",
+        "publisher": "Team Deakins",
+        "url": "https://teamdeakins.libsyn.com/turning-the-tables-no-country-for-old-men"
+      },
+      {
+        "id": "s2",
+        "title": "No Country for Old Men: Craig Berkey Exclusive Interview",
+        "publisher": "Designing Sound",
+        "url": "https://designingsound.org/2007/11/15/no-country-for-old-men-exclusive-interview-with-sound-designerre-recording-mixer-craig-berkey/"
+      },
+      {
+        "id": "s3",
+        "title": "No Country for Old Men",
+        "publisher": "Turner Classic Movies",
+        "url": "https://www.tcm.com/articles/1068746/no-country-for-old-men"
+      }
+    ],
+    "questions": [
+      {
+        "id": "nocountry-scout",
+        "area": "camera",
+        "prompt": {
+          "en": "How should landscape scouting inform the storyboard?",
+          "nb": "Hvordan bør stedsbefaring påvirke storyboardet?",
+          "fr": "Comment les repérages de paysage orientent-ils le découpage ?",
+          "pt": "Como devem os locais orientar o storyboard?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare sightlines and blocking before choosing frames",
+              "nb": "Sammenlign siktlinjer og blokkering før valg av utsnitt",
+              "fr": "Comparer axes de vue et déplacements avant le cadrage",
+              "pt": "Comparar linhas de visão e marcações antes do enquadramento"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose every frame before examining the location",
+              "nb": "Velg alle utsnitt før du undersøker stedet",
+              "fr": "Choisir tous les cadres avant de voir le lieu",
+              "pt": "Escolher todos os quadros antes de observar o local"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat every landscape as interchangeable scenery",
+              "nb": "Behandle alle landskap som utskiftbar dekor",
+              "fr": "Traiter tous les paysages comme des décors interchangeables",
+              "pt": "Tratar todas as paisagens como cenários intercambiáveis"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Deakins describes scouting and storyboarding New Mexico and West Texas locations. Test how a selected landscape informs staging without inventing exact historical setups.",
+          "nb": "Deakins beskriver befaring og storyboard for steder i New Mexico og Vest-Texas. Prøv hvordan landskapet påvirker iscenesettelsen uten å finne på eksakte historiske oppsett.",
+          "fr": "Deakins décrit les repérages et le découpage au Nouveau-Mexique et au Texas. Testez l’apport du paysage sans inventer les dispositifs historiques.",
+          "pt": "Deakins descreve pesquisa de locais e storyboard no Novo México e Texas. Teste o contributo da paisagem sem inventar dispositivos históricos."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "nocountry-quiet",
+        "area": "sound",
+        "prompt": {
+          "en": "How can an ordinary environment sustain tension without constant music?",
+          "nb": "Hvordan kan et hverdagsmiljø skape spenning uten konstant musikk?",
+          "fr": "Comment un milieu ordinaire entretient-il la tension sans musique continue ?",
+          "pt": "Como pode um ambiente comum manter tensão sem música contínua?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Place loud music beneath every quiet moment",
+              "nb": "Legg høy musikk under hvert stille øyeblikk",
+              "fr": "Placer une musique forte sous chaque silence",
+              "pt": "Colocar música alta sob cada momento calmo"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Make all environmental sounds equally prominent",
+              "nb": "Gjør alle miljølyder like fremtredende",
+              "fr": "Donner la même importance à tous les sons ambiants",
+              "pt": "Dar igual destaque a todos os sons ambientes"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Shape ambience, pauses and dynamic contrast",
+              "nb": "Form miljølyd, pauser og dynamisk kontrast",
+              "fr": "Façonner ambiance, pauses et contraste dynamique",
+              "pt": "Moldar ambiente, pausas e contraste dinâmico"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Berkey describes detailed sound and dynamic control in place of a conventional score. Compare ordinary room ambience and silence in a fictional suspense scene.",
+          "nb": "Berkey beskriver detaljert lyd og dynamisk kontroll fremfor konvensjonell musikk. Sammenlign vanlig romlyd og stillhet i en fiktiv spenningsscene.",
+          "fr": "Berkey décrit un son détaillé et des contrastes dynamiques plutôt qu’une musique conventionnelle. Comparez ambiance et silence dans une scène fictive.",
+          "pt": "Berkey descreve som detalhado e controlo dinâmico em vez de música convencional. Compare ambiente e silêncio numa cena fictícia."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "nocountry-behavior",
+        "area": "research",
+        "prompt": {
+          "en": "How can physical behavior carry a sparse dialogue scene?",
+          "nb": "Hvordan kan fysisk atferd bære en scene med sparsom dialog?",
+          "fr": "Comment le comportement physique porte-t-il une scène peu dialoguée ?",
+          "pt": "Como pode o comportamento físico sustentar uma cena com pouco diálogo?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore actor choices when planning the sequence",
+              "nb": "Se bort fra skuespillervalg i sekvensplanen",
+              "fr": "Ignorer les choix des acteurs dans le découpage",
+              "pt": "Ignorar escolhas dos atores ao planear a sequência"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse purposeful gestures and observe their rhythm",
+              "nb": "Øv inn meningsfulle gester og observer rytmen",
+              "fr": "Répéter des gestes motivés et observer leur rythme",
+              "pt": "Ensaiar gestos motivados e observar o ritmo"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Add exposition to every pause and gesture",
+              "nb": "Legg inn forklaring i hver pause og gest",
+              "fr": "Ajouter une explication à chaque pause et geste",
+              "pt": "Adicionar explicação a cada pausa e gesto"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "TCM highlights sparse dialogue and physical behavior; Deakins discusses actor collaboration. Design a new scene where gestures carry information without dialogue.",
+          "nb": "TCM fremhever sparsom dialog og fysisk atferd; Deakins omtaler skuespillersamarbeid. Lag en ny scene der gester bærer informasjon uten dialog.",
+          "fr": "TCM souligne la rareté du dialogue et les gestes ; Deakins évoque la collaboration avec les acteurs. Créez une scène où le geste informe sans dialogue.",
+          "pt": "A TCM destaca diálogo escasso e comportamento físico; Deakins aborda a colaboração com atores. Crie uma cena em que gestos informem sem diálogo."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_there_will_be_blood_2007",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Physical period geography, photochemical workflow and score",
+      "nb": "Fysisk historisk geografi, fotokjemisk arbeidsflyt og musikk",
+      "fr": "Géographie historique, chaîne photochimique et musique",
+      "pt": "Geografia histórica, fluxo fotoquímico e música"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "There Will Be Blood (2007)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/a36f4303-906f-55a0-a906-c4116a9faebe/there-will-be-blood"
+      },
+      {
+        "id": "s2",
+        "title": "Blood for Oil: There Will Be Blood",
+        "publisher": "American Society of Cinematographers",
+        "url": "https://theasc.com/article/there-will-be-blood-cinematography-robert-elswit/"
+      },
+      {
+        "id": "s3",
+        "title": "Designing for the Screen: An Interview with Jack Fisk",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/current/posts/3923-designing-for-the-screen-an-interview-with-jack-fisk"
+      },
+      {
+        "id": "s4",
+        "title": "Inside the enduring movie homes of Jack Fisk, production design legend",
+        "publisher": "Associated Press",
+        "url": "https://apnews.com/article/90c5b0a569ae9653985252176d7ead7a"
+      },
+      {
+        "id": "s5",
+        "title": "Paul Thomas Anderson's There Will Be Blood",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/archives/issues/winter2008/blood.php"
+      },
+      {
+        "id": "s6",
+        "title": "Nonesuch Journal Exclusive: An Interview with Jonny Greenwood",
+        "publisher": "Nonesuch Records",
+        "url": "https://www.nonesuch.com/journal/nonesuch-journal-exclusive-interview-jonny-greenwood"
+      }
+    ],
+    "questions": [
+      {
+        "id": "therewillbeblood-geography",
+        "area": "research",
+        "prompt": {
+          "en": "How can a constructed town express relationships between institutions?",
+          "nb": "Hvordan kan en bygget by uttrykke forhold mellom institusjoner?",
+          "fr": "Comment une ville construite exprime-t-elle les rapports institutionnels ?",
+          "pt": "Como pode uma vila construída exprimir relações institucionais?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan meaningful distances and sightlines between buildings",
+              "nb": "Planlegg meningsfulle avstander og siktlinjer mellom bygninger",
+              "fr": "Prévoir distances et axes visuels significatifs entre bâtiments",
+              "pt": "Planear distâncias e linhas de visão significativas entre edifícios"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Scatter buildings without considering the story",
+              "nb": "Spre bygningene uten hensyn til fortellingen",
+              "fr": "Disperser les bâtiments sans tenir compte du récit",
+              "pt": "Dispersar edifícios sem considerar a narrativa"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose scenery solely for decorative richness",
+              "nb": "Velg dekor utelukkende for visuell overdådighet",
+              "fr": "Choisir les décors pour leur seule richesse décorative",
+              "pt": "Escolher cenários apenas pela riqueza decorativa"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Fisk's accounts connect the built town and the spatial relationship between commerce and religion. Design a new map where geography supports the drama.",
+          "nb": "Fisks beretninger knytter den bygde byen til romforholdet mellom handel og religion. Lag et nytt kart der geografien støtter dramaet.",
+          "fr": "Les témoignages de Fisk relient la ville construite aux rapports spatiaux entre commerce et religion. Créez une carte au service du drame.",
+          "pt": "Os relatos de Fisk ligam a vila construída às relações espaciais entre comércio e religião. Crie um mapa ao serviço do drama."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "therewillbeblood-finish",
+        "area": "camera",
+        "prompt": {
+          "en": "How should an anamorphic photochemical workflow be documented?",
+          "nb": "Hvordan bør en anamorfisk fotokjemisk arbeidsflyt dokumenteres?",
+          "fr": "Comment documenter une chaîne photochimique anamorphique ?",
+          "pt": "Como documentar um fluxo fotoquímico anamórfico?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume the film used a digital intermediate",
+              "nb": "Anta at filmen brukte et digitalt mellomledd",
+              "fr": "Supposer que le film a utilisé un intermédiaire numérique",
+              "pt": "Supor que o filme usou um intermediário digital"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Infer exact exposure from the film's awards",
+              "nb": "Utled eksakt eksponering fra filmens priser",
+              "fr": "Déduire l’exposition exacte des récompenses",
+              "pt": "Deduzir exposição exata a partir dos prémios"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Separate capture, printed dailies and photochemical finishing",
+              "nb": "Skill opptak, kopierte dagsopptak og fotokjemisk etterarbeid",
+              "fr": "Distinguer captation, rushes tirés et finition photochimique",
+              "pt": "Separar captação, provas diárias e acabamento fotoquímico"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "ASC documents anamorphic 35mm, printed dailies and no digital intermediate. Record these distinct stages without inferring undocumented shot settings.",
+          "nb": "ASC dokumenterer anamorfisk 35 mm, kopierte dagsopptak og fravær av digitalt mellomledd. Registrer trinnene uten å utlede udokumenterte opptaksinnstillinger.",
+          "fr": "L’ASC documente le 35 mm anamorphique, les rushes tirés et l’absence d’intermédiaire numérique. Notez ces étapes sans inventer les réglages.",
+          "pt": "A ASC documenta 35 mm anamórfico, provas diárias e ausência de intermediário digital. Registe estas etapas sem inventar parâmetros."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      },
+      {
+        "id": "therewillbeblood-score",
+        "area": "sound",
+        "prompt": {
+          "en": "How can music written from story themes be explored in editing?",
+          "nb": "Hvordan kan musikk skrevet ut fra fortellingens temaer utforskes i klippen?",
+          "fr": "Comment explorer au montage une musique issue des thèmes du récit ?",
+          "pt": "Como explorar na montagem música inspirada nos temas narrativos?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use music only to duplicate spoken information",
+              "nb": "Bruk musikk bare til å gjenta muntlig informasjon",
+              "fr": "Employer la musique uniquement pour répéter le dialogue",
+              "pt": "Usar música apenas para repetir informação falada"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test original thematic cues in different dramatic contexts",
+              "nb": "Prøv originale tematiske musikkinnslag i ulike dramatiske sammenhenger",
+              "fr": "Tester des motifs originaux dans divers contextes dramatiques",
+              "pt": "Testar motivos originais em diferentes contextos dramáticos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assign a fixed cue to every scene before viewing it",
+              "nb": "Tildel hvert innslag fast scene før du ser den",
+              "fr": "Attribuer un morceau fixe à chaque scène avant de la voir",
+              "pt": "Atribuir uma faixa fixa a cada cena antes de a ver"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Greenwood describes writing substantial music from story, scenery and themes for Anderson to place. Test original cues flexibly rather than assuming every piece was written to a specific scene.",
+          "nb": "Greenwood beskriver musikk skrevet ut fra fortelling, landskap og temaer som Anderson kunne plassere. Prøv originale innslag fleksibelt fremfor å anta at alt ble skrevet til bestemte scener.",
+          "fr": "Greenwood décrit une musique issue du récit, du paysage et des thèmes, à placer par Anderson. Testez des motifs originaux sans supposer que chacun visait une scène précise.",
+          "pt": "Greenwood descreve música baseada na história, paisagem e temas, para Anderson a colocar. Teste motivos originais sem supor que cada um visava uma cena específica."
+        },
+        "sourceIds": [
+          "s6",
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_white_ribbon_2009",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Village hierarchy, monochrome image and uncertain causality",
+      "nb": "Landsbyhierarki, monokromt bilde og usikker årsakssammenheng",
+      "fr": "Hiérarchie villageoise, image monochrome et causalité incertaine",
+      "pt": "Hierarquia da aldeia, imagem monocromática e causalidade incerta"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Das weisse Band",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/das-weisse-band/"
+      },
+      {
+        "id": "s1",
+        "title": "Press Conference: Michael Haneke unknots his White Ribbon",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/2009/press-conference-michael-haneke-unknots-his-white-ribbon/"
+      },
+      {
+        "id": "s2",
+        "title": "Das weiße Band - Eine deutsche Kindergeschichte",
+        "publisher": "filmportal.de",
+        "url": "https://www.filmportal.de/en/movie/das-weisse-band-eine-deutsche-kindergeschichte_66eb7e6d55fc0a4be040007f01001887"
+      },
+      {
+        "id": "s3",
+        "title": "Interview: Cinematographer Christian Berger Unravels The White Ribbon",
+        "publisher": "HollywoodChicago.com",
+        "url": "https://www.hollywoodchicago.com/news/9728/interview-cinematographer-christian-berger-unravels-the-white-ribbon"
+      }
+    ],
+    "questions": [
+      {
+        "id": "whiteribbon-authority",
+        "area": "research",
+        "prompt": {
+          "en": "How can a village ensemble express institutional authority?",
+          "nb": "Hvordan kan et landsbyensemble uttrykke institusjonell autoritet?",
+          "fr": "Comment un ensemble villageois exprime-t-il l’autorité institutionnelle ?",
+          "pt": "Como pode um elenco de aldeia exprimir autoridade institucional?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map relationships and recurring rituals across institutions",
+              "nb": "Kartlegg relasjoner og gjentatte ritualer på tvers av institusjoner",
+              "fr": "Cartographier relations et rituels récurrents entre institutions",
+              "pt": "Mapear relações e rituais recorrentes entre instituições"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Reduce every character to the same social role",
+              "nb": "Reduser alle figurer til samme sosiale rolle",
+              "fr": "Réduire tous les personnages au même rôle social",
+              "pt": "Reduzir todas as personagens ao mesmo papel social"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Explain a single definitive cause for all events",
+              "nb": "Forklar én endelig årsak til alle hendelser",
+              "fr": "Expliquer une cause unique et définitive pour tous les événements",
+              "pt": "Explicar uma causa única e definitiva para todos os acontecimentos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Haneke's Cannes testimony describes the inquiry into absolutist values. Map institutional pressures in a fictional ensemble without declaring one definitive cause of historical violence.",
+          "nb": "Hanekes Cannes-beretning beskriver undersøkelsen av absolutte verdier. Kartlegg institusjonelt press i et fiktivt ensemble uten å erklære én endelig årsak til historisk vold.",
+          "fr": "Le témoignage de Haneke à Cannes décrit l’étude des valeurs absolutistes. Cartographiez les pressions institutionnelles d’un ensemble fictif sans cause historique unique.",
+          "pt": "O testemunho de Haneke em Cannes descreve a investigação de valores absolutistas. Mapeie pressões institucionais num elenco fictício sem declarar uma causa histórica única."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "whiteribbon-monochrome",
+        "area": "camera",
+        "prompt": {
+          "en": "How should monochrome period photography be prepared?",
+          "nb": "Hvordan bør monokrom historisk fotografering forberedes?",
+          "fr": "Comment préparer une photographie d’époque monochrome ?",
+          "pt": "Como preparar fotografia de época monocromática?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume removing color guarantees a readable image",
+              "nb": "Anta at fjerning av farge sikrer et lesbart bilde",
+              "fr": "Supposer que supprimer la couleur garantit la lisibilité",
+              "pt": "Supor que retirar cor garante legibilidade"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Infer camera settings from a monochrome release print",
+              "nb": "Utled kamerainnstillinger fra en monokrom visningskopi",
+              "fr": "Déduire les réglages de caméra d’une copie monochrome",
+              "pt": "Deduzir parâmetros de câmara de uma cópia monocromática"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test tonal separation of costumes, faces and settings",
+              "nb": "Prøv toneseparasjon mellom kostymer, ansikter og miljøer",
+              "fr": "Tester la séparation tonale des costumes, visages et décors",
+              "pt": "Testar separação tonal de figurinos, rostos e cenários"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Filmportal records the monochrome presentation and Berger discusses constructing the look. Compare tonal tests without inferring undocumented acquisition settings.",
+          "nb": "Filmportal registrerer den monokrome visningen og Berger omtaler utformingen av uttrykket. Sammenlign toneprøver uten å utlede udokumenterte opptaksinnstillinger.",
+          "fr": "Filmportal documente la présentation monochrome et Berger décrit sa construction. Comparez les essais tonals sans inventer les réglages de captation.",
+          "pt": "O Filmportal regista a apresentação monocromática e Berger aborda a construção visual. Compare testes tonais sem inventar parâmetros de captação."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "whiteribbon-uncertainty",
+        "area": "research",
+        "prompt": {
+          "en": "How can an uncertain narrator preserve unanswered questions?",
+          "nb": "Hvordan kan en usikker forteller bevare ubesvarte spørsmål?",
+          "fr": "Comment un narrateur incertain conserve-t-il des questions ouvertes ?",
+          "pt": "Como pode um narrador incerto preservar perguntas em aberto?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Resolve every uncertainty with a final explanation",
+              "nb": "Løs all usikkerhet med en avsluttende forklaring",
+              "fr": "Résoudre toute incertitude par une explication finale",
+              "pt": "Resolver toda incerteza com uma explicação final"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Distinguish observed events from retrospective interpretation",
+              "nb": "Skill observerte hendelser fra retrospektiv tolkning",
+              "fr": "Distinguer événements observés et interprétation rétrospective",
+              "pt": "Distinguir acontecimentos observados e interpretação retrospetiva"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Present every inference as an established fact",
+              "nb": "Presenter alle slutninger som etablerte fakta",
+              "fr": "Présenter toute inférence comme un fait établi",
+              "pt": "Apresentar toda inferência como facto estabelecido"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Cannes situates the project in a village and Haneke frames it as an inquiry into absolutism. Preserve the distinction between evidence and interpretation in your own narrative exercise.",
+          "nb": "Cannes plasserer prosjektet i en landsby, og Haneke rammer det inn som en undersøkelse av absolutisme. Bevar skillet mellom bevis og tolkning i din egen fortellerøvelse.",
+          "fr": "Cannes situe le projet dans un village et Haneke le présente comme une enquête sur l’absolutisme. Préservez la distinction entre preuve et interprétation dans votre exercice.",
+          "pt": "Cannes situa o projeto numa aldeia e Haneke enquadra-o como investigação do absolutismo. Preserve a distinção entre evidência e interpretação no exercício."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_a_prophet_2009",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Multilingual narrative, constructed institutions and actor preparation",
+      "nb": "Flerspråklig fortelling, bygde institusjoner og skuespillerforberedelse",
+      "fr": "Récit multilingue, institution construite et préparation des acteurs",
+      "pt": "Narrativa multilingue, instituição construída e preparação de atores"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "A Prophet speaks to the press",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/2009/a-prophet-speaks-to-the-press/"
+      },
+      {
+        "id": "s1",
+        "title": "A Prophet",
+        "publisher": "Danish Film Institute",
+        "url": "https://www.dfi.dk/en/viden-om-film/filmdatabasen/film/profeten"
+      },
+      {
+        "id": "s3",
+        "title": "Jacques Audiard — Director",
+        "publisher": "Cineuropa",
+        "url": "https://cineuropa.org/en/interview/108598/fmt/flv/rl/1/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "aprophet-language",
+        "area": "sound",
+        "prompt": {
+          "en": "How can language shape a character's access to knowledge?",
+          "nb": "Hvordan kan språk forme en karakters tilgang til kunnskap?",
+          "fr": "Comment la langue façonne-t-elle l’accès d’un personnage au savoir ?",
+          "pt": "Como pode a língua moldar o acesso de uma personagem ao conhecimento?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map what each character understands in each scene",
+              "nb": "Kartlegg hva hver karakter forstår i hver scene",
+              "fr": "Cartographier ce que chaque personnage comprend par scène",
+              "pt": "Mapear o que cada personagem compreende em cada cena"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Translate every exchange for every character in the story",
+              "nb": "Oversett alle samtaler for alle karakterene i fortellingen",
+              "fr": "Traduire tous les échanges pour tous les personnages",
+              "pt": "Traduzir todas as conversas para todas as personagens"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat all spoken languages as interchangeable texture",
+              "nb": "Behandle alle talespråk som utskiftbar tekstur",
+              "fr": "Traiter toutes les langues parlées comme texture interchangeable",
+              "pt": "Tratar todas as línguas faladas como textura intercambiável"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Audiard explains Corsican and Arabic as boundaries of knowledge and power. Plan a fictional scene where unequal comprehension matters without stereotyping speakers.",
+          "nb": "Audiard forklarer korsikansk og arabisk som grenser for kunnskap og makt. Planlegg en fiktiv scene der ulik forståelse betyr noe uten å stereotypisere talerne.",
+          "fr": "Audiard explique le corse et l’arabe comme frontières du savoir et du pouvoir. Imaginez une scène où la compréhension inégale compte sans stéréotyper les locuteurs.",
+          "pt": "Audiard explica o corso e o árabe como fronteiras de conhecimento e poder. Planeie uma cena em que compreensão desigual importe sem estereotipar falantes."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "aprophet-space",
+        "area": "research",
+        "prompt": {
+          "en": "How should a purpose-built institution support narrative geography?",
+          "nb": "Hvordan bør en spesialbygget institusjon støtte fortellingens geografi?",
+          "fr": "Comment une institution construite sert-elle la géographie narrative ?",
+          "pt": "Como deve uma instituição construída apoiar a geografia narrativa?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Change the layout arbitrarily between scenes",
+              "nb": "Endre planløsningen vilkårlig mellom scenene",
+              "fr": "Modifier arbitrairement le plan entre les scènes",
+              "pt": "Alterar a planta arbitrariamente entre cenas"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose locations without considering character movement",
+              "nb": "Velg steder uten å vurdere karakterenes bevegelser",
+              "fr": "Choisir les lieux sans considérer les déplacements",
+              "pt": "Escolher locais sem considerar movimentos das personagens"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan recurring spaces and their dramatic relationships",
+              "nb": "Planlegg tilbakevendende rom og dramatiske forbindelser",
+              "fr": "Prévoir espaces récurrents et relations dramatiques",
+              "pt": "Planear espaços recorrentes e relações dramáticas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Cannes documents the purpose-built Gennevilliers prison and DFI records its production departments. Create a fictional floor plan that keeps dramatic space coherent.",
+          "nb": "Cannes dokumenterer det bygde fengselet i Gennevilliers, og DFI registrerer produksjonsavdelingene. Lag en fiktiv planløsning med sammenhengende dramatisk rom.",
+          "fr": "Cannes documente la prison construite à Gennevilliers et le DFI les départements. Créez un plan fictif cohérent pour l’espace dramatique.",
+          "pt": "Cannes documenta a prisão construída em Gennevilliers e o DFI os departamentos. Crie uma planta fictícia coerente para o espaço dramático."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "aprophet-coaching",
+        "area": "research",
+        "prompt": {
+          "en": "How can language coaching serve character development?",
+          "nb": "Hvordan kan språkcoaching støtte karakterutvikling?",
+          "fr": "Comment le coaching linguistique sert-il l’évolution du personnage ?",
+          "pt": "Como pode a preparação linguística servir a evolução da personagem?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore language learning in the performance schedule",
+              "nb": "Ignorer språklæring i prøveplanen",
+              "fr": "Ignorer l’apprentissage linguistique dans le planning",
+              "pt": "Ignorar aprendizagem linguística no calendário de ensaios"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Schedule coached rehearsals and track changes in fluency",
+              "nb": "Planlegg veiledede prøver og følg endringer i språkflyt",
+              "fr": "Prévoir des répétitions accompagnées et suivre la progression",
+              "pt": "Planear ensaios acompanhados e acompanhar a evolução da fluência"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Ask actors to improvise unfamiliar languages without support",
+              "nb": "Be skuespillere improvisere ukjente språk uten støtte",
+              "fr": "Demander d’improviser des langues inconnues sans aide",
+              "pt": "Pedir improvisação em línguas desconhecidas sem apoio"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Cannes reports months of Corsican coaching and character research. Link coaching to the scripted learning arc and consult qualified language speakers in the exercise.",
+          "nb": "Cannes omtaler måneder med korsikansk språkcoaching og karakterresearch. Knytt veiledning til manusets læringsforløp og rådfør deg med kvalifiserte språkbrukere.",
+          "fr": "Cannes rapporte des mois de coaching en corse et de recherche. Reliez cet accompagnement à l’évolution écrite et consultez des locuteurs qualifiés.",
+          "pt": "Cannes relata meses de preparação em corso e pesquisa da personagem. Ligue a preparação ao percurso escrito e consulte falantes qualificados."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_avatar_2009",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Virtual camera, mixed-world preview and sound handoffs",
+      "nb": "Virtuelt kamera, sammensatt forhåndsvisning og lydoverleveringer",
+      "fr": "Caméra virtuelle, prévisualisation hybride et transmissions sonores",
+      "pt": "Câmara virtual, pré-visualização híbrida e transições sonoras"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Conquering New Worlds: Avatar",
+        "publisher": "American Society of Cinematographers",
+        "url": "https://theasc.com/article/avatar/"
+      },
+      {
+        "id": "s1",
+        "title": "Director's Chair: James Cameron - Avatar",
+        "publisher": "Post Magazine",
+        "url": "https://www.postmagazine.com/Publications/Post-Magazine/2010/January-1-2010/DIRECTORS-CHAIR-JAMES-CAMERON-AVATAR.aspx"
+      },
+      {
+        "id": "s2",
+        "title": "Joe Letteri on the Visual Effects of Avatar",
+        "publisher": "Below the Line / Media & Entertainment",
+        "url": "https://mande.net/btl/crafts/post-production/joe-letteri-on-the-visual-effects-of-avatar"
+      },
+      {
+        "id": "s3",
+        "title": "Avatar",
+        "publisher": "Mix",
+        "url": "https://www.mixonline.com/the-wire/avatar-369250"
+      },
+      {
+        "id": "s4",
+        "title": "Avatar (2009)",
+        "publisher": "American Film Institute",
+        "url": "https://catalog.afi.com/Film/55800-AVATAR"
+      }
+    ],
+    "questions": [
+      {
+        "id": "avatar2009-virtual",
+        "area": "camera",
+        "prompt": {
+          "en": "How should a virtual camera be understood during performance capture?",
+          "nb": "Hvordan bør et virtuelt kamera forstås under bevegelsesopptak?",
+          "fr": "Comment comprendre la caméra virtuelle pendant la capture de jeu ?",
+          "pt": "Como compreender a câmara virtual durante a captura de interpretação?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use tracked framing within a digital scene",
+              "nb": "Bruk sporet bildekomposisjon i en digital scene",
+              "fr": "Utiliser un cadrage suivi dans une scène numérique",
+              "pt": "Usar enquadramento rastreado numa cena digital"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume it records optical images of the finished world",
+              "nb": "Anta at det filmer optiske bilder av den ferdige verdenen",
+              "fr": "Supposer qu’elle filme optiquement le monde final",
+              "pt": "Supor que filma opticamente o mundo final"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Postpone all framing decisions until final rendering",
+              "nb": "Utsett alle utsnittsvalg til endelig rendering",
+              "fr": "Reporter tout cadrage au rendu final",
+              "pt": "Adiar todas as decisões de enquadramento até à renderização final"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "ASC and Cameron describe a tracked interface, not an optical camera. Letteri connects it to decisions during capture; test framing in a simple virtual scene.",
+          "nb": "ASC og Cameron beskriver et sporet grensesnitt, ikke et optisk kamera. Letteri knytter det til valg under opptak; prøv bildekomposisjon i en enkel virtuell scene.",
+          "fr": "L’ASC et Cameron décrivent une interface suivie, pas une caméra optique. Letteri la relie aux choix pendant la capture ; testez le cadrage d’une scène virtuelle.",
+          "pt": "A ASC e Cameron descrevem uma interface rastreada, não uma câmara ótica. Letteri liga-a às decisões durante a captura; teste enquadramento numa cena virtual."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "avatar2009-preview",
+        "area": "animation",
+        "prompt": {
+          "en": "How should live and virtual elements be previewed together?",
+          "nb": "Hvordan bør fysiske og virtuelle elementer forhåndsvises sammen?",
+          "fr": "Comment prévisualiser ensemble les éléments réels et virtuels ?",
+          "pt": "Como pré-visualizar elementos reais e virtuais em conjunto?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Ignore the relationship between live and virtual space",
+              "nb": "Se bort fra forholdet mellom fysisk og virtuelt rom",
+              "fr": "Ignorer le rapport entre espace réel et virtuel",
+              "pt": "Ignorar a relação entre espaço real e virtual"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat the on-set preview as final rendered imagery",
+              "nb": "Behandle forhåndsvisningen på settet som ferdig rendering",
+              "fr": "Traiter la prévisualisation plateau comme rendu définitif",
+              "pt": "Tratar a pré-visualização no set como renderização final"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test registration and alignment in a combined preview",
+              "nb": "Prøv registrering og samsvar i en kombinert forhåndsvisning",
+              "fr": "Tester le recalage et l’alignement dans une prévisualisation combinée",
+              "pt": "Testar registo e alinhamento numa pré-visualização combinada"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "ASC and Cameron describe SimulCam as a registered view of live and CG elements. Test spatial alignment separately from final rendering quality.",
+          "nb": "ASC og Cameron beskriver SimulCam som en registrert visning av fysiske og digitale elementer. Prøv romlig samsvar adskilt fra endelig renderkvalitet.",
+          "fr": "L’ASC et Cameron décrivent SimulCam comme une vue recalée du réel et du numérique. Testez l’alignement indépendamment de la qualité du rendu final.",
+          "pt": "A ASC e Cameron descrevem SimulCam como vista registada de elementos reais e digitais. Teste alinhamento separadamente da qualidade final."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "avatar2009-mix",
+        "area": "sound",
+        "prompt": {
+          "en": "How should dialogue, effects and music be coordinated in a final mix?",
+          "nb": "Hvordan bør dialog, effekter og musikk samordnes i sluttmiksen?",
+          "fr": "Comment coordonner dialogue, effets et musique au mixage final ?",
+          "pt": "Como coordenar diálogo, efeitos e música na mistura final?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume stereoscopic images automatically create spatial sound",
+              "nb": "Anta at stereoskopiske bilder automatisk skaper romlig lyd",
+              "fr": "Supposer que l’image stéréoscopique crée automatiquement le son spatial",
+              "pt": "Supor que imagens estereoscópicas criam automaticamente som espacial"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Maintain distinct sound stems and review their balance together",
+              "nb": "Behold separate lydgrupper og vurder balansen samlet",
+              "fr": "Conserver des groupes sonores distincts et revoir leur équilibre ensemble",
+              "pt": "Manter grupos sonoros distintos e rever o equilíbrio em conjunto"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Flatten all audio before balance decisions are made",
+              "nb": "Slå sammen all lyd før balansen er avgjort",
+              "fr": "Fusionner tout l’audio avant les décisions d’équilibre",
+              "pt": "Fundir todo o áudio antes de decidir o equilíbrio"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Mix documents distinct effects, dialogue and music mixing responsibilities. Build an original three-stem exercise and review their combined spatial balance without claiming an exact historical configuration.",
+          "nb": "Mix dokumenterer separate ansvarsområder for effekter, dialog og musikk. Lag en original øvelse med tre lydgrupper og vurder romlig balanse uten å påstå eksakt historisk oppsett.",
+          "fr": "Mix documente les responsabilités séparées pour effets, dialogue et musique. Créez un exercice original à trois groupes et évaluez l’équilibre spatial sans inventer la configuration historique.",
+          "pt": "A Mix documenta responsabilidades distintas por efeitos, diálogo e música. Crie um exercício original com três grupos e reveja o equilíbrio espacial sem inventar a configuração histórica."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      }
+    ]
   }
 ] as const satisfies readonly SourceBackedCaseWorkshop[];
