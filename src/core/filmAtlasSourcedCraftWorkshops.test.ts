@@ -266,15 +266,26 @@ const ids = [
   "scenario_nomadland_2020",
   "scenario_soul_2020",
   "scenario_wolfwalkers_2020",
+  "scenario_collective_2020",
+  "scenario_another_round_2020",
+  "scenario_dune_2021",
+  "scenario_drive_my_car_2021",
+  "scenario_flee_2021",
+  "scenario_the_worst_person_in_the_world_2021",
+  "scenario_titane_2021",
+  "scenario_the_power_of_the_dog_2021",
+  "scenario_coda_2021",
+  "scenario_memoria_2021",
+  "scenario_annette_2021",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly two hundred and fifty-seven existing cases have seven hundred and seventy-one original, source-backed decisions", () => {
+test("Exactly two hundred and sixty-eight existing cases have eight hundred and four original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 257);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 771);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 268);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 804);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -656,6 +667,14 @@ test("Exactly two hundred and fifty-seven existing cases have seven hundred and 
       for (const source of workshop.sources) assert.ok(verification.includes(source.url));
     } else if (["scenario_parasite_2019","scenario_the_irishman_2019","scenario_1917_2019","scenario_portrait_of_a_lady_on_fire_2019","scenario_atlantics_2019","scenario_the_lighthouse_2019","scenario_tenet_2020","scenario_nomadland_2020","scenario_soul_2020","scenario_wolfwalkers_2020"].includes(workshop.scenarioId)) {
       const configs: Record<string, [string, string]> = {"scenario_parasite_2019":["src/ui/data/scenarioProductionVerificationParasite.ts","chapterEighteenParasiteExpansion"],"scenario_the_irishman_2019":["src/ui/data/scenarioProductionVerificationTheIrishman.ts","chapterEighteenTheIrishmanExpansion"],"scenario_1917_2019":["src/ui/data/scenarioProductionVerification1917.ts","chapterEighteen1917Expansion"],"scenario_portrait_of_a_lady_on_fire_2019":["src/ui/data/scenarioProductionVerificationPortraitOfALadyOnFire.ts","italyFranceGermanyBeneluxExpansion"],"scenario_atlantics_2019":["src/ui/data/scenarioProductionVerificationAtlantics.ts","chapterEighteenAtlanticsExpansion"],"scenario_the_lighthouse_2019":["src/ui/data/scenarioProductionVerificationTechnologyBatch.ts","seed"],"scenario_tenet_2020":["src/ui/data/scenarioProductionVerificationTenet.ts","chapterNineteenTenetExpansion"],"scenario_nomadland_2020":["src/ui/data/scenarioProductionVerificationNomadland.ts","chapterNineteenNomadlandExpansion"],"scenario_soul_2020":["src/ui/data/scenarioProductionVerificationSoul.ts","chapterNineteenSoulExpansion"],"scenario_wolfwalkers_2020":["src/ui/data/scenarioProductionVerificationWolfwalkers.ts","chapterNineteenWolfwalkersExpansion"]};
+      const [path, definition] = configs[workshop.scenarioId]!;
+      if (definition === "seed") assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
+      else assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
+      const verification = readFileSync(path, "utf8");
+      assert.ok(verification.includes('scenarioId: "' + workshop.scenarioId + '"'));
+      for (const source of workshop.sources) assert.ok(verification.includes(source.url));
+    } else if (["scenario_collective_2020","scenario_another_round_2020","scenario_dune_2021","scenario_drive_my_car_2021","scenario_flee_2021","scenario_the_worst_person_in_the_world_2021","scenario_titane_2021","scenario_the_power_of_the_dog_2021","scenario_coda_2021","scenario_memoria_2021","scenario_annette_2021"].includes(workshop.scenarioId)) {
+      const configs: Record<string, [string, string]> = {"scenario_collective_2020":["src/ui/data/scenarioProductionVerificationCollective.ts","chapterNineteenCollectiveExpansion"],"scenario_another_round_2020":["src/ui/data/scenarioProductionVerificationModernNordicBehaviorSystemsBatch.ts","seed"],"scenario_dune_2021":["src/ui/data/scenarioProductionVerificationDune.ts","chapterNineteenDuneExpansion"],"scenario_drive_my_car_2021":["src/ui/data/scenarioProductionVerificationDriveMyCar.ts","chapterNineteenDriveMyCarExpansion"],"scenario_flee_2021":["src/ui/data/scenarioProductionVerificationFlee.ts","chapterNineteenFleeExpansion"],"scenario_the_worst_person_in_the_world_2021":["src/ui/data/scenarioProductionVerificationModernNordicBehaviorSystemsBatch.ts","scandinavianEuropeanExpansion"],"scenario_titane_2021":["src/ui/data/scenarioProductionVerificationTitane.ts","chapterNineteenTitaneExpansion"],"scenario_the_power_of_the_dog_2021":["src/ui/data/scenarioProductionVerificationThePowerOfTheDog.ts","chapterNineteenThePowerOfTheDogExpansion"],"scenario_coda_2021":["src/ui/data/scenarioProductionVerificationCoda.ts","chapterNineteenCodaExpansion"],"scenario_memoria_2021":["src/ui/data/scenarioProductionVerificationMemoria.ts","chapterNineteenMemoriaExpansion"],"scenario_annette_2021":["src/ui/data/scenarioProductionVerificationAnnette.ts","chapterNineteenAnnetteExpansion"]};
       const [path, definition] = configs[workshop.scenarioId]!;
       if (definition === "seed") assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
       else assert.ok(readFileSync("src/core/" + definition + ".ts", "utf8").includes(workshop.scenarioId));
@@ -1404,4 +1423,19 @@ test("2019–2020 workshops retain film-specific production decisions", () => {
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_nomadland_2020")?.questions.map(q => q.id), ["nomadland-people","nomadland-light","nomadland-sound"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_soul_2020")?.questions.map(q => q.id), ["soul-worlds","soul-lighting","soul-jazz"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_wolfwalkers_2020")?.questions.map(q => q.id), ["wolfwalkers-styles","wolfwalkers-wolfvision","wolfwalkers-animatic"]);
+});
+
+
+test("2020–2021 workshops retain film-specific production decisions", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_collective_2020")?.questions.map(q => q.id), ["collective-access","collective-sound","collective-edit"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_another_round_2020")?.questions.map(q => q.id), ["anotherround-ensemble","anotherround-look","anotherround-premise"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_dune_2021")?.questions.map(q => q.id), ["dune-bible","dune-finish","dune-sound"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_drive_my_car_2021")?.questions.map(q => q.id), ["drivemycar-reading","drivemycar-interior","drivemycar-takes"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_flee_2021")?.questions.map(q => q.id), ["flee-audio","flee-privacy","flee-handoff"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_worst_person_in_the_world_2021")?.questions.map(q => q.id), ["worstperson-oslo","worstperson-performance","worstperson-freeze"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_titane_2021")?.questions.map(q => q.id), ["titane-color","titane-effects","titane-structure"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_power_of_the_dog_2021")?.questions.map(q => q.id), ["powerofthedog-prep","powerofthedog-ranch","powerofthedog-tension"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_coda_2021")?.questions.map(q => q.id), ["coda-sign","coda-editorial","coda-sound"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_memoria_2021")?.questions.map(q => q.id), ["memoria-duration","memoria-listen","memoria-signature"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_annette_2021")?.questions.map(q => q.id), ["annette-singing","annette-puppet","annette-locations"]);
 });
