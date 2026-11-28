@@ -18000,5 +18000,1229 @@ export const postwarSourceWorkshops = [
         ]
       }
     ]
+  },
+  {
+    "scenarioId": "scenario_in_the_mood_for_love_2000",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Evolving narrative and shared cinematography",
+      "nb": "Fortelling i utvikling og delt fotoarbeid",
+      "fr": "Récit évolutif et photographie partagée",
+      "pt": "Narrativa em evolução e fotografia partilhada"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Wong Kar Wai on In the Mood for Love at 25 – a new interview",
+        "publisher": "British Film Institute / Sight and Sound",
+        "url": "https://www.bfi.org.uk/sight-and-sound/interviews/wong-kar-wai-mood-love-25"
+      },
+      {
+        "id": "s1",
+        "title": "In the Mood for Love (2000)",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/198-in-the-mood-for-love"
+      },
+      {
+        "id": "s2",
+        "title": "In the Mood for Love",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/in-the-mood-for-love-3/"
+      },
+      {
+        "id": "s3",
+        "title": "DVD Playback: In the Mood for Love",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/magazine/dec02/dvd/page2.html"
+      },
+      {
+        "id": "s4",
+        "title": "Wong Kar-Wai",
+        "publisher": "The A.V. Club",
+        "url": "https://www.avclub.com/wong-kar-wai-1798208135"
+      },
+      {
+        "id": "s5",
+        "title": "Watch In the Mood for Love online",
+        "publisher": "British Film Institute",
+        "url": "https://player.bfi.org.uk/rentals/film/watch-in-the-mood-for-love-2000-online"
+      }
+    ],
+    "questions": [
+      {
+        "id": "inthemoodforlove-revision",
+        "area": "research",
+        "prompt": {
+          "en": "How should changing story material be tracked?",
+          "nb": "Hvordan bør historiemateriale i utvikling følges opp?",
+          "fr": "Comment suivre un matériau narratif évolutif ?",
+          "pt": "Como acompanhar material narrativo em evolução?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Keep dated revisions and identify unused scenes",
+              "nb": "Før daterte revisjoner og identifiser ubrukte scener",
+              "fr": "Conserver les révisions datées et identifier les scènes inutilisées",
+              "pt": "Manter revisões datadas e identificar cenas não usadas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat all filmed scenes as final material",
+              "nb": "Behandle alle opptak som endelig materiale",
+              "fr": "Traiter toutes les scènes tournées comme définitives",
+              "pt": "Tratar todas as cenas filmadas como definitivas"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore interruptions and cast availability",
+              "nb": "Ignorer avbrudd og skuespillernes tilgjengelighet",
+              "fr": "Ignorer les interruptions et la disponibilité des acteurs",
+              "pt": "Ignorar interrupções e disponibilidade dos atores"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Wong describes removed material and an evolving production with interruptions. Make a revision ledger for an original fictional film.",
+          "nb": "Wong beskriver fjernet materiale og en produksjon i utvikling med avbrudd. Lag en revisjonslogg for en egen fiktiv film.",
+          "fr": "Wong décrit les scènes retirées et une production évolutive avec interruptions. Créez un registre pour une fiction originale.",
+          "pt": "Wong descreve material retirado e produção em evolução com interrupções. Crie registo de revisões para ficção original."
+        },
+        "sourceIds": [
+          "s0",
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "inthemoodforlove-handoff",
+        "area": "camera",
+        "prompt": {
+          "en": "How can two cinematographers preserve continuity?",
+          "nb": "Hvordan kan to filmfotografer bevare kontinuitet?",
+          "fr": "Comment deux chefs opérateurs préservent-ils la continuité ?",
+          "pt": "Como podem dois diretores de fotografia preservar continuidade?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Infer lens settings from restoration metadata",
+              "nb": "Utled objektivinnstillinger fra restaureringsmetadata",
+              "fr": "Déduire les réglages optiques des métadonnées du restauro",
+              "pt": "Deduzir configurações óticas de metadados de restauro"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Share visual references and record separate contributions",
+              "nb": "Del bildereferanser og registrer separate bidrag",
+              "fr": "Partager les références et noter les contributions distinctes",
+              "pt": "Partilhar referências e registar contributos distintos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Credit every shot to the first cinematographer",
+              "nb": "Krediter alle bilder den første filmfotografen",
+              "fr": "Attribuer tous les plans au premier chef opérateur",
+              "pt": "Creditar todos os planos ao primeiro fotógrafo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Wong documents the Doyle-to-Lee handoff and credits confirm both. Plan a new handoff without inventing historical shot assignments.",
+          "nb": "Wong dokumenterer overgangen fra Doyle til Lee, og begge er kreditert. Lag en ny overleveringsplan uten oppdiktede historiske bildelister.",
+          "fr": "Wong documente le relais Doyle-Lee et les crédits confirment les deux. Concevez un relais sans inventer les attributions historiques.",
+          "pt": "Wong documenta transição Doyle-Lee e créditos confirmam ambos. Planeie transição sem inventar atribuições históricas."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "inthemoodforlove-motif",
+        "area": "sound",
+        "prompt": {
+          "en": "How can recurring music express changing relationships?",
+          "nb": "Hvordan kan gjentakende musikk uttrykke skiftende relasjoner?",
+          "fr": "Comment la musique récurrente exprime-t-elle des rapports changeants ?",
+          "pt": "Como pode música recorrente exprimir relações em mudança?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use an unchanged recording regardless of context",
+              "nb": "Bruk uendret opptak uavhengig av kontekst",
+              "fr": "Utiliser un enregistrement inchangé sans égard au contexte",
+              "pt": "Usar gravação inalterada sem considerar contexto"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume every later mix matches the premiere",
+              "nb": "Anta at alle senere mikser tilsvarer premieren",
+              "fr": "Supposer que chaque mixage correspond à la première",
+              "pt": "Supor que toda mistura posterior corresponde à estreia"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Vary an original motif against contrasting scenes",
+              "nb": "Varier et eget motiv mot kontrasterende scener",
+              "fr": "Varier un motif original dans des scènes contrastées",
+              "pt": "Variar motivo original em cenas contrastantes"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Wong describes repetition and the mono Cannes copy. Design an original cue plan and distinguish music credits from edition-specific sound mixes.",
+          "nb": "Wong beskriver gjentakelse og monokopien i Cannes. Lag en egen lydplan og skill musikkreditering fra utgavespesifikke mikser.",
+          "fr": "Wong décrit répétition et copie mono à Cannes. Créez un plan original distinguant crédits musicaux et mixages par édition.",
+          "pt": "Wong descreve repetição e cópia mono em Cannes. Crie plano original distinguindo créditos musicais e misturas por edição."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_yi_yi_2000",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Layered framing, domestic time and preservation",
+      "nb": "Lagdelt bildeutsnitt, hverdagstid og bevaring",
+      "fr": "Cadrage stratifié, temps quotidien et conservation",
+      "pt": "Enquadramento em camadas, tempo quotidiano e preservação"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Yi Yi",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/781-yi-yi"
+      },
+      {
+        "id": "s1",
+        "title": "Yi Yi",
+        "publisher": "New Zealand International Film Festival",
+        "url": "https://www.nziff.co.nz/2008/archive/yi-yi/"
+      },
+      {
+        "id": "s2",
+        "title": "Reflections In and On YI YI",
+        "publisher": "The Criterion Channel / Observations on Film Art",
+        "url": "https://www.criterionchannel.com/reflections-in-and-on-yi-yi/season:1/videos/reflections-in-and-on-yi-yi"
+      },
+      {
+        "id": "s3",
+        "title": "Cannes Classics 2025",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/press/press-releases/cannes-classics-2025/"
+      },
+      {
+        "id": "s4",
+        "title": "Yi Yi: Time and Space",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/current/posts/1516-yi-yi-time-and-space"
+      }
+    ],
+    "questions": [
+      {
+        "id": "yiyi-reflection",
+        "area": "camera",
+        "prompt": {
+          "en": "How can reflections enrich an ordinary interior?",
+          "nb": "Hvordan kan refleksjoner berike et vanlig interiør?",
+          "fr": "Comment les reflets enrichissent-ils un intérieur ordinaire ?",
+          "pt": "Como podem reflexos enriquecer um interior comum?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore character attention when framing reflections",
+              "nb": "Ignorer figurenes oppmerksomhet ved komponering av refleksjoner",
+              "fr": "Ignorer l’attention des personnages dans le cadrage des reflets",
+              "pt": "Ignorar atenção das personagens ao enquadrar reflexos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compose foreground action and reflected space together",
+              "nb": "Komponer forgrunnshandling og reflektert rom sammen",
+              "fr": "Composer ensemble action au premier plan et espace reflété",
+              "pt": "Compor ação em primeiro plano e espaço refletido juntos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume every reflection uses one technical method",
+              "nb": "Anta at alle refleksjoner bruker én teknisk metode",
+              "fr": "Supposer une technique unique pour tous les reflets",
+              "pt": "Supor uma técnica única para todos os reflexos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Formal analysis identifies reflections and layered images in the finished film. Create an original study without inferring undocumented equipment.",
+          "nb": "Formalanalysen identifiserer refleksjoner og lagdelte bilder i ferdig film. Lag en egen studie uten å utlede udokumentert utstyr.",
+          "fr": "L’analyse identifie reflets et couches dans le film fini. Créez une étude sans déduire du matériel non documenté.",
+          "pt": "A análise identifica reflexos e camadas no filme final. Crie estudo sem deduzir equipamento não documentado."
+        },
+        "sourceIds": [
+          "s2",
+          "s4"
+        ]
+      },
+      {
+        "id": "yiyi-time",
+        "area": "research",
+        "prompt": {
+          "en": "How can everyday spaces link several family storylines?",
+          "nb": "Hvordan kan hverdagsrom forbinde flere familiehistorier?",
+          "fr": "Comment les lieux quotidiens relient-ils plusieurs récits familiaux ?",
+          "pt": "Como podem espaços quotidianos ligar várias histórias familiares?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat each location as an unrelated backdrop",
+              "nb": "Behandle hvert sted som en urelatert bakgrunn",
+              "fr": "Traiter chaque lieu comme un fond sans lien",
+              "pt": "Tratar cada local como fundo sem ligação"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume duration alone creates narrative coherence",
+              "nb": "Anta at varighet alene skaper fortellingsmessig sammenheng",
+              "fr": "Supposer que la durée seule crée la cohérence",
+              "pt": "Supor que duração sozinha cria coerência"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map recurring rooms, encounters and transitions",
+              "nb": "Kartlegg tilbakevendende rom, møter og overganger",
+              "fr": "Cartographier lieux récurrents, rencontres et transitions",
+              "pt": "Mapear espaços recorrentes, encontros e transições"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Critical analysis links Yang's characters to time and space. Make an original ensemble map acknowledging the credited creative collaborators.",
+          "nb": "Kritisk analyse knytter Yangs figurer til tid og rom. Lag et eget ensemblekart som anerkjenner de krediterte kreative medarbeiderne.",
+          "fr": "L’analyse relie personnages, temps et espace. Créez une carte originale des relations reconnaissant les collaborateurs crédités.",
+          "pt": "A análise liga personagens, tempo e espaço. Crie mapa original de relações reconhecendo colaboradores creditados."
+        },
+        "sourceIds": [
+          "s0",
+          "s4"
+        ]
+      },
+      {
+        "id": "yiyi-sound",
+        "area": "sound",
+        "prompt": {
+          "en": "What does a sound preservation source actually establish?",
+          "nb": "Hva fastslår egentlig en kilde til lydbevaring?",
+          "fr": "Qu’établit réellement une source de conservation sonore ?",
+          "pt": "O que estabelece realmente uma fonte de preservação sonora?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Distinguish preservation source from original acquisition",
+              "nb": "Skill bevaringskilde fra opprinnelig lydopptak",
+              "fr": "Distinguer source de conservation et captation originale",
+              "pt": "Distinguir fonte de preservação de captação original"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Infer the on-set recorder from a stored Hi8 source",
+              "nb": "Utled opptakeren på settet fra en lagret Hi8-kilde",
+              "fr": "Déduire l’enregistreur du tournage d’une source Hi8",
+              "pt": "Deduzir gravador do local de uma fonte Hi8"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat every restored mix as identical to the original",
+              "nb": "Behandle enhver restaurert miks som identisk med originalen",
+              "fr": "Traiter chaque mixage restauré comme identique à l’original",
+              "pt": "Tratar toda mistura restaurada como idêntica à original"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Cannes records sound digitization from a stored Hi8 source and Tu Duu-chih's restoration. This is not proof of the original on-set equipment.",
+          "nb": "Cannes dokumenterer lyddigitalisering fra lagret Hi8 og Tu Duu-chihs restaurering. Dette er ikke bevis på originalt opptaksutstyr.",
+          "fr": "Cannes documente la numérisation Hi8 et la restauration par Tu Duu-chih. Cela ne prouve pas le matériel de tournage original.",
+          "pt": "Cannes documenta digitalização Hi8 e restauro por Tu Duu-chih. Isso não prova o equipamento original de captação."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_crouching_tiger_hidden_dragon_2000",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "International collaboration, movement and musical timing",
+      "nb": "Internasjonalt samarbeid, bevegelse og musikktiming",
+      "fr": "Collaboration internationale, mouvement et rythme musical",
+      "pt": "Colaboração internacional, movimento e ritmo musical"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Crouching Tiger Hidden Dragon (2000)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/c1c5ce3b-f398-5864-a681-96eb0cb1f1d7/crouching-tiger-hidden-dragon"
+      },
+      {
+        "id": "s1",
+        "title": "Crouching Tiger, Hidden Dragon Delivers High-Flying Adventure",
+        "publisher": "American Cinematographer / American Society of Cinematographers",
+        "url": "https://theasc.com/article/crouching-tiger-hidden-dragon-cinematography/"
+      },
+      {
+        "id": "s2",
+        "title": "Flying Tiger",
+        "publisher": "Directors Guild of America",
+        "url": "https://www.dga.org/craft/dgaq/issues/0702-summer-2007/shot-to-remember-ang-lee"
+      },
+      {
+        "id": "s3",
+        "title": "The 73rd Academy Awards | 2001",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/oscars/ceremonies/2001"
+      },
+      {
+        "id": "s4",
+        "title": "For composer Tan Dun, Yo-Yo Ma proved to be key for ‘Crouching Tiger’ score",
+        "publisher": "Chicago Symphony Orchestra",
+        "url": "https://cso.org/experience/article/21324/for-composer-tan-dun-yo-yo-ma-proved-to-be-ke"
+      }
+    ],
+    "questions": [
+      {
+        "id": "crouchingtigerhiddendragon-partners",
+        "area": "research",
+        "prompt": {
+          "en": "How should an international film document creative partnerships?",
+          "nb": "Hvordan bør en internasjonal film dokumentere kreative partnerskap?",
+          "fr": "Comment documenter les partenariats créatifs d’un film international ?",
+          "pt": "Como documentar parcerias criativas de um filme internacional?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume every partner supplied identical resources",
+              "nb": "Anta at alle partnere bidro med identiske ressurser",
+              "fr": "Supposer que chaque partenaire fournit les mêmes ressources",
+              "pt": "Supor que cada parceiro fornece recursos idênticos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Infer financial shares from the countries listed",
+              "nb": "Utled finansieringsandeler fra oppførte produksjonsland",
+              "fr": "Déduire les parts financières des pays indiqués",
+              "pt": "Deduzir participações financeiras dos países indicados"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map production partners and distinguish craft roles",
+              "nb": "Kartlegg produksjonspartnere og skill fagrollene",
+              "fr": "Cartographier partenaires et distinguer les métiers",
+              "pt": "Mapear parceiros e distinguir funções criativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Institutional credits establish the international production and distinct creative roles. Make a fictional partner map without inventing historical funding shares.",
+          "nb": "Institusjonell kreditering etablerer internasjonal produksjon og ulike fagroller. Lag et fiktivt partnerkart uten oppdiktede finansieringsandeler.",
+          "fr": "Les crédits établissent la coproduction et les métiers distincts. Créez un organigramme fictif sans inventer les parts financières.",
+          "pt": "Créditos estabelecem coprodução e funções distintas. Crie mapa fictício sem inventar participações financeiras."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "crouchingtigerhiddendragon-movement",
+        "area": "camera",
+        "prompt": {
+          "en": "How can framing give movement a lyrical quality?",
+          "nb": "Hvordan kan utsnitt gi bevegelse en lyrisk kvalitet?",
+          "fr": "Comment le cadrage donne-t-il une qualité lyrique au mouvement ?",
+          "pt": "Como pode enquadramento dar qualidade lírica ao movimento?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare safe non-contact movement sketches and shot lengths",
+              "nb": "Sammenlign trygge kontaktfrie bevegelsesskisser og bildelengder",
+              "fr": "Comparer mouvements sûrs sans contact et durées de plans",
+              "pt": "Comparar movimentos seguros sem contacto e durações de planos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Recreate dangerous historical stunt conditions",
+              "nb": "Gjenskap farlige historiske stuntforhold",
+              "fr": "Reproduire des conditions historiques dangereuses de cascades",
+              "pt": "Reproduzir condições históricas perigosas de acrobacias"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat physical performance and digital correction as identical",
+              "nb": "Behandle fysisk skuespill og digital korrigering som identiske",
+              "fr": "Assimiler jeu physique et correction numérique",
+              "pt": "Equiparar interpretação física e correção digital"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Lee and Pau distinguish performance, photography and selective digital correction. Explore rhythm on paper rather than recreating stunts.",
+          "nb": "Lee og Pau skiller skuespill, foto og selektiv digital korrigering. Utforsk rytme på papir fremfor å gjenskape stunt.",
+          "fr": "Lee et Pau distinguent jeu, image et correction numérique. Explorez le rythme sur papier sans reproduire de cascades.",
+          "pt": "Lee e Pau distinguem interpretação, imagem e correção digital. Explore ritmo em papel sem reproduzir acrobacias."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "crouchingtigerhiddendragon-score",
+        "area": "sound",
+        "prompt": {
+          "en": "How can original music respond to the rhythm of editing?",
+          "nb": "Hvordan kan egen musikk reagere på klipperytmen?",
+          "fr": "Comment une musique originale répond-elle au rythme du montage ?",
+          "pt": "Como pode música original responder ao ritmo da montagem?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat composition and location recording as one role",
+              "nb": "Behandle komposisjon og opptakslyd som én fagrolle",
+              "fr": "Assimiler composition et prise de son directe",
+              "pt": "Equiparar composição e gravação de som direto"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Agree themes early and refine cues against the edit",
+              "nb": "Avtal temaer tidlig og tilpass lydinnslag til klippen",
+              "fr": "Convenir des thèmes tôt et affiner les motifs sur le montage",
+              "pt": "Acordar temas cedo e ajustar motivos à montagem"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Copy the original score instead of composing new material",
+              "nb": "Kopier originalmusikken fremfor å lage nytt materiale",
+              "fr": "Copier la partition au lieu de composer du matériau nouveau",
+              "pt": "Copiar banda musical em vez de compor material novo"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Tan Dun describes early discussions and later synchronization challenges. Create an original cue plan distinguishing composition from production sound.",
+          "nb": "Tan Dun beskriver tidlige diskusjoner og senere synkroniseringsutfordringer. Lag en egen lydplan som skiller komposisjon fra opptakslyd.",
+          "fr": "Tan Dun évoque discussions précoces et synchronisation. Créez un plan original distinguant composition et prise de son.",
+          "pt": "Tan Dun descreve discussões iniciais e sincronização. Crie plano original distinguindo composição de gravação sonora."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_spirited_away_2001",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Hand-drawn animation, digital finishing and color design",
+      "nb": "Håndtegnet animasjon, digital ferdigstilling og fargedesign",
+      "fr": "Animation dessinée, finition numérique et conception chromatique",
+      "pt": "Animação desenhada à mão, acabamento digital e design de cor"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Spirited Away (2001)",
+        "publisher": "Studio Ghibli",
+        "url": "https://www.ghibli.jp/works/chihiro/"
+      },
+      {
+        "id": "s1",
+        "title": "Hayao Miyazaki's Spirited Trip to the U.S.",
+        "publisher": "Animation World Network",
+        "url": "https://www.awn.com/animationworld/hayao-miyazakis-spirited-trip-us"
+      },
+      {
+        "id": "s2",
+        "title": "Midnight Eye interview: Hayao Miyazaki",
+        "publisher": "Midnight Eye",
+        "url": "https://www.midnighteye.com/interviews/hayao-miyazaki/"
+      },
+      {
+        "id": "s3",
+        "title": "Studio Ghibli Production Diary — April/May/June 2001",
+        "publisher": "Studio Ghibli",
+        "url": "https://www.ghibli.jp/storage/diary/000082/"
+      },
+      {
+        "id": "s4",
+        "title": "Studio Ghibli Publishing Diary — October 2001",
+        "publisher": "Studio Ghibli",
+        "url": "https://www.ghibli.jp/shuppan/old/diary/d_list_10.html"
+      },
+      {
+        "id": "s5",
+        "title": "Spirited Away — Studio Ghibli / Disney official",
+        "publisher": "Walt Disney Studios Japan",
+        "url": "https://www.waltdisneystudios.jp/studio/ghibli/0252"
+      },
+      {
+        "id": "s6",
+        "title": "The 75th Academy Awards — Animated Feature Film",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/oscars/ceremonies/2003/J"
+      }
+    ],
+    "questions": [
+      {
+        "id": "spiritedaway-pipeline",
+        "area": "animation",
+        "prompt": {
+          "en": "How can hand-drawn animation use digital finishing?",
+          "nb": "Hvordan kan håndtegnet animasjon bruke digital ferdigstilling?",
+          "fr": "Comment l’animation dessinée utilise-t-elle une finition numérique ?",
+          "pt": "Como pode animação desenhada à mão usar acabamento digital?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Separate drawing, scanning, coloring and compositing",
+              "nb": "Skill tegning, skanning, fargelegging og kompositering",
+              "fr": "Distinguer dessin, numérisation, couleur et compositing",
+              "pt": "Distinguir desenho, digitalização, cor e composição"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume digital coloring implies entirely 3D animation",
+              "nb": "Anta at digital fargelegging betyr fullstendig 3D-animasjon",
+              "fr": "Supposer que la couleur numérique implique une animation 3D",
+              "pt": "Supor que cor digital implica animação inteiramente 3D"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat finishing as traditional physical cel painting",
+              "nb": "Behandle ferdigstillingen som tradisjonell fysisk cellefargelegging",
+              "fr": "Traiter la finition comme peinture sur cellulos physiques",
+              "pt": "Tratar acabamento como pintura tradicional de acetatos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Ghibli documents hand drawings and digital finishing without traditional cels. Plan a distinct workflow separating animation from finishing.",
+          "nb": "Ghibli dokumenterer håndtegninger og digital ferdigstilling uten tradisjonelle celler. Lag en egen flyt som skiller animasjon fra ferdigstilling.",
+          "fr": "Ghibli documente dessins manuels et finition numérique sans cellulos. Concevez une chaîne séparant animation et finition.",
+          "pt": "Ghibli documenta desenhos manuais e acabamento digital sem acetatos. Crie fluxo separando animação de acabamento."
+        },
+        "sourceIds": [
+          "s1",
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "spiritedaway-scope",
+        "area": "research",
+        "prompt": {
+          "en": "How can an expanding shot count be managed?",
+          "nb": "Hvordan kan et voksende antall bilder håndteres?",
+          "fr": "Comment gérer un nombre croissant de plans ?",
+          "pt": "Como gerir um número crescente de planos?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Add work without updating the production schedule",
+              "nb": "Legg til arbeid uten å oppdatere produksjonsplanen",
+              "fr": "Ajouter du travail sans actualiser le calendrier",
+              "pt": "Adicionar trabalho sem atualizar calendário de produção"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Revise workload estimates and communicate dependencies",
+              "nb": "Revider arbeidsmengdeanslag og kommuniser avhengigheter",
+              "fr": "Réviser les charges et communiquer les dépendances",
+              "pt": "Rever estimativas de trabalho e comunicar dependências"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Freeze the initial storyboard estimate permanently",
+              "nb": "Lås det første storyboardanslaget permanent",
+              "fr": "Figer définitivement l’estimation initiale du storyboard",
+              "pt": "Fixar permanentemente estimativa inicial do storyboard"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Miyazaki describes beginning before storyboard completion and an expanded final shot count. Model a fictional schedule that tracks scope changes.",
+          "nb": "Miyazaki beskriver oppstart før storyboardet var ferdig og et økt antall bilder. Lag en fiktiv plan som følger omfangsendringer.",
+          "fr": "Miyazaki décrit le démarrage avant la fin du storyboard et davantage de plans. Modélisez un calendrier suivant les changements.",
+          "pt": "Miyazaki descreve início antes de finalizar storyboard e aumento de planos. Modele calendário que acompanhe alterações."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "spiritedaway-color",
+        "area": "animation",
+        "prompt": {
+          "en": "How should color design guide animation finishing?",
+          "nb": "Hvordan bør fargedesign styre animasjonens ferdigstilling?",
+          "fr": "Comment la couleur guide-t-elle la finition animée ?",
+          "pt": "Como deve design de cor orientar acabamento animado?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose every frame's palette without shared references",
+              "nb": "Velg hvert bildes palett uten felles referanser",
+              "fr": "Choisir chaque palette sans références communes",
+              "pt": "Escolher paleta de cada quadro sem referências comuns"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Credit all digital color work to the director alone",
+              "nb": "Krediter alt digitalt fargearbeid regissøren alene",
+              "fr": "Créditer toute la couleur numérique au seul réalisateur",
+              "pt": "Creditar toda cor digital apenas ao realizador"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Create shared original references for characters and backgrounds",
+              "nb": "Lag felles egne referanser for figurer og bakgrunner",
+              "fr": "Créer des références originales communes aux personnages et décors",
+              "pt": "Criar referências originais comuns a personagens e fundos"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The Ghibli diary describes Yasuda's computer-based color choices. Build a shared color plan recognizing distinct art, color and image roles.",
+          "nb": "Ghiblis dagbok beskriver Yasudas databaserte fargevalg. Lag en felles fargeplan som anerkjenner ulike kunst-, farge- og bildefag.",
+          "fr": "Le journal Ghibli décrit les choix numériques de Yasuda. Créez un plan partagé reconnaissant les métiers distincts.",
+          "pt": "Diário Ghibli descreve escolhas digitais de Yasuda. Crie plano partilhado reconhecendo funções distintas."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_amelie_2001",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Location design, poetic effects and sound balance",
+      "nb": "Stedsscenografi, poetiske effekter og lydbalanse",
+      "fr": "Décors en extérieur, effets poétiques et équilibre sonore",
+      "pt": "Cenografia em exteriores, efeitos poéticos e equilíbrio sonoro"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Le Fabuleux Destin d’Amélie Poulain",
+        "publisher": "Jean-Pierre Jeunet",
+        "url": "https://www.jpjeunet.com/filmographie/le-fabuleux-destin-damelie-poulain/"
+      },
+      {
+        "id": "s1",
+        "title": "Amélie",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/2828d25a-1b4d-517f-9da7-99cac2e45c2e/amelie"
+      },
+      {
+        "id": "s2",
+        "title": "Amelie from Montmartre",
+        "publisher": "UniFrance",
+        "url": "https://en.unifrance.org/movie/20864/amelie-from-montmartre"
+      },
+      {
+        "id": "s3",
+        "title": "Den fabelagtige Amélie fra Montmartre",
+        "publisher": "Danish Film Institute",
+        "url": "https://www.dfi.dk/is/viden-om-film/filmdatabasen/film/32517"
+      },
+      {
+        "id": "s4",
+        "title": "Amélie",
+        "publisher": "Film France-CNC",
+        "url": "https://www.filmfrance.net/en/once-upon-a-time/amelie/"
+      },
+      {
+        "id": "s5",
+        "title": "Amélie: Fabricating a New French Fable",
+        "publisher": "Live Design",
+        "url": "https://www.livedesignonline.com/amelie-fabricating-a-new-french-fable"
+      },
+      {
+        "id": "s6",
+        "title": "The Editors Guild Magazine: Amélie soundtrack",
+        "publisher": "Motion Picture Editors Guild",
+        "url": "https://kinogammeproductions.com/?p=1585"
+      },
+      {
+        "id": "s7",
+        "title": "Awards 2001",
+        "publisher": "European Film Academy",
+        "url": "https://www.europeanfilmawards.eu/award-edition/awards-2001/"
+      },
+      {
+        "id": "s8",
+        "title": "The 74th Academy Awards",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/oscars/ceremonies/2002/K--O"
+      },
+      {
+        "id": "s9",
+        "title": "Amélie director Jean-Pierre Jeunet looks back on the classic",
+        "publisher": "People",
+        "url": "https://people.com/amelie-director-on-making-of-audrey-tautou-movie-valentines-day-exclusive-8572265"
+      }
+    ],
+    "questions": [
+      {
+        "id": "amelie-locations",
+        "area": "camera",
+        "prompt": {
+          "en": "How can city locations support a stylized atmosphere?",
+          "nb": "Hvordan kan bymiljøer støtte en stilisert atmosfære?",
+          "fr": "Comment les lieux urbains soutiennent-ils une atmosphère stylisée ?",
+          "pt": "Como podem locais urbanos apoiar atmosfera estilizada?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Change public spaces without appropriate permissions",
+              "nb": "Endre offentlige rom uten nødvendige tillatelser",
+              "fr": "Modifier les espaces publics sans autorisations",
+              "pt": "Alterar espaços públicos sem permissões adequadas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Coordinate a distinct palette with permitted location dressing",
+              "nb": "Samordne en egen palett med tillatt stedsscenografi",
+              "fr": "Coordonner une palette distincte et l’aménagement autorisé des lieux",
+              "pt": "Coordenar paleta distinta e decoração autorizada dos locais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat stylized imagery as neutral documentary evidence",
+              "nb": "Behandle stiliserte bilder som nøytralt dokumentarisk belegg",
+              "fr": "Traiter les images stylisées comme preuves documentaires neutres",
+              "pt": "Tratar imagens estilizadas como prova documental neutra"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Jeunet describes redressing locations for a palette and Film France maps actual Paris locations. Design a permitted original study distinguishing fiction and evidence.",
+          "nb": "Jeunet beskriver tilpasning av steder til en palett, og Film France kartlegger opptakssteder i Paris. Lag en tillatt egen studie som skiller fiksjon og belegg.",
+          "fr": "Jeunet décrit l’aménagement des lieux et Film France recense les lieux parisiens. Créez une étude autorisée distinguant fiction et preuve.",
+          "pt": "Jeunet descreve decoração dos locais e Film France mapeia Paris. Crie estudo autorizado distinguindo ficção de prova."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "amelie-imagination",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a visual effect express a character's imagination?",
+          "nb": "Hvordan kan en visuell effekt uttrykke en figurs fantasi?",
+          "fr": "Comment un effet visuel exprime-t-il l’imagination d’un personnage ?",
+          "pt": "Como pode um efeito visual exprimir imaginação de uma personagem?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Add unrelated effects to every shot mechanically",
+              "nb": "Legg til urelaterte effekter i hvert bilde mekanisk",
+              "fr": "Ajouter mécaniquement des effets sans lien à chaque plan",
+              "pt": "Adicionar mecanicamente efeitos sem relação a cada plano"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the film's recognizable effect imagery exactly",
+              "nb": "Kopier filmens gjenkjennelige effektbilder nøyaktig",
+              "fr": "Copier exactement les effets reconnaissables du film",
+              "pt": "Copiar exatamente efeitos reconhecíveis do filme"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Storyboard an original effect with a clear narrative purpose",
+              "nb": "Lag storyboard for en egen effekt med tydelig fortellingsformål",
+              "fr": "Préparer un storyboard d’effet original à fonction narrative claire",
+              "pt": "Criar storyboard de efeito original com função narrativa clara"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Jeunet describes visualizing feelings and digitally changing scenery. Create an original imaginative insert rather than copying the historical film.",
+          "nb": "Jeunet beskriver visualisering av følelser og digital endring av miljøet. Lag et eget fantasifullt innslag fremfor å kopiere filmen.",
+          "fr": "Jeunet décrit la visualisation des émotions et les décors modifiés. Créez un insert original sans copier le film.",
+          "pt": "Jeunet descreve visualização de emoções e cenários modificados. Crie inserção original sem copiar o filme."
+        },
+        "sourceIds": [
+          "s0",
+          "s5"
+        ]
+      },
+      {
+        "id": "amelie-mix",
+        "area": "sound",
+        "prompt": {
+          "en": "How can narration, music and location sound be balanced?",
+          "nb": "Hvordan kan fortellerstemme, musikk og stedslyd balanseres?",
+          "fr": "Comment équilibrer narration, musique et son direct ?",
+          "pt": "Como equilibrar narração, música e som direto?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare original cues with dialogue and ambient recordings",
+              "nb": "Sammenlign egne lydinnslag med dialog og miljøopptak",
+              "fr": "Comparer motifs originaux, dialogue et sons ambiants",
+              "pt": "Comparar motivos originais, diálogo e gravações ambientais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Replace all location sound regardless of its quality",
+              "nb": "Erstatt all stedslyd uansett kvalitet",
+              "fr": "Remplacer tout son direct quelle que soit sa qualité",
+              "pt": "Substituir todo som direto independentemente da qualidade"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Attribute the complete soundtrack to the composer alone",
+              "nb": "Tilskriv hele lydsporet komponisten alene",
+              "fr": "Attribuer toute la bande sonore au seul compositeur",
+              "pt": "Atribuir toda banda sonora apenas ao compositor"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Arnardi describes retained production sound and precise balances with narration and music. Make an original mix study with separate craft credits.",
+          "nb": "Arnardi beskriver bevart opptakslyd og presis balanse med fortellerstemme og musikk. Lag en egen miksstudie med separate fagkrediteringer.",
+          "fr": "Arnardi décrit le son direct conservé et les équilibres précis. Créez une étude de mixage aux crédits distincts.",
+          "pt": "Arnardi descreve som direto preservado e equilíbrios precisos. Crie estudo de mistura com créditos distintos."
+        },
+        "sourceIds": [
+          "s0",
+          "s6"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_city_of_god_2002",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Performance workshops, mixed-format images and editorial records",
+      "nb": "Skuespillerverksteder, blandede filmformater og klippebelegg",
+      "fr": "Ateliers de jeu, images multiformats et dossiers de montage",
+      "pt": "Oficinas de interpretação, imagens multiformato e registos de montagem"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The City of God phenomenon: a new interview with Fernando Meirelles",
+        "publisher": "BFI",
+        "url": "https://www.bfi.org.uk/interviews/city-god-phenomenon-new-interview-with-fernando-meirelles"
+      },
+      {
+        "id": "s1",
+        "title": "Sessão ABC 2002",
+        "publisher": "ABCine — Associação Brasileira de Cinematografia",
+        "url": "https://abcine.org.br/eventos/sessao-abc-2002/"
+      },
+      {
+        "id": "s2",
+        "title": "Entrevista com César Charlone, ABC",
+        "publisher": "ABCine — Associação Brasileira de Cinematografia",
+        "url": "https://abcine.org.br/entrevistas/entrevista-com-cesar-charlone-abc/"
+      },
+      {
+        "id": "s3",
+        "title": "City of God — BFI Southbank Programme Notes",
+        "publisher": "BFI Documentation Unit / Sight and Sound",
+        "url": "https://bfidatadigipres.github.io/re-releases/2024/02/23/city-of-god/"
+      },
+      {
+        "id": "s4",
+        "title": "Cidade de Deus",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/cidade-de-deus/"
+      },
+      {
+        "id": "s5",
+        "title": "Cidade de Deus",
+        "publisher": "Danish Film Institute",
+        "url": "https://www.dfi.dk/en/viden-om-film/filmdatabasen/film/city-god"
+      }
+    ],
+    "questions": [
+      {
+        "id": "cityofgod-rehearsal",
+        "area": "research",
+        "prompt": {
+          "en": "How can rehearsed improvisation inform an original scene?",
+          "nb": "Hvordan kan innøvd improvisasjon informere en egen scene?",
+          "fr": "Comment l’improvisation répétée nourrit-elle une scène originale ?",
+          "pt": "Como pode improvisação ensaiada informar uma cena original?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Expose young performers to actual dangerous conditions",
+              "nb": "Utsett unge skuespillere for reelt farlige forhold",
+              "fr": "Exposer les jeunes acteurs à des conditions dangereuses",
+              "pt": "Expor jovens atores a condições perigosas reais"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore the contribution of performance collaborators",
+              "nb": "Ignorer bidrag fra skuespillermedarbeidere",
+              "fr": "Ignorer les contributions des collaborateurs du jeu",
+              "pt": "Ignorar contributos dos colaboradores de interpretação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use agreed exercises, consent and documented revisions",
+              "nb": "Bruk avtalte øvelser, samtykke og dokumenterte revisjoner",
+              "fr": "Utiliser exercices convenus, consentement et révisions documentées",
+              "pt": "Usar exercícios acordados, consentimento e revisões documentadas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Meirelles describes Lund's contribution and long acting workshops. Plan a safe original exercise with informed consent and no reenactment of historical risks.",
+          "nb": "Meirelles beskriver Lunds bidrag og lange skuespillerverksteder. Lag en trygg egen øvelse med informert samtykke uten gjenskaping av historisk risiko.",
+          "fr": "Meirelles décrit l’apport de Lund et les ateliers prolongés. Concevez un exercice sûr et consenti sans reproduire les risques historiques.",
+          "pt": "Meirelles descreve contributo de Lund e oficinas prolongadas. Crie exercício seguro e consentido sem reproduzir riscos históricos."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "cityofgod-formats",
+        "area": "camera",
+        "prompt": {
+          "en": "How can mixed-format images maintain visual continuity?",
+          "nb": "Hvordan kan bilder i blandede formater bevare visuell kontinuitet?",
+          "fr": "Comment des images multiformats préservent-elles les raccords ?",
+          "pt": "Como podem imagens multiformato preservar continuidade visual?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test visual matching and preserve distinct format records",
+              "nb": "Test visuelt samsvar og bevar separate formatoppføringer",
+              "fr": "Tester les raccords et conserver les données de chaque format",
+              "pt": "Testar correspondência e preservar registos de cada formato"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume different formats always produce identical images",
+              "nb": "Anta at ulike formater alltid gir identiske bilder",
+              "fr": "Supposer que les formats différents donnent des images identiques",
+              "pt": "Supor que formatos diferentes produzem imagens idênticas"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Force different historical estimates into one exact percentage",
+              "nb": "Tving ulike historiske anslag til én eksakt prosent",
+              "fr": "Forcer les estimations divergentes en un pourcentage exact",
+              "pt": "Forçar estimativas divergentes a uma percentagem exata"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "ABC documents Super 16 and 35 mm work; Charlone's later estimate differs from the contemporary report. Plan a matching test and preserve the discrepancy.",
+          "nb": "ABC dokumenterer Super 16 og 35 mm; Charlones senere anslag avviker fra samtidsrapporten. Lag en samsvarstest og bevar avviket.",
+          "fr": "ABC documente Super 16 et 35 mm ; l’estimation ultérieure de Charlone diverge. Concevez un test et conservez l’écart.",
+          "pt": "ABC documenta Super 16 e 35 mm; estimativa posterior de Charlone diverge. Crie teste e preserve discrepância."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "cityofgod-credits",
+        "area": "research",
+        "prompt": {
+          "en": "How should differing institutional records be reconciled?",
+          "nb": "Hvordan bør ulike institusjonelle filmoppføringer avstemmes?",
+          "fr": "Comment rapprocher des notices institutionnelles divergentes ?",
+          "pt": "Como conciliar registos institucionais divergentes?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Replace co-director credits with one unsupported attribution",
+              "nb": "Erstatt medregikreditering med én udokumentert attribusjon",
+              "fr": "Remplacer la coréalisation par une attribution non étayée",
+              "pt": "Substituir créditos de correalização por atribuição sem prova"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Preserve each runtime and collaborative credit with its source",
+              "nb": "Bevar hver spilletid og samarbeidskreditering med sin kilde",
+              "fr": "Conserver chaque durée et crédit collectif avec sa source",
+              "pt": "Preservar cada duração e crédito coletivo com a sua fonte"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Infer precise editorial cuts from catalogue runtime differences",
+              "nb": "Utled presise klipp fra katalogenes spilletidsforskjeller",
+              "fr": "Déduire des coupes précises d’écarts de durée",
+              "pt": "Deduzir cortes precisos de diferenças de duração"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Cannes lists 135 minutes while BFI and DFI list 130. Preserve catalogue provenance and directing collaboration without inventing causes for the differences.",
+          "nb": "Cannes oppgir 135 minutter mens BFI og DFI oppgir 130. Bevar katalogproveniens og regisamarbeid uten oppdiktede årsaker til forskjellene.",
+          "fr": "Cannes indique 135 minutes contre 130 au BFI et DFI. Conservez provenance et coréalisation sans inventer les causes des écarts.",
+          "pt": "Cannes indica 135 minutos contra 130 no BFI e DFI. Preserve proveniência e correalização sem inventar causas das diferenças."
+        },
+        "sourceIds": [
+          "s0",
+          "s3",
+          "s4",
+          "s5"
+        ]
+      }
+    ]
   }
 ] as const satisfies readonly SourceBackedCaseWorkshop[];
