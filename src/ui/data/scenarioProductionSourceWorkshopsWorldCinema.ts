@@ -4899,5 +4899,939 @@ export const worldCinemaSourceWorkshops = [
         ]
       }
     ]
+  },
+  {
+    "scenarioId": "scenario_broker_2022",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Road locations, parallel rewriting and weather continuity",
+      "nb": "Reisesteder, parallell manusrevisjon og værkontinuitet",
+      "fr": "Lieux itinérants, réécriture parallèle et raccords météo",
+      "pt": "Locais de viagem, reescrita paralela e continuidade meteorológica"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "BROKER",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/broker/"
+      },
+      {
+        "id": "s4",
+        "title": "KOFIC Korean Cinema Today: Broker location-production report",
+        "publisher": "Korean Film Council / KoBiz",
+        "url": "https://koreanfilm.or.kr/eng/ebook/magazine/koreanCinemaToday41/1/index-1.html"
+      },
+      {
+        "id": "s5",
+        "title": "I Wanted the Story to Start in a Downpour and End With Waves: Hirokazu Kore-eda on Broker",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/118011-interview-hirokazu-kore-eda-broker/"
+      },
+      {
+        "id": "s6",
+        "title": "Filming Spots of the Movie Broker",
+        "publisher": "Korea Tourism Organization / VisitKorea",
+        "url": "https://english.visitkorea.or.kr/svc/whereToGo/hdrdslt/hdrdsltView.do?crsSn=393082"
+      }
+    ],
+    "questions": [
+      {
+        "id": "broker-route",
+        "area": "research",
+        "prompt": {
+          "en": "The production report describes overwhelmingly location-based filming along the Korean route. Which approach would you choose for a new production exercise?",
+          "nb": "Produksjonsrapporten beskriver overveiende stedsopptak langs den koreanske ruten. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le rapport décrit un tournage essentiellement en décors naturels le long du trajet coréen. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O relatório descreve filmagem sobretudo em locais reais ao longo do percurso coreano. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Group scenes by location while tracking story order",
+              "nb": "Grupper scener etter sted og hold styr på fortellingens rekkefølge",
+              "fr": "Regrouper les scènes par lieu en suivant l’ordre narratif",
+              "pt": "Agrupar cenas por local mantendo a ordem narrativa"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Shoot every scene in script order regardless of travel",
+              "nb": "Film alle scener i manusrekkefølge uansett reisevei",
+              "fr": "Tourner dans l’ordre du scénario malgré les déplacements",
+              "pt": "Filmar na ordem do argumento apesar das deslocações"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume all locations have identical logistical needs",
+              "nb": "Anta at alle steder har identiske logistikkbehov",
+              "fr": "Supposer que tous les lieux ont les mêmes besoins logistiques",
+              "pt": "Supor que todos os locais têm necessidades logísticas idênticas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The production report describes overwhelmingly location-based filming along the Korean route. A practical exercise would be to: Group scenes by location while tracking story order.",
+          "nb": "Produksjonsrapporten beskriver overveiende stedsopptak langs den koreanske ruten. En praktisk øvelse vil være å: Grupper scener etter sted og hold styr på fortellingens rekkefølge.",
+          "fr": "Le rapport décrit un tournage essentiellement en décors naturels le long du trajet coréen. Un exercice pratique consisterait à : Regrouper les scènes par lieu en suivant l’ordre narratif.",
+          "pt": "O relatório descreve filmagem sobretudo em locais reais ao longo do percurso coreano. Um exercício prático consistiria em: Agrupar cenas por local mantendo a ordem narrativa."
+        },
+        "sourceIds": [
+          "s4",
+          "s6"
+        ]
+      },
+      {
+        "id": "broker-rewrite",
+        "area": "research",
+        "prompt": {
+          "en": "Kore-eda describes editing and rewriting alongside shooting. Which approach would you choose for a new production exercise?",
+          "nb": "Kore-eda beskriver klipping og omskriving parallelt med opptak. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Kore-eda décrit le montage et la réécriture en parallèle du tournage. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Kore-eda descreve montagem e reescrita em paralelo com a filmagem. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Discard continuity notes when rewriting an ending",
+              "nb": "Kast kontinuitetsnotater når slutten omskrives",
+              "fr": "Écarter les notes de raccord en réécrivant la fin",
+              "pt": "Descartar notas de continuidade ao reescrever o final"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Review rough scenes before revising later performances",
+              "nb": "Gjennomgå grovklipp før senere skuespillerarbeid revideres",
+              "fr": "Revoir les scènes prémontées avant de modifier le jeu ultérieur",
+              "pt": "Rever cenas preliminares antes de rever atuações posteriores"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Prevent the editor from seeing unfinished material",
+              "nb": "Hindre klipperen i å se uferdig materiale",
+              "fr": "Empêcher le monteur de voir les images inachevées",
+              "pt": "Impedir o montador de ver material inacabado"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Kore-eda describes editing and rewriting alongside shooting. A practical exercise would be to: Review rough scenes before revising later performances.",
+          "nb": "Kore-eda beskriver klipping og omskriving parallelt med opptak. En praktisk øvelse vil være å: Gjennomgå grovklipp før senere skuespillerarbeid revideres.",
+          "fr": "Kore-eda décrit le montage et la réécriture en parallèle du tournage. Un exercice pratique consisterait à : Revoir les scènes prémontées avant de modifier le jeu ultérieur.",
+          "pt": "Kore-eda descreve montagem e reescrita em paralelo com a filmagem. Um exercício prático consistiria em: Rever cenas preliminares antes de rever atuações posteriores."
+        },
+        "sourceIds": [
+          "s5",
+          "s0"
+        ]
+      },
+      {
+        "id": "broker-weather",
+        "area": "camera",
+        "prompt": {
+          "en": "The director describes water and weather as part of the visual concept. Which approach would you choose for a new production exercise?",
+          "nb": "Regissøren beskriver vann og vær som del av bildekonseptet. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le réalisateur décrit l’eau et la météo comme éléments du concept visuel. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O realizador descreve água e tempo como parte do conceito visual. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Remove all water imagery before testing",
+              "nb": "Fjern alle vannmotiver før prøver",
+              "fr": "Supprimer toutes les images d’eau avant les essais",
+              "pt": "Eliminar todas as imagens de água antes dos testes"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat weather as irrelevant to visual continuity",
+              "nb": "Behandle vær som irrelevant for visuell kontinuitet",
+              "fr": "Traiter la météo comme sans effet sur les raccords",
+              "pt": "Tratar o tempo como irrelevante para a continuidade visual"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Track weather and reflections across connected scenes",
+              "nb": "Følg vær og refleksjoner i sammenhengende scener",
+              "fr": "Suivre météo et reflets entre scènes raccordées",
+              "pt": "Acompanhar tempo e reflexos entre cenas ligadas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The director describes water and weather as part of the visual concept. A practical exercise would be to: Track weather and reflections across connected scenes.",
+          "nb": "Regissøren beskriver vann og vær som del av bildekonseptet. En praktisk øvelse vil være å: Følg vær og refleksjoner i sammenhengende scener.",
+          "fr": "Le réalisateur décrit l’eau et la météo comme éléments du concept visuel. Un exercice pratique consisterait à : Suivre météo et reflets entre scènes raccordées.",
+          "pt": "O realizador descreve água e tempo como parte do conceito visual. Um exercício prático consistiria em: Acompanhar tempo e reflexos entre cenas ligadas."
+        },
+        "sourceIds": [
+          "s5",
+          "s4"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_compartment_no_6_2021",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Confined-space staging, film economy and train sound",
+      "nb": "Iscenesettelse i trange rom, filmøkonomi og toglyd",
+      "fr": "Mise en scène exiguë, économie de pellicule et son ferroviaire",
+      "pt": "Encenação em espaço reduzido, economia de película e som ferroviário"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "HYTTI NRO 6 (COMPARTMENT NO. 6)",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/hytti-nro-6/"
+      },
+      {
+        "id": "s1",
+        "title": "Strangers make connections on a train in Juho Kuosmanen's Cannes-contending Compartment No.6, filmed in 2-perf on Kodak 35mm",
+        "publisher": "Kodak",
+        "url": "https://www.kodak.com/en/motion/blog-post/compartment-no-6/"
+      },
+      {
+        "id": "s2",
+        "title": "Compartment No. 6 — Cannes press kit",
+        "publisher": "Aamu Film Company / Festival de Cannes",
+        "url": "https://cdn.festival-cannes.com/media/uploads/2023/03/124120.pdf"
+      }
+    ],
+    "questions": [
+      {
+        "id": "compartment-space",
+        "area": "camera",
+        "prompt": {
+          "en": "The crew worked in cramped train interiors with a small team and concealed practical lighting. Which approach would you choose for a new production exercise?",
+          "nb": "Teamet arbeidet i trange toginteriører med liten stab og skjult praktisk belysning. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "L’équipe travaillait dans des intérieurs de train exigus avec des éclairages discrets. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A equipa trabalhou em interiores ferroviários apertados com iluminação discreta. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse camera and actor paths in a compartment mock-up",
+              "nb": "Øv kamera- og skuespillerbaner i en kupémodell",
+              "fr": "Répéter les déplacements dans une maquette de compartiment",
+              "pt": "Ensaiar movimentos de câmara e atores numa maquete de compartimento"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Schedule a full-size crew inside every compartment",
+              "nb": "Planlegg full stab inne i hver kupé",
+              "fr": "Prévoir toute l’équipe dans chaque compartiment",
+              "pt": "Planear toda a equipa dentro de cada compartimento"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose angles without testing available space",
+              "nb": "Velg vinkler uten å prøve tilgjengelig plass",
+              "fr": "Choisir les angles sans tester l’espace disponible",
+              "pt": "Escolher ângulos sem testar o espaço disponível"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The crew worked in cramped train interiors with a small team and concealed practical lighting. A practical exercise would be to: Rehearse camera and actor paths in a compartment mock-up.",
+          "nb": "Teamet arbeidet i trange toginteriører med liten stab og skjult praktisk belysning. En praktisk øvelse vil være å: Øv kamera- og skuespillerbaner i en kupémodell.",
+          "fr": "L’équipe travaillait dans des intérieurs de train exigus avec des éclairages discrets. Un exercice pratique consisterait à : Répéter les déplacements dans une maquette de compartiment.",
+          "pt": "A equipa trabalhou em interiores ferroviários apertados com iluminação discreta. Um exercício prático consistiria em: Ensaiar movimentos de câmara e atores numa maquete de compartimento."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "compartment-stock",
+        "area": "camera",
+        "prompt": {
+          "en": "Passi documents a two-perforation 35 mm capture workflow. Which approach would you choose for a new production exercise?",
+          "nb": "Passi dokumenterer en 35 mm-opptaksflyt med to perforeringer. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Passi documente une chaîne de capture 35 mm à deux perforations. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Passi documenta captação em 35 mm de duas perfurações. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume all 35 mm workflows consume equal stock",
+              "nb": "Anta at alle 35 mm-arbeidsflyter bruker like mye film",
+              "fr": "Supposer que tous les procédés 35 mm consomment autant",
+              "pt": "Supor que todos os processos de 35 mm consomem o mesmo"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare stock consumption and finishing requirements before choosing format",
+              "nb": "Sammenlign filmforbruk og etterarbeidskrav før formatvalg",
+              "fr": "Comparer consommation de pellicule et finition avant le choix",
+              "pt": "Comparar consumo de película e requisitos de acabamento antes da escolha"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Infer film consumption only from the runtime",
+              "nb": "Utled filmforbruk bare fra spilletiden",
+              "fr": "Déduire la consommation seulement de la durée du film",
+              "pt": "Deduzir consumo apenas da duração do filme"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Passi documents a two-perforation 35 mm capture workflow. A practical exercise would be to: Compare stock consumption and finishing requirements before choosing format.",
+          "nb": "Passi dokumenterer en 35 mm-opptaksflyt med to perforeringer. En praktisk øvelse vil være å: Sammenlign filmforbruk og etterarbeidskrav før formatvalg.",
+          "fr": "Passi documente une chaîne de capture 35 mm à deux perforations. Un exercice pratique consisterait à : Comparer consommation de pellicule et finition avant le choix.",
+          "pt": "Passi documenta captação em 35 mm de duas perfurações. Um exercício prático consistiria em: Comparar consumo de película e requisitos de acabamento antes da escolha."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "compartment-sound",
+        "area": "sound",
+        "prompt": {
+          "en": "The press kit distinguishes the confined setting from the Dolby Atmos presentation format. Which approach would you choose for a new production exercise?",
+          "nb": "Pressematerialet skiller det trange miljøet fra Dolby Atmos-visningsformatet. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le dossier distingue le décor exigu du format de diffusion Dolby Atmos. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O dossier distingue o espaço apertado do formato de exibição Dolby Atmos. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Infer the recording microphones from the exhibition format",
+              "nb": "Utled opptaksmikrofoner fra visningsformatet",
+              "fr": "Déduire les microphones du format de diffusion",
+              "pt": "Deduzir microfones do formato de exibição"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Erase all carriage ambience to simplify the mix",
+              "nb": "Fjern all toglyd for å forenkle miksen",
+              "fr": "Effacer toute ambiance du train pour simplifier le mix",
+              "pt": "Eliminar todo ambiente ferroviário para simplificar a mistura"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test dialogue against layered carriage ambience",
+              "nb": "Prøv dialog mot lagdelt kupé- og toglyd",
+              "fr": "Tester les dialogues avec des couches d’ambiance ferroviaire",
+              "pt": "Testar diálogo com camadas de ambiente ferroviário"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The press kit distinguishes the confined setting from the Dolby Atmos presentation format. A practical exercise would be to: Test dialogue against layered carriage ambience.",
+          "nb": "Pressematerialet skiller det trange miljøet fra Dolby Atmos-visningsformatet. En praktisk øvelse vil være å: Prøv dialog mot lagdelt kupé- og toglyd.",
+          "fr": "Le dossier distingue le décor exigu du format de diffusion Dolby Atmos. Un exercice pratique consisterait à : Tester les dialogues avec des couches d’ambiance ferroviaire.",
+          "pt": "O dossier distingue o espaço apertado do formato de exibição Dolby Atmos. Um exercício prático consistiria em: Testar diálogo com camadas de ambiente ferroviário."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_eight_mountains_2022",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Mountain logistics, vertical composition and block production",
+      "nb": "Fjellogistikk, vertikal komposisjon og blokkproduksjon",
+      "fr": "Logistique de montagne, composition verticale et tournage par blocs",
+      "pt": "Logística de montanha, composição vertical e filmagem por blocos"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "LE OTTO MONTAGNE (THE EIGHT MOUNTAINS)",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/le-otto-montagne/"
+      },
+      {
+        "id": "s1",
+        "title": "MOUNTAIN MEN Ruben Impens on The Eight Mountains",
+        "publisher": "Belgian Society of Cinematographers",
+        "url": "https://www.sbcine.be/?p=12053"
+      },
+      {
+        "id": "s4",
+        "title": "Shooting at 3,300 Meters: An interview with the creators of The Eight Mountains",
+        "publisher": "Screen Slate",
+        "url": "https://www.screenslate.com/articles/shooting-3300-meters-interview-creators-eight-mountains"
+      }
+    ],
+    "questions": [
+      {
+        "id": "eightmountains-access",
+        "area": "research",
+        "prompt": {
+          "en": "The filmmakers describe demanding mountain access and extended location production. Which approach would you choose for a new production exercise?",
+          "nb": "Filmskaperne beskriver krevende fjelladkomst og omfattende stedsopptak. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les cinéastes décrivent des accès difficiles et un tournage prolongé en montagne. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os cineastas descrevem acessos difíceis e filmagem prolongada na montanha. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Plan safe access, weather margins and crew accommodation",
+              "nb": "Planlegg trygg adkomst, værmarginer og innkvartering",
+              "fr": "Prévoir accès sûr, marge météo et hébergement",
+              "pt": "Planear acesso seguro, margem meteorológica e alojamento"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Schedule every high-altitude scene without weather margins",
+              "nb": "Planlegg alle høyfjellsscener uten værmargin",
+              "fr": "Programmer toutes les scènes d’altitude sans marge météo",
+              "pt": "Planear todas as cenas de altitude sem margem meteorológica"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume road access for every mountain location",
+              "nb": "Anta veiadkomst til alle fjellsteder",
+              "fr": "Supposer un accès routier à chaque lieu de montagne",
+              "pt": "Supor acesso rodoviário a todos os locais de montanha"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The filmmakers describe demanding mountain access and extended location production. A practical exercise would be to: Plan safe access, weather margins and crew accommodation.",
+          "nb": "Filmskaperne beskriver krevende fjelladkomst og omfattende stedsopptak. En praktisk øvelse vil være å: Planlegg trygg adkomst, værmarginer og innkvartering.",
+          "fr": "Les cinéastes décrivent des accès difficiles et un tournage prolongé en montagne. Un exercice pratique consisterait à : Prévoir accès sûr, marge météo et hébergement.",
+          "pt": "Os cineastas descrevem acessos difíceis e filmagem prolongada na montanha. Um exercício prático consistiria em: Planear acesso seguro, margem meteorológica e alojamento."
+        },
+        "sourceIds": [
+          "s1",
+          "s4"
+        ]
+      },
+      {
+        "id": "eightmountains-ratio",
+        "area": "camera",
+        "prompt": {
+          "en": "Impens describes the film’s 4:3 spherical framing. Which approach would you choose for a new production exercise?",
+          "nb": "Impens beskriver filmens sfæriske 4:3-utsnitt. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Impens décrit le cadrage sphérique 4:3 du film. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Impens descreve o enquadramento esférico 4:3 do filme. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Crop faces arbitrarily to preserve mountain height",
+              "nb": "Beskjær ansikter vilkårlig for å bevare fjellhøyden",
+              "fr": "Rogner les visages arbitrairement pour conserver la hauteur",
+              "pt": "Cortar rostos arbitrariamente para preservar a altura"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare vertical landscape and human scale in narrow and wide frames",
+              "nb": "Sammenlign vertikalt landskap og menneskeskala i smale og brede utsnitt",
+              "fr": "Comparer paysage vertical et échelle humaine en cadres étroits et larges",
+              "pt": "Comparar paisagem vertical e escala humana em quadros estreitos e largos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose the widest frame without testing composition",
+              "nb": "Velg bredeste format uten komposisjonsprøver",
+              "fr": "Choisir le cadre le plus large sans tester la composition",
+              "pt": "Escolher o quadro mais largo sem testar composição"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Impens describes the film’s 4:3 spherical framing. A practical exercise would be to: Compare vertical landscape and human scale in narrow and wide frames.",
+          "nb": "Impens beskriver filmens sfæriske 4:3-utsnitt. En praktisk øvelse vil være å: Sammenlign vertikalt landskap og menneskeskala i smale og brede utsnitt.",
+          "fr": "Impens décrit le cadrage sphérique 4:3 du film. Un exercice pratique consisterait à : Comparer paysage vertical et échelle humaine en cadres étroits et larges.",
+          "pt": "Impens descreve o enquadramento esférico 4:3 do filme. Um exercício prático consistiria em: Comparar paisagem vertical e escala humana em quadros estreitos e largos."
+        },
+        "sourceIds": [
+          "s1",
+          "s0"
+        ]
+      },
+      {
+        "id": "eightmountains-blocks",
+        "area": "research",
+        "prompt": {
+          "en": "The co-directors describe learning across several shooting blocks. Which approach would you choose for a new production exercise?",
+          "nb": "Medregissørene beskriver læring mellom flere opptaksblokker. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les coréalisateurs décrivent un apprentissage entre plusieurs blocs de tournage. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os correalizadores descrevem aprendizagem entre vários blocos de filmagem. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Avoid reviewing any material until production wraps",
+              "nb": "Unngå gjennomgang av materiale før alle opptak er ferdige",
+              "fr": "Ne revoir aucune image avant la fin du tournage",
+              "pt": "Não rever material até ao fim da filmagem"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Reset the visual approach without documenting changes",
+              "nb": "Nullstill bildeuttrykket uten å dokumentere endringer",
+              "fr": "Réinitialiser l’approche visuelle sans documenter les changements",
+              "pt": "Reiniciar a abordagem visual sem documentar alterações"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Review previous footage and continuity before each new block",
+              "nb": "Gjennomgå tidligere opptak og kontinuitet før hver ny blokk",
+              "fr": "Revoir les images et raccords avant chaque nouveau bloc",
+              "pt": "Rever imagens e continuidade antes de cada novo bloco"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The co-directors describe learning across several shooting blocks. A practical exercise would be to: Review previous footage and continuity before each new block.",
+          "nb": "Medregissørene beskriver læring mellom flere opptaksblokker. En praktisk øvelse vil være å: Gjennomgå tidligere opptak og kontinuitet før hver ny blokk.",
+          "fr": "Les coréalisateurs décrivent un apprentissage entre plusieurs blocs de tournage. Un exercice pratique consisterait à : Revoir les images et raccords avant chaque nouveau bloc.",
+          "pt": "Os correalizadores descrevem aprendizagem entre vários blocos de filmagem. Um exercício prático consistiria em: Rever imagens e continuidade antes de cada novo bloco."
+        },
+        "sourceIds": [
+          "s4",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_tori_and_lokita_2022",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Young performers, handheld choreography and diegetic sound",
+      "nb": "Unge utøvere, håndholdt koreografi og diegetisk lyd",
+      "fr": "Jeunes interprètes, chorégraphie portée et son diégétique",
+      "pt": "Jovens intérpretes, coreografia à mão e som diegético"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "TORI ET LOKITA (TORI AND LOKITA)",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/tori-et-lokita/"
+      },
+      {
+        "id": "s1",
+        "title": "Tori et Lokita",
+        "publisher": "Les Films du Fleuve",
+        "url": "https://lesfilmsdufleuve.be/en/movies/tori-et-lokita/"
+      },
+      {
+        "id": "s2",
+        "title": "Benoit Dervaux and the approach for Tori and Lokita",
+        "publisher": "Belgian Society of Cinematographers",
+        "url": "https://www.sbcine.be/?p=13130"
+      },
+      {
+        "id": "s3",
+        "title": "A Conversation with the Dardenne Brothers (Tori and Lokita)",
+        "publisher": "Hammer to Nail",
+        "url": "https://www.hammertonail.com/interviews/dardenne-brothers/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "torilokita-casting",
+        "area": "research",
+        "prompt": {
+          "en": "The directors describe extensive casting and five weeks of rehearsals with the leads. Which approach would you choose for a new production exercise?",
+          "nb": "Regissørene beskriver omfattende casting og fem ukers prøver med hovedrollene. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les réalisateurs décrivent un casting étendu et cinq semaines de répétitions. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os realizadores descrevem casting amplo e cinco semanas de ensaios. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Provide age-appropriate rehearsals with clear support and boundaries",
+              "nb": "Gi alderstilpassede prøver med tydelig støtte og grenser",
+              "fr": "Prévoir des répétitions adaptées à l’âge avec soutien et limites",
+              "pt": "Proporcionar ensaios adequados à idade com apoio e limites"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use stressful surprises instead of preparation",
+              "nb": "Bruk stressende overraskelser i stedet for forberedelse",
+              "fr": "Utiliser des surprises stressantes au lieu de préparer",
+              "pt": "Usar surpresas stressantes em vez de preparação"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assess candidates only by previous screen credits",
+              "nb": "Vurder kandidater bare etter tidligere filmroller",
+              "fr": "Évaluer les candidats seulement par leurs rôles antérieurs",
+              "pt": "Avaliar candidatos apenas por papéis anteriores"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The directors describe extensive casting and five weeks of rehearsals with the leads. A practical exercise would be to: Provide age-appropriate rehearsals with clear support and boundaries.",
+          "nb": "Regissørene beskriver omfattende casting og fem ukers prøver med hovedrollene. En praktisk øvelse vil være å: Gi alderstilpassede prøver med tydelig støtte og grenser.",
+          "fr": "Les réalisateurs décrivent un casting étendu et cinq semaines de répétitions. Un exercice pratique consisterait à : Prévoir des répétitions adaptées à l’âge avec soutien et limites.",
+          "pt": "Os realizadores descrevem casting amplo e cinco semanas de ensaios. Um exercício prático consistiria em: Proporcionar ensaios adequados à idade com apoio e limites."
+        },
+        "sourceIds": [
+          "s3",
+          "s0"
+        ]
+      },
+      {
+        "id": "torilokita-height",
+        "area": "camera",
+        "prompt": {
+          "en": "Dervaux describes handheld operation at the actors’ height and extensive rehearsal. Which approach would you choose for a new production exercise?",
+          "nb": "Dervaux beskriver håndholdt kamera i skuespillernes høyde og omfattende prøver. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Dervaux décrit une caméra portée à hauteur des acteurs et de longues répétitions. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Dervaux descreve câmara à mão à altura dos atores e ensaios extensos. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Change camera height without considering character perspective",
+              "nb": "Endre kamerahøyde uten å vurdere karakterperspektiv",
+              "fr": "Changer la hauteur sans considérer le point de vue",
+              "pt": "Mudar altura sem considerar a perspetiva da personagem"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse actor and operator movement at matching eye height",
+              "nb": "Øv skuespillerens og fotografens bevegelser i samsvarende øyehøyde",
+              "fr": "Répéter les mouvements à hauteur de regard correspondante",
+              "pt": "Ensaiar movimentos de ator e operador à altura do olhar"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Shoot every interaction from a distant overhead position",
+              "nb": "Film alle møter fra en fjern posisjon ovenfra",
+              "fr": "Filmer toutes les interactions de loin en plongée",
+              "pt": "Filmar todas as interações de longe e de cima"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Dervaux describes handheld operation at the actors’ height and extensive rehearsal. A practical exercise would be to: Rehearse actor and operator movement at matching eye height.",
+          "nb": "Dervaux beskriver håndholdt kamera i skuespillernes høyde og omfattende prøver. En praktisk øvelse vil være å: Øv skuespillerens og fotografens bevegelser i samsvarende øyehøyde.",
+          "fr": "Dervaux décrit une caméra portée à hauteur des acteurs et de longues répétitions. Un exercice pratique consisterait à : Répéter les mouvements à hauteur de regard correspondante.",
+          "pt": "Dervaux descreve câmara à mão à altura dos atores e ensaios extensos. Um exercício prático consistiria em: Ensaiar movimentos de ator e operador à altura do olhar."
+        },
+        "sourceIds": [
+          "s2",
+          "s0"
+        ]
+      },
+      {
+        "id": "torilokita-sound",
+        "area": "sound",
+        "prompt": {
+          "en": "The directors describe a diegetic sound principle with location-derived additions. Which approach would you choose for a new production exercise?",
+          "nb": "Regissørene beskriver et diegetisk lydprinsipp med tillegg hentet fra stedet. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les réalisateurs décrivent un principe diégétique avec des ajouts issus des lieux. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os realizadores descrevem um princípio diegético com adições oriundas dos locais. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Add a dramatic score to every emotional transition",
+              "nb": "Legg dramatisk musikk på hvert følelsesskifte",
+              "fr": "Ajouter une musique dramatique à chaque transition émotionnelle",
+              "pt": "Adicionar música dramática a cada transição emocional"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Replace natural sounds with unrelated stock effects",
+              "nb": "Erstatt naturlige lyder med uvedkommende standardeffekter",
+              "fr": "Remplacer les sons naturels par des effets sans rapport",
+              "pt": "Substituir sons naturais por efeitos sem relação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record room tone and practical sounds for subtle editorial additions",
+              "nb": "Ta opp romlyd og praktiske lyder for diskrete klippetillegg",
+              "fr": "Enregistrer ambiances et sons réels pour des ajouts discrets",
+              "pt": "Gravar ambiente e sons reais para adições discretas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The directors describe a diegetic sound principle with location-derived additions. A practical exercise would be to: Record room tone and practical sounds for subtle editorial additions.",
+          "nb": "Regissørene beskriver et diegetisk lydprinsipp med tillegg hentet fra stedet. En praktisk øvelse vil være å: Ta opp romlyd og praktiske lyder for diskrete klippetillegg.",
+          "fr": "Les réalisateurs décrivent un principe diégétique avec des ajouts issus des lieux. Un exercice pratique consisterait à : Enregistrer ambiances et sons réels pour des ajouts discrets.",
+          "pt": "Os realizadores descrevem um princípio diegético com adições oriundas dos locais. Um exercício prático consistiria em: Gravar ambiente e sons reais para adições discretas."
+        },
+        "sourceIds": [
+          "s3",
+          "s1"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_about_dry_grasses_2023",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Long screenplay, seasonal continuity and editorial reduction",
+      "nb": "Langt manus, årstidskontinuitet og redaksjonell forkorting",
+      "fr": "Scénario long, raccords saisonniers et réduction au montage",
+      "pt": "Argumento longo, continuidade sazonal e redução na montagem"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "KURU OTLAR USTUNE (ABOUT DRY GRASSES)",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/kuru-otlar-ustune/"
+      },
+      {
+        "id": "s3",
+        "title": "About Dry Grasses - Technical Info",
+        "publisher": "Nuri Bilge Ceylan",
+        "url": "https://www.nuribilgeceylan.com/movies/kuruotlar/techinfo.php?mid=4"
+      },
+      {
+        "id": "s4",
+        "title": "About Dry Grasses - Credits",
+        "publisher": "Nuri Bilge Ceylan",
+        "url": "https://www.nuribilgeceylan.com/movies/kuruotlar/credits.php?mid=3"
+      },
+      {
+        "id": "s8",
+        "title": "Nuri Bilge Ceylan - Director of About Dry Grasses",
+        "publisher": "Cineuropa",
+        "url": "https://cineuropa.org/en/interview/442832/"
+      },
+      {
+        "id": "s9",
+        "title": "Nuri Bilge Ceylan's About Dry Grasses: A dive into the hinterlands through the eyes of Samet",
+        "publisher": "Bianet",
+        "url": "https://bianet.org/yazi/nuri-bilge-ceylan-s-about-dry-grasses-a-dive-into-the-hinterlands-through-the-eyes-of-samet-288165"
+      }
+    ],
+    "questions": [
+      {
+        "id": "drygrasses-writing",
+        "area": "research",
+        "prompt": {
+          "en": "Ceylan describes a teaching diary as a story source and a long collaborative writing process. Which approach would you choose for a new production exercise?",
+          "nb": "Ceylan beskriver en lærerdagbok som fortellingskilde og en lang felles skriveprosess. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Ceylan décrit un journal d’enseignant et une longue écriture collective. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Ceylan descreve um diário de professor e uma longa escrita colaborativa. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Separate diary observations from invented character and dialogue",
+              "nb": "Skill dagbokobservasjoner fra oppdiktede karakterer og dialog",
+              "fr": "Séparer observations du journal et personnages ou dialogues inventés",
+              "pt": "Separar observações do diário de personagens e diálogos inventados"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat all diary entries as finished screenplay dialogue",
+              "nb": "Behandle alle dagboknotater som ferdig manusdialog",
+              "fr": "Traiter chaque note comme dialogue définitif",
+              "pt": "Tratar todas as notas como diálogo final"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Repeat the original method without testing its suitability",
+              "nb": "Gjenta originalmetoden uten å prøve om den passer",
+              "fr": "Répéter la méthode originale sans tester sa pertinence",
+              "pt": "Repetir o método original sem testar a sua adequação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Ceylan describes a teaching diary as a story source and a long collaborative writing process. A practical exercise would be to: Separate diary observations from invented character and dialogue.",
+          "nb": "Ceylan beskriver en lærerdagbok som fortellingskilde og en lang felles skriveprosess. En praktisk øvelse vil være å: Skill dagbokobservasjoner fra oppdiktede karakterer og dialog.",
+          "fr": "Ceylan décrit un journal d’enseignant et une longue écriture collective. Un exercice pratique consisterait à : Séparer observations du journal et personnages ou dialogues inventés.",
+          "pt": "Ceylan descreve um diário de professor e uma longa escrita colaborativa. Um exercício prático consistiria em: Separar observações do diário de personagens e diálogos inventados."
+        },
+        "sourceIds": [
+          "s8",
+          "s9"
+        ]
+      },
+      {
+        "id": "drygrasses-seasons",
+        "area": "camera",
+        "prompt": {
+          "en": "The official credits distinguish winter and summer camera and makeup teams. Which approach would you choose for a new production exercise?",
+          "nb": "De offisielle krediteringene skiller vinter- og sommerteam for kamera og sminke. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les crédits distinguent les équipes caméra et maquillage d’hiver et d’été. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os créditos distinguem equipas de câmara e maquilhagem de inverno e verão. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Repeat the original method without testing its suitability",
+              "nb": "Gjenta originalmetoden uten å prøve om den passer",
+              "fr": "Répéter la méthode originale sans tester sa pertinence",
+              "pt": "Repetir o método original sem testar a sua adequação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Prepare shared reference images and handover notes between seasonal teams",
+              "nb": "Lag felles referansebilder og overleveringsnotater mellom sesongteam",
+              "fr": "Préparer références visuelles et notes de transmission entre équipes saisonnières",
+              "pt": "Preparar referências visuais e notas de passagem entre equipas sazonais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume different seasonal teams need no shared references",
+              "nb": "Anta at ulike sesongteam ikke trenger felles referanser",
+              "fr": "Supposer que les équipes saisonnières n’ont pas besoin de références communes",
+              "pt": "Supor que equipas sazonais dispensam referências comuns"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The official credits distinguish winter and summer camera and makeup teams. A practical exercise would be to: Prepare shared reference images and handover notes between seasonal teams.",
+          "nb": "De offisielle krediteringene skiller vinter- og sommerteam for kamera og sminke. En praktisk øvelse vil være å: Lag felles referansebilder og overleveringsnotater mellom sesongteam.",
+          "fr": "Les crédits distinguent les équipes caméra et maquillage d’hiver et d’été. Un exercice pratique consisterait à : Préparer références visuelles et notes de transmission entre équipes saisonnières.",
+          "pt": "Os créditos distinguem equipas de câmara e maquilhagem de inverno e verão. Um exercício prático consistiria em: Preparar referências visuais e notas de passagem entre equipas sazonais."
+        },
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
+      },
+      {
+        "id": "drygrasses-cut",
+        "area": "research",
+        "prompt": {
+          "en": "Ceylan describes shooting a long script and substantially reducing it in editing. Which approach would you choose for a new production exercise?",
+          "nb": "Ceylan beskriver opptak av et langt manus og betydelig forkorting i klippen. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Ceylan décrit le tournage d’un long scénario et sa réduction au montage. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Ceylan descreve filmar um argumento longo e reduzi-lo na montagem. Que abordagem escolheria para um novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Delete every long scene regardless of narrative purpose",
+              "nb": "Slett alle lange scener uansett fortellerfunksjon",
+              "fr": "Supprimer toutes les longues scènes sans tenir compte de leur fonction",
+              "pt": "Eliminar todas as cenas longas independentemente da função"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Repeat the original method without testing its suitability",
+              "nb": "Gjenta originalmetoden uten å prøve om den passer",
+              "fr": "Répéter la méthode originale sans tester sa pertinence",
+              "pt": "Repetir o método original sem testar a sua adequação"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare scene versions by character function rather than duration alone",
+              "nb": "Sammenlign sceneversjoner etter karakterfunksjon, ikke bare varighet",
+              "fr": "Comparer les versions selon la fonction dramatique plutôt que la seule durée",
+              "pt": "Comparar versões pela função dramática e não só pela duração"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Ceylan describes shooting a long script and substantially reducing it in editing. A practical exercise would be to: Compare scene versions by character function rather than duration alone.",
+          "nb": "Ceylan beskriver opptak av et langt manus og betydelig forkorting i klippen. En praktisk øvelse vil være å: Sammenlign sceneversjoner etter karakterfunksjon, ikke bare varighet.",
+          "fr": "Ceylan décrit le tournage d’un long scénario et sa réduction au montage. Un exercice pratique consisterait à : Comparer les versions selon la fonction dramatique plutôt que la seule durée.",
+          "pt": "Ceylan descreve filmar um argumento longo e reduzi-lo na montagem. Um exercício prático consistiria em: Comparar versões pela função dramática e não só pela duração."
+        },
+        "sourceIds": [
+          "s8",
+          "s0"
+        ]
+      }
+    ]
   }
 ] as const satisfies readonly SourceBackedCaseWorkshop[];
