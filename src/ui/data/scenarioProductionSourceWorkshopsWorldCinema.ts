@@ -12632,5 +12632,1004 @@ export const worldCinemaSourceWorkshops = [
         ]
       }
     ]
+  },
+  {
+    "scenarioId": "scenario_trainspotting_1996",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Adaptation, subjective imagery and archival versions",
+      "nb": "Adaptasjon, subjektivt bildespråk og arkivversjoner",
+      "fr": "Adaptation, images subjectives et versions archivées",
+      "pt": "Adaptação, imagens subjetivas e versões de arquivo"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "The Trainspotting phenomenon... 20 years on",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/trainspotting-phenomenon-20-years"
+      },
+      {
+        "id": "s2",
+        "title": "Trainspotting",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/29627-trainspotting"
+      },
+      {
+        "id": "s3",
+        "title": "Trainspotting: behind the scenes by Danny Boyle, Ewan McGregor, Irvine Welsh and more",
+        "publisher": "The Guardian",
+        "url": "https://www.theguardian.com/film/gallery/2021/oct/25/trainspotting-behind-the-scenes-danny-boyle-ewan-mcgregor-irvine-welsh-harvey-weinstein"
+      },
+      {
+        "id": "s4",
+        "title": "Well spotted",
+        "publisher": "The Irish Times",
+        "url": "https://www.irishtimes.com/news/well-spotted-1.30690"
+      },
+      {
+        "id": "s5",
+        "title": "Typescript screenplay of Trainspotting by John Hodge",
+        "publisher": "University of Edinburgh",
+        "url": "https://archives.collections.ed.ac.uk/repositories/2/resources/85641"
+      },
+      {
+        "id": "s9",
+        "title": "Trainspotting",
+        "publisher": "British Board of Film Classification",
+        "url": "https://www.bbfc.co.uk/release/trainspotting-q29sbgvjdglvbjpwwc0zndmxmdu"
+      }
+    ],
+    "questions": [
+      {
+        "id": "trainspotting-voice",
+        "area": "research",
+        "prompt": {
+          "en": "Hodge describes reorganising linked stories around Renton’s voice. Which approach would you choose in a new production exercise?",
+          "nb": "Hodge beskriver omorganisering av sammenknyttede historier rundt Rentons stemme. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Hodge décrit la réorganisation de récits liés autour de la voix de Renton. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Hodge descreve reorganização de histórias ligadas em torno da voz de Renton. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map an original ensemble story through one selected narrative voice",
+              "nb": "Kartlegg en original ensemblefortelling gjennom én valgt fortellerstemme",
+              "fr": "Cartographier un récit choral original autour d’une voix choisie",
+              "pt": "Mapear narrativa coral original através de uma voz escolhida"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Copy the literary structure without testing cinematic clarity",
+              "nb": "Kopier litterær struktur uten å prøve filmatisk klarhet",
+              "fr": "Copier la structure littéraire sans tester sa clarté filmique",
+              "pt": "Copiar estrutura literária sem testar clareza cinematográfica"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Give every character identical narration",
+              "nb": "Gi alle karakterer identisk fortellerstemme",
+              "fr": "Donner à chaque personnage une narration identique",
+              "pt": "Dar narração idêntica a cada personagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Hodge describes reorganising linked stories around Renton’s voice. In a new exercise, test this approach: Map an original ensemble story through one selected narrative voice.",
+          "nb": "Hodge beskriver omorganisering av sammenknyttede historier rundt Rentons stemme. Prøv denne tilnærmingen i en ny øvelse: Kartlegg en original ensemblefortelling gjennom én valgt fortellerstemme.",
+          "fr": "Hodge décrit la réorganisation de récits liés autour de la voix de Renton. Dans un nouvel exercice, tester cette approche : Cartographier un récit choral original autour d’une voix choisie.",
+          "pt": "Hodge descreve reorganização de histórias ligadas em torno da voz de Renton. Num novo exercício, testar esta abordagem: Mapear narrativa coral original através de uma voz escolhida."
+        },
+        "sourceIds": [
+          "s3",
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "trainspotting-subjective",
+        "area": "camera",
+        "prompt": {
+          "en": "Production materials document practical construction of subjective sequences. Which approach would you choose in a new production exercise?",
+          "nb": "Produksjonsmaterialet dokumenterer fysisk konstruksjon av subjektive sekvenser. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les archives documentent la construction pratique de séquences subjectives. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Os arquivos documentam construção prática de sequências subjetivas. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume spectacle alone communicates inner experience",
+              "nb": "Anta at spektakel alene formidler indre opplevelse",
+              "fr": "Supposer que le spectacle seul communique l’expérience intérieure",
+              "pt": "Supor que espetáculo por si comunica experiência interior"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test a safe miniature and storyboard for an original subjective scene",
+              "nb": "Prøv en trygg miniatyr og storyboard til en original subjektiv scene",
+              "fr": "Tester une maquette sûre et un storyboard pour une scène subjective originale",
+              "pt": "Testar maquete segura e storyboard para cena subjetiva original"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose effects without considering character perspective",
+              "nb": "Velg effekter uten å vurdere karakterperspektiv",
+              "fr": "Choisir les effets sans considérer le point de vue",
+              "pt": "Escolher efeitos sem considerar perspetiva"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Production materials document practical construction of subjective sequences. In a new exercise, test this approach: Test a safe miniature and storyboard for an original subjective scene.",
+          "nb": "Produksjonsmaterialet dokumenterer fysisk konstruksjon av subjektive sekvenser. Prøv denne tilnærmingen i en ny øvelse: Prøv en trygg miniatyr og storyboard til en original subjektiv scene.",
+          "fr": "Les archives documentent la construction pratique de séquences subjectives. Dans un nouvel exercice, tester cette approche : Tester une maquette sûre et un storyboard pour une scène subjective originale.",
+          "pt": "Os arquivos documentam construção prática de sequências subjetivas. Num novo exercício, testar esta abordagem: Testar maquete segura e storyboard para cena subjetiva original."
+        },
+        "sourceIds": [
+          "s1",
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "trainspotting-versions",
+        "area": "research",
+        "prompt": {
+          "en": "The sources distinguish classified releases and a later uncut restoration. Which approach would you choose in a new production exercise?",
+          "nb": "Kildene skiller klassifiserte utgivelser og en senere uklippet restaurering. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les sources distinguent sorties classifiées et restauration intégrale ultérieure. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "As fontes distinguem versões classificadas e restauro integral posterior. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat every release as an identical master",
+              "nb": "Behandle alle utgivelser som identisk master",
+              "fr": "Traiter chaque sortie comme master identique",
+              "pt": "Tratar cada lançamento como master idêntico"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Infer deleted material solely from runtime differences",
+              "nb": "Utled slettet materiale bare fra forskjeller i spilletid",
+              "fr": "Déduire les suppressions de la seule durée",
+              "pt": "Deduzir cortes apenas por diferenças de duração"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record each version’s source and documented differences",
+              "nb": "Registrer hver versjons kilde og dokumenterte forskjeller",
+              "fr": "Consigner la source et les différences documentées de chaque version",
+              "pt": "Registar fonte e diferenças documentadas de cada versão"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The sources distinguish classified releases and a later uncut restoration. In a new exercise, test this approach: Record each version’s source and documented differences.",
+          "nb": "Kildene skiller klassifiserte utgivelser og en senere uklippet restaurering. Prøv denne tilnærmingen i en ny øvelse: Registrer hver versjons kilde og dokumenterte forskjeller.",
+          "fr": "Les sources distinguent sorties classifiées et restauration intégrale ultérieure. Dans un nouvel exercice, tester cette approche : Consigner la source et les différences documentées de chaque version.",
+          "pt": "As fontes distinguem versões classificadas e restauro integral posterior. Num novo exercício, testar esta abordagem: Registar fonte e diferenças documentadas de cada versão."
+        },
+        "sourceIds": [
+          "s2",
+          "s9"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_being_john_malkovich_1999",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Script development, practical puppetry and emotional music",
+      "nb": "Manusutvikling, praktisk dukkespill og emosjonell musikk",
+      "fr": "Développement du scénario, marionnettes et musique émotionnelle",
+      "pt": "Desenvolvimento do argumento, marionetas e música emocional"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Being John Malkovich",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/60900-BEING-JOHN-MALKOVICH"
+      },
+      {
+        "id": "s1",
+        "title": "Being John Malkovich",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/28055-being-john-malkovich"
+      },
+      {
+        "id": "s5",
+        "title": "Charlie Kaufman: how to write",
+        "publisher": "The Guardian",
+        "url": "https://www.theguardian.com/film/2011/oct/03/charlie-kaufman-how-to-write"
+      },
+      {
+        "id": "s6",
+        "title": "The Rough Draft: Charlie Kaufman",
+        "publisher": "WIRED",
+        "url": "https://www.wired.com/2008/09/the-rough-draft"
+      },
+      {
+        "id": "s8",
+        "title": "Being John Malkovich — Puppetry Journal interview",
+        "publisher": "Puppetry Journal",
+        "url": "https://www.hubermarionettes.com/bjm/bjminterview.html"
+      },
+      {
+        "id": "s9",
+        "title": "Being John Malkovich",
+        "publisher": "Carter Burwell",
+        "url": "https://www.carterburwell.com/projects/Being_John_Malkovich.shtml"
+      }
+    ],
+    "questions": [
+      {
+        "id": "malkovich-rewrite",
+        "area": "research",
+        "prompt": {
+          "en": "Jonze and Kaufman revised the script to prioritise emotional consequences over a larger confrontation. Which approach would you choose in a new production exercise?",
+          "nb": "Jonze og Kaufman reviderte manuset for å prioritere emosjonelle konsekvenser fremfor en større konfrontasjon. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Jonze et Kaufman ont privilégié les conséquences émotionnelles à une confrontation plus vaste. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Jonze e Kaufman privilegiaram consequências emocionais sobre confronto maior. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare endings by their effect on character relationships",
+              "nb": "Sammenlign avslutninger etter virkningen på karakterrelasjonene",
+              "fr": "Comparer les fins selon leur effet sur les relations",
+              "pt": "Comparar finais pelo efeito nas relações"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Choose the largest ending solely by spectacle",
+              "nb": "Velg største avslutning bare etter spektakel",
+              "fr": "Choisir la fin la plus spectaculaire uniquement",
+              "pt": "Escolher final maior apenas pelo espetáculo"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Retain every early draft scene regardless of purpose",
+              "nb": "Behold alle scener fra tidlige utkast uansett funksjon",
+              "fr": "Conserver chaque scène des premiers jets sans considérer sa fonction",
+              "pt": "Manter todas as cenas iniciais independentemente da função"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Jonze and Kaufman revised the script to prioritise emotional consequences over a larger confrontation. In a new exercise, test this approach: Compare endings by their effect on character relationships.",
+          "nb": "Jonze og Kaufman reviderte manuset for å prioritere emosjonelle konsekvenser fremfor en større konfrontasjon. Prøv denne tilnærmingen i en ny øvelse: Sammenlign avslutninger etter virkningen på karakterrelasjonene.",
+          "fr": "Jonze et Kaufman ont privilégié les conséquences émotionnelles à une confrontation plus vaste. Dans un nouvel exercice, tester cette approche : Comparer les fins selon leur effet sur les relations.",
+          "pt": "Jonze e Kaufman privilegiaram consequências emocionais sobre confronto maior. Num novo exercício, testar esta abordagem: Comparar finais pelo efeito nas relações."
+        },
+        "sourceIds": [
+          "s5",
+          "s6"
+        ]
+      },
+      {
+        "id": "malkovich-puppet",
+        "area": "camera",
+        "prompt": {
+          "en": "The puppetry account describes camera-specific choreography and adjustments to the marionettes. Which approach would you choose in a new production exercise?",
+          "nb": "Dukkespillkilden beskriver kameratilpasset koreografi og justeringer av marionettene. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le témoignage décrit chorégraphie adaptée à la caméra et ajustements des marionnettes. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O relato descreve coreografia adaptada à câmara e ajustes das marionetas. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume stage puppetry and screen framing have identical requirements",
+              "nb": "Anta at scenedukkespill og filmutsnitt har identiske krav",
+              "fr": "Supposer que scène et cadrage ont les mêmes exigences",
+              "pt": "Supor que palco e enquadramento têm requisitos idênticos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Rehearse an original puppet gesture at the intended camera angle",
+              "nb": "Øv en original dukkebevegelse fra planlagt kameravinkel",
+              "fr": "Répéter un geste original de marionnette selon l’angle prévu",
+              "pt": "Ensaiar gesto original de marioneta no ângulo previsto"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Approve all gestures without viewing them through the camera",
+              "nb": "Godkjenn alle gester uten å se dem gjennom kameraet",
+              "fr": "Valider tous les gestes sans les voir à la caméra",
+              "pt": "Aprovar gestos sem os ver pela câmara"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The puppetry account describes camera-specific choreography and adjustments to the marionettes. In a new exercise, test this approach: Rehearse an original puppet gesture at the intended camera angle.",
+          "nb": "Dukkespillkilden beskriver kameratilpasset koreografi og justeringer av marionettene. Prøv denne tilnærmingen i en ny øvelse: Øv en original dukkebevegelse fra planlagt kameravinkel.",
+          "fr": "Le témoignage décrit chorégraphie adaptée à la caméra et ajustements des marionnettes. Dans un nouvel exercice, tester cette approche : Répéter un geste original de marionnette selon l’angle prévu.",
+          "pt": "O relato descreve coreografia adaptada à câmara e ajustes das marionetas. Num novo exercício, testar esta abordagem: Ensaiar gesto original de marioneta no ângulo previsto."
+        },
+        "sourceIds": [
+          "s8",
+          "s1"
+        ]
+      },
+      {
+        "id": "malkovich-score",
+        "area": "sound",
+        "prompt": {
+          "en": "Burwell describes a warm circular score intended to ground the unusual story emotionally. Which approach would you choose in a new production exercise?",
+          "nb": "Burwell beskriver en varm sirkulær filmmusikk som skulle forankre den uvanlige historien emosjonelt. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Burwell décrit une musique chaleureuse et circulaire qui ancre émotionnellement le récit étrange. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Burwell descreve música calorosa e circular para ancorar emocionalmente a história invulgar. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use music only to signal that an event is strange",
+              "nb": "Bruk musikk bare for å signalisere at en hendelse er merkelig",
+              "fr": "Utiliser la musique uniquement pour signaler l’étrangeté",
+              "pt": "Usar música apenas para sinalizar estranheza"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose a cue without considering the character’s emotion",
+              "nb": "Velg musikkinnslag uten å vurdere karakterens følelser",
+              "fr": "Choisir un motif sans considérer l’émotion du personnage",
+              "pt": "Escolher motivo sem considerar emoção da personagem"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare a warm original motif with an explicitly comic musical treatment",
+              "nb": "Sammenlign et varmt originalmotiv med en tydelig komisk musikkbehandling",
+              "fr": "Comparer un motif original chaleureux à un traitement ouvertement comique",
+              "pt": "Comparar motivo original caloroso com tratamento musical explicitamente cómico"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Burwell describes a warm circular score intended to ground the unusual story emotionally. In a new exercise, test this approach: Compare a warm original motif with an explicitly comic musical treatment.",
+          "nb": "Burwell beskriver en varm sirkulær filmmusikk som skulle forankre den uvanlige historien emosjonelt. Prøv denne tilnærmingen i en ny øvelse: Sammenlign et varmt originalmotiv med en tydelig komisk musikkbehandling.",
+          "fr": "Burwell décrit une musique chaleureuse et circulaire qui ancre émotionnellement le récit étrange. Dans un nouvel exercice, tester cette approche : Comparer un motif original chaleureux à un traitement ouvertement comique.",
+          "pt": "Burwell descreve música calorosa e circular para ancorar emocionalmente a história invulgar. Num novo exercício, testar esta abordagem: Comparar motivo original caloroso com tratamento musical explicitamente cómico."
+        },
+        "sourceIds": [
+          "s9",
+          "s0"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_requiem_for_a_dream_2000",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Rhythmic montage, colour dramaturgy and early sound design",
+      "nb": "Rytmisk montasje, fargedramaturgi og tidlig lyddesign",
+      "fr": "Montage rythmique, dramaturgie chromatique et conception sonore précoce",
+      "pt": "Montagem rítmica, dramaturgia da cor e desenho sonoro inicial"
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "title": "Requiem for a Dream: Downward Spiral",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/article/requiem-for-a-dream-downward-spiral/"
+      },
+      {
+        "id": "s2",
+        "title": "Coney Island baby",
+        "publisher": "The Guardian",
+        "url": "https://www.theguardian.com/culture/2000/oct/30/artsfeatures"
+      },
+      {
+        "id": "s3",
+        "title": "We'll Fix It in Post",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/archives/issues/winter2003/line_items/fix_it.php"
+      },
+      {
+        "id": "s4",
+        "title": "Requiem for a Dream",
+        "publisher": "James Chinlund",
+        "url": "https://www.jameschinlund.com/features/requiem-for-a-dream"
+      },
+      {
+        "id": "s5",
+        "title": "The Sound of Requiem for a Dream",
+        "publisher": "The Awl",
+        "url": "https://www.theawl.com/2012/07/the-sound-of-requiem-for-a-dream/"
+      },
+      {
+        "id": "s6",
+        "title": "Film: Addicted to Noise",
+        "publisher": "Live Design",
+        "url": "https://www.livedesignonline.com/film-0"
+      },
+      {
+        "id": "s7",
+        "title": "Method Man: Jay Rabinowitz Finds that the Film Tells Him How to Edit It",
+        "publisher": "CineMontage",
+        "url": "https://cinemontage.org/method-man-jay-rabinowitz/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "requiem-montage",
+        "area": "research",
+        "prompt": {
+          "en": "The director and editor describe rhythmic contrast and performance shaping within heightened montage. Which approach would you choose in a new production exercise?",
+          "nb": "Regissøren og klipperen beskriver rytmisk kontrast og utforming av spill i intensiv montasje. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le réalisateur et le monteur décrivent contraste rythmique et travail du jeu dans un montage intense. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O realizador e o montador descrevem contraste rítmico e atuação em montagem intensa. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare rapid and restrained cuts of an ordinary daily routine",
+              "nb": "Sammenlign rask og tilbakeholden klipp av en vanlig hverdagsrutine",
+              "fr": "Comparer montages rapide et retenu d’une routine quotidienne",
+              "pt": "Comparar cortes rápidos e contidos de uma rotina quotidiana"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use the fastest possible cut for every emotion",
+              "nb": "Bruk raskest mulig klipp for alle følelser",
+              "fr": "Utiliser le montage le plus rapide pour chaque émotion",
+              "pt": "Usar o corte mais rápido para cada emoção"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose rhythm without reviewing the actor’s reactions",
+              "nb": "Velg rytme uten å gjennomgå skuespillerens reaksjoner",
+              "fr": "Choisir le rythme sans examiner les réactions",
+              "pt": "Escolher ritmo sem rever reações do ator"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The director and editor describe rhythmic contrast and performance shaping within heightened montage. In a new exercise, test this approach: Compare rapid and restrained cuts of an ordinary daily routine.",
+          "nb": "Regissøren og klipperen beskriver rytmisk kontrast og utforming av spill i intensiv montasje. Prøv denne tilnærmingen i en ny øvelse: Sammenlign rask og tilbakeholden klipp av en vanlig hverdagsrutine.",
+          "fr": "Le réalisateur et le monteur décrivent contraste rythmique et travail du jeu dans un montage intense. Dans un nouvel exercice, tester cette approche : Comparer montages rapide et retenu d’une routine quotidienne.",
+          "pt": "O realizador e o montador descrevem contraste rítmico e atuação em montagem intensa. Num novo exercício, testar esta abordagem: Comparar cortes rápidos e contidos de uma rotina quotidiana."
+        },
+        "sourceIds": [
+          "s2",
+          "s3",
+          "s7"
+        ]
+      },
+      {
+        "id": "requiem-palette",
+        "area": "camera",
+        "prompt": {
+          "en": "Chinlund describes reserving red as a specific dramatic marker. Which approach would you choose in a new production exercise?",
+          "nb": "Chinlund beskriver å reservere rødt som en bestemt dramatisk markør. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Chinlund décrit le rouge réservé comme marqueur dramatique précis. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Chinlund descreve vermelho reservado como marcador dramático específico. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat production design and photography as unrelated palettes",
+              "nb": "Behandle scenografi og foto som uavhengige paletter",
+              "fr": "Traiter décor et photographie comme palettes indépendantes",
+              "pt": "Tratar cenografia e fotografia como paletas independentes"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Create a colour progression tied to a fictional character arc",
+              "nb": "Lag en fargeprogresjon knyttet til et fiktivt karakterforløp",
+              "fr": "Créer une progression chromatique liée à un arc fictionnel",
+              "pt": "Criar progressão cromática ligada a arco ficcional"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Use the reserved colour in every scene from the start",
+              "nb": "Bruk den reserverte fargen i alle scener fra starten",
+              "fr": "Utiliser la couleur réservée dès le début dans chaque scène",
+              "pt": "Usar cor reservada em todas as cenas desde o início"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Chinlund describes reserving red as a specific dramatic marker. In a new exercise, test this approach: Create a colour progression tied to a fictional character arc.",
+          "nb": "Chinlund beskriver å reservere rødt som en bestemt dramatisk markør. Prøv denne tilnærmingen i en ny øvelse: Lag en fargeprogresjon knyttet til et fiktivt karakterforløp.",
+          "fr": "Chinlund décrit le rouge réservé comme marqueur dramatique précis. Dans un nouvel exercice, tester cette approche : Créer une progression chromatique liée à un arc fictionnel.",
+          "pt": "Chinlund descreve vermelho reservado como marcador dramático específico. Num novo exercício, testar esta abordagem: Criar progressão cromática ligada a arco ficcional."
+        },
+        "sourceIds": [
+          "s1",
+          "s4"
+        ]
+      },
+      {
+        "id": "requiem-sound",
+        "area": "sound",
+        "prompt": {
+          "en": "Emrich developed recurring montage sounds during production and picture editing. Which approach would you choose in a new production exercise?",
+          "nb": "Emrich utviklet gjentatte montasjelyder under produksjon og bildeklipp. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Emrich a développé des sons récurrents pendant tournage et montage image. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Emrich desenvolveu sons recorrentes durante produção e montagem de imagem. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Wait until picture lock to consider every rhythmic sound cue",
+              "nb": "Vent til bildeklippen er låst før alle rytmiske lydsignaler vurderes",
+              "fr": "Attendre le montage verrouillé pour considérer tout repère rythmique",
+              "pt": "Esperar montagem fechada para considerar todos os sinais rítmicos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use identical sound dynamics regardless of changes in pacing",
+              "nb": "Bruk identisk lyddynamikk uansett tempoendringer",
+              "fr": "Utiliser la même dynamique malgré les variations de rythme",
+              "pt": "Usar dinâmica idêntica apesar de mudanças de ritmo"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Build temporary sounds for a harmless repetitive activity and refine them with the edit",
+              "nb": "Bygg midlertidige lyder til en ufarlig gjentatt aktivitet og finjuster dem med klippen",
+              "fr": "Créer des sons provisoires pour une activité anodine et les affiner au montage",
+              "pt": "Criar sons provisórios para atividade inofensiva e refiná-los na montagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Emrich developed recurring montage sounds during production and picture editing. In a new exercise, test this approach: Build temporary sounds for a harmless repetitive activity and refine them with the edit.",
+          "nb": "Emrich utviklet gjentatte montasjelyder under produksjon og bildeklipp. Prøv denne tilnærmingen i en ny øvelse: Bygg midlertidige lyder til en ufarlig gjentatt aktivitet og finjuster dem med klippen.",
+          "fr": "Emrich a développé des sons récurrents pendant tournage et montage image. Dans un nouvel exercice, tester cette approche : Créer des sons provisoires pour une activité anodine et les affiner au montage.",
+          "pt": "Emrich desenvolveu sons recorrentes durante produção e montagem de imagem. Num novo exercício, testar esta abordagem: Criar sons provisórios para atividade inofensiva e refiná-los na montagem."
+        },
+        "sourceIds": [
+          "s5",
+          "s6"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_buffalo_66_1998",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Reversal film, controlled performance and regional location",
+      "nb": "Reverseringsfilm, kontrollert spill og regionale steder",
+      "fr": "Pellicule inversible, jeu contrôlé et lieux régionaux",
+      "pt": "Película reversível, atuação controlada e locais regionais"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Buffalo '66",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/60657-BUFFALO-%2766"
+      },
+      {
+        "id": "s1",
+        "title": "Behind the Mask: Cinematography in Buffalo 66",
+        "publisher": "BAFTA",
+        "url": "https://www.bafta.org/stories/behind-mask-cinematography-buffalo-66/"
+      },
+      {
+        "id": "s6",
+        "title": "From the Vaults: Vincent Gallo on Buffalo and Buffalo 66",
+        "publisher": "The Public",
+        "url": "https://www.dailypublic.com/articles/03302015/vaults-vincent-gallo-buffalo-and-buffalo-66"
+      },
+      {
+        "id": "s7",
+        "title": "Things you didn't know about Vincent Gallo's Buffalo '66",
+        "publisher": "i-D",
+        "url": "https://i-d.co/article/vincent-gallo-buffalo-66/"
+      },
+      {
+        "id": "s9",
+        "title": "Buffalo '66",
+        "publisher": "MUBI",
+        "url": "https://mubi.com/en/do/films/buffalo-66"
+      }
+    ],
+    "questions": [
+      {
+        "id": "buffalo66-reversal",
+        "area": "camera",
+        "prompt": {
+          "en": "The production used reversal stock with particular exposure and colour demands. Which approach would you choose in a new production exercise?",
+          "nb": "Produksjonen brukte reverseringsfilm med særskilte krav til eksponering og farge. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "La production utilisait une pellicule inversible aux exigences particulières de couleur et exposition. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A produção usou película reversível com exigências específicas de cor e exposição. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test exposure and costume colours before choosing a final capture approach",
+              "nb": "Prøv eksponering og kostymefarger før endelig opptaksmetode velges",
+              "fr": "Tester exposition et couleurs des costumes avant le choix de capture",
+              "pt": "Testar exposição e cores dos figurinos antes de escolher captação"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume all film stocks respond identically to exposure",
+              "nb": "Anta at alle filmtyper reagerer identisk på eksponering",
+              "fr": "Supposer que toutes les pellicules réagissent pareil à l’exposition",
+              "pt": "Supor que todas as películas reagem igualmente à exposição"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Choose colours without reviewing how the medium renders them",
+              "nb": "Velg farger uten å se hvordan mediet gjengir dem",
+              "fr": "Choisir les couleurs sans vérifier leur rendu",
+              "pt": "Escolher cores sem rever como o suporte as reproduz"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The production used reversal stock with particular exposure and colour demands. In a new exercise, test this approach: Test exposure and costume colours before choosing a final capture approach.",
+          "nb": "Produksjonen brukte reverseringsfilm med særskilte krav til eksponering og farge. Prøv denne tilnærmingen i en ny øvelse: Prøv eksponering og kostymefarger før endelig opptaksmetode velges.",
+          "fr": "La production utilisait une pellicule inversible aux exigences particulières de couleur et exposition. Dans un nouvel exercice, tester cette approche : Tester exposition et couleurs des costumes avant le choix de capture.",
+          "pt": "A produção usou película reversível com exigências específicas de cor e exposição. Num novo exercício, testar esta abordagem: Testar exposição e cores dos figurinos antes de escolher captação."
+        },
+        "sourceIds": [
+          "s1",
+          "s6",
+          "s7"
+        ]
+      },
+      {
+        "id": "buffalo66-performance",
+        "area": "research",
+        "prompt": {
+          "en": "The production interview distinguishes carefully controlled performances from improvisation. Which approach would you choose in a new production exercise?",
+          "nb": "Produksjonsintervjuet skiller nøye kontrollert spill fra improvisasjon. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "L’entretien distingue jeu précisément contrôlé et improvisation. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A entrevista distingue atuação cuidadosamente controlada de improvisação. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat rehearsal as incompatible with emotional accuracy",
+              "nb": "Behandle prøver som uforenlige med emosjonell presisjon",
+              "fr": "Traiter les répétitions comme incompatibles avec la justesse émotionnelle",
+              "pt": "Tratar ensaios como incompatíveis com precisão emocional"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare tightly rehearsed and exploratory takes of the same fictional scene",
+              "nb": "Sammenlign nøye innøvde og utforskende opptak av samme fiktive scene",
+              "fr": "Comparer prises répétées et exploratoires d’une même scène fictive",
+              "pt": "Comparar tomadas ensaiadas e exploratórias da mesma cena ficcional"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume naturalistic dialogue must be improvised",
+              "nb": "Anta at naturalistisk dialog må improviseres",
+              "fr": "Supposer que le dialogue naturaliste doit être improvisé",
+              "pt": "Supor que diálogo naturalista tem de ser improvisado"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The production interview distinguishes carefully controlled performances from improvisation. In a new exercise, test this approach: Compare tightly rehearsed and exploratory takes of the same fictional scene.",
+          "nb": "Produksjonsintervjuet skiller nøye kontrollert spill fra improvisasjon. Prøv denne tilnærmingen i en ny øvelse: Sammenlign nøye innøvde og utforskende opptak av samme fiktive scene.",
+          "fr": "L’entretien distingue jeu précisément contrôlé et improvisation. Dans un nouvel exercice, tester cette approche : Comparer prises répétées et exploratoires d’une même scène fictive.",
+          "pt": "A entrevista distingue atuação cuidadosamente controlada de improvisação. Num novo exercício, testar esta abordagem: Comparar tomadas ensaiadas e exploratórias da mesma cena ficcional."
+        },
+        "sourceIds": [
+          "s6",
+          "s0"
+        ]
+      },
+      {
+        "id": "buffalo66-place",
+        "area": "research",
+        "prompt": {
+          "en": "The film uses local Buffalo environments and a distinctive regional visual identity. Which approach would you choose in a new production exercise?",
+          "nb": "Filmen bruker lokale Buffalo-miljøer og en egen regional visuell identitet. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Le film utilise des lieux de Buffalo et une identité visuelle régionale singulière. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "O filme usa locais de Buffalo e identidade visual regional distinta. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Replace every ordinary location with generic luxury scenery",
+              "nb": "Erstatt alle vanlige steder med generiske luksuskulisser",
+              "fr": "Remplacer chaque lieu ordinaire par un décor luxueux générique",
+              "pt": "Substituir todos os locais comuns por cenários luxuosos genéricos"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore local details that support character and mood",
+              "nb": "Ignorer lokale detaljer som støtter karakter og stemning",
+              "fr": "Ignorer les détails locaux qui soutiennent personnage et ambiance",
+              "pt": "Ignorar detalhes locais que apoiam personagem e ambiente"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Scout ordinary local interiors and document their visual character",
+              "nb": "Befar vanlige lokale interiører og dokumenter deres visuelle særpreg",
+              "fr": "Repérer des intérieurs ordinaires et documenter leur caractère visuel",
+              "pt": "Reconhecer interiores comuns locais e documentar caráter visual"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The film uses local Buffalo environments and a distinctive regional visual identity. In a new exercise, test this approach: Scout ordinary local interiors and document their visual character.",
+          "nb": "Filmen bruker lokale Buffalo-miljøer og en egen regional visuell identitet. Prøv denne tilnærmingen i en ny øvelse: Befar vanlige lokale interiører og dokumenter deres visuelle særpreg.",
+          "fr": "Le film utilise des lieux de Buffalo et une identité visuelle régionale singulière. Dans un nouvel exercice, tester cette approche : Repérer des intérieurs ordinaires et documenter leur caractère visuel.",
+          "pt": "O filme usa locais de Buffalo e identidade visual regional distinta. Num novo exercício, testar esta abordagem: Reconhecer interiores comuns locais e documentar caráter visual."
+        },
+        "sourceIds": [
+          "s6",
+          "s9"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_down_by_law_1986",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Monochrome locations, narrative ellipsis and musical identity",
+      "nb": "Svart-hvitt-steder, narrativ ellipse og musikalsk identitet",
+      "fr": "Lieux monochromes, ellipse narrative et identité musicale",
+      "pt": "Locais monocromáticos, elipse narrativa e identidade musical"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Down by Law",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/films/719-down-by-law"
+      },
+      {
+        "id": "s1",
+        "title": "Jim Jarmusch: Down By Law",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/events/jim-jarmusch-down-law"
+      },
+      {
+        "id": "s2",
+        "title": "Remembering Robby Müller",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/articles/remembering-robby-m%C3%BCller"
+      },
+      {
+        "id": "s3",
+        "title": "AFI Catalog: Down by Law",
+        "publisher": "American Film Institute",
+        "url": "https://catalog.afi.com/Film/57310-DOWN-BY-LAW"
+      },
+      {
+        "id": "s4",
+        "title": "Jim Jarmusch Is the God of Small Things",
+        "publisher": "GQ",
+        "url": "https://www.gq.com/story/jim-jarmusch-is-the-god-of-small-things"
+      }
+    ],
+    "questions": [
+      {
+        "id": "downbylaw-monochrome",
+        "area": "camera",
+        "prompt": {
+          "en": "Müller’s monochrome photography responds to the Louisiana environments and unhurried rhythm. Which approach would you choose in a new production exercise?",
+          "nb": "Müllers svart-hvitt-fotografi svarer på Louisiana-miljøene og den rolige rytmen. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "La photographie monochrome de Müller répond aux lieux de Louisiane et au rythme paisible. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "A fotografia monocromática de Müller responde aos locais da Louisiana e ritmo tranquilo. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare tonal separation and texture in sustained location shots",
+              "nb": "Sammenlign toneseparasjon og tekstur i vedvarende stedsopptak",
+              "fr": "Comparer séparation tonale et texture dans des plans de lieu prolongés",
+              "pt": "Comparar separação tonal e textura em planos prolongados de locais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume all colour scenes translate equally into monochrome",
+              "nb": "Anta at alle fargescener fungerer likt i svart-hvitt",
+              "fr": "Supposer que chaque scène couleur se transpose pareil en monochrome",
+              "pt": "Supor que todas as cenas a cores passam igualmente a monocromia"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use high contrast indiscriminately in every location",
+              "nb": "Bruk høy kontrast ukritisk på alle steder",
+              "fr": "Utiliser un fort contraste indistinctement partout",
+              "pt": "Usar alto contraste indiscriminadamente em todos os locais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Müller’s monochrome photography responds to the Louisiana environments and unhurried rhythm. In a new exercise, test this approach: Compare tonal separation and texture in sustained location shots.",
+          "nb": "Müllers svart-hvitt-fotografi svarer på Louisiana-miljøene og den rolige rytmen. Prøv denne tilnærmingen i en ny øvelse: Sammenlign toneseparasjon og tekstur i vedvarende stedsopptak.",
+          "fr": "La photographie monochrome de Müller répond aux lieux de Louisiane et au rythme paisible. Dans un nouvel exercice, tester cette approche : Comparer séparation tonale et texture dans des plans de lieu prolongés.",
+          "pt": "A fotografia monocromática de Müller responde aos locais da Louisiana e ritmo tranquilo. Num novo exercício, testar esta abordagem: Comparar separação tonal e textura em planos prolongados de locais."
+        },
+        "sourceIds": [
+          "s1",
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "downbylaw-ellipsis",
+        "area": "research",
+        "prompt": {
+          "en": "Jarmusch describes deliberately omitting expected dramatic peaks. Which approach would you choose in a new production exercise?",
+          "nb": "Jarmusch beskriver bevisst utelatelse av forventede dramatiske høydepunkter. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Jarmusch décrit l’omission volontaire de sommets dramatiques attendus. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "Jarmusch descreve omissão deliberada de picos dramáticos esperados. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Omit scenes randomly without checking viewer understanding",
+              "nb": "Utelat scener tilfeldig uten å sjekke seerens forståelse",
+              "fr": "Omettre les scènes au hasard sans vérifier la compréhension",
+              "pt": "Omitir cenas ao acaso sem verificar compreensão"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare a fictional transition shown directly and conveyed through aftermath",
+              "nb": "Sammenlign en fiktiv overgang vist direkte og formidlet gjennom ettervirkninger",
+              "fr": "Comparer une transition fictive montrée directement ou par ses conséquences",
+              "pt": "Comparar transição fictícia mostrada diretamente ou pelas consequências"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Explain every omitted event in a long exposition",
+              "nb": "Forklar alle utelatte hendelser i en lang utredning",
+              "fr": "Expliquer chaque événement omis dans un long exposé",
+              "pt": "Explicar todos os eventos omitidos em longa exposição"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Jarmusch describes deliberately omitting expected dramatic peaks. In a new exercise, test this approach: Compare a fictional transition shown directly and conveyed through aftermath.",
+          "nb": "Jarmusch beskriver bevisst utelatelse av forventede dramatiske høydepunkter. Prøv denne tilnærmingen i en ny øvelse: Sammenlign en fiktiv overgang vist direkte og formidlet gjennom ettervirkninger.",
+          "fr": "Jarmusch décrit l’omission volontaire de sommets dramatiques attendus. Dans un nouvel exercice, tester cette approche : Comparer une transition fictive montrée directement ou par ses conséquences.",
+          "pt": "Jarmusch descreve omissão deliberada de picos dramáticos esperados. Num novo exercício, testar esta abordagem: Comparar transição fictícia mostrada diretamente ou pelas consequências."
+        },
+        "sourceIds": [
+          "s4",
+          "s0"
+        ]
+      },
+      {
+        "id": "downbylaw-music",
+        "area": "sound",
+        "prompt": {
+          "en": "The sources identify music and songs as part of the film’s independent identity. Which approach would you choose in a new production exercise?",
+          "nb": "Kildene identifiserer musikk og sanger som del av filmens uavhengige identitet. Hvilken tilnærming ville du valgt i en ny produksjonsøvelse?",
+          "fr": "Les sources identifient musique et chansons comme éléments de l’identité indépendante du film. Quelle approche choisiriez-vous pour un nouvel exercice de production ?",
+          "pt": "As fontes identificam música e canções como parte da identidade independente do filme. Que abordagem escolheria num novo exercício de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Select a song solely because it is commercially familiar",
+              "nb": "Velg en sang bare fordi den er kommersielt kjent",
+              "fr": "Choisir une chanson uniquement parce qu’elle est connue",
+              "pt": "Escolher canção apenas por ser comercialmente conhecida"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore the contrast between music and silence",
+              "nb": "Ignorer kontrasten mellom musikk og stillhet",
+              "fr": "Ignorer le contraste entre musique et silence",
+              "pt": "Ignorar contraste entre música e silêncio"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Test a cleared or original musical cue against a quiet landscape sequence",
+              "nb": "Prøv et klarert eller originalt musikkinnslag mot en stille landskapssekvens",
+              "fr": "Tester un motif autorisé ou original sur une séquence paysagère calme",
+              "pt": "Testar motivo autorizado ou original numa sequência calma de paisagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The sources identify music and songs as part of the film’s independent identity. In a new exercise, test this approach: Test a cleared or original musical cue against a quiet landscape sequence.",
+          "nb": "Kildene identifiserer musikk og sanger som del av filmens uavhengige identitet. Prøv denne tilnærmingen i en ny øvelse: Prøv et klarert eller originalt musikkinnslag mot en stille landskapssekvens.",
+          "fr": "Les sources identifient musique et chansons comme éléments de l’identité indépendante du film. Dans un nouvel exercice, tester cette approche : Tester un motif autorisé ou original sur une séquence paysagère calme.",
+          "pt": "As fontes identificam música e canções como parte da identidade independente do filme. Num novo exercício, testar esta abordagem: Testar motivo autorizado ou original numa sequência calma de paisagem."
+        },
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
+      }
+    ]
   }
 ] as const satisfies readonly SourceBackedCaseWorkshop[];
