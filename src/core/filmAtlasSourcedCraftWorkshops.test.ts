@@ -369,15 +369,20 @@ const ids = [
   "scenario_the_guilty_2018",
   "scenario_rams_2015",
   "scenario_on_body_and_soul_2017",
+  "scenario_loveless_2017",
+  "scenario_happy_as_lazzaro_2018",
+  "scenario_terrified_2017",
+  "scenario_tangerines_2013",
+  "scenario_paterson_2016",
 ] as const;
 const seeds = JSON.parse(readFileSync("data/film/scenarios/film_scenarios_seed.json", "utf8"));
 const panel = readFileSync("src/ui/components/ScenarioProductionBriefPanel.tsx", "utf8");
 const sourcePanel = readFileSync("src/ui/components/ScenarioProductionSourceWorkshop.tsx", "utf8");
 
-test("Exactly three hundred and sixty existing cases have one thousand and eighty original, source-backed decisions", () => {
+test("Exactly three hundred and sixty-five existing cases have one thousand and ninety-five original, source-backed decisions", () => {
   assert.deepEqual(SOURCE_BACKED_CASE_WORKSHOPS.map(w => w.scenarioId), ids);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 360);
-  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 1080);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.length, 365);
+  assert.equal(SOURCE_BACKED_CASE_WORKSHOPS.reduce((n, w) => n + w.questions.length, 0), 1095);
   for (const workshop of SOURCE_BACKED_CASE_WORKSHOPS) {
     assert.equal(workshop.status, "editorial_learning_exercise_not_case_verified");
     assert.equal(workshop.questions.length, 3);
@@ -860,6 +865,12 @@ test("Exactly three hundred and sixty existing cases have one thousand and eight
       const verification = readFileSync(configs[workshop.scenarioId]!, "utf8");
       assert.ok(verification.includes('scenarioId: "' + workshop.scenarioId + '"'));
       for (const source of workshop.sources) assert.ok(verification.includes(source.url));
+    } else if (["scenario_loveless_2017","scenario_happy_as_lazzaro_2018","scenario_terrified_2017","scenario_tangerines_2013","scenario_paterson_2016"].includes(workshop.scenarioId)) {
+      const configs: Record<string, string> = {"scenario_loveless_2017":"src/ui/data/scenarioProductionVerificationLoveless.ts","scenario_happy_as_lazzaro_2018":"src/ui/data/scenarioProductionVerificationHappyAsLazzaro.ts","scenario_terrified_2017":"src/ui/data/scenarioProductionVerificationTerrified.ts","scenario_tangerines_2013":"src/ui/data/scenarioProductionVerificationTangerines.ts","scenario_paterson_2016":"src/ui/data/scenarioProductionVerificationPaterson.ts"};
+      assert.ok(seeds.scenarios.some((s: {id: string}) => s.id === workshop.scenarioId));
+      const verification = readFileSync(configs[workshop.scenarioId]!, "utf8");
+      assert.ok(verification.includes('scenarioId: "' + workshop.scenarioId + '"'));
+      for (const source of workshop.sources) assert.ok(verification.includes(source.url));
     } else if (["scenario_living_in_bondage_1992","scenario_birds_of_passage_2018","scenario_the_motorcycle_diaries_2004","scenario_the_lunchbox_2013","scenario_capernaum_2018","scenario_where_is_the_friend_s_house_1987","scenario_kitchen_stories_2003","scenario_brothers_2015","scenario_drommer_2024","scenario_four_daughters_2023"].includes(workshop.scenarioId)) {
       const configs: Record<string, [string, string]> = {"scenario_living_in_bondage_1992":["src/ui/data/scenarioProductionVerificationLivingInBondage.ts","nollywoodLivingInBondageExpansion"],"scenario_birds_of_passage_2018":["src/ui/data/scenarioProductionVerificationBirdsOfPassage.ts","seed"],"scenario_the_motorcycle_diaries_2004":["src/ui/data/scenarioProductionVerificationMotorcycleDiaries.ts","seed"],"scenario_the_lunchbox_2013":["src/ui/data/scenarioProductionVerificationLunchbox.ts","southSoutheastAsianExpansion"],"scenario_capernaum_2018":["src/ui/data/scenarioProductionVerificationCapernaum.ts","seed"],"scenario_where_is_the_friend_s_house_1987":["src/ui/data/scenarioProductionVerificationWhereFriendsHouse.ts","seed"],"scenario_kitchen_stories_2003":["src/ui/data/scenarioProductionVerificationKitchenStories.ts","seed"],"scenario_brothers_2015":["src/ui/data/scenarioProductionVerificationBrothers.ts","seed"],"scenario_drommer_2024":["src/ui/data/scenarioProductionVerificationDrommer.ts","chapterNineteenDrommerExpansion"],"scenario_four_daughters_2023":["src/ui/data/scenarioProductionVerificationFourDaughters.ts","chapterNineteenFourDaughtersExpansion"]};
       const [path, definition] = configs[workshop.scenarioId]!;
@@ -946,7 +957,7 @@ test("Exactly three hundred and sixty existing cases have one thousand and eight
     }
   }
   assert.equal(getSourceBackedCaseWorkshop("scenario_host_2020"), undefined);
-  assert.equal(getSourceBackedCaseWorkshop("scenario_tangerines_2013"), undefined);
+  assert.ok(getSourceBackedCaseWorkshop("scenario_tangerines_2013"));
 });
 
 test("Festen exercises present the handheld DV workflow without resolving a disputed Sony camera model", () => {
@@ -1769,4 +1780,13 @@ test("Tenth world cinema round preserves film-specific decisions", () => {
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_the_guilty_2018")?.questions.map(q => q.id), ["theguilty-realtime","theguilty-voice","theguilty-space"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_rams_2015")?.questions.map(q => q.id), ["rams-research","rams-animals","rams-rhythm"]);
   assert.deepEqual(getSourceBackedCaseWorkshop("scenario_on_body_and_soul_2017")?.questions.map(q => q.id), ["bodyandsoul-dream","bodyandsoul-performance","bodyandsoul-sound"]);
+});
+
+
+test("Eleventh world cinema round preserves film-specific decisions", () => {
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_loveless_2017")?.questions.map(q => q.id), ["loveless-apartment","loveless-blocking","loveless-winter"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_happy_as_lazzaro_2018")?.questions.map(q => q.id), ["lazzaro-texture","lazzaro-casting","lazzaro-fable"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_terrified_2017")?.questions.map(q => q.id), ["terrified-street","terrified-focus","terrified-sound"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_tangerines_2013")?.questions.map(q => q.id), ["tangerines-chamber","tangerines-location","tangerines-music"]);
+  assert.deepEqual(getSourceBackedCaseWorkshop("scenario_paterson_2016")?.questions.map(q => q.id), ["paterson-routine","paterson-poetry","paterson-transit"]);
 });
