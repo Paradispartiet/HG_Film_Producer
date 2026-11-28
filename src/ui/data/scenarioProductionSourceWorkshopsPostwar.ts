@@ -16384,5 +16384,1621 @@ export const postwarSourceWorkshops = [
         ]
       }
     ]
+  },
+  {
+    "scenarioId": "scenario_eves_bayou_1997",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Memory, family perspective and edition history",
+      "nb": "Erindring, familieperspektiv og utgavehistorie",
+      "fr": "Mémoire, regard familial et histoire des versions",
+      "pt": "Memória, perspetiva familiar e história das edições"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Complete National Film Registry Listing — Eve's Bayou (1997)",
+        "publisher": "Library of Congress / National Film Preservation Board",
+        "url": "https://www.loc.gov/programs/national-film-preservation-board/film-registry/complete-national-film-registry-listing/"
+      },
+      {
+        "id": "s1",
+        "title": "Eve's Bayou (1997) — title and credit record",
+        "publisher": "IMDb",
+        "url": "https://www.imdb.com/title/tt0119080/"
+      },
+      {
+        "id": "s2",
+        "title": "Eve's Bayou",
+        "publisher": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Eve%27s_Bayou"
+      },
+      {
+        "id": "s3",
+        "title": "Eve's Bayou — edition and restoration search record",
+        "publisher": "The Criterion Collection",
+        "url": "https://www.criterion.com/search#stq=Eve%27s%20Bayou"
+      }
+    ],
+    "questions": [
+      {
+        "id": "evesbayou-memory",
+        "area": "research",
+        "prompt": {
+          "en": "How can a fictional memory differ from objective evidence?",
+          "nb": "Hvordan kan et fiktivt minne skille seg fra objektive belegg?",
+          "fr": "Comment un souvenir fictif diffère-t-il d’une preuve objective ?",
+          "pt": "Como pode uma memória fictícia diferir de uma prova objetiva?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Separate remembered events from independently established facts",
+              "nb": "Skill erindrede hendelser fra uavhengig etablerte fakta",
+              "fr": "Distinguer événements remémorés et faits établis",
+              "pt": "Distinguir eventos recordados de factos estabelecidos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat every recollection as an exact historical record",
+              "nb": "Behandle alle erindringer som eksakt historisk dokumentasjon",
+              "fr": "Traiter chaque souvenir comme une archive exacte",
+              "pt": "Tratar cada recordação como registo histórico exato"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Remove all differences between narrative viewpoints",
+              "nb": "Fjern alle forskjeller mellom fortellerperspektiver",
+              "fr": "Supprimer les différences entre points de vue narratifs",
+              "pt": "Eliminar diferenças entre perspetivas narrativas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The catalogue establishes Lemmons's film and its Louisiana setting; this is an original narrative exercise, not a documented historical production method.",
+          "nb": "Katalogen etablerer Lemmons' film og Louisiana-miljøet; dette er en egen fortellerøvelse, ikke en dokumentert historisk produksjonsmetode.",
+          "fr": "Le catalogue établit le film de Lemmons et son cadre louisianais ; cet exercice narratif original ne prétend pas restituer une méthode historique.",
+          "pt": "O catálogo estabelece o filme de Lemmons e o cenário da Luisiana; este exercício narrativo original não pretende reproduzir um método histórico."
+        },
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "id": "evesbayou-collaboration",
+        "area": "camera",
+        "prompt": {
+          "en": "How should an intimate family scene coordinate image and editing?",
+          "nb": "Hvordan bør en intim familiescene samordne foto og klipp?",
+          "fr": "Comment coordonner image et montage dans une scène familiale intime ?",
+          "pt": "Como coordenar imagem e montagem numa cena familiar íntima?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Infer original lenses from the principal credit list",
+              "nb": "Utled opprinnelige objektiver fra hovedkrediteringen",
+              "fr": "Déduire les objectifs originaux des seuls crédits",
+              "pt": "Deduzir objetivas originais apenas dos créditos"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Develop a shot plan and review changing actor relationships in editing",
+              "nb": "Lag en bildeplan og vurder skiftende skuespillerrelasjoner i klippingen",
+              "fr": "Prévoir les plans et examiner au montage les rapports changeants",
+              "pt": "Planear planos e rever na montagem as relações variáveis"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assign every creative decision exclusively to the director",
+              "nb": "Tilskriv alle kreative valg utelukkende regissøren",
+              "fr": "Attribuer chaque décision au seul réalisateur",
+              "pt": "Atribuir todas as decisões exclusivamente ao realizador"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The credit record identifies Amy Vincent and Terilyn A. Shropshire. Design an original family scene that recognizes their distinct disciplines without inventing the film's technical settings.",
+          "nb": "Krediteringen identifiserer Amy Vincent og Terilyn A. Shropshire. Lag en egen familiescene som anerkjenner fagrollene uten å dikte opp filmens tekniske innstillinger.",
+          "fr": "Les crédits identifient Amy Vincent et Terilyn A. Shropshire. Créez une scène originale distinguant leurs métiers sans inventer les réglages du film.",
+          "pt": "Os créditos identificam Amy Vincent e Terilyn A. Shropshire. Crie uma cena original distinguindo funções sem inventar configurações do filme."
+        },
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "id": "evesbayou-edition",
+        "area": "research",
+        "prompt": {
+          "en": "How should a later director's cut be catalogued?",
+          "nb": "Hvordan bør en senere regissørversjon katalogiseres?",
+          "fr": "Comment cataloguer un montage du réalisateur publié ultérieurement ?",
+          "pt": "Como catalogar uma versão posterior do realizador?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume later mastering describes the original camera workflow",
+              "nb": "Anta at senere mastering beskriver den opprinnelige fotoarbeidsflyten",
+              "fr": "Supposer que le master ultérieur décrit la captation originale",
+              "pt": "Supor que master posterior descreve a captação original"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Use preservation selection as proof of original equipment",
+              "nb": "Bruk bevaringsutvelgelse som bevis på originalt utstyr",
+              "fr": "Prendre la sélection patrimoniale pour preuve du matériel original",
+              "pt": "Usar seleção patrimonial como prova do equipamento original"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Identify the release and restoration records separately",
+              "nb": "Identifiser utgivelses- og restaureringsoppføringer separat",
+              "fr": "Identifier séparément sortie et restauration",
+              "pt": "Identificar separadamente lançamento e restauro"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The Registry and edition record establish preservation and later presentation, not original equipment. Compare only identified editions and distinguish preservation from production.",
+          "nb": "Filmregisteret og utgaveoppføringen etablerer bevaring og senere visning, ikke originalutstyr. Sammenlign identifiserte utgaver og skill bevaring fra produksjon.",
+          "fr": "Le registre et la notice établissent conservation et présentation ultérieure, non le matériel original. Comparez des éditions identifiées.",
+          "pt": "O registo e a ficha estabelecem preservação e apresentação posterior, não equipamento original. Compare edições identificadas."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_princess_mononoke_1997",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Hybrid animation, storyboard revisions and sound scheduling",
+      "nb": "Hybridanimasjon, storyboardrevisjoner og lydplanlegging",
+      "fr": "Animation hybride, révisions du storyboard et calendrier sonore",
+      "pt": "Animação híbrida, revisões de storyboard e calendário sonoro"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Princess Mononoke / もののけ姫",
+        "publisher": "Studio Ghibli",
+        "url": "https://www.ghibli.jp/works/mononoke/"
+      },
+      {
+        "id": "s1",
+        "title": "Studio Ghibli production diary — January 1997",
+        "publisher": "Studio Ghibli",
+        "url": "https://www.ghibli.jp/diary_m/971.html"
+      },
+      {
+        "id": "s2",
+        "title": "Studio Ghibli production diary — February 1997",
+        "publisher": "Studio Ghibli",
+        "url": "https://www.ghibli.jp/diary_m/972.html"
+      },
+      {
+        "id": "s3",
+        "title": "Studio Ghibli production diary — April 1997",
+        "publisher": "Studio Ghibli",
+        "url": "https://www.ghibli.jp/diary_m/974.html"
+      },
+      {
+        "id": "s4",
+        "title": "Studio Ghibli production diary — May 1997",
+        "publisher": "Studio Ghibli",
+        "url": "https://www.ghibli.jp/diary_m/975.html"
+      },
+      {
+        "id": "s5",
+        "title": "Studio Ghibli production diary — September 1997",
+        "publisher": "Studio Ghibli",
+        "url": "https://www.ghibli.jp/diary_m/979.html"
+      },
+      {
+        "id": "s6",
+        "title": "Princess Mononoke (1997)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/83d016f7-82b0-5d6a-a2ad-3fe8cbbded15/princess-mononoke"
+      },
+      {
+        "id": "s7",
+        "title": "Princess Mononoke Japanese-version credits archive",
+        "publisher": "Nausicaa.net",
+        "url": "https://nausicaa.net/wiki/Princess_Mononoke_%28credits%29"
+      },
+      {
+        "id": "s8",
+        "title": "Hayao Miyazaki — 2014 Governors Awards",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/governors-awards/2014/hayao-miyazaki"
+      },
+      {
+        "id": "s9",
+        "title": "Five reasons why Princess Mononoke is Hayao Miyazaki's masterpiece",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/five-reasons-princess-mononoke-hayao-miyazaki-ghibli"
+      }
+    ],
+    "questions": [
+      {
+        "id": "princessmononoke-hybrid",
+        "area": "animation",
+        "prompt": {
+          "en": "How should a hybrid animation workflow divide finishing tasks?",
+          "nb": "Hvordan bør en hybrid animasjonsflyt dele ferdigstillingsoppgavene?",
+          "fr": "Comment répartir les tâches de finition dans une animation hybride ?",
+          "pt": "Como dividir tarefas de acabamento numa animação híbrida?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat digital paint as identical to character animation",
+              "nb": "Behandle digital fargelegging som identisk med karakteranimasjon",
+              "fr": "Assimiler peinture numérique et animation des personnages",
+              "pt": "Equiparar pintura digital a animação de personagens"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Track traditional cels, digital paint and compositing separately",
+              "nb": "Følg tradisjonelle celler, digital fargelegging og kompositering separat",
+              "fr": "Suivre séparément cellulos, peinture numérique et compositing",
+              "pt": "Acompanhar separadamente acetatos, pintura digital e composição"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume every image was generated entirely digitally",
+              "nb": "Anta at alle bilder var fullstendig digitalt generert",
+              "fr": "Supposer que toutes les images étaient entièrement numériques",
+              "pt": "Supor que todas as imagens foram inteiramente digitais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Ghibli's April and May diaries document partial digital paint alongside cel and compositing work; September identifies further computerization as a future challenge. Plan a distinct hybrid workflow.",
+          "nb": "Ghiblis april- og maidagbøker dokumenterer delvis digital fargelegging sammen med celle- og komposittarbeid; september omtaler videre digitalisering som neste utfordring. Lag en egen hybridflyt.",
+          "fr": "Les journaux d’avril et mai documentent peinture numérique partielle et cellulos ; septembre évoque la numérisation future. Concevez une chaîne hybride originale.",
+          "pt": "Os diários de abril e maio documentam pintura digital parcial e acetatos; setembro refere digitalização futura. Crie um fluxo híbrido original."
+        },
+        "sourceIds": [
+          "s3",
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "princessmononoke-revision",
+        "area": "research",
+        "prompt": {
+          "en": "How should a storyboard revision affect downstream scheduling?",
+          "nb": "Hvordan bør storyboardrevisjon påvirke videre tidsplanlegging?",
+          "fr": "Comment une révision du storyboard affecte-t-elle le calendrier en aval ?",
+          "pt": "Como deve revisão de storyboard afetar o calendário posterior?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Freeze all downstream plans despite changing story length",
+              "nb": "Lås alle senere planer tross endret fortellingslengde",
+              "fr": "Figer tous les plans malgré la durée changeante",
+              "pt": "Fixar todos os planos apesar da duração variável"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat a provisional storyboard as a finished release",
+              "nb": "Behandle et foreløpig storyboard som ferdig utgivelse",
+              "fr": "Traiter un storyboard provisoire comme une sortie finale",
+              "pt": "Tratar storyboard provisório como lançamento final"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Update sequence length and communicate changes to affected teams",
+              "nb": "Oppdater sekvenslengde og informer berørte team",
+              "fr": "Actualiser la durée et informer les équipes concernées",
+              "pt": "Atualizar duração e informar equipas afetadas"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Ghibli's January diary records a provisional storyboard exceeding 130 minutes and immediate revision. Create an original revision schedule with dependencies for animation and sound.",
+          "nb": "Ghiblis januardagbok registrerer et foreløpig storyboard over 130 minutter og umiddelbar revisjon. Lag en egen revisjonsplan med avhengigheter for animasjon og lyd.",
+          "fr": "Le journal de janvier note un storyboard provisoire de plus de 130 minutes et sa révision. Créez un calendrier reliant animation et son.",
+          "pt": "O diário de janeiro regista storyboard provisório acima de 130 minutos e revisão. Crie calendário ligando animação e som."
+        },
+        "sourceIds": [
+          "s1",
+          "s4"
+        ]
+      },
+      {
+        "id": "princessmononoke-voices",
+        "area": "sound",
+        "prompt": {
+          "en": "How should original voice work and later localization be documented?",
+          "nb": "Hvordan bør originallyd og senere språktilpasning dokumenteres?",
+          "fr": "Comment documenter les voix originales et la localisation ultérieure ?",
+          "pt": "Como documentar vozes originais e localização posterior?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Separate original recording sessions from later language versions",
+              "nb": "Skill opprinnelige stemmeopptak fra senere språkversjoner",
+              "fr": "Distinguer séances originales et versions linguistiques ultérieures",
+              "pt": "Distinguir sessões originais de versões linguísticas posteriores"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Attribute all language versions to the original voice director",
+              "nb": "Tilskriv alle språkversjoner den opprinnelige stemmeregissøren",
+              "fr": "Attribuer toutes les langues au directeur vocal original",
+              "pt": "Atribuir todas as línguas ao diretor vocal original"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume localization reveals original recording hardware",
+              "nb": "Anta at språktilpasning avslører originalt opptaksutstyr",
+              "fr": "Supposer que la localisation révèle le matériel original",
+              "pt": "Supor que localização revela equipamento original"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Ghibli's February and May diaries record Japanese voice work and orchestral recording; later English adaptation is separate. Build a cue and credit log without conflating versions.",
+          "nb": "Ghiblis februar- og maidagbøker dokumenterer japansk stemmearbeid og orkesteropptak; senere engelsk adaptasjon er separat. Lag lyd- og krediteringslogg uten å blande versjoner.",
+          "fr": "Les journaux de février et mai documentent voix japonaises et orchestre ; l’adaptation anglaise est distincte. Créez un registre sonore et de crédits.",
+          "pt": "Os diários de fevereiro e maio documentam vozes japonesas e orquestra; adaptação inglesa é distinta. Crie registo de som e créditos."
+        },
+        "sourceIds": [
+          "s2",
+          "s4",
+          "s9"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_titanic_1997",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Multiple production units, miniature composites and historical footage",
+      "nb": "Flere opptaksteam, miniatyrkompositter og historiske opptak",
+      "fr": "Équipes multiples, composites miniatures et images historiques",
+      "pt": "Equipas múltiplas, compósitos de miniaturas e imagens históricas"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Titanic (1997)",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/55202-TITANIC"
+      },
+      {
+        "id": "s1",
+        "title": "Titanic (1997)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/aa4a1930-21de-51ce-9700-6acaf2d59437/titanic"
+      },
+      {
+        "id": "s2",
+        "title": "Titanic",
+        "publisher": "Danish Film Institute",
+        "url": "https://www.dfi.dk/en/viden-om-film/filmdatabasen/film/titanic"
+      },
+      {
+        "id": "s3",
+        "title": "Titanic: All Hands on Deck",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/magazine/dec97/titanic/ahod/pg2.htm"
+      },
+      {
+        "id": "s4",
+        "title": "Titanic 20th Anniversary — Russell Carpenter, ASC",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/podcasts/titanic-20th-anniversary-russell-carpenter-asc"
+      },
+      {
+        "id": "s5",
+        "title": "True Luminaries: Russell Carpenter, ASC",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/magazine/jun98/lumin/pg3.htm"
+      },
+      {
+        "id": "s6",
+        "title": "Titanic: Epic Effects",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/magazine/dec97/titanic/eect/pg5.htm"
+      },
+      {
+        "id": "s7",
+        "title": "Titanic",
+        "publisher": "Digital Domain",
+        "url": "https://digitaldomain.com/work/titanic/"
+      },
+      {
+        "id": "s8",
+        "title": "NOVA Online: Special Effects — Rob Legato Q&A",
+        "publisher": "PBS NOVA",
+        "url": "https://www.pbs.org/wgbh/nova/specialfx2/wizardlegato1203.html"
+      },
+      {
+        "id": "s9",
+        "title": "The 70th Academy Awards",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/oscars/ceremonies/1998/A"
+      }
+    ],
+    "questions": [
+      {
+        "id": "titanic-units",
+        "area": "research",
+        "prompt": {
+          "en": "How can separate filming units maintain visual continuity?",
+          "nb": "Hvordan kan separate opptaksteam bevare visuell kontinuitet?",
+          "fr": "Comment des équipes de tournage distinctes maintiennent-elles les raccords ?",
+          "pt": "Como podem equipas de filmagem distintas manter continuidade visual?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assign all photography to one person without distinction",
+              "nb": "Tilskriv alt fotoarbeid én person uten skille",
+              "fr": "Attribuer toute la photographie à une seule personne",
+              "pt": "Atribuir toda fotografia a uma única pessoa"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume every unit used the same production conditions",
+              "nb": "Anta at alle team hadde samme produksjonsforhold",
+              "fr": "Supposer que toutes les équipes avaient les mêmes conditions",
+              "pt": "Supor que todas as equipas tinham as mesmas condições"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Share visual references and document each unit's responsibilities",
+              "nb": "Del bildereferanser og dokumenter ansvaret til hvert team",
+              "fr": "Partager références visuelles et documenter les responsabilités",
+              "pt": "Partilhar referências visuais e documentar responsabilidades"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Carpenter distinguishes Deschanel's modern-day section from his period production. Plan an original multi-unit handoff with clear credits and continuity requirements.",
+          "nb": "Carpenter skiller Deschanels nåtidsdel fra sin historiske produksjon. Lag en egen overleveringsplan mellom team med tydelige krediteringer og kontinuitetskrav.",
+          "fr": "Carpenter distingue la partie contemporaine de Deschanel de sa production d’époque. Concevez un relais original avec crédits et raccords clairs.",
+          "pt": "Carpenter distingue a parte contemporânea de Deschanel da sua produção de época. Crie transição original com créditos e continuidade claros."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "titanic-composite",
+        "area": "camera",
+        "prompt": {
+          "en": "How can models and digital extensions form a coherent fictional environment?",
+          "nb": "Hvordan kan modeller og digitale utvidelser danne et sammenhengende fiktivt miljø?",
+          "fr": "Comment maquettes et extensions numériques forment-elles un environnement cohérent ?",
+          "pt": "Como podem miniaturas e extensões digitais formar um ambiente coerente?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Coordinate scale, perspective and lighting using safe tabletop examples",
+              "nb": "Samordne skala, perspektiv og lys med trygge bordmodelleksempler",
+              "fr": "Coordonner échelle, perspective et lumière avec des maquettes sûres",
+              "pt": "Coordenar escala, perspetiva e luz com modelos seguros de mesa"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume every environment was built at full scale",
+              "nb": "Anta at alle miljøer ble bygget i full skala",
+              "fr": "Supposer que tous les décors étaient grandeur nature",
+              "pt": "Supor que todos os cenários eram de tamanho real"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Recreate hazardous water-stage work in a classroom",
+              "nb": "Gjenskap farlig vannstudioarbeid i et klasserom",
+              "fr": "Reproduire un tournage aquatique dangereux en classe",
+              "pt": "Reproduzir filmagem aquática perigosa numa aula"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Digital Domain and Legato document combined live action, miniatures and digital extensions. Design a harmless tabletop composite without reproducing hazardous historical production conditions.",
+          "nb": "Digital Domain og Legato dokumenterer realfilm, miniatyrer og digitale utvidelser. Lag et ufarlig bordmodellkompositt uten å gjenskape farlige historiske produksjonsforhold.",
+          "fr": "Digital Domain et Legato documentent prises réelles, maquettes et extensions. Concevez un composite de table inoffensif sans reproduire les risques historiques.",
+          "pt": "Digital Domain e Legato documentam filmagem real, miniaturas e extensões. Crie compósito de mesa inofensivo sem reproduzir riscos históricos."
+        },
+        "sourceIds": [
+          "s7",
+          "s8"
+        ]
+      },
+      {
+        "id": "titanic-wreck",
+        "area": "research",
+        "prompt": {
+          "en": "How should genuine archival expedition imagery be distinguished from fictional reconstruction?",
+          "nb": "Hvordan bør autentiske ekspedisjonsbilder skilles fra fiktiv rekonstruksjon?",
+          "fr": "Comment distinguer des images d’expédition authentiques d’une reconstruction fictive ?",
+          "pt": "Como distinguir imagens autênticas de expedição de reconstrução ficcional?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Infer historical truth from the appearance of a composite",
+              "nb": "Utled historisk sannhet fra utseendet til et kompositt",
+              "fr": "Déduire la vérité historique de l’apparence d’un composite",
+              "pt": "Deduzir verdade histórica da aparência de um compósito"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record acquisition context and provenance for each image category",
+              "nb": "Registrer opptakskontekst og proveniens for hver bildekategori",
+              "fr": "Noter contexte de captation et provenance de chaque catégorie",
+              "pt": "Registar contexto de captação e proveniência de cada categoria"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Label all effects footage as genuine expedition footage",
+              "nb": "Merk alle effektopptak som autentiske ekspedisjonsopptak",
+              "fr": "Présenter tous les effets comme images authentiques d’expédition",
+              "pt": "Apresentar todos os efeitos como imagens autênticas de expedição"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "ASC distinguishes actual 1995 wreck imagery from effects-unit photography. Build an original provenance log separating archival evidence from fictional construction.",
+          "nb": "ASC skiller faktiske vrakbilder fra 1995 fra effektteamets foto. Lag en egen provenienslogg som skiller arkivbelegg fra fiktiv konstruksjon.",
+          "fr": "L’ASC distingue les images réelles de l’épave de 1995 des prises d’effets. Créez un registre séparant archives et construction fictive.",
+          "pt": "A ASC distingue imagens reais do naufrágio de 1995 da fotografia de efeitos. Crie registo separando arquivo de construção ficcional."
+        },
+        "sourceIds": [
+          "s6"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_ringu_1998",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Analog media anxiety, adaptation and catalogue evidence",
+      "nb": "Analog medieuro, adaptasjon og katalogbelegg",
+      "fr": "Inquiétude liée aux médias analogiques, adaptation et catalogues",
+      "pt": "Inquietação dos meios analógicos, adaptação e catálogos"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Ringu",
+        "publisher": "Danish Film Institute",
+        "url": "https://www.dfi.dk/en/viden-om-film/filmdatabasen/film/ring-0"
+      },
+      {
+        "id": "s1",
+        "title": "Ringu — BFI film record",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/69fc19aa-0991-54a8-894d-0b1ba53e70bf/ringu"
+      },
+      {
+        "id": "s2",
+        "title": "When videotapes were sinister – 20 years of J-horror classic Ring",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/features/ringu-hideo-nakata-videotapes-lynch-haneke"
+      },
+      {
+        "id": "s3",
+        "title": "Ring [Ringu] — BFI Player",
+        "publisher": "British Film Institute",
+        "url": "https://player.bfi.org.uk/subscription/film/watch-ring-ringu-1997-online"
+      }
+    ],
+    "questions": [
+      {
+        "id": "ringu-media",
+        "area": "camera",
+        "prompt": {
+          "en": "How can an obsolete media object become a fictional source of suspense?",
+          "nb": "Hvordan kan et foreldet medieobjekt bli en fiktiv kilde til spenning?",
+          "fr": "Comment un objet médiatique ancien devient-il source de suspense fictif ?",
+          "pt": "Como pode um objeto mediático antigo tornar-se fonte de suspense ficcional?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Develop an original visual motif around the object's familiar everyday use",
+              "nb": "Utvikle et eget bildemotiv rundt gjenstandens velkjente hverdagsbruk",
+              "fr": "Développer un motif original autour de son usage quotidien",
+              "pt": "Desenvolver motivo original em torno do uso quotidiano do objeto"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume the object's physical technology itself proves supernatural claims",
+              "nb": "Anta at gjenstandens teknologi beviser overnaturlige påstander",
+              "fr": "Supposer que la technologie prouve des affirmations surnaturelles",
+              "pt": "Supor que tecnologia prova alegações sobrenaturais"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy the film's recognizable tape imagery exactly",
+              "nb": "Kopier filmens gjenkjennelige videobilder nøyaktig",
+              "fr": "Copier exactement les images reconnaissables de la cassette",
+              "pt": "Copiar exatamente imagens reconhecíveis da fita"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "BFI analyzes VHS and CRT anxieties in the film. Create a distinct fictional media motif without claiming undocumented original camera or effects methods.",
+          "nb": "BFI analyserer uro knyttet til VHS og CRT i filmen. Lag et eget fiktivt mediemotiv uten å hevde udokumenterte opprinnelige foto- eller effektmetoder.",
+          "fr": "Le BFI analyse les inquiétudes liées au VHS et au CRT. Créez un motif distinct sans inventer de méthodes de tournage historiques.",
+          "pt": "O BFI analisa inquietações sobre VHS e CRT. Crie motivo distinto sem inventar métodos históricos de filmagem."
+        },
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "id": "ringu-catalogue",
+        "area": "research",
+        "prompt": {
+          "en": "How should conflicting release dates and durations be handled?",
+          "nb": "Hvordan bør motstridende utgivelsesår og spilletider håndteres?",
+          "fr": "Comment traiter des dates et durées de sortie divergentes ?",
+          "pt": "Como tratar datas e durações de lançamento divergentes?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Infer a specific censorship change solely from runtime differences",
+              "nb": "Utled en bestemt sensurendring bare fra spilletidsforskjeller",
+              "fr": "Déduire une censure précise du seul écart de durée",
+              "pt": "Deduzir censura específica apenas por diferenças de duração"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Preserve each catalogue entry and identify the edition under study",
+              "nb": "Bevar hver katalogoppføring og identifiser utgaven som studeres",
+              "fr": "Conserver chaque notice et identifier la version étudiée",
+              "pt": "Preservar cada ficha e identificar edição estudada"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Overwrite every date with the earliest catalogue entry",
+              "nb": "Overskriv alle datoer med den tidligste katalogoppføringen",
+              "fr": "Remplacer toutes les dates par la plus ancienne notice",
+              "pt": "Substituir todas as datas pela ficha mais antiga"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The Danish catalogue and BFI preserve different dating and duration conventions. Maintain the canonical 1998 identity and cite each edition record without guessing the reason for discrepancies.",
+          "nb": "Den danske katalogen og BFI bevarer ulike daterings- og spilletidskonvensjoner. Behold den kanoniske 1998-identiteten og oppgi hver utgavekilde uten å gjette årsakene.",
+          "fr": "Le catalogue danois et le BFI divergent sur dates et durées. Gardez l’identité canonique de 1998 et citez chaque notice sans inventer de causes.",
+          "pt": "O catálogo dinamarquês e o BFI divergem em datas e durações. Mantenha identidade canónica de 1998 e cite cada ficha sem inventar causas."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s3"
+        ]
+      },
+      {
+        "id": "ringu-format",
+        "area": "research",
+        "prompt": {
+          "en": "What can a catalogue's exhibition format establish about original production?",
+          "nb": "Hva kan katalogens visningsformat fastslå om opprinnelig produksjon?",
+          "fr": "Que peut établir un format de projection catalogué sur la production originale ?",
+          "pt": "O que pode um formato de exibição catalogado estabelecer sobre a produção original?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat a DTS listing as a complete sound-recording workflow",
+              "nb": "Behandle en DTS-oppføring som fullstendig lydopptaksflyt",
+              "fr": "Traiter une mention DTS comme chaîne complète de prise de son",
+              "pt": "Tratar menção DTS como fluxo completo de gravação sonora"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume a current streaming presentation proves original lens choices",
+              "nb": "Anta at nåværende strømming beviser opprinnelige objektivvalg",
+              "fr": "Supposer que le streaming actuel prouve les objectifs originaux",
+              "pt": "Supor que streaming atual prova escolhas de objetivas originais"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record exhibition metadata without inferring acquisition equipment",
+              "nb": "Registrer visningsmetadata uten å utlede opptaksutstyr",
+              "fr": "Noter les métadonnées de projection sans déduire le matériel de captation",
+              "pt": "Registar metadados de exibição sem deduzir equipamento de captação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The institutional record lists presentation properties, not a complete acquisition pipeline. Design a dossier separating verified presentation facts from unknown production details.",
+          "nb": "Institusjonsoppføringen angir visningsegenskaper, ikke full opptaksflyt. Lag en filmmappe som skiller verifiserte visningsfakta fra ukjente produksjonsdetaljer.",
+          "fr": "La notice institutionnelle indique la projection, non toute la captation. Créez un dossier distinguant faits vérifiés et détails inconnus.",
+          "pt": "A ficha institucional indica exibição, não fluxo completo de captação. Crie dossier distinguindo factos verificados de detalhes desconhecidos."
+        },
+        "sourceIds": [
+          "s0"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_idiots_1998",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Dogme constraints, evidence boundaries and festival circulation",
+      "nb": "Dogme-begrensninger, kildegrenser og festivalsirkulasjon",
+      "fr": "Contraintes Dogme, limites des preuves et circulation en festival",
+      "pt": "Restrições Dogme, limites das provas e circulação em festivais"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Idioterne",
+        "publisher": "Danish Film Institute",
+        "url": "https://www.dfi.dk/viden-om-film/filmdatabasen/film/idioterne"
+      },
+      {
+        "id": "s1",
+        "title": "The Vow of Chastity — Dogme 95",
+        "publisher": "Dogme 95",
+        "url": "https://www.dogme95.dk/the-vow-of-chastity/"
+      },
+      {
+        "id": "s2",
+        "title": "Idioterne / The Idiots — Festival de Cannes archive",
+        "publisher": "Festival de Cannes",
+        "url": "https://www.festival-cannes.com/en/f/idioterne/"
+      },
+      {
+        "id": "s3",
+        "title": "The Idiots (1998) — title and credit record",
+        "publisher": "IMDb",
+        "url": "https://www.imdb.com/title/tt0154421/"
+      }
+    ],
+    "questions": [
+      {
+        "id": "theidiots-constraints",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a self-imposed filmmaking constraint guide a short fictional scene?",
+          "nb": "Hvordan kan en selvvalgt filmbegrensning styre en kort fiktiv scene?",
+          "fr": "Comment une contrainte volontaire guide-t-elle une courte scène fictive ?",
+          "pt": "Como pode uma restrição voluntária orientar uma breve cena ficcional?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Abandon performer safety in order to follow a manifesto",
+              "nb": "Oppgi skuespillertrygghet for å følge et manifest",
+              "fr": "Abandonner la sécurité des interprètes pour suivre un manifeste",
+              "pt": "Abandonar segurança dos intérpretes para seguir um manifesto"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Define an explicit constraint and assess its creative consequences",
+              "nb": "Definer en tydelig begrensning og vurder kreative konsekvenser",
+              "fr": "Définir une contrainte explicite et évaluer ses effets créatifs",
+              "pt": "Definir restrição explícita e avaliar consequências criativas"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume every restriction automatically improves the scene",
+              "nb": "Anta at enhver begrensning automatisk forbedrer scenen",
+              "fr": "Supposer que chaque contrainte améliore automatiquement la scène",
+              "pt": "Supor que toda restrição melhora automaticamente a cena"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The Dogme 95 Vow documents prescribed rules. Test a safe original constraint-based scene without treating a manifesto as proof of film-specific compliance.",
+          "nb": "Dogme 95-løftet dokumenterer foreskrevne regler. Test en trygg egen scene med begrensninger uten å behandle manifestet som bevis på filmspesifikk etterlevelse.",
+          "fr": "Le vœu Dogme 95 documente des règles prescrites. Testez une scène originale sûre sans confondre manifeste et conformité historique.",
+          "pt": "O voto Dogme 95 documenta regras prescritas. Teste cena original segura sem confundir manifesto com conformidade histórica."
+        },
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "id": "theidiots-evidence",
+        "area": "research",
+        "prompt": {
+          "en": "How should a movement's rules be compared with actual production evidence?",
+          "nb": "Hvordan bør en filmbevegelses regler sammenlignes med faktisk produksjonsbelegg?",
+          "fr": "Comment comparer les règles d’un mouvement aux preuves de production ?",
+          "pt": "Como comparar regras de um movimento com provas de produção?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Infer all original equipment from the movement's manifesto",
+              "nb": "Utled alt originalutstyr fra bevegelsens manifest",
+              "fr": "Déduire tout le matériel original du manifeste",
+              "pt": "Deduzir todo equipamento original do manifesto"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat absence of documentation as proof of full compliance",
+              "nb": "Behandle fravær av dokumentasjon som bevis på full etterlevelse",
+              "fr": "Traiter l’absence de documentation comme preuve de conformité totale",
+              "pt": "Tratar ausência de documentação como prova de conformidade total"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Distinguish normative rules from verified title-specific practices",
+              "nb": "Skill normative regler fra verifiserte filmspesifikke praksiser",
+              "fr": "Distinguer règles normatives et pratiques attestées du film",
+              "pt": "Distinguir regras normativas de práticas verificadas do filme"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "DFI establishes the film's identity and Dogme's primary document establishes its rules. Keep these separate and explicitly mark undocumented technical details.",
+          "nb": "DFI etablerer filmens identitet og Dogmes primærdokument etablerer reglene. Hold disse adskilt og merk udokumenterte tekniske detaljer eksplisitt.",
+          "fr": "Le DFI établit l’identité du film et le texte Dogme ses règles. Séparez les deux et signalez les détails non documentés.",
+          "pt": "O DFI estabelece identidade do filme e o texto Dogme as regras. Separe ambos e assinale detalhes não documentados."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "theidiots-festival",
+        "area": "research",
+        "prompt": {
+          "en": "How should a festival presentation be recorded in a production dossier?",
+          "nb": "Hvordan bør en festivalvisning registreres i en produksjonsmappe?",
+          "fr": "Comment consigner une présentation en festival dans un dossier de production ?",
+          "pt": "Como registar apresentação em festival num dossier de produção?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record festival circulation separately from original production credits",
+              "nb": "Registrer festivalsirkulasjon separat fra original produksjonskreditering",
+              "fr": "Noter la circulation en festival séparément des crédits originaux",
+              "pt": "Registar circulação em festival separadamente dos créditos originais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat festival selection as proof of every technical procedure",
+              "nb": "Behandle festivalutvelgelse som bevis for alle tekniske prosedyrer",
+              "fr": "Traiter la sélection comme preuve de chaque procédure technique",
+              "pt": "Tratar seleção como prova de cada procedimento técnico"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Replace all production evidence with one festival listing",
+              "nb": "Erstatt alle produksjonsbelegg med én festivaloppføring",
+              "fr": "Remplacer toutes les preuves par une notice de festival",
+              "pt": "Substituir todas as provas por uma ficha de festival"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Cannes documents the 1998 festival circulation and DFI records production identity. Build separate chronology entries rather than conflating production and exhibition.",
+          "nb": "Cannes dokumenterer festivalsirkulasjonen i 1998 og DFI registrerer produksjonsidentiteten. Lag separate kronologioppføringer fremfor å blande produksjon og visning.",
+          "fr": "Cannes documente la circulation de 1998 et le DFI l’identité de production. Créez des entrées distinctes pour production et projection.",
+          "pt": "Cannes documenta circulação de 1998 e o DFI identidade de produção. Crie entradas distintas para produção e exibição."
+        },
+        "sourceIds": [
+          "s0",
+          "s2"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_matrix_1999",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Visual world separation, temporal effects and sound collaboration",
+      "nb": "Visuelt skille mellom verdener, tidseffekter og lydsamarbeid",
+      "fr": "Séparation visuelle des mondes, effets temporels et collaboration sonore",
+      "pt": "Separação visual de mundos, efeitos temporais e colaboração sonora"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "The Matrix (1999)",
+        "publisher": "AFI Catalog",
+        "url": "https://catalog.afi.com/Film/61230-THE-MATRIX"
+      },
+      {
+        "id": "s1",
+        "title": "The Matrix (1999)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/cc7edbb1-17e5-509b-935b-725045d722aa/the-matrix"
+      },
+      {
+        "id": "s2",
+        "title": "The Matrix",
+        "publisher": "BFI Sight and Sound",
+        "url": "https://old.bfi.org.uk/sightandsound/review/151"
+      },
+      {
+        "id": "s3",
+        "title": "The Matrix: Welcome to the Machine",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/article/flashback-the-matrix-cinematography/"
+      },
+      {
+        "id": "s4",
+        "title": "Welcome to the Machine - Image 8",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/magazine/apr99/matrix/img8.htm"
+      },
+      {
+        "id": "s5",
+        "title": "The End of the Century as We Knew It — The 1990s",
+        "publisher": "American Cinematographer",
+        "url": "https://theasc.com/article/the-end-of-the-century-as-we-knew-it-the-1990s/"
+      },
+      {
+        "id": "s6",
+        "title": "Looking back at The Matrix in Australia",
+        "publisher": "National Film and Sound Archive of Australia",
+        "url": "https://www.nfsa.gov.au/stories/articles/re-entering-the-matrix"
+      },
+      {
+        "id": "s7",
+        "title": "Hugo Weaving on Agent Smith and The Matrix",
+        "publisher": "National Film and Sound Archive of Australia",
+        "url": "https://www.nfsa.gov.au/collection/item/hugo-weaving-agent-smith-and-matrix"
+      },
+      {
+        "id": "s8",
+        "title": "The 72nd Academy Awards",
+        "publisher": "Academy of Motion Picture Arts and Sciences",
+        "url": "https://www.oscars.org/oscars/ceremonies/2000"
+      },
+      {
+        "id": "s9",
+        "title": "The Matrix",
+        "publisher": "National Film and Sound Archive of Australia",
+        "url": "https://tickets.nfsa.gov.au/Events/The-Matrix"
+      }
+    ],
+    "questions": [
+      {
+        "id": "thematrix-worlds",
+        "area": "camera",
+        "prompt": {
+          "en": "How can two fictional worlds have distinct visual identities?",
+          "nb": "Hvordan kan to fiktive verdener få ulike visuelle identiteter?",
+          "fr": "Comment deux mondes fictifs acquièrent-ils des identités visuelles distinctes ?",
+          "pt": "Como podem dois mundos fictícios adquirir identidades visuais distintas?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Apply identical visual treatment to both worlds without purpose",
+              "nb": "Bruk identisk bildebehandling i begge verdener uten formål",
+              "fr": "Appliquer le même traitement aux deux mondes sans raison",
+              "pt": "Aplicar tratamento idêntico a ambos os mundos sem razão"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Copy all recognizable production designs of the film",
+              "nb": "Kopier alle gjenkjennelige produksjonsdesign fra filmen",
+              "fr": "Copier tous les décors reconnaissables du film",
+              "pt": "Copiar todos os designs reconhecíveis do filme"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Design contrasting palettes and shared continuity references",
+              "nb": "Lag kontrasterende paletter og felles kontinuitetsreferanser",
+              "fr": "Concevoir palettes contrastées et références communes",
+              "pt": "Conceber paletas contrastantes e referências comuns"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Contemporary ASC reporting documents distinct green and blue-white strategies. Develop original palette tests for two invented environments rather than copying the film's designs.",
+          "nb": "Samtidig ASC-rapportering dokumenterer ulike grønne og blåhvite strategier. Lag egne palettprøver for to oppdiktede miljøer fremfor å kopiere filmens design.",
+          "fr": "L’ASC documente les stratégies vertes et bleu-blanc. Développez des essais originaux pour deux environnements inventés.",
+          "pt": "A ASC documenta estratégias verdes e azul-branco. Desenvolva testes originais para dois ambientes inventados."
+        },
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      {
+        "id": "thematrix-time",
+        "area": "camera",
+        "prompt": {
+          "en": "How can a fictional image study separate viewpoint from perceived time?",
+          "nb": "Hvordan kan en fiktiv bildestudie skille synsvinkel fra opplevd tid?",
+          "fr": "Comment une étude visuelle fictive dissocie-t-elle point de vue et temps perçu ?",
+          "pt": "Como pode um estudo visual fictício separar perspetiva de tempo percebido?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Compare an original static-object sequence at different viewing angles",
+              "nb": "Sammenlign en egen sekvens av en stillestående gjenstand fra ulike vinkler",
+              "fr": "Comparer une séquence originale d’objet fixe sous différents angles",
+              "pt": "Comparar sequência original de objeto estático em ângulos distintos"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Assume every temporal effect used one fixed historical setup",
+              "nb": "Anta at alle tidseffekter brukte ett fast historisk oppsett",
+              "fr": "Supposer que tous les effets temporels utilisaient un dispositif unique",
+              "pt": "Supor que todos os efeitos temporais usaram configuração única"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Recreate dangerous action for a classroom visual test",
+              "nb": "Gjenskap farlig handling til en visuell undervisningstest",
+              "fr": "Reproduire une action dangereuse pour un essai en classe",
+              "pt": "Reproduzir ação perigosa num teste em aula"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "ASC documents camera-array work and varying configurations. Explore the conceptual relationship of viewpoint and time with a harmless object, not a reconstruction of the action or historical apparatus.",
+          "nb": "ASC dokumenterer kameraarrayarbeid og varierende oppsett. Utforsk forholdet mellom synsvinkel og tid med en ufarlig gjenstand, ikke en gjenskaping av action eller historisk utstyr.",
+          "fr": "L’ASC documente les réseaux de caméras et leurs configurations variables. Étudiez regard et temps avec un objet inoffensif, sans reconstitution de l’action ni du matériel.",
+          "pt": "A ASC documenta conjuntos de câmaras e configurações variáveis. Explore perspetiva e tempo com objeto inofensivo, sem recriar ação ou equipamento."
+        },
+        "sourceIds": [
+          "s4",
+          "s5"
+        ]
+      },
+      {
+        "id": "thematrix-sound",
+        "area": "sound",
+        "prompt": {
+          "en": "How should distinct sound and effects contributions be credited?",
+          "nb": "Hvordan bør ulike lyd- og effektbidrag krediteres?",
+          "fr": "Comment créditer les apports distincts du son et des effets ?",
+          "pt": "Como creditar contributos distintos de som e efeitos?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat award credits as a complete record of every production task",
+              "nb": "Behandle priskrediteringer som fullstendig dokumentasjon av alle produksjonsoppgaver",
+              "fr": "Traiter les prix comme relevé complet de chaque tâche",
+              "pt": "Tratar prémios como registo completo de todas as tarefas"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Map sound editing, production recording, mixing and visual effects roles",
+              "nb": "Kartlegg lydklipp, opptakslyd, miks og visuelle effektroller",
+              "fr": "Cartographier montage sonore, prise de son, mixage et effets visuels",
+              "pt": "Mapear edição sonora, gravação, mistura e efeitos visuais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Attribute every sound to the visual-effects supervisor",
+              "nb": "Tilskriv all lyd den visuelle effektansvarlige",
+              "fr": "Attribuer tout le son au superviseur des effets visuels",
+              "pt": "Atribuir todo som ao supervisor de efeitos visuais"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Contemporary credits distinguish Davis, Lee, mixers and visual-effects teams; the Academy records separate awards. Design a new sound plan with clearly differentiated contributions.",
+          "nb": "Samtidig kreditering skiller Davis, Lee, miksere og effektteam; Academy registrerer separate priser. Lag en ny lydplan med tydelig adskilte bidrag.",
+          "fr": "Les crédits distinguent Davis, Lee, mixeurs et effets ; l’Académie recense des prix distincts. Concevez un plan sonore aux contributions différenciées.",
+          "pt": "Os créditos distinguem Davis, Lee, misturadores e efeitos; a Academia regista prémios distintos. Crie plano sonoro com contributos diferenciados."
+        },
+        "sourceIds": [
+          "s2",
+          "s8"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_the_blair_witch_project_1999",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Participant-operated cameras, improvisation and transparent promotion",
+      "nb": "Deltakerstyrte kameraer, improvisasjon og åpen markedsføring",
+      "fr": "Caméras maniées par les participants, improvisation et promotion transparente",
+      "pt": "Câmaras operadas por participantes, improvisação e promoção transparente"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Into the Woods: Eduardo Sanchez and Daniel Myrick's The Blair Witch Project",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/archives/issues/winter1999/into_the_woods.php"
+      },
+      {
+        "id": "s1",
+        "title": "The Blair Witch Project",
+        "publisher": "American Film Institute",
+        "url": "https://catalog.afi.com/Film/60908-THE-BLAIR-WITCH-PROJECT"
+      },
+      {
+        "id": "s2",
+        "title": "From The Blair Witch Project to Hereditary: How the Sundance Film Festival Defined Modern Horror",
+        "publisher": "Sundance Institute",
+        "url": "https://www.sundance.org/blogs/from-the-blair-witch-project-to-hereditary-how-the-sundance-film-festival-defined-modern-horror/"
+      },
+      {
+        "id": "s3",
+        "title": "Festival Roundup: Florida Film Festival",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/archives/issues/summer1999/fests.php"
+      }
+    ],
+    "questions": [
+      {
+        "id": "theblairwitchproject-improvisation",
+        "area": "camera",
+        "prompt": {
+          "en": "How can performers operate cameras during a safe fictional improvisation?",
+          "nb": "Hvordan kan skuespillere betjene kameraer under en trygg fiktiv improvisasjon?",
+          "fr": "Comment des interprètes manient-ils des caméras dans une improvisation fictive sûre ?",
+          "pt": "Como podem intérpretes operar câmaras numa improvisação ficcional segura?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Agree an outline, camera training and clear consent before filming",
+              "nb": "Avtal handlingsskisse, kameraopplæring og tydelig samtykke før opptak",
+              "fr": "Convenir d’un canevas, d’une formation caméra et du consentement",
+              "pt": "Acordar esboço, formação de câmara e consentimento claro"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Create genuine distress by withholding essential safety information",
+              "nb": "Skap ekte ubehag ved å holde tilbake nødvendig sikkerhetsinformasjon",
+              "fr": "Provoquer une détresse réelle en cachant les informations de sécurité",
+              "pt": "Provocar sofrimento real ocultando informação de segurança"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume improvisation eliminates the need for crew preparation",
+              "nb": "Anta at improvisasjon fjerner behovet for teamforberedelse",
+              "fr": "Supposer que l’improvisation dispense de préparation",
+              "pt": "Supor que improvisação dispensa preparação"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The contemporary interview describes outline-based improvisation and actor-operated cameras. Plan a present-day exercise with informed consent, training and safe conditions, not a recreation of historical pressures.",
+          "nb": "Det samtidige intervjuet beskriver improvisasjon etter handlingsskisse og skuespillerstyrte kameraer. Lag en moderne øvelse med informert samtykke, opplæring og trygge forhold, ikke historisk press.",
+          "fr": "L’entretien décrit l’improvisation sur canevas et les caméras maniées par les acteurs. Concevez un exercice actuel avec consentement, formation et sécurité.",
+          "pt": "A entrevista descreve improvisação por esboço e câmaras operadas por atores. Crie exercício atual com consentimento, formação e segurança."
+        },
+        "sourceIds": [
+          "s0"
+        ]
+      },
+      {
+        "id": "theblairwitchproject-selection",
+        "area": "research",
+        "prompt": {
+          "en": "How can found-footage fiction preserve clarity during editing?",
+          "nb": "Hvordan kan found-footage-fiksjon bevare tydelighet under klippingen?",
+          "fr": "Comment une fiction en images retrouvées garde-t-elle sa clarté au montage ?",
+          "pt": "Como pode ficção de imagens encontradas manter clareza na montagem?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Ignore differences between festival and distribution editions",
+              "nb": "Ignorer forskjeller mellom festival- og distribusjonsutgaver",
+              "fr": "Ignorer les différences entre versions festival et distribution",
+              "pt": "Ignorar diferenças entre edições de festival e distribuição"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Log recorded material and identify purposeful omissions or inserts",
+              "nb": "Loggfør opptak og identifiser målrettede utelatelser eller innslag",
+              "fr": "Consigner les images et identifier omissions ou inserts intentionnels",
+              "pt": "Registar material e identificar omissões ou inserções intencionais"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat all recorded footage as part of the finished feature",
+              "nb": "Behandle alt opptaksmateriale som del av ferdig langfilm",
+              "fr": "Traiter toutes les images comme partie du film fini",
+              "pt": "Tratar todo material gravado como parte da longa final"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "The directors distinguish recorded phases from unused material; trade reporting documents post-Sundance adjustments. Maintain a fictional editorial log with identified versions.",
+          "nb": "Regissørene skiller opptaksfaser fra ubrukt materiale; bransjerapportering dokumenterer endringer etter Sundance. Før en fiktiv klippelogg med identifiserte utgaver.",
+          "fr": "Les réalisateurs distinguent phases et matériau inutilisé ; la presse documente les changements après Sundance. Tenez un registre fictif des versions.",
+          "pt": "Os realizadores distinguem fases e material não usado; imprensa documenta mudanças após Sundance. Mantenha registo fictício de versões."
+        },
+        "sourceIds": [
+          "s0",
+          "s3"
+        ]
+      },
+      {
+        "id": "theblairwitchproject-promotion",
+        "area": "research",
+        "prompt": {
+          "en": "How should a fictional found-footage film be promoted responsibly today?",
+          "nb": "Hvordan bør en fiktiv found-footage-film markedsføres ansvarlig i dag?",
+          "fr": "Comment promouvoir aujourd’hui une fiction en images retrouvées de façon responsable ?",
+          "pt": "Como promover hoje ficção de imagens encontradas de forma responsável?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Present invented disappearances as verified real emergencies",
+              "nb": "Presenter oppdiktede forsvinninger som verifiserte reelle nødsituasjoner",
+              "fr": "Présenter des disparitions inventées comme urgences réelles vérifiées",
+              "pt": "Apresentar desaparecimentos inventados como emergências reais verificadas"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat promotional claims as independent historical documentation",
+              "nb": "Behandle markedsføringspåstander som uavhengig historisk dokumentasjon",
+              "fr": "Traiter les affirmations promotionnelles comme archives indépendantes",
+              "pt": "Tratar alegações promocionais como documentação independente"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Use atmospheric fictional material while clearly identifying its status",
+              "nb": "Bruk stemningsfullt fiktivt materiale og merk statusen tydelig",
+              "fr": "Employer du matériau fictif atmosphérique en indiquant son statut",
+              "pt": "Usar material ficcional atmosférico identificando claramente seu estatuto"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Sundance documents the historical internet campaign presenting fiction as real. Analyze its circulation critically and design an explicitly fictional modern promotion.",
+          "nb": "Sundance dokumenterer den historiske nettkampanjen som fremstilte fiksjon som virkelighet. Analyser sirkulasjonen kritisk og lag en uttrykkelig fiktiv moderne kampanje.",
+          "fr": "Sundance documente la campagne historique présentant la fiction comme réelle. Analysez-la et concevez une promotion moderne explicitement fictive.",
+          "pt": "Sundance documenta campanha histórica apresentando ficção como real. Analise-a e crie promoção moderna explicitamente ficcional."
+        },
+        "sourceIds": [
+          "s1",
+          "s2",
+          "s3"
+        ]
+      }
+    ]
+  },
+  {
+    "scenarioId": "scenario_boys_dont_cry_1999",
+    "status": "editorial_learning_exercise_not_case_verified",
+    "introduction": {
+      "en": "Biographical research, ethical casting and audience-informed editing",
+      "nb": "Biografisk research, etisk casting og publikumsinformert klipping",
+      "fr": "Recherche biographique, casting éthique et montage éclairé par le public",
+      "pt": "Pesquisa biográfica, elenco ético e montagem informada pelo público"
+    },
+    "sources": [
+      {
+        "id": "s0",
+        "title": "Girl Interrupted: Kimberly Peirce's Boys Don't Cry",
+        "publisher": "Filmmaker Magazine",
+        "url": "https://filmmakermagazine.com/archives/issues/fall1999/boys.php"
+      },
+      {
+        "id": "s1",
+        "title": "Boys Don't Cry",
+        "publisher": "American Film Institute",
+        "url": "https://catalog.afi.com/Film/60916-BOYS-DON%27T-CRY"
+      },
+      {
+        "id": "s2",
+        "title": "Boys Don't Cry (1999)",
+        "publisher": "British Film Institute",
+        "url": "https://www.bfi.org.uk/film/e0bd96fc-e1cd-56d7-bcd4-ff4d3e67d51b/boys-dont-cry"
+      },
+      {
+        "id": "s3",
+        "title": "When Looks Can Kill",
+        "publisher": "Los Angeles Times",
+        "url": "https://www.latimes.com/archives/la-xpm-1999-sep-12-ca-9492-story.html"
+      },
+      {
+        "id": "s4",
+        "title": "Film Notes: BOYS DON'T CRY",
+        "publisher": "Yale University Library",
+        "url": "https://web.library.yale.edu/film/notes/fn00128"
+      }
+    ],
+    "questions": [
+      {
+        "id": "boysdontcry-research",
+        "area": "research",
+        "prompt": {
+          "en": "How should a fictionalized biography document sensitive historical claims?",
+          "nb": "Hvordan bør en dramatisert biografi dokumentere sensitive historiske påstander?",
+          "fr": "Comment une biographie fictionnalisée documente-t-elle des affirmations historiques sensibles ?",
+          "pt": "Como pode biografia ficcionalizada documentar alegações históricas sensíveis?"
+        },
+        "options": [
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Publish sensitive personal information without reviewing its relevance",
+              "nb": "Publiser sensitiv personinformasjon uten å vurdere relevans",
+              "fr": "Publier des données sensibles sans examiner leur pertinence",
+              "pt": "Publicar dados sensíveis sem rever relevância"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Separate verified sources, disputed claims and fictional interpretation",
+              "nb": "Skill verifiserte kilder, omstridte påstander og fiktiv tolkning",
+              "fr": "Distinguer sources vérifiées, affirmations contestées et fiction",
+              "pt": "Distinguir fontes verificadas, alegações contestadas e ficção"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Treat every scripted exchange as a verified quotation",
+              "nb": "Behandle alle manusreplikker som verifiserte sitater",
+              "fr": "Traiter chaque dialogue écrit comme citation vérifiée",
+              "pt": "Tratar todo diálogo escrito como citação verificada"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Peirce describes extended research and legal vetting. Build a fictional research ledger with respect for privacy and individual identity, distinguishing documented evidence from dramatization.",
+          "nb": "Peirce beskriver langvarig research og juridisk vurdering. Lag en fiktiv researchlogg med respekt for privatliv og individuell identitet, og skill dokumentasjon fra dramatisering.",
+          "fr": "Peirce décrit une recherche prolongée et une vérification juridique. Créez un registre respectant vie privée et identité, distinguant preuves et dramatisation.",
+          "pt": "Peirce descreve pesquisa prolongada e avaliação jurídica. Crie registo respeitando privacidade e identidade, distinguindo provas de dramatização."
+        },
+        "sourceIds": [
+          "s0",
+          "s1"
+        ]
+      },
+      {
+        "id": "boysdontcry-performance",
+        "area": "camera",
+        "prompt": {
+          "en": "How can framing and rehearsal support a sensitive fictional performance?",
+          "nb": "Hvordan kan utsnitt og prøver støtte et sensitivt fiktivt skuespill?",
+          "fr": "Comment cadrage et répétition soutiennent-ils un jeu fictif sensible ?",
+          "pt": "Como podem enquadramento e ensaio apoiar interpretação ficcional sensível?"
+        },
+        "options": [
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Demand that performers reproduce actual traumatic events",
+              "nb": "Krev at skuespillere gjenskaper faktiske traumatiske hendelser",
+              "fr": "Exiger que les acteurs reproduisent des traumatismes réels",
+              "pt": "Exigir que intérpretes reproduzam acontecimentos traumáticos reais"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Treat historical casting practices as universal present-day standards",
+              "nb": "Behandle historisk castingpraksis som universell moderne standard",
+              "fr": "Traiter le casting historique comme norme universelle actuelle",
+              "pt": "Tratar práticas históricas de elenco como padrão universal atual"
+            }
+          },
+          {
+            "id": "supported",
+            "label": {
+              "en": "Agree boundaries and develop safe character-centered visual references",
+              "nb": "Avtal grenser og utvikle trygge karaktersentrerte bildereferanser",
+              "fr": "Convenir de limites et créer des références centrées sur le personnage",
+              "pt": "Acordar limites e criar referências seguras centradas na personagem"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Peirce discusses preparation, choreography and point-of-view choices. Plan a safe nonviolent fictional scene with informed consent and actor collaboration instead of reenacting harm.",
+          "nb": "Peirce drøfter forberedelser, koreografi og perspektivvalg. Lag en trygg ikke-voldelig fiktiv scene med informert samtykke og skuespillersamarbeid fremfor å gjenskape skade.",
+          "fr": "Peirce évoque préparation, chorégraphie et point de vue. Concevez une scène fictive non violente avec consentement et collaboration.",
+          "pt": "Peirce aborda preparação, coreografia e perspetiva. Crie cena ficcional não violenta com consentimento e colaboração."
+        },
+        "sourceIds": [
+          "s0"
+        ]
+      },
+      {
+        "id": "boysdontcry-screenings",
+        "area": "research",
+        "prompt": {
+          "en": "How can audience screenings inform editing without surrendering editorial judgment?",
+          "nb": "Hvordan kan prøvevisninger informere klipping uten å oppgi redaksjonell vurdering?",
+          "fr": "Comment des projections tests éclairent-elles le montage sans abandonner le jugement éditorial ?",
+          "pt": "Como podem sessões de teste informar montagem sem abandonar julgamento editorial?"
+        },
+        "options": [
+          {
+            "id": "supported",
+            "label": {
+              "en": "Record feedback themes and document the reasons for revisions",
+              "nb": "Registrer tilbakemeldingstemaer og dokumenter begrunnelsene for revisjoner",
+              "fr": "Noter les thèmes des retours et justifier les révisions",
+              "pt": "Registar temas de feedback e justificar revisões"
+            }
+          },
+          {
+            "id": "alternative-a",
+            "label": {
+              "en": "Make every requested change regardless of the film's purpose",
+              "nb": "Gjør alle ønskede endringer uansett filmens formål",
+              "fr": "Faire chaque modification demandée sans égard au propos",
+              "pt": "Fazer toda alteração pedida sem atender ao propósito"
+            }
+          },
+          {
+            "id": "alternative-b",
+            "label": {
+              "en": "Assume runtime variance alone identifies test-screening changes",
+              "nb": "Anta at spilletidsavvik alene identifiserer prøvevisningsendringer",
+              "fr": "Supposer que les écarts de durée identifient seuls les modifications",
+              "pt": "Supor que diferenças de duração identificam sozinhas mudanças de teste"
+            }
+          }
+        ],
+        "bestSupportedOptionId": "supported",
+        "explanation": {
+          "en": "Peirce describes seven audience screenings during editing, while AFI and BFI preserve different runtimes. Plan a fictional feedback process without claiming undocumented links between runtime and revisions.",
+          "nb": "Peirce beskriver sju prøvevisninger under klipping, mens AFI og BFI bevarer ulike spilletider. Lag en fiktiv tilbakemeldingsprosess uten udokumenterte koblinger mellom spilletid og revisjoner.",
+          "fr": "Peirce décrit sept projections tests, tandis que l’AFI et le BFI indiquent des durées différentes. Créez un processus fictif sans inventer de liens entre durée et révisions.",
+          "pt": "Peirce descreve sete sessões de teste, enquanto AFI e BFI indicam durações diferentes. Crie processo fictício sem inventar ligações entre duração e revisões."
+        },
+        "sourceIds": [
+          "s0",
+          "s1",
+          "s2"
+        ]
+      }
+    ]
   }
 ] as const satisfies readonly SourceBackedCaseWorkshop[];
